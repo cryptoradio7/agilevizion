@@ -1192,7 +1192,7 @@ select:focus {
   .hero-text {
     text-align: left;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
   }
   .hero-title-line h1 {
     text-align: left;
