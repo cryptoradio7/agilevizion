@@ -1216,6 +1216,27 @@ select:focus {
   }
 }
 
+.hero-diploma {
+  font-size: 1rem;
+  color: #888;
+  font-style: italic;
+  margin-top: 0.1rem;
+  margin-bottom: 0.3rem;
+}
+@media (min-width: 769px) {
+  .hero-diploma {
+    text-align: left;
+    margin-left: 0;
+  }
+}
+@media (max-width: 768px) {
+  .hero-diploma {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 /* Missions Section */
 .missions-section {
     padding: 80px 0;
