@@ -1500,3 +1500,110 @@ html, body {
 }
 /* --- FIN AJOUT --- */
 
+/* --- AJOUT : Lang switch mobile à côté du logo --- */
+.lang-switch-mobile {
+  display: none;
+}
+@media (max-width: 768px) {
+  .lang-switch-mobile {
+    display: flex !important;
+    align-items: center;
+    gap: 4px;
+    margin-left: 10px;
+  }
+  .nav-menu .lang-switch {
+    display: none !important;
+  }
+}
+/* --- FIN AJOUT --- */
+
+/* --- AJOUT : Look & feel mobile amélioré --- */
+@media (max-width: 768px) {
+  .navbar {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    padding: 0.3rem 0;
+    background: #fff;
+  }
+  .nav-brand svg {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .nav-brand span {
+    font-size: 1.1rem !important;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+  }
+  .hero {
+    padding-top: 80px !important;
+    padding-bottom: 30px !important;
+  }
+  .hero-title-line {
+    margin-bottom: 0.5rem;
+  }
+  .hero-text h1 {
+    font-size: 2rem !important;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.3rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem !important;
+    color: var(--primary-green);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.2rem;
+  }
+  .hero-text h2 {
+    font-size: 1.1rem !important;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+  }
+  .hero-description {
+    font-size: 1rem !important;
+    color: var(--text-gray);
+    margin-bottom: 1.2rem;
+    line-height: 1.5;
+  }
+  .expertise-list {
+    gap: 1rem !important;
+    margin-bottom: 1.2rem !important;
+  }
+  .expertise-card {
+    background: linear-gradient(90deg, #f8f9fa 60%, #e9f7ef 100%);
+    border-radius: 18px !important;
+    box-shadow: 0 2px 12px rgba(0,168,89,0.07);
+    padding: 1.1rem 1.2rem 1.1rem 1rem !important;
+    margin-bottom: 0.7rem;
+    border-left: 4px solid var(--primary-green);
+    transition: box-shadow 0.2s;
+  }
+  .expertise-title {
+    font-size: 1.05em !important;
+    font-weight: 700 !important;
+    color: var(--primary-green) !important;
+  }
+  .expertise-text {
+    font-size: 0.97em !important;
+    color: #333 !important;
+  }
+  .btn, .btn-primary, .btn-secondary {
+    width: 100%;
+    border-radius: 30px !important;
+    font-size: 1.1rem !important;
+    padding: 1rem 0 !important;
+    margin-bottom: 0.7rem;
+    box-shadow: 0 2px 8px rgba(0,168,89,0.08);
+  }
+  .hero-cta {
+    flex-direction: column;
+    gap: 0.5rem !important;
+    align-items: stretch;
+  }
+  .container, .hero-content {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
+/* --- FIN AJOUT --- */
+
