@@ -1614,3 +1614,33 @@ html, body {
 }
 /* --- FIN AJOUT --- */
 
+/* --- AJOUT : Un seul bouton EN/FR mobile à côté du logo, desktop dans menu --- */
+.lang-switch-mobile { display: none; }
+.lang-switch { display: flex; }
+@media (max-width: 768px) {
+  .lang-switch-mobile {
+    display: inline-block !important;
+    margin-left: 10px;
+    font-size: 1rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    background: #f8f9fa;
+    border: 1px solid #00A859;
+    color: #00A859;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .nav-menu .lang-switch {
+    display: none !important;
+  }
+}
+@media (min-width: 769px) {
+  .lang-switch-mobile {
+    display: none !important;
+  }
+  .nav-menu .lang-switch {
+    display: flex !important;
+  }
+}
+/* --- FIN AJOUT --- */
+
