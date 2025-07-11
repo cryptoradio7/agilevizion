@@ -123,7 +123,7 @@ document.querySelectorAll('.stats, .role-card, .cert-badge, .mission-card, .proc
 function showPhoneModal() {
     if (/Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         // Sur mobile, lancer l'appel direct
-        window.location.href = 'tel:00352661780807';
+        window.location.href = 'tel:00652661780807';
     } else {
         // Sur desktop, afficher le modal comme avant
         document.getElementById('phoneModal').style.display = 'block';
