@@ -121,7 +121,13 @@ document.querySelectorAll('.stats, .role-card, .cert-badge, .mission-card, .proc
 
 // Modal téléphone
 function showPhoneModal() {
-    document.getElementById('phoneModal').style.display = 'block';
+    if (/Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        // Sur mobile, lancer l'appel direct
+        window.location.href = 'tel:+33612345678'; // Remplace par ton vrai numéro
+    } else {
+        // Sur desktop, afficher le modal comme avant
+        document.getElementById('phoneModal').style.display = 'block';
+    }
 }
 
 document.querySelector('.close').addEventListener('click', function() {
