@@ -1205,6 +1205,9 @@ select:focus {
   }
   .hero-subtitle {
     text-align: left;
+    color: #888;
+    font-style: italic;
+    font-weight: 400;
   }
 }
 
