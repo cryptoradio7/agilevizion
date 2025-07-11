@@ -1697,3 +1697,34 @@ html, body {
   font-weight: 600;
 }
 
+@media (max-width: 768px) {
+  .hero-text {
+    text-align: center;
+    padding: 0 10px;
+  }
+  .hero-subtitle {
+    color: #888;
+    font-size: 1rem;
+    font-style: italic;
+    margin-bottom: 0.3rem;
+    font-weight: 400;
+  }
+  .hero-title-line h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    color: #222;
+  }
+  .hero-text h2 {
+    font-size: 1.2rem;
+    color: #00A859;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+  }
+  .hero-description {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 1.2rem;
+  }
+}
+
