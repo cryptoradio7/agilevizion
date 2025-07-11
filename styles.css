@@ -1683,7 +1683,7 @@ html, body {
 }
 
 .kanban-svg text[data-translate^="kanban_"] {
-  font-size: 11px !important;
+  font-size: 10px !important;
   font-weight: 400;
   text-anchor: middle;
   dominant-baseline: middle;
