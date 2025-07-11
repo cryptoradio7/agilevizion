@@ -1134,17 +1134,51 @@ select:focus {
 
 @media (max-width: 768px) {
   .hero-modern {
-    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 70vh;
+    padding-top: 40px;
     padding-bottom: 30px;
   }
-  .expertise-card {
-    font-size: 0.93em;
-    padding: 0.5rem 0.6rem 0.5rem 0.6rem;
-    gap: 0.4rem;
+  .hero-text {
+    text-align: center;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-  .expertise-list {
-    gap: 0.4rem;
-    margin: 0.1rem 0 0.7rem 0;
+  .hero-subtitle {
+    color: #888;
+    font-size: 1rem;
+    font-style: italic;
+    margin-bottom: 0.3rem;
+    font-weight: 400;
+    text-align: center;
+  }
+  .hero-title-line h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    color: #222;
+    text-align: center;
+  }
+  .hero-text h2 {
+    font-size: 1.3rem;
+    color: #00A859;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+    margin-top: 0.2rem;
+    text-align: center;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+  }
+  .hero-description {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 1.2rem;
+    text-align: center;
   }
 }
 
@@ -1695,36 +1729,5 @@ html, body {
 .kanban-svg text[data-translate="kanban_done"] {
   font-size: 16px !important;
   font-weight: 600;
-}
-
-@media (max-width: 768px) {
-  .hero-text {
-    text-align: center;
-    padding: 0 10px;
-  }
-  .hero-subtitle {
-    color: #888;
-    font-size: 1rem;
-    font-style: italic;
-    margin-bottom: 0.3rem;
-    font-weight: 400;
-  }
-  .hero-title-line h1 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 0.2rem;
-    color: #222;
-  }
-  .hero-text h2 {
-    font-size: 1.2rem;
-    color: #00A859;
-    font-weight: 700;
-    margin-bottom: 0.7rem;
-  }
-  .hero-description {
-    font-size: 1rem;
-    color: #444;
-    margin-bottom: 1.2rem;
-  }
 }
 
