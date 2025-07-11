@@ -1152,11 +1152,11 @@ select:focus {
     flex: 1 1 auto;
   }
   .hero-subtitle {
-    color: #888;
-    font-size: 1rem;
+    color: #888 !important;
+    font-size: 1.1rem;
     font-style: italic;
-    margin-bottom: 0.3rem;
     font-weight: 400;
+    margin-bottom: 0.3rem;
     text-align: center;
   }
   .hero-title-line h1 {
