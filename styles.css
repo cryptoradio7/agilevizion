@@ -1418,3 +1418,40 @@ select:focus {
 }
 /* --- FIN AJOUT --- */
 
+/* --- AJOUT : Fix scroll horizontal hero mobile --- */
+@media (max-width: 768px) {
+  .hero {
+    overflow-x: hidden;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .hero-content {
+    width: 100% !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 0.5rem !important;
+    box-sizing: border-box;
+  }
+  .hero-avatar {
+    width: 100% !important;
+    max-width: 100vw !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto;
+  }
+  .hero-avatar svg {
+    width: 100% !important;
+    max-width: 320px !important;
+    height: auto !important;
+    min-width: 0 !important;
+    display: block;
+  }
+}
+@media (max-width: 480px) {
+  .hero-avatar svg {
+    max-width: 220px !important;
+  }
+}
+/* --- FIN AJOUT --- */
+
