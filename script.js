@@ -153,31 +153,38 @@ window.addEventListener('scroll', function() {
     }
 }); 
 
-// --- AJOUT : Switch langue EN/FR synchronisé mobile/desktop ---
+// --- AJOUT/MODIF : Switch langue EN/FR, FR par défaut, bouton EN si FR actif, FR si EN actif ---
 function getCurrentLang() {
     return document.documentElement.lang || document.documentElement.getAttribute('data-lang') || 'fr';
 }
 function setLangSwitchButtons() {
     const lang = getCurrentLang();
-    const nextLang = lang === 'fr' ? 'en' : 'fr';
-    document.getElementById('lang-switch-mobile').textContent = nextLang.toUpperCase();
-    document.getElementById('lang-switch-desktop').textContent = nextLang.toUpperCase();
+    const nextLang = lang === 'fr' ? 'EN' : 'FR';
+    if(document.getElementById('lang-switch-mobile'))
+        document.getElementById('lang-switch-mobile').textContent = nextLang;
+    if(document.getElementById('lang-switch-desktop'))
+        document.getElementById('lang-switch-desktop').textContent = nextLang;
 }
 function switchLang() {
     const lang = getCurrentLang();
     const nextLang = lang === 'fr' ? 'en' : 'fr';
-    // Change l'URL si besoin ou recharge la page avec le paramètre/langue
     if (typeof changeLanguageURL === 'function') {
         changeLanguageURL(nextLang);
     } else {
         document.documentElement.lang = nextLang;
         document.documentElement.setAttribute('data-lang', nextLang);
         setLangSwitchButtons();
-        // Optionnel : recharger les textes si tu as une fonction translate()
         if (typeof translate === 'function') translate(nextLang);
     }
 }
-document.getElementById('lang-switch-mobile').addEventListener('click', switchLang);
-document.getElementById('lang-switch-desktop').addEventListener('click', switchLang);
+// Forcer la langue par défaut à FR au chargement
+if (!document.documentElement.lang && !document.documentElement.getAttribute('data-lang')) {
+    document.documentElement.lang = 'fr';
+    document.documentElement.setAttribute('data-lang', 'fr');
+}
+if(document.getElementById('lang-switch-mobile'))
+    document.getElementById('lang-switch-mobile').addEventListener('click', switchLang);
+if(document.getElementById('lang-switch-desktop'))
+    document.getElementById('lang-switch-desktop').addEventListener('click', switchLang);
 setLangSwitchButtons();
-// --- FIN AJOUT --- 
+// --- FIN AJOUT/MODIF --- 
