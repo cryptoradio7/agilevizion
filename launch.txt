@@ -57,3 +57,8 @@ tu me mets tous les scripts si besoin et tu m'expliques la configuration
 
 
 http://agilevizion.com.s3-website.eu-north-1.amazonaws.com/?lang=fr
+
+-----------
+
+
+
