@@ -181,6 +181,10 @@ const translations = {
         expertise_it_text: "Conception, modernisation et intégration d'applications adaptées à vos flux métiers.",
         expertise_cyber_title: "Cybersécurité & Conformité",
         expertise_cyber_text: "Audit, renforcement de la protection et alignement sur les réglementations en vigueur (DORA, ISO 27001).",
+        portfolio_point1: "Mise en place des processus de gouvernance IT",
+        portfolio_point2: "Gestion du budget IT (0,6M€ à 1,8M€ en 3 ans)",
+        portfolio_point3: "Identification, évaluation, création de feuille de route",
+        portfolio_point4: "Reporting d'avancement du portefeuille au Comité Exécutif",
     },
     en: {
         // Navigation
@@ -363,6 +367,10 @@ const translations = {
         expertise_it_text: "Design, modernization and integration of applications tailored to your business processes.",
         expertise_cyber_title: "Cybersecurity & Compliance",
         expertise_cyber_text: "Audit, protection reinforcement and alignment with current regulations (DORA, ISO 27001).",
+        portfolio_point1: "Implementation of IT governance processes",
+        portfolio_point2: "IT budget management (€0.6M to €1.8M in 3 years)",
+        portfolio_point3: "Identification, evaluation, roadmap creation",
+        portfolio_point4: "Portfolio progress reporting to Executive Committee",
     }
 };
 
@@ -453,15 +461,16 @@ function translate(lang) {
 // Initialisation
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Page chargée, initialisation de la traduction');
-    
-    // Détecter la langue depuis l'URL au chargement
-    const urlLang = getLanguageFromURL();
-    console.log('Langue détectée dans l\'URL:', urlLang);
-    
-    // Forcer la traduction au chargement
+    // On regarde si l'utilisateur a déjà choisi une langue (dans l'URL ou dans le localStorage)
+    let urlLang = getLanguageFromURL();
+    if (!urlLang || (urlLang !== 'fr' && urlLang !== 'en')) {
+        urlLang = 'fr'; // Par défaut français
+    }
+    document.documentElement.lang = urlLang;
+    document.documentElement.setAttribute('data-lang', urlLang);
     setTimeout(() => {
         translate(urlLang);
-    }, 100);
+    }, 0);
 
     // Gérer le bouton "retour" du navigateur
     window.addEventListener('popstate', () => {
