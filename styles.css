@@ -1358,3 +1358,63 @@ select:focus {
     vertical-align: middle;
 }
 
+/* --- AJOUT : Uniformisation responsive mobile --- */
+@media (max-width: 768px) {
+  .container,
+  section,
+  .roles-section,
+  .certifications,
+  .missions-section,
+  .contact,
+  .footer {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box;
+  }
+  .roles-grid,
+  .cert-grid,
+  .missions-grid,
+  .stats-grid,
+  .contact-content {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .stat-card,
+  .role-card,
+  .mission-card,
+  .cert-badge {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .container,
+  section,
+  .roles-section,
+  .certifications,
+  .missions-section,
+  .contact,
+  .footer {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .stat-card,
+  .role-card,
+  .mission-card,
+  .cert-badge {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
+/* --- FIN AJOUT --- */
+
