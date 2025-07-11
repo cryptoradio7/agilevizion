@@ -463,17 +463,6 @@ document.addEventListener('DOMContentLoaded', () => {
         translate(urlLang);
     }, 100);
 
-    // Gestionnaire du bouton de langue
-    const langBtn = document.querySelector('.lang-btn');
-    if (langBtn) {
-        langBtn.onclick = () => {
-            const currentLang = document.documentElement.getAttribute('data-lang') || 'fr';
-            console.log('Changement de langue depuis:', currentLang);
-            const newLang = currentLang === 'fr' ? 'en' : 'fr';
-            translate(newLang);
-        };
-    }
-
     // Gérer le bouton "retour" du navigateur
     window.addEventListener('popstate', () => {
         const newLang = getLanguageFromURL();
