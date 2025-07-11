@@ -1500,10 +1500,9 @@ html, body {
 }
 /* --- FIN AJOUT --- */
 
-/* --- AJOUT : Lang switch mobile à côté du logo --- */
-.lang-switch-mobile {
-  display: none;
-}
+/* --- AJOUT : Switch FR/EN mobile vs desktop --- */
+.lang-switch-mobile { display: none; }
+.lang-switch { display: flex; }
 @media (max-width: 768px) {
   .lang-switch-mobile {
     display: flex !important;
@@ -1513,6 +1512,14 @@ html, body {
   }
   .nav-menu .lang-switch {
     display: none !important;
+  }
+}
+@media (min-width: 769px) {
+  .lang-switch-mobile {
+    display: none !important;
+  }
+  .nav-menu .lang-switch {
+    display: flex !important;
   }
 }
 /* --- FIN AJOUT --- */
