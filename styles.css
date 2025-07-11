@@ -1196,6 +1196,11 @@ select:focus {
   }
   .hero-title-line h1 {
     text-align: left;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    margin-top: 0.2rem;
+    color: #222;
   }
   .hero-text h2 {
     text-align: left;
