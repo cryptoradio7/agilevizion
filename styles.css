@@ -1644,3 +1644,15 @@ html, body {
 }
 /* --- FIN AJOUT --- */
 
+/* --- AJOUT : Kanban responsive mobile --- */
+@media (max-width: 768px) {
+  .kanban-svg {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: auto !important;
+    display: block;
+    margin: 0 auto;
+  }
+}
+/* --- FIN AJOUT --- */
+
