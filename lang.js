@@ -129,8 +129,7 @@ const translations = {
         // Missions Section
         missions_title: "Cas d'usage réels",
         portfolio_title: "Gestion de portefeuille IT & gouvernance & projets",
-        portfolio_description: "Implementation of IT governance processes, IT budget management (€0.6M to €1.8M in 3 years), identification, evaluation, roadmap creation, portfolio progress reporting to Executive Committee.",
-        
+        portfolio_description: "Mise en place des processus de gouvernance IT, gestion du budget IT (0,6 M€ à 1,8 M€ en 3 ans), identification, évaluation, création de feuille de route, reporting d’avancement du portefeuille au Comité Exécutif.",
         agile_title: "Transformation Agile IT",
         agile_text1: "Déploiement de frameworks SAFe et Scrum pour optimiser les processus IT et améliorer la collaboration d'équipe.",
         agile_text2: "Accompagnement/coaching des équipes scrum, définition de la vision produit et priorisation des besoins avec les parties prenantes.",
