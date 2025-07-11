@@ -1455,3 +1455,48 @@ select:focus {
 }
 /* --- FIN AJOUT --- */
 
+/* --- AJOUT : Fix global scroll horizontal + backgrounds full width --- */
+html, body {
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+}
+
+@media (max-width: 768px) {
+  .hero-modern,
+  .stats,
+  .missions-section,
+  .roles-section,
+  .certifications,
+  .contact,
+  .footer,
+  section {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+  .container {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin: 0 !important;
+  }
+  .roles-grid,
+  .cert-grid,
+  .missions-grid,
+  .stats-grid,
+  .contact-content {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box;
+    overflow-x: auto;
+  }
+}
+/* --- FIN AJOUT --- */
+
