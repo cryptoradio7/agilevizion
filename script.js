@@ -170,12 +170,11 @@ function switchLang() {
     const nextLang = lang === 'fr' ? 'en' : 'fr';
     if (typeof changeLanguageURL === 'function') {
         changeLanguageURL(nextLang);
-    } else {
-        document.documentElement.lang = nextLang;
-        document.documentElement.setAttribute('data-lang', nextLang);
-        setLangSwitchButtons();
-        if (typeof translate === 'function') translate(nextLang);
     }
+    document.documentElement.lang = nextLang;
+    document.documentElement.setAttribute('data-lang', nextLang);
+    setLangSwitchButtons();
+    if (typeof translate === 'function') translate(nextLang);
 }
 // Forcer la langue par défaut à FR au chargement
 if (!document.documentElement.lang && !document.documentElement.getAttribute('data-lang')) {

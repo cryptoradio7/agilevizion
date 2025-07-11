@@ -439,13 +439,6 @@ function translate(lang) {
             });
         }
 
-        // Mettre à jour le bouton de langue
-        const langBtn = document.querySelector('.lang-btn');
-        if (langBtn) {
-            langBtn.textContent = lang === 'fr' ? 'EN' : 'FR';
-            langBtn.setAttribute('data-lang', lang === 'fr' ? 'en' : 'fr');
-        }
-
         // Mettre à jour l'attribut lang de la page
         document.documentElement.setAttribute('lang', lang);
         document.documentElement.setAttribute('data-lang', lang);
