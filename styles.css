@@ -1531,7 +1531,7 @@ select:focus {
   }
   .hero-avatar svg {
     width: 100% !important;
-    max-width: 320px !important;
+    max-width: 400px !important;
     height: auto !important;
     min-width: 0 !important;
     display: block;
@@ -1539,7 +1539,7 @@ select:focus {
 }
 @media (max-width: 480px) {
   .hero-avatar svg {
-    max-width: 220px !important;
+    max-width: 350px !important;
   }
 }
 /* --- FIN AJOUT --- */
@@ -1736,8 +1736,8 @@ html, body {
 /* --- AJOUT : Kanban responsive mobile --- */
 @media (max-width: 768px) {
   .kanban-svg {
-    width: 100vw !important;
-    max-width: 100vw !important;
+    width: 100% !important;
+    max-width: 400px !important;
     height: auto !important;
     display: block;
     margin: 0 auto;
@@ -1762,12 +1762,12 @@ html, body {
   .kanban-svg text[data-translate="kanban_todo"],
   .kanban-svg text[data-translate="kanban_doing"],
   .kanban-svg text[data-translate="kanban_done"] {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
 .kanban-svg text[data-translate^="kanban_"] {
-  font-size: 10px !important;
+  font-size: 12px !important;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   text-anchor: middle;
@@ -1777,7 +1777,7 @@ html, body {
 .kanban-svg text[data-translate="kanban_todo"],
 .kanban-svg text[data-translate="kanban_doing"],
 .kanban-svg text[data-translate="kanban_done"] {
-  font-size: 11px !important;
+  font-size: 13px !important;
   font-weight: 600;
   /* Remonte les statuts dans la boîte */
   dominant-baseline: hanging;
