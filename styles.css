@@ -1899,3 +1899,18 @@ html, body {
   }
 }
 
+@media (max-width: 768px) {
+  .process-step {
+    margin-bottom: 10px !important;
+    padding: 18px 10px !important;
+  }
+  .arrow {
+    margin: 0 0 6px 0 !important;
+    font-size: 1.3rem !important;
+  }
+  .approche-section .container {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
