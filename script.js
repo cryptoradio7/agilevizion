@@ -211,29 +211,13 @@ document.addEventListener('DOMContentLoaded', function() {
             kanbanSvg.classList.remove('zoom');
         });
         
-        // Pour desktop, zoom au clic avec retour automatique
-        kanbanSvg.addEventListener('mousedown', function(e) {
-            e.preventDefault();
-            kanbanSvg.classList.add('zoom');
-        });
-        
-        kanbanSvg.addEventListener('mouseup', function(e) {
-            e.preventDefault();
-            kanbanSvg.classList.remove('zoom');
-        });
-        
-        kanbanSvg.addEventListener('mouseleave', function(e) {
-            e.preventDefault();
-            kanbanSvg.classList.remove('zoom');
-        });
-        
-        // Alternative pour desktop avec click
+        // Pour desktop, zoom au clic simple
         kanbanSvg.addEventListener('click', function(e) {
-            e.preventDefault();
+            console.log('Click détecté sur kanban'); // Debug
             kanbanSvg.classList.add('zoom');
             setTimeout(() => {
                 kanbanSvg.classList.remove('zoom');
-            }, 200);
+            }, 300);
         });
     }
 }); 
