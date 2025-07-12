@@ -212,16 +212,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         // Pour desktop, zoom au clic avec retour automatique
-        kanbanSvg.addEventListener('mousedown', function() {
+        kanbanSvg.addEventListener('mousedown', function(e) {
+            e.preventDefault();
             kanbanSvg.classList.add('zoom');
         });
         
-        kanbanSvg.addEventListener('mouseup', function() {
+        kanbanSvg.addEventListener('mouseup', function(e) {
+            e.preventDefault();
             kanbanSvg.classList.remove('zoom');
         });
         
-        kanbanSvg.addEventListener('mouseleave', function() {
+        kanbanSvg.addEventListener('mouseleave', function(e) {
+            e.preventDefault();
             kanbanSvg.classList.remove('zoom');
+        });
+        
+        // Alternative pour desktop avec click
+        kanbanSvg.addEventListener('click', function(e) {
+            e.preventDefault();
+            kanbanSvg.classList.add('zoom');
+            setTimeout(() => {
+                kanbanSvg.classList.remove('zoom');
+            }, 200);
         });
     }
 }); 

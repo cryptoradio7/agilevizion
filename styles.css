@@ -1754,7 +1754,13 @@ html, body {
 }
 
 .kanban-svg.zoom {
-  transform: scale(1.1);
+  transform: scale(1.15);
+}
+
+@media (max-width: 768px) {
+  .kanban-svg.zoom {
+    transform: scale(1.25);
+  }
 }
 }
 /* --- FIN AJOUT --- */
