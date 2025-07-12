@@ -1049,6 +1049,13 @@ select:focus {
     transition: all 0.3s ease;
 }
 
+@media (max-width: 768px) {
+    .lang-btn {
+        font-size: 1rem;
+        padding: 0.3rem 0.6rem;
+    }
+}
+
 .lang-btn:first-child {
     border-radius: 4px 0 0 4px;
 }
@@ -1686,8 +1693,8 @@ html, body {
   .btn, .btn-primary, .btn-secondary {
     width: 100%;
     border-radius: 30px !important;
-    font-size: 1.1rem !important;
-    padding: 1rem 0 !important;
+    font-size: 1.3rem !important;
+    padding: 1.2rem 0 !important;
     margin-bottom: 0.7rem;
     box-shadow: 0 2px 8px rgba(0,168,89,0.08);
   }
@@ -1710,8 +1717,8 @@ html, body {
   .lang-switch-mobile {
     display: inline-block !important;
     margin-left: 10px;
-    font-size: 1rem;
-    padding: 0.3rem 0.7rem;
+    font-size: 1.1rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 6px;
     background: #f8f9fa;
     border: 1px solid #00A859;
