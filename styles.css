@@ -1986,21 +1986,36 @@ html, body {
   align-items: flex-start;
   line-height: 1.1;
 }
+.brand-texts span:first-child {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #00A859;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
 .site-tagline {
   font-size: 0.8rem;
   color: #b0b0b0;
   font-style: italic;
-  margin-top: -2px;
-  margin-bottom: 0;
   font-weight: 400;
+  margin-top: 2px;
+  margin-bottom: 0;
   line-height: 1.1;
 }
 @media (max-width: 768px) {
-  .site-tagline {
-    font-size: 0.78rem;
+  .brand-texts span:first-child {
+    font-size: 1.02rem;
+    font-weight: 700;
   }
-  .brand-texts {
-    align-items: flex-start;
+  .site-tagline {
+    font-size: 0.72rem;
+    margin-top: 1px;
+    font-weight: 400;
+  }
+  .navbar {
+    min-height: 64px;
+    padding-top: 4px;
+    padding-bottom: 4px;
   }
 }
 
