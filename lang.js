@@ -379,7 +379,7 @@ const translations = {
         portfolio_point2: "IT budget management (€0.6M to €1.8M in 3 years)",
         portfolio_point3: "Identification, evaluation, roadmap creation",
         portfolio_point4: "Portfolio progress reporting to Executive Committee",
-        diploma: "MBA, Master IT in Innovation Science",
+        diploma: "Master of Science in IT and Innovation",
     }
 };
 
