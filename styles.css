@@ -1873,3 +1873,23 @@ html, body {
   }
 }
 
+@media (max-width: 768px) {
+  .missions-grid {
+    display: block !important;
+    grid-template-columns: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .mission-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .missions-section .container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
+
