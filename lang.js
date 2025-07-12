@@ -189,7 +189,7 @@ const translations = {
         portfolio_point2: "Gestion du budget IT (0,6M€ à 1,8M€ en 3 ans)",
         portfolio_point3: "Identification, évaluation, création de feuille de route",
         portfolio_point4: "Reporting d'avancement du portefeuille au Comité Exécutif",
-        diploma: "MBA, Master IT en Science de l'Innovation",
+        diploma: "Master de Sciences en Technologies de l'Information et Innovation",
     },
     en: {
         // Navigation
