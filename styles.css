@@ -1710,8 +1710,8 @@ html, body {
   
   /* Styles spécifiques pour les sections de missions sur mobile */
   .missions-section {
-    padding: 40px 15px !important;
-    margin: 0 15px !important;
+    padding: 40px 0 !important;
+    margin: 0 !important;
     border-radius: 12px !important;
   }
   
