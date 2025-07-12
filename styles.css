@@ -1749,12 +1749,12 @@ html, body {
   display: block;
   margin: 0 auto;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
   transform-origin: center;
 }
 
-.kanban-svg.rotate {
-  transform: rotate(15deg);
+.kanban-svg.zoom {
+  transform: scale(1.1);
 }
 }
 /* --- FIN AJOUT --- */

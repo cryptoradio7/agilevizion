@@ -188,26 +188,40 @@ if(document.getElementById('lang-switch-desktop'))
 setLangSwitchButtons();
 // --- FIN AJOUT/MODIF ---
 
-// Animation du kanban au clic/toucher
+// Animation du kanban au toucher avec zoom
 document.addEventListener('DOMContentLoaded', function() {
     const kanbanSvg = document.querySelector('.kanban-svg');
     
     if (kanbanSvg) {
-        // Fonction pour animer la rotation
-        function animateKanban() {
-            kanbanSvg.classList.add('rotate');
-            
-            // Retirer la classe après l'animation
-            setTimeout(() => {
-                kanbanSvg.classList.remove('rotate');
-            }, 300);
-        }
-        
-        // Événements pour clic et toucher
-        kanbanSvg.addEventListener('click', animateKanban);
+        // Zoom au toucher
         kanbanSvg.addEventListener('touchstart', function(e) {
-            e.preventDefault(); // Éviter le double déclenchement
-            animateKanban();
+            e.preventDefault();
+            kanbanSvg.classList.add('zoom');
+        });
+        
+        // Retour à la normale quand on relâche
+        kanbanSvg.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            kanbanSvg.classList.remove('zoom');
+        });
+        
+        // Retour à la normale si on sort du toucher
+        kanbanSvg.addEventListener('touchcancel', function(e) {
+            e.preventDefault();
+            kanbanSvg.classList.remove('zoom');
+        });
+        
+        // Pour desktop, zoom au clic avec retour automatique
+        kanbanSvg.addEventListener('mousedown', function() {
+            kanbanSvg.classList.add('zoom');
+        });
+        
+        kanbanSvg.addEventListener('mouseup', function() {
+            kanbanSvg.classList.remove('zoom');
+        });
+        
+        kanbanSvg.addEventListener('mouseleave', function() {
+            kanbanSvg.classList.remove('zoom');
         });
     }
 }); 
