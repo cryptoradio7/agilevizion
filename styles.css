@@ -1893,3 +1893,9 @@ html, body {
   }
 }
 
+@media (max-width: 768px) {
+  .mission-card {
+    margin-bottom: 18px !important;
+  }
+}
+
