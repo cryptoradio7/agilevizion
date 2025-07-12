@@ -47,7 +47,7 @@ const translations = {
         arrow: "→",
 
         // Hero Section
-        freelance_consultant: "Votre consultant freelance",
+        subtitle: "VOTRE CONSULTANT FREELANCE",
         hero_title: "Expert en Transformation Agile & Gestion IT",
         hero_description: "Accompagnement Agile & IT sur mesure pour votre business. Mon expertise à votre service :",
         call_now: "Appeler Maintenant",
@@ -233,7 +233,7 @@ const translations = {
         arrow: "→",
 
         // Hero Section
-        freelance_consultant: "Your freelance consultant",
+        subtitle: "YOUR FREELANCE CONSULTANT",
         hero_title: "Expert in Agile Transformation & IT Management",
         hero_description: "Custom Agile & IT support for your business. My expertise at your service:",
         call_now: "Call Now",
