@@ -2008,24 +2008,23 @@ html, body {
     justify-content: space-between;
     align-items: flex-start;
     padding: 0 10px;
-    min-height: 80px;
+    min-height: 90px;
   }
   .nav-brand {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: auto;
     flex-shrink: 1;
+    min-width: 0;
   }
   .brand-row {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 8px;
-    width: 100%;
   }
   .brand-title {
-    font-size: 1.25rem !important;
+    font-size: 1.28rem !important;
     font-weight: 700 !important;
     color: #00A859 !important;
     letter-spacing: 0.01em;
@@ -2037,7 +2036,7 @@ html, body {
     height: 36px !important;
   }
   .site-tagline {
-    font-size: 0.62rem !important;
+    font-size: 0.60rem !important;
     color: #b0b0b0 !important;
     font-style: italic !important;
     font-weight: 400 !important;
@@ -2057,9 +2056,10 @@ html, body {
     margin-left: 12px !important;
     margin-right: 0 !important;
     align-self: flex-start;
+    font-size: 1rem !important;
   }
   .hero {
-    padding-top: 100px !important;
+    padding-top: 110px !important;
   }
   body {
     padding-top: 0 !important;
