@@ -2004,26 +2004,34 @@ html, body {
 }
 @media (max-width: 768px) {
   .brand-texts span:first-child {
-    font-size: 1.02rem !important;
+    font-size: 1.12rem !important;
     font-weight: 700 !important;
-    margin-bottom: 2px !important;
+    color: #00A859 !important;
+    line-height: 1.1 !important;
+    margin-bottom: 0 !important;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
   }
   .site-tagline {
     font-size: 0.68rem !important;
     color: #b0b0b0 !important;
     font-style: italic !important;
     font-weight: 400 !important;
-    margin-top: 4px !important;
+    margin-top: 2px !important;
     margin-bottom: 0 !important;
-    letter-spacing: 0.01em;
     line-height: 1.1 !important;
     display: block;
     text-align: left;
+    white-space: normal;
+    max-width: 120px;
   }
   .navbar {
-    min-height: 72px !important;
+    min-height: 70px !important;
     padding-top: 8px !important;
     padding-bottom: 8px !important;
+  }
+  body {
+    padding-top: 70px !important;
   }
 }
 
