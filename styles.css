@@ -1994,14 +1994,23 @@ html, body {
   line-height: 1.1;
 }
 .site-tagline {
-  font-size: 0.8rem;
-  color: #b0b0b0;
-  font-style: italic;
-  font-weight: 400;
-  margin-top: 2px;
-  margin-bottom: 0;
-  line-height: 1.1;
+  font-size: 0.62rem !important;
+  color: #b0b0b0 !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  margin-top: 2px !important;
+  margin-bottom: 0 !important;
+  line-height: 1.1 !important;
+  display: block;
+  text-align: left;
+  white-space: nowrap;
+  max-width: 100vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  align-self: flex-start;
+  padding-left: 44px;
 }
+
 @media (max-width: 768px) {
   .navbar .container {
     display: flex;
@@ -2036,7 +2045,7 @@ html, body {
     height: 36px !important;
   }
   .site-tagline {
-    font-size: 0.62rem !important;
+    font-size: 0.55rem !important;
     color: #b0b0b0 !important;
     font-style: italic !important;
     font-weight: 400 !important;
@@ -2063,15 +2072,6 @@ html, body {
   }
   body {
     padding-top: 0 !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .brand-title {
-    font-size: 1.5rem !important;
-  }
-  .site-tagline {
-    font-size: 0.55rem !important;
   }
 }
 

@@ -51,6 +51,7 @@ const translations = {
         hero_title: "Expert en Transformation Agile & Gestion IT",
         hero_description: "Accompagnement Agile & IT sur mesure pour votre business. Mon expertise à votre service :",
         call_now: "Appeler Maintenant",
+        site_tagline: "IT agile, sécurisé, à haute valeur.",
 
         // Results Section
         results_title: "Mes Résultats en Chiffres",
@@ -242,6 +243,7 @@ const translations = {
         hero_title: "Expert in Agile Transformation & IT Management",
         hero_description: "Custom Agile & IT support for your business. My expertise at your service:",
         call_now: "Call Now",
+        site_tagline: "Agile IT, secure, high value.",
 
         // Results Section
         results_title: "Results in Numbers",
