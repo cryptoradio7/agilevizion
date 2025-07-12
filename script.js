@@ -186,4 +186,28 @@ if(document.getElementById('lang-switch-mobile'))
 if(document.getElementById('lang-switch-desktop'))
     document.getElementById('lang-switch-desktop').addEventListener('click', switchLang);
 setLangSwitchButtons();
-// --- FIN AJOUT/MODIF --- 
+// --- FIN AJOUT/MODIF ---
+
+// Animation du kanban au clic/toucher
+document.addEventListener('DOMContentLoaded', function() {
+    const kanbanSvg = document.querySelector('.kanban-svg');
+    
+    if (kanbanSvg) {
+        // Fonction pour animer la rotation
+        function animateKanban() {
+            kanbanSvg.classList.add('rotate');
+            
+            // Retirer la classe après l'animation
+            setTimeout(() => {
+                kanbanSvg.classList.remove('rotate');
+            }, 300);
+        }
+        
+        // Événements pour clic et toucher
+        kanbanSvg.addEventListener('click', animateKanban);
+        kanbanSvg.addEventListener('touchstart', function(e) {
+            e.preventDefault(); // Éviter le double déclenchement
+            animateKanban();
+        });
+    }
+}); 

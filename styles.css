@@ -1743,12 +1743,19 @@ html, body {
 /* --- AJOUT : Kanban responsive mobile --- */
 @media (max-width: 768px) {
   .kanban-svg {
-    width: 100% !important;
-    max-width: 400px !important;
-    height: auto !important;
-    display: block;
-    margin: 0 auto;
-  }
+  width: 100% !important;
+  max-width: 400px !important;
+  height: auto !important;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+.kanban-svg.rotate {
+  transform: rotate(15deg);
+}
 }
 /* --- FIN AJOUT --- */
 
