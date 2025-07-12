@@ -2062,7 +2062,7 @@ html, body {
     padding-left: 44px;
   }
   .lang-switch-mobile {
-    margin-left: 12px !important;
+    margin-left: 20px !important;
     margin-right: 0 !important;
     align-self: flex-start;
     font-size: 1rem !important;
