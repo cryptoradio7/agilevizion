@@ -1787,24 +1787,25 @@ html, body {
 }
 
 .hero-name {
-  font-size: 1.5rem;
+  display: block;
+  font-size: 1.6rem;
+  font-weight: bold;
   color: #222;
-  font-weight: 700;
-  margin-bottom: 0.2rem;
-  font-style: normal;
+  margin-bottom: 0.2em;
 }
 .hero-subtitle {
-  color: #888;
-  font-size: 1.1rem;
+  display: block;
   font-style: italic;
-  margin-bottom: 0.1rem;
-  font-weight: 700;
+  color: #888;
+  font-size: 1.2rem;
+  margin-bottom: 0.2em;
 }
 .hero-diploma {
-  color: #bbb;
+  display: block;
+  color: #b0b0b0;
   font-size: 1rem;
   font-style: italic;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2em;
 }
 @media (max-width: 768px) {
   .hero-title-line {
