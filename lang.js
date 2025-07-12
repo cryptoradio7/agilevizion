@@ -121,7 +121,7 @@ const translations = {
         mission_type_8: "Gestion de portefeuille IT",
         mission_type_9: "Gestion de projets Prince 2",
         mission_type_10: "Gestion de projets agiles",
-        mission_type_11: "Service Management",
+        mission_type_11: "Gestion de service",
         form_describe: "Décrivez votre besoin...",
         form_submit: "Envoyer ma demande",
         contact_direct_title: "Contact Direct",
