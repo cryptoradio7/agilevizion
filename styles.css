@@ -1701,7 +1701,9 @@ html, body {
     gap: 0.5rem !important;
     align-items: stretch;
   }
-  .container, .hero-content {
+  .missions-section .container,
+  .roles-section .container,
+  .approche-section .container {
     padding-left: 10px !important;
     padding-right: 10px !important;
   }
