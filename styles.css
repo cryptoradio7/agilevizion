@@ -1901,12 +1901,12 @@ html, body {
 
 @media (max-width: 768px) {
   .process-step {
-    margin-bottom: 10px !important;
-    padding: 18px 10px !important;
+    margin-bottom: 4px !important;
+    padding: 12px 8px !important;
   }
   .arrow {
-    margin: 0 0 6px 0 !important;
-    font-size: 1.3rem !important;
+    margin: 0 0 2px 0 !important;
+    font-size: 1.1rem !important;
   }
   .approche-section .container {
     padding-top: 0 !important;
