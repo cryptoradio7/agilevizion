@@ -1777,8 +1777,12 @@ html, body {
 .kanban-svg text[data-translate="kanban_todo"],
 .kanban-svg text[data-translate="kanban_doing"],
 .kanban-svg text[data-translate="kanban_done"] {
-  font-size: 10px !important;
+  font-size: 11px !important;
   font-weight: 600;
+  /* Remonte les statuts dans la boîte */
+  dominant-baseline: hanging;
+  /* Si besoin, ajuste la position Y dans le SVG ou ajoute un margin-bottom négatif */
+  /* margin-bottom: -8px; */
 }
 
 .hero-name {
