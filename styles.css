@@ -1694,7 +1694,7 @@ html, body {
     width: 100%;
     border-radius: 30px !important;
     font-size: 1.1rem !important;
-    padding: 1rem 0 !important;
+    padding: 1rem 2rem !important;
     margin-bottom: 0.7rem;
     box-shadow: 0 2px 8px rgba(0,168,89,0.08);
   }
