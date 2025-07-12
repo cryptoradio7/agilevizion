@@ -1761,6 +1761,33 @@ html, body {
   .kanban-svg.zoom {
     transform: scale(1.1);
   }
+  
+  /* Zoom sur tous les composants interactifs */
+  .expertise-card,
+  .role-card,
+  .mission-card,
+  .stat-card,
+  .cert-badge,
+  .process-step,
+  .btn,
+  .btn-primary,
+  .btn-secondary {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    transform-origin: center;
+  }
+  
+  .expertise-card.zoom,
+  .role-card.zoom,
+  .mission-card.zoom,
+  .stat-card.zoom,
+  .cert-badge.zoom,
+  .process-step.zoom,
+  .btn.zoom,
+  .btn-primary.zoom,
+  .btn-secondary.zoom {
+    transform: scale(1.05);
+  }
 }
 }
 /* --- FIN AJOUT --- */

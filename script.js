@@ -220,4 +220,27 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 300);
         });
     }
+    
+    // Zoom sur tous les composants interactifs (mobile uniquement)
+    const interactiveElements = document.querySelectorAll('.expertise-card, .role-card, .mission-card, .stat-card, .cert-badge, .process-step, .btn, .btn-primary, .btn-secondary');
+    
+    interactiveElements.forEach(element => {
+        // Zoom au toucher
+        element.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            this.classList.add('zoom');
+        });
+        
+        // Retour à la normale quand on relâche
+        element.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            this.classList.remove('zoom');
+        });
+        
+        // Retour à la normale si on sort du toucher
+        element.addEventListener('touchcancel', function(e) {
+            e.preventDefault();
+            this.classList.remove('zoom');
+        });
+    });
 }); 
