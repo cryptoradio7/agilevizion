@@ -240,4 +240,17 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 300);
     }
 
+    // Animation du logo (A et V) au clic sur le logo (mobile & web)
+    var brandRow = document.querySelector('.brand-row');
+    if (brandRow) {
+      brandRow.addEventListener('click', function() {
+        brandRow.classList.remove('animated');
+        void brandRow.offsetWidth; // force reflow pour relancer l'animation
+        brandRow.classList.add('animated');
+        setTimeout(function() {
+          brandRow.classList.remove('animated');
+        }, 900);
+      });
+    }
+
 }); 
