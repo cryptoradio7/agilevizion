@@ -1,3 +1,23 @@
+/* Animation logo Agile Vizion */
+.brand-row.animated .logo-a {
+  transform-origin: 20px 20px;
+  animation: rotateA 0.7s cubic-bezier(.6,-0.28,.74,1.25);
+}
+.brand-row.animated .logo-v {
+  transform-origin: 20px 28px;
+  animation: rotateV 0.7s cubic-bezier(.6,-0.28,.74,1.25);
+}
+@keyframes rotateA {
+  0% { transform: rotate(0deg); }
+  60% { transform: rotate(-22deg); }
+  100% { transform: rotate(0deg); }
+}
+@keyframes rotateV {
+  0% { transform: rotate(0deg); }
+  60% { transform: rotate(22deg); }
+  100% { transform: rotate(0deg); }
+}
+
 /* Reset et styles de base */
 * {
     margin: 0;
