@@ -63,7 +63,7 @@ body {
 .nav-header-row {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
     width: 100%;
     gap: 40px;
@@ -84,7 +84,7 @@ body {
 }
 
 .brand-title {
-    font-size: 2rem;
+    font-size: 1.55rem;
     font-weight: 800;
     color: #00A859;
     letter-spacing: 0.01em;
@@ -95,14 +95,14 @@ body {
     display: block;
     width: auto;
     text-align: left;
-    font-size: 1.18rem;
+    font-size: 1.25rem;
     color: #b0b0b0;
     font-style: italic;
     margin-top: 2px;
     margin-bottom: 0;
     line-height: 1.1;
     letter-spacing: 0.01em;
-    padding-left: 3.1rem; /* logo (40px) + petit espace = sous le A */
+    padding-left: 3.1rem;
 }
 
 @media (max-width: 768px) {
@@ -206,6 +206,7 @@ body {
     font-size: 0.95rem;
     white-space: nowrap;
     flex-wrap: nowrap;
+    height: 100%;
 }
 
 .nav-link {
@@ -2159,7 +2160,7 @@ html, body {
 .nav-header-row {
     display: flex;
   flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
   justify-content: flex-start;
   width: 100%;
   gap: 40px;
@@ -2180,7 +2181,7 @@ html, body {
   }
 
   .brand-title {
-  font-size: 2rem;
+  font-size: 1.55rem;
   font-weight: 800;
   color: #00A859;
     letter-spacing: 0.01em;
@@ -2189,16 +2190,16 @@ html, body {
 
 .site-tagline {
   display: block;
-  width: 100%;
+  width: auto;
   text-align: left;
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: #b0b0b0;
   font-style: italic;
   margin-top: 2px;
   margin-bottom: 0;
   line-height: 1.1;
   letter-spacing: 0.01em;
-  padding-left: 44px;
+  padding-left: 3.1rem;
 }
 
 .nav-menu-row {
@@ -2211,6 +2212,7 @@ html, body {
   font-size: 0.95rem;
   white-space: nowrap;
   flex-wrap: nowrap;
+  height: 100%;
 }
 
 .nav-link {
@@ -4149,7 +4151,7 @@ html, body {
 .nav-header-row {
     display: flex;
   flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
   justify-content: flex-start;
   width: 100%;
   gap: 40px;
@@ -4170,7 +4172,7 @@ html, body {
   }
 
   .brand-title {
-  font-size: 2rem;
+  font-size: 1.55rem;
   font-weight: 800;
   color: #00A859;
     letter-spacing: 0.01em;
@@ -4181,14 +4183,14 @@ html, body {
   display: block;
   width: auto;
   text-align: left;
-  font-size: 1.18rem;
+  font-size: 1.25rem;
   color: #b0b0b0;
   font-style: italic;
   margin-top: 2px;
   margin-bottom: 0;
   line-height: 1.1;
   letter-spacing: 0.01em;
-  padding-left: 3.1rem; /* logo (40px) + petit espace = sous le A */
+  padding-left: 3.1rem;
 }
 
 @media (max-width: 768px) {
@@ -4208,6 +4210,7 @@ html, body {
   font-size: 0.95rem;
   white-space: nowrap;
   flex-wrap: nowrap;
+  height: 100%;
 }
 
 .nav-link {
@@ -6146,7 +6149,7 @@ html, body {
 .nav-header-row {
     display: flex;
   flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
   justify-content: flex-start;
   width: 100%;
   gap: 40px;
@@ -6167,7 +6170,7 @@ html, body {
   }
 
   .brand-title {
-  font-size: 2rem;
+  font-size: 1.55rem;
   font-weight: 800;
   color: #00A859;
     letter-spacing: 0.01em;
@@ -6176,16 +6179,16 @@ html, body {
 
 .site-tagline {
   display: block;
-  width: 100%;
+  width: auto;
   text-align: left;
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: #b0b0b0;
   font-style: italic;
   margin-top: 2px;
   margin-bottom: 0;
   line-height: 1.1;
   letter-spacing: 0.01em;
-  padding-left: 44px;
+  padding-left: 3.1rem;
 }
 
 .nav-menu-row {
@@ -6198,6 +6201,7 @@ html, body {
   font-size: 0.95rem;
   white-space: nowrap;
   flex-wrap: nowrap;
+  height: 100%;
 }
 
 .nav-link {
@@ -8137,7 +8141,7 @@ html, body {
 .nav-header-row {
     display: flex;
   flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
   justify-content: flex-start;
   width: 100%;
   gap: 40px;
@@ -8158,7 +8162,7 @@ html, body {
   }
 
   .brand-title {
-  font-size: 2rem;
+  font-size: 1.55rem;
   font-weight: 800;
   color: #00A859;
     letter-spacing: 0.01em;
@@ -8169,14 +8173,14 @@ html, body {
   display: block;
   width: auto;
   text-align: left;
-  font-size: 1.18rem;
+  font-size: 1.25rem;
   color: #b0b0b0;
   font-style: italic;
   margin-top: 2px;
   margin-bottom: 0;
   line-height: 1.1;
   letter-spacing: 0.01em;
-  padding-left: 3.1rem; /* logo (40px) + petit espace = sous le A */
+  padding-left: 3.1rem;
 }
 
 @media (max-width: 768px) {
@@ -8196,6 +8200,7 @@ html, body {
   font-size: 0.95rem;
   white-space: nowrap;
   flex-wrap: nowrap;
+  height: 100%;
 }
 
 .nav-link {
@@ -10134,7 +10139,7 @@ html, body {
 .nav-header-row {
     display: flex;
   flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
   justify-content: flex-start;
   width: 100%;
   gap: 40px;
@@ -10155,7 +10160,7 @@ html, body {
   }
 
   .brand-title {
-  font-size: 2rem;
+  font-size: 1.55rem;
   font-weight: 800;
   color: #00A859;
     letter-spacing: 0.01em;
@@ -10164,16 +10169,16 @@ html, body {
 
 .site-tagline {
   display: block;
-  width: 100%;
+  width: auto;
   text-align: left;
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: #b0b0b0;
   font-style: italic;
   margin-top: 2px;
   margin-bottom: 0;
   line-height: 1.1;
   letter-spacing: 0.01em;
-  padding-left: 44px;
+  padding-left: 3.1rem;
 }
 
 .nav-menu-row {
@@ -10186,6 +10191,7 @@ html, body {
   font-size: 0.95rem;
   white-space: nowrap;
   flex-wrap: nowrap;
+  height: 100%;
 }
 
 .nav-link {
