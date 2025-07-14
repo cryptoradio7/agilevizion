@@ -155,6 +155,25 @@ body {
         display: inline-flex !important;
         margin-left: 0;
     }
+    .nav-menu-row {
+        display: none !important;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100vw;
+        height: calc(100vh - 60px);
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2rem;
+        z-index: 100;
+        padding-top: 2.5rem;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .nav-menu-row.active {
+        display: flex !important;
+    }
 }
 
 .nav-menu-row {
@@ -11551,6 +11570,7 @@ select:focus {
     margin: 0 auto !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
+    box-sizing: border-box;
   }
   .stat-card,
   .role-card,

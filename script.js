@@ -1,6 +1,6 @@
 // Navigation mobile
 document.querySelector('.nav-toggle').addEventListener('click', function() {
-    document.querySelector('.nav-menu').classList.toggle('active');
+    document.querySelector('.nav-menu-row').classList.toggle('active');
 });
 
 // Smooth scrolling
