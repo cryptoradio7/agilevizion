@@ -80,7 +80,7 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 3.5rem; /* Augmente l'espacement pour la lisibilité */
     align-items: center;
 }
 
@@ -2072,6 +2072,19 @@ html, body {
   }
   body {
     padding-top: 0 !important;
+  }
+}
+
+.hero-title {
+    margin-top: 2.5rem; /* Espace le nom du header */
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    gap: 2.2rem !important; /* Plus d'espace aussi sur mobile */
+  }
+  .hero-title {
+    margin-top: 1.5rem !important;
   }
 }
 
