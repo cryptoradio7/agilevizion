@@ -55,33 +55,66 @@ body {
 
 .navbar .container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 20px;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.2rem 30px 0 30px;
+}
+
+.nav-header-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 40px;
 }
 
 .nav-brand {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+    min-width: 120px;
+}
+
+.brand-row {
+    display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 10px;
-    font-weight: 600;
-    font-size: 1.5rem;
-    color: var(--primary-green);
 }
 
-.nav-brand svg {
-    transition: transform 0.3s ease;
+.brand-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #00A859;
+    letter-spacing: 0.01em;
+    line-height: 1.1;
 }
 
-.nav-brand:hover svg {
-    transform: rotate(180deg);
+.site-tagline {
+    display: block;
+    width: auto;
+    text-align: left;
+    font-size: 1rem;
+    color: #b0b0b0;
+    font-style: italic;
+    margin-top: 2px;
+    margin-bottom: 0;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+    padding-left: 50px;
 }
 
 .nav-menu {
     display: flex;
-    list-style: none;
-    gap: 3.5rem; /* Augmente l'espacement pour la lisibilité */
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex: 1 1 auto;
+    font-size: 1.15rem;
+    font-weight: 500;
 }
 
 .nav-menu a {
@@ -90,6 +123,8 @@ body {
     font-weight: 500;
     transition: color 0.3s ease;
     position: relative;
+    font-size: 1.15rem;
+    font-weight: 500;
 }
 
 .nav-menu a:hover,
@@ -2048,8 +2083,8 @@ html, body {
 @media (max-width: 768px) {
   .navbar .container {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: stretch;
     padding: 0 10px;
     min-height: 90px;
   }
@@ -2067,12 +2102,19 @@ html, body {
     gap: 8px;
   }
   .brand-title {
-    font-size: 2.1rem !important;
-    font-weight: 800 !important;
-    color: #00A859 !important;
-    letter-spacing: 0.01em;
-    white-space: nowrap;
-    line-height: 1.1 !important;
+    font-size: 1.1rem;
+  }
+  .site-tagline {
+    font-size: 0.7rem;
+    padding-left: 10px;
+    text-align: left;
+  }
+  .nav-menu {
+    gap: 0.7rem;
+    font-size: 0.95rem;
+  }
+  .nav-menu a {
+    font-size: 0.95rem;
   }
   .nav-brand svg {
     width: 36px !important;
