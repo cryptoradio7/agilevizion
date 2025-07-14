@@ -230,5 +230,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    var brandRow = document.querySelector('.brand-row');
+    if (brandRow) {
+      setTimeout(function() {
+        brandRow.classList.add('animated');
+        setTimeout(function() {
+          brandRow.classList.remove('animated');
+        }, 900);
+      }, 300);
+    }
 
 }); 
