@@ -107,19 +107,19 @@ body {
 
 @media (max-width: 768px) {
     .nav-header-row {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-        justify-content: flex-start;
-        gap: 0.2rem;
+        justify-content: space-between;
+        gap: 0;
         position: relative;
     }
     .nav-brand-block {
-        align-items: center;
-        width: 100%;
+        align-items: flex-start;
+        width: auto;
     }
     .brand-row {
-        justify-content: center;
-        width: 100%;
+        justify-content: flex-start;
+        width: auto;
     }
     .brand-title {
         font-size: 1.25rem !important;
@@ -130,11 +130,7 @@ body {
         height: 28px !important;
     }
     .site-tagline {
-        text-align: center;
-        width: 100%;
-        padding-left: 0;
-        font-size: 0.95rem;
-        margin-bottom: 0.2rem;
+        display: none !important;
     }
     .nav-actions-mobile {
         position: absolute;
@@ -166,9 +162,10 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        gap: 2rem;
+        gap: 2.2rem;
         z-index: 100;
         padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
         box-shadow: 0 2px 12px rgba(0,0,0,0.08);
     }
     .nav-menu-row.active {
