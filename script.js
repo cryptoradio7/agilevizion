@@ -188,6 +188,15 @@ if(document.getElementById('lang-switch-desktop'))
 setLangSwitchButtons();
 // --- FIN AJOUT/MODIF ---
 
+// Fermer le menu mobile au clic sur un lien
+if (window.innerWidth <= 768) {
+  document.querySelectorAll('.nav-menu-row .nav-link').forEach(link => {
+    link.addEventListener('click', function() {
+      document.querySelector('.nav-menu-row').classList.remove('active');
+    });
+  });
+}
+
 // Animation du kanban au toucher avec zoom
 document.addEventListener('DOMContentLoaded', function() {
     const kanbanSvg = document.querySelector('.kanban-svg');
