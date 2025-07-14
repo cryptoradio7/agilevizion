@@ -102,13 +102,13 @@ body {
     margin-bottom: 0;
     line-height: 1.1;
     letter-spacing: 0.01em;
-    padding-left: 2.2rem; /* décale sous le A du titre */
+    padding-left: 3.1rem; /* logo (40px) + petit espace = sous le A */
 }
 
 @media (max-width: 768px) {
     .site-tagline {
         font-size: 1rem;
-        padding-left: 1.2rem;
+        padding-left: 2.1rem;
     }
 }
 
@@ -2114,7 +2114,7 @@ html, body {
   margin-bottom: 0;
   line-height: 1.1;
   letter-spacing: 0.01em;
-  padding-left: 4px;
+  padding-left: 44px;
 }
 
 .nav-menu-row {
@@ -4104,13 +4104,13 @@ html, body {
   margin-bottom: 0;
   line-height: 1.1;
   letter-spacing: 0.01em;
-  padding-left: 2.2rem; /* décale sous le A du titre */
+  padding-left: 3.1rem; /* logo (40px) + petit espace = sous le A */
 }
 
 @media (max-width: 768px) {
   .site-tagline {
     font-size: 1rem;
-    padding-left: 1.2rem;
+    padding-left: 2.1rem;
   }
 }
 
@@ -6101,7 +6101,7 @@ html, body {
   margin-bottom: 0;
   line-height: 1.1;
   letter-spacing: 0.01em;
-  padding-left: 4px;
+  padding-left: 44px;
 }
 
 .nav-menu-row {
@@ -8092,13 +8092,13 @@ html, body {
   margin-bottom: 0;
   line-height: 1.1;
   letter-spacing: 0.01em;
-  padding-left: 2.2rem; /* décale sous le A du titre */
+  padding-left: 3.1rem; /* logo (40px) + petit espace = sous le A */
 }
 
 @media (max-width: 768px) {
   .site-tagline {
     font-size: 1rem;
-    padding-left: 1.2rem;
+    padding-left: 2.1rem;
   }
 }
 
@@ -10089,7 +10089,7 @@ html, body {
   margin-bottom: 0;
   line-height: 1.1;
   letter-spacing: 0.01em;
-  padding-left: 4px;
+  padding-left: 44px;
 }
 
 .nav-menu-row {
