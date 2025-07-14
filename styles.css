@@ -107,8 +107,36 @@ body {
 
 @media (max-width: 768px) {
     .site-tagline {
-        font-size: 1rem;
-        padding-left: 2.1rem;
+        text-align: center;
+        padding-left: 0;
+        font-size: 0.98rem;
+        width: 100%;
+    }
+    .nav-header-row {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0;
+    }
+    .nav-brand-block {
+        width: auto;
+        align-items: flex-start;
+    }
+    .nav-actions-mobile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+        margin-left: auto;
+    }
+    .lang-switch-mobile {
+        display: inline-flex !important;
+        margin: 0 0.2rem 0 0;
+        position: static !important;
+    }
+    .nav-toggle {
+        display: inline-flex !important;
+        margin-left: 0;
     }
 }
 
