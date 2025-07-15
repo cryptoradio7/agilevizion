@@ -2,7 +2,7 @@
 const translations = {
     fr: {
         // Navigation
-        results: "Résultats",
+        results: "Points clés",
         roles: "Mes Rôles",
         certifications: "Certifications",
         missions: "Portefeuille IT",
@@ -54,7 +54,7 @@ const translations = {
         site_tagline: "IT agile, sécurisé, à haute valeur.",
 
         // Results Section
-        results_title: "Mes Résultats en Chiffres",
+        results_title: "Points Clés en Chiffres",
         years_experience: "Années d'Expérience",
         projects_completed: "Projets Menés",
         clients_served: "Clients Accompagnés",
@@ -200,7 +200,7 @@ const translations = {
     },
     en: {
         // Navigation
-        results: "Results",
+        results: "Highlights",
         roles: "My Roles",
         certifications: "Certifications",
         missions: "IT Portfolio",
@@ -252,7 +252,7 @@ const translations = {
         site_tagline: "Agile IT, secure, high value.",
 
         // Results Section
-        results_title: "Results in Numbers",
+        results_title: "Key Highlights in Numbers",
         years_experience: "Years of Experience",
         projects_completed: "Projects Completed",
         clients_served: "Clients Served",
