@@ -139,7 +139,7 @@ const translations = {
         contact_call_direct: "Appelez-moi directement pour une réponse immédiate !",
 
         // Missions Section
-        missions_title: "Portefeuille de Projets",
+        missions_title: "Portefeuille de Projets IT",
         portfolio_title: "Gestion de portefeuille IT & gouvernance & projets",
         portfolio_description: "Mise en place des processus de gouvernance IT, gestion du budget IT (0,6 M€ à 1,8 M€ en 3 ans), identification, évaluation, création de feuille de route, reporting d’avancement du portefeuille au Comité Exécutif.",
         agile_title: "Transformation Agile IT",
@@ -337,7 +337,7 @@ const translations = {
         contact_call_direct: "Call me directly for an immediate response!",
 
         // Missions Section
-        missions_title: "Project Portfolio",
+        missions_title: "IT Project Portfolio",
         portfolio_title: "IT Portfolio, Governance & Project Management",
         portfolio_description: "Implementation of IT governance processes, IT budget management (€0.6M to €1.8M in 3 years), identification, evaluation, roadmap creation, portfolio progress reporting to Executive Committee.",
         
