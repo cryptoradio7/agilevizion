@@ -113,7 +113,7 @@ const translations = {
         // Contact Section
         contact_title: "Démarrons Votre Projet",
         contact_consultation: "Demande d'informations",
-        form_name: "Demande d'informations",
+        form_name: "Votre nom*",
         form_email: "Votre email*",
         form_phone: "Votre téléphone",
         form_company: "Votre entreprise",
@@ -311,7 +311,7 @@ const translations = {
         // Contact Section
         contact_title: "Let's Start Your Project",
         contact_consultation: "Request Info",
-        form_name: "Request Info",
+        form_name: "Your name*",
         form_email: "Your email*",
         form_phone: "Your phone",
         form_company: "Your company",
