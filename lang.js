@@ -7,7 +7,7 @@ const translations = {
         certifications: "Certifications",
         missions: "Portefeuille IT",
         approach: "Mon Approche",
-        free_consultation: "Consultation Gratuite",
+        free_consultation: "Contactez-moi",
 
         // Footer
         footer_text: "© 2025 Emmanuel Genesteix - Expert en Transformation Agile & Gestion IT.",
@@ -205,7 +205,7 @@ const translations = {
         certifications: "Certifications",
         missions: "IT Portfolio",
         approach: "My Approach",
-        free_consultation: "Free Consultation",
+        free_consultation: "Get in touch",
 
         // Footer
         footer_text: "© 2025 Emmanuel Genesteix - Expert in Agile Transformation & IT Management.",
