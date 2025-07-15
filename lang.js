@@ -3,7 +3,7 @@ const translations = {
     fr: {
         // Navigation
         results: "Points clés",
-        roles: "Mes Rôles",
+        roles: "Mes Services",
         certifications: "Certifications",
         missions: "Portefeuille IT",
         approach: "Mon Approche",
@@ -61,7 +61,7 @@ const translations = {
         client_satisfaction: "% Satisfaction Client",
 
         // Roles Section
-        roles_title: "Mes Rôles & Expertises",
+        roles_title: "Mes Services & Expertises",
         role_agile_title: "Transformation Agile IT",
         role_agile_1: "Accompagnement de la direction pour un alignement de l'IT avec les objectifs stratégiques et métiers",
         role_agile_3: "Mise en œuvre de frameworks agiles (Scrum, SAFe)",
@@ -201,7 +201,7 @@ const translations = {
     en: {
         // Navigation
         results: "Highlights",
-        roles: "My Roles",
+        roles: "My Services",
         certifications: "Certifications",
         missions: "IT Portfolio",
         approach: "My Approach",
@@ -259,7 +259,7 @@ const translations = {
         client_satisfaction: "% Client Satisfaction",
 
         // Roles Section
-        roles_title: "My Roles & Expertise",
+        roles_title: "My Services & Expertise",
         role_agile_title: "IT Agile Transformation",
         role_agile_1: "Management support for IT alignment with strategic and business objectives",
         role_agile_3: "Implementation of agile frameworks (Scrum, SAFe)",
