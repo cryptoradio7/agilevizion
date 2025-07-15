@@ -7,7 +7,7 @@ const translations = {
         certifications: "Certifications",
         missions: "Portefeuille IT",
         approach: "Mon Approche",
-        free_consultation: "Contactez-moi",
+        free_consultation: "Demande d'informations",
 
         // Footer
         footer_text: "© 2025 Emmanuel Genesteix - Expert en Transformation Agile & Gestion IT.",
@@ -113,7 +113,7 @@ const translations = {
         // Contact Section
         contact_title: "Démarrons Votre Projet",
         contact_consultation: "Consultation Gratuite",
-        form_name: "Votre nom*",
+        form_name: "Demande d'informations",
         form_email: "Votre email*",
         form_phone: "Votre téléphone",
         form_company: "Votre entreprise",
@@ -205,7 +205,7 @@ const translations = {
         certifications: "Certifications",
         missions: "IT Portfolio",
         approach: "My Approach",
-        free_consultation: "Get in touch",
+        free_consultation: "Request Info",
 
         // Footer
         footer_text: "© 2025 Emmanuel Genesteix - Expert in Agile Transformation & IT Management.",
@@ -311,7 +311,7 @@ const translations = {
         // Contact Section
         contact_title: "Let's Start Your Project",
         contact_consultation: "Free Consultation",
-        form_name: "Your name*",
+        form_name: "Request Info",
         form_email: "Your email*",
         form_phone: "Your phone",
         form_company: "Your company",
