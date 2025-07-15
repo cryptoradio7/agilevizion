@@ -5,7 +5,7 @@ const translations = {
         results: "Résultats",
         roles: "Mes Rôles",
         certifications: "Certifications",
-        missions: "Portefeuille",
+        missions: "Portefeuille IT",
         approach: "Mon Approche",
         free_consultation: "Consultation Gratuite",
 
@@ -203,7 +203,7 @@ const translations = {
         results: "Results",
         roles: "My Roles",
         certifications: "Certifications",
-        missions: "Portfolio",
+        missions: "IT Portfolio",
         approach: "My Approach",
         free_consultation: "Free Consultation",
 
