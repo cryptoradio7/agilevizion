@@ -103,6 +103,12 @@ const translations = {
         role_cyber_3: "Design des politiques IT",
         role_cyber_4: "Sensibilisation des utilisateurs",
 
+        role_service_title: "Service Management",
+        role_service_1: "Migration ITSM vers ServiceNow",
+        role_service_2: "Gestion des fournisseurs & optimisation des SLAs",
+        role_service_3: "Renforcement des KPIs et introduction de pénalités",
+        role_service_4: "Optimisation de la livraison des services",
+
         role_business_title: "Business Analyst",
         role_business_1: "Analyse approfondie des besoins métier",
         role_business_2: "Modélisation et optimisation des processus",
@@ -300,6 +306,12 @@ const translations = {
         role_cyber_2: "IT infrastructure protection",
         role_cyber_3: "IT policy design",
         role_cyber_4: "User awareness training",
+
+        role_service_title: "Service Management",
+        role_service_1: "ITSM migration to ServiceNow",
+        role_service_2: "Vendor management & SLA optimization",
+        role_service_3: "KPI strengthening and penalty introduction",
+        role_service_4: "Service delivery optimization",
 
         role_business_title: "Business Analyst",
         role_business_1: "In-depth business needs analysis",
