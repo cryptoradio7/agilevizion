@@ -97,6 +97,12 @@ const translations = {
         role_scrum_4: "Promotion des valeurs et principes Agile",
         role_scrum_5: "Amélioration continue des processus",
 
+        role_cyber_title: "Cybersécurité",
+        role_cyber_1: "Audit de conformité DORA, ISO 27001",
+        role_cyber_2: "Protection des infrastructures IT",
+        role_cyber_3: "Design des politiques IT",
+        role_cyber_4: "Sensibilisation des utilisateurs",
+
         role_business_title: "Business Analyst",
         role_business_1: "Analyse approfondie des besoins métier",
         role_business_2: "Modélisation et optimisation des processus",
@@ -288,6 +294,12 @@ const translations = {
         role_scrum_3: "Removal of obstacles and blockers",
         role_scrum_4: "Promotion of Agile values and principles",
         role_scrum_5: "Continuous process improvement",
+
+        role_cyber_title: "Cybersecurity",
+        role_cyber_1: "DORA, ISO 27001 compliance audit",
+        role_cyber_2: "IT infrastructure protection",
+        role_cyber_3: "IT policy design",
+        role_cyber_4: "User awareness training",
 
         role_business_title: "Business Analyst",
         role_business_1: "In-depth business needs analysis",
