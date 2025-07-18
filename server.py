@@ -12,7 +12,7 @@ import threading
 import time
 from urllib.parse import urlparse
 
-PORT = 8080
+PORT = 3004
 DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 
 class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
@@ -34,16 +34,13 @@ def open_browser():
 def main():
     os.chdir(DIRECTORY)
     
+    # Permettre la réutilisation du port
+    socketserver.TCPServer.allow_reuse_address = True
+    
     with socketserver.TCPServer(("", PORT), CustomHTTPRequestHandler) as httpd:
         print(f"🚀 Serveur Agile Vizion démarré sur http://localhost:{PORT}")
         print(f"📁 Répertoire: {DIRECTORY}")
-        print("🌐 Ouverture automatique du navigateur...")
         print("⏹️  Appuyez sur Ctrl+C pour arrêter le serveur")
-        
-        # Ouvrir le navigateur dans un thread séparé
-        browser_thread = threading.Thread(target=open_browser)
-        browser_thread.daemon = True
-        browser_thread.start()
         
         try:
             httpd.serve_forever()
