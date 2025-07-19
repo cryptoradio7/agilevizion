@@ -84,7 +84,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     width: 100%;
     gap: 40px;
 }
@@ -129,7 +129,7 @@ body {
     .nav-header-row {
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
         gap: 0;
         position: relative;
     }
@@ -138,7 +138,7 @@ body {
         width: auto;
     }
     .brand-row {
-        justify-content: flex-start;
+        justify-content: center;
         width: auto;
     }
     .brand-title {
@@ -1014,7 +1014,7 @@ section h2::after {
 .process-flow {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -1035,7 +1035,7 @@ section h2::after {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .process-step:hover {
@@ -1365,7 +1365,7 @@ select:focus {
   .hero-text {
     text-align: left;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: center;
   }
   .hero-title-line h1 {
     text-align: left;
@@ -2185,7 +2185,7 @@ html, body {
     display: flex;
   flex-direction: row;
     align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
   gap: 40px;
   }
@@ -3009,7 +3009,7 @@ section h2::after {
 .process-flow {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -3030,7 +3030,7 @@ section h2::after {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .process-step:hover {
@@ -3360,7 +3360,7 @@ select:focus {
   .hero-text {
     text-align: left;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: center;
   }
   .hero-title-line h1 {
     text-align: left;
@@ -4184,7 +4184,7 @@ html, body {
     display: flex;
   flex-direction: row;
     align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
   gap: 40px;
   }
@@ -5015,7 +5015,7 @@ section h2::after {
 .process-flow {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -5036,7 +5036,7 @@ section h2::after {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .process-step:hover {
@@ -5366,7 +5366,7 @@ select:focus {
   .hero-text {
     text-align: left;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: center;
   }
   .hero-title-line h1 {
     text-align: left;
@@ -6186,7 +6186,7 @@ html, body {
     display: flex;
   flex-direction: row;
     align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
   gap: 40px;
   }
@@ -7010,7 +7010,7 @@ section h2::after {
 .process-flow {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -7031,7 +7031,7 @@ section h2::after {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .process-step:hover {
@@ -7361,7 +7361,7 @@ select:focus {
   .hero-text {
     text-align: left;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: center;
   }
   .hero-title-line h1 {
     text-align: left;
@@ -8185,7 +8185,7 @@ html, body {
     display: flex;
   flex-direction: row;
     align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
   gap: 40px;
   }
@@ -9017,7 +9017,7 @@ section h2::after {
 .process-flow {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -9038,7 +9038,7 @@ section h2::after {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .process-step:hover {
@@ -9368,7 +9368,7 @@ select:focus {
   .hero-text {
     text-align: left;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: center;
   }
   .hero-title-line h1 {
     text-align: left;
@@ -10189,7 +10189,7 @@ html, body {
     display: flex;
   flex-direction: row;
     align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
   gap: 40px;
   }
@@ -11013,7 +11013,7 @@ section h2::after {
 .process-flow {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -11034,7 +11034,7 @@ section h2::after {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .process-step:hover {
@@ -11364,7 +11364,7 @@ select:focus {
   .hero-text {
     text-align: left;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: center;
   }
   .hero-title-line h1 {
     text-align: left;
