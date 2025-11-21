@@ -11,15 +11,76 @@
             box-sizing: border-box;
         }
 
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #1a1a1a;
             background: #fff;
+            font-weight: 400;
+        }
+
+        .navbar {
+            background: rgba(12, 95, 141, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nav-item {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 8px 0;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-item:hover {
+            color: #81C995;
+        }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #81C995;
+            transition: width 0.3s;
+        }
+
+        .nav-item:hover::after {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            .nav-item {
+                font-size: 0.9rem;
+            }
         }
 
         .hero {
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
+            background: #0C5F8D;
             color: white;
             padding: 50px 20px;
             text-align: center;
@@ -34,11 +95,11 @@
         }
 
         .hero h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
+            font-size: 2.8rem;
+            font-weight: 700;
             margin-bottom: 0;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
             line-height: 1.2;
+            letter-spacing: -0.02em;
         }
 
         .container {
@@ -54,48 +115,134 @@
         .section-title {
             font-size: 2.5rem;
             font-weight: 700;
-            color: #1e3a8a;
+            color: #0C5F8D;
             margin-bottom: 30px;
             text-align: center;
+            letter-spacing: -0.02em;
         }
 
         .vision-box {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            border-left: 5px solid #2563eb;
+            background: #f5f7fa;
+            border-left: 4px solid #81C995;
             padding: 40px;
-            border-radius: 10px;
+            border-radius: 8px;
             margin-bottom: 40px;
             display: flex;
             gap: 30px;
             align-items: flex-start;
         }
 
-        .vision-content {
-            flex: 1;
+        .vision-image-wrapper {
+            width: 250px;
+            flex-shrink: 0;
         }
 
         .vision-image {
-            width: 300px;
-            max-width: 35%;
+            width: 100%;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            flex-shrink: 0;
+        }
+
+        .vision-bio {
+            flex: 1;
+        }
+
+        .approach-section {
+            background: #f5f7fa;
+            border-left: 4px solid #81C995;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        .approach-section h2 {
+            color: #0C5F8D;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .approach-item {
+            margin-top: 20px;
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .approach-item h3 {
+            color: #0C5F8D;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .approach-item p {
+            color: #4b5563;
+            margin: 0;
+            line-height: 1.6;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .vision-bio {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 3px solid #81C995;
+        }
+
+        .vision-bio p {
+            color: #0C5F8D;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .vision-bio p:not(:last-child) {
+            margin-bottom: 12px;
+        }
+
+        .vision-bio a {
+            color: #0C5F8D;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+            transition: color 0.3s;
+        }
+
+        .vision-bio a:hover {
+            color: #81C995;
         }
 
         @media (max-width: 768px) {
             .vision-box {
                 flex-direction: column;
             }
-            .vision-image {
+            .vision-image-wrapper {
                 width: 100%;
-                max-width: 100%;
+            }
+            .vision-bio {
+                width: 100%;
+            }
+            .approach-item {
+                flex-direction: column;
+            }
+            .approach-item h3 {
+                white-space: normal;
             }
         }
 
         .vision-box h2 {
             font-size: 2rem;
-            color: #1e3a8a;
+            color: #0C5F8D;
             margin-bottom: 25px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
         }
 
         .vision-list {
@@ -113,7 +260,7 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: #059669;
+            color: #81C995;
             font-weight: bold;
             font-size: 1.5rem;
         }
@@ -127,22 +274,23 @@
 
         .expertise-card {
             background: white;
-            border: 2px solid #e5e7eb;
-            border-radius: 10px;
+            border: 1px solid #e0e4e8;
+            border-radius: 8px;
             padding: 30px;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .expertise-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-color: #2563eb;
+            box-shadow: 0 10px 30px rgba(12, 95, 141, 0.15);
+            border-color: #81C995;
         }
 
         .expertise-card h3 {
-            color: #1e3a8a;
+            color: #0C5F8D;
             font-size: 1.3rem;
             margin-bottom: 15px;
+            font-weight: 600;
         }
 
         .expertise-card ul {
@@ -160,7 +308,7 @@
             content: '•';
             position: absolute;
             left: 0;
-            color: #2563eb;
+            color: #81C995;
             font-weight: bold;
         }
 
@@ -172,16 +320,17 @@
         }
 
         .value-card {
-            background: #f9fafb;
+            background: #f5f7fa;
             padding: 25px;
             border-radius: 8px;
-            border-top: 4px solid #2563eb;
+            border-top: 4px solid #81C995;
         }
 
         .value-card h3 {
-            color: #1e3a8a;
+            color: #0C5F8D;
             font-size: 1.2rem;
             margin-bottom: 12px;
+            font-weight: 600;
         }
 
         .value-card p {
@@ -207,17 +356,17 @@
             content: '•';
             position: absolute;
             left: 0;
-            color: #2563eb;
+            color: #81C995;
             font-weight: bold;
             font-size: 1.2rem;
         }
 
         .cta-section {
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            background: #0C5F8D;
             color: white;
             padding: 50px 20px;
             text-align: center;
-            border-radius: 10px;
+            border-radius: 8px;
             margin: 30px 0;
         }
 
@@ -234,20 +383,22 @@
 
         .cta-button {
             display: inline-block;
-            background: white;
-            color: #1e3a8a;
-            padding: 18px 40px;
-            font-size: 1.1rem;
+            background: #81C995;
+            color: #0C5F8D;
+            padding: 16px 36px;
+            font-size: 1rem;
             font-weight: 600;
             text-decoration: none;
-            border-radius: 50px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border-radius: 4px;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(129, 201, 149, 0.3);
+            letter-spacing: 0.01em;
         }
 
         .cta-button:hover {
+            background: #7AB800;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 12px rgba(129, 201, 149, 0.4);
         }
 
         .highlight {
@@ -259,8 +410,8 @@
 
         .differentiator {
             background: white;
-            border: 2px solid #2563eb;
-            border-radius: 10px;
+            border: 2px solid #81C995;
+            border-radius: 8px;
             padding: 30px;
             margin: 30px 0;
             text-align: center;
@@ -268,11 +419,63 @@
 
         .differentiator p {
             font-size: 1.3rem;
-            color: #1e3a8a;
+            color: #0C5F8D;
             font-weight: 600;
             font-style: italic;
         }
 
+
+        .itil-domains {
+            background: #f5f7fa;
+            padding: 50px 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .itil-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .itil-domain {
+            background: white;
+            padding: 18px 20px;
+            border-radius: 6px;
+            border-left: 3px solid #81C995;
+            transition: all 0.3s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .itil-domain:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(12, 95, 141, 0.15);
+            border-left-color: #0C5F8D;
+        }
+
+        .itil-domain-number {
+            display: inline-block;
+            background: #0C5F8D;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 12px;
+            vertical-align: middle;
+        }
+
+        .itil-domain-name {
+            color: #0C5F8D;
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: inline-block;
+            vertical-align: middle;
+        }
 
         @media (max-width: 768px) {
             .hero h1 {
@@ -287,34 +490,86 @@
             .value-grid {
                 grid-template-columns: 1fr;
             }
+
+            .itil-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#infrastructure" class="nav-item">Infrastructure</a>
+            <a href="#cybersecurite" class="nav-item">Cybersécurité</a>
+            <a href="#ia" class="nav-item">IA</a>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>ServiceNow ITSM : De la stratégie à l'opération</h1>
+            <h1>Gestion des services et de l'infrastructure</h1>
         </div>
     </section>
 
     <!-- Vision Section -->
     <section class="container section">
         <div class="vision-box">
-            <div class="vision-content">
-                <h2>Imaginez un IT où...</h2>
-                <ul class="vision-list">
-                    <li>Vos équipes ne sont plus noyées sous les tickets → elles créent de la valeur</li>
-                    <li>Chaque incident est résolu avant que le business ne soit impacté</li>
-                    <li>Votre direction voit enfin le ROI de l'IT en temps réel</li>
-                    <li>Vos changements sont maîtrisés → zéro panne due à un changement</li>
-                    <li>Vous dormez tranquille : conformité ITIL, audits réussis, SLA respectés</li>
-                </ul>
-                <p style="font-size: 1.2rem; margin-top: 25px; font-weight: 600; color: #1e3a8a;">
-                    Ce n'est pas un rêve. C'est ce que je livre à mes clients.
-                </p>
+            <div class="vision-image-wrapper">
+                <img src="top.jpg" alt="" class="vision-image">
             </div>
-            <img src="top.jpg" alt="" class="vision-image">
+            <div class="vision-bio">
+                <p style="font-weight: 700; font-size: 1.3rem; margin-bottom: 12px; color: #0C5F8D;">Emmanuel GENESTEIX</p>
+                <p style="font-weight: 600; font-size: 1rem; margin-bottom: 10px; color: #0C5F8D;">20 ans d'expérience IT</p>
+                <p style="margin-bottom: 8px; color: #0C5F8D;">Accompagnement des Directions, conseil freelance ou postes de direction salarié</p>
+                <ul style="margin-top: 12px; margin-bottom: 8px; padding-left: 20px; line-height: 1.8; color: #0C5F8D;">
+                    <li style="margin-bottom: 8px; color: #0C5F8D;">Je mets mon expérience combinée à l'IA pour vous aider à résoudre rapidement vos problèmes.</li>
+                    <li style="margin-bottom: 8px; color: #0C5F8D;">Signe particulier:</li>
+                    <li style="margin-bottom: 8px; color: #0C5F8D;">Père d'un petit garçon de 11 ans, marié.</li>
+                    <li style="margin-bottom: 8px; color: #0C5F8D;">A côté de mes missions, j'ai créé un RAG LLM avec une architecture hybride on premise et cloud pour permettre aux entreprises d'utiliser chatgpt et de faire des recherches sur leurs documents.</li>
+                    <li style="margin-bottom: 8px; color: #0C5F8D;">J'ai également vibe codé un CRM full stack en 1 mois.</li>
+                </ul>
+                <a href="https://www.linkedin.com/in/genesteix-emmanuel/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; color: #0C5F8D; text-decoration: none; font-weight: 500; transition: color 0.3s;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Approach Section -->
+    <section class="container section">
+        <div class="approach-section">
+            <h2>Mon approche : aligner votre Service Management avec les bonnes pratiques ITIL</h2>
+            
+            <div class="approach-item">
+                <h3>1. Vision & Stratégie</h3>
+                <p>Définition de votre vision et objectifs business → feuille de route claire.</p>
+            </div>
+
+            <div class="approach-item">
+                <h3>2. SLA & Performance</h3>
+                <p>Définition des SLA, mesure de performance, amélioration continue.</p>
+            </div>
+
+            <div class="approach-item">
+                <h3>3. Déploiement ITIL</h3>
+                <p>Déploiement ITIL sur les processus ITSM pertinents.</p>
+            </div>
+
+            <div class="approach-item">
+                <h3>4. Outillage ServiceNow</h3>
+                <p>Outillage avec ServiceNow pour automatiser et optimiser.</p>
+            </div>
+
+            <div class="approach-item">
+                <h3>5. Intelligence Artificielle</h3>
+                <p>Intégration de l'IA tout au long du processus.</p>
+            </div>
         </div>
     </section>
 
@@ -387,12 +642,92 @@
         </div>
     </section>
 
+    <!-- ITIL Domains Section -->
+    <section class="container section">
+        <h2 class="section-title">Mes domaines ITIL d'intervention</h2>
+        <p style="text-align: center; color: #6b7280; margin-bottom: 20px; font-size: 1.1rem;">
+            17 domaines ITIL maîtrisés pour une couverture complète de vos besoins ITSM
+        </p>
+        <div class="itil-domains">
+            <div class="itil-grid">
+                <div class="itil-domain">
+                    <span class="itil-domain-number">1</span>
+                    <span class="itil-domain-name">Service Desk</span>
+                </div>
+                <div class="itil-domain">
+                    <span class="itil-domain-number">2</span>
+                    <span class="itil-domain-name">Incident Management</span>
+                </div>
+                <div class="itil-domain">
+                    <span class="itil-domain-number">3</span>
+                    <span class="itil-domain-name">Problem Management</span>
+                </div>
+                <div class="itil-domain">
+                    <span class="itil-domain-number">4</span>
+                    <span class="itil-domain-name">Change Enablement (Change Management)</span>
+                </div>
+                <div class="itil-domain">
+                    <span class="itil-domain-number">5</span>
+                    <span class="itil-domain-name">Service Request Management</span>
+                </div>
+                <div class="itil-domain">
+                    <span class="itil-domain-number">6</span>
+                    <span class="itil-domain-name">Service Level Management</span>
+                </div>
+                <div class="itil-domain">
+                    <span class="itil-domain-number">7</span>
+                    <span class="itil-domain-name">Service Configuration Management</span>
+                </div>
+                <div class="itil-domain">
+                    <span class="itil-domain-number">8</span>
+                    <span class="itil-domain-name">IT Asset Management</span>
+                </div>
+                <div class="itil-domain">
+                    <span class="itil-domain-number">9</span>
+                    <span class="itil-domain-name">Monitoring and Event Management</span>
+                </div>
+                <div class="itil-domain">
+                    <span class="itil-domain-number">10</span>
+                    <span class="itil-domain-name">Release Management</span>
+                </div>
+                <div class="itil-domain">
+                    <span class="itil-domain-number">11</span>
+                    <span class="itil-domain-name">Service Catalog Management</span>
+                </div>
+                <div class="itil-domain">
+                    <span class="itil-domain-number">12</span>
+                    <span class="itil-domain-name">Availability Management</span>
+                </div>
+                <div class="itil-domain">
+                    <span class="itil-domain-number">13</span>
+                    <span class="itil-domain-name">Capacity and Performance Management</span>
+                </div>
+                <div class="itil-domain">
+                    <span class="itil-domain-number">14</span>
+                    <span class="itil-domain-name">Service Continuity Management</span>
+                </div>
+                <div class="itil-domain">
+                    <span class="itil-domain-number">15</span>
+                    <span class="itil-domain-name">Deployment Management</span>
+                </div>
+                <div class="itil-domain">
+                    <span class="itil-domain-number">16</span>
+                    <span class="itil-domain-name">InfoSec Management (Information Security Management)</span>
+                </div>
+                <div class="itil-domain">
+                    <span class="itil-domain-number">17</span>
+                    <span class="itil-domain-name">Supplier Management</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Offer Section -->
     <section class="container section">
         <h2 class="section-title">Mon accompagnement ServiceNow</h2>
         
-        <div class="vision-box" style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-left-color: #059669;">
-            <h2 style="color: #059669;">Lifecycle complet</h2>
+        <div class="vision-box" style="background: #f5f7fa; border-left-color: #81C995;">
+            <h2 style="color: #0C5F8D;">Lifecycle complet</h2>
             <ul class="vision-list" style="font-size: 1rem;">
                 <li><strong>Strategy :</strong> Alignement business-IT</li>
                 <li><strong>Design :</strong> Architecture ServiceNow sur mesure</li>
@@ -400,7 +735,7 @@
             </ul>
             
             <div style="margin-top: 30px; padding: 20px; background: white; border-radius: 8px;">
-                <h3 style="color: #059669; margin-bottom: 15px;">Livrables :</h3>
+                <h3 style="color: #0C5F8D; margin-bottom: 15px;">Livrables :</h3>
                 <p style="font-size: 1.1rem; color: #333;">
                     IT conforme ITIL • SLA opérationnels • Processus automatisés • KPI de performance
                 </p>
@@ -431,7 +766,7 @@
         <p style="font-size: 1.2rem; color: #6b7280; margin-bottom: 30px;">
             Contactez-moi pour transformer votre IT en moteur de valeur business
         </p>
-        <a href="mailto:contact@agilevizion.com" class="cta-button" style="background: #1e3a8a; color: white;">
+        <a href="mailto:contact@agilevizion.com" class="cta-button" style="background: #81C995; color: #0C5F8D;">
             ME CONTACTER
         </a>
     </section>
