@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit Cybersécurité (GRC) - AgileVizion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .navbar {
+            background: #1a202c;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .navbar-brand {
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .navbar-brand span {
+            color: #667eea;
+        }
+        
+        .navbar-menu {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .navbar-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+            font-weight: 500;
+        }
+        
+        .navbar-menu a:hover {
+            background: #667eea;
+        }
+        
+        .navbar-menu a.active {
+            background: #667eea;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #e53e3e;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            color: #2d3748;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .service-card {
+            background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+            color: white;
+            padding: 35px;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        .service-card ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        .service-card li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .service-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .service-card p {
+            margin-bottom: 10px;
+            opacity: 0.95;
+        }
+        
+        .grc-section {
+            background: #f7fafc;
+            padding: 60px 20px;
+        }
+        
+        .grc-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .grc-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .grc-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .grc-card .icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+        }
+        
+        .grc-card h3 {
+            color: #e53e3e;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        
+        .grc-card p {
+            color: #4a5568;
+            line-height: 1.8;
+        }
+        
+        .frameworks {
+            background: #2d3748;
+            color: white;
+            padding: 60px 20px;
+        }
+        
+        .frameworks .section-title {
+            color: white;
+        }
+        
+        .frameworks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .framework-item {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            border-top: 3px solid #e53e3e;
+        }
+        
+        .framework-item h4 {
+            color: #e53e3e;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        
+        .contact-info {
+            background: #2d3748;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            
+            .section-title {
+                font-size: 1.8em;
+            }
+            
+            .grc-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .navbar-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand">Agile<span>Vizion</span></a>
+        <div class="navbar-menu">
+            <a href="index.html">Service Management</a>
+            <a href="audit-cybersecurite.html" class="active">Audit Cybersécurité (GRC)</a>
+            <a href="profil.html">Mon Profil</a>
+        </div>
+    </nav>
+    
+    <div class="hero">
+        <h1>Audit Cybersécurité & GRC</h1>
+        <p>Gouvernance, Risques et Conformité | Protégez vos actifs numériques</p>
+        <a href="#contact" class="cta-button">Demander un audit</a>
+    </div>
+
+    <div class="grc-section">
+        <h2 class="section-title">Les 3 piliers GRC</h2>
+        <div class="grc-grid">
+            <div class="grc-card">
+                <div class="icon"><i class="fa-solid fa-landmark"></i></div>
+                <h3>Gouvernance</h3>
+                <p>• Politiques de sécurité<br>• Comités et instances<br>• Rôles et responsabilités<br>• Indicateurs de pilotage</p>
+            </div>
+            <div class="grc-card">
+                <div class="icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <h3>Risques</h3>
+                <p>• Cartographie des risques<br>• Analyse d'impact (BIA)<br>• Plans de traitement<br>• Suivi et réévaluation</p>
+            </div>
+            <div class="grc-card">
+                <div class="icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                <h3>Conformité</h3>
+                <p>• Audits réglementaires<br>• RGPD / NIS2 / DORA<br>• Certifications ISO<br>• Contrôles internes</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="section-title">Mes services d'audit</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>🔍 Audit de maturité cybersécurité</h3>
+                <p>Évaluation complète de votre posture sécurité</p>
+                <ul>
+                    <li>Analyse selon NIST / ISO 27001</li>
+                    <li>Évaluation des contrôles existants</li>
+                    <li>Identification des gaps</li>
+                    <li>Plan de remédiation priorisé</li>
+                    <li>Roadmap de mise en conformité</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <h3>⚠️ Analyse des risques</h3>
+                <p>Méthodologie EBIOS RM / ISO 27005</p>
+                <ul>
+                    <li>Identification des actifs critiques</li>
+                    <li>Scénarios de menaces</li>
+                    <li>Évaluation des vulnérabilités</li>
+                    <li>Calcul d'impact et probabilité</li>
+                    <li>Stratégies de mitigation</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <h3>📋 Mise en conformité</h3>
+                <p>Accompagnement réglementaire</p>
+                <ul>
+                    <li>RGPD et protection des données</li>
+                    <li>Directive NIS2</li>
+                    <li>Règlement DORA</li>
+                    <li>Préparation certification ISO 27001</li>
+                    <li>Documentation et procédures</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <h3>🛡️ Plan de continuité (PCA/PRA)</h3>
+                <p>Résilience et reprise d'activité</p>
+                <ul>
+                    <li>Business Impact Analysis</li>
+                    <li>Stratégies de continuité</li>
+                    <li>Procédures de reprise</li>
+                    <li>Tests et exercices</li>
+                    <li>Amélioration continue</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="frameworks">
+        <h2 class="section-title">Référentiels & Normes</h2>
+        <div class="frameworks-grid">
+            <div class="framework-item">
+                <h4>ISO 27001</h4>
+                <p>Système de management de la sécurité</p>
+            </div>
+            <div class="framework-item">
+                <h4>NIST CSF</h4>
+                <p>Framework cybersécurité</p>
+            </div>
+            <div class="framework-item">
+                <h4>EBIOS RM</h4>
+                <p>Analyse des risques</p>
+            </div>
+            <div class="framework-item">
+                <h4>RGPD</h4>
+                <p>Protection des données</p>
+            </div>
+            <div class="framework-item">
+                <h4>NIS2</h4>
+                <p>Directive européenne</p>
+            </div>
+            <div class="framework-item">
+                <h4>DORA</h4>
+                <p>Résilience opérationnelle</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <h2>Évaluez votre niveau de sécurité</h2>
+        <p>Audit initial gratuit de 30 minutes pour identifier vos priorités</p>
+        <a href="#contact" class="cta-button">Planifier mon audit</a>
+    </div>
+
+    <div class="contact-info" id="contact">
+        <div class="container">
+            <h2 style="margin-bottom: 20px;">Contactez-moi</h2>
+            <p style="font-size: 1.2em; margin-bottom: 10px;">📧 emmanuel.genesteix@agilevizion.com</p>
+            <p style="font-size: 1.2em; margin-bottom: 10px;">📱 +352 661 78 08 07</p>
+            <p style="font-size: 1.2em;">📍 Luxembourg (interventions Europe)</p>
+        </div>
+    </div>
+</body>
+</html>
+

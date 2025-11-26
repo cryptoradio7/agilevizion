@@ -3,777 +3,839 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transformation IT ServiceNow - Expert ITSM</title>
+    <title>Consultant ServiceNow & ITSM - Transformez votre IT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #1a1a1a;
-            background: #fff;
-            font-weight: 400;
+            color: #333;
         }
-
+        
         .navbar {
-            background: rgba(12, 95, 141, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 20px;
+            background: #1a202c;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
+        
+        .navbar-brand {
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .navbar-brand span {
+            color: #667eea;
+        }
+        
+        .navbar-menu {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
+            gap: 10px;
         }
-
-        .nav-item {
+        
+        .navbar-menu a {
             color: white;
             text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
             font-weight: 500;
-            font-size: 1rem;
-            padding: 8px 0;
-            position: relative;
-            transition: color 0.3s;
         }
-
-        .nav-item:hover {
-            color: #81C995;
+        
+        .navbar-menu a:hover {
+            background: #667eea;
         }
-
-        .nav-item::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #81C995;
-            transition: width 0.3s;
+        
+        .navbar-menu a.active {
+            background: #667eea;
         }
-
-        .nav-item:hover::after {
-            width: 100%;
-        }
-
-        @media (max-width: 768px) {
-            .nav-container {
-                gap: 20px;
-                flex-wrap: wrap;
-            }
-            .nav-item {
-                font-size: 0.9rem;
-            }
-        }
-
+        
         .hero {
-            background: #0C5F8D;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 50px 20px;
+            padding: 80px 20px;
             text-align: center;
-            position: relative;
         }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
+        
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 2.8em;
+            margin-bottom: 20px;
             font-weight: 700;
-            margin-bottom: 0;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
         }
-
+        
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
-
+        
         .section {
-            margin-bottom: 30px;
+            margin-bottom: 60px;
         }
-
+        
         .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #0C5F8D;
-            margin-bottom: 30px;
             text-align: center;
-            letter-spacing: -0.02em;
-        }
-
-        .vision-box {
-            background: #f5f7fa;
-            border-left: 4px solid #81C995;
-            padding: 40px;
-            border-radius: 8px;
+            font-size: 2.2em;
             margin-bottom: 40px;
-            display: flex;
+            color: #2d3748;
+        }
+        
+        .pain-points {
+            background: #f7fafc;
+            padding: 60px 20px;
+        }
+        
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
-            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-
-        .vision-image-wrapper {
-            width: 250px;
-            flex-shrink: 0;
-        }
-
-        .vision-image {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .vision-bio {
-            flex: 1;
-        }
-
-        .approach-section {
-            background: #f5f7fa;
-            border-left: 4px solid #81C995;
-            padding: 40px;
-            border-radius: 8px;
-            margin-bottom: 40px;
-        }
-
-        .approach-section h2 {
-            color: #0C5F8D;
-            font-size: 2rem;
-            margin-bottom: 30px;
-            font-weight: 600;
-        }
-
-        .approach-item {
-            margin-top: 20px;
-            display: flex;
-            align-items: baseline;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .approach-item h3 {
-            color: #0C5F8D;
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin: 0;
-            white-space: nowrap;
-        }
-
-        .approach-item p {
-            color: #4b5563;
-            margin: 0;
-            line-height: 1.6;
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .vision-bio {
+        
+        .pain-card {
             background: white;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 3px solid #81C995;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-
-        .vision-bio p {
-            color: #0C5F8D;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin: 0;
+        
+        .pain-card h3 {
+            color: #e53e3e;
+            margin-bottom: 15px;
+            font-size: 1.3em;
         }
-
-        .vision-bio p:not(:last-child) {
-            margin-bottom: 12px;
+        
+        .services {
+            background: white;
         }
-
-        .vision-bio a {
-            color: #0C5F8D;
-            text-decoration: none;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 12px;
-            transition: color 0.3s;
-        }
-
-        .vision-bio a:hover {
-            color: #81C995;
-        }
-
-        @media (max-width: 768px) {
-            .vision-box {
-                flex-direction: column;
-            }
-            .vision-image-wrapper {
-                width: 100%;
-            }
-            .vision-bio {
-                width: 100%;
-            }
-            .approach-item {
-                flex-direction: column;
-            }
-            .approach-item h3 {
-                white-space: normal;
-            }
-        }
-
-        .vision-box h2 {
-            font-size: 2rem;
-            color: #0C5F8D;
-            margin-bottom: 25px;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-        }
-
-        .vision-list {
-            list-style: none;
-            font-size: 1.1rem;
-        }
-
-        .vision-list li {
-            padding: 15px 0;
-            padding-left: 35px;
-            position: relative;
-        }
-
-        .vision-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #81C995;
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-
-        .expertise-grid {
+        
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin-top: 40px;
         }
-
-        .expertise-card {
-            background: white;
-            border: 1px solid #e0e4e8;
-            border-radius: 8px;
-            padding: 30px;
-            transition: transform 0.3s, box-shadow 0.3s;
+        
+        .service-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 35px;
+            border-radius: 15px;
+            transition: transform 0.3s;
         }
-
-        .expertise-card:hover {
+        
+        .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(12, 95, 141, 0.15);
-            border-color: #81C995;
         }
-
-        .expertise-card h3 {
-            color: #0C5F8D;
-            font-size: 1.3rem;
+        
+        .service-card h3 {
+            font-size: 1.5em;
             margin-bottom: 15px;
-            font-weight: 600;
         }
-
-        .expertise-card ul {
+        
+        .service-card ul {
             list-style: none;
-            color: #4b5563;
+            margin-top: 15px;
         }
-
-        .expertise-card li {
+        
+        .service-card li {
             padding: 8px 0;
             padding-left: 25px;
             position: relative;
         }
-
-        .expertise-card li::before {
-            content: '•';
+        
+        .service-card li:before {
+            content: "✓";
             position: absolute;
             left: 0;
-            color: #81C995;
             font-weight: bold;
         }
-
-        .value-grid {
+        
+        .service-card p {
+            margin-bottom: 10px;
+            opacity: 0.95;
+        }
+        
+        .expertise {
+            background: #edf2f7;
+            padding: 60px 20px;
+        }
+        
+        .expertise-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .expertise-item {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .expertise-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .results {
+            background: white;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             gap: 25px;
             margin-top: 40px;
         }
-
-        .value-card {
-            background: #f5f7fa;
+        
+        .result-card {
             padding: 25px;
+            background: #f7fafc;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        
+        .result-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .result-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .result-text {
+            font-size: 1em;
+            color: #4a5568;
+        }
+        
+        .method {
+            background: #2d3748;
+            color: white;
+            padding: 60px 20px;
+        }
+        
+        .method .section-title {
+            color: white;
+        }
+        
+        .method-steps {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: center;
+            gap: 0;
+            max-width: 100%;
+            margin: 0 auto;
+            overflow-x: hidden;
+            padding: 30px 5px;
+            flex-wrap: wrap;
+        }
+        
+        .method-step {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 10px;
             border-radius: 8px;
-            border-top: 4px solid #81C995;
+            border-top: 3px solid #667eea;
+            min-width: 0;
+            flex: 1 1 120px;
+            max-width: 160px;
         }
-
-        .value-card h3 {
-            color: #0C5F8D;
-            font-size: 1.2rem;
-            margin-bottom: 12px;
-            font-weight: 600;
+        
+        .method-step h4 {
+            color: #667eea;
+            font-size: 0.8em;
+            margin-bottom: 4px;
+            line-height: 1.2;
         }
-
-        .value-card p {
-            color: #6b7280;
-            font-size: 0.95rem;
+        
+        .method-step .step-objective {
+            font-size: 0.65em;
+            font-style: italic;
+            color: #a0aec0;
+            margin-bottom: 6px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-
-        .value-card ul {
-            list-style: none;
-            padding: 0;
+        
+        .method-step p {
+            font-size: 0.65em;
+            line-height: 1.25;
             margin: 0;
         }
-
-        .value-card li {
-            color: #6b7280;
-            font-size: 0.95rem;
-            padding: 5px 0;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .value-card li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: #81C995;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .cta-section {
-            background: #0C5F8D;
-            color: white;
-            padding: 50px 20px;
-            text-align: center;
-            border-radius: 8px;
-            margin: 30px 0;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.95;
-        }
-
-        .cta-button {
+        
+        .method-step .step-number {
             display: inline-block;
-            background: #81C995;
-            color: #0C5F8D;
-            padding: 16px 36px;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: all 0.3s;
-            box-shadow: 0 2px 8px rgba(129, 201, 149, 0.3);
-            letter-spacing: 0.01em;
-        }
-
-        .cta-button:hover {
-            background: #7AB800;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(129, 201, 149, 0.4);
-        }
-
-        .highlight {
-            background: #fef3c7;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-
-        .differentiator {
-            background: white;
-            border: 2px solid #81C995;
-            border-radius: 8px;
-            padding: 30px;
-            margin: 30px 0;
-            text-align: center;
-        }
-
-        .differentiator p {
-            font-size: 1.3rem;
-            color: #0C5F8D;
-            font-weight: 600;
-            font-style: italic;
-        }
-
-
-        .itil-domains {
-            background: #f5f7fa;
-            padding: 50px 20px;
-            border-radius: 8px;
-            margin: 30px 0;
-        }
-
-        .itil-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .itil-domain {
-            background: white;
-            padding: 18px 20px;
-            border-radius: 6px;
-            border-left: 3px solid #81C995;
-            transition: all 0.3s;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
-
-        .itil-domain:hover {
-            transform: translateX(5px);
-            box-shadow: 0 4px 12px rgba(12, 95, 141, 0.15);
-            border-left-color: #0C5F8D;
-        }
-
-        .itil-domain-number {
-            display: inline-block;
-            background: #0C5F8D;
+            background: #667eea;
             color: white;
-            width: 28px;
-            height: 28px;
+            width: 26px;
+            height: 26px;
             border-radius: 50%;
             text-align: center;
-            line-height: 28px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-right: 12px;
-            vertical-align: middle;
+            line-height: 26px;
+            margin-bottom: 4px;
+            font-weight: bold;
+            font-size: 0.95em;
         }
-
-        .itil-domain-name {
-            color: #0C5F8D;
-            font-weight: 500;
-            font-size: 0.95rem;
-            display: inline-block;
-            vertical-align: middle;
+        
+        .method-arrow {
+            font-size: 1.5em;
+            color: #667eea;
+            padding: 0 6px;
+            flex-shrink: 0;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
         }
-
+        
+        .value {
+            background: white;
+            padding: 60px 20px;
+        }
+        
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .value-card {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .value-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .value-card h4 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+        
+        .value-card p {
+            text-align: left;
+            line-height: 1.6;
+        }
+        
+        .value-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            width: 70px;
+            height: 70px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .value-icon i {
+            color: white;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        
+        .contact-info {
+            background: #2d3748;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        @media (max-width: 1200px) {
+            .method-steps {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            
+            .method-step {
+                flex: 1 1 140px;
+                max-width: 180px;
+            }
+            
+            .method-arrow {
+                display: none;
+            }
+            
+            .method-step::after {
+                content: "→";
+                position: absolute;
+                right: -15px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #667eea;
+                font-size: 1.2em;
+                font-weight: bold;
+            }
+            
+            .method-step {
+                position: relative;
+            }
+            
+            .method-step:last-child::after {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .method-steps {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+            }
+            
+            .method-step {
+                max-width: 100%;
+            }
+            
+            .method-step::after {
+                display: none;
+            }
+            
+            .method-arrow {
+                display: none;
+            }
+        }
+        
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 1.8rem;
+                font-size: 2em;
             }
-
+            
             .section-title {
-                font-size: 2rem;
+                font-size: 1.8em;
             }
-
-            .expertise-grid,
-            .value-grid {
+            
+            .results-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .result-number {
+                font-size: 2em;
+            }
+            
+            .method-steps {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            
+            .navbar {
+                padding: 10px 20px;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .navbar-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 5px;
+            }
+            
+            .navbar-menu a {
+                padding: 8px 12px;
+                font-size: 0.9em;
+            }
+        }
+        
+        @media (max-width: 500px) {
+            .method-steps {
                 grid-template-columns: 1fr;
+                gap: 10px;
             }
-
-            .itil-grid {
+            
+            .method-step {
+                max-width: 100%;
+            }
+            
+            .results-grid {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container">
-            <a href="#infrastructure" class="nav-item">Infrastructure</a>
-            <a href="#cybersecurite" class="nav-item">Cybersécurité</a>
-            <a href="#ia" class="nav-item">IA</a>
+        <a href="index.html" class="navbar-brand">Agile<span>Vizion</span></a>
+        <div class="navbar-menu">
+            <a href="index.html" class="active">Service Management</a>
+            <a href="audit-cybersecurite.html">Audit Cybersécurité (GRC)</a>
+            <a href="profil.html">Mon Profil</a>
         </div>
     </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Gestion des services et de l'infrastructure</h1>
-        </div>
-    </section>
-
-    <!-- Vision Section -->
-    <section class="container section">
-        <div class="vision-box">
-            <div class="vision-image-wrapper">
-                <img src="top.jpg" alt="" class="vision-image">
-            </div>
-            <div class="vision-bio">
-                <p style="font-weight: 700; font-size: 1.3rem; margin-bottom: 12px; color: #0C5F8D;">Emmanuel GENESTEIX</p>
-                <p style="font-weight: 600; font-size: 1rem; margin-bottom: 10px; color: #0C5F8D;">20 ans d'expérience IT</p>
-                <p style="margin-bottom: 8px; color: #0C5F8D;">Accompagnement des Directions, conseil freelance ou postes de direction salarié</p>
-                <ul style="margin-top: 12px; margin-bottom: 8px; padding-left: 20px; line-height: 1.8; color: #0C5F8D;">
-                    <li style="margin-bottom: 8px; color: #0C5F8D;">Je mets mon expérience combinée à l'IA pour vous aider à résoudre rapidement vos problèmes.</li>
-                    <li style="margin-bottom: 8px; color: #0C5F8D;">Signe particulier:</li>
-                    <li style="margin-bottom: 8px; color: #0C5F8D;">Père d'un petit garçon de 11 ans, marié.</li>
-                    <li style="margin-bottom: 8px; color: #0C5F8D;">A côté de mes missions, j'ai créé un RAG LLM avec une architecture hybride on premise et cloud pour permettre aux entreprises d'utiliser chatgpt et de faire des recherches sur leurs documents.</li>
-                    <li style="margin-bottom: 8px; color: #0C5F8D;">J'ai également vibe codé un CRM full stack en 1 mois.</li>
-                </ul>
-                <a href="https://www.linkedin.com/in/genesteix-emmanuel/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; color: #0C5F8D; text-decoration: none; font-weight: 500; transition: color 0.3s;">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                    LinkedIn
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Approach Section -->
-    <section class="container section">
-        <div class="approach-section">
-            <h2>Mon approche : aligner votre Service Management avec les bonnes pratiques ITIL</h2>
-            
-            <div class="approach-item">
-                <h3>1. Vision & Stratégie</h3>
-                <p>Définition de votre vision et objectifs business → feuille de route claire.</p>
-            </div>
-
-            <div class="approach-item">
-                <h3>2. SLA & Performance</h3>
-                <p>Définition des SLA, mesure de performance, amélioration continue.</p>
-            </div>
-
-            <div class="approach-item">
-                <h3>3. Déploiement ITIL</h3>
-                <p>Déploiement ITIL sur les processus ITSM pertinents.</p>
-            </div>
-
-            <div class="approach-item">
-                <h3>4. Outillage ServiceNow</h3>
-                <p>Outillage avec ServiceNow pour automatiser et optimiser.</p>
-            </div>
-
-            <div class="approach-item">
-                <h3>5. Intelligence Artificielle</h3>
-                <p>Intégration de l'IA tout au long du processus.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Expertise Section -->
-    <section class="container section">
-        <h2 class="section-title">Pourquoi mes clients me font confiance</h2>
+    
+    <div class="hero">
+        <h1>ServiceNow & ITIL : structurez, automatisez, performez</h1>
+        <p>L'ITSM au service de votre croissance</p>
+        <a href="#contact" class="cta-button">Discutons de votre projet</a>
         
-        <div class="expertise-grid">
-            <div class="expertise-card">
-                <h3>Expertise terrain</h3>
-                <ul>
-                    <li>Chef de projet migration ServiceNow</li>
-                    <li>Service Manager opérationnel</li>
-                    <li>Incident Manager en environnement critique</li>
-                </ul>
-            </div>
+        <!-- Propositions de titres alternatives (masqués) -->
+        <!-- Option 1: De l'incident au service : Pilotez votre IT avec méthode -->
+        <!-- Option 2: Votre IT mérite mieux qu'un mode pompier permanent -->
+        <!-- Option 3: ITIL + ServiceNow : L'alliance gagnante pour votre infrastructure -->
+        <!-- Option 4: Passez d'une IT réactive à une IT stratégique -->
+        <!-- Option 5: Structurez votre IT comme les grandes organisations -->
+        <!-- Option 6: Stop aux incidents récurrents : Optimisez votre IT durablement -->
+        <!-- Option 7: ServiceNow + ITIL : Reprenez le contrôle de votre infrastructure -->
+        <!-- Option 8: Gouvernance IT : De la vision à l'exécution -->
+        <!-- Option 9: Maîtrisez vos services IT de bout en bout -->
+        <!-- Option 10: L'excellence opérationnelle IT à votre portée -->
+    </div>
 
-            <div class="expertise-card">
-                <h3>Maîtrise technique</h3>
-                <ul>
-                    <li>ITIL, ServiceNow, ITSM, ITOM, CMDB</li>
-                    <li>17 services ITSM maîtrisés</li>
-                    <li>On-premise & Cloud</li>
-                </ul>
-            </div>
-
-            <div class="expertise-card">
-                <h3>Service Manager</h3>
-                <ul>
-                    <li>Service Requests → Servers</li>
-                    <li>VM, Apps, DB, Network</li>
-                    <li>Security, Cloud components</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="differentiator">
-            <p>Je ne vends pas de la technologie. Je transforme votre IT en avantage concurrentiel.</p>
-        </div>
-    </section>
-
-    <!-- Value Section -->
-    <section class="container section">
-        <h2 class="section-title">Ce que vous obtenez</h2>
-        
-        <div class="value-grid">
-            <div class="value-card">
-                <h3>Cadre professionnel</h3>
-                <ul>
-                    <li>Conformité ITIL (best practices du marché)</li>
-                    <li>SLA contractuels clairs → obligations définies</li>
-                    <li>Processus ITSM documentés et automatisés</li>
-                    <li>KPI de performance → amélioration continue mesurée</li>
-                </ul>
-            </div>
-
-            <div class="value-card">
-                <h3>Gestion opérationnelle</h3>
-                <ul>
-                    <li>Incidents, problèmes, changements, releases → tout maîtrisé</li>
-                    <li>Automatisation IA → 30% d'incidents auto-résolus</li>
-                    <li>Expérience client améliorée → satisfaction mesurée</li>
-                </ul>
-            </div>
-
-            <div class="value-card">
-                <h3>Résultat</h3>
-                <p>IT aligné business, performant, conforme. Vous pouvez vous concentrer sur votre cœur de métier.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ITIL Domains Section -->
-    <section class="container section">
-        <h2 class="section-title">Mes domaines ITIL d'intervention</h2>
-        <p style="text-align: center; color: #6b7280; margin-bottom: 20px; font-size: 1.1rem;">
-            17 domaines ITIL maîtrisés pour une couverture complète de vos besoins ITSM
-        </p>
-        <div class="itil-domains">
-            <div class="itil-grid">
-                <div class="itil-domain">
-                    <span class="itil-domain-number">1</span>
-                    <span class="itil-domain-name">Service Desk</span>
+    <div class="pain-points">
+        <div class="container">
+            <h2 class="section-title">Vos défis IT vous freinent ?</h2>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <h3>🔥 Incidents qui se répètent</h3>
+                    <p>Votre équipe éteint les mêmes feux chaque semaine sans comprendre la cause racine. Le temps et l'argent s'évaporent.</p>
                 </div>
-                <div class="itil-domain">
-                    <span class="itil-domain-number">2</span>
-                    <span class="itil-domain-name">Incident Management</span>
+                <div class="pain-card">
+                    <h3>⏰ SLA non respectés</h3>
+                    <p>Les délais explosent, les clients sont mécontents, et votre réputation en prend un coup.</p>
                 </div>
-                <div class="itil-domain">
-                    <span class="itil-domain-number">3</span>
-                    <span class="itil-domain-name">Problem Management</span>
+                <div class="pain-card">
+                    <h3>📊 CMDB inexploitable</h3>
+                    <p>Vos données d'infrastructure sont obsolètes ou inexistantes. Impossible de prendre des décisions éclairées.</p>
                 </div>
-                <div class="itil-domain">
-                    <span class="itil-domain-number">4</span>
-                    <span class="itil-domain-name">Change Enablement (Change Management)</span>
+                <div class="pain-card">
+                    <h3>🔄 Changements risqués</h3>
+                    <p>Chaque mise à jour devient un stress. Pas de processus clair, pas de plan B.</p>
                 </div>
-                <div class="itil-domain">
-                    <span class="itil-domain-number">5</span>
-                    <span class="itil-domain-name">Service Request Management</span>
+                <div class="pain-card">
+                    <h3>💰 Coûts IT incontrôlés</h3>
+                    <p>Vous ne savez pas où va votre budget IT ni comment optimiser vos investissements.</p>
                 </div>
-                <div class="itil-domain">
-                    <span class="itil-domain-number">6</span>
-                    <span class="itil-domain-name">Service Level Management</span>
-                </div>
-                <div class="itil-domain">
-                    <span class="itil-domain-number">7</span>
-                    <span class="itil-domain-name">Service Configuration Management</span>
-                </div>
-                <div class="itil-domain">
-                    <span class="itil-domain-number">8</span>
-                    <span class="itil-domain-name">IT Asset Management</span>
-                </div>
-                <div class="itil-domain">
-                    <span class="itil-domain-number">9</span>
-                    <span class="itil-domain-name">Monitoring and Event Management</span>
-                </div>
-                <div class="itil-domain">
-                    <span class="itil-domain-number">10</span>
-                    <span class="itil-domain-name">Release Management</span>
-                </div>
-                <div class="itil-domain">
-                    <span class="itil-domain-number">11</span>
-                    <span class="itil-domain-name">Service Catalog Management</span>
-                </div>
-                <div class="itil-domain">
-                    <span class="itil-domain-number">12</span>
-                    <span class="itil-domain-name">Availability Management</span>
-                </div>
-                <div class="itil-domain">
-                    <span class="itil-domain-number">13</span>
-                    <span class="itil-domain-name">Capacity and Performance Management</span>
-                </div>
-                <div class="itil-domain">
-                    <span class="itil-domain-number">14</span>
-                    <span class="itil-domain-name">Service Continuity Management</span>
-                </div>
-                <div class="itil-domain">
-                    <span class="itil-domain-number">15</span>
-                    <span class="itil-domain-name">Deployment Management</span>
-                </div>
-                <div class="itil-domain">
-                    <span class="itil-domain-number">16</span>
-                    <span class="itil-domain-name">InfoSec Management (Information Security Management)</span>
-                </div>
-                <div class="itil-domain">
-                    <span class="itil-domain-number">17</span>
-                    <span class="itil-domain-name">Supplier Management</span>
+                <div class="pain-card">
+                    <h3>🤷 Équipes débordées</h3>
+                    <p>Vos techniciens croulent sous les tickets sans outils ni processus efficaces.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Offer Section -->
-    <section class="container section">
-        <h2 class="section-title">Mon accompagnement ServiceNow</h2>
-        
-        <div class="vision-box" style="background: #f5f7fa; border-left-color: #81C995;">
-            <h2 style="color: #0C5F8D;">Lifecycle complet</h2>
-            <ul class="vision-list" style="font-size: 1rem;">
-                <li><strong>Strategy :</strong> Alignement business-IT</li>
-                <li><strong>Design :</strong> Architecture ServiceNow sur mesure</li>
-                <li><strong>Operations :</strong> Déploiement + optimisation continue</li>
-            </ul>
-            
-            <div style="margin-top: 30px; padding: 20px; background: white; border-radius: 8px;">
-                <h3 style="color: #0C5F8D; margin-bottom: 15px;">Livrables :</h3>
-                <p style="font-size: 1.1rem; color: #333;">
-                    IT conforme ITIL • SLA opérationnels • Processus automatisés • KPI de performance
-                </p>
+    <div class="services">
+        <div class="container">
+            <h2 class="section-title">Ce que j'apporte à votre organisation</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🎯 Gouvernance IT & Cycle de vie ITIL</h3>
+                    <p><strong>Stratégie → Design → Opérations → Maintenance</strong></p>
+                    <p style="margin-top: 15px;">Structuration complète de votre gouvernance IT selon les standards ITIL v4, avec mise en place du cycle de vie complet des services.</p>
+                    <ul>
+                        <li>Définition stratégie et portefeuille de services</li>
+                        <li>Design et architecture des processus</li>
+                        <li>Pilotage opérations quotidiennes</li>
+                        <li>Amélioration continue et maintenance</li>
+                        <li>Gestion risques et conformité (GRC)</li>
+                        <li>Asset Management et coûts IT</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <h3>🛠️ 17 Services ITSM fondamentaux</h3>
+                    <p>Implémentation et optimisation des processus ITIL essentiels</p>
+                    <ul>
+                        <li><strong>Service Desk</strong> - Point de contact unique</li>
+                        <li><strong>Incident Management</strong> - Restauration rapide</li>
+                        <li><strong>Problem Management</strong> - Analyse cause racine</li>
+                        <li><strong>Change Enablement</strong> - Gestion des changements</li>
+                        <li><strong>Service Request</strong> - Catalogue de services</li>
+                        <li><strong>Service Level Management</strong> - SLA/OLA</li>
+                        <li><strong>Configuration Management</strong> - CMDB structurée</li>
+                        <li><strong>IT Asset Management</strong> - Gestion actifs</li>
+                        <li><strong>Monitoring & Event</strong> - Surveillance proactive</li>
+                        <li><strong>Release</strong>, <strong>Deployment</strong>, <strong>Availability</strong>, <strong>Capacity</strong>, <strong>Continuity</strong>, <strong>InfoSec</strong>, <strong>Supplier</strong></li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <h3>⚙️ Optimisation des processus ITIL</h3>
+                    <p>Alignement des pratiques ITIL avec vos besoins métiers</p>
+                    <ul>
+                        <li>Audit et cartographie des processus existants</li>
+                        <li>Identification des inefficacités et gaspillages (Lean)</li>
+                        <li>Workflows rationalisés et automatisés</li>
+                        <li>SLA adaptés à vos enjeux business</li>
+                        <li>KPI et tableaux de bord décisionnels</li>
+                        <li>Documentation complète des procédures</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <h3>🚀 Pilotage implémentation ServiceNow</h3>
+                    <p>Implémentation et paramétrage de votre plateforme ITSM</p>
+                    <ul>
+                        <li>Implémentation modules ITSM, ITOM, GRC</li>
+                        <li>Structuration CMDB et relations CI</li>
+                        <li>Paramétrage SLA et notifications</li>
+                        <li>Service Portal et self-service</li>
+                        <li>Knowledge Base et documentation</li>
+                        <li>Personnalisation formulaires et listes</li>
+                        <li>Business Rules et UI Policies</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <h3>🔗 Pilotage Intégrations, Cloud & Monitoring</h3>
+                    <p>Connectivité et visibilité complète de votre infrastructure</p>
+                    <ul>
+                        <li>Intégration Active Directory / LDAP / SSO</li>
+                        <li>Mise en œuvre Mid Server pour découverte réseau</li>
+                        <li>Event Management (Nagios, Splunk, outils monitoring)</li>
+                        <li>Service Mapping et cartographie dépendances</li>
+                        <li>Intégrations API REST/SOAP</li>
+                        <li>Cloud Management (AWS, Azure)</li>
+                        <li>Discovery automatisé des actifs</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <h3>🎓 Formation & Accompagnement</h3>
+                    <p>Transfert de compétences et autonomisation</p>
+                    <ul>
+                        <li>Formation administrateurs ServiceNow</li>
+                        <li>Coaching utilisateurs finaux</li>
+                        <li>Documentation technique et fonctionnelle</li>
+                        <li>Best practices ITIL v4</li>
+                        <li>Support post-déploiement</li>
+                        <li>Conduite du changement</li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- CTA Section -->
-    <section class="container">
-        <div class="cta-section">
-            <h2>Prochaine étape</h2>
-            <p><strong>Audit ITIL gratuit (30 min)</strong></p>
-            <p style="font-size: 1rem; margin-top: 15px;">
-                • Analyse de votre situation<br>
-                • Identification des gains rapides<br>
-                • Roadmap personnalisée ServiceNow
-            </p>
-            <p style="margin-top: 25px; font-size: 1.1rem; font-weight: 600;">
-                <span class="highlight" style="background: #fef3c7; color: #92400e;">3 créneaux disponibles ce mois</span> → Réservez maintenant
-            </p>
-            <a href="#contact" class="cta-button">RÉSERVER MON AUDIT GRATUIT</a>
+    <div class="expertise">
+        <div class="container">
+            <h2 class="section-title">Compétences techniques</h2>
+            <div class="expertise-list">
+                <div class="expertise-item">
+                    <h4>🏗️ Modules ServiceNow</h4>
+                    <p>• Incident Management<br>• SLA & Problem Management<br>• Change & CMDB<br>• Service Catalog & Knowledge<br>• Service Portal & Connect<br>• Visual Task Board</p>
+                </div>
+                <div class="expertise-item">
+                    <h4>🔗 Architecture & Intégrations</h4>
+                    <p>• Cloud AWS<br>• API REST / SOAP<br>• Active Directory / LDAP / SSO<br>• Mid Server<br>• IntegrationHub<br>• Webhooks</p>
+                </div>
+                <div class="expertise-item">
+                    <h4>🗄️ Data & Discovery</h4>
+                    <p>• CMDB<br>• Discovery<br>• Service Mapping<br>• Relations CI<br>• Data Quality</p>
+                </div>
+                <div class="expertise-item">
+                    <h4>📊 Méthodologies</h4>
+                    <p>• ITIL v4<br>• Lean IT<br>• SLA Management<br>• KPI & Reporting<br>• Amélioration continue</p>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="container section" style="text-align: center; padding: 40px 20px;">
-        <h2 class="section-title">Discutons de votre projet</h2>
-        <p style="font-size: 1.2rem; color: #6b7280; margin-bottom: 30px;">
-            Contactez-moi pour transformer votre IT en moteur de valeur business
-        </p>
-        <a href="mailto:contact@agilevizion.com" class="cta-button" style="background: #81C995; color: #0C5F8D;">
-            ME CONTACTER
-        </a>
-    </section>
+    <div class="results">
+        <div class="container">
+            <h2 class="section-title">Résultats mesurables attendus</h2>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-number">+97%</div>
+                    <div class="result-text">Taux de respect des SLA</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">-25%</div>
+                    <div class="result-text">Coûts opérationnels IT</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">+100%</div>
+                    <div class="result-text">Traçabilité des changements et audits</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">-50%</div>
+                    <div class="result-text">Tickets créés manuellement (automatisation)</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <footer style="background: #1f2937; color: white; text-align: center; padding: 30px 20px; margin-top: 30px;">
-        <p>&copy; 2024 AgileVizion - Expert ServiceNow ITSM</p>
-    </footer>
+    <div class="method">
+        <div class="container">
+            <h2 class="section-title">Ma méthode de travail</h2>
+            <div class="method-steps">
+                <div class="method-step">
+                    <div class="step-number">1</div>
+                    <h4>Diagnostic 360°</h4>
+                    <p class="step-objective">Comprendre où en est le client</p>
+                    <p>• Photo complète de la situation<br>• Forces et faiblesses<br>• Base factuelle</p>
+                </div>
+                
+                <div class="method-arrow">→</div>
+                
+                <div class="method-step">
+                    <div class="step-number">2</div>
+                    <h4>Analyse Lean IT</h4>
+                    <p class="step-objective">Trouver les sources d'inefficacité</p>
+                    <p>• Flux de travail réels<br>• Pertes temps & argent<br>• Benchmark marché</p>
+                </div>
+                
+                <div class="method-arrow">→</div>
+                
+                <div class="method-step">
+                    <div class="step-number">3</div>
+                    <h4>Stratégie & Priorisation</h4>
+                    <p class="step-objective">Définir le plan d'action optimal</p>
+                    <p>• Batailles prioritaires<br>• ROI maximisé<br>• Objectifs mesurables</p>
+                </div>
+                
+                <div class="method-arrow">→</div>
+                
+                <div class="method-step">
+                    <div class="step-number">4</div>
+                    <h4>Design & Planification</h4>
+                    <p class="step-objective">Préparer une exécution sans surprise</p>
+                    <p>• Obstacles anticipés<br>• Ressources allouées<br>• Planning réaliste</p>
+                </div>
+                
+                <div class="method-arrow">→</div>
+                
+                <div class="method-step">
+                    <div class="step-number">5</div>
+                    <h4>Déploiement Agile</h4>
+                    <p class="step-objective">Livrer de la valeur rapidement</p>
+                    <p>• Contrôle avancement<br>• Réactivité imprévus<br>• Communication fluide</p>
+                </div>
+                
+                <div class="method-arrow">→</div>
+                
+                <div class="method-step">
+                    <div class="step-number">6</div>
+                    <h4>Adoption & Pérennisation</h4>
+                    <p class="step-objective">Garantir des changements durables</p>
+                    <p>• Adhésion utilisateurs<br>• Nouvelles pratiques ancrées<br>• Succès mesurés</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="value">
+        <div class="container">
+            <h2 class="section-title">Ma valeur ajoutée</h2>
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa-solid fa-gears"></i></div>
+                    <h4>Optimisation des processus</h4>
+                    <p>• Élimination des gaspillages<br>• Simplification des workflows<br>• Alignement IT-métier</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <h4>Automatisation</h4>
+                    <p>• Réduction tâches manuelles<br>• Routage intelligent<br>• Notifications proactives</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                    <h4>Rationalisation des coûts</h4>
+                    <p>• Visibilité financière<br>• Asset Management rigoureux<br>• Optimisation budgétaire</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h4>Réduction des délais</h4>
+                    <p>• Accélération des résolutions<br>• Approbations fluides<br>• Self-service efficace</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <h4>Engagement des tiers</h4>
+                    <p>• Coordination fournisseurs<br>• Intégration partenaires<br>• Gestion contractuelle</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h4>Qualité & Conformité</h4>
+                    <p>• Données fiables<br>• Processus documentés<br>• Traçabilité complète</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <h2>Prêt à moderniser votre IT ?</h2>
+        <p>Audit gratuit de 30 minutes pour identifier vos axes d'amélioration prioritaires</p>
+        <a href="#contact" class="cta-button">Réserver mon audit gratuit</a>
+    </div>
+
+    <div class="contact-info" id="contact">
+        <div class="container">
+            <h2 style="margin-bottom: 20px;">Contactez-moi</h2>
+            <p style="font-size: 1.2em; margin-bottom: 10px;">📧 emmanuel.genesteix@agilevizion.com</p>
+            <p style="font-size: 1.2em; margin-bottom: 10px;">📱 +352 661 78 08 07</p>
+            <p style="font-size: 1.2em;">📍 Luxembourg (interventions Europe)</p>
+        </div>
+    </div>
 </body>
 </html>
-
