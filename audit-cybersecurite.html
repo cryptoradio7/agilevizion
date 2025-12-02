@@ -106,7 +106,8 @@
         .hero-benefits {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            align-items: center;
+            gap: 15px;
             margin: 35px 0;
             flex-wrap: wrap;
         }
@@ -114,25 +115,20 @@
         .hero-benefit-item {
             display: flex;
             align-items: center;
-            gap: 12px;
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            padding: 18px 28px;
-            border-radius: 50px;
-            border: 2px solid rgba(255,255,255,0.4);
-            font-size: 1.1em;
+            gap: 10px;
+            padding: 10px 5px;
+            font-size: 1.15em;
             font-weight: 600;
-            transition: transform 0.3s, background 0.3s;
-        }
-        
-        .hero-benefit-item:hover {
-            transform: translateY(-3px);
-            background: rgba(255,255,255,0.25);
         }
         
         .hero-benefit-item i {
-            font-size: 1.4em;
+            font-size: 1.3em;
             color: #fff;
+        }
+        
+        .hero-arrow {
+            font-size: 1.5em;
+            color: rgba(255,255,255,0.8);
         }
         
         .container {
@@ -603,13 +599,17 @@
             
             .hero-benefits {
                 flex-direction: column;
-                gap: 15px;
+                gap: 12px;
                 align-items: center;
             }
             
             .hero-benefit-item {
-                padding: 14px 22px;
                 font-size: 1em;
+            }
+            
+            .hero-arrow {
+                transform: rotate(90deg);
+                font-size: 1.2em;
             }
         }
     </style>
@@ -634,10 +634,12 @@
                 <i class="fa-solid fa-bullseye"></i>
                 <span>Identifier les normes applicables</span>
             </div>
+            <i class="fa-solid fa-arrow-right hero-arrow"></i>
             <div class="hero-benefit-item">
                 <i class="fa-solid fa-calculator"></i>
                 <span>Estimation durée et budget</span>
             </div>
+            <i class="fa-solid fa-arrow-right hero-arrow"></i>
             <div class="hero-benefit-item">
                 <i class="fa-solid fa-gift"></i>
                 <span>Premier diagnostic offert</span>
