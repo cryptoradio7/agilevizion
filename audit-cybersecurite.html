@@ -71,9 +71,12 @@
         }
         
         .hero h1 {
-            font-size: 2.8em;
+            font-size: 2.4em;
             margin-bottom: 20px;
             font-weight: 700;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .hero p {
@@ -100,6 +103,38 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
         
+        .hero-benefits {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 35px 0;
+            flex-wrap: wrap;
+        }
+        
+        .hero-benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 18px 28px;
+            border-radius: 50px;
+            border: 2px solid rgba(255,255,255,0.4);
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: transform 0.3s, background 0.3s;
+        }
+        
+        .hero-benefit-item:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.25);
+        }
+        
+        .hero-benefit-item i {
+            font-size: 1.4em;
+            color: #fff;
+        }
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -113,6 +148,261 @@
             color: #2d3748;
         }
         
+        /* Section Problèmes */
+        .problems-section {
+            background: #1a1a2e;
+            padding: 60px 20px;
+            color: white;
+        }
+        
+        .problems-section .section-title {
+            color: white;
+        }
+        
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto 40px;
+        }
+        
+        .problem-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            border-left: 3px solid #c0392b;
+        }
+        
+        .problem-item i {
+            color: #c0392b;
+            font-size: 1.3em;
+            margin-top: 3px;
+        }
+        
+        .problem-item p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+        
+        .sanctions-box {
+            background: linear-gradient(135deg, #c0392b 0%, #922b21 100%);
+            padding: 30px 40px;
+            border-radius: 15px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .sanctions-box h3 {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+        }
+        
+        .sanctions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .sanction-item {
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .sanction-item .percent {
+            font-size: 2.5em;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .sanction-item .label {
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+        
+        /* Section Promesse */
+        .promise-section {
+            background: #f7fafc;
+            padding: 60px 20px;
+        }
+        
+        .promise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .promise-card {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .promise-card .number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #c0392b 0%, #922b21 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .promise-card h3 {
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .promise-card p {
+            color: #4a5568;
+        }
+        
+        /* Section Livrables */
+        .deliverables-section {
+            padding: 60px 20px;
+            background: white;
+        }
+        
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .deliverable-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 25px;
+            background: #f7fafc;
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .deliverable-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .deliverable-card .icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #c0392b 0%, #922b21 100%);
+            color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3em;
+            flex-shrink: 0;
+        }
+        
+        .deliverable-card h4 {
+            color: #2d3748;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        
+        .deliverable-card p {
+            color: #4a5568;
+            font-size: 0.95em;
+        }
+        
+        /* Section Normes - MISE EN VALEUR */
+        .frameworks {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 80px 20px;
+        }
+        
+        .frameworks .section-title {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .frameworks .section-subtitle {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            font-size: 1.2em;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .frameworks-category {
+            max-width: 1100px;
+            margin: 0 auto 40px;
+        }
+        
+        .frameworks-category h3 {
+            color: #c0392b;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .frameworks-category h3 i {
+            font-size: 0.9em;
+        }
+        
+        .frameworks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+        }
+        
+        .framework-item {
+            background: rgba(255,255,255,0.08);
+            padding: 25px 20px;
+            border-radius: 12px;
+            text-align: center;
+            border-top: 4px solid #c0392b;
+            transition: transform 0.3s, background 0.3s;
+        }
+        
+        .framework-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.12);
+        }
+        
+        .framework-item h4 {
+            color: white;
+            margin-bottom: 8px;
+            font-size: 1.3em;
+            font-weight: 700;
+        }
+        
+        .framework-item p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        
+        .framework-item.highlight {
+            background: linear-gradient(135deg, #c0392b 0%, #922b21 100%);
+            border-top-color: white;
+        }
+        
+        .framework-item.highlight p {
+            color: rgba(255,255,255,0.9);
+        }
+        
+        /* Services Grid */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -161,6 +451,7 @@
             opacity: 0.95;
         }
         
+        /* GRC Section */
         .grc-section {
             background: #f7fafc;
             padding: 60px 20px;
@@ -213,38 +504,7 @@
             line-height: 1.8;
         }
         
-        .frameworks {
-            background: #2d3748;
-            color: white;
-            padding: 60px 20px;
-        }
-        
-        .frameworks .section-title {
-            color: white;
-        }
-        
-        .frameworks-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .framework-item {
-            background: rgba(255,255,255,0.1);
-            padding: 25px;
-            border-radius: 10px;
-            text-align: center;
-            border-top: 3px solid #c0392b;
-        }
-        
-        .framework-item h4 {
-            color: #c0392b;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-        
+        /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, #c0392b 0%, #922b21 100%);
             color: white;
@@ -260,8 +520,48 @@
         .cta-section p {
             font-size: 1.2em;
             margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
+        .cta-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            color: #c0392b;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .cta-email:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .cta-benefits {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .cta-benefits span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1em;
+            opacity: 0.95;
+        }
+        
+        /* Contact Info */
         .contact-info {
             background: #2d3748;
             color: white;
@@ -271,14 +571,14 @@
         
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2em;
+                font-size: 1.8em;
             }
             
             .section-title {
                 font-size: 1.8em;
             }
             
-            .grc-grid {
+            .grc-grid, .promise-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -290,6 +590,26 @@
             .navbar-menu {
                 flex-wrap: wrap;
                 justify-content: center;
+            }
+            
+            .sanctions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-benefits {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero-benefits {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+            
+            .hero-benefit-item {
+                padding: 14px 22px;
+                font-size: 1em;
             }
         }
     </style>
@@ -304,132 +624,224 @@
         </div>
     </nav>
     
+    <!-- HERO avec accroche -->
     <div class="hero">
-        <h1>GRC & Cybersécurité</h1>
-        <p>Gouvernance, Risques et Conformité | Protégez vos actifs numériques</p>
-        <a href="#contact" class="cta-button">Demander un audit</a>
+        <h1>Vous êtes soumis à DORA, NIS 2, ISO 27001 ou RGPD… mais vous ne savez pas par où commencer ?</h1>
+        <p>Je prends en charge l'audit de conformité de A à Z</p>
+        
+        <div class="hero-benefits">
+            <div class="hero-benefit-item">
+                <i class="fa-solid fa-bullseye"></i>
+                <span>Identifier les normes applicables</span>
+            </div>
+            <div class="hero-benefit-item">
+                <i class="fa-solid fa-calculator"></i>
+                <span>Estimation durée et budget</span>
+            </div>
+            <div class="hero-benefit-item">
+                <i class="fa-solid fa-gift"></i>
+                <span>Premier diagnostic offert</span>
+            </div>
+        </div>
+        
+        <a href="#contact" class="cta-button"><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> Me contacter</a>
     </div>
 
-    <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 40px 20px; text-align: center;">
-        <p style="max-width: 900px; margin: 0 auto; font-size: 1.4em; color: #fff; line-height: 1.6;">
-            <i class="fa-solid fa-shield-halved" style="color: #667eea; margin-right: 10px;"></i>
-            J'aide les organisations à se mettre en conformité avec les <strong style="color: #667eea;">règlements et directives européennes</strong> ou les <strong style="color: #667eea;">standards internationaux</strong>
-        </p>
-    </div>
-
-    <div class="grc-section">
-        <h2 class="section-title">Les 3 piliers GRC</h2>
-        <div class="grc-grid">
-            <div class="grc-card">
-                <div class="icon"><i class="fa-solid fa-landmark"></i></div>
-                <h3>Gouvernance</h3>
-                <p>• Politiques de sécurité<br>• Comités et instances<br>• Rôles et responsabilités<br>• Indicateurs de pilotage</p>
+    <!-- Section PROBLÈMES -->
+    <div class="problems-section">
+        <h2 class="section-title">Vous vous posez ces questions ?</h2>
+        <div class="problems-grid">
+            <div class="problem-item">
+                <i class="fa-solid fa-circle-question"></i>
+                <p>Quelles normes s'appliquent <strong>vraiment</strong> à mon organisation ?</p>
             </div>
-            <div class="grc-card">
-                <div class="icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
-                <h3>Risques</h3>
-                <p>• Cartographie des risques<br>• Analyse d'impact (BIA)<br>• Plans de traitement<br>• Suivi et réévaluation</p>
+            <div class="problem-item">
+                <i class="fa-solid fa-circle-question"></i>
+                <p>Qu'est-ce qui est <strong>obligatoire</strong> vs recommandé ?</p>
             </div>
-            <div class="grc-card">
-                <div class="icon"><i class="fa-solid fa-clipboard-check"></i></div>
-                <h3>Conformité</h3>
-                <p>• Audits réglementaires<br>• RGPD / NIS2 / DORA<br>• Certifications ISO<br>• Contrôles internes</p>
+            <div class="problem-item">
+                <i class="fa-solid fa-circle-question"></i>
+                <p>Comment auditer sans mobiliser mon équipe <strong>pendant des mois</strong> ?</p>
+            </div>
+            <div class="problem-item">
+                <i class="fa-solid fa-circle-question"></i>
+                <p>Et si je rate quelque chose qui <strong>expose l'entreprise</strong> ?</p>
+            </div>
+        </div>
+        
+        <div class="sanctions-box">
+            <h3><i class="fa-solid fa-triangle-exclamation" style="margin-right: 10px;"></i> Le risque financier est réel</h3>
+            <div class="sanctions-grid">
+                <div class="sanction-item">
+                    <span class="percent">5%</span>
+                    <span class="label">du CA annuel<br><strong>DORA</strong> — Secteur financier</span>
+                </div>
+                <div class="sanction-item">
+                    <span class="percent">2%</span>
+                    <span class="label">du CA mondial<br><strong>NIS 2</strong> — Infrastructures critiques</span>
+                </div>
+                <div class="sanction-item">
+                    <span class="percent">4%</span>
+                    <span class="label">du CA mondial<br><strong>RGPD</strong> — Protection des données</span>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="container">
-        <h2 class="section-title">Mes services d'audit</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>🔍 Audit de maturité cybersécurité</h3>
-                <p>Évaluation complète de votre posture sécurité</p>
-                <ul>
-                    <li>Analyse selon NIST / ISO 27001</li>
-                    <li>Évaluation des contrôles existants</li>
-                    <li>Identification des gaps</li>
-                    <li>Plan de remédiation priorisé</li>
-                    <li>Roadmap de mise en conformité</li>
-                </ul>
+    <!-- Section PROMESSE -->
+    <div class="promise-section">
+        <h2 class="section-title">Mon approche</h2>
+        <div class="promise-grid">
+            <div class="promise-card">
+                <div class="number">1</div>
+                <h3>Diagnostic initial</h3>
+                <p>J'identifie les normes réellement applicables à votre contexte — pas de sur-conformité inutile</p>
             </div>
-            
-            <div class="service-card">
-                <h3>⚠️ Analyse des risques</h3>
-                <p>Méthodologie EBIOS RM / ISO 27005</p>
-                <ul>
-                    <li>Identification des actifs critiques</li>
-                    <li>Scénarios de menaces</li>
-                    <li>Évaluation des vulnérabilités</li>
-                    <li>Calcul d'impact et probabilité</li>
-                    <li>Stratégies de mitigation</li>
-                </ul>
+            <div class="promise-card">
+                <div class="number">2</div>
+                <h3>Audit terrain</h3>
+                <p>Méthodologie structurée avec des livrables professionnels et un planning clair</p>
             </div>
-            
-            <div class="service-card">
-                <h3>📋 Mise en conformité</h3>
-                <p>Accompagnement réglementaire</p>
-                <ul>
-                    <li>RGPD et protection des données</li>
-                    <li>Directive NIS2</li>
-                    <li>Règlement DORA</li>
-                    <li>Préparation certification ISO 27001</li>
-                    <li>Documentation et procédures</li>
-                </ul>
-            </div>
-            
-            <div class="service-card">
-                <h3>🛡️ Plan de continuité (PCA/PRA)</h3>
-                <p>Résilience et reprise d'activité</p>
-                <ul>
-                    <li>Business Impact Analysis</li>
-                    <li>Stratégies de continuité</li>
-                    <li>Procédures de reprise</li>
-                    <li>Tests et exercices</li>
-                    <li>Amélioration continue</li>
-                </ul>
+            <div class="promise-card">
+                <div class="number">3</div>
+                <h3>Visibilité totale</h3>
+                <p>Charge de travail pour vos équipes, jalons clairs, zéro surprise</p>
             </div>
         </div>
     </div>
 
+    <!-- Section LIVRABLES -->
+    <div class="deliverables-section">
+        <h2 class="section-title">Ce que vous obtenez</h2>
+        <div class="deliverables-grid">
+            <div class="deliverable-card">
+                <div class="icon"><i class="fa-solid fa-list-check"></i></div>
+                <div>
+                    <h4>Grille d'audit complète</h4>
+                    <p>100 à 160+ points de contrôle par norme, alignés sur les textes officiels</p>
+                </div>
+            </div>
+            <div class="deliverable-card">
+                <div class="icon"><i class="fa-solid fa-file-lines"></i></div>
+                <div>
+                    <h4>Rapport d'audit exécutif</h4>
+                    <p>Synthèse claire pour la direction + analyse détaillée pour les équipes techniques</p>
+                </div>
+            </div>
+            <div class="deliverable-card">
+                <div class="icon"><i class="fa-solid fa-road"></i></div>
+                <div>
+                    <h4>Feuille de route priorisée</h4>
+                    <p>Actions classées par criticité, effort et impact — prêtes à exécuter</p>
+                </div>
+            </div>
+            <div class="deliverable-card">
+                <div class="icon"><i class="fa-solid fa-file-signature"></i></div>
+                <div>
+                    <h4>Procès-verbal de validation</h4>
+                    <p>Document formel de clôture, signé par les parties</p>
+                </div>
+            </div>
+            <div class="deliverable-card">
+                <div class="icon"><i class="fa-solid fa-folder-open"></i></div>
+                <div>
+                    <h4>Modèles réutilisables</h4>
+                    <p>Lettres de mission, fiches de non-conformité, registres, matrices RACI</p>
+                </div>
+            </div>
+            <div class="deliverable-card">
+                <div class="icon"><i class="fa-solid fa-diagram-project"></i></div>
+                <div>
+                    <h4>Infographie de la norme</h4>
+                    <p>Vue d'ensemble visuelle pour comprendre l'architecture du référentiel</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section NORMES COUVERTES - MISE EN VALEUR -->
     <div class="frameworks">
-        <h2 class="section-title">Référentiels & Normes</h2>
-        <div class="frameworks-grid">
-            <div class="framework-item">
-                <h4>ISO 27001</h4>
-                <p>Système de management de la sécurité</p>
+        <h2 class="section-title">Référentiels & Normes couverts</h2>
+        <p class="section-subtitle">Des kits d'audit complets, testés et prêts à l'emploi pour chaque référentiel</p>
+        
+        <div class="frameworks-category">
+            <h3><i class="fa-solid fa-landmark-flag"></i> Réglementations européennes</h3>
+            <div class="frameworks-grid">
+                <div class="framework-item highlight">
+                    <h4>DORA</h4>
+                    <p>Résilience opérationnelle numérique — Secteur financier</p>
+                </div>
+                <div class="framework-item highlight">
+                    <h4>NIS 2</h4>
+                    <p>Directive cybersécurité — Infrastructures critiques</p>
+                </div>
+                <div class="framework-item">
+                    <h4>RGPD</h4>
+                    <p>Protection des données personnelles</p>
+                </div>
             </div>
-            <div class="framework-item">
-                <h4>NIST CSF</h4>
-                <p>Framework cybersécurité</p>
+        </div>
+        
+        <div class="frameworks-category">
+            <h3><i class="fa-solid fa-certificate"></i> Standards internationaux ISO</h3>
+            <div class="frameworks-grid">
+                <div class="framework-item">
+                    <h4>ISO 27001</h4>
+                    <p>Système de management de la sécurité</p>
+                </div>
+                <div class="framework-item">
+                    <h4>ISO 27002</h4>
+                    <p>Mesures de sécurité de l'information</p>
+                </div>
+                <div class="framework-item">
+                    <h4>ISO 27005</h4>
+                    <p>Gestion des risques de sécurité</p>
+                </div>
             </div>
-            <div class="framework-item">
-                <h4>EBIOS RM</h4>
-                <p>Analyse des risques</p>
-            </div>
-            <div class="framework-item">
-                <h4>RGPD</h4>
-                <p>Protection des données</p>
-            </div>
-            <div class="framework-item">
-                <h4>NIS2</h4>
-                <p>Directive européenne</p>
-            </div>
-            <div class="framework-item">
-                <h4>DORA</h4>
-                <p>Résilience opérationnelle</p>
+        </div>
+        
+        <div class="frameworks-category">
+            <h3><i class="fa-solid fa-shield-halved"></i> Frameworks cybersécurité</h3>
+            <div class="frameworks-grid">
+                <div class="framework-item">
+                    <h4>CIS Controls v8</h4>
+                    <p>18 contrôles, 153 safeguards</p>
+                </div>
+                <div class="framework-item">
+                    <h4>NIST 800-53</h4>
+                    <p>Contrôles de sécurité fédéraux US</p>
+                </div>
+                <div class="framework-item">
+                    <h4>NIST 800-37</h4>
+                    <p>Risk Management Framework</p>
+                </div>
+                <div class="framework-item">
+                    <h4>EBIOS RM</h4>
+                    <p>Analyse des risques (ANSSI)</p>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="cta-section">
-        <h2>Évaluez votre niveau de sécurité</h2>
-        <p>Audit initial gratuit de 30 minutes pour identifier vos priorités</p>
-        <a href="#contact" class="cta-button">Planifier mon audit</a>
+
+    <!-- CTA Final -->
+    <div class="cta-section" id="contact">
+        <h2>Prêt à y voir clair sur votre conformité ?</h2>
+        <p>Premier échange de 30 minutes pour identifier vos priorités — gratuit, sans engagement</p>
+        <a href="mailto:emmanuel.genesteix@agilevizion.com?subject=Demande d'audit conformité" class="cta-email">
+            <i class="fa-solid fa-envelope"></i>
+            emmanuel.genesteix@agilevizion.com
+        </a>
+        <div class="cta-benefits">
+            <span><i class="fa-solid fa-check-circle"></i> Identifier les normes applicables</span>
+            <span><i class="fa-solid fa-check-circle"></i> Estimation durée et budget</span>
+            <span><i class="fa-solid fa-check-circle"></i> Premier diagnostic offert</span>
+        </div>
     </div>
 
-    <div class="contact-info" id="contact">
+    <div class="contact-info">
         <div class="container">
-            <h2 style="margin-bottom: 20px;">Me contacter</h2>
+            <h2 style="margin-bottom: 20px;">Coordonnées</h2>
             <p style="font-size: 1.2em; margin-bottom: 10px;">📧 emmanuel.genesteix@agilevizion.com</p>
             <p style="font-size: 1.2em; margin-bottom: 10px;">📱 +352 661 78 08 07</p>
             <p style="font-size: 1.2em;">📍 Luxembourg (interventions Europe)</p>
@@ -441,5 +853,3 @@
     </footer>
 </body>
 </html>
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
