@@ -567,12 +567,23 @@
         }
         
         @media (max-width: 768px) {
+            .hero {
+                padding: 50px 15px;
+            }
+            
             .hero h1 {
-                font-size: 1.8em;
+                font-size: 1.5em;
+                padding: 0 10px;
+            }
+            
+            .hero p {
+                font-size: 1.1em;
+                padding: 0 10px;
             }
             
             .section-title {
-                font-size: 1.8em;
+                font-size: 1.5em;
+                padding: 0 10px;
             }
             
             .grc-grid, .promise-grid {
@@ -582,15 +593,26 @@
             .navbar {
                 flex-direction: column;
                 gap: 15px;
+                padding: 15px 15px;
             }
             
             .navbar-menu {
                 flex-wrap: wrap;
                 justify-content: center;
+                gap: 5px;
+            }
+            
+            .navbar-menu a {
+                padding: 8px 12px;
+                font-size: 0.9em;
             }
             
             .sanctions-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .sanctions-box {
+                padding: 20px 15px;
             }
             
             .cta-benefits {
@@ -600,17 +622,109 @@
             
             .hero-benefits {
                 flex-direction: column;
-                gap: 12px;
+                gap: 10px;
                 align-items: center;
+                padding: 0 10px;
             }
             
             .hero-benefit-item {
-                font-size: 1em;
+                font-size: 0.95em;
             }
             
             .hero-arrow {
                 transform: rotate(90deg);
+                font-size: 1em;
+            }
+            
+            /* Boutons responsive */
+            .cta-button {
+                padding: 12px 20px;
+                font-size: 0.9em;
+                max-width: 90%;
+                word-break: break-word;
+            }
+            
+            .cta-email {
+                padding: 14px 20px;
+                font-size: 0.95em;
+                max-width: 90%;
+                word-break: break-word;
+            }
+            
+            /* CTA Section */
+            .cta-section {
+                padding: 50px 15px;
+            }
+            
+            .cta-section h2 {
+                font-size: 1.6em;
+            }
+            
+            .cta-section p {
+                font-size: 1em;
+                padding: 0 10px;
+            }
+            
+            /* Grilles responsive */
+            .problems-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .deliverables-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .deliverable-card {
+                padding: 20px 15px;
+            }
+            
+            .frameworks-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .frameworks-category h3 {
+                font-size: 1.1em;
+            }
+            
+            .framework-item {
+                padding: 20px 15px;
+            }
+            
+            .promise-card {
+                padding: 20px 15px;
+            }
+            
+            /* Contact info */
+            .contact-info {
+                padding: 30px 15px;
+            }
+            
+            .contact-info p {
+                font-size: 1em !important;
+            }
+        }
+        
+        /* Extra small devices */
+        @media (max-width: 400px) {
+            .hero h1 {
+                font-size: 1.3em;
+            }
+            
+            .cta-button, .cta-email {
+                padding: 12px 15px;
+                font-size: 0.85em;
+            }
+            
+            .navbar-brand {
                 font-size: 1.2em;
+            }
+            
+            .section-title {
+                font-size: 1.3em;
+            }
+            
+            .cta-section h2 {
+                font-size: 1.4em;
             }
         }
     </style>
