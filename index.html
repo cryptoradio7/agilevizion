@@ -103,6 +103,96 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
         
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .cta-button-primary {
+            display: inline-block;
+            background: white;
+            color: #c0392b;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .cta-button-secondary {
+            display: inline-block;
+            background: transparent;
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1em;
+            border: 2px solid white;
+            transition: transform 0.3s, background 0.3s;
+        }
+        
+        .cta-button-secondary:hover {
+            transform: translateY(-2px);
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .cta-calendly-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            color: #c0392b;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .cta-calendly-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .cta-email-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: transparent;
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2em;
+            border: 2px solid white;
+            transition: transform 0.3s, background 0.3s;
+        }
+        
+        .cta-email-secondary:hover {
+            transform: translateY(-2px);
+            background: rgba(255,255,255,0.1);
+        }
+        
         .hero-benefits {
             display: flex;
             justify-content: center;
@@ -755,7 +845,10 @@
         <h1>GRC & Audit Cybersécurité : conformité, maîtrise des risques, sérénité</h1>
         <p>DORA, NIS 2, ISO 27001, RGPD... Je vous accompagne de A à Z</p>
         <p style="font-size: 1.2em; margin-bottom: 15px; font-weight: 600;">Discutons de votre projet</p>
-        <a href="mailto:emmanuel.genesteix@agilevizion.com?subject=Demande d'audit conformité" class="cta-button"><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> emmanuel.genesteix@agilevizion.com</a>
+        <div class="hero-buttons">
+            <a href="https://calendly.com/emmanuel-genesteix" target="_blank" class="cta-button-primary"><i class="fa-solid fa-calendar-check" style="margin-right: 8px;"></i> Réserver un créneau</a>
+            <a href="mailto:emmanuel.genesteix@agilevizion.com?subject=Demande d'audit conformité" class="cta-button-secondary"><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> M'envoyer un email</a>
+        </div>
     </div>
 
     <!-- Bannière phrase clé -->
@@ -964,10 +1057,16 @@
             </div>
         </div>
         <p style="font-size: 1.3em; margin-bottom: 15px; font-weight: 600;">Discutons de votre projet</p>
-        <a href="mailto:emmanuel.genesteix@agilevizion.com?subject=Demande d'audit conformité" class="cta-email">
-            <i class="fa-solid fa-envelope"></i>
-            emmanuel.genesteix@agilevizion.com
-        </a>
+        <div class="cta-buttons">
+            <a href="https://calendly.com/emmanuel-genesteix" target="_blank" class="cta-calendly-primary">
+                <i class="fa-solid fa-calendar-check"></i>
+                Réserver un créneau
+            </a>
+            <a href="mailto:emmanuel.genesteix@agilevizion.com?subject=Demande d'audit conformité" class="cta-email-secondary">
+                <i class="fa-solid fa-envelope"></i>
+                M'envoyer un email
+            </a>
+        </div>
     </div>
 
     <div class="contact-info">
