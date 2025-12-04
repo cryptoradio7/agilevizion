@@ -467,22 +467,33 @@
             margin-right: auto;
         }
         
-        .cta-steps {
+        .hero-benefits {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 35px;
+            gap: 15px;
+            margin: 35px 0;
+            flex-wrap: wrap;
         }
         
-        .cta-steps span {
+        .hero-benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 5px;
             font-size: 1.15em;
-            opacity: 0.95;
-            background: rgba(255,255,255,0.1);
-            padding: 12px 25px;
-            border-radius: 8px;
-            width: 420px;
-            text-align: left;
+            font-weight: 600;
+        }
+        
+        .step-number {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #fff;
+        }
+        
+        .hero-arrow {
+            font-size: 1.5em;
+            color: rgba(255,255,255,0.8);
         }
         
         .cta-buttons {
@@ -588,6 +599,22 @@
             .cta-benefits {
                 flex-direction: column;
                 gap: 15px;
+            }
+            
+            .hero-benefits {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+                padding: 0 10px;
+            }
+            
+            .hero-benefit-item {
+                font-size: 0.95em;
+            }
+            
+            .hero-arrow {
+                transform: rotate(90deg);
+                font-size: 1em;
             }
         }
         
@@ -822,10 +849,21 @@
     <div class="cta-section" id="contact">
         <h2>Prêt à structurer vos services IT ?</h2>
         <p>Premier échange de 30 minutes — gratuit, sans engagement</p>
-        <div class="cta-steps">
-            <span><strong>1)</strong> Comprendre votre situation actuelle</span>
-            <span><strong>2)</strong> Identifier vos priorités</span>
-            <span><strong>3)</strong> Définir les prochaines étapes</span>
+        <div class="hero-benefits" style="margin-bottom: 30px;">
+            <div class="hero-benefit-item">
+                <span class="step-number">1)</span>
+                <span>Comprendre votre situation actuelle</span>
+            </div>
+            <i class="fa-solid fa-arrow-right hero-arrow"></i>
+            <div class="hero-benefit-item">
+                <span class="step-number">2)</span>
+                <span>Identifier vos priorités</span>
+            </div>
+            <i class="fa-solid fa-arrow-right hero-arrow"></i>
+            <div class="hero-benefit-item">
+                <span class="step-number">3)</span>
+                <span>Définir les prochaines étapes</span>
+            </div>
         </div>
         <div class="cta-buttons">
             <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/emmanuel-genesteix-agilevizion/diagnostic-agile-vizion'});return false;" class="cta-calendly-primary">
