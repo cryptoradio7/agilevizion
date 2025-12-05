@@ -38,8 +38,8 @@
         .profile-info p { font-size: 1.1em; line-height: 1.8; margin-bottom: 20px; color: #4a5568; }
         .certifications { background: #2d3748; color: white; padding: 60px 20px; }
         .certifications .section-title { color: white; }
-        .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; max-width: 1000px; margin: 0 auto; }
-        .cert-item { background: rgba(255,255,255,0.1); padding: 20px 15px; border-radius: 8px; text-align: center; border-top: 3px solid #667eea; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; height: 160px; }
+        .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, 180px); gap: 15px; max-width: 1000px; margin: 0 auto; justify-content: center; }
+        .cert-item { background: rgba(255,255,255,0.1); padding: 20px 15px; border-radius: 8px; text-align: center; border-top: 3px solid #667eea; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; width: 180px; height: 160px; }
         .cert-item .icon { font-size: 1.8em; margin-bottom: 10px; color: #667eea; flex-shrink: 0; }
         .cert-item h4 { color: white; margin-bottom: 5px; font-size: 0.85em; line-height: 1.3; flex-grow: 1; display: flex; align-items: center; }
         .cert-item p { color: #a0aec0; font-size: 0.75em; flex-shrink: 0; }
@@ -53,8 +53,8 @@
             .hero p { font-size: 1.1em; }
             .section-title { font-size: 1.6em; }
             .profile-section { grid-template-columns: 1fr; text-align: center; padding: 40px 15px; gap: 40px; }
-            .cert-grid { grid-template-columns: repeat(2, 1fr); padding: 0 15px; }
-            .cert-item { height: 150px; padding: 15px 10px; }
+            .cert-grid { grid-template-columns: repeat(2, 160px); padding: 0 15px; }
+            .cert-item { width: 160px; height: 150px; padding: 15px 10px; }
             .cert-item h4 { font-size: 0.8em; }
             .navbar { flex-direction: column; gap: 15px; padding: 15px; }
             .navbar-menu { flex-wrap: wrap; justify-content: center; gap: 5px; }
@@ -64,7 +64,8 @@
             .lang-switch { margin-left: 0; padding-left: 0; border-left: none; margin-top: 10px; }
         }
         @media (max-width: 480px) {
-            .cert-grid { grid-template-columns: 1fr; }
+            .cert-grid { grid-template-columns: 180px; }
+            .cert-item { width: 180px; }
             .hero h1 { font-size: 1.5em; }
             .section-title { font-size: 1.4em; }
             .navbar-brand { font-size: 1.2em; }
