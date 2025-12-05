@@ -1,13 +1,13 @@
-                                                                                                                                                                                                                                                                                                    <!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GRC Cybersécurité - AgileVizion</title>
+    <title>AgileVizion - GRC Cybersecurity & IT Service Management</title>
+    <link rel="alternate" hreflang="fr" href="FR/index.html" />
+    <link rel="alternate" hreflang="en" href="EN/index.html" />
+    <link rel="alternate" hreflang="x-default" href="FR/index.html" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Calendly Widget -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <style>
         * {
             margin: 0;
@@ -17,1093 +17,219 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        
-        .navbar {
-            background: #1a202c;
-            padding: 15px 40px;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-        
-        .navbar-brand {
-            color: white;
-            font-size: 1.5em;
-            font-weight: bold;
-            text-decoration: none;
-        }
-        
-        .navbar-brand span {
-            color: #c0392b;
-        }
-        
-        .navbar-menu {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .navbar-menu a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background 0.3s, color 0.3s;
-            font-weight: 500;
-        }
-        
-        .navbar-menu a:hover {
-            background: #2c3e50;
-        }
-        
-        .navbar-menu a.active {
-            background: #2c3e50;
-        }
-        
-        .hero {
-            background: linear-gradient(135deg, #c0392b 0%, #922b21 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 2.4em;
-            margin-bottom: 20px;
-            font-weight: 700;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .hero p {
-            font-size: 1.3em;
-            margin-bottom: 30px;
-            opacity: 0.95;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: #c0392b;
-            padding: 15px 40px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-        
-        .hero-buttons {
-            display: flex;
             justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .cta-button-primary {
-            display: inline-block;
-            background: white;
-            color: #c0392b;
-            padding: 15px 35px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        
-        .cta-button-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-        
-        .cta-button-secondary {
-            display: inline-block;
-            background: transparent;
             color: white;
-            padding: 15px 35px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1em;
-            border: 2px solid white;
-            transition: transform 0.3s, background 0.3s;
-        }
-        
-        .cta-button-secondary:hover {
-            transform: translateY(-2px);
-            background: rgba(255,255,255,0.1);
-        }
-        
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .cta-calendly-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: white;
-            color: #c0392b;
-            padding: 18px 40px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.2em;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        
-        .cta-calendly-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-        
-        .cta-email-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: transparent;
-            color: white;
-            padding: 18px 40px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.2em;
-            border: 2px solid white;
-            transition: transform 0.3s, background 0.3s;
-        }
-        
-        .cta-email-secondary:hover {
-            transform: translateY(-2px);
-            background: rgba(255,255,255,0.1);
-        }
-        
-        .hero-benefits {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin: 35px 0;
-            flex-wrap: wrap;
-        }
-        
-        .hero-benefit-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 5px;
-            font-size: 1.15em;
-            font-weight: 600;
-        }
-        
-        .step-number {
-            font-size: 1.3em;
-            font-weight: 700;
-            color: #fff;
-        }
-        
-        .hero-arrow {
-            font-size: 1.5em;
-            color: rgba(255,255,255,0.8);
         }
         
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-        
-        .section-title {
             text-align: center;
-            font-size: 2.2em;
-            margin-bottom: 40px;
-            color: #2d3748;
+            padding: 40px 20px;
+            max-width: 800px;
         }
         
-        /* Section Problèmes */
-        .problems-section {
-            background: #f7fafc;
-            padding: 60px 20px;
-            color: #333;
+        .logo {
+            font-size: 3.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
         }
         
-        .problems-section .section-title {
-            color: #2d3748;
-        }
-        
-        .problems-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            max-width: 1000px;
-            margin: 0 auto 40px;
-        }
-        
-        .problem-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            border-left: 3px solid #c0392b;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        }
-        
-        .problem-item i {
+        .logo .highlight-red {
             color: #c0392b;
+        }
+        
+        .logo .highlight-green {
+            color: #27ae60;
+        }
+        
+        .tagline {
             font-size: 1.3em;
-            margin-top: 3px;
-        }
-        
-        .problem-item p {
-            font-size: 1.1em;
-            color: #4a5568;
-        }
-        
-        .sanctions-box {
-            background: linear-gradient(135deg, #c0392b 0%, #922b21 100%);
-            padding: 30px 40px;
-            border-radius: 15px;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-            color: white;
-        }
-        
-        .sanctions-box h3 {
-            font-size: 1.4em;
-            margin-bottom: 20px;
-            color: white;
-        }
-        
-        .sanctions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-        
-        .sanction-item {
-            background: rgba(255,255,255,0.2);
-            padding: 20px;
-            border-radius: 10px;
-        }
-        
-        .sanction-item .percent {
-            font-size: 2.5em;
-            font-weight: bold;
-            display: block;
-            color: white;
-        }
-        
-        .sanction-item .label {
-            font-size: 0.95em;
-            color: rgba(255,255,255,0.95);
-        }
-        
-        /* Section Promesse */
-        .promise-section {
-            background: #1a1a2e;
-            padding: 60px 20px;
-            color: white;
-        }
-        
-        .promise-section .section-title {
-            color: white;
-        }
-        
-        .promise-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .promise-card {
-            text-align: center;
-            padding: 30px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 12px;
-        }
-        
-        .promise-card .number {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #c0392b 0%, #922b21 100%);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5em;
-            font-weight: bold;
-            margin: 0 auto 20px;
-        }
-        
-        .promise-card h3 {
-            color: white;
-            margin-bottom: 10px;
-            font-size: 1.3em;
-        }
-        
-        .promise-card p {
-            color: rgba(255,255,255,0.85);
-        }
-        
-        /* Section Livrables */
-        .deliverables-section {
-            padding: 60px 20px;
-            background: white;
-        }
-        
-        .deliverables-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        
-        .deliverable-card {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            padding: 25px;
-            background: #f7fafc;
-            border-radius: 12px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .deliverable-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-        
-        .deliverable-card .icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #c0392b 0%, #922b21 100%);
-            color: white;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3em;
-            flex-shrink: 0;
-        }
-        
-        .deliverable-card h4 {
-            color: #2d3748;
-            margin-bottom: 8px;
-            font-size: 1.1em;
-        }
-        
-        .deliverable-card p {
-            color: #4a5568;
-            font-size: 0.95em;
-        }
-        
-        /* Section Normes - MISE EN VALEUR */
-        .frameworks {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-            padding: 80px 20px;
-        }
-        
-        .frameworks .section-title {
-            color: white;
-            margin-bottom: 20px;
-        }
-        
-        .frameworks .section-subtitle {
-            text-align: center;
             color: rgba(255,255,255,0.8);
-            font-size: 1.2em;
-            margin-bottom: 50px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 60px;
+            line-height: 1.6;
         }
         
-        .frameworks-category {
-            max-width: 1100px;
-            margin: 0 auto 40px;
-        }
-        
-        .frameworks-category h3 {
-            color: #c0392b;
-            font-size: 1.3em;
-            margin-bottom: 20px;
+        .language-choice {
             display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .frameworks-category h3 i {
-            font-size: 0.9em;
-        }
-        
-        .frameworks-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-        }
-        
-        .framework-item {
-            background: rgba(255,255,255,0.08);
-            padding: 25px 20px;
-            border-radius: 12px;
-            text-align: center;
-            border-top: 4px solid #c0392b;
-            transition: transform 0.3s, background 0.3s;
-        }
-        
-        .framework-item:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.12);
-        }
-        
-        .framework-item h4 {
-            color: white;
-            margin-bottom: 8px;
-            font-size: 1.3em;
-            font-weight: 700;
-        }
-        
-        .framework-item p {
-            color: rgba(255,255,255,0.7);
-            font-size: 0.9em;
-        }
-        
-        .framework-item.highlight {
-            background: linear-gradient(135deg, #c0392b 0%, #922b21 100%);
-            border-top-color: white;
-        }
-        
-        .framework-item.highlight p {
-            color: rgba(255,255,255,0.9);
-        }
-        
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .service-card {
-            background: linear-gradient(135deg, #c0392b 0%, #922b21 100%);
-            color: white;
-            padding: 35px;
-            border-radius: 15px;
-            transition: transform 0.3s;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .service-card h3 {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-        }
-        
-        .service-card ul {
-            list-style: none;
-            margin-top: 15px;
-        }
-        
-        .service-card li {
-            padding: 8px 0;
-            padding-left: 25px;
-            position: relative;
-        }
-        
-        .service-card li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-        
-        .service-card p {
-            margin-bottom: 10px;
-            opacity: 0.95;
-        }
-        
-        /* GRC Section */
-        .grc-section {
-            background: #f7fafc;
-            padding: 60px 20px;
-        }
-        
-        .grc-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .grc-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .grc-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .grc-card .icon {
-            font-size: 3em;
-            margin-bottom: 20px;
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #c0392b 0%, #922b21 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
             justify-content: center;
-            margin-left: auto;
-            margin-right: auto;
-            color: white;
-        }
-        
-        .grc-card h3 {
-            color: #c0392b;
-            font-size: 1.8em;
-            margin-bottom: 15px;
-        }
-        
-        .grc-card p {
-            color: #4a5568;
-            line-height: 1.8;
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, #c0392b 0%, #922b21 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-        
-        .cta-section h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        
-        .cta-section p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .cta-email {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: white;
-            color: #c0392b;
-            padding: 18px 40px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.2em;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        
-        .cta-email:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-        
-        .cta-benefits {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 30px;
             flex-wrap: wrap;
         }
         
-        .cta-benefits span {
+        .lang-card {
+            background: rgba(255,255,255,0.08);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 40px 50px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            min-width: 200px;
+        }
+        
+        .lang-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .lang-card.fr:hover {
+            border-color: #c0392b;
+        }
+        
+        .lang-card.en:hover {
+            border-color: #27ae60;
+        }
+        
+        .lang-flag {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .lang-name {
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .lang-subtitle {
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        .services {
+            margin-top: 60px;
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .service-badge {
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 1em;
-            opacity: 0.95;
+            gap: 10px;
+            padding: 12px 25px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50px;
+            font-size: 0.95em;
+            color: rgba(255,255,255,0.8);
         }
         
-        /* Contact Info */
-        .contact-info {
-            background: #2d3748;
-            color: white;
-            padding: 40px 20px;
+        .service-badge i {
+            font-size: 1.2em;
+        }
+        
+        .service-badge.cyber i {
+            color: #c0392b;
+        }
+        
+        .service-badge.itsm i {
+            color: #27ae60;
+        }
+        
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
             text-align: center;
+            padding: 15px 20px;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.85em;
         }
         
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            color: white;
-            font-size: 2em;
-            transition: color 0.3s, transform 0.3s;
-        }
-        
-        .social-links a:hover {
-            color: #0077b5;
-            transform: scale(1.1);
-        }
-        
-        @media (max-width: 768px) {
-            .hero {
-                padding: 50px 15px;
+        @media (max-width: 600px) {
+            .logo {
+                font-size: 2.5em;
             }
             
-            .hero h1 {
-                font-size: 1.8em;
-                padding: 0 10px;
-            }
-            
-            .hero p {
+            .tagline {
                 font-size: 1.1em;
-                padding: 0 10px;
+                margin-bottom: 40px;
             }
             
-            .section-title {
-                font-size: 1.6em;
-                padding: 0 10px;
+            .language-choice {
+                flex-direction: column;
+                gap: 20px;
             }
             
-            .grc-grid, .promise-grid {
-                grid-template-columns: 1fr;
+            .lang-card {
+                padding: 30px 40px;
             }
             
-            .navbar {
+            .services {
                 flex-direction: column;
                 gap: 15px;
-                padding: 15px 15px;
+                margin-top: 40px;
             }
             
-            .navbar-menu {
-                flex-wrap: wrap;
+            .service-badge {
                 justify-content: center;
-                gap: 5px;
-            }
-            
-            .navbar-menu a {
-                padding: 8px 12px;
-                font-size: 0.9em;
-            }
-            
-            .sanctions-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .sanctions-box {
-                padding: 20px 15px;
-            }
-            
-            .cta-benefits {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .hero-benefits {
-                flex-direction: column;
-                gap: 10px;
-                align-items: center;
-                padding: 0 10px;
-            }
-            
-            .hero-benefit-item {
-                font-size: 0.95em;
-            }
-            
-            .hero-arrow {
-                transform: rotate(90deg);
-                font-size: 1em;
-            }
-            
-            /* Boutons responsive */
-            .cta-button {
-                padding: 12px 20px;
-                font-size: 0.9em;
-                max-width: 90%;
-                word-break: break-word;
-            }
-            
-            .cta-email {
-                padding: 14px 20px;
-                font-size: 0.95em;
-                max-width: 90%;
-                word-break: break-word;
-            }
-            
-            /* CTA Section */
-            .cta-section {
-                padding: 50px 15px;
-            }
-            
-            .cta-section h2 {
-                font-size: 1.6em;
-            }
-            
-            .cta-section p {
-                font-size: 1em;
-                padding: 0 10px;
-            }
-            
-            /* Grilles responsive */
-            .problems-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .deliverables-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .deliverable-card {
-                padding: 20px 15px;
-            }
-            
-            .frameworks-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .frameworks-category h3 {
-                font-size: 1.1em;
-            }
-            
-            .framework-item {
-                padding: 20px 15px;
-            }
-            
-            .promise-card {
-                padding: 20px 15px;
-            }
-            
-            /* Contact info */
-            .contact-info {
-                padding: 30px 15px;
-            }
-            
-            .contact-info p {
-                font-size: 1em !important;
-            }
-        }
-        
-        /* Extra small devices */
-        @media (max-width: 400px) {
-            .hero h1 {
-                font-size: 1.5em;
-            }
-            
-            .cta-button, .cta-email {
-                padding: 12px 15px;
-                font-size: 0.85em;
-            }
-            
-            .navbar-brand {
-                font-size: 1.2em;
-            }
-            
-            .section-title {
-                font-size: 1.4em;
-            }
-            
-            .cta-section h2 {
-                font-size: 1.4em;
             }
         }
     </style>
+    <script>
+        // Auto-detect language preference
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user has a language preference stored
+            const savedLang = localStorage.getItem('agilevizion-lang');
+            if (savedLang === 'fr') {
+                window.location.href = 'FR/index.html';
+            } else if (savedLang === 'en') {
+                window.location.href = 'EN/index.html';
+            }
+            // If no preference, show the language selection page
+        });
+        
+        function selectLanguage(lang) {
+            localStorage.setItem('agilevizion-lang', lang);
+        }
+    </script>
 </head>
 <body>
-    <nav class="navbar">
-        <a href="index.html" class="navbar-brand">Agile<span>Vizion</span></a>
-        <div class="navbar-menu">
-            <a href="index.html" class="active">GRC Cybersécurité</a>
-            <a href="service_management.html">Service Management</a>
-            <a href="pourquoi_moi.html">Pourquoi moi</a>
+    <div class="container">
+        <div class="logo">
+            Agile<span class="highlight-red">Viz</span><span class="highlight-green">ion</span>
         </div>
-    </nav>
-    
-    <!-- HERO -->
-    <div class="hero">
-        <h1>10 millions d'euros d'amende ou 2% du CA — et ce n'est que NIS 2</h1>
-        <p>DORA, NIS 2, ISO 27001, RGPD... Chaque mois une nouvelle exigence ?</p>
-        <p>Vous voulez savoir où vous en êtes avant que le régulateur ne le fasse ?</p>
-    </div>
-
-    <!-- Bannière phrase clé -->
-    <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 40px 20px; text-align: center;">
-        <p style="max-width: 900px; margin: 0 auto; font-size: 1.4em; color: #fff; line-height: 1.6;">
-            <i class="fa-solid fa-shield-halved" style="color: #c0392b; margin-right: 10px;"></i>
-            J'aide les organisations à se mettre en <strong style="color: #c0392b;">conformité</strong> avec le <strong style="color: #c0392b;">cadre réglementaire</strong> en matière de <strong style="color: #c0392b;">cybersécurité</strong>
+        
+        <p class="tagline">
+            GRC Cybersecurity & IT Service Management<br>
+            Consulting Services in Luxembourg & Europe
         </p>
-        <div class="hero-buttons" style="margin-top: 25px;">
-            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/emmanuel-genesteix-agilevizion/diagnostic-agilevizion'});return false;" class="cta-button-primary"><i class="fa-solid fa-calendar-check" style="margin-right: 8px;"></i> Réserver un créneau</a>
-            <a href="mailto:emmanuel.genesteix@agilevizion.com?subject=Demande d'audit conformité" class="cta-button-secondary"><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> M'envoyer un email</a>
-        </div>
-    </div>
-
-    <!-- Section PROBLÈMES -->
-    <div class="problems-section">
-        <h2 class="section-title">Vous vous posez ces questions ?</h2>
-        <div class="problems-grid">
-            <div class="problem-item">
-                <i class="fa-solid fa-circle-question"></i>
-                <p>Quelles normes s'appliquent <strong>vraiment</strong> à mon organisation ?</p>
-            </div>
-            <div class="problem-item">
-                <i class="fa-solid fa-circle-question"></i>
-                <p>Qu'est-ce qui est <strong>obligatoire</strong> vs recommandé ?</p>
-            </div>
-            <div class="problem-item">
-                <i class="fa-solid fa-circle-question"></i>
-                <p>Comment auditer sans mobiliser mon équipe <strong>pendant des mois</strong> ?</p>
-            </div>
-            <div class="problem-item">
-                <i class="fa-solid fa-circle-question"></i>
-                <p>Et si je rate quelque chose qui <strong>expose l'entreprise</strong> ?</p>
-            </div>
-        </div>
         
-        <div class="sanctions-box">
-            <h3><i class="fa-solid fa-triangle-exclamation" style="margin-right: 10px;"></i> Le risque financier est réel</h3>
-            <div class="sanctions-grid">
-                <div class="sanction-item">
-                    <span class="percent">2%</span>
-                    <span class="label">du CA ou 10M€<br><strong>NIS 2</strong> — Entités Essentielles</span>
-                </div>
-                <div class="sanction-item">
-                    <span class="percent">4%</span>
-                    <span class="label">du CA ou 20M€<br><strong>RGPD</strong> — Violations graves</span>
-                </div>
-                <div class="sanction-item">
-                    <span class="percent" style="font-size: 1.5em;">⚠️</span>
-                    <span class="label"><strong>DORA</strong><br>Retrait d'agrément, interdiction d'exercer</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Section PROMESSE -->
-    <div class="promise-section">
-        <h2 class="section-title">Mon approche</h2>
-        <div class="promise-grid">
-            <div class="promise-card">
-                <div class="number">1</div>
-                <h3>Diagnostic initial</h3>
-                <p>J'identifie les normes réellement applicables à votre contexte — pas de sur-conformité inutile</p>
-            </div>
-            <div class="promise-card">
-                <div class="number">2</div>
-                <h3>Audit terrain</h3>
-                <p>Méthodologie structurée avec des livrables professionnels et un planning clair</p>
-            </div>
-            <div class="promise-card">
-                <div class="number">3</div>
-                <h3>Visibilité totale</h3>
-                <p>Charge de travail pour vos équipes, jalons clairs, zéro surprise</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Section LIVRABLES -->
-    <div class="deliverables-section">
-        <h2 class="section-title">Ce que je livre</h2>
-        <div class="deliverables-grid">
-            <div class="deliverable-card">
-                <div class="icon"><i class="fa-solid fa-list-check"></i></div>
-                <div>
-                    <h4>Grille d'audit complète</h4>
-                    <p>100 à 160+ points de contrôle par norme, alignés sur les textes officiels</p>
-                </div>
-            </div>
-            <div class="deliverable-card">
-                <div class="icon"><i class="fa-solid fa-file-lines"></i></div>
-                <div>
-                    <h4>Rapport d'audit exécutif</h4>
-                    <p>Synthèse claire pour la direction + analyse détaillée pour les équipes techniques</p>
-                </div>
-            </div>
-            <div class="deliverable-card">
-                <div class="icon"><i class="fa-solid fa-road"></i></div>
-                <div>
-                    <h4>Feuille de route priorisée</h4>
-                    <p>Actions classées par criticité, effort et impact — prêtes à exécuter</p>
-                </div>
-            </div>
-            <div class="deliverable-card">
-                <div class="icon"><i class="fa-solid fa-file-signature"></i></div>
-                <div>
-                    <h4>Procès-verbal de validation</h4>
-                    <p>Document formel de clôture, signé par les parties</p>
-                </div>
-            </div>
-            <div class="deliverable-card">
-                <div class="icon"><i class="fa-solid fa-folder-open"></i></div>
-                <div>
-                    <h4>Modèles réutilisables</h4>
-                    <p>Lettres de mission, fiches de non-conformité, registres, matrices RACI</p>
-                </div>
-            </div>
-            <div class="deliverable-card">
-                <div class="icon"><i class="fa-solid fa-diagram-project"></i></div>
-                <div>
-                    <h4>Infographie de la norme</h4>
-                    <p>Vue d'ensemble visuelle pour comprendre l'architecture du référentiel</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Section NORMES COUVERTES - MISE EN VALEUR -->
-    <div class="frameworks">
-        <h2 class="section-title">Référentiels & Normes couverts</h2>
-        <p class="section-subtitle">Des kits d'audit complets, testés et prêts à l'emploi pour chaque référentiel</p>
-        
-        <div class="frameworks-category">
-            <h3><i class="fa-solid fa-landmark-flag"></i> Réglementations européennes</h3>
-            <div class="frameworks-grid">
-                <div class="framework-item highlight">
-                    <h4>DORA</h4>
-                    <p>Résilience opérationnelle numérique — Secteur financier</p>
-                </div>
-                <div class="framework-item highlight">
-                    <h4>NIS 2</h4>
-                    <p>Directive cybersécurité — Infrastructures critiques</p>
-                </div>
-                <div class="framework-item">
-                    <h4>RGPD</h4>
-                    <p>Protection des données personnelles</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="frameworks-category">
-            <h3><i class="fa-solid fa-certificate"></i> Standards internationaux ISO</h3>
-            <div class="frameworks-grid">
-                <div class="framework-item">
-                    <h4>ISO 27001</h4>
-                    <p>Système de management de la sécurité</p>
-                </div>
-                <div class="framework-item">
-                    <h4>ISO 27002</h4>
-                    <p>Mesures de sécurité de l'information</p>
-                </div>
-                <div class="framework-item">
-                    <h4>ISO 27005</h4>
-                    <p>Gestion des risques de sécurité</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="frameworks-category">
-            <h3><i class="fa-solid fa-shield-halved"></i> Frameworks cybersécurité</h3>
-            <div class="frameworks-grid">
-                <div class="framework-item">
-                    <h4>CIS Controls v8</h4>
-                    <p>18 contrôles, 153 safeguards</p>
-                </div>
-                <div class="framework-item">
-                    <h4>NIST 800-53</h4>
-                    <p>Contrôles de sécurité fédéraux US</p>
-                </div>
-                <div class="framework-item">
-                    <h4>NIST 800-37</h4>
-                    <p>Risk Management Framework</p>
-                </div>
-                <div class="framework-item">
-                    <h4>EBIOS RM</h4>
-                    <p>Analyse des risques (ANSSI)</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- CTA Final -->
-    <div class="cta-section" id="contact">
-        <h2>Prêt à y voir clair sur votre conformité ?</h2>
-        <p>Premier échange de 30 minutes pour identifier vos priorités — gratuit, sans engagement</p>
-        <div class="hero-benefits" style="margin-bottom: 30px;">
-            <div class="hero-benefit-item">
-                <span class="step-number">1)</span>
-                <span>Identifier les normes applicables</span>
-            </div>
-            <i class="fa-solid fa-arrow-right hero-arrow"></i>
-            <div class="hero-benefit-item">
-                <span class="step-number">2)</span>
-                <span>Estimation durée et budget</span>
-            </div>
-            <i class="fa-solid fa-arrow-right hero-arrow"></i>
-            <div class="hero-benefit-item">
-                <span class="step-number">3)</span>
-                <span>Premier diagnostic offert</span>
-            </div>
-        </div>
-        <p style="font-size: 1.3em; margin-bottom: 15px; font-weight: 600;">Discutons de votre projet</p>
-        <div class="cta-buttons">
-            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/emmanuel-genesteix-agilevizion/diagnostic-agilevizion'});return false;" class="cta-calendly-primary">
-                <i class="fa-solid fa-calendar-check"></i>
-                Réserver un créneau
+        <div class="language-choice">
+            <a href="FR/index.html" class="lang-card fr" onclick="selectLanguage('fr')">
+                <div class="lang-flag">🇫🇷</div>
+                <div class="lang-name">Français</div>
+                <div class="lang-subtitle">Accéder au site</div>
             </a>
-            <a href="mailto:emmanuel.genesteix@agilevizion.com?subject=Demande d'audit conformité" class="cta-email-secondary">
-            <i class="fa-solid fa-envelope"></i>
-                M'envoyer un email
-        </a>
+            <a href="EN/index.html" class="lang-card en" onclick="selectLanguage('en')">
+                <div class="lang-flag">🇬🇧</div>
+                <div class="lang-name">English</div>
+                <div class="lang-subtitle">Access the website</div>
+            </a>
         </div>
-    </div>
-
-    <div class="contact-info">
-        <div class="container">
-            <h2 style="margin-bottom: 20px;">Me contacter</h2>
-            <p style="font-size: 1.2em; margin-bottom: 10px;">📱 +352.661.78.08.07 · ✉️ <a href="mailto:emmanuel.genesteix@agilevizion.com" style="color: white;">emmanuel.genesteix@agilevizion.com</a></p>
-            <p style="font-size: 1.2em;">📍 Luxembourg (interventions Europe)</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/genesteix-emmanuel/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        
+        <div class="services">
+            <div class="service-badge cyber">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>DORA · NIS 2 · ISO 27001 · GDPR</span>
+            </div>
+            <div class="service-badge itsm">
+                <i class="fa-solid fa-gears"></i>
+                <span>ITIL 4 · ISO 20000 · ServiceNow</span>
             </div>
         </div>
     </div>
-
-    <footer style="background: #1a1a2e; color: rgba(255,255,255,0.6); text-align: center; padding: 15px 20px; font-size: 0.85em;">
-        <p style="margin: 0;">Agile Vizion · N° immatriculation A46385 · TVA LU36976357</p>
+    
+    <footer>
+        Agile Vizion · Luxembourg · N° A46385 · VAT LU36976357
     </footer>
 </body>
 </html>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            

@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Management IT - AgileVizion</title>
+    <title>GRC Cybersécurité - AgileVizion</title>
+    <link rel="alternate" hreflang="fr" href="index.html" />
+    <link rel="alternate" hreflang="en" href="../EN/index.html" />
+    <link rel="alternate" hreflang="x-default" href="index.html" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Calendly Widget -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -41,12 +44,13 @@
         }
         
         .navbar-brand span {
-            color: #27ae60;
+            color: #c0392b;
         }
         
         .navbar-menu {
             display: flex;
             gap: 10px;
+            align-items: center;
         }
         
         .navbar-menu a {
@@ -65,35 +69,40 @@
         .navbar-menu a.active {
             background: #2c3e50;
         }
+
+        .lang-switch {
+            display: flex;
+            gap: 5px;
+            margin-left: 20px;
+            padding-left: 20px;
+            border-left: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .lang-switch a {
+            padding: 5px 10px !important;
+            font-size: 0.85em;
+            opacity: 0.7;
+        }
+
+        .lang-switch a.active-lang {
+            opacity: 1;
+            background: rgba(255,255,255,0.1);
+        }
         
         .hero {
-            background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
+            background: linear-gradient(135deg, #c0392b 0%, #922b21 100%);
             color: white;
-            padding: 105px 20px;
+            padding: 80px 20px;
             text-align: center;
         }
         
-        .hero-questions {
-            max-width: 900px;
-            margin: 0 auto 25px;
-        }
-        
         .hero h1 {
-            font-size: 2.2em;
-            margin-bottom: 15px;
+            font-size: 2.4em;
+            margin-bottom: 20px;
             font-weight: 700;
-        }
-        
-        .hero-sub {
-            font-size: 1.3em;
-            opacity: 0.9;
-            margin-bottom: 5px;
-        }
-        
-        .hero-baseline {
-            font-size: 1.4em;
-            margin-bottom: 30px;
-            opacity: 0.95;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .hero p {
@@ -112,7 +121,7 @@
         .cta-button-primary {
             display: inline-block;
             background: white;
-            color: #27ae60;
+            color: #c0392b;
             padding: 15px 35px;
             text-decoration: none;
             border-radius: 50px;
@@ -145,326 +154,51 @@
             background: rgba(255,255,255,0.1);
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.2em;
-            margin-bottom: 40px;
-            color: #2d3748;
-        }
-        
-        /* Section Problèmes */
-        .problems-section {
-            background: #f7fafc;
-            padding: 60px 20px;
-            color: #333;
-        }
-        
-        .problems-section .section-title {
-            color: #2d3748;
-        }
-        
-        .problems-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-            max-width: 1100px;
-            margin: 0 auto 40px;
-        }
-        
-        .problem-item {
+        .cta-buttons {
             display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            padding: 25px;
-            background: white;
-            border-radius: 10px;
-            border-left: 3px solid #27ae60;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        }
-        
-        .problem-item i {
-            color: #27ae60;
-            font-size: 1.5em;
-            margin-top: 3px;
-        }
-        
-        .problem-item strong {
-            display: block;
-            font-size: 1.15em;
-            margin-bottom: 8px;
-            color: #2d3748;
-        }
-        
-        .problem-item p {
-            font-size: 1em;
-            color: #4a5568;
-            margin: 0;
-        }
-        
-        .cost-box {
-            background: linear-gradient(135deg, #1e8449 0%, #145a32 100%);
-            padding: 40px;
-            border-radius: 15px;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-        
-        .cost-box h3 {
-            font-size: 1.5em;
-            margin-bottom: 25px;
-            color: white;
-        }
-        
-        .cost-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-        
-        .cost-item {
-            background: rgba(255,255,255,0.15);
-            padding: 25px 20px;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        
-        .cost-item .percent {
-            font-size: 3em;
-            font-weight: bold;
-            display: block;
-            color: white;
-            margin-bottom: 10px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-        
-        .cost-item .label {
-            font-size: 1em;
-            color: rgba(255,255,255,0.95);
-            line-height: 1.4;
-        }
-        
-        /* Section Promesse */
-        .promise-section {
-            background: #1a1a2e;
-            padding: 60px 20px;
-        }
-        
-        .promise-section .section-title {
-            color: white;
-        }
-        
-        .promise-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .promise-card {
-            text-align: center;
-            padding: 30px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 12px;
-        }
-        
-        .promise-card .number {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
             justify-content: center;
-            font-size: 1.5em;
-            font-weight: bold;
-            margin: 0 auto 20px;
-        }
-        
-        .promise-card h3 {
-            color: #27ae60;
-            margin-bottom: 10px;
-            font-size: 1.3em;
-        }
-        
-        .promise-card p {
-            color: rgba(255,255,255,0.85);
-        }
-        
-        /* Section Livrables */
-        .deliverables-section {
-            padding: 60px 20px;
-            background: white;
-        }
-        
-        .deliverables-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        
-        .deliverable-card {
-            display: flex;
-            align-items: flex-start;
             gap: 20px;
-            padding: 25px;
-            background: #f7fafc;
-            border-radius: 12px;
-            transition: transform 0.3s, box-shadow 0.3s;
+            flex-wrap: wrap;
         }
         
-        .deliverable-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-        
-        .deliverable-card .icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
-            color: white;
-            border-radius: 10px;
-            display: flex;
+        .cta-calendly-primary {
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.3em;
-            flex-shrink: 0;
-        }
-        
-        .deliverable-card h4 {
-            color: #2d3748;
-            margin-bottom: 8px;
-            font-size: 1.1em;
-        }
-        
-        .deliverable-card p {
-            color: #4a5568;
-            font-size: 0.95em;
-        }
-        
-        /* Section Frameworks */
-        .frameworks {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-            padding: 80px 20px;
-        }
-        
-        .frameworks .section-title {
-            color: white;
-            margin-bottom: 20px;
-        }
-        
-        .frameworks .section-subtitle {
-            text-align: center;
-            color: rgba(255,255,255,0.8);
+            gap: 12px;
+            background: white;
+            color: #c0392b;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
             font-size: 1.2em;
-            margin-bottom: 50px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
         
-        .frameworks-category {
-            max-width: 1100px;
-            margin: 0 auto 40px;
+        .cta-calendly-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
         
-        .frameworks-category h3 {
-            color: #27ae60;
-            font-size: 1.3em;
-            margin-bottom: 20px;
-            display: flex;
+        .cta-email-secondary {
+            display: inline-flex;
             align-items: center;
-            gap: 10px;
-        }
-        
-        .frameworks-category h3 i {
-            font-size: 0.9em;
-        }
-        
-        .frameworks-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-        }
-        
-        @media (max-width: 900px) {
-            .frameworks-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 600px) {
-            .frameworks-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .framework-item {
-            background: rgba(255,255,255,0.08);
-            padding: 25px 20px;
-            border-radius: 12px;
-            text-align: center;
-            border-top: 4px solid #27ae60;
+            gap: 12px;
+            background: transparent;
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2em;
+            border: 2px solid white;
             transition: transform 0.3s, background 0.3s;
         }
         
-        .framework-item:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.12);
-        }
-        
-        .framework-item h4 {
-            color: white;
-            margin-bottom: 8px;
-            font-size: 1.3em;
-            font-weight: 700;
-        }
-        
-        .framework-item p {
-            color: rgba(255,255,255,0.7);
-            font-size: 0.9em;
-        }
-        
-        .framework-item.highlight {
-            background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
-            border-top-color: white;
-        }
-        
-        .framework-item.highlight p {
-            color: rgba(255,255,255,0.9);
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-        
-        .cta-section h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        
-        .cta-section p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+        .cta-email-secondary:hover {
+            transform: translateY(-2px);
+            background: rgba(255,255,255,0.1);
         }
         
         .hero-benefits {
@@ -496,54 +230,296 @@
             color: rgba(255,255,255,0.8);
         }
         
-        .cta-buttons {
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            color: #2d3748;
+        }
+        
+        .problems-section {
+            background: #f7fafc;
+            padding: 60px 20px;
+            color: #333;
+        }
+        
+        .problems-section .section-title {
+            color: #2d3748;
+        }
+        
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto 40px;
+        }
+        
+        .problem-item {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .cta-calendly-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px;
             background: white;
-            color: #27ae60;
-            padding: 18px 35px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
+            border-radius: 10px;
+            border-left: 3px solid #c0392b;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        
+        .problem-item i {
+            color: #c0392b;
+            font-size: 1.3em;
+            margin-top: 3px;
+        }
+        
+        .problem-item p {
             font-size: 1.1em;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            color: #4a5568;
         }
         
-        .cta-calendly-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-        
-        .cta-email-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: transparent;
+        .sanctions-box {
+            background: linear-gradient(135deg, #c0392b 0%, #922b21 100%);
+            padding: 30px 40px;
+            border-radius: 15px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
             color: white;
-            padding: 18px 35px;
-            text-decoration: none;
-            border-radius: 50px;
+        }
+        
+        .sanctions-box h3 {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .sanctions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .sanction-item {
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .sanction-item .percent {
+            font-size: 2.5em;
             font-weight: bold;
+            display: block;
+            color: white;
+        }
+        
+        .sanction-item .label {
+            font-size: 0.95em;
+            color: rgba(255,255,255,0.95);
+        }
+        
+        .promise-section {
+            background: #1a1a2e;
+            padding: 60px 20px;
+            color: white;
+        }
+        
+        .promise-section .section-title {
+            color: white;
+        }
+        
+        .promise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .promise-card {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+        }
+        
+        .promise-card .number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #c0392b 0%, #922b21 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .promise-card h3 {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .promise-card p {
+            color: rgba(255,255,255,0.85);
+        }
+        
+        .deliverables-section {
+            padding: 60px 20px;
+            background: white;
+        }
+        
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .deliverable-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 25px;
+            background: #f7fafc;
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .deliverable-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .deliverable-card .icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #c0392b 0%, #922b21 100%);
+            color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3em;
+            flex-shrink: 0;
+        }
+        
+        .deliverable-card h4 {
+            color: #2d3748;
+            margin-bottom: 8px;
             font-size: 1.1em;
-            border: 2px solid white;
+        }
+        
+        .deliverable-card p {
+            color: #4a5568;
+            font-size: 0.95em;
+        }
+        
+        .frameworks {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 80px 20px;
+        }
+        
+        .frameworks .section-title {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .frameworks .section-subtitle {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            font-size: 1.2em;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .frameworks-category {
+            max-width: 1100px;
+            margin: 0 auto 40px;
+        }
+        
+        .frameworks-category h3 {
+            color: #c0392b;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .frameworks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+        }
+        
+        .framework-item {
+            background: rgba(255,255,255,0.08);
+            padding: 25px 20px;
+            border-radius: 12px;
+            text-align: center;
+            border-top: 4px solid #c0392b;
             transition: transform 0.3s, background 0.3s;
         }
         
-        .cta-email-secondary:hover {
-            transform: translateY(-2px);
-            background: rgba(255,255,255,0.1);
+        .framework-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.12);
         }
         
-        /* Contact Info */
+        .framework-item h4 {
+            color: white;
+            margin-bottom: 8px;
+            font-size: 1.3em;
+            font-weight: 700;
+        }
+        
+        .framework-item p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9em;
+        }
+        
+        .framework-item.highlight {
+            background: linear-gradient(135deg, #c0392b 0%, #922b21 100%);
+            border-top-color: white;
+        }
+        
+        .framework-item.highlight p {
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #c0392b 0%, #922b21 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
         .contact-info {
             background: #2d3748;
             color: white;
@@ -576,10 +552,17 @@
             
             .hero h1 {
                 font-size: 1.8em;
+                padding: 0 10px;
+            }
+            
+            .hero p {
+                font-size: 1.1em;
+                padding: 0 10px;
             }
             
             .section-title {
                 font-size: 1.6em;
+                padding: 0 10px;
             }
             
             .promise-grid {
@@ -589,6 +572,7 @@
             .navbar {
                 flex-direction: column;
                 gap: 15px;
+                padding: 15px 15px;
             }
             
             .navbar-menu {
@@ -602,13 +586,12 @@
                 font-size: 0.9em;
             }
             
-            .cost-grid {
+            .sanctions-grid {
                 grid-template-columns: 1fr;
             }
             
-            .cta-benefits {
-                flex-direction: column;
-                gap: 15px;
+            .sanctions-box {
+                padding: 20px 15px;
             }
             
             .hero-benefits {
@@ -626,6 +609,69 @@
                 transform: rotate(90deg);
                 font-size: 1em;
             }
+            
+            .cta-button-primary, .cta-button-secondary {
+                padding: 12px 20px;
+                font-size: 0.9em;
+                max-width: 90%;
+                word-break: break-word;
+            }
+            
+            .cta-section {
+                padding: 50px 15px;
+            }
+            
+            .cta-section h2 {
+                font-size: 1.6em;
+            }
+            
+            .cta-section p {
+                font-size: 1em;
+                padding: 0 10px;
+            }
+            
+            .problems-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .deliverables-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .deliverable-card {
+                padding: 20px 15px;
+            }
+            
+            .frameworks-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .frameworks-category h3 {
+                font-size: 1.1em;
+            }
+            
+            .framework-item {
+                padding: 20px 15px;
+            }
+            
+            .promise-card {
+                padding: 20px 15px;
+            }
+            
+            .contact-info {
+                padding: 30px 15px;
+            }
+            
+            .contact-info p {
+                font-size: 1em !important;
+            }
+
+            .lang-switch {
+                margin-left: 0;
+                padding-left: 0;
+                border-left: none;
+                margin-top: 10px;
+            }
         }
         
         @media (max-width: 400px) {
@@ -633,12 +679,21 @@
                 font-size: 1.5em;
             }
             
-            .section-title {
-                font-size: 1.4em;
+            .cta-button-primary, .cta-button-secondary {
+                padding: 12px 15px;
+                font-size: 0.85em;
             }
             
             .navbar-brand {
                 font-size: 1.2em;
+            }
+            
+            .section-title {
+                font-size: 1.4em;
+            }
+            
+            .cta-section h2 {
+                font-size: 1.4em;
             }
         }
     </style>
@@ -647,76 +702,71 @@
     <nav class="navbar">
         <a href="index.html" class="navbar-brand">Agile<span>Vizion</span></a>
         <div class="navbar-menu">
-            <a href="index.html">GRC Cybersécurité</a>
-            <a href="service_management.html" class="active">Service Management</a>
+            <a href="index.html" class="active">GRC Cybersécurité</a>
+            <a href="service_management.html">Service Management</a>
             <a href="pourquoi_moi.html">Pourquoi moi</a>
+            <div class="lang-switch">
+                <a href="index.html" class="active-lang">FR</a>
+                <a href="../EN/index.html">EN</a>
+            </div>
         </div>
     </nav>
     
-    <!-- HERO avec accroche -->
+    <!-- HERO -->
     <div class="hero">
-        <div class="hero-questions">
-            <h1>Vos processus ITSM reposent sur des habitudes plutôt que sur des standards ?</h1>
-            <p class="hero-sub">Vos équipes IT sont compétentes, mais chacun travaille à sa manière ?</p>
-            <p class="hero-sub">Vous avez les outils — il vous manque la méthode ?</p>
-        </div>
+        <h1>10 millions d'euros d'amende ou 2% du CA — et ce n'est que NIS 2</h1>
+        <p>DORA, NIS 2, ISO 27001, RGPD... Chaque mois une nouvelle exigence ?</p>
+        <p>Vous voulez savoir où vous en êtes avant que le régulateur ne le fasse ?</p>
     </div>
 
-    <!-- BANDEAU sous le hero -->
+    <!-- Bannière phrase clé -->
     <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 40px 20px; text-align: center;">
-        <p style="max-width: 900px; margin: 0 auto 30px; font-size: 1.4em; color: #fff; line-height: 1.6;">
-            J'aide les organisations à structurer leurs services IT selon les standards <strong style="color: #27ae60;">ITIL 4</strong> et <strong style="color: #27ae60;">ISO 20000</strong>
+        <p style="max-width: 900px; margin: 0 auto; font-size: 1.4em; color: #fff; line-height: 1.6;">
+            <i class="fa-solid fa-shield-halved" style="color: #c0392b; margin-right: 10px;"></i>
+            J'aide les organisations à se mettre en <strong style="color: #c0392b;">conformité</strong> avec le <strong style="color: #c0392b;">cadre réglementaire</strong> en matière de <strong style="color: #c0392b;">cybersécurité</strong>
         </p>
-        <div class="hero-buttons">
+        <div class="hero-buttons" style="margin-top: 25px;">
             <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/emmanuel-genesteix-agilevizion/diagnostic-agilevizion'});return false;" class="cta-button-primary"><i class="fa-solid fa-calendar-check" style="margin-right: 8px;"></i> Réserver un créneau</a>
-            <a href="/cdn-cgi/l/email-protection#3f5a52525e514a5a5311585a515a4c4b5a56477f5e5856535a495645565051115c5052004c4a5d555a5c4b027b5a525e515b5a1f6c5a4d49565c5a1f725e515e585a525a514b1f766b" class="cta-button-secondary"><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> M'envoyer un email</a>
+            <a href="mailto:emmanuel.genesteix@agilevizion.com?subject=Demande d'audit conformité" class="cta-button-secondary"><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> M'envoyer un email</a>
         </div>
     </div>
 
     <!-- Section PROBLÈMES -->
     <div class="problems-section">
-        <h2 class="section-title">Ces situations vous parlent ?</h2>
+        <h2 class="section-title">Vous vous posez ces questions ?</h2>
         <div class="problems-grid">
             <div class="problem-item">
-                <i class="fa-solid fa-fire"></i>
-                <div>
-                    <strong>Incidents qui se répètent</strong>
-                    <p>Votre équipe éteint les mêmes feux chaque semaine sans comprendre la cause racine. Le temps et l'argent s'évaporent.</p>
-                </div>
+                <i class="fa-solid fa-circle-question"></i>
+                <p>Quelles normes s'appliquent <strong>vraiment</strong> à mon organisation ?</p>
             </div>
             <div class="problem-item">
-                <i class="fa-solid fa-clock"></i>
-                <div>
-                    <strong>SLA non respectés</strong>
-                    <p>Les délais explosent, les clients sont mécontents, et votre réputation en prend un coup.</p>
-                </div>
+                <i class="fa-solid fa-circle-question"></i>
+                <p>Qu'est-ce qui est <strong>obligatoire</strong> vs recommandé ?</p>
             </div>
             <div class="problem-item">
-                <i class="fa-solid fa-database"></i>
-                <div>
-                    <strong>CMDB inexploitable</strong>
-                    <p>Vos données d'infrastructure sont obsolètes ou inexistantes. Impossible de prendre des décisions éclairées.</p>
-                </div>
+                <i class="fa-solid fa-circle-question"></i>
+                <p>Comment auditer sans mobiliser mon équipe <strong>pendant des mois</strong> ?</p>
             </div>
             <div class="problem-item">
-                <i class="fa-solid fa-shuffle"></i>
-                <div>
-                    <strong>Changements risqués</strong>
-                    <p>Chaque mise à jour devient un stress. Pas de processus clair, pas de plan B.</p>
-                </div>
+                <i class="fa-solid fa-circle-question"></i>
+                <p>Et si je rate quelque chose qui <strong>expose l'entreprise</strong> ?</p>
             </div>
-            <div class="problem-item">
-                <i class="fa-solid fa-money-bill-trend-up"></i>
-                <div>
-                    <strong>Coûts IT incontrôlés</strong>
-                    <p>Vous ne savez pas où va votre budget IT ni comment optimiser vos investissements.</p>
+        </div>
+        
+        <div class="sanctions-box">
+            <h3><i class="fa-solid fa-triangle-exclamation" style="margin-right: 10px;"></i> Le risque financier est réel</h3>
+            <div class="sanctions-grid">
+                <div class="sanction-item">
+                    <span class="percent">2%</span>
+                    <span class="label">du CA ou 10M€<br><strong>NIS 2</strong> — Entités Essentielles</span>
                 </div>
-            </div>
-            <div class="problem-item">
-                <i class="fa-solid fa-user-clock"></i>
-                <div>
-                    <strong>Équipes débordées</strong>
-                    <p>Vos techniciens croulent sous les tickets sans outils ni processus efficaces.</p>
+                <div class="sanction-item">
+                    <span class="percent">4%</span>
+                    <span class="label">du CA ou 20M€<br><strong>RGPD</strong> — Violations graves</span>
+                </div>
+                <div class="sanction-item">
+                    <span class="percent" style="font-size: 1.5em;">⚠️</span>
+                    <span class="label"><strong>DORA</strong><br>Retrait d'agrément, interdiction d'exercer</span>
                 </div>
             </div>
         </div>
@@ -728,18 +778,18 @@
         <div class="promise-grid">
             <div class="promise-card">
                 <div class="number">1</div>
-                <h3>Diagnostic</h3>
-                <p>J'évalue votre maturité ITSM et mesure l'écart avec ISO 20000 — vous savez où vous en êtes</p>
+                <h3>Diagnostic initial</h3>
+                <p>J'identifie les normes réellement applicables à votre contexte — pas de sur-conformité inutile</p>
             </div>
             <div class="promise-card">
                 <div class="number">2</div>
-                <h3>Design</h3>
-                <p>On définit ensemble ce que vous voulez atteindre — pas forcément tout, juste ce qui compte pour vous</p>
+                <h3>Audit terrain</h3>
+                <p>Méthodologie structurée avec des livrables professionnels et un planning clair</p>
             </div>
             <div class="promise-card">
                 <div class="number">3</div>
-                <h3>Implémentation</h3>
-                <p>Je vous accompagne sur le plan d'actions : processus, outillage, équipes — jusqu'à l'autonomie</p>
+                <h3>Visibilité totale</h3>
+                <p>Charge de travail pour vos équipes, jalons clairs, zéro surprise</p>
             </div>
         </div>
     </div>
@@ -749,141 +799,144 @@
         <h2 class="section-title">Ce que je livre</h2>
         <div class="deliverables-grid">
             <div class="deliverable-card">
-                <div class="icon"><i class="fa-solid fa-landmark"></i></div>
+                <div class="icon"><i class="fa-solid fa-list-check"></i></div>
                 <div>
-                    <h4>Construire la gouvernance</h4>
-                    <p>Politique SMS, matrice RACI, périmètre formalisé</p>
+                    <h4>Grille d'audit complète</h4>
+                    <p>100 à 160+ points de contrôle par norme, alignés sur les textes officiels</p>
+                </div>
+            </div>
+            <div class="deliverable-card">
+                <div class="icon"><i class="fa-solid fa-file-lines"></i></div>
+                <div>
+                    <h4>Rapport d'audit exécutif</h4>
+                    <p>Synthèse claire pour la direction + analyse détaillée pour les équipes techniques</p>
+                </div>
+            </div>
+            <div class="deliverable-card">
+                <div class="icon"><i class="fa-solid fa-road"></i></div>
+                <div>
+                    <h4>Feuille de route priorisée</h4>
+                    <p>Actions classées par criticité, effort et impact — prêtes à exécuter</p>
+                </div>
+            </div>
+            <div class="deliverable-card">
+                <div class="icon"><i class="fa-solid fa-file-signature"></i></div>
+                <div>
+                    <h4>Procès-verbal de validation</h4>
+                    <p>Document formel de clôture, signé par les parties</p>
+                </div>
+            </div>
+            <div class="deliverable-card">
+                <div class="icon"><i class="fa-solid fa-folder-open"></i></div>
+                <div>
+                    <h4>Modèles réutilisables</h4>
+                    <p>Lettres de mission, fiches de non-conformité, registres, matrices RACI</p>
                 </div>
             </div>
             <div class="deliverable-card">
                 <div class="icon"><i class="fa-solid fa-diagram-project"></i></div>
                 <div>
-                    <h4>Structurer les processus</h4>
-                    <p>Incident, Problème, Changement, CMDB, Catalogue</p>
-                </div>
-            </div>
-            <div class="deliverable-card">
-                <div class="icon"><i class="fa-solid fa-file-contract"></i></div>
-                <div>
-                    <h4>Contractualiser les engagements</h4>
-                    <p>SLA documentés et mesurables</p>
-                </div>
-            </div>
-            <div class="deliverable-card">
-                <div class="icon"><i class="fa-solid fa-gears"></i></div>
-                <div>
-                    <h4>Outiller les équipes</h4>
-                    <p>ServiceNow, Jira SM ou votre outil — opérationnel</p>
-                </div>
-            </div>
-            <div class="deliverable-card">
-                <div class="icon"><i class="fa-solid fa-gauge-high"></i></div>
-                <div>
-                    <h4>Mesurer la performance</h4>
-                    <p>KPIs, revues de direction, amélioration continue</p>
+                    <h4>Infographie de la norme</h4>
+                    <p>Vue d'ensemble visuelle pour comprendre l'architecture du référentiel</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Section FRAMEWORKS -->
+    <!-- Section NORMES COUVERTES -->
     <div class="frameworks">
-        <h2 class="section-title">Référentiels & Outils maîtrisés</h2>
-        <p class="section-subtitle">Une expertise terrain, pas que des certifications</p>
+        <h2 class="section-title">Référentiels & Normes couverts</h2>
+        <p class="section-subtitle">Des kits d'audit complets, testés et prêts à l'emploi pour chaque référentiel</p>
         
         <div class="frameworks-category">
-            <h3><i class="fa-solid fa-book"></i> Frameworks ITSM</h3>
+            <h3><i class="fa-solid fa-landmark-flag"></i> Réglementations européennes</h3>
             <div class="frameworks-grid">
                 <div class="framework-item highlight">
-                    <h4>ITIL 4</h4>
-                    <p>Gestion des services IT — Certifié</p>
+                    <h4>DORA</h4>
+                    <p>Résilience opérationnelle numérique — Secteur financier</p>
+                </div>
+                <div class="framework-item highlight">
+                    <h4>NIS 2</h4>
+                    <p>Directive cybersécurité — Infrastructures critiques</p>
                 </div>
                 <div class="framework-item">
-                    <h4>COBIT</h4>
-                    <p>Gouvernance IT</p>
-                </div>
-                <div class="framework-item">
-                    <h4>ISO 20000</h4>
-                    <p>Système de management des services</p>
+                    <h4>RGPD</h4>
+                    <p>Protection des données personnelles</p>
                 </div>
             </div>
         </div>
         
         <div class="frameworks-category">
-            <h3><i class="fa-solid fa-toolbox"></i> Outils ITSM</h3>
+            <h3><i class="fa-solid fa-certificate"></i> Standards internationaux ISO</h3>
             <div class="frameworks-grid">
-                <div class="framework-item highlight">
-                    <h4>ServiceNow</h4>
-                    <p>ITSM, ITOM, CMDB</p>
+                <div class="framework-item">
+                    <h4>ISO 27001</h4>
+                    <p>Système de management de la sécurité</p>
                 </div>
                 <div class="framework-item">
-                    <h4>Jira Service Management</h4>
-                    <p>Ticketing & workflows</p>
+                    <h4>ISO 27002</h4>
+                    <p>Mesures de sécurité de l'information</p>
+                </div>
+                <div class="framework-item">
+                    <h4>ISO 27005</h4>
+                    <p>Gestion des risques de sécurité</p>
                 </div>
             </div>
         </div>
         
         <div class="frameworks-category">
-            <h3><i class="fa-solid fa-layer-group"></i> Processus clés</h3>
+            <h3><i class="fa-solid fa-shield-halved"></i> Frameworks cybersécurité</h3>
             <div class="frameworks-grid">
                 <div class="framework-item">
-                    <h4>Incident</h4>
-                    <p>Restaurer le service rapidement</p>
+                    <h4>CIS Controls v8</h4>
+                    <p>18 contrôles, 153 safeguards</p>
                 </div>
                 <div class="framework-item">
-                    <h4>Problème</h4>
-                    <p>Éliminer les causes racines</p>
+                    <h4>NIST 800-53</h4>
+                    <p>Contrôles de sécurité fédéraux US</p>
                 </div>
                 <div class="framework-item">
-                    <h4>Changement</h4>
-                    <p>Maîtriser les évolutions</p>
+                    <h4>NIST 800-37</h4>
+                    <p>Risk Management Framework</p>
                 </div>
                 <div class="framework-item">
-                    <h4>Demande</h4>
-                    <p>Fluidifier les requêtes utilisateurs</p>
-                </div>
-                <div class="framework-item">
-                    <h4>CMDB</h4>
-                    <p>Cartographier les actifs IT</p>
-                </div>
-                <div class="framework-item">
-                    <h4>SLA</h4>
-                    <p>Piloter les niveaux de service</p>
+                    <h4>EBIOS RM</h4>
+                    <p>Analyse des risques (ANSSI)</p>
                 </div>
             </div>
-            <p style="text-align: center; color: rgba(255,255,255,0.7); margin-top: 25px; font-style: italic;">Et aussi : Release, Capacity, Continuity, Supplier Management… selon vos besoins.</p>
         </div>
     </div>
 
     <!-- CTA Final -->
     <div class="cta-section" id="contact">
-        <h2>Prêt à structurer vos services IT ?</h2>
-        <p>Premier échange de 30 minutes — gratuit, sans engagement</p>
+        <h2>Prêt à y voir clair sur votre conformité ?</h2>
+        <p>Premier échange de 30 minutes pour identifier vos priorités — gratuit, sans engagement</p>
         <div class="hero-benefits" style="margin-bottom: 30px;">
             <div class="hero-benefit-item">
                 <span class="step-number">1)</span>
-                <span>Comprendre votre situation actuelle</span>
+                <span>Identifier les normes applicables</span>
             </div>
             <i class="fa-solid fa-arrow-right hero-arrow"></i>
             <div class="hero-benefit-item">
                 <span class="step-number">2)</span>
-                <span>Identifier vos priorités</span>
+                <span>Estimation durée et budget</span>
             </div>
             <i class="fa-solid fa-arrow-right hero-arrow"></i>
             <div class="hero-benefit-item">
                 <span class="step-number">3)</span>
-                <span>Définir les prochaines étapes</span>
+                <span>Premier diagnostic offert</span>
             </div>
         </div>
+        <p style="font-size: 1.3em; margin-bottom: 15px; font-weight: 600;">Discutons de votre projet</p>
         <div class="cta-buttons">
             <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/emmanuel-genesteix-agilevizion/diagnostic-agilevizion'});return false;" class="cta-calendly-primary">
                 <i class="fa-solid fa-calendar-check"></i>
                 Réserver un créneau
             </a>
-            <a href="/cdn-cgi/l/email-protection#04616969656a7161682a63616a617770616d7c4465636d6861726d7e6d6b6a2a676b693b7771666e61677039406169656a606124576176726d67612449656a65636169616a70244d50" class="cta-email-secondary">
-                <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:emmanuel.genesteix@agilevizion.com?subject=Demande d'audit conformité" class="cta-email-secondary">
+            <i class="fa-solid fa-envelope"></i>
                 M'envoyer un email
-            </a>
+        </a>
         </div>
     </div>
 
@@ -903,3 +956,4 @@
     </footer>
 </body>
 </html>
+
