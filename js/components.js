@@ -13,10 +13,25 @@ const Components = {
 
     MENU_ITEMS: [
         { href: 'index.html', id: 'grc', i18n: 'nav.grc' },
-        { href: 'service-management.html', id: 'itsm', i18n: 'nav.itsm' },
-        { href: 'simulator.html', id: 'simulator', i18n: 'nav.simulator' },
-        { href: 'why-me.html', id: 'why', i18n: 'nav.why' }
+        { href: 'pages/service-management.html', id: 'itsm', i18n: 'nav.itsm' },
+        { href: 'pages/simulator.html', id: 'simulator', i18n: 'nav.simulator' },
+        { href: 'pages/why-me.html', id: 'why', i18n: 'nav.why' }
     ],
+
+    /**
+     * Detect if we're in a subdirectory
+     */
+    isInSubfolder() {
+        const path = window.location.pathname;
+        return path.includes('/pages/');
+    },
+
+    /**
+     * Get the base path prefix
+     */
+    getBasePath() {
+        return this.isInSubfolder() ? '../' : '';
+    },
 
     /**
      * Detect current page from URL
@@ -38,12 +53,14 @@ const Components = {
     generateHeader() {
         const currentPage = this.detectCurrentPage();
         const currentLang = window.I18n ? window.I18n.getLang() : 'en';
+        const basePath = this.getBasePath();
 
-        // Build menu items
+        // Build menu items with correct paths
         let menuHtml = this.MENU_ITEMS.map(item => {
             const activeClass = item.id === currentPage ? ' class="active"' : '';
             const label = window.I18n ? window.I18n.t(item.i18n) : item.id;
-            return `<a href="${item.href}"${activeClass}>${label}</a>`;
+            const href = basePath + item.href;
+            return `<a href="${href}"${activeClass}>${label}</a>`;
         }).join('\n            ');
 
         // Language switch
@@ -52,7 +69,7 @@ const Components = {
 
         return `
     <nav class="navbar">
-        <a href="index.html" class="navbar-brand" data-i18n-html="common.brand">Agile<span>Vizion</span></a>
+        <a href="${basePath}index.html" class="navbar-brand" data-i18n-html="common.brand">Agile<span>Vizion</span></a>
         <div class="navbar-menu">
             ${menuHtml}
             <div class="lang-switch">
