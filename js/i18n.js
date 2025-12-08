@@ -47,20 +47,11 @@ const I18n = {
     },
 
     /**
-     * Get base path for loading resources
-     */
-    getBasePath() {
-        const path = window.location.pathname;
-        return path.includes('/pages/') ? '../' : '';
-    },
-
-    /**
      * Load translations from JSON file
      */
     async loadTranslations(lang) {
         try {
-            const basePath = this.getBasePath();
-            const response = await fetch(`${basePath}lang/${lang}.json`);
+            const response = await fetch(`lang/${lang}.json`);
             if (!response.ok) throw new Error(`Failed to load ${lang}.json`);
             this.translations = await response.json();
         } catch (error) {

@@ -10,6 +10,10 @@ agilevizion/
 ├── simulator.html          # Page Simulateur (à compléter)
 ├── CNAME                   # Configuration domaine
 │
+├── includes/               # ⭐ COMPOSANTS RÉUTILISABLES
+│   ├── header.html         # Menu/navbar (1 fichier pour toutes les pages)
+│   └── footer.html         # Pied de page (1 fichier pour toutes les pages)
+│
 ├── css/
 │   ├── common.css          # Styles de base (navbar, footer, composants)
 │   ├── themes.css          # Couleurs par page (theme-grc, theme-service, theme-whyme)
@@ -17,7 +21,7 @@ agilevizion/
 │
 ├── js/
 │   ├── i18n.js             # Gestion multilingue (FR/EN)
-│   └── components.js       # Header et Footer dynamiques
+│   └── loader.js           # Charge header.html et footer.html
 │
 ├── lang/
 │   ├── en.json             # Traductions anglais
@@ -30,6 +34,34 @@ agilevizion/
     ├── Diploma.pdf
     └── Employment_certificates.pdf
 ```
+
+## 🧩 Header et Footer réutilisables
+
+### Fichiers
+- **`includes/header.html`** : Contient la navbar (logo + menu + sélecteur langue)
+- **`includes/footer.html`** : Contient les infos contact + copyright
+
+### Comment ça marche
+1. Chaque page HTML contient des placeholders :
+   ```html
+   <div id="header-placeholder"></div>
+   <!-- ... contenu de la page ... -->
+   <div id="footer-placeholder"></div>
+   ```
+
+2. Le script `loader.js` charge les fichiers HTML :
+   ```javascript
+   // Charge header.html dans #header-placeholder
+   // Charge footer.html dans #footer-placeholder
+   ```
+
+3. Les traductions sont appliquées automatiquement via `data-i18n`
+
+### Modifier le menu
+Éditer **`includes/header.html`** — le changement s'applique à TOUTES les pages.
+
+### Modifier le footer
+Éditer **`includes/footer.html`** — le changement s'applique à TOUTES les pages.
 
 ## 🌍 Gestion des Langues
 
