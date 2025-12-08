@@ -1,6 +1,6 @@
 /**
  * AgileVizion - Component Loader
- * Loads header.html, menu.html and footer.html into pages
+ * Loads header.html and footer.html into pages
  * Works with i18n.js for translations
  */
 
@@ -99,11 +99,8 @@ const Loader = {
     async init() {
         const basePath = this.getBasePath();
         
-        // Load header first
+        // Load header (includes menu)
         await this.loadComponent(`${basePath}html_generique/header.html`, 'header-placeholder');
-        
-        // Then load menu into the header's menu placeholder
-        await this.loadComponent(`${basePath}html_generique/menu.html`, 'menu-placeholder');
         
         // Load footer
         await this.loadComponent(`${basePath}html_generique/footer.html`, 'footer-placeholder');
