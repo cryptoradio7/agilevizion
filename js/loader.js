@@ -1,10 +1,25 @@
 /**
  * AgileVizion - Component Loader
- * Loads header.html and footer.html into pages
+ * Loads header.html, menu.html and footer.html into pages
  * Works with i18n.js for translations
  */
 
 const Loader = {
+    /**
+     * Detect if current page is in a subfolder (html_specifique)
+     */
+    isInSubfolder() {
+        const path = window.location.pathname;
+        return path.includes('/html_specifique/');
+    },
+
+    /**
+     * Get base path for assets (../ if in subfolder, empty if at root)
+     */
+    getBasePath() {
+        return this.isInSubfolder() ? '../' : '';
+    },
+
     /**
      * Load an HTML file and inject it into a placeholder
      */
@@ -12,7 +27,14 @@ const Loader = {
         try {
             const response = await fetch(url);
             if (!response.ok) throw new Error(`Failed to load ${url}`);
-            const html = await response.text();
+            let html = await response.text();
+            
+            // Adjust paths if in subfolder
+            if (this.isInSubfolder()) {
+                // Fix href paths for links
+                html = html.replace(/href="index\.html/g, 'href="../index.html');
+                html = html.replace(/href="html_specifique\//g, 'href="');
+            }
             
             const placeholder = document.getElementById(placeholderId);
             if (placeholder) {
@@ -75,11 +97,16 @@ const Loader = {
      * Initialize: load components, set active states, translate
      */
     async init() {
-        // Load header and footer
-        await Promise.all([
-            this.loadComponent('includes/header.html', 'header-placeholder'),
-            this.loadComponent('includes/footer.html', 'footer-placeholder')
-        ]);
+        const basePath = this.getBasePath();
+        
+        // Load header first
+        await this.loadComponent(`${basePath}html_generique/header.html`, 'header-placeholder');
+        
+        // Then load menu into the header's menu placeholder
+        await this.loadComponent(`${basePath}html_generique/menu.html`, 'menu-placeholder');
+        
+        // Load footer
+        await this.loadComponent(`${basePath}html_generique/footer.html`, 'footer-placeholder');
 
         // Set active menu item
         this.setActiveMenu();

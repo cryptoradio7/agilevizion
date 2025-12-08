@@ -10,6 +10,21 @@ const I18n = {
     supportedLangs: ['en', 'fr'],
 
     /**
+     * Check if page is in a subfolder (html_specifique)
+     */
+    isInSubfolder() {
+        const path = window.location.pathname;
+        return path.includes('/html_specifique/');
+    },
+
+    /**
+     * Get base path for assets
+     */
+    getBasePath() {
+        return this.isInSubfolder() ? '../' : '';
+    },
+
+    /**
      * Initialize the i18n module
      */
     async init() {
@@ -51,7 +66,8 @@ const I18n = {
      */
     async loadTranslations(lang) {
         try {
-            const response = await fetch(`lang/${lang}.json`);
+            const basePath = this.getBasePath();
+            const response = await fetch(`${basePath}lang/${lang}.json`);
             if (!response.ok) throw new Error(`Failed to load ${lang}.json`);
             this.translations = await response.json();
         } catch (error) {
