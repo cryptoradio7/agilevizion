@@ -10,11 +10,11 @@ const I18n = {
     supportedLangs: ['en', 'fr'],
 
     /**
-     * Check if page is in a subfolder (html_specifique)
+     * Check if page is in a subfolder (pages_specs)
      */
     isInSubfolder() {
         const path = window.location.pathname;
-        return path.includes('/html_specifique/');
+        return path.includes('/pages_specs/');
     },
 
     /**

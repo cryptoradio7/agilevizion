@@ -6,11 +6,11 @@
 
 const Loader = {
     /**
-     * Detect if current page is in a subfolder (html_specifique)
+     * Detect if current page is in a subfolder (pages_specs)
      */
     isInSubfolder() {
         const path = window.location.pathname;
-        return path.includes('/html_specifique/');
+        return path.includes('/pages_specs/');
     },
 
     /**
@@ -33,7 +33,7 @@ const Loader = {
             if (this.isInSubfolder()) {
                 // Fix href paths for links
                 html = html.replace(/href="index\.html/g, 'href="../index.html');
-                html = html.replace(/href="html_specifique\//g, 'href="');
+                html = html.replace(/href="pages_specs\//g, 'href="');
             }
             
             const placeholder = document.getElementById(placeholderId);
@@ -100,10 +100,10 @@ const Loader = {
         const basePath = this.getBasePath();
         
         // Load header (includes menu)
-        await this.loadComponent(`${basePath}html_generique/header.html`, 'header-placeholder');
+        await this.loadComponent(`${basePath}pages_gen/header.html`, 'header-placeholder');
         
         // Load footer
-        await this.loadComponent(`${basePath}html_generique/footer.html`, 'footer-placeholder');
+        await this.loadComponent(`${basePath}pages_gen/footer.html`, 'footer-placeholder');
 
         // Set active menu item
         this.setActiveMenu();
