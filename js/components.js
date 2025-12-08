@@ -1,184 +1,140 @@
 /**
- * AgileVizion - Composants réutilisables (Header & Footer)
- * Modifiez ce fichier pour changer le menu ou le footer sur TOUTES les pages
+ * AgileVizion - Components (Header & Footer)
+ * Generates dynamic header and footer, integrated with i18n
  */
 
-// ============================================================
-// CONFIGURATION - Modifiez ici les liens et textes
-// ============================================================
-
-const CONFIG = {
-    brand: 'Agile<span>Vizion</span>',
-    email: 'emmanuel.genesteix@agilevizion.com',
-    phone: '+352.661.78.08.07',
-    location: {
-        fr: 'Luxembourg (interventions Europe)',
-        en: 'Luxembourg (Europe-wide interventions)'
+const Components = {
+    CONFIG: {
+        email: 'emmanuel.genesteix@agilevizion.com',
+        phone: '+352.661.78.08.07',
+        linkedin: 'https://www.linkedin.com/in/genesteix-emmanuel/',
+        calendly: 'https://calendly.com/emmanuel-genesteix-agilevizion/diagnostic-agilevizion'
     },
-    linkedin: 'https://www.linkedin.com/in/genesteix-emmanuel/',
-    calendly: 'https://calendly.com/emmanuel-genesteix-agilevizion/diagnostic-agilevizion'
-};
 
-// Menu items - Modifiez ici pour ajouter/supprimer des pages
-const MENU_FR = [
-    { href: 'index.html', label: 'GRC Cybersécurité', id: 'grc' },
-    { href: 'service_management.html', label: 'Service Management', id: 'itsm' },
-    { href: 'simulator.html', label: 'Simulateur', id: 'simulator' },
-    { href: 'pourquoi_moi.html', label: 'Pourquoi moi', id: 'why' }
-];
+    MENU_ITEMS: [
+        { href: 'index.html', id: 'grc', i18n: 'nav.grc' },
+        { href: 'service-management.html', id: 'itsm', i18n: 'nav.itsm' },
+        { href: 'simulator.html', id: 'simulator', i18n: 'nav.simulator' },
+        { href: 'why-me.html', id: 'why', i18n: 'nav.why' }
+    ],
 
-const MENU_EN = [
-    { href: 'index.html', label: 'GRC Cybersecurity', id: 'grc' },
-    { href: 'service_management.html', label: 'Service Management', id: 'itsm' },
-    { href: 'simulator.html', label: 'Simulator', id: 'simulator' },
-    { href: 'why_me.html', label: 'Why me', id: 'why' }
-];
+    /**
+     * Detect current page from URL
+     */
+    detectCurrentPage() {
+        const path = window.location.pathname;
+        const filename = path.split('/').pop() || 'index.html';
+        
+        if (filename.includes('index') || filename === '') return 'grc';
+        if (filename.includes('service-management')) return 'itsm';
+        if (filename.includes('simulator')) return 'simulator';
+        if (filename.includes('why-me')) return 'why';
+        return 'grc';
+    },
 
-// Menu items pour la racine (paths différents)
-const MENU_ROOT_EN = [
-    { href: 'index.html', label: 'GRC Cybersecurity', id: 'grc' },
-    { href: 'EN/service_management.html', label: 'Service Management', id: 'itsm' },
-    { href: 'EN/simulator.html', label: 'Simulator', id: 'simulator' },
-    { href: 'EN/why_me.html', label: 'Why me', id: 'why' }
-];
+    /**
+     * Generate the navigation header
+     */
+    generateHeader() {
+        const currentPage = this.detectCurrentPage();
+        const currentLang = window.I18n ? window.I18n.getLang() : 'en';
 
-// ============================================================
-// FONCTIONS - Ne pas modifier sauf si nécessaire
-// ============================================================
+        // Build menu items
+        let menuHtml = this.MENU_ITEMS.map(item => {
+            const activeClass = item.id === currentPage ? ' class="active"' : '';
+            const label = window.I18n ? window.I18n.t(item.i18n) : item.id;
+            return `<a href="${item.href}"${activeClass}>${label}</a>`;
+        }).join('\n            ');
 
-function detectLanguage() {
-    const path = window.location.pathname;
-    if (path.includes('/FR/')) return 'fr';
-    if (path.includes('/EN/')) return 'en';
-    // Root level - check html lang or default to en
-    const htmlLang = document.documentElement.lang;
-    return htmlLang === 'fr' ? 'fr' : 'en';
-}
+        // Language switch
+        const frActiveClass = currentLang === 'fr' ? ' class="active-lang"' : '';
+        const enActiveClass = currentLang === 'en' ? ' class="active-lang"' : '';
 
-function detectCurrentPage() {
-    const path = window.location.pathname;
-    const filename = path.split('/').pop() || 'index.html';
-    
-    if (filename.includes('index')) return 'grc';
-    if (filename.includes('service_management')) return 'itsm';
-    if (filename.includes('simulator')) return 'simulator';
-    if (filename.includes('pourquoi_moi') || filename.includes('why_me')) return 'why';
-    return 'grc';
-}
-
-function getBasePath() {
-    const path = window.location.pathname;
-    if (path.includes('/FR/') || path.includes('/EN/')) {
-        return '../';
-    }
-    return '';
-}
-
-function generateHeader() {
-    const lang = detectLanguage();
-    const currentPage = detectCurrentPage();
-    const basePath = getBasePath();
-    const isSubfolder = basePath !== '';
-    
-    // Sélectionner le bon menu selon la position et la langue
-    let menu;
-    if (!isSubfolder && lang === 'en') {
-        menu = MENU_ROOT_EN;
-    } else if (lang === 'fr') {
-        menu = MENU_FR;
-    } else {
-        menu = MENU_EN;
-    }
-    
-    // Determine paths based on location
-    const frPath = isSubfolder ? '' : 'FR/';
-    const enPath = isSubfolder ? '../EN/' : 'EN/';
-    const rootPath = isSubfolder ? '../' : '';
-    
-    // Build menu items
-    let menuHtml = '';
-    menu.forEach(item => {
-        const activeClass = item.id === currentPage ? ' class="active"' : '';
-        menuHtml += `<a href="${item.href}"${activeClass}>${item.label}</a>\n            `;
-    });
-    
-    // Language switch paths
-    let frHref, enHref;
-    const currentFile = window.location.pathname.split('/').pop() || 'index.html';
-    
-    if (lang === 'fr') {
-        frHref = currentFile;
-        if (currentFile === 'pourquoi_moi.html') {
-            enHref = '../EN/why_me.html';
-        } else {
-            enHref = `../EN/${currentFile}`;
-        }
-    } else {
-        if (currentFile === 'why_me.html') {
-            frHref = isSubfolder ? '../FR/pourquoi_moi.html' : 'FR/pourquoi_moi.html';
-        } else {
-            frHref = isSubfolder ? `../FR/${currentFile}` : `FR/${currentFile}`;
-        }
-        enHref = currentFile;
-    }
-    
-    // For root index.html
-    if (!isSubfolder && currentFile === 'index.html') {
-        frHref = 'FR/index.html';
-        enHref = 'index.html';
-    }
-
-    const frActiveClass = lang === 'fr' ? ' class="active-lang"' : '';
-    const enActiveClass = lang === 'en' ? ' class="active-lang"' : '';
-
-    return `
+        return `
     <nav class="navbar">
-        <a href="${isSubfolder ? '' : (lang === 'fr' ? 'FR/' : '')}index.html" class="navbar-brand">${CONFIG.brand}</a>
+        <a href="index.html" class="navbar-brand" data-i18n-html="common.brand">Agile<span>Vizion</span></a>
         <div class="navbar-menu">
-            ${menuHtml}<div class="lang-switch">
-                <a href="${frHref}"${frActiveClass}>FR</a>
-                <a href="${enHref}"${enActiveClass}>EN</a>
+            ${menuHtml}
+            <div class="lang-switch">
+                <a href="javascript:void(0)" onclick="I18n.switchLanguage('fr')"${frActiveClass}>FR</a>
+                <a href="javascript:void(0)" onclick="I18n.switchLanguage('en')"${enActiveClass}>EN</a>
             </div>
         </div>
     </nav>`;
-}
+    },
 
-function generateFooter() {
-    const lang = detectLanguage();
-    const locationText = lang === 'fr' ? CONFIG.location.fr : CONFIG.location.en;
-    const contactTitle = lang === 'fr' ? 'Me contacter' : 'Contact me';
-    
-    return `
+    /**
+     * Generate the footer with contact info
+     */
+    generateFooter() {
+        const contactTitle = window.I18n ? window.I18n.t('common.contact_title') : 'Contact me';
+        const location = window.I18n ? window.I18n.t('common.location') : 'Luxembourg';
+        const copyright = window.I18n ? window.I18n.t('common.copyright') : '© AgileVizion';
+
+        return `
     <div class="contact-info">
         <div style="max-width: 1200px; margin: 0 auto;">
             <h2 style="margin-bottom: 20px;">${contactTitle}</h2>
-            <p style="font-size: 1.2em; margin-bottom: 10px;">📱 ${CONFIG.phone} · ✉️ <a href="mailto:${CONFIG.email}" style="color: white;">${CONFIG.email}</a></p>
-            <p style="font-size: 1.2em;">📍 ${locationText}</p>
+            <p style="font-size: 1.2em; margin-bottom: 10px;">📱 ${this.CONFIG.phone} · ✉️ <a href="mailto:${this.CONFIG.email}" style="color: white;">${this.CONFIG.email}</a></p>
+            <p style="font-size: 1.2em;">📍 ${location}</p>
             <div class="social-links">
-                <a href="${CONFIG.linkedin}" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="${this.CONFIG.linkedin}" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </div>
     </div>
     <footer class="footer">
-        <p>© ${new Date().getFullYear()} AgileVizion - Emmanuel MUSIC Genesteix</p>
+        <p>${copyright}</p>
     </footer>`;
-}
+    },
 
-// ============================================================
-// INJECTION - Injecte le header et footer dans la page
-// ============================================================
+    /**
+     * Inject header and footer into the page
+     */
+    inject() {
+        const headerPlaceholder = document.getElementById('header-placeholder');
+        if (headerPlaceholder) {
+            headerPlaceholder.innerHTML = this.generateHeader();
+        }
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Inject header
-    const headerPlaceholder = document.getElementById('header-placeholder');
-    if (headerPlaceholder) {
-        headerPlaceholder.innerHTML = generateHeader();
+        const footerPlaceholder = document.getElementById('footer-placeholder');
+        if (footerPlaceholder) {
+            footerPlaceholder.innerHTML = this.generateFooter();
+        }
+    },
+
+    /**
+     * Update components when language changes
+     */
+    updateOnLanguageChange() {
+        this.inject();
+    },
+
+    /**
+     * Initialize components
+     */
+    init() {
+        // Wait for i18n to be ready
+        if (window.I18n && window.I18n.translations && Object.keys(window.I18n.translations).length > 0) {
+            this.inject();
+        } else {
+            // If i18n not ready, inject basic version and update later
+            this.inject();
+        }
+
+        // Listen for language changes
+        window.addEventListener('languageChanged', () => {
+            this.updateOnLanguageChange();
+        });
     }
-    
-    // Inject footer
-    const footerPlaceholder = document.getElementById('footer-placeholder');
-    if (footerPlaceholder) {
-        footerPlaceholder.innerHTML = generateFooter();
-    }
+};
+
+// Export for use in other modules
+window.Components = Components;
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    // Small delay to ensure i18n is loaded first
+    setTimeout(() => {
+        Components.init();
+    }, 100);
 });
-

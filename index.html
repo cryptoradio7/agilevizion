@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GRC Cybersecurity - AgileVizion</title>
-    <link rel="alternate" hreflang="fr" href="FR/index.html" />
-    <link rel="alternate" hreflang="en" href="index.html" />
-    <link rel="alternate" hreflang="x-default" href="index.html" />
+    <title data-i18n="grc.title">GRC Cybersecurity - AgileVizion</title>
+    <link rel="canonical" href="https://agilevizion.com/index.html" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/themes.css">
@@ -15,64 +13,70 @@
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
-<body class="theme-grc">
+<body class="theme-grc" data-page="grc" data-page-title="grc.title">
     <div id="header-placeholder"></div>
     
     <!-- HERO -->
     <div class="hero">
-        <h1>€10 million fine or 2% of revenue — and that's just NIS 2</h1>
-        <p>DORA, NIS 2, ISO 27001, GDPR... A new requirement every month?</p>
-        <p>Want to know where you stand before the regulator does?</p>
+        <h1 data-i18n="grc.hero_h1">€10 million fine or 2% of revenue — and that's just NIS 2</h1>
+        <p data-i18n="grc.hero_p1">DORA, NIS 2, ISO 27001, GDPR... A new requirement every month?</p>
+        <p data-i18n="grc.hero_p2">Want to know where you stand before the regulator does?</p>
     </div>
 
     <!-- Key phrase banner -->
     <div class="key-phrase-banner">
         <p>
             <i class="fa-solid fa-shield-halved text-primary" style="margin-right: 10px;"></i>
-            I help organisations achieve <strong class="text-primary">compliance</strong> with the <strong class="text-primary">regulatory framework</strong> for <strong class="text-primary">cybersecurity</strong>
+            <span data-i18n="grc.banner_text" data-i18n-html>I help organisations achieve <strong class="text-primary">compliance</strong> with the <strong class="text-primary">regulatory framework</strong> for <strong class="text-primary">cybersecurity</strong></span>
         </p>
         <div class="hero-buttons" style="margin-top: 25px;">
-            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/emmanuel-genesteix-agilevizion/diagnostic-agilevizion'});return false;" class="cta-button-primary"><i class="fa-solid fa-calendar-check" style="margin-right: 8px;"></i> Book a call</a>
-            <a href="mailto:emmanuel.genesteix@agilevizion.com" class="cta-button-secondary"><i class="fa-solid fa-envelope" style="margin-right: 8px;"></i> Send me an email</a>
+            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/emmanuel-genesteix-agilevizion/diagnostic-agilevizion'});return false;" class="cta-button-primary">
+                <i class="fa-solid fa-calendar-check" style="margin-right: 8px;"></i>
+                <span data-i18n="common.book_call">Book a call</span>
+            </a>
+            <a href="mailto:emmanuel.genesteix@agilevizion.com" class="cta-button-secondary">
+                <i class="fa-solid fa-envelope" style="margin-right: 8px;"></i>
+                <span data-i18n="common.send_email">Send me an email</span>
+            </a>
         </div>
     </div>
 
     <!-- PROBLEMS Section -->
     <div class="problems-section">
-        <h2 class="section-title">Sounds familiar?</h2>
+        <h2 class="section-title" data-i18n="grc.problems_title">Sounds familiar?</h2>
         <div class="problems-grid">
             <div class="problem-item">
                 <i class="fa-solid fa-circle-question"></i>
-                <p>Which standards <strong>actually</strong> apply to my organisation?</p>
+                <p data-i18n="grc.problem_1" data-i18n-html>Which standards <strong>actually</strong> apply to my organisation?</p>
             </div>
             <div class="problem-item">
                 <i class="fa-solid fa-circle-question"></i>
-                <p>What's <strong>mandatory</strong> versus merely recommended?</p>
+                <p data-i18n="grc.problem_2" data-i18n-html>What's <strong>mandatory</strong> versus merely recommended?</p>
             </div>
             <div class="problem-item">
                 <i class="fa-solid fa-circle-question"></i>
-                <p>How can I audit without tying up my team <strong>for months</strong>?</p>
+                <p data-i18n="grc.problem_3" data-i18n-html>How can I audit without tying up my team <strong>for months</strong>?</p>
             </div>
             <div class="problem-item">
                 <i class="fa-solid fa-circle-question"></i>
-                <p>What if I miss something that <strong>exposes the company</strong>?</p>
+                <p data-i18n="grc.problem_4" data-i18n-html>What if I miss something that <strong>exposes the company</strong>?</p>
             </div>
         </div>
         
         <div class="sanctions-box">
-            <h3><i class="fa-solid fa-triangle-exclamation" style="margin-right: 10px;"></i> The financial risk is real</h3>
+            <h3><i class="fa-solid fa-triangle-exclamation" style="margin-right: 10px;"></i><span data-i18n="grc.sanctions_title">The financial risk is real</span></h3>
             <div class="sanctions-grid">
                 <div class="sanction-item">
-                    <span class="percent">2%</span>
-                    <span class="label">of revenue or €10M<br><strong>NIS 2</strong> — Essential Entities</span>
+                    <span class="percent" data-i18n="grc.sanction_1_percent">2%</span>
+                    <span class="label" data-i18n="grc.sanction_1_label" data-i18n-html>of revenue or €10M<br><strong>NIS 2</strong> — Essential Entities</span>
                 </div>
                 <div class="sanction-item">
-                    <span class="percent">4%</span>
-                    <span class="label">of revenue or €20M<br><strong>GDPR</strong> — Serious violations</span>
+                    <span class="percent" data-i18n="grc.sanction_2_percent">4%</span>
+                    <span class="label" data-i18n="grc.sanction_2_label" data-i18n-html>of revenue or €20M<br><strong>GDPR</strong> — Serious violations</span>
                 </div>
                 <div class="sanction-item">
                     <span class="percent" style="font-size: 1.5em;">⚠️</span>
-                    <span class="label"><strong>DORA</strong><br>Licence withdrawal, ban from practice</span>
+                    <span class="label" data-i18n="grc.sanction_3_label" data-i18n-html><strong>DORA</strong><br>Licence withdrawal, ban from practice</span>
                 </div>
             </div>
         </div>
@@ -80,70 +84,70 @@
 
     <!-- PROMISE Section -->
     <div class="promise-section">
-        <h2 class="section-title">My approach</h2>
+        <h2 class="section-title" data-i18n="grc.approach_title">My approach</h2>
         <div class="promise-grid">
             <div class="promise-card">
                 <div class="number">1</div>
-                <h3>Initial assessment</h3>
-                <p>I identify which standards genuinely apply to your context — no unnecessary over-compliance</p>
+                <h3 data-i18n="grc.approach_1_title">Initial assessment</h3>
+                <p data-i18n="grc.approach_1_text">I identify which standards genuinely apply to your context — no unnecessary over-compliance</p>
             </div>
             <div class="promise-card">
                 <div class="number">2</div>
-                <h3>Field audit</h3>
-                <p>Structured methodology with professional deliverables and a clear timeline</p>
+                <h3 data-i18n="grc.approach_2_title">Field audit</h3>
+                <p data-i18n="grc.approach_2_text">Structured methodology with professional deliverables and a clear timeline</p>
             </div>
             <div class="promise-card">
                 <div class="number">3</div>
-                <h3>Full visibility</h3>
-                <p>Workload for your teams, clear milestones, zero surprises</p>
+                <h3 data-i18n="grc.approach_3_title">Full visibility</h3>
+                <p data-i18n="grc.approach_3_text">Workload for your teams, clear milestones, zero surprises</p>
             </div>
         </div>
     </div>
 
     <!-- DELIVERABLES Section -->
     <div class="deliverables-section">
-        <h2 class="section-title">What I deliver</h2>
+        <h2 class="section-title" data-i18n="grc.deliverables_title">What I deliver</h2>
         <div class="deliverables-grid">
             <div class="deliverable-card">
                 <div class="icon"><i class="fa-solid fa-list-check"></i></div>
                 <div>
-                    <h4>Complete audit checklist</h4>
-                    <p>100 to 160+ control points per standard, aligned with official texts</p>
+                    <h4 data-i18n="grc.deliverable_1_title">Complete audit checklist</h4>
+                    <p data-i18n="grc.deliverable_1_text">100 to 160+ control points per standard, aligned with official texts</p>
                 </div>
             </div>
             <div class="deliverable-card">
                 <div class="icon"><i class="fa-solid fa-file-lines"></i></div>
                 <div>
-                    <h4>Executive audit report</h4>
-                    <p>Clear summary for management + detailed analysis for technical teams</p>
+                    <h4 data-i18n="grc.deliverable_2_title">Executive audit report</h4>
+                    <p data-i18n="grc.deliverable_2_text">Clear summary for management + detailed analysis for technical teams</p>
                 </div>
             </div>
             <div class="deliverable-card">
                 <div class="icon"><i class="fa-solid fa-road"></i></div>
                 <div>
-                    <h4>Prioritised roadmap</h4>
-                    <p>Actions ranked by criticality, effort and impact — ready to execute</p>
+                    <h4 data-i18n="grc.deliverable_3_title">Prioritised roadmap</h4>
+                    <p data-i18n="grc.deliverable_3_text">Actions ranked by criticality, effort and impact — ready to execute</p>
                 </div>
             </div>
             <div class="deliverable-card">
                 <div class="icon"><i class="fa-solid fa-file-signature"></i></div>
                 <div>
-                    <h4>Validation certificate</h4>
-                    <p>Formal closing document, signed by all parties</p>
+                    <h4 data-i18n="grc.deliverable_4_title">Validation certificate</h4>
+                    <p data-i18n="grc.deliverable_4_text">Formal closing document, signed by all parties</p>
                 </div>
             </div>
             <div class="deliverable-card">
                 <div class="icon"><i class="fa-solid fa-folder-open"></i></div>
                 <div>
-                    <h4>Reusable templates</h4>
-                    <p>Engagement letters, non-conformity sheets, registers, RACI matrices</p>
+                    <h4 data-i18n="grc.deliverable_5_title">Reusable templates</h4>
+                    <p data-i18n="grc.deliverable_5_text">Engagement letters, non-conformity sheets, registers, RACI matrices</p>
                 </div>
             </div>
             <div class="deliverable-card">
                 <div class="icon"><i class="fa-solid fa-diagram-project"></i></div>
                 <div>
-                    <h4>Standard infographic</h4>
-                    <p>Visual overview to understand the framework architecture</p>
+                    <h4 data-i18n="grc.deliverable_6_title">Standard infographic</h4>
+                    <p data-i18n="grc.deliverable_6_text">Visual overview to understand the framework architecture</p>
                 </div>
             </div>
         </div>
@@ -151,63 +155,63 @@
 
     <!-- FRAMEWORKS Section -->
     <div class="frameworks">
-        <h2 class="section-title">Frameworks & Standards covered</h2>
-        <p class="section-subtitle">Complete audit kits, tested and ready to use for each framework</p>
+        <h2 class="section-title" data-i18n="grc.frameworks_title">Frameworks & Standards covered</h2>
+        <p class="section-subtitle" data-i18n="grc.frameworks_subtitle">Complete audit kits, tested and ready to use for each framework</p>
         
         <div class="frameworks-category">
-            <h3><i class="fa-solid fa-landmark-flag"></i> European regulations</h3>
+            <h3><i class="fa-solid fa-landmark-flag"></i> <span data-i18n="grc.frameworks_eu">European regulations</span></h3>
             <div class="frameworks-grid">
                 <div class="framework-item highlight">
                     <h4>DORA</h4>
-                    <p>Digital Operational Resilience — Financial Sector</p>
+                    <p data-i18n="grc.dora_desc">Digital Operational Resilience — Financial Sector</p>
                 </div>
                 <div class="framework-item highlight">
                     <h4>NIS 2</h4>
-                    <p>Cybersecurity Directive — Critical Infrastructure</p>
+                    <p data-i18n="grc.nis2_desc">Cybersecurity Directive — Critical Infrastructure</p>
                 </div>
                 <div class="framework-item">
-                    <h4>GDPR</h4>
-                    <p>Personal Data Protection</p>
+                    <h4>GDPR / RGPD</h4>
+                    <p data-i18n="grc.gdpr_desc">Personal Data Protection</p>
                 </div>
             </div>
         </div>
         
         <div class="frameworks-category">
-            <h3><i class="fa-solid fa-certificate"></i> ISO international standards</h3>
+            <h3><i class="fa-solid fa-certificate"></i> <span data-i18n="grc.frameworks_iso">ISO international standards</span></h3>
             <div class="frameworks-grid">
                 <div class="framework-item">
                     <h4>ISO 27001</h4>
-                    <p>Information Security Management System</p>
+                    <p data-i18n="grc.iso27001_desc">Information Security Management System</p>
                 </div>
                 <div class="framework-item">
                     <h4>ISO 27002</h4>
-                    <p>Information Security Controls</p>
+                    <p data-i18n="grc.iso27002_desc">Information Security Controls</p>
                 </div>
                 <div class="framework-item">
                     <h4>ISO 27005</h4>
-                    <p>Security Risk Management</p>
+                    <p data-i18n="grc.iso27005_desc">Security Risk Management</p>
                 </div>
             </div>
         </div>
         
         <div class="frameworks-category">
-            <h3><i class="fa-solid fa-shield-halved"></i> Cybersecurity frameworks</h3>
+            <h3><i class="fa-solid fa-shield-halved"></i> <span data-i18n="grc.frameworks_cyber">Cybersecurity frameworks</span></h3>
             <div class="frameworks-grid">
                 <div class="framework-item">
                     <h4>CIS Controls v8</h4>
-                    <p>18 controls, 153 safeguards</p>
+                    <p data-i18n="grc.cis_desc">18 controls, 153 safeguards</p>
                 </div>
                 <div class="framework-item">
                     <h4>NIST 800-53</h4>
-                    <p>US Federal Security Controls</p>
+                    <p data-i18n="grc.nist53_desc">US Federal Security Controls</p>
                 </div>
                 <div class="framework-item">
                     <h4>NIST 800-37</h4>
-                    <p>Risk Management Framework</p>
+                    <p data-i18n="grc.nist37_desc">Risk Management Framework</p>
                 </div>
                 <div class="framework-item">
                     <h4>EBIOS RM</h4>
-                    <p>Risk Analysis (ANSSI)</p>
+                    <p data-i18n="grc.ebios_desc">Risk Analysis (ANSSI)</p>
                 </div>
             </div>
         </div>
@@ -215,39 +219,41 @@
 
     <!-- Final CTA -->
     <div class="cta-section" id="contact">
-        <h2>Ready to get clarity on your compliance?</h2>
-        <p>30-minute initial call to identify your priorities — free, no commitment</p>
+        <h2 data-i18n="grc.cta_title">Ready to get clarity on your compliance?</h2>
+        <p data-i18n="grc.cta_subtitle">30-minute initial call to identify your priorities — free, no commitment</p>
         <div class="hero-benefits" style="margin-bottom: 30px;">
             <div class="hero-benefit-item">
                 <span class="step-number">1)</span>
-                <span>Identify applicable standards</span>
+                <span data-i18n="grc.cta_step_1">Identify applicable standards</span>
             </div>
             <i class="fa-solid fa-arrow-right hero-arrow"></i>
             <div class="hero-benefit-item">
                 <span class="step-number">2)</span>
-                <span>Timeline and budget estimate</span>
+                <span data-i18n="grc.cta_step_2">Timeline and budget estimate</span>
             </div>
             <i class="fa-solid fa-arrow-right hero-arrow"></i>
             <div class="hero-benefit-item">
                 <span class="step-number">3)</span>
-                <span>Free initial assessment</span>
+                <span data-i18n="grc.cta_step_3">Free initial assessment</span>
             </div>
         </div>
-        <p style="font-size: 1.3em; margin-bottom: 15px; font-weight: 600;">Let's discuss your project</p>
+        <p style="font-size: 1.3em; margin-bottom: 15px; font-weight: 600;" data-i18n="grc.cta_discuss">Let's discuss your project</p>
         <div class="cta-buttons">
             <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/emmanuel-genesteix-agilevizion/diagnostic-agilevizion'});return false;" class="cta-calendly-primary">
                 <i class="fa-solid fa-calendar-check"></i>
-                Book a slot
+                <span data-i18n="common.book_slot">Book a slot</span>
             </a>
             <a href="mailto:emmanuel.genesteix@agilevizion.com" class="cta-email-secondary">
-            <i class="fa-solid fa-envelope"></i>
-                Send me an email
-        </a>
+                <i class="fa-solid fa-envelope"></i>
+                <span data-i18n="common.send_email">Send me an email</span>
+            </a>
         </div>
     </div>
 
     <div id="footer-placeholder"></div>
 
+    <!-- Scripts - i18n must load before components -->
+    <script src="js/i18n.js"></script>
     <script src="js/components.js"></script>
 </body>
 </html>
