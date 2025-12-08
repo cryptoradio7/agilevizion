@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compliance Simulator - AgileVizion</title>
+    <link rel="alternate" hreflang="fr" href="../FR/simulator.html" />
+    <link rel="alternate" hreflang="en" href="simulator.html" />
+    <link rel="alternate" hreflang="x-default" href="../FR/simulator.html" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+    <!-- Calendly Widget -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <!-- PDF Generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f7fafc; }
+        
+        /* ===== NAVBAR (same as index.html) ===== */
+        .navbar { background: #1a202c; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .navbar-brand { color: white; font-size: 1.5em; font-weight: bold; text-decoration: none; }
+        .navbar-brand span { color: #2980b9; }
+        .navbar-menu { display: flex; gap: 10px; align-items: center; }
+        .navbar-menu a { color: white; text-decoration: none; padding: 10px 20px; border-radius: 5px; transition: background 0.3s; font-weight: 500; }
+        .navbar-menu a:hover, .navbar-menu a.active { background: #2c3e50; }
+        .lang-switch { display: flex; gap: 5px; margin-left: 20px; padding-left: 20px; border-left: 1px solid rgba(255,255,255,0.3); }
+        .lang-switch a { padding: 5px 10px !important; font-size: 0.85em; opacity: 0.7; }
+        .lang-switch a.active-lang { opacity: 1; background: rgba(255,255,255,0.1); }
+        
+        /* ===== HERO ===== */
+        .hero { background: linear-gradient(135deg, #2980b9 0%, #1a5276 100%); color: white; padding: 50px 20px; text-align: center; }
+        .hero h1 { font-size: 2em; margin-bottom: 12px; font-weight: 700; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .hero p { font-size: 1.1em; opacity: 0.95; max-width: 600px; margin: 0 auto; }
+        
+        /* ===== CONTAINER ===== */
+        .container { max-width: 850px; margin: 0 auto; padding: 30px 20px; }
+        
+        /* ===== SECTION CARDS ===== */
+        .section-card { background: white; border-radius: 10px; padding: 25px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+        .section-title { font-size: 1.15em; color: #1a202c; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 3px solid #2980b9; display: flex; align-items: center; gap: 10px; }
+        .section-title i { color: #2980b9; }
+        
+        /* ===== QUESTIONS - Compact Layout ===== */
+        .question-row { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+        .question-label { font-weight: 600; color: #2d3748; font-size: 0.9em; min-width: 220px; flex-shrink: 0; }
+        .question-hint { font-size: 0.8em; color: #718096; font-style: italic; flex: 1; min-width: 120px; }
+        .question-select { width: 180px; padding: 10px 12px; border: 2px solid #e2e8f0; border-radius: 6px; font-size: 0.9em; background: white; cursor: pointer; transition: border-color 0.2s; flex-shrink: 0; }
+        .question-select:focus { outline: none; border-color: #2980b9; }
+        .question-select:hover { border-color: #2980b9; }
+        
+        /* ===== BUTTON ===== */
+        .btn-calculate { width: 100%; padding: 16px 30px; background: linear-gradient(135deg, #2980b9 0%, #1a5276 100%); color: white; border: none; border-radius: 8px; font-size: 1.15em; font-weight: 600; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .btn-calculate:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(192, 57, 43, 0.4); }
+        
+        /* ===== RESULTS ===== */
+        .results-section { display: none; }
+        .results-section.visible { display: block; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .results-summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 25px; }
+        .summary-card { text-align: center; padding: 18px 12px; border-radius: 10px; color: white; }
+        .summary-card.mandatory { background: linear-gradient(135deg, #2980b9, #1a5276); }
+        .summary-card.recommended { background: linear-gradient(135deg, #f39c12, #d68910); }
+        .summary-card.optional { background: linear-gradient(135deg, #3498db, #2980b9); }
+        .summary-number { font-size: 2.2em; font-weight: 700; }
+        .summary-label { font-size: 0.85em; opacity: 0.95; }
+        
+        /* ===== RESULTS TABLE ===== */
+        .results-table { width: 100%; border-collapse: collapse; font-size: 0.9em; }
+        .results-table th { background: #1a202c; color: white; padding: 12px 10px; text-align: left; font-weight: 600; }
+        .results-table td { padding: 12px 10px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+        .results-table tr:hover { background: #f7fafc; }
+        .norm-name { font-weight: 600; color: #1a202c; }
+        .status-badge { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 0.75em; font-weight: 600; white-space: nowrap; }
+        .status-badge.mandatory { background: #fde8e8; color: #c53030; }
+        .status-badge.recommended { background: #fef3c7; color: #b45309; }
+        .status-badge.to-verify { background: #e0f2fe; color: #0369a1; }
+        .status-badge.not-applicable { background: #f3f4f6; color: #6b7280; }
+        .criteria-text { font-size: 0.85em; color: #4a5568; }
+        .sanctions-text { font-size: 0.85em; color: #c53030; font-weight: 500; }
+        
+        /* ===== PDF SECTION ===== */
+        .pdf-section { background: #ebf5fb; border: 2px solid #2980b9; border-radius: 10px; padding: 25px; margin-top: 25px; }
+        .pdf-section h4 { color: #1a202c; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; font-size: 1.1em; }
+        .pdf-section h4 i { color: #2980b9; }
+        .pdf-section p { font-size: 0.9em; color: #4a5568; margin-bottom: 15px; }
+        .form-row { display: flex; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+        .form-input { flex: 1; min-width: 180px; padding: 11px 14px; border: 2px solid #e2e8f0; border-radius: 6px; font-size: 0.95em; }
+        .form-input:focus { outline: none; border-color: #2980b9; }
+        .btn-send { padding: 11px 22px; background: #2980b9; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 0.95em; white-space: nowrap; transition: background 0.2s; }
+        .btn-send:hover { background: #1a5276; }
+        .btn-send:disabled { background: #9ca3af; cursor: not-allowed; }
+        .success-msg { display: none; color: #166534; margin-top: 12px; font-size: 0.9em; padding: 12px; background: #dcfce7; border-radius: 6px; }
+        .success-msg.visible { display: block; }
+        .error-msg { display: none; color: #c53030; margin-top: 12px; font-size: 0.9em; padding: 12px; background: #fef2f2; border-radius: 6px; }
+        .error-msg.visible { display: block; }
+        
+        /* ===== CTA SECTION ===== */
+        .cta-section { background: linear-gradient(135deg, #2980b9 0%, #1a5276 100%); color: white; padding: 40px 25px; border-radius: 10px; text-align: center; margin-top: 25px; }
+        .cta-section h3 { font-size: 1.4em; margin-bottom: 10px; }
+        .cta-section p { opacity: 0.95; margin-bottom: 25px; }
+        .cta-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .cta-btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; border: none; font-size: 1em; }
+        .cta-btn.primary { background: white; color: #2980b9; }
+        .cta-btn.secondary { background: transparent; border: 2px solid white; color: white; }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.25); }
+        
+        /* ===== FOOTER ===== */
+        .contact-info { background: #2d3748; color: white; padding: 40px 20px; text-align: center; }
+        .social-links { display: flex; justify-content: center; gap: 20px; margin-top: 20px; }
+        .social-links a { color: white; font-size: 2em; transition: color 0.3s, transform 0.3s; }
+        .social-links a:hover { color: #0077b5; transform: scale(1.1); }
+        
+        /* ===== PDF TEMPLATE ===== */
+        #pdf-content { padding: 25px; background: white; font-family: 'Segoe UI', sans-serif; }
+        #pdf-content h1 { color: #2980b9; font-size: 1.5em; margin-bottom: 15px; }
+        #pdf-content .pdf-header { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid #e2e8f0; }
+        #pdf-content .pdf-footer { margin-top: 25px; padding-top: 15px; border-top: 2px solid #e2e8f0; color: #2980b9; }
+        
+        .spinner { display: inline-block; width: 18px; height: 18px; border: 2px solid #ffffff; border-radius: 50%; border-top-color: transparent; animation: spin 0.8s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; gap: 15px; padding: 15px; }
+            .navbar-menu { flex-wrap: wrap; justify-content: center; gap: 5px; }
+            .navbar-menu a { padding: 8px 12px; font-size: 0.9em; }
+            .lang-switch { margin-left: 0; padding-left: 0; border-left: none; margin-top: 10px; }
+            .hero { padding: 35px 15px; }
+            .hero h1 { font-size: 1.5em; }
+            .hero p { font-size: 1em; }
+            .container { padding: 20px 15px; }
+            .section-card { padding: 18px; }
+            .question-row { flex-direction: column; align-items: flex-start; gap: 6px; }
+            .question-label { min-width: auto; }
+            .question-hint { min-width: auto; }
+            .question-select { width: 100%; }
+            .results-summary { grid-template-columns: 1fr; }
+            .results-table { font-size: 0.8em; }
+            .results-table th, .results-table td { padding: 8px 6px; }
+            .cta-buttons { flex-direction: column; }
+            .cta-btn { width: 100%; justify-content: center; }
+            .contact-info { padding: 30px 15px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand">Agile<span>Vizion</span></a>
+        <div class="navbar-menu">
+            <a href="index.html">GRC Cybersecurity</a>
+            <a href="service_management.html">Service Management</a>
+            <a href="simulator.html" class="active">Simulator</a>
+            <a href="why_me.html">Why me</a>
+            <div class="lang-switch">
+                <a href="../FR/simulator.html">FR</a>
+                <a href="simulator.html" class="active-lang">EN</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <div class="hero">
+        <h1>🎯 Which Cyber Regulations Apply to Your Organisation?</h1>
+        <p>Answer 17 questions and discover your mandatory, recommended, and optional compliance frameworks in 2 minutes.</p>
+    </div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <div class="container">
+        
+        <!-- SECTION 1: GENERAL INFO -->
+        <div class="section-card">
+            <h2 class="section-title"><i class="fa-solid fa-building"></i> Section 1 — General Information</h2>
+            
+            <div class="question-row">
+                <span class="question-label">Q1. Number of employees</span>
+                <span class="question-hint">Permanent + fixed-term (excl. temps)</span>
+                <select class="question-select" id="q1">
+                    <option value="">—</option>
+                    <option value="<50">< 50</option>
+                    <option value="50-249">50 - 249</option>
+                    <option value="250-499">250 - 499</option>
+                    <option value="500+">500+</option>
+                </select>
+            </div>
+            
+            <div class="question-row">
+                <span class="question-label">Q2. Annual revenue</span>
+                <span class="question-hint">Net revenue last fiscal year</span>
+                <select class="question-select" id="q2">
+                    <option value="">—</option>
+                    <option value="<10M">< €10M</option>
+                    <option value="10-50M">€10M - €50M</option>
+                    <option value=">50M">> €50M</option>
+                </select>
+            </div>
+            
+            <div class="question-row">
+                <span class="question-label">Q3. Total balance sheet</span>
+                <span class="question-hint">Total Assets = Total Liabilities</span>
+                <select class="question-select" id="q3">
+                    <option value="">—</option>
+                    <option value="<10M">< €10M</option>
+                    <option value="10-43M">€10M - €43M</option>
+                    <option value=">43M">> €43M</option>
+                </select>
+            </div>
+            
+            <div class="question-row">
+                <span class="question-label">Q4. Headquarters location</span>
+                <span class="question-hint">Registered office location</span>
+                <select class="question-select" id="q4">
+                    <option value="">—</option>
+                    <option value="EU">European Union</option>
+                    <option value="nonEU_clients">Non-EU with EU clients</option>
+                    <option value="nonEU_no">Non-EU, no EU clients</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- SECTION 2: SECTOR -->
+        <div class="section-card">
+            <h2 class="section-title"><i class="fa-solid fa-industry"></i> Section 2 — Industry Sector</h2>
+            
+            <div class="question-row">
+                <span class="question-label">Q5. Main business sector</span>
+                <span class="question-hint">Activity generating most revenue</span>
+                <select class="question-select" id="q5">
+                    <option value="">—</option>
+                    <option value="energy">Energy</option>
+                    <option value="transport">Transport</option>
+                    <option value="banking">Banking / Finance</option>
+                    <option value="insurance">Insurance / Mutual</option>
+                    <option value="health">Healthcare</option>
+                    <option value="water">Water / Environment</option>
+                    <option value="telecom">Telecom / Cloud / Datacenter</option>
+                    <option value="msp">MSP / MSSP / IT Services</option>
+                    <option value="public">Public Administration</option>
+                    <option value="space">Space</option>
+                    <option value="postal">Postal Services</option>
+                    <option value="waste">Waste Management</option>
+                    <option value="chemistry">Chemistry</option>
+                    <option value="food">Food & Agriculture</option>
+                    <option value="manufacturing">Manufacturing</option>
+                    <option value="digital">Digital Provider</option>
+                    <option value="retail">Retail / E-commerce</option>
+                    <option value="services">Business Services</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- SECTION 3: DATA -->
+        <div class="section-card">
+            <h2 class="section-title"><i class="fa-solid fa-database"></i> Section 3 — Data & Processing</h2>
+            
+            <div class="question-row">
+                <span class="question-label">Q6. Process personal data?</span>
+                <span class="question-hint">Customers, employees, cookies...</span>
+                <select class="question-select" id="q6">
+                    <option value="">—</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            
+            <div class="question-row">
+                <span class="question-label">Q7. Process health data?</span>
+                <span class="question-hint">Patient records, medical data...</span>
+                <select class="question-select" id="q7">
+                    <option value="">—</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            
+            <div class="question-row">
+                <span class="question-label">Q8. Process card data?</span>
+                <span class="question-hint">PAN, CVV, storage/transmission</span>
+                <select class="question-select" id="q8">
+                    <option value="">—</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            
+            <div class="question-row">
+                <span class="question-label">Q9. Card transactions/year?</span>
+                <span class="question-hint">If applicable</span>
+                <select class="question-select" id="q9">
+                    <option value="">—</option>
+                    <option value="na">N/A</option>
+                    <option value="<20k">< 20K</option>
+                    <option value="20k-1m">20K - 1M</option>
+                    <option value="1m-6m">1M - 6M</option>
+                    <option value=">6m">> 6M</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- SECTION 4: REGULATIONS -->
+        <div class="section-card">
+            <h2 class="section-title"><i class="fa-solid fa-gavel"></i> Section 4 — Regulations & Client Requirements</h2>
+            
+            <div class="question-row">
+                <span class="question-label">Q10. Regulated by AMF/ACPR?</span>
+                <span class="question-hint">Banking, insurance license...</span>
+                <select class="question-select" id="q10">
+                    <option value="">—</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            
+            <div class="question-row">
+                <span class="question-label">Q11. Subcontractor for banks/insurers?</span>
+                <span class="question-hint">ICT provider under DORA</span>
+                <select class="question-select" id="q11">
+                    <option value="">—</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            
+            <div class="question-row">
+                <span class="question-label">Q12. Provide IT/Cloud services?</span>
+                <span class="question-hint">MSP, SaaS, hosting...</span>
+                <select class="question-select" id="q12">
+                    <option value="">—</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            
+            <div class="question-row">
+                <span class="question-label">Q13. Host health data for third parties?</span>
+                <span class="question-hint">HDS certification (France)</span>
+                <select class="question-select" id="q13">
+                    <option value="">—</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            
+            <div class="question-row">
+                <span class="question-label">Q14. Work with US DoD?</span>
+                <span class="question-hint">CMMC applicable</span>
+                <select class="question-select" id="q14">
+                    <option value="">—</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            
+            <div class="question-row">
+                <span class="question-label">Q15. Clients require ISO 27001?</span>
+                <span class="question-hint">RFPs, large accounts</span>
+                <select class="question-select" id="q15">
+                    <option value="">—</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            
+            <div class="question-row">
+                <span class="question-label">Q16. Clients require SOC 2?</span>
+                <span class="question-hint">US clients, B2B SaaS</span>
+                <select class="question-select" id="q16">
+                    <option value="">—</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            
+            <div class="question-row">
+                <span class="question-label">Q17. Critical activities to protect?</span>
+                <span class="question-hint">BCP/DRP requirements</span>
+                <select class="question-select" id="q17">
+                    <option value="">—</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- BUTTON -->
+        <button class="btn-calculate" onclick="calculate()">
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
+            Analyze My Compliance Requirements
+        </button>
+
+        <!-- ===== RESULTS ===== -->
+        <div class="results-section" id="results">
+            <div class="section-card">
+                <h2 class="section-title"><i class="fa-solid fa-chart-pie"></i> Results — Applicable Frameworks</h2>
+                
+                <div class="results-summary">
+                    <div class="summary-card mandatory">
+                        <div class="summary-number" id="cnt-mand">0</div>
+                        <div class="summary-label">Mandatory</div>
+                    </div>
+                    <div class="summary-card recommended">
+                        <div class="summary-number" id="cnt-rec">0</div>
+                        <div class="summary-label">Recommended</div>
+                    </div>
+                    <div class="summary-card optional">
+                        <div class="summary-number" id="cnt-ver">0</div>
+                        <div class="summary-label">To Verify</div>
+                    </div>
+                </div>
+                
+                <div id="table-container"></div>
+            </div>
+
+            <!-- PDF SECTION -->
+            <div class="pdf-section">
+                <h4><i class="fa-solid fa-file-pdf"></i> Get Your Report by Email</h4>
+                <p>Enter your details to receive your personalized compliance assessment PDF.</p>
+                <div class="form-row">
+                    <input type="text" class="form-input" id="company" placeholder="Company name">
+                    <input type="email" class="form-input" id="email" placeholder="your@email.com">
+                </div>
+                <div class="form-row">
+                    <button class="btn-send" onclick="sendReport()" id="btn-send">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Send My Report
+                    </button>
+                </div>
+                <p class="success-msg" id="success">✅ Report downloaded! A notification has been sent to AgileVizion.</p>
+                <p class="error-msg" id="error">❌ Error. Please try again.</p>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-section">
+                <h3>Need Help Getting Compliant?</h3>
+                <p>Let's discuss your situation and build a roadmap together — 30-min call, free, no commitment.</p>
+                <div class="cta-buttons">
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/emmanuel-genesteix-agilevizion/diagnostic-agilevizion'});return false;" class="cta-btn primary">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        Book a Call
+                    </a>
+                    <a href="mailto:emmanuel.genesteix@agilevizion.com" class="cta-btn secondary">
+                        <i class="fa-solid fa-envelope"></i>
+                        Send Email
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <div class="contact-info">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="margin-bottom: 20px;">Contact me</h2>
+            <p style="font-size: 1.2em; margin-bottom: 10px;">📱 +352.661.78.08.07 · ✉️ <a href="mailto:emmanuel.genesteix@agilevizion.com" style="color: white;">emmanuel.genesteix@agilevizion.com</a></p>
+            <p style="font-size: 1.2em;">📍 Luxembourg (Europe-wide interventions)</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/genesteix-emmanuel/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== PDF TEMPLATE (hidden) ===== -->
+    <div style="position:absolute;left:-9999px;">
+        <div id="pdf-content">
+            <h1>🎯 Cyber Compliance Assessment — AgileVizion</h1>
+            <div class="pdf-header">
+                <p><strong>Company:</strong> <span id="pdf-company"></span></p>
+                <p><strong>Email:</strong> <span id="pdf-email"></span></p>
+                <p><strong>Date:</strong> <span id="pdf-date"></span></p>
+            </div>
+            <div id="pdf-results"></div>
+            <div class="pdf-footer">
+                <p><strong>AgileVizion</strong> — GRC & Cybersecurity Consulting</p>
+                <p>📧 emmanuel.genesteix@agilevizion.com | 🌐 www.agilevizion.com</p>
+                <p style="margin-top:10px;">Need help? Book a free call: calendly.com/emmanuel-genesteix-agilevizion</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ========== NORMS CONFIG ==========
+        const NORMS = {
+            rgpd: { name: "GDPR", sanctions: "€20M or 4% global revenue" },
+            dora: { name: "DORA", sanctions: "License withdrawal + sanctions" },
+            nis2: { name: "NIS 2", sanctions: "€10M/2% (EE) or €7M/1.4% (IE)" },
+            pcidss: { name: "PCI-DSS", sanctions: "Network fines + loss of accreditation" },
+            hds: { name: "HDS (France)", sanctions: "Criminal sanctions + CNIL fines" },
+            iso27001: { name: "ISO 27001", sanctions: "Loss of contracts/markets" },
+            iso20000: { name: "ISO 20000", sanctions: "Commercial differentiation loss" },
+            soc2: { name: "SOC 2", sanctions: "Loss of US/international clients" },
+            iso22301: { name: "ISO 22301", sanctions: "Business interruption risk" },
+            cmmc: { name: "CMMC (US)", sanctions: "Exclusion from DoD contracts" }
+        };
+
+        const NIS2_SECTORS = ['energy','transport','banking','insurance','health','water','telecom','msp','public','space','postal','waste','chemistry','food','manufacturing','digital'];
+        const SENSITIVE = ['banking','insurance','health','telecom','msp'];
+
+        let results = null;
+
+        // ========== CALCULATION ==========
+        function calculate() {
+            const a = {};
+            for (let i = 1; i <= 17; i++) a['q'+i] = document.getElementById('q'+i).value;
+
+            results = {};
+
+            // GDPR
+            if (a.q6 === 'yes') results.rgpd = { st: 'mandatory', why: 'Processing personal data' };
+            else if (a.q6 === 'no') results.rgpd = { st: 'not_applicable', why: 'No personal data' };
+            else results.rgpd = { st: 'to_verify', why: 'Clarify Q6' };
+
+            // DORA
+            if (a.q10 === 'yes' || a.q11 === 'yes') {
+                results.dora = { st: 'mandatory', why: a.q10 === 'yes' ? 'AMF/ACPR regulated entity' : 'Critical ICT provider for financial entities' };
+            } else if (a.q10 === 'no' && a.q11 === 'no') {
+                results.dora = { st: 'not_applicable', why: 'Not regulated, not ICT provider' };
+            } else {
+                results.dora = { st: 'to_verify', why: 'Verify Q10-Q11' };
+            }
+
+            // NIS 2
+            const isSector = NIS2_SECTORS.includes(a.q5);
+            const isSize = ['50-249','250-499','500+'].includes(a.q1) || ['10-50M','>50M'].includes(a.q2) || ['10-43M','>43M'].includes(a.q3);
+            const isEU = a.q4 === 'EU' || a.q4 === 'nonEU_clients';
+            
+            if (isSector && isSize && isEU) {
+                results.nis2 = { st: 'mandatory', why: 'Critical sector + Size ≥50 emp or ≥€10M + EU' };
+            } else if (a.q1 === '<50' && a.q2 === '<10M' && a.q3 === '<10M') {
+                results.nis2 = { st: 'not_applicable', why: 'Below all size thresholds' };
+            } else {
+                results.nis2 = { st: 'to_verify', why: 'Check 3 cumulative criteria' };
+            }
+
+            // PCI-DSS
+            if (a.q8 === 'yes') {
+                const vol = a.q9 && a.q9 !== 'na' ? ` (${a.q9})` : '';
+                results.pcidss = { st: 'mandatory', why: `Processing card data${vol}` };
+            } else if (a.q8 === 'no') {
+                results.pcidss = { st: 'not_applicable', why: 'No card data processed' };
+            } else {
+                results.pcidss = { st: 'to_verify', why: 'Clarify Q8' };
+            }
+
+            // HDS
+            if (a.q13 === 'yes') {
+                results.hds = { st: 'mandatory', why: 'Hosting health data for third parties' };
+            } else if (a.q7 === 'yes' || a.q5 === 'health') {
+                results.hds = { st: 'to_verify', why: 'Health data - check if HDS required' };
+            } else {
+                results.hds = { st: 'not_applicable', why: 'Not concerned' };
+            }
+
+            // ISO 27001
+            if (a.q15 === 'yes') {
+                results.iso27001 = { st: 'mandatory', why: 'Required by clients/partners' };
+            } else if (SENSITIVE.includes(a.q5) || a.q11 === 'yes') {
+                results.iso27001 = { st: 'recommended', why: 'Sensitive sector - highly recommended' };
+            } else {
+                results.iso27001 = { st: 'to_verify', why: 'Voluntary but differentiating' };
+            }
+
+            // ISO 20000
+            if (a.q12 === 'yes') {
+                results.iso20000 = { st: 'recommended', why: 'IT services provider' };
+            } else if (['telecom','msp'].includes(a.q5)) {
+                results.iso20000 = { st: 'to_verify', why: 'IT sector - consider' };
+            } else {
+                results.iso20000 = { st: 'not_applicable', why: 'Not an IT provider' };
+            }
+
+            // SOC 2
+            if (a.q16 === 'yes') {
+                results.soc2 = { st: 'mandatory', why: 'Required by clients (US)' };
+            } else if (a.q12 === 'yes' && ['telecom','msp'].includes(a.q5)) {
+                results.soc2 = { st: 'recommended', why: 'SaaS/Cloud B2B - often requested' };
+            } else {
+                results.soc2 = { st: 'to_verify', why: 'Optional' };
+            }
+
+            // ISO 22301
+            if (a.q17 === 'yes') {
+                results.iso22301 = { st: 'recommended', why: 'Critical activities identified' };
+            } else if (['banking','health','energy'].includes(a.q5)) {
+                results.iso22301 = { st: 'recommended', why: 'Critical sector - continuity essential' };
+            } else {
+                results.iso22301 = { st: 'to_verify', why: 'Optional' };
+            }
+
+            // CMMC
+            if (a.q14 === 'yes') {
+                results.cmmc = { st: 'mandatory', why: 'Working with US DoD' };
+            } else {
+                results.cmmc = { st: 'not_applicable', why: 'No DoD contracts' };
+            }
+
+            showResults(results);
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showResults(r) {
+            let mand = 0, rec = 0, ver = 0;
+            Object.values(r).forEach(x => {
+                if (x.st === 'mandatory') mand++;
+                else if (x.st === 'recommended') rec++;
+                else if (x.st === 'to_verify') ver++;
+            });
+
+            document.getElementById('cnt-mand').textContent = mand;
+            document.getElementById('cnt-rec').textContent = rec;
+            document.getElementById('cnt-ver').textContent = ver;
+
+            const labels = { mandatory: 'Mandatory', recommended: 'Recommended', to_verify: 'To Verify', not_applicable: 'Not Applicable' };
+
+            let html = `<table class="results-table">
+                <thead><tr><th>Framework</th><th>Status</th><th>Why</th><th>Penalties if non-compliant</th></tr></thead><tbody>`;
+
+            Object.entries(r).forEach(([k, v]) => {
+                const n = NORMS[k];
+                const cls = v.st === 'mandatory' ? 'mandatory' : v.st === 'recommended' ? 'recommended' : v.st === 'to_verify' ? 'to-verify' : 'not-applicable';
+                html += `<tr>
+                    <td class="norm-name">${n.name}</td>
+                    <td><span class="status-badge ${cls}">${labels[v.st]}</span></td>
+                    <td class="criteria-text">${v.why}</td>
+                    <td class="sanctions-text">${v.st === 'mandatory' || v.st === 'recommended' ? n.sanctions : '—'}</td>
+                </tr>`;
+            });
+
+            html += '</tbody></table>';
+            document.getElementById('table-container').innerHTML = html;
+            document.getElementById('results').classList.add('visible');
+        }
+
+        // ========== PDF & EMAIL ==========
+        async function sendReport() {
+            const company = document.getElementById('company').value.trim();
+            const email = document.getElementById('email').value.trim();
+            
+            if (!company) { alert('Please enter your company name'); document.getElementById('company').focus(); return; }
+            if (!email || !email.includes('@')) { alert('Please enter a valid email'); document.getElementById('email').focus(); return; }
+
+            const btn = document.getElementById('btn-send');
+            const orig = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner"></span>';
+            
+            document.getElementById('success').classList.remove('visible');
+            document.getElementById('error').classList.remove('visible');
+
+            try {
+                // Prepare results summary for email
+                const summary = Object.entries(results).map(([k,v]) => {
+                    const labels = { mandatory: '🔴 MANDATORY', recommended: '🟡 RECOMMENDED', to_verify: '🔵 TO VERIFY', not_applicable: '⚪ N/A' };
+                    return `${NORMS[k].name}: ${labels[v.st]} - ${v.why}`;
+                }).join('\n');
+
+                let mand = 0, rec = 0;
+                Object.values(results).forEach(x => { if (x.st === 'mandatory') mand++; else if (x.st === 'recommended') rec++; });
+
+                // Prepare PDF
+                document.getElementById('pdf-company').textContent = company;
+                document.getElementById('pdf-email').textContent = email;
+                document.getElementById('pdf-date').textContent = new Date().toLocaleDateString();
+                document.getElementById('pdf-results').innerHTML = document.getElementById('table-container').innerHTML;
+
+                const el = document.getElementById('pdf-content');
+                el.style.display = 'block';
+
+                // Generate & download PDF
+                await html2pdf().set({
+                    margin: 10,
+                    filename: `AgileVizion_Compliance_${company.replace(/[^a-zA-Z0-9]/g, '_')}.pdf`,
+                    image: { type: 'jpeg', quality: 0.95 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                }).from(el).save();
+
+                el.style.display = 'none';
+
+                // ========== NOTIFY CONSULTANT ==========
+                const mailSubject = encodeURIComponent(`🎯 New Simulator Lead: ${company}`);
+                const mailBody = encodeURIComponent(
+`New lead from Cyber Compliance Simulator
+
+📧 Email: ${email}
+🏢 Company: ${company}
+📅 Date: ${new Date().toLocaleString()}
+
+📊 RESULTS:
+${summary}
+
+---
+Mandatory: ${mand} | Recommended: ${rec}
+`);
+                
+                // Silent mailto trigger
+                const iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                iframe.src = `mailto:emmanuel.genesteix@agilevizion.com?subject=${mailSubject}&body=${mailBody}`;
+                document.body.appendChild(iframe);
+                setTimeout(() => document.body.removeChild(iframe), 2000);
+
+                document.getElementById('success').classList.add('visible');
+
+            } catch (e) {
+                console.error('Error:', e);
+                document.getElementById('error').classList.add('visible');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = orig;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -8,81 +8,14 @@
     <link rel="alternate" hreflang="en" href="why_me.html" />
     <link rel="alternate" hreflang="x-default" href="../FR/pourquoi_moi.html" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/themes.css">
+    <link rel="stylesheet" href="../css/responsive.css">
     <!-- Calendly Widget -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
-        .navbar { background: #1a202c; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-        .navbar-brand { color: white; font-size: 1.5em; font-weight: bold; text-decoration: none; }
-        .navbar-brand span { color: #667eea; }
-        .navbar-menu { display: flex; gap: 10px; align-items: center; }
-        .navbar-menu a { color: white; text-decoration: none; padding: 10px 20px; border-radius: 5px; transition: background 0.3s; font-weight: 500; }
-        .navbar-menu a:hover, .navbar-menu a.active { background: #667eea; }
-        .lang-switch { display: flex; gap: 5px; margin-left: 20px; padding-left: 20px; border-left: 1px solid rgba(255,255,255,0.3); }
-        .lang-switch a { padding: 5px 10px !important; font-size: 0.85em; opacity: 0.7; }
-        .lang-switch a.active-lang { opacity: 1; background: rgba(255,255,255,0.1); }
-        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 80px 20px; text-align: center; }
-        .hero h1 { font-size: 2.8em; margin-bottom: 20px; font-weight: 700; }
-        .hero p { font-size: 1.3em; margin-bottom: 30px; opacity: 0.95; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
-        .section-title { text-align: center; font-size: 2.2em; margin-bottom: 40px; color: #2d3748; }
-        .profile-section { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
-        .profile-photo { text-align: center; }
-        .profile-photo .avatar { width: 250px; height: 250px; border-radius: 50%; margin: 0 auto 30px; overflow: hidden; border: 5px solid #667eea; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
-        .profile-photo .avatar img { width: 100%; height: 100%; object-fit: cover; }
-        .profile-photo h2 { color: #2d3748; font-size: 1.8em; margin-bottom: 10px; }
-        .profile-photo p { color: #667eea; font-size: 1.2em; font-weight: 500; }
-        .profile-info h3 { color: #667eea; font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #667eea; }
-        .profile-info p { font-size: 1.1em; line-height: 1.8; margin-bottom: 20px; color: #4a5568; }
-        .certifications { background: #2d3748; color: white; padding: 60px 20px; }
-        .certifications .section-title { color: white; }
-        .cert-category { margin-bottom: 50px; }
-        .cert-category:last-child { margin-bottom: 0; }
-        .cert-category h3 { color: #a0aec0; text-align: center; margin-bottom: 25px; font-size: 1.3em; }
-        .cert-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 900px; margin: 0 auto; }
-        .cert-item { background: rgba(255,255,255,0.08); padding: 25px 20px; border-radius: 12px; text-align: center; border: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; align-items: center; justify-content: center; width: 170px; height: 160px; transition: transform 0.3s, background 0.3s, box-shadow 0.3s; }
-        .cert-item:hover { transform: translateY(-5px); background: rgba(255,255,255,0.12); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-        .cert-item .icon { font-size: 2em; margin-bottom: 15px; color: #667eea; flex-shrink: 0; }
-        .cert-item h4 { color: white; margin-bottom: 8px; font-size: 0.9em; line-height: 1.4; font-weight: 600; text-align: center; }
-        .cert-item p { color: #a0aec0; font-size: 0.75em; flex-shrink: 0; }
-        .contact-info { background: #2d3748; color: white; padding: 40px 20px; text-align: center; }
-        .social-links { display: flex; justify-content: center; gap: 20px; margin-top: 30px; }
-        .social-links a { color: white; font-size: 2em; transition: color 0.3s, transform 0.3s; }
-        .social-links a:hover { color: #0077b5; transform: scale(1.1); }
-        @media (max-width: 768px) {
-            .hero { padding: 50px 15px; }
-            .hero h1 { font-size: 1.8em; }
-            .hero p { font-size: 1.1em; }
-            .section-title { font-size: 1.6em; }
-            .profile-section { grid-template-columns: 1fr; text-align: center; padding: 40px 15px; gap: 40px; }
-            .cert-grid { gap: 15px; padding: 0 10px; }
-            .cert-item { width: 150px; height: 145px; padding: 18px 12px; }
-            .cert-item .icon { font-size: 1.6em; margin-bottom: 10px; }
-            .cert-item h4 { font-size: 0.8em; margin-bottom: 5px; }
-            .cert-item p { font-size: 0.7em; }
-            .cert-category { margin-bottom: 40px; }
-            .cert-category h3 { font-size: 1.1em; margin-bottom: 20px; }
-            .navbar { flex-direction: column; gap: 15px; padding: 15px; }
-            .navbar-menu { flex-wrap: wrap; justify-content: center; gap: 5px; }
-            .navbar-menu a { padding: 8px 12px; font-size: 0.9em; }
-            .contact-info { padding: 30px 15px; }
-            .contact-info p { font-size: 1em !important; }
-            .lang-switch { margin-left: 0; padding-left: 0; border-left: none; margin-top: 10px; }
-        }
-        @media (max-width: 480px) {
-            .cert-grid { gap: 12px; }
-            .cert-item { width: 140px; height: 140px; padding: 15px 10px; }
-            .cert-item .icon { font-size: 1.5em; }
-            .cert-item h4 { font-size: 0.75em; }
-            .hero h1 { font-size: 1.5em; }
-            .section-title { font-size: 1.4em; }
-            .navbar-brand { font-size: 1.2em; }
-        }
-    </style>
 </head>
-<body>
+<body class="theme-whyme">
     <nav class="navbar">
         <a href="index.html" class="navbar-brand">Agile<span>Vizion</span></a>
         <div class="navbar-menu">
@@ -102,49 +35,49 @@
     </div>
 
     <!-- Arguments Section -->
-    <div class="arguments-section" style="background: #f7fafc; padding: 60px 20px;">
+    <div class="arguments-section">
         <h2 class="section-title">6 good reasons</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; max-width: 1100px; margin: 0 auto;">
-            <div style="display: flex; align-items: flex-start; gap: 15px; padding: 25px; background: white; border-radius: 10px; border-left: 4px solid #667eea; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
-                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">1</div>
+        <div class="arguments-grid">
+            <div class="argument-item">
+                <div class="number">1</div>
                 <div>
-                    <strong style="display: block; font-size: 1.15em; margin-bottom: 8px; color: #2d3748;">Ready to deliver</strong>
-                    <p style="color: #4a5568; margin: 0;">Tested audit kits, proven methodology, turnkey deliverables — I don't reinvent the wheel on your budget</p>
+                    <strong>Ready to deliver</strong>
+                    <p>Tested audit kits, proven methodology, turnkey deliverables — I don't reinvent the wheel on your budget</p>
                 </div>
             </div>
-            <div style="display: flex; align-items: flex-start; gap: 15px; padding: 25px; background: white; border-radius: 10px; border-left: 4px solid #667eea; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
-                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">2</div>
+            <div class="argument-item">
+                <div class="number">2</div>
                 <div>
-                    <strong style="display: block; font-size: 1.15em; margin-bottom: 8px; color: #2d3748;">One contact, not an army</strong>
-                    <p style="color: #4a5568; margin: 0;">I do the work myself. No junior learning on your dime, no turnover mid-project</p>
+                    <strong>One contact, not an army</strong>
+                    <p>I do the work myself. No junior learning on your dime, no turnover mid-project</p>
                 </div>
             </div>
-            <div style="display: flex; align-items: flex-start; gap: 15px; padding: 25px; background: white; border-radius: 10px; border-left: 4px solid #667eea; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
-                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">3</div>
+            <div class="argument-item">
+                <div class="number">3</div>
                 <div>
-                    <strong style="display: block; font-size: 1.15em; margin-bottom: 8px; color: #2d3748;">Transparent pricing</strong>
-                    <p style="color: #4a5568; margin: 0;">No Big 4 day rates, no surprises. We agree on the budget together before starting</p>
+                    <strong>Transparent pricing</strong>
+                    <p>No Big 4 day rates, no surprises. We agree on the budget together before starting</p>
                 </div>
             </div>
-            <div style="display: flex; align-items: flex-start; gap: 15px; padding: 25px; background: white; border-radius: 10px; border-left: 4px solid #667eea; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
-                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">4</div>
+            <div class="argument-item">
+                <div class="number">4</div>
                 <div>
-                    <strong style="display: block; font-size: 1.15em; margin-bottom: 8px; color: #2d3748;">Direct line</strong>
-                    <p style="color: #4a5568; margin: 0;">From assessment to deliverable, it's me from start to finish</p>
+                    <strong>Direct line</strong>
+                    <p>From assessment to deliverable, it's me from start to finish</p>
                 </div>
             </div>
-            <div style="display: flex; align-items: flex-start; gap: 15px; padding: 25px; background: white; border-radius: 10px; border-left: 4px solid #667eea; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
-                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">5</div>
+            <div class="argument-item">
+                <div class="number">5</div>
                 <div>
-                    <strong style="display: block; font-size: 1.15em; margin-bottom: 8px; color: #2d3748;">One-stop shop for cyber</strong>
-                    <p style="color: #4a5568; margin: 0;">DORA, NIS 2, ISO 27001, GDPR — one methodology, all regulations covered</p>
+                    <strong>One-stop shop for cyber</strong>
+                    <p>DORA, NIS 2, ISO 27001, GDPR — one methodology, all regulations covered</p>
                 </div>
             </div>
-            <div style="display: flex; align-items: flex-start; gap: 15px; padding: 25px; background: white; border-radius: 10px; border-left: 4px solid #667eea; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
-                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">6</div>
+            <div class="argument-item">
+                <div class="number">6</div>
                 <div>
-                    <strong style="display: block; font-size: 1.15em; margin-bottom: 8px; color: #2d3748;">Support included</strong>
-                    <p style="color: #4a5568; margin: 0;">One month of follow-up included after delivery. 24-hour response to all your questions</p>
+                    <strong>Support included</strong>
+                    <p>One month of follow-up included after delivery. 24-hour response to all your questions</p>
                 </div>
             </div>
         </div>
@@ -164,23 +97,23 @@
             <p><strong>20 years at the crossroads of technology, law and business.</strong></p>
             <p><strong>Computer Science</strong> + <strong>Master's in Business Law</strong> + <strong>MBA</strong></p>
             <p>What's rare isn't having these skills — it's making them work together. I understand your <strong>technical constraints</strong>, your <strong>legal obligations</strong> AND your <strong>business challenges</strong>. No translator needed.</p>
-            <a href="../social_proof/Diploma.pdf" target="_blank" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 25px; font-size: 0.95em; transition: transform 0.3s, box-shadow 0.3s;">
+            <a href="../social_proof/Diploma.pdf" target="_blank" class="cta-button-primary" style="display: inline-block; margin-top: 10px; padding: 10px 20px; font-size: 0.95em;">
                 📜 View diplomas
             </a>
         </div>
     </div>
 
     <!-- Areas of Expertise Section -->
-    <div style="background: #1a1a2e; padding: 60px 20px;">
+    <div class="expertise-section">
         <div style="max-width: 1200px; margin: 0 auto;">
             <h2 class="section-title" style="color: white;">🛡️ Areas of expertise</h2>
             <div class="cert-grid" style="max-width: 800px;">
-                <div class="cert-item" style="border-top-color: #e74c3c;">
+                <div class="cert-item" style="border-top: 3px solid #e74c3c;">
                     <div class="icon" style="color: #e74c3c;"><i class="fa-solid fa-shield-halved"></i></div>
                     <h4>GRC Cybersecurity</h4>
                     <p>DORA · NIS 2 · ISO 27001 · GDPR</p>
                 </div>
-                <div class="cert-item" style="border-top-color: #27ae60;">
+                <div class="cert-item" style="border-top: 3px solid #27ae60;">
                     <div class="icon" style="color: #27ae60;"><i class="fa-solid fa-gears"></i></div>
                     <h4>IT Service Management</h4>
                     <p>ITIL 4 · ISO 20000 · ServiceNow</p>
@@ -265,14 +198,14 @@
     </div>
 
     <!-- CTA Section -->
-    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 20px; text-align: center;">
-        <h2 style="font-size: 2em; margin-bottom: 15px;">Ready to talk?</h2>
-        <p style="font-size: 1.2em; margin-bottom: 30px; opacity: 0.95;">30 minutes to understand your situation and see if we can work together</p>
-        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/emmanuel-genesteix-agilevizion/diagnostic-agilevizion'});return false;" style="display: inline-flex; align-items: center; gap: 10px; background: white; color: #667eea; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1em; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+    <div class="cta-section">
+        <h2>Ready to talk?</h2>
+        <p>30 minutes to understand your situation and see if we can work together</p>
+        <div class="cta-buttons">
+            <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/emmanuel-genesteix-agilevizion/diagnostic-agilevizion'});return false;" class="cta-calendly-primary">
                 <i class="fa-solid fa-calendar-check"></i> Book a slot
             </a>
-            <a href="mailto:emmanuel.genesteix@agilevizion.com" style="display: inline-flex; align-items: center; gap: 10px; background: transparent; color: white; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1em; border: 2px solid white; transition: transform 0.3s, background 0.3s;">
+            <a href="mailto:emmanuel.genesteix@agilevizion.com" class="cta-email-secondary">
                 <i class="fa-solid fa-envelope"></i> Send me an email
             </a>
         </div>
@@ -280,8 +213,8 @@
 
     <div class="contact-info" id="contact">
         <div class="container">
-            <h2 style="margin-bottom: 20px;">Contact me</h2>
-            <p style="font-size: 1.2em; margin-bottom: 10px;">📱 +352.661.78.08.07 · ✉️ <a href="mailto:emmanuel.genesteix@agilevizion.com" style="color: white;">emmanuel.genesteix@agilevizion.com</a></p>
+            <h2>Contact me</h2>
+            <p style="font-size: 1.2em; margin-bottom: 10px;">📱 +352.661.78.08.07 · ✉️ <a href="mailto:emmanuel.genesteix@agilevizion.com">emmanuel.genesteix@agilevizion.com</a></p>
             <p style="font-size: 1.2em;">📍 Luxembourg (Europe-wide interventions)</p>
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/genesteix-emmanuel/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
@@ -289,9 +222,8 @@
         </div>
     </div>
 
-    <footer style="background: #1a1a2e; color: rgba(255,255,255,0.6); text-align: center; padding: 15px 20px; font-size: 0.85em;">
-        <p style="margin: 0;">Agile Vizion · Registration N° A46385 · VAT LU36976357</p>
+    <footer class="footer">
+        <p>Agile Vizion · Registration N° A46385 · VAT LU36976357</p>
     </footer>
 </body>
 </html>
-

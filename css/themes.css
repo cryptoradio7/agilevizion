@@ -1,0 +1,69 @@
+/* ============================================
+   AGILEVIZION - Theme Colors
+   CSS Variables for page-specific colors
+   ============================================ */
+
+/* === GRC CYBERSECURITY THEME (Red) === */
+.theme-grc {
+    --primary-color: #c0392b;
+    --primary-dark: #922b21;
+    --hero-gradient: linear-gradient(135deg, #c0392b 0%, #922b21 100%);
+    --navbar-active-bg: #2c3e50;
+}
+
+/* === SERVICE MANAGEMENT THEME (Green) === */
+.theme-service {
+    --primary-color: #27ae60;
+    --primary-dark: #1e8449;
+    --hero-gradient: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
+    --navbar-active-bg: #2c3e50;
+}
+
+/* === WHY ME THEME (Purple) === */
+.theme-whyme {
+    --primary-color: #667eea;
+    --primary-dark: #764ba2;
+    --hero-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --navbar-active-bg: #667eea;
+}
+
+/* === THEME-SPECIFIC OVERRIDES === */
+
+/* GRC - Promise card title stays white */
+.theme-grc .promise-card h3 {
+    color: white;
+}
+
+/* Service Management - Promise card title is green */
+.theme-service .promise-card h3 {
+    color: #27ae60;
+}
+
+/* Service Management - Hero padding adjustment */
+.theme-service .hero {
+    padding: 105px 20px;
+}
+
+/* Why Me - Hero h1 larger */
+.theme-whyme .hero h1 {
+    font-size: 2.8em;
+}
+
+/* Service Management - Frameworks grid 3 columns */
+.theme-service .frameworks-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* === INLINE COLOR UTILITIES === */
+.text-primary {
+    color: var(--primary-color);
+}
+
+.bg-primary {
+    background: var(--hero-gradient);
+}
+
+.border-primary {
+    border-color: var(--primary-color);
+}
+
