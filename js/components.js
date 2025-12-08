@@ -159,7 +159,7 @@ function generateFooter() {
             </div>
         </div>
     </div>
-    <footer>
+    <footer class="footer">
         <p>© ${new Date().getFullYear()} AgileVizion - Emmanuel MUSIC Genesteix</p>
     </footer>`;
 }
