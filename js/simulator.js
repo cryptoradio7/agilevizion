@@ -874,18 +874,25 @@ function displayResults() {
 }
 
 function getNormTranslation(norm, property) {
-    var t = window.I18n && window.I18n.t ? window.I18n.t.bind(window.I18n) : function(key) { return key; };
+    if (!window.I18n || !window.I18n.t) {
+        console.warn('I18n not available, returning original value');
+        return norm[property];
+    }
     var key = 'simulator.norms.' + norm.key + '.' + property;
-    var translated = t(key);
+    var translated = window.I18n.t(key);
     // Fallback to original value if translation not found
     return (translated === key) ? norm[property] : translated;
 }
 
 function getWhyTranslation(norm) {
-    var t = window.I18n && window.I18n.t ? window.I18n.t.bind(window.I18n) : function(key) { return key; };
+    if (!window.I18n || !window.I18n.t) {
+        console.warn('I18n not available, returning original value');
+        return norm.why;
+    }
     if (norm.whyKey) {
-        var translated = t('simulator.why.' + norm.whyKey);
-        return (translated === 'simulator.why.' + norm.whyKey) ? norm.why : translated;
+        var key = 'simulator.why.' + norm.whyKey;
+        var translated = window.I18n.t(key);
+        return (translated === key) ? norm.why : translated;
     }
     return norm.why;
 }
