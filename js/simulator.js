@@ -1026,7 +1026,8 @@ function generatePDF() {
 
                 checkPdfFormValid();
 
-        });
+            });
+        }, 100); // Small delay to ensure DOM is updated
 
     } catch (e) {
 
