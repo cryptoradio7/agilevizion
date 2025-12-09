@@ -970,11 +970,19 @@ function generatePDF() {
 
         var pdfEl = document.getElementById('pdf-template');
 
+        // Force visibility and positioning for html2pdf
         pdfEl.style.display = 'block';
+        pdfEl.style.visibility = 'visible';
+        pdfEl.style.position = 'absolute';
+        pdfEl.style.left = '-9999px';
+        pdfEl.style.top = '0';
+        pdfEl.style.width = '210mm'; // A4 width
+        pdfEl.style.backgroundColor = '#ffffff';
+        pdfEl.style.color = '#1a202c';
 
-        
-
-        html2pdf().set({ 
+        // Wait for DOM to update
+        setTimeout(function() {
+            html2pdf().set({ 
 
             margin: 10, 
 
@@ -992,11 +1000,13 @@ function generatePDF() {
 
             jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' } 
 
-        }).from(pdfEl).save().then(function() {
+            }).from(pdfEl).save().then(function() {
 
-            pdfEl.style.display = 'none';
+                pdfEl.style.display = 'none';
+                pdfEl.style.visibility = 'hidden';
+                pdfEl.style.position = '';
 
-            if (msgSuccess) msgSuccess.classList.add('visible');
+                if (msgSuccess) msgSuccess.classList.add('visible');
 
             btn.innerHTML = orig;
 
