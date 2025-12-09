@@ -321,6 +321,7 @@
     },
     "no_results_title": "Aucune réglementation spécifique identifiée",
     "no_results_text": "Sur la base de vos réponses, nous n'avons pas identifié de réglementation obligatoire, si l'on se réfère à notre liste non exhaustive de référence.",
+    "nis2_extraterritorial_note": "Secteurs concernés par l'effet extraterritorial NIS 2 : (1) Infrastructure numérique (IXP, DNS, TLD, datacenters), (2) Services TIC B2B (MSP, MSSP, infogérance), (3) Fournisseurs numériques (marketplaces, moteurs de recherche, réseaux sociaux). Les autres secteurs hors UE avec clients UE ne sont PAS soumis à NIS 2. Obligation de désigner un représentant dans l'UE.",
     "pdf_title": "Télécharger votre rapport",
     "pdf_text": "Recevez un PDF récapitulatif avec toutes les réglementations, risques et échéances.",
     "input_company": "Nom de votre entreprise *",

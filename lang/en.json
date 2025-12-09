@@ -321,6 +321,7 @@
     },
     "no_results_title": "No specific regulation identified",
     "no_results_text": "Based on your answers, we have not identified any mandatory regulation, referring to our non-exhaustive reference list.",
+    "nis2_extraterritorial_note": "Sectors concerned by NIS 2 extraterritorial effect: (1) Digital infrastructure (IXP, DNS, TLD, datacenters), (2) B2B ICT services (MSP, MSSP, managed services), (3) Digital providers (marketplaces, search engines, social networks). Other sectors outside EU with EU clients are NOT subject to NIS 2. Obligation to designate a representative in the EU.",
     "pdf_title": "Download your report",
     "pdf_text": "Receive a summary PDF with all regulations, risks and deadlines.",
     "input_company": "Your company name *",
