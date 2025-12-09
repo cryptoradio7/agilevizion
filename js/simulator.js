@@ -930,7 +930,7 @@ function generatePDF() {
 
         var p = PROFILES[state.profile];
 
-        var pdfHtml = '<div class="pdf-profile" style="color:#1a202c;"><strong>' + p.icon + ' Profil :</strong> ' + p.title + '<br><strong>Résultat :</strong> ' + mandatory.length + ' réglementation(s) applicable(s), ' + recommended.length + ' recommandation(s)</div>';
+        var pdfHtml = '<div class="pdf-profile" style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px; color: #1a202c; font-size: 1em;"><strong style="color: #1a202c;">' + p.icon + ' Profil :</strong> <span style="color: #1a202c;">' + p.title + '</span><br><strong style="color: #1a202c;">Résultat :</strong> <span style="color: #1a202c;">' + mandatory.length + ' réglementation(s) applicable(s), ' + recommended.length + ' recommandation(s)</span></div>';
 
         if (mandatory.length > 0) {
 
@@ -940,7 +940,7 @@ function generatePDF() {
 
                 var label = n.isRegulation ? 'Sanctions' : 'Risques';
 
-                pdfHtml += '<div class="pdf-norm mandatory" style="color:#1a202c;"><h4 style="color:#1e8449;margin:0 0 8px;">' + n.name + ' — ' + n.fullName + '</h4><p style="color:#2d3748;"><strong>Pourquoi :</strong> ' + n.why + '</p><p style="color:#2d3748;"><strong>Échéance :</strong> ' + n.deadline + '</p><p style="color:#c53030;"><strong>' + label + ' :</strong> ' + n.sanctions + '</p></div>';
+                pdfHtml += '<div class="pdf-norm mandatory" style="padding: 15px; margin: 12px 0; border-left: 4px solid #27ae60; background: #f8f9fa; border-radius: 0 8px 8px 0; color: #1a202c;"><h4 style="color: #1e8449; margin: 0 0 8px; font-size: 1.1em; font-weight: bold;">' + n.name + ' — ' + n.fullName + '</h4><p style="color: #2d3748; margin: 5px 0; font-size: 0.95em;"><strong style="color: #2d3748;">Pourquoi :</strong> <span style="color: #2d3748;">' + n.why + '</span></p><p style="color: #2d3748; margin: 5px 0; font-size: 0.95em;"><strong style="color: #2d3748;">Échéance :</strong> <span style="color: #2d3748;">' + n.deadline + '</span></p><p style="color: #c53030; margin: 5px 0; font-size: 0.95em;"><strong style="color: #c53030;">' + label + ' :</strong> <span style="color: #c53030;">' + n.sanctions + '</span></p></div>';
 
             });
 
@@ -954,7 +954,7 @@ function generatePDF() {
 
             recommended.forEach(function(n) {
 
-                pdfHtml += '<div class="pdf-norm recommended" style="color:#1a202c;"><h4 style="color:#2563eb;margin:0 0 8px;">' + n.name + ' — ' + n.fullName + '</h4><p style="color:#2d3748;"><strong>Pourquoi :</strong> ' + n.why + '</p></div>';
+                pdfHtml += '<div class="pdf-norm recommended" style="padding: 15px; margin: 12px 0; border-left: 4px solid #2563eb; background: #f8f9fa; border-radius: 0 8px 8px 0; color: #1a202c;"><h4 style="color: #2563eb; margin: 0 0 8px; font-size: 1.1em; font-weight: bold;">' + n.name + ' — ' + n.fullName + '</h4><p style="color: #2d3748; margin: 5px 0; font-size: 0.95em;"><strong style="color: #2d3748;">Pourquoi :</strong> <span style="color: #2d3748;">' + n.why + '</span></p></div>';
 
             });
 
