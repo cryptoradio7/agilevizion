@@ -857,19 +857,23 @@ function buildNormCard(norm, status) {
 
     
 
+    var appliesText = isMandatory ? t('simulator.applies') : t('simulator.recommended_badge');
+    var whyText = t('simulator.why');
+    var deadlineText = t('simulator.deadline');
+    
     return '<div class="norm-card ' + (isMandatory ? 'mandatory' : 'recommended') + '">' +
 
         '<div class="norm-header"><div><span class="norm-name">' + norm.name + '</span><span class="norm-fullname"> — ' + norm.fullName + '</span></div>' +
 
-        '<span class="norm-badge ' + status + '">' + (isMandatory ? "S'APPLIQUE" : 'RECOMMANDÉ') + '</span></div>' +
+        '<span class="norm-badge ' + status + '">' + appliesText + '</span></div>' +
 
-        '<div class="norm-why"><i class="fa-solid fa-check"></i> ' + norm.why + '</div>' +
+        '<div class="norm-why"><i class="fa-solid fa-check"></i> <strong>' + whyText + ' :</strong> ' + norm.why + '</div>' +
 
         '<div class="norm-details">' +
 
         '<div class="norm-detail ' + sanctionClass + '"><i class="fa-solid fa-triangle-exclamation"></i> <strong>' + sanctionLabel + ' :</strong> ' + norm.sanctions + '</div>' +
 
-        '<div class="norm-detail deadline"><i class="fa-solid fa-calendar"></i> <strong>Échéance :</strong> ' + norm.deadline + '</div>' +
+        '<div class="norm-detail deadline"><i class="fa-solid fa-calendar"></i> <strong>' + deadlineText + ' :</strong> ' + norm.deadline + '</div>' +
 
         '<div class="norm-detail"><i class="fa-solid fa-book"></i> <strong>Réf. :</strong> ' + norm.source + '</div></div>' +
 
