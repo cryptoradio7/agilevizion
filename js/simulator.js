@@ -993,7 +993,8 @@ function generatePDF() {
         var resultLabel = t('simulator.result_label');
         var regsText = mandatory.length + ' ' + t('simulator.regulations_applicable');
         var recsText = recommended.length + ' ' + t('simulator.recommendations_count');
-        var pdfHtml = '<div class="pdf-profile" style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px; color: #1a202c; font-size: 1em;"><strong style="color: #1a202c;">' + p.icon + ' ' + profileLabel + '</strong> <span style="color: #1a202c;">' + p.title + '</span><br><strong style="color: #1a202c;">' + resultLabel + '</strong> <span style="color: #1a202c;">' + regsText + ', ' + recsText + '</span></div>';
+        var profileTitle = t('simulator.profiles.' + state.profile + '.title');
+        var pdfHtml = '<div class="pdf-profile" style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px; color: #1a202c; font-size: 1em;"><strong style="color: #1a202c;">' + p.icon + ' ' + profileLabel + '</strong> <span style="color: #1a202c;">' + profileTitle + '</span><br><strong style="color: #1a202c;">' + resultLabel + '</strong> <span style="color: #1a202c;">' + regsText + ', ' + recsText + '</span></div>';
 
         if (mandatory.length > 0) {
 

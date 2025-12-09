@@ -305,6 +305,20 @@
       "iso22301_critical_activity": "Activités critiques identifiées — plan de continuité recommandé",
       "cmmc": "Contrats directs ou sous-traitance avec le Département de la Défense US (DoD)"
     },
+    "profiles": {
+      "startup": {
+        "title": "Petite structure",
+        "subtitle": "<50 employés, CA <10M€, bilan <10M€"
+      },
+      "pme": {
+        "title": "Moyenne entreprise",
+        "subtitle": "50-249 employés ou CA 10-50M€"
+      },
+      "eti": {
+        "title": "Grande entreprise",
+        "subtitle": "250+ employés ou CA >50M€"
+      }
+    },
     "pdf_title": "Télécharger votre rapport",
     "pdf_text": "Recevez un PDF récapitulatif avec toutes les réglementations, risques et échéances.",
     "input_company": "Nom de votre entreprise *",

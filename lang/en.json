@@ -305,6 +305,20 @@
       "iso22301_critical_activity": "Critical activities identified — business continuity plan recommended",
       "cmmc": "Direct contracts or subcontracting with the US Department of Defense (DoD)"
     },
+    "profiles": {
+      "startup": {
+        "title": "Small structure",
+        "subtitle": "<50 employees, turnover <€10M, balance sheet <€10M"
+      },
+      "pme": {
+        "title": "Medium enterprise",
+        "subtitle": "50-249 employees or turnover €10-50M"
+      },
+      "eti": {
+        "title": "Large enterprise",
+        "subtitle": "250+ employees or turnover >€50M"
+      }
+    },
     "pdf_title": "Download your report",
     "pdf_text": "Receive a summary PDF with all regulations, risks and deadlines.",
     "input_company": "Your company name *",
