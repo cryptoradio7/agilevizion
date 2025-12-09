@@ -1004,8 +1004,11 @@ function generatePDF() {
                 scale: 2, 
                 useCORS: true,
                 backgroundColor: '#ffffff',
-                logging: false,
-                letterRendering: true
+                logging: true,
+                letterRendering: true,
+                allowTaint: false,
+                windowWidth: 794,
+                windowHeight: 1123
             }, 
 
             jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' } 
@@ -1015,6 +1018,9 @@ function generatePDF() {
                 pdfEl.style.display = 'none';
                 pdfEl.style.visibility = 'hidden';
                 pdfEl.style.position = '';
+                pdfEl.style.opacity = '';
+                pdfEl.style.zIndex = '';
+                pdfEl.style.pointerEvents = '';
 
                 if (msgSuccess) msgSuccess.classList.add('visible');
 
