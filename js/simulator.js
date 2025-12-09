@@ -930,7 +930,7 @@ function generatePDF() {
 
         var p = PROFILES[state.profile];
 
-        var pdfHtml = '<div class="pdf-profile"><strong>' + p.icon + ' Profil :</strong> ' + p.title + '<br><strong>Résultat :</strong> ' + mandatory.length + ' réglementation(s) applicable(s), ' + recommended.length + ' recommandation(s)</div>';
+        var pdfHtml = '<div class="pdf-profile" style="color:#1a202c;"><strong>' + p.icon + ' Profil :</strong> ' + p.title + '<br><strong>Résultat :</strong> ' + mandatory.length + ' réglementation(s) applicable(s), ' + recommended.length + ' recommandation(s)</div>';
 
         if (mandatory.length > 0) {
 
@@ -940,7 +940,7 @@ function generatePDF() {
 
                 var label = n.isRegulation ? 'Sanctions' : 'Risques';
 
-                pdfHtml += '<div class="pdf-norm mandatory"><h4 style="color:#1e8449;margin:0 0 8px;">' + n.name + ' — ' + n.fullName + '</h4><p><strong>Pourquoi :</strong> ' + n.why + '</p><p><strong>Échéance :</strong> ' + n.deadline + '</p><p style="color:#c53030;"><strong>' + label + ' :</strong> ' + n.sanctions + '</p></div>';
+                pdfHtml += '<div class="pdf-norm mandatory" style="color:#1a202c;"><h4 style="color:#1e8449;margin:0 0 8px;">' + n.name + ' — ' + n.fullName + '</h4><p style="color:#2d3748;"><strong>Pourquoi :</strong> ' + n.why + '</p><p style="color:#2d3748;"><strong>Échéance :</strong> ' + n.deadline + '</p><p style="color:#c53030;"><strong>' + label + ' :</strong> ' + n.sanctions + '</p></div>';
 
             });
 
@@ -954,7 +954,7 @@ function generatePDF() {
 
             recommended.forEach(function(n) {
 
-                pdfHtml += '<div class="pdf-norm recommended"><h4 style="color:#2563eb;margin:0 0 8px;">' + n.name + ' — ' + n.fullName + '</h4><p><strong>Pourquoi :</strong> ' + n.why + '</p></div>';
+                pdfHtml += '<div class="pdf-norm recommended" style="color:#1a202c;"><h4 style="color:#2563eb;margin:0 0 8px;">' + n.name + ' — ' + n.fullName + '</h4><p style="color:#2d3748;"><strong>Pourquoi :</strong> ' + n.why + '</p></div>';
 
             });
 

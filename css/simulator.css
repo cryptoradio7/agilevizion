@@ -300,21 +300,79 @@
 
 /* PDF Template */
 
-#pdf-template { display: none; padding: 25px; background: white; }
+#pdf-template { 
+    display: none; 
+    padding: 25px; 
+    background: white; 
+    color: #1a202c;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-#pdf-template h1 { color: var(--primary); font-size: 1.5em; margin-bottom: 5px; }
+#pdf-template h1 { 
+    color: #2563eb; 
+    font-size: 1.5em; 
+    margin-bottom: 5px; 
+}
 
-#pdf-template .pdf-header { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid var(--primary); }
+#pdf-template .pdf-header { 
+    margin-bottom: 25px; 
+    padding-bottom: 15px; 
+    border-bottom: 3px solid #2563eb; 
+    color: #1a202c;
+}
 
-#pdf-template .pdf-profile { background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+#pdf-template .pdf-header p {
+    color: #1a202c;
+    margin: 5px 0;
+}
 
-#pdf-template .pdf-norm { padding: 15px; margin: 12px 0; border-left: 4px solid; background: #f8f9fa; border-radius: 0 8px 8px 0; }
+#pdf-template .pdf-profile { 
+    background: #f8f9fa; 
+    padding: 15px; 
+    border-radius: 8px; 
+    margin-bottom: 20px; 
+    color: #1a202c;
+}
 
-#pdf-template .pdf-norm.mandatory { border-color: var(--success); }
+#pdf-template .pdf-norm { 
+    padding: 15px; 
+    margin: 12px 0; 
+    border-left: 4px solid; 
+    background: #f8f9fa; 
+    border-radius: 0 8px 8px 0; 
+    color: #1a202c;
+}
 
-#pdf-template .pdf-norm.recommended { border-color: var(--primary); }
+#pdf-template .pdf-norm h4 {
+    color: #1a202c;
+    margin: 0 0 8px;
+}
 
-#pdf-template .pdf-footer { margin-top: 30px; padding-top: 15px; border-top: 2px solid var(--gray-200); text-align: center; color: var(--primary); }
+#pdf-template .pdf-norm p {
+    color: #2d3748;
+    margin: 5px 0;
+}
+
+#pdf-template .pdf-norm.mandatory { 
+    border-color: #27ae60; 
+}
+
+#pdf-template .pdf-norm.recommended { 
+    border-color: #2563eb; 
+}
+
+#pdf-template .pdf-footer { 
+    margin-top: 30px; 
+    padding-top: 15px; 
+    border-top: 2px solid #e2e8f0; 
+    text-align: center; 
+    color: #2563eb; 
+}
+
+#pdf-template .pdf-footer p {
+    color: #2563eb;
+    margin: 5px 0;
+}
 
 /* Spinner */
 
