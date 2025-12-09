@@ -10,6 +10,7 @@ var NORMS = {
 
     rgpd: { 
 
+        key: 'rgpd',
         name: 'RGPD', 
 
         fullName: 'Règlement Général sur la Protection des Données', 
@@ -26,6 +27,7 @@ var NORMS = {
 
     dora: { 
 
+        key: 'dora',
         name: 'DORA', 
 
         fullName: 'Digital Operational Resilience Act', 
@@ -42,6 +44,7 @@ var NORMS = {
 
     nis2: { 
 
+        key: 'nis2',
         name: 'NIS 2', 
 
         fullName: 'Network and Information Security Directive', 
@@ -58,6 +61,7 @@ var NORMS = {
 
     pcidss: { 
 
+        key: 'pcidss',
         name: 'PCI-DSS', 
 
         fullName: 'Payment Card Industry Data Security Standard', 
@@ -74,6 +78,7 @@ var NORMS = {
 
     hds: { 
 
+        key: 'hds',
         name: 'HDS', 
 
         fullName: 'Hébergeur de Données de Santé', 
@@ -90,6 +95,7 @@ var NORMS = {
 
     iso27001: { 
 
+        key: 'iso27001',
         name: 'ISO 27001', 
 
         fullName: "Système de Management de la Sécurité de l'Information", 
@@ -106,6 +112,7 @@ var NORMS = {
 
     iso20000: { 
 
+        key: 'iso20000',
         name: 'ISO 20000', 
 
         fullName: 'Système de Management des Services IT', 
@@ -122,6 +129,7 @@ var NORMS = {
 
     soc2: { 
 
+        key: 'soc2',
         name: 'SOC 2', 
 
         fullName: 'Service Organization Control 2', 
@@ -138,6 +146,7 @@ var NORMS = {
 
     iso22301: { 
 
+        key: 'iso22301',
         name: 'ISO 22301', 
 
         fullName: "Système de Management de la Continuité d'Activité", 
@@ -154,6 +163,7 @@ var NORMS = {
 
     cmmc: { 
 
+        key: 'cmmc',
         name: 'CMMC', 
 
         fullName: 'Cybersecurity Maturity Model Certification', 
@@ -548,6 +558,8 @@ function calculateResults() {
 
     var isLarge = (a.q3_size === 'large');
 
+    var t = window.I18n && window.I18n.t ? window.I18n.t.bind(window.I18n) : function(key) { return key; };
+    
     // RGPD
 
     if (a.q4_personal_data === 'yes' && (isEU || hasEUClients)) {
@@ -556,7 +568,8 @@ function calculateResults() {
 
             status: 'obligatoire', 
 
-            why: "Traitement de données personnelles avec activité dans l'UE ou clients/utilisateurs UE" 
+            why: t('simulator.why.rgpd'),
+            whyKey: 'rgpd'
 
         };
 
@@ -572,7 +585,8 @@ function calculateResults() {
 
                 status: 'obligatoire', 
 
-                why: 'Entité financière UE détenant un agrément (AMF, ACPR, CSSF ou équivalent)' 
+                why: t('simulator.why.dora_regulated'),
+                whyKey: 'dora_regulated'
 
             };
 
@@ -582,7 +596,8 @@ function calculateResults() {
 
                 status: 'obligatoire', 
 
-                why: 'Prestataire TIC critique fournissant des services à des entités financières UE régulées' 
+                why: t('simulator.why.dora_tic'),
+                whyKey: 'dora_tic'
 
             };
 
@@ -596,13 +611,14 @@ function calculateResults() {
 
         if (isEU) {
 
-            var cat = isLarge ? 'Entité Essentielle (EE)' : 'Entité Importante (EI)';
+            var whyKey = 'nis2_eu_' + (isAnnex1 ? 'annex1' : 'annex2') + '_' + (isLarge ? 'ee' : 'ei');
 
             results.nis2 = { 
 
                 status: 'obligatoire', 
 
-                why: 'Secteur ' + (isAnnex1 ? 'Annexe I (hautement critique)' : 'Annexe II (critique)') + ' + Taille suffisante (≥50 employés OU ≥10M€ CA OU ≥10M€ bilan) + Siège UE → Classifié ' + cat 
+                why: t('simulator.why.' + whyKey),
+                whyKey: whyKey
 
             };
 
@@ -612,8 +628,8 @@ function calculateResults() {
 
                 status: 'obligatoire', 
 
-                why: "Effet extraterritorial NIS 2 (Art. 26) : entité hors UE fournissant des services à des clients/utilisateurs UE. Secteurs concernés : Infrastructure numérique, Services TIC B2B, Fournisseurs numériques.",
-
+                why: t('simulator.why.nis2_extraterritorial'),
+                whyKey: 'nis2_extraterritorial',
                 extraterritorial: true
 
             };
@@ -630,7 +646,8 @@ function calculateResults() {
 
             status: 'obligatoire', 
 
-            why: 'Stockage, traitement ou transmission de numéros de cartes bancaires (PAN)' 
+            why: t('simulator.why.pcidss'),
+            whyKey: 'pcidss'
 
         };
 
@@ -644,7 +661,8 @@ function calculateResults() {
 
             status: 'obligatoire', 
 
-            why: 'Hébergement de données de santé à caractère personnel pour le compte de tiers (clients)' 
+            why: t('simulator.why.hds'),
+            whyKey: 'hds'
 
         };
 
@@ -658,7 +676,8 @@ function calculateResults() {
 
             status: 'obligatoire', 
 
-            why: 'Certification exigée contractuellement par vos clients' 
+            why: t('simulator.why.iso27001_mandatory'),
+            whyKey: 'iso27001_mandatory'
 
         };
 
@@ -668,7 +687,8 @@ function calculateResults() {
 
             status: 'recommande', 
 
-            why: "Standard international de référence pour la sécurité de l'information — valorisé par les grands comptes" 
+            why: t('simulator.why.iso27001_recommended'),
+            whyKey: 'iso27001_recommended'
 
         };
 
@@ -682,7 +702,8 @@ function calculateResults() {
 
             status: 'recommande', 
 
-            why: 'Prestataire de services IT/Cloud — certification différenciante pour la gestion des services' 
+            why: t('simulator.why.iso20000'),
+            whyKey: 'iso20000'
 
         };
 
@@ -696,7 +717,8 @@ function calculateResults() {
 
             status: 'obligatoire', 
 
-            why: 'Attestation exigée par vos clients US' 
+            why: t('simulator.why.soc2_mandatory'),
+            whyKey: 'soc2_mandatory'
 
         };
 
@@ -706,7 +728,8 @@ function calculateResults() {
 
             status: 'recommande', 
 
-            why: 'Standard attendu par les clients américains pour les fournisseurs SaaS/Cloud' 
+            why: t('simulator.why.soc2_recommended'),
+            whyKey: 'soc2_recommended'
 
         };
 
@@ -716,31 +739,37 @@ function calculateResults() {
 
     if (a.q11_continuity === 'yes' || SECTORS.CRITICAL.indexOf(a.q2_sector) !== -1 || results.dora || results.nis2) {
 
+        var iso22301WhyKey = '';
         var iso22301Why = '';
 
         if (results.dora && results.nis2) {
 
-            iso22301Why = "Exigence réglementaire DORA + NIS 2 (Art. 21) — un plan de continuité d'activité est obligatoire";
+            iso22301WhyKey = 'iso22301_dora_nis2';
+            iso22301Why = t('simulator.why.iso22301_dora_nis2');
 
         } else if (results.dora) {
 
-            iso22301Why = "Exigence réglementaire DORA — un plan de continuité d'activité est obligatoire";
+            iso22301WhyKey = 'iso22301_dora';
+            iso22301Why = t('simulator.why.iso22301_dora');
 
         } else if (results.nis2) {
 
-            iso22301Why = "Exigence réglementaire NIS 2 (Art. 21) — un plan de continuité d'activité est obligatoire";
+            iso22301WhyKey = 'iso22301_nis2';
+            iso22301Why = t('simulator.why.iso22301_nis2');
 
         } else if (SECTORS.CRITICAL.indexOf(a.q2_sector) !== -1) {
 
-            iso22301Why = "Secteur critique — plan de continuité fortement recommandé";
+            iso22301WhyKey = 'iso22301_critical_sector';
+            iso22301Why = t('simulator.why.iso22301_critical_sector');
 
         } else {
 
-            iso22301Why = "Activités critiques identifiées — plan de continuité recommandé";
+            iso22301WhyKey = 'iso22301_critical_activity';
+            iso22301Why = t('simulator.why.iso22301_critical_activity');
 
         }
 
-        results.iso22301 = { status: 'recommande', why: iso22301Why };
+        results.iso22301 = { status: 'recommande', why: iso22301Why, whyKey: iso22301WhyKey };
 
     }
 
@@ -752,7 +781,8 @@ function calculateResults() {
 
             status: 'obligatoire', 
 
-            why: 'Contrats directs ou sous-traitance avec le Département de la Défense US (DoD)' 
+            why: t('simulator.why.cmmc'),
+            whyKey: 'cmmc'
 
         };
 
@@ -838,12 +868,26 @@ function displayResults() {
 
 }
 
+function getNormTranslation(norm, property) {
+    var t = window.I18n && window.I18n.t ? window.I18n.t.bind(window.I18n) : function(key) { return key; };
+    var key = 'simulator.norms.' + norm.key + '.' + property;
+    var translated = t(key);
+    // Fallback to original value if translation not found
+    return (translated === key) ? norm[property] : translated;
+}
+
 function buildNormCard(norm, status) {
 
     var isMandatory = status === 'obligatoire';
     var t = window.I18n && window.I18n.t ? window.I18n.t.bind(window.I18n) : function(key) { return key; };
     var sanctionLabel = norm.isRegulation ? t('simulator.sanctions') : t('simulator.risks');
     var sanctionClass = norm.isRegulation ? 'sanction' : 'risk';
+    
+    // Get translated values
+    var fullName = getNormTranslation(norm, 'fullName');
+    var why = getWhyTranslation(norm);
+    var sanctions = getNormTranslation(norm, 'sanctions');
+    var deadline = getNormTranslation(norm, 'deadline');
 
     
 
@@ -863,17 +907,17 @@ function buildNormCard(norm, status) {
     
     return '<div class="norm-card ' + (isMandatory ? 'mandatory' : 'recommended') + '">' +
 
-        '<div class="norm-header"><div><span class="norm-name">' + norm.name + '</span><span class="norm-fullname"> — ' + norm.fullName + '</span></div>' +
+        '<div class="norm-header"><div><span class="norm-name">' + norm.name + '</span><span class="norm-fullname"> — ' + fullName + '</span></div>' +
 
         '<span class="norm-badge ' + status + '">' + appliesText + '</span></div>' +
 
-        '<div class="norm-why"><i class="fa-solid fa-check"></i> <strong>' + whyText + ' :</strong> ' + norm.why + '</div>' +
+        '<div class="norm-why"><i class="fa-solid fa-check"></i> <strong>' + whyText + ' :</strong> ' + why + '</div>' +
 
         '<div class="norm-details">' +
 
-        '<div class="norm-detail ' + sanctionClass + '"><i class="fa-solid fa-triangle-exclamation"></i> <strong>' + sanctionLabel + ' :</strong> ' + norm.sanctions + '</div>' +
+        '<div class="norm-detail ' + sanctionClass + '"><i class="fa-solid fa-triangle-exclamation"></i> <strong>' + sanctionLabel + ' :</strong> ' + sanctions + '</div>' +
 
-        '<div class="norm-detail deadline"><i class="fa-solid fa-calendar"></i> <strong>' + deadlineText + ' :</strong> ' + norm.deadline + '</div>' +
+        '<div class="norm-detail deadline"><i class="fa-solid fa-calendar"></i> <strong>' + deadlineText + ' :</strong> ' + deadline + '</div>' +
 
         '<div class="norm-detail"><i class="fa-solid fa-book"></i> <strong>Réf. :</strong> ' + norm.source + '</div></div>' +
 
@@ -951,8 +995,12 @@ function generatePDF() {
                 var label = n.isRegulation ? t('simulator.sanctions') : t('simulator.risks');
                 var whyText = t('simulator.why');
                 var deadlineText = t('simulator.deadline');
+                var fullName = getNormTranslation(n, 'fullName');
+                var why = getWhyTranslation(n);
+                var sanctions = getNormTranslation(n, 'sanctions');
+                var deadline = getNormTranslation(n, 'deadline');
 
-                pdfHtml += '<div class="pdf-norm mandatory" style="padding: 15px; margin: 12px 0; border-left: 4px solid #27ae60; background: #f8f9fa; border-radius: 0 8px 8px 0; color: #1a202c;"><h4 style="color: #1e8449; margin: 0 0 8px; font-size: 1.1em; font-weight: bold;">' + n.name + ' — ' + n.fullName + '</h4><p style="color: #2d3748; margin: 5px 0; font-size: 0.95em;"><strong style="color: #2d3748;">' + whyText + ' :</strong> <span style="color: #2d3748;">' + n.why + '</span></p><p style="color: #2d3748; margin: 5px 0; font-size: 0.95em;"><strong style="color: #2d3748;">' + deadlineText + ' :</strong> <span style="color: #2d3748;">' + n.deadline + '</span></p><p style="color: #c53030; margin: 5px 0; font-size: 0.95em;"><strong style="color: #c53030;">' + label + ' :</strong> <span style="color: #c53030;">' + n.sanctions + '</span></p></div>';
+                pdfHtml += '<div class="pdf-norm mandatory" style="padding: 15px; margin: 12px 0; border-left: 4px solid #27ae60; background: #f8f9fa; border-radius: 0 8px 8px 0; color: #1a202c;"><h4 style="color: #1e8449; margin: 0 0 8px; font-size: 1.1em; font-weight: bold;">' + n.name + ' — ' + fullName + '</h4><p style="color: #2d3748; margin: 5px 0; font-size: 0.95em;"><strong style="color: #2d3748;">' + whyText + ' :</strong> <span style="color: #2d3748;">' + why + '</span></p><p style="color: #2d3748; margin: 5px 0; font-size: 0.95em;"><strong style="color: #2d3748;">' + deadlineText + ' :</strong> <span style="color: #2d3748;">' + deadline + '</span></p><p style="color: #c53030; margin: 5px 0; font-size: 0.95em;"><strong style="color: #c53030;">' + label + ' :</strong> <span style="color: #c53030;">' + sanctions + '</span></p></div>';
 
             });
 
@@ -967,8 +1015,10 @@ function generatePDF() {
             recommended.forEach(function(n) {
 
                 var whyText = t('simulator.why');
+                var fullName = getNormTranslation(n, 'fullName');
+                var why = getWhyTranslation(n);
 
-                pdfHtml += '<div class="pdf-norm recommended" style="padding: 15px; margin: 12px 0; border-left: 4px solid #2563eb; background: #f8f9fa; border-radius: 0 8px 8px 0; color: #1a202c;"><h4 style="color: #2563eb; margin: 0 0 8px; font-size: 1.1em; font-weight: bold;">' + n.name + ' — ' + n.fullName + '</h4><p style="color: #2d3748; margin: 5px 0; font-size: 0.95em;"><strong style="color: #2d3748;">' + whyText + ' :</strong> <span style="color: #2d3748;">' + n.why + '</span></p></div>';
+                pdfHtml += '<div class="pdf-norm recommended" style="padding: 15px; margin: 12px 0; border-left: 4px solid #2563eb; background: #f8f9fa; border-radius: 0 8px 8px 0; color: #1a202c;"><h4 style="color: #2563eb; margin: 0 0 8px; font-size: 1.1em; font-weight: bold;">' + n.name + ' — ' + fullName + '</h4><p style="color: #2d3748; margin: 5px 0; font-size: 0.95em;"><strong style="color: #2d3748;">' + whyText + ' :</strong> <span style="color: #2d3748;">' + why + '</span></p></div>';
 
             });
 

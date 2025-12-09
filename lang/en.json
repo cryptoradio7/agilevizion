@@ -230,6 +230,81 @@
     "result_label": "Result:",
     "regulations_applicable": "applicable regulation(s)",
     "recommendations_count": "recommendation(s)",
+    "norms": {
+      "rgpd": {
+        "fullName": "General Data Protection Regulation",
+        "sanctions": "Up to €20M or 4% of annual global turnover (whichever is higher)",
+        "deadline": "In force since May 2018"
+      },
+      "dora": {
+        "fullName": "Digital Operational Resilience Act",
+        "sanctions": "Periodic penalties + possible license withdrawal by supervisory authority",
+        "deadline": "Applicable since January 17, 2025"
+      },
+      "nis2": {
+        "fullName": "Network and Information Security Directive",
+        "sanctions": "Essential Entities: up to €10M or 2% turnover | Important Entities: up to €7M or 1.4% turnover",
+        "deadline": "National transposition since October 2024"
+      },
+      "pcidss": {
+        "fullName": "Payment Card Industry Data Security Standard",
+        "sanctions": "$5K-10K/month (months 1-3), $25-50K/month (months 4-6), up to $100K/month beyond + card processing capability withdrawal",
+        "deadline": "Version 4.0 mandatory since March 2025"
+      },
+      "hds": {
+        "fullName": "Health Data Hosting",
+        "sanctions": "3 years imprisonment + €45,000 (individuals) / €225,000 (legal entities) + CNIL fines up to 4% turnover",
+        "deadline": "Mandatory certification in force"
+      },
+      "iso27001": {
+        "fullName": "Information Security Management System",
+        "sanctions": "Loss of contracts, exclusion from tenders, loss of customer trust",
+        "deadline": "Voluntary certification (3-year cycle)"
+      },
+      "iso20000": {
+        "fullName": "IT Service Management System",
+        "sanctions": "Loss of commercial differentiation, competitive disadvantage",
+        "deadline": "Voluntary certification"
+      },
+      "soc2": {
+        "fullName": "Service Organization Control 2",
+        "sanctions": "Loss of US/international clients, exclusion from Fortune 500 procurement processes",
+        "deadline": "Annual voluntary attestation"
+      },
+      "iso22301": {
+        "fullName": "Business Continuity Management System",
+        "sanctions": "Risk of prolonged interruption, financial losses, reputation damage",
+        "deadline": "Voluntary certification"
+      },
+      "cmmc": {
+        "fullName": "Cybersecurity Maturity Model Certification",
+        "sanctions": "Exclusion from DoD markets + False Claims Act fines up to $250K/violation + triple damages",
+        "deadline": "Mandatory for DoD contracts (deployment 2024-2028)"
+      }
+    },
+    "why": {
+      "rgpd": "Processing of personal data with activity in the EU or EU clients/users",
+      "dora_regulated": "EU financial entity holding a license (AMF, ACPR, CSSF or equivalent)",
+      "dora_tic": "Critical ICT provider supplying services to regulated EU financial entities",
+      "nis2_eu_annex1_ee": "Annex I sector (highly critical) + Sufficient size (≥50 employees OR ≥€10M turnover OR ≥€10M balance sheet) + EU headquarters → Classified Essential Entity (EE)",
+      "nis2_eu_annex1_ei": "Annex I sector (highly critical) + Sufficient size (≥50 employees OR ≥€10M turnover OR ≥€10M balance sheet) + EU headquarters → Classified Important Entity (EI)",
+      "nis2_eu_annex2_ee": "Annex II sector (critical) + Sufficient size (≥50 employees OR ≥€10M turnover OR ≥€10M balance sheet) + EU headquarters → Classified Essential Entity (EE)",
+      "nis2_eu_annex2_ei": "Annex II sector (critical) + Sufficient size (≥50 employees OR ≥€10M turnover OR ≥€10M balance sheet) + EU headquarters → Classified Important Entity (EI)",
+      "nis2_extraterritorial": "NIS 2 extraterritorial effect (Art. 26): entity outside EU providing services to EU clients/users. Sectors concerned: Digital infrastructure, B2B ICT services, Digital providers.",
+      "pcidss": "Storage, processing or transmission of bank card numbers (PAN)",
+      "hds": "Hosting of personal health data on behalf of third parties (clients)",
+      "iso27001_mandatory": "Certification contractually required by your clients",
+      "iso27001_recommended": "International reference standard for information security — valued by large accounts",
+      "iso20000": "IT/Cloud service provider — differentiating certification for service management",
+      "soc2_mandatory": "Attestation required by your US clients",
+      "soc2_recommended": "Standard expected by US clients for SaaS/Cloud providers",
+      "iso22301_dora_nis2": "Regulatory requirement DORA + NIS 2 (Art. 21) — a business continuity plan is mandatory",
+      "iso22301_dora": "Regulatory requirement DORA — a business continuity plan is mandatory",
+      "iso22301_nis2": "Regulatory requirement NIS 2 (Art. 21) — a business continuity plan is mandatory",
+      "iso22301_critical_sector": "Critical sector — business continuity plan strongly recommended",
+      "iso22301_critical_activity": "Critical activities identified — business continuity plan recommended",
+      "cmmc": "Direct contracts or subcontracting with the US Department of Defense (DoD)"
+    },
     "pdf_title": "Download your report",
     "pdf_text": "Receive a summary PDF with all regulations, risks and deadlines.",
     "input_company": "Your company name *",
