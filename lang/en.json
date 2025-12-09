@@ -182,7 +182,6 @@
     "organization_title": "Your organisation",
     "organization_subtitle": "These 6 questions determine applicable regulations",
     "q1_label": "Q1. Where is your headquarters / main activity located?<span class=\"required\">*</span>",
-    "q1_hint": "Determines territorial scope (GDPR, NIS 2)",
     "q2_label": "Q2. What is your main business sector?<span class=\"required\">*</span>",
     "q2_hint": "Determines NIS 2 (Annex I/II), DORA (financial sector)",
     "q3_label": "Q3. What is the size of your organisation?<span class=\"required\">*</span>",

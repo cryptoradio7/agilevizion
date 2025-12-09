@@ -182,7 +182,6 @@
     "organization_title": "Votre organisation",
     "organization_subtitle": "Ces 6 questions permettent de déterminer les réglementations applicables",
     "q1_label": "Q1. Où est situé votre siège social / activité principale ?<span class=\"required\">*</span>",
-    "q1_hint": "Détermine le champ d'application territorial (RGPD, NIS 2)",
     "q2_label": "Q2. Quel est votre secteur d'activité principal ?<span class=\"required\">*</span>",
     "q2_hint": "Détermine NIS 2 (Annexe I/II), DORA (secteur financier)",
     "q3_label": "Q3. Quelle est la taille de votre organisation ?<span class=\"required\">*</span>",
