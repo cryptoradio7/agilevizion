@@ -876,6 +876,15 @@ function getNormTranslation(norm, property) {
     return (translated === key) ? norm[property] : translated;
 }
 
+function getWhyTranslation(norm) {
+    var t = window.I18n && window.I18n.t ? window.I18n.t.bind(window.I18n) : function(key) { return key; };
+    if (norm.whyKey) {
+        var translated = t('simulator.why.' + norm.whyKey);
+        return (translated === 'simulator.why.' + norm.whyKey) ? norm.why : translated;
+    }
+    return norm.why;
+}
+
 function buildNormCard(norm, status) {
 
     var isMandatory = status === 'obligatoire';
