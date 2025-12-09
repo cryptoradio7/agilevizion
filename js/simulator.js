@@ -908,9 +908,8 @@ function buildNormCard(norm, status) {
     var noteHtml = '';
 
     if (norm.key === 'nis2' && norm.extraterritorial) {
-
-        noteHtml = '<div class="norm-note warning"><i class="fa-solid fa-globe"></i> <strong>Secteurs concernés par l\'effet extraterritorial NIS 2 :</strong> (1) Infrastructure numérique (IXP, DNS, TLD, datacenters), (2) Services TIC B2B (MSP, MSSP, infogérance), (3) Fournisseurs numériques (marketplaces, moteurs de recherche, réseaux sociaux). Les autres secteurs hors UE avec clients UE ne sont PAS soumis à NIS 2. Obligation de désigner un représentant dans l\'UE.</div>';
-
+        var noteText = t('simulator.nis2_extraterritorial_note');
+        noteHtml = '<div class="norm-note warning"><i class="fa-solid fa-globe"></i> <strong>' + noteText.split(':')[0] + ':</strong> ' + noteText.split(':').slice(1).join(':') + '</div>';
     }
 
     
