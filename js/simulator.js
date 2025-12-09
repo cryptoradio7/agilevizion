@@ -1020,7 +1020,7 @@ function generatePDF() {
                 pdfEl.style.visibility = 'hidden';
                 pdfEl.style.position = '';
 
-            if (msgError) msgError.classList.add('visible');
+                if (msgError) msgError.classList.add('visible');
 
             btn.innerHTML = orig;
 
