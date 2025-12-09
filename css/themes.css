@@ -66,6 +66,11 @@
     grid-template-columns: repeat(3, 1fr);
 }
 
+/* Simulator - Vizion in blue */
+body[data-page="simulator"] .navbar-brand span {
+    color: #2563eb !important;
+}
+
 /* === INLINE COLOR UTILITIES === */
 .text-primary {
     color: var(--primary-color);
