@@ -160,9 +160,12 @@ const Loader = {
         this.updateLanguageSwitch();
 
         // Apply translations if i18n is loaded
-        if (window.I18n && window.I18n.translations) {
-            window.I18n.translatePage();
-        }
+        // Wait a bit to ensure translations are fully loaded
+        setTimeout(() => {
+            if (window.I18n && window.I18n.translations && Object.keys(window.I18n.translations).length > 0) {
+                window.I18n.translatePage();
+            }
+        }, 200);
 
         // Listen for language changes to update components
         window.addEventListener('languageChanged', () => {
@@ -176,10 +179,29 @@ window.Loader = Loader;
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', async () => {
-    // Wait for i18n to load first (if present)
-    if (window.I18n) {
-        // Small delay to let i18n initialize
-        await new Promise(resolve => setTimeout(resolve, 50));
-    }
+    // Wait for translations to be ready
+    const waitForTranslations = () => {
+        return new Promise((resolve) => {
+            if (window.I18n && window.I18n.translations && Object.keys(window.I18n.translations).length > 0) {
+                resolve();
+            } else {
+                // Listen for translationsReady event
+                window.addEventListener('translationsReady', resolve, { once: true });
+                // Fallback timeout
+                setTimeout(resolve, 1000);
+            }
+        });
+    };
+    
+    await waitForTranslations();
+    
+    // Now load components
     await Loader.init();
+    
+    // Ensure translations are applied after everything is loaded
+    setTimeout(() => {
+        if (window.I18n && window.I18n.translations && Object.keys(window.I18n.translations).length > 0) {
+            window.I18n.translatePage();
+        }
+    }, 100);
 });

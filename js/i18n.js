@@ -190,6 +190,8 @@ const I18n = {
 window.I18n = I18n;
 
 // Auto-initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-    I18n.init();
+document.addEventListener('DOMContentLoaded', async () => {
+    await I18n.init();
+    // Trigger event when translations are ready
+    window.dispatchEvent(new CustomEvent('translationsReady'));
 });
