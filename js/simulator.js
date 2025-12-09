@@ -909,7 +909,10 @@ function buildNormCard(norm, status) {
 
     if (norm.key === 'nis2' && norm.extraterritorial) {
         var noteText = t('simulator.nis2_extraterritorial_note');
-        noteHtml = '<div class="norm-note warning"><i class="fa-solid fa-globe"></i> <strong>' + noteText.split(':')[0] + ':</strong> ' + noteText.split(':').slice(1).join(':') + '</div>';
+        var colonIndex = noteText.indexOf(':');
+        var noteTitle = colonIndex > 0 ? noteText.substring(0, colonIndex) : '';
+        var noteContent = colonIndex > 0 ? noteText.substring(colonIndex + 1).trim() : noteText;
+        noteHtml = '<div class="norm-note warning"><i class="fa-solid fa-globe"></i>' + (noteTitle ? ' <strong>' + noteTitle + ':</strong>' : '') + ' ' + noteContent + '</div>';
     }
 
     
