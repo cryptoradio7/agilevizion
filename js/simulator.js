@@ -950,11 +950,11 @@ function generatePDF() {
 
         if (recommended.length > 0) {
 
-            pdfHtml += '<h3 style="color:#0f4c81;margin:20px 0 10px;border-bottom:2px solid #0f4c81;padding-bottom:5px;">RECOMMANDATIONS (' + recommended.length + ')</h3>';
+            pdfHtml += '<h3 style="color:#2563eb;margin:20px 0 10px;border-bottom:2px solid #2563eb;padding-bottom:5px;">RECOMMANDATIONS (' + recommended.length + ')</h3>';
 
             recommended.forEach(function(n) {
 
-                pdfHtml += '<div class="pdf-norm recommended"><h4 style="color:#0f4c81;margin:0 0 8px;">' + n.name + ' — ' + n.fullName + '</h4><p><strong>Pourquoi :</strong> ' + n.why + '</p></div>';
+                pdfHtml += '<div class="pdf-norm recommended"><h4 style="color:#2563eb;margin:0 0 8px;">' + n.name + ' — ' + n.fullName + '</h4><p><strong>Pourquoi :</strong> ' + n.why + '</p></div>';
 
             });
 
