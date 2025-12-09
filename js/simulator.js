@@ -969,30 +969,40 @@ function generatePDF() {
         document.getElementById('pdf-results').innerHTML = pdfHtml;
 
         var pdfEl = document.getElementById('pdf-template');
+        
+        // Verify content is injected
+        var resultsDiv = document.getElementById('pdf-results');
+        if (!resultsDiv || !resultsDiv.innerHTML || resultsDiv.innerHTML.trim() === '') {
+            console.error('PDF content is empty!');
+            if (msgError) msgError.classList.add('visible');
+            btn.innerHTML = orig;
+            return;
+        }
 
-        // Force visibility and positioning for html2pdf
+        // Make template visible but off-screen
+        var originalDisplay = pdfEl.style.display;
+        var originalPosition = pdfEl.style.position;
+        var originalLeft = pdfEl.style.left;
+        var originalTop = pdfEl.style.top;
+        var originalZIndex = pdfEl.style.zIndex;
+        
         pdfEl.style.display = 'block';
-        pdfEl.style.visibility = 'visible';
-        pdfEl.style.position = 'fixed';
-        pdfEl.style.left = '0';
+        pdfEl.style.position = 'absolute';
+        pdfEl.style.left = '-10000px';
         pdfEl.style.top = '0';
-        pdfEl.style.width = '210mm';
-        pdfEl.style.maxWidth = '210mm';
-        pdfEl.style.minWidth = '210mm';
+        pdfEl.style.width = '794px'; // A4 width in pixels
         pdfEl.style.backgroundColor = '#ffffff';
         pdfEl.style.color = '#1a202c';
-        pdfEl.style.zIndex = '9999';
-        pdfEl.style.opacity = '0';
-        pdfEl.style.pointerEvents = 'none';
+        pdfEl.style.zIndex = '10000';
 
-        // Force reflow to ensure content is rendered
-        pdfEl.offsetHeight;
+        // Force reflow
+        var height = pdfEl.offsetHeight;
+        console.log('PDF template height:', height);
+        console.log('PDF results content length:', resultsDiv.innerHTML.length);
         
-        // Wait for DOM to update with multiple frames
-        requestAnimationFrame(function() {
-            requestAnimationFrame(function() {
-                setTimeout(function() {
-                    html2pdf().set({ 
+        // Wait for rendering
+        setTimeout(function() {
+            html2pdf().set({ 
 
             margin: 10, 
 
@@ -1014,13 +1024,12 @@ function generatePDF() {
             jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' } 
 
             }).from(pdfEl).save().then(function() {
-
-                pdfEl.style.display = 'none';
-                pdfEl.style.visibility = 'hidden';
-                pdfEl.style.position = '';
-                pdfEl.style.opacity = '';
-                pdfEl.style.zIndex = '';
-                pdfEl.style.pointerEvents = '';
+                // Restore original styles
+                pdfEl.style.display = originalDisplay;
+                pdfEl.style.position = originalPosition;
+                pdfEl.style.left = originalLeft;
+                pdfEl.style.top = originalTop;
+                pdfEl.style.zIndex = originalZIndex;
 
                 if (msgSuccess) msgSuccess.classList.add('visible');
 
@@ -1029,15 +1038,15 @@ function generatePDF() {
                 checkPdfFormValid();
 
             }).catch(function(err) {
-
                 console.error('PDF error:', err);
-
-                pdfEl.style.display = 'none';
-                pdfEl.style.visibility = 'hidden';
-                pdfEl.style.position = '';
-                pdfEl.style.opacity = '';
-                pdfEl.style.zIndex = '';
-                pdfEl.style.pointerEvents = '';
+                console.error('Error details:', err.message, err.stack);
+                
+                // Restore original styles
+                pdfEl.style.display = originalDisplay;
+                pdfEl.style.position = originalPosition;
+                pdfEl.style.left = originalLeft;
+                pdfEl.style.top = originalTop;
+                pdfEl.style.zIndex = originalZIndex;
 
                 if (msgError) msgError.classList.add('visible');
 
@@ -1045,10 +1054,8 @@ function generatePDF() {
 
                 checkPdfFormValid();
 
-                    });
-                }, 200); // Delay to ensure DOM is fully updated
             });
-        });
+        }, 300); // Delay to ensure DOM is fully updated
 
     } catch (e) {
 
