@@ -800,9 +800,11 @@ function displayResults() {
 
     
 
+    var t = window.I18n && window.I18n.t ? window.I18n.t.bind(window.I18n) : function(key) { return key; };
+    
     if (mandatory.length > 0) {
 
-        html += '<div class="results-category"><h3 class="mandatory-title"><i class="fa-solid fa-circle-check"></i> Réglementations applicables (' + mandatory.length + ')</h3>';
+        html += '<div class="results-category"><h3 class="mandatory-title"><i class="fa-solid fa-circle-check"></i> ' + t('simulator.mandatory_title') + ' (' + mandatory.length + ')</h3>';
 
         mandatory.forEach(function(n) { html += buildNormCard(n, 'obligatoire'); });
 
@@ -814,7 +816,7 @@ function displayResults() {
 
     if (recommended.length > 0) {
 
-        html += '<div class="results-category"><h3 class="recommended-title"><i class="fa-solid fa-lightbulb"></i> Recommandations (' + recommended.length + ')</h3>';
+        html += '<div class="results-category"><h3 class="recommended-title"><i class="fa-solid fa-lightbulb"></i> ' + t('simulator.recommended_title') + ' (' + recommended.length + ')</h3>';
 
         recommended.forEach(function(n) { html += buildNormCard(n, 'recommande'); });
 
@@ -839,9 +841,8 @@ function displayResults() {
 function buildNormCard(norm, status) {
 
     var isMandatory = status === 'obligatoire';
-
-    var sanctionLabel = norm.isRegulation ? 'Sanctions' : 'Risques';
-
+    var t = window.I18n && window.I18n.t ? window.I18n.t.bind(window.I18n) : function(key) { return key; };
+    var sanctionLabel = norm.isRegulation ? t('simulator.sanctions') : t('simulator.risks');
     var sanctionClass = norm.isRegulation ? 'sanction' : 'risk';
 
     
@@ -930,17 +931,24 @@ function generatePDF() {
 
         var p = PROFILES[state.profile];
 
-        var pdfHtml = '<div class="pdf-profile" style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px; color: #1a202c; font-size: 1em;"><strong style="color: #1a202c;">' + p.icon + ' Profil :</strong> <span style="color: #1a202c;">' + p.title + '</span><br><strong style="color: #1a202c;">Résultat :</strong> <span style="color: #1a202c;">' + mandatory.length + ' réglementation(s) applicable(s), ' + recommended.length + ' recommandation(s)</span></div>';
+        var t = window.I18n && window.I18n.t ? window.I18n.t.bind(window.I18n) : function(key) { return key; };
+        var profileLabel = t('simulator.profile_label');
+        var resultLabel = t('simulator.result_label');
+        var regsText = mandatory.length + ' ' + t('simulator.regulations_applicable');
+        var recsText = recommended.length + ' ' + t('simulator.recommendations_count');
+        var pdfHtml = '<div class="pdf-profile" style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px; color: #1a202c; font-size: 1em;"><strong style="color: #1a202c;">' + p.icon + ' ' + profileLabel + '</strong> <span style="color: #1a202c;">' + p.title + '</span><br><strong style="color: #1a202c;">' + resultLabel + '</strong> <span style="color: #1a202c;">' + regsText + ', ' + recsText + '</span></div>';
 
         if (mandatory.length > 0) {
 
-            pdfHtml += '<h3 style="color:#27ae60;margin:20px 0 10px;border-bottom:2px solid #27ae60;padding-bottom:5px;">RÉGLEMENTATIONS APPLICABLES (' + mandatory.length + ')</h3>';
+            pdfHtml += '<h3 style="color:#27ae60;margin:20px 0 10px;border-bottom:2px solid #27ae60;padding-bottom:5px;">' + t('simulator.mandatory_title').toUpperCase() + ' (' + mandatory.length + ')</h3>';
 
             mandatory.forEach(function(n) {
 
-                var label = n.isRegulation ? 'Sanctions' : 'Risques';
+                var label = n.isRegulation ? t('simulator.sanctions') : t('simulator.risks');
+                var whyText = t('simulator.why');
+                var deadlineText = t('simulator.deadline');
 
-                pdfHtml += '<div class="pdf-norm mandatory" style="padding: 15px; margin: 12px 0; border-left: 4px solid #27ae60; background: #f8f9fa; border-radius: 0 8px 8px 0; color: #1a202c;"><h4 style="color: #1e8449; margin: 0 0 8px; font-size: 1.1em; font-weight: bold;">' + n.name + ' — ' + n.fullName + '</h4><p style="color: #2d3748; margin: 5px 0; font-size: 0.95em;"><strong style="color: #2d3748;">Pourquoi :</strong> <span style="color: #2d3748;">' + n.why + '</span></p><p style="color: #2d3748; margin: 5px 0; font-size: 0.95em;"><strong style="color: #2d3748;">Échéance :</strong> <span style="color: #2d3748;">' + n.deadline + '</span></p><p style="color: #c53030; margin: 5px 0; font-size: 0.95em;"><strong style="color: #c53030;">' + label + ' :</strong> <span style="color: #c53030;">' + n.sanctions + '</span></p></div>';
+                pdfHtml += '<div class="pdf-norm mandatory" style="padding: 15px; margin: 12px 0; border-left: 4px solid #27ae60; background: #f8f9fa; border-radius: 0 8px 8px 0; color: #1a202c;"><h4 style="color: #1e8449; margin: 0 0 8px; font-size: 1.1em; font-weight: bold;">' + n.name + ' — ' + n.fullName + '</h4><p style="color: #2d3748; margin: 5px 0; font-size: 0.95em;"><strong style="color: #2d3748;">' + whyText + ' :</strong> <span style="color: #2d3748;">' + n.why + '</span></p><p style="color: #2d3748; margin: 5px 0; font-size: 0.95em;"><strong style="color: #2d3748;">' + deadlineText + ' :</strong> <span style="color: #2d3748;">' + n.deadline + '</span></p><p style="color: #c53030; margin: 5px 0; font-size: 0.95em;"><strong style="color: #c53030;">' + label + ' :</strong> <span style="color: #c53030;">' + n.sanctions + '</span></p></div>';
 
             });
 
@@ -950,11 +958,13 @@ function generatePDF() {
 
         if (recommended.length > 0) {
 
-            pdfHtml += '<h3 style="color:#2563eb;margin:20px 0 10px;border-bottom:2px solid #2563eb;padding-bottom:5px;">RECOMMANDATIONS (' + recommended.length + ')</h3>';
+            pdfHtml += '<h3 style="color:#2563eb;margin:20px 0 10px;border-bottom:2px solid #2563eb;padding-bottom:5px;">' + t('simulator.recommended_title').toUpperCase() + ' (' + recommended.length + ')</h3>';
 
             recommended.forEach(function(n) {
 
-                pdfHtml += '<div class="pdf-norm recommended" style="padding: 15px; margin: 12px 0; border-left: 4px solid #2563eb; background: #f8f9fa; border-radius: 0 8px 8px 0; color: #1a202c;"><h4 style="color: #2563eb; margin: 0 0 8px; font-size: 1.1em; font-weight: bold;">' + n.name + ' — ' + n.fullName + '</h4><p style="color: #2d3748; margin: 5px 0; font-size: 0.95em;"><strong style="color: #2d3748;">Pourquoi :</strong> <span style="color: #2d3748;">' + n.why + '</span></p></div>';
+                var whyText = t('simulator.why');
+
+                pdfHtml += '<div class="pdf-norm recommended" style="padding: 15px; margin: 12px 0; border-left: 4px solid #2563eb; background: #f8f9fa; border-radius: 0 8px 8px 0; color: #1a202c;"><h4 style="color: #2563eb; margin: 0 0 8px; font-size: 1.1em; font-weight: bold;">' + n.name + ' — ' + n.fullName + '</h4><p style="color: #2d3748; margin: 5px 0; font-size: 0.95em;"><strong style="color: #2d3748;">' + whyText + ' :</strong> <span style="color: #2d3748;">' + n.why + '</span></p></div>';
 
             });
 
