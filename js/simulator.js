@@ -1016,9 +1016,7 @@ function generatePDF() {
                 backgroundColor: '#ffffff',
                 logging: true,
                 letterRendering: true,
-                allowTaint: false,
-                windowWidth: 794,
-                windowHeight: 1123
+                allowTaint: false
             }, 
 
             jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' } 
