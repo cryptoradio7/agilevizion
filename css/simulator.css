@@ -121,9 +121,9 @@ body.theme-grc[data-page="simulator"] .navbar .navbar-brand span,
     transform: translateY(-1px);
 }
 
-.btn-primary { width: 100%; padding: 16px 30px; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: 600; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.btn-primary { width: 100%; padding: 16px 30px; background: linear-gradient(135deg, #2563eb 0%, #1e40af 50%, #1e3a8a 100%); color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: 600; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; display: flex; align-items: center; justify-content: center; gap: 10px; }
 
-.btn-primary:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(15, 76, 129, 0.4); }
+.btn-primary:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4); }
 
 .btn-primary:disabled { background: var(--gray-400); cursor: not-allowed; transform: none; box-shadow: none; }
 
