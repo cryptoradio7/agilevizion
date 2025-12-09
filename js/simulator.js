@@ -491,7 +491,7 @@ function analyzeProfile() {
 function displayProfile() {
 
     var p = PROFILES[state.profile];
-    var t = window.I18n && window.I18n.t ? window.I18n.t.bind(window.I18n) : function(key) { return key; };
+    var t = window.I18n && window.I18n.t ? function(key) { return window.I18n.t(key); } : function(key) { return key; };
     var profileTitle = t('simulator.profiles.' + state.profile + '.title');
     var profileSubtitle = t('simulator.profiles.' + state.profile + '.subtitle');
 
@@ -561,7 +561,7 @@ function calculateResults() {
 
     var isLarge = (a.q3_size === 'large');
 
-    var t = window.I18n && window.I18n.t ? window.I18n.t.bind(window.I18n) : function(key) { return key; };
+    var t = window.I18n && window.I18n.t ? function(key) { return window.I18n.t(key); } : function(key) { return key; };
     
     // RGPD
 
