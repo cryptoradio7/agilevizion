@@ -26,229 +26,217 @@
 <body class="theme-grc" data-page="simulator" data-page-title="simulator.title">
     <div id="header-placeholder"></div>
     
-    <!-- ===== SIMULATOR BODY CONTENT ===== -->
-    
     <!-- HERO -->
     <section class="sim-hero">
         <h1><i class="fa-solid fa-shield-halved"></i> <span data-i18n="simulator.hero_title">Quelles réglementations cyber s'appliquent à vous ?</span></h1>
-        <p><span data-i18n="simulator.hero_text" data-i18n-html>Répondez à <span class="highlight">6 questions</span> et découvrez immédiatement quels référentiels sont <strong>obligatoires</strong> ou <strong>recommandés</strong> pour votre organisation.</span></p>
+        <p data-i18n="simulator.hero_text" data-i18n-html>Répondez à quelques questions et découvrez immédiatement quels référentiels sont <strong>applicables</strong> ou <strong>recommandés</strong> pour votre organisation.</p>
     </section>
-    
-    <!-- MAIN CONTAINER -->
+
     <div class="sim-container">
-        
-        <!-- PHASE INDICATOR -->
-        <div class="phase-indicator">
-            <div class="phase-step active" data-phase="1">
-                <i class="fa-solid fa-clipboard-question"></i>
-                <span data-i18n="simulator.phase1">Diagnostic rapide</span>
+        <!-- QUESTIONS CARD -->
+        <div class="sim-card" id="questions-card">
+            <div class="sim-card-header">
+                <h2 class="sim-card-title"><i class="fa-solid fa-building"></i> <span data-i18n="simulator.organization_title">Votre organisation</span></h2>
+                <button class="btn-reset" onclick="resetSimulator()"><i class="fa-solid fa-rotate-left"></i> <span data-i18n="simulator.btn_reset">Réinitialiser</span></button>
             </div>
-            <div class="phase-connector"><i class="fa-solid fa-chevron-right"></i></div>
-            <div class="phase-step" data-phase="2">
-                <i class="fa-solid fa-sliders"></i>
-                <span data-i18n="simulator.phase2">Affinage</span>
-            </div>
-            <div class="phase-connector"><i class="fa-solid fa-chevron-right"></i></div>
-            <div class="phase-step" data-phase="3">
-                <i class="fa-solid fa-file-pdf"></i>
-                <span data-i18n="simulator.phase3">Rapport PDF</span>
-            </div>
-        </div>
-        
-        <!-- PHASE 1: CORE QUESTIONS -->
-        <div class="sim-card" id="phase1-card">
-            <h2 class="sim-card-title"><i class="fa-solid fa-building"></i> <span data-i18n="simulator.organization_title">Votre organisation</span></h2>
-            <p class="sim-card-subtitle" data-i18n="simulator.organization_subtitle">Ces 6 questions permettent de déterminer les réglementations applicables</p>
             
+            <div class="disclaimer">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <span data-i18n="simulator.disclaimer">Ce simulateur fournit une indication générale et ne constitue pas un avis juridique.</span>
+            </div>
+
             <!-- Q1: Location -->
-            <div class="question-group">
-                <label class="question-label" data-i18n="simulator.q1_label" data-i18n-html>Q1. Où est situé votre siège social / activité principale ?<span class="required">*</span></label>
-                <select class="question-select" id="q1_location">
-                    <option value="">— Sélectionnez —</option>
-                    <option value="eu">🇪🇺 Siège dans l'Union Européenne</option>
-                    <option value="eu_clients">🌍 Hors UE mais clients/utilisateurs dans l'UE</option>
-                    <option value="non_eu">🌐 Hors UE, aucune activité UE</option>
+            <div class="question-group" id="group-q1">
+                <label class="question-label" data-i18n="simulator.q1_label" data-i18n-html>Où est situé votre siège social / activité principale ?<span class="required">*</span></label>
+                <select class="question-select" id="q1_location" onchange="handleChange(this)">
+                    <option value="">— <span data-i18n="simulator.select">Sélectionnez</span> —</option>
+                    <option value="eu" data-i18n="simulator.q1_option_eu">Siège dans l'Union Européenne</option>
+                    <option value="eu_clients" data-i18n="simulator.q1_option_eu_clients">Hors UE mais clients/utilisateurs dans l'UE</option>
+                    <option value="non_eu" data-i18n="simulator.q1_option_non_eu">Hors UE, aucune activité UE</option>
                 </select>
             </div>
-            
+
             <!-- Q2: Sector -->
-            <div class="question-group">
-                <label class="question-label" data-i18n="simulator.q2_label" data-i18n-html>Q2. Quel est votre secteur d'activité principal ?<span class="required">*</span></label>
-                <p class="question-hint" data-i18n="simulator.q2_hint">Détermine NIS 2 (Annexe I/II), DORA (secteur financier)</p>
-                <select class="question-select" id="q2_sector">
-                    <option value="">— Sélectionnez —</option>
-                    <optgroup label="🔴 NIS 2 Annexe I — Hautement critiques">
-                        <option value="energy">⚡ Énergie (électricité, gaz, pétrole, hydrogène)</option>
-                        <option value="transport">🚆 Transports (aérien, ferroviaire, maritime, routier)</option>
-                        <option value="banking">🏦 Banque / Établissements de crédit</option>
-                        <option value="financial_infra">📈 Infrastructures des marchés financiers</option>
-                        <option value="health">🏥 Santé (hôpitaux, labos, pharma)</option>
-                        <option value="water">💧 Eau potable / Eaux usées</option>
-                        <option value="digital_infra">🌐 Infrastructure numérique (IXP, DNS, TLD, datacenter)</option>
-                        <option value="ict_b2b">💻 Services TIC B2B (MSP, MSSP, infogérance)</option>
-                        <option value="public_admin">🏛️ Administrations publiques</option>
-                        <option value="space">🚀 Espace</option>
+            <div class="question-group" id="group-q2">
+                <label class="question-label" data-i18n="simulator.q2_label" data-i18n-html>Quel est votre secteur d'activité principal ?<span class="required">*</span></label>
+                <select class="question-select" id="q2_sector" onchange="handleChange(this)">
+                    <option value="">— <span data-i18n="simulator.select">Sélectionnez</span> —</option>
+                    <optgroup label="NIS 2 Annexe I — Hautement critiques">
+                        <option value="energy">Énergie (électricité, gaz, pétrole, hydrogène)</option>
+                        <option value="transport">Transports (aérien, ferroviaire, maritime, routier)</option>
+                        <option value="banking">Banque / Établissements de crédit</option>
+                        <option value="financial_infra">Infrastructures des marchés financiers</option>
+                        <option value="health">Santé (hôpitaux, labos, pharma)</option>
+                        <option value="water">Eau potable / Eaux usées</option>
+                        <option value="digital_infra">Infrastructure numérique (IXP, DNS, TLD, datacenter)</option>
+                        <option value="ict_b2b">Services TIC B2B (MSP, MSSP, infogérance)</option>
+                        <option value="public_admin">Administrations publiques</option>
+                        <option value="space">Espace</option>
                     </optgroup>
-                    <optgroup label="🟠 NIS 2 Annexe II — Critiques">
-                        <option value="postal">📮 Services postaux et courrier</option>
-                        <option value="waste">♻️ Gestion des déchets</option>
-                        <option value="chemistry">🧪 Chimie (fabrication, production)</option>
-                        <option value="food">🍽️ Agroalimentaire (production, distribution)</option>
-                        <option value="manufacturing">⚙️ Fabrication (médical, électronique, machines, véhicules)</option>
-                        <option value="digital_providers">📱 Fournisseurs numériques (marketplaces, moteurs, réseaux sociaux)</option>
-                        <option value="research">🔬 Organismes de recherche</option>
+                    <optgroup label="NIS 2 Annexe II — Secteurs critiques">
+                        <option value="postal">Services postaux et courrier</option>
+                        <option value="waste">Gestion des déchets</option>
+                        <option value="chemistry">Chimie (fabrication, production)</option>
+                        <option value="food">Agroalimentaire (production, distribution)</option>
+                        <option value="manufacturing">Fabrication (médical, électronique, machines, véhicules)</option>
+                        <option value="digital_providers">Fournisseurs numériques (marketplaces, moteurs, réseaux sociaux)</option>
+                        <option value="research">Organismes de recherche</option>
                     </optgroup>
-                    <optgroup label="🔵 Secteur financier (DORA)">
-                        <option value="insurance">🛡️ Assurance / Réassurance / Mutuelle</option>
-                        <option value="investment">💼 Entreprise d'investissement / SGP / OPCVM</option>
-                        <option value="crypto">₿ Prestataire crypto (agrément MiCA)</option>
-                        <option value="crowdfunding">🤝 Plateforme de crowdfunding</option>
-                        <option value="rating">⭐ Agence de notation</option>
+                    <optgroup label="Secteur financier (DORA)">
+                        <option value="insurance">Assurance / Réassurance / Mutuelle</option>
+                        <option value="investment">Entreprise d'investissement / SGP / OPCVM</option>
+                        <option value="crypto">Prestataire crypto (agrément MiCA)</option>
+                        <option value="crowdfunding">Plateforme de crowdfunding</option>
+                        <option value="rating">Agence de notation</option>
                     </optgroup>
-                    <optgroup label="⚪ Autres secteurs">
-                        <option value="retail">🛒 Commerce / E-commerce</option>
-                        <option value="services">📊 Services aux entreprises / Conseil</option>
-                        <option value="other">🔹 Autre secteur</option>
+                    <optgroup label="Autres secteurs">
+                        <option value="retail">Commerce / E-commerce</option>
+                        <option value="services">Services aux entreprises / Conseil</option>
+                        <option value="other">Autre secteur</option>
                     </optgroup>
                 </select>
             </div>
-            
+
             <!-- Q3: Size -->
-            <div class="question-group">
-                <label class="question-label" data-i18n="simulator.q3_label" data-i18n-html>Q3. Quelle est la taille de votre organisation ?<span class="required">*</span></label>
-                <p class="question-hint" data-i18n="simulator.q3_hint" data-i18n-html>NIS 2 : <code>&lt;50 sal ET &lt;10M€</code> = non concerné. Un seul seuil dépassé suffit.</p>
-                <select class="question-select" id="q3_size">
-                    <option value="">— Sélectionnez —</option>
-                    <option value="small">🚀 TPE/Startup : &lt;50 employés ET CA &lt;10M€ ET bilan &lt;10M€</option>
-                    <option value="medium">🏢 PME : 50-249 employés OU CA 10-50M€ OU bilan 10-43M€</option>
-                    <option value="large">🏛️ ETI/GE : 250+ employés OU CA &gt;50M€ OU bilan &gt;43M€</option>
+            <div class="question-group" id="group-q3">
+                <label class="question-label" data-i18n="simulator.q3_label" data-i18n-html>Quelle est la taille de votre organisation ?<span class="required">*</span></label>
+                <select class="question-select" id="q3_size" onchange="handleChange(this)">
+                    <option value="">— <span data-i18n="simulator.select">Sélectionnez</span> —</option>
+                    <option value="small">Petite : moins de 50 employés ET CA &lt;10M€ ET bilan &lt;10M€</option>
+                    <option value="medium">Moyenne : 50-249 employés OU CA 10-50M€ OU bilan 10-43M€</option>
+                    <option value="large">Grande : 250+ employés OU CA &gt;50M€ OU bilan &gt;43M€</option>
                 </select>
             </div>
-            
+
             <!-- Q4: Personal Data -->
-            <div class="question-group">
-                <label class="question-label" data-i18n="simulator.q4_label" data-i18n-html>Q4. Traitez-vous des données personnelles ?<span class="required">*</span></label>
-                <p class="question-hint" data-i18n="simulator.q4_hint" data-i18n-html>Nom, email, téléphone, IP, cookies, données RH, fichiers clients... <code>95% des entreprises = Oui</code></p>
-                <select class="question-select" id="q4_personal_data">
-                    <option value="">— Sélectionnez —</option>
-                    <option value="yes">✅ Oui</option>
-                    <option value="no">❌ Non (rare)</option>
-                    <option value="unknown">❓ Je ne suis pas sûr</option>
+            <div class="question-group" id="group-q4">
+                <label class="question-label" data-i18n="simulator.q4_label" data-i18n-html>Traitez-vous des données personnelles ?<span class="required">*</span></label>
+                <select class="question-select" id="q4_personal_data" onchange="handleChange(this)">
+                    <option value="">— <span data-i18n="simulator.select">Sélectionnez</span> —</option>
+                    <option value="yes">Oui</option>
+                    <option value="no">Non</option>
                 </select>
             </div>
-            
+
             <!-- Q5: Regulated -->
-            <div class="question-group">
-                <label class="question-label" data-i18n="simulator.q5_label" data-i18n-html>Q5. Détenez-vous un agrément financier (AMF, ACPR, CSSF...) ?<span class="required">*</span></label>
-                <p class="question-hint" data-i18n="simulator.q5_hint" data-i18n-html>DORA cible <strong>exclusivement</strong> les entités financières régulées. Le secteur "banque/finance" ne suffit PAS sans agrément !</p>
-                <select class="question-select" id="q5_regulated">
-                    <option value="">— Sélectionnez —</option>
-                    <option value="yes">✅ Oui - Entité régulée (licence bancaire, agrément assurance, etc.)</option>
-                    <option value="no">❌ Non</option>
+            <div class="question-group" id="group-q5">
+                <label class="question-label" data-i18n="simulator.q5_label" data-i18n-html>Détenez-vous un agrément financier (AMF, ACPR, CSSF...) ?<span class="required">*</span></label>
+                <select class="question-select" id="q5_regulated" onchange="handleChange(this)">
+                    <option value="">— <span data-i18n="simulator.select">Sélectionnez</span> —</option>
+                    <option value="yes">Oui — Entité régulée</option>
+                    <option value="no">Non</option>
                 </select>
             </div>
-            
+
             <!-- Q6: IT Services -->
-            <div class="question-group">
-                <label class="question-label" data-i18n="simulator.q6_label" data-i18n-html>Q6. Fournissez-vous des services IT/Cloud à des clients ?<span class="required">*</span></label>
-                <p class="question-hint" data-i18n="simulator.q6_hint">MSP, infogérance, SaaS, hébergement, conseil IT...</p>
-                <select class="question-select" id="q6_it_services">
-                    <option value="">— Sélectionnez —</option>
-                    <option value="yes">✅ Oui</option>
-                    <option value="no">❌ Non</option>
+            <div class="question-group" id="group-q6">
+                <label class="question-label" data-i18n="simulator.q6_label" data-i18n-html>Fournissez-vous des services IT/Cloud à des clients ?<span class="required">*</span></label>
+                <select class="question-select" id="q6_it_services" onchange="handleChange(this)">
+                    <option value="">— <span data-i18n="simulator.select">Sélectionnez</span> —</option>
+                    <option value="yes">Oui</option>
+                    <option value="no">Non</option>
                 </select>
             </div>
-            
-            <!-- BUTTON -->
-            <button class="btn-primary" id="btn-phase1" onclick="analyzePhase1()" disabled>
-                <i class="fa-solid fa-magnifying-glass-chart"></i>
-                <span data-i18n="simulator.btn_analyze">Analyser mon profil</span>
+
+            <!-- Conditional: TIC Provider -->
+            <div class="conditional-group question-group" id="cond-tic">
+                <label class="question-label" data-i18n="simulator.q7_label">Êtes-vous prestataire TIC pour des entités financières régulées ?</label>
+                <select class="question-select" id="q7_tic_provider" onchange="handleChange(this)">
+                    <option value="">— <span data-i18n="simulator.select">Sélectionnez</span> —</option>
+                    <option value="yes">Oui</option>
+                    <option value="no">Non</option>
+                </select>
+            </div>
+
+            <!-- Conditional: HDS -->
+            <div class="conditional-group question-group" id="cond-hds">
+                <label class="question-label" data-i18n="simulator.q8_label">Hébergez-vous des données de santé pour des tiers (clients) ?</label>
+                <select class="question-select" id="q8_hds" onchange="handleChange(this)">
+                    <option value="">— <span data-i18n="simulator.select">Sélectionnez</span> —</option>
+                    <option value="yes">Oui</option>
+                    <option value="no">Non</option>
+                </select>
+            </div>
+
+            <!-- Conditional: PCI -->
+            <div class="conditional-group question-group" id="cond-pci">
+                <label class="question-label" data-i18n="simulator.q9_label">Stockez/traitez-vous des numéros de cartes bancaires (PAN) ?</label>
+                <select class="question-select" id="q9_pci" onchange="handleChange(this)">
+                    <option value="">— <span data-i18n="simulator.select">Sélectionnez</span> —</option>
+                    <option value="yes">Oui</option>
+                    <option value="no">Non (Stripe/PayPal gère les paiements)</option>
+                </select>
+            </div>
+
+            <!-- US Section -->
+            <div class="section-title"><i class="fa-solid fa-flag-usa"></i> <span data-i18n="simulator.us_section">Activités aux États-Unis</span></div>
+
+            <!-- Q10: US Activity -->
+            <div class="question-group" id="group-q10">
+                <label class="question-label" data-i18n="simulator.q10_label" data-i18n-html>Avez-vous des activités ou clients aux États-Unis ?<span class="required">*</span></label>
+                <select class="question-select" id="q10_us_activity" onchange="handleChange(this)">
+                    <option value="yes">Oui</option>
+                    <option value="no" selected>Non</option>
+                </select>
+            </div>
+
+            <!-- Conditional: US Certs -->
+            <div class="conditional-group question-group" id="cond-us-certs">
+                <label class="question-label" data-i18n="simulator.q10a_label">Vos clients US exigent-ils des certifications (ISO 27001 / SOC 2) ?</label>
+                <select class="question-select" id="q10a_us_certs" onchange="handleChange(this)">
+                    <option value="">— <span data-i18n="simulator.select">Sélectionnez</span> —</option>
+                    <option value="iso27001">ISO 27001 exigé</option>
+                    <option value="soc2">SOC 2 exigé</option>
+                    <option value="both">Les deux</option>
+                    <option value="no">Non / Pas encore</option>
+                </select>
+            </div>
+
+            <!-- Conditional: DoD -->
+            <div class="conditional-group question-group" id="cond-us-dod">
+                <label class="question-label" data-i18n="simulator.q10b_label">Travaillez-vous avec le Département de la Défense US (DoD) ?</label>
+                <select class="question-select" id="q10b_dod" onchange="handleChange(this)">
+                    <option value="">— <span data-i18n="simulator.select">Sélectionnez</span> —</option>
+                    <option value="yes">Oui — Contrats directs ou sous-traitance</option>
+                    <option value="no">Non</option>
+                </select>
+            </div>
+
+            <!-- Continuity Section -->
+            <div class="section-title"><i class="fa-solid fa-arrows-rotate"></i> <span data-i18n="simulator.continuity_section">Continuité d'activité</span></div>
+
+            <!-- Q11: Continuity -->
+            <div class="question-group" id="group-q11">
+                <label class="question-label" data-i18n="simulator.q11_label" data-i18n-html>Avez-vous des activités critiques nécessitant un plan de continuité ?<span class="required">*</span></label>
+                <select class="question-select" id="q11_continuity" onchange="handleChange(this)">
+                    <option value="">— <span data-i18n="simulator.select">Sélectionnez</span> —</option>
+                    <option value="yes">Oui</option>
+                    <option value="no">Non</option>
+                </select>
+                <div class="question-note warning" id="note-continuity" style="display:none;">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <span data-i18n="simulator.continuity_note">NIS 2 / DORA impose des mesures de continuité d'activité (Art. 21). Un plan sera requis même si vous n'en avez pas encore.</span>
+                </div>
+            </div>
+
+            <!-- Analyze Button -->
+            <button class="btn-primary" id="btn-analyze" onclick="analyzeProfile()" disabled>
+                <i class="fa-solid fa-magnifying-glass-chart"></i> <span data-i18n="simulator.btn_analyze">Analyser mon profil</span>
             </button>
         </div>
-        
+
         <!-- PROFILE CARD -->
         <div class="profile-card" id="profile-card">
             <div class="profile-header">
-                <div class="profile-icon" id="profile-icon">🏢</div>
+                <div class="profile-icon" id="profile-icon"></div>
                 <div>
-                    <div class="profile-title" id="profile-title">PME</div>
-                    <div class="profile-subtitle" id="profile-subtitle">50 à 249 employés</div>
+                    <div class="profile-title" id="profile-title">Moyenne entreprise</div>
+                    <div class="profile-subtitle" id="profile-subtitle">50-249 employés ou CA 10-50M€</div>
                 </div>
             </div>
             <div class="profile-tags" id="profile-tags"></div>
         </div>
-        
-        <!-- CONDITIONAL QUESTIONS (Phase 2) -->
-        <div class="sim-card" id="phase2-card" style="display:none;">
-            <h2 class="sim-card-title"><i class="fa-solid fa-sliders"></i> <span data-i18n="simulator.conditional_title">Questions complémentaires</span></h2>
-            <p class="sim-card-subtitle" data-i18n="simulator.conditional_subtitle">Ces questions affinent votre diagnostic selon votre profil</p>
-            
-            <div class="conditional-group question-group" id="cond-tic">
-                <label class="question-label" data-i18n="simulator.q7_label">Q7. Êtes-vous prestataire TIC pour des entités financières régulées ?</label>
-                <p class="question-hint" data-i18n="simulator.q7_hint">Sous-traitant IT critique pour banques, assureurs, SGP... → DORA s'applique</p>
-                <select class="question-select" id="q7_tic_provider">
-                    <option value="">— Sélectionnez —</option>
-                    <option value="yes">✅ Oui - Nous fournissons des services IT critiques à des entités régulées</option>
-                    <option value="no">❌ Non</option>
-                </select>
-            </div>
-            
-            <div class="conditional-group question-group" id="cond-hds">
-                <label class="question-label" data-i18n="simulator.q8_label">Q8. Hébergez-vous des données de santé pour des TIERS ?</label>
-                <p class="question-hint" data-i18n="simulator.q8_hint">Pour des clients (hôpitaux, médecins, cliniques). PAS vos propres données internes.</p>
-                <select class="question-select" id="q8_hds">
-                    <option value="">— Sélectionnez —</option>
-                    <option value="yes">✅ Oui - Nous hébergeons des données santé pour des clients</option>
-                    <option value="no">❌ Non (ou uniquement nos propres données)</option>
-                </select>
-            </div>
-            
-            <div class="conditional-group question-group" id="cond-pci">
-                <label class="question-label" data-i18n="simulator.q9_label">Q9. Stockez/traitez-vous des numéros de cartes bancaires (PAN) ?</label>
-                <p class="question-hint" data-i18n="simulator.q9_hint">NON applicable si vous utilisez Stripe/PayPal sans jamais voir les numéros.</p>
-                <select class="question-select" id="q9_pci">
-                    <option value="">— Sélectionnez —</option>
-                    <option value="yes_level1">✅ Oui - &gt;6 millions de transactions/an (Niveau 1)</option>
-                    <option value="yes_level2">✅ Oui - 1 à 6 millions de transactions/an (Niveau 2)</option>
-                    <option value="yes_level3">✅ Oui - 20K à 1 million de transactions/an (Niveau 3)</option>
-                    <option value="yes_level4">✅ Oui - &lt;20K transactions/an (Niveau 4)</option>
-                    <option value="no">❌ Non - Nous utilisons des PSP (Stripe, PayPal...) sans voir les PAN</option>
-                </select>
-            </div>
-            
-            <div class="conditional-group question-group" id="cond-certs">
-                <label class="question-label" data-i18n="simulator.q10_label">Q10. Vos clients exigent-ils ISO 27001 ou SOC 2 ?</label>
-                <p class="question-hint" data-i18n="simulator.q10_hint">Exigence contractuelle, appels d'offres, grands comptes...</p>
-                <select class="question-select" id="q10_certs">
-                    <option value="">— Sélectionnez —</option>
-                    <option value="iso27001">✅ Oui - ISO 27001 exigé</option>
-                    <option value="soc2">✅ Oui - SOC 2 exigé (clients US)</option>
-                    <option value="both">✅ Oui - Les deux</option>
-                    <option value="no">❌ Non - Pas d'exigence spécifique</option>
-                </select>
-            </div>
-            
-            <div class="conditional-group question-group" id="cond-dod">
-                <label class="question-label" data-i18n="simulator.q11_label">Q11. Travaillez-vous avec le Département de la Défense US (DoD) ?</label>
-                <p class="question-hint" data-i18n="simulator.q11_hint">Contrats directs ou sous-traitance dans la chaîne d'approvisionnement DoD</p>
-                <select class="question-select" id="q11_dod">
-                    <option value="">— Sélectionnez —</option>
-                    <option value="yes">✅ Oui</option>
-                    <option value="no">❌ Non</option>
-                </select>
-            </div>
-            
-            <div class="conditional-group question-group" id="cond-continuity">
-                <label class="question-label" data-i18n="simulator.q12_label">Q12. Avez-vous des activités critiques nécessitant un plan de continuité ?</label>
-                <p class="question-hint" data-i18n="simulator.q12_hint">Activités dont l'interruption aurait un impact majeur sur votre business ou vos clients</p>
-                <select class="question-select" id="q12_continuity">
-                    <option value="">— Sélectionnez —</option>
-                    <option value="yes">✅ Oui - Activités critiques identifiées</option>
-                    <option value="no">❌ Non - Pas de besoin PCA/PRA spécifique</option>
-                </select>
-            </div>
-        </div>
-        
+
         <!-- RESULTS SECTION -->
         <section class="results-section" id="results-section">
             <div class="sim-card">
@@ -264,64 +252,54 @@
                         <div class="summary-label" data-i18n="simulator.recommended_label">Recommandation(s)</div>
                     </div>
                 </div>
-                
+
                 <div id="results-container"></div>
             </div>
-            
+
             <!-- PDF Section -->
             <div class="pdf-section">
                 <h4><i class="fa-solid fa-file-pdf"></i> <span data-i18n="simulator.pdf_title">Télécharger votre rapport</span></h4>
-                <p data-i18n="simulator.pdf_text">Recevez un PDF récapitulatif avec toutes les réglementations, sanctions et échéances.</p>
+                <p data-i18n="simulator.pdf_text">Recevez un PDF récapitulatif avec toutes les réglementations, risques et échéances.</p>
                 <div class="form-row">
-                    <input type="text" id="input-company" class="form-input" placeholder="Nom de votre entreprise *" required>
-                    <input type="email" id="input-email" class="form-input" placeholder="Votre email professionnel *" required>
-                    <button class="btn-download" id="btn-pdf" onclick="generatePDF()">
-                        <i class="fa-solid fa-download"></i> <span data-i18n="simulator.btn_download">Télécharger PDF</span>
-                    </button>
+                    <input type="text" id="input-company" class="form-input" data-i18n-placeholder="simulator.input_company" placeholder="Nom de votre entreprise *" oninput="checkPdfFormValid()">
+                    <input type="email" id="input-email" class="form-input" data-i18n-placeholder="simulator.input_email" placeholder="Votre email *" oninput="checkPdfFormValid()">
+                    <button class="btn-download" id="btn-pdf" onclick="generatePDF()" disabled><i class="fa-solid fa-download"></i> <span data-i18n="simulator.btn_download">Télécharger PDF</span></button>
                 </div>
-                <div class="msg-success" id="msg-success">
-                    <i class="fa-solid fa-circle-check"></i> <span data-i18n="simulator.pdf_success">Votre rapport a été généré et téléchargé !</span>
-                </div>
-                <div class="msg-error" id="msg-error">
-                    <i class="fa-solid fa-circle-xmark"></i> <span data-i18n="simulator.pdf_error">Une erreur est survenue. Veuillez réessayer.</span>
-                </div>
+                <div class="msg-success" id="msg-success"><i class="fa-solid fa-circle-check"></i> <span data-i18n="simulator.pdf_success">Rapport téléchargé !</span></div>
+                <div class="msg-error" id="msg-error"><i class="fa-solid fa-circle-xmark"></i> <span data-i18n="simulator.pdf_error">Erreur, réessayez.</span></div>
             </div>
-            
+
             <!-- CTA Section -->
             <div class="cta-section">
                 <h3><i class="fa-solid fa-handshake"></i> <span data-i18n="simulator.cta_title">Besoin d'accompagnement ?</span></h3>
                 <p data-i18n="simulator.cta_text">Obtenez un audit personnalisé et une feuille de route pour votre mise en conformité.</p>
                 <div class="cta-buttons">
-                    <button class="cta-btn primary" onclick="openCalendly()">
-                        <i class="fa-solid fa-video"></i> <span data-i18n="common.book_slot">Réserver un appel (30 min)</span>
-                    </button>
-                    <a href="mailto:emmanuel.genesteix@agilevizion.com?subject=Demande%20accompagnement%20compliance" class="cta-btn secondary">
-                        <i class="fa-solid fa-envelope"></i> <span data-i18n="common.send_email">Me contacter par email</span>
-                    </a>
+                    <button class="cta-btn primary" onclick="openCalendly()"><i class="fa-solid fa-video"></i> <span data-i18n="common.book_slot">Réserver un appel (30 min)</span></button>
+                    <a href="mailto:emmanuel.genesteix@agilevizion.com" class="cta-btn secondary"><i class="fa-solid fa-envelope"></i> <span data-i18n="simulator.cta_contact">Me contacter</span></a>
                 </div>
             </div>
         </section>
     </div>
-    
-    <!-- PDF TEMPLATE (Hidden) -->
+
+    <!-- PDF TEMPLATE (hidden) -->
     <div id="pdf-template">
         <div class="pdf-header">
-            <h1>🛡️ Diagnostic Compliance</h1>
-            <p style="color:#2980b9;font-size:1.1em;margin:5px 0;">AgileVizion — GRC & Cybersécurité</p>
+            <h1>Diagnostic Compliance</h1>
+            <p style="color:#0f4c81;font-size:1.1em;margin:5px 0;">AgileVizion — GRC et Cybersécurité</p>
             <p><strong>Entreprise :</strong> <span id="pdf-company"></span></p>
             <p><strong>Email :</strong> <span id="pdf-email"></span></p>
             <p><strong>Date :</strong> <span id="pdf-date"></span></p>
+            <p style="font-size:0.85em;color:#666;margin-top:10px;font-style:italic;">Ce document fournit une indication générale et ne constitue pas un avis juridique.</p>
         </div>
         <div id="pdf-results"></div>
         <div class="pdf-footer">
-            <p><strong>AgileVizion</strong> — Conseil GRC & Cybersécurité</p>
-            <p>📧 emmanuel.genesteix@agilevizion.com | 🌐 agilevizion.com</p>
-            <p style="font-size:0.85em;color:#718096;margin-top:10px;">Ce diagnostic est basé sur vos réponses et fournit une orientation. Un audit détaillé est recommandé pour confirmer l'applicabilité.</p>
+            <p><strong>AgileVizion</strong> — Conseil GRC et Cybersécurité</p>
+            <p>emmanuel.genesteix@agilevizion.com | agilevizion.com</p>
         </div>
     </div>
-    
+
     <div id="footer-placeholder"></div>
-    
+
     <!-- Scripts -->
     <script src="../js/i18n.js"></script>
     <script src="../js/loader.js"></script>
