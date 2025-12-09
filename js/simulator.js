@@ -1022,9 +1022,9 @@ function generatePDF() {
 
                 if (msgError) msgError.classList.add('visible');
 
-            btn.innerHTML = orig;
+                btn.innerHTML = orig;
 
-            checkPdfFormValid();
+                checkPdfFormValid();
 
         });
 
