@@ -38,9 +38,11 @@
 
 }
 
-/* Navbar - Vizion in blue on simulator page */
-body[data-page="simulator"] .navbar-brand span,
-.theme-grc[data-page="simulator"] .navbar-brand span {
+/* Navbar - Vizion in blue on simulator page - Multiple selectors for maximum specificity */
+body[data-page="simulator"] .navbar .navbar-brand span,
+body.theme-grc[data-page="simulator"] .navbar .navbar-brand span,
+.theme-grc[data-page="simulator"] .navbar .navbar-brand span,
+.navbar .navbar-brand span {
     color: #2563eb !important;
 }
 
