@@ -973,16 +973,26 @@ function generatePDF() {
         // Force visibility and positioning for html2pdf
         pdfEl.style.display = 'block';
         pdfEl.style.visibility = 'visible';
-        pdfEl.style.position = 'absolute';
-        pdfEl.style.left = '-9999px';
+        pdfEl.style.position = 'fixed';
+        pdfEl.style.left = '0';
         pdfEl.style.top = '0';
-        pdfEl.style.width = '210mm'; // A4 width
+        pdfEl.style.width = '210mm';
+        pdfEl.style.maxWidth = '210mm';
+        pdfEl.style.minWidth = '210mm';
         pdfEl.style.backgroundColor = '#ffffff';
         pdfEl.style.color = '#1a202c';
+        pdfEl.style.zIndex = '9999';
+        pdfEl.style.opacity = '0';
+        pdfEl.style.pointerEvents = 'none';
 
-        // Wait for DOM to update
-        setTimeout(function() {
-            html2pdf().set({ 
+        // Force reflow to ensure content is rendered
+        pdfEl.offsetHeight;
+        
+        // Wait for DOM to update with multiple frames
+        requestAnimationFrame(function() {
+            requestAnimationFrame(function() {
+                setTimeout(function() {
+                    html2pdf().set({ 
 
             margin: 10, 
 
@@ -1019,6 +1029,9 @@ function generatePDF() {
                 pdfEl.style.display = 'none';
                 pdfEl.style.visibility = 'hidden';
                 pdfEl.style.position = '';
+                pdfEl.style.opacity = '';
+                pdfEl.style.zIndex = '';
+                pdfEl.style.pointerEvents = '';
 
                 if (msgError) msgError.classList.add('visible');
 
@@ -1026,8 +1039,10 @@ function generatePDF() {
 
                 checkPdfFormValid();
 
+                    });
+                }, 200); // Delay to ensure DOM is fully updated
             });
-        }, 100); // Small delay to ensure DOM is updated
+        });
 
     } catch (e) {
 
