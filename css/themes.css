@@ -44,9 +44,27 @@
     padding: 105px 20px;
 }
 
-/* Why Me - Hero h1 larger */
+/* Why Me - Hero h1 larger and fixed height */
+.theme-whyme .hero {
+    min-height: 315px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .theme-whyme .hero h1 {
+.theme-whyme .hero {
+    min-height: 315px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
     font-size: 2.8em;
+.theme-whyme .hero {
+    min-height: 315px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 }
 
 /* Service Management - Frameworks grid 3 columns */
