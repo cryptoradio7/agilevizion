@@ -108,17 +108,32 @@ const I18n = {
      */
     translatePage() {
         // Translate elements with data-i18n attribute
-        document.querySelectorAll('[data-i18n]').forEach(element => {
+        const elements = document.querySelectorAll('[data-i18n]');
+        let translatedCount = 0;
+        
+        elements.forEach(element => {
             const key = element.getAttribute('data-i18n');
+            if (!key) return;
+            
             const translation = this.t(key);
             
-            // Check if we should use innerHTML or textContent
-            if (element.hasAttribute('data-i18n-html')) {
-                element.innerHTML = translation;
+            // Only update if translation is different from key (meaning it was found)
+            if (translation !== key) {
+                // Check if we should use innerHTML or textContent
+                if (element.hasAttribute('data-i18n-html')) {
+                    element.innerHTML = translation;
+                } else {
+                    element.textContent = translation;
+                }
+                translatedCount++;
             } else {
-                element.textContent = translation;
+                console.warn(`Translation not found for key: ${key}`);
             }
         });
+        
+        if (translatedCount > 0) {
+            console.log(`Translated ${translatedCount} elements`);
+        }
 
         // Translate placeholders
         document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {

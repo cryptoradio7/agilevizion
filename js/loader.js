@@ -199,9 +199,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     await Loader.init();
     
     // Ensure translations are applied after everything is loaded
-    setTimeout(() => {
+    // Multiple attempts to catch all elements
+    const applyTranslations = () => {
         if (window.I18n && window.I18n.translations && Object.keys(window.I18n.translations).length > 0) {
             window.I18n.translatePage();
         }
-    }, 100);
+    };
+    
+    // First attempt
+    setTimeout(applyTranslations, 100);
+    // Second attempt after a longer delay (in case some elements load later)
+    setTimeout(applyTranslations, 500);
+    // Third attempt as final fallback
+    setTimeout(applyTranslations, 1000);
 });
