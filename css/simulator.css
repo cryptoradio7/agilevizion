@@ -38,6 +38,12 @@
 
 }
 
+/* Navbar - Vizion in blue on simulator page */
+body[data-page="simulator"] .navbar-brand span,
+.theme-grc[data-page="simulator"] .navbar-brand span {
+    color: #2563eb !important;
+}
+
 /* Hero */
 
 .sim-hero { 
