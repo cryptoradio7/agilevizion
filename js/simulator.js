@@ -491,6 +491,9 @@ function analyzeProfile() {
 function displayProfile() {
 
     var p = PROFILES[state.profile];
+    var t = window.I18n && window.I18n.t ? window.I18n.t.bind(window.I18n) : function(key) { return key; };
+    var profileTitle = t('simulator.profiles.' + state.profile + '.title');
+    var profileSubtitle = t('simulator.profiles.' + state.profile + '.subtitle');
 
     var a = state.answers;
 
@@ -498,9 +501,9 @@ function displayProfile() {
 
     document.getElementById('profile-icon').textContent = p.icon;
 
-    document.getElementById('profile-title').textContent = p.title;
+    document.getElementById('profile-title').textContent = profileTitle;
 
-    document.getElementById('profile-subtitle').textContent = p.subtitle;
+    document.getElementById('profile-subtitle').innerHTML = profileSubtitle;
 
     
 
@@ -858,7 +861,9 @@ function displayResults() {
 
     if (!mandatory.length && !recommended.length) {
 
-        html = '<div class="no-results"><i class="fa-solid fa-clipboard-question"></i><h4>Aucune réglementation spécifique identifiée</h4><p>Sur la base de vos réponses, nous n\'avons pas identifié de réglementation obligatoire, si l\'on se réfère à notre liste non exhaustive de référence.</p></div>';
+        var noResultsTitle = t('simulator.no_results_title');
+        var noResultsText = t('simulator.no_results_text');
+        html = '<div class="no-results"><i class="fa-solid fa-clipboard-question"></i><h4>' + noResultsTitle + '</h4><p>' + noResultsText + '</p></div>';
 
     }
 

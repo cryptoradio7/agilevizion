@@ -319,6 +319,8 @@
         "subtitle": "250+ employees or turnover >€50M"
       }
     },
+    "no_results_title": "No specific regulation identified",
+    "no_results_text": "Based on your answers, we have not identified any mandatory regulation, referring to our non-exhaustive reference list.",
     "pdf_title": "Download your report",
     "pdf_text": "Receive a summary PDF with all regulations, risks and deadlines.",
     "input_company": "Your company name *",

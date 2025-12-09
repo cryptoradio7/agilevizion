@@ -319,6 +319,8 @@
         "subtitle": "250+ employés ou CA >50M€"
       }
     },
+    "no_results_title": "Aucune réglementation spécifique identifiée",
+    "no_results_text": "Sur la base de vos réponses, nous n'avons pas identifié de réglementation obligatoire, si l'on se réfère à notre liste non exhaustive de référence.",
     "pdf_title": "Télécharger votre rapport",
     "pdf_text": "Recevez un PDF récapitulatif avec toutes les réglementations, risques et échéances.",
     "input_company": "Nom de votre entreprise *",
