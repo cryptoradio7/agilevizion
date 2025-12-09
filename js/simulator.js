@@ -1008,15 +1008,17 @@ function generatePDF() {
 
                 if (msgSuccess) msgSuccess.classList.add('visible');
 
-            btn.innerHTML = orig;
+                btn.innerHTML = orig;
 
-            checkPdfFormValid();
+                checkPdfFormValid();
 
-        }).catch(function(err) {
+            }).catch(function(err) {
 
-            console.error('PDF error:', err);
+                console.error('PDF error:', err);
 
-            pdfEl.style.display = 'none';
+                pdfEl.style.display = 'none';
+                pdfEl.style.visibility = 'hidden';
+                pdfEl.style.position = '';
 
             if (msgError) msgError.classList.add('visible');
 
