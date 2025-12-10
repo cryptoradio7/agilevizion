@@ -1097,116 +1097,57 @@ function generatePDF() {
         if (mandatory.length === 0 && recommended.length === 0) {
             pdfHtml += '<div style="padding: 20px; text-align: center; color: #2d3748;"><p style="font-size: 1.1em; margin: 10px 0;">' + t('simulator.no_results_title') + '</p><p style="font-size: 0.95em; margin: 10px 0;">' + t('simulator.no_results_text') + '</p></div>';
         }
-
-        // Set company name, email, and date
-        document.getElementById('pdf-company').textContent = company;
-        document.getElementById('pdf-email').textContent = email;
-        document.getElementById('pdf-date').textContent = new Date().toLocaleDateString('fr-FR');
         
-        // Set PDF title with company name
-        var pdfTitleEl = document.getElementById('pdf-report-title');
-        if (pdfTitleEl) {
-            var baseTitle = t('simulator.pdf_report_title');
-            pdfTitleEl.textContent = baseTitle + ' — ' + company;
-        }
+        // Add audit section
+        pdfHtml += '<div class="audit-section">';
+        pdfHtml += '<h3>' + auditTitle + '</h3>';
+        pdfHtml += '<p>' + auditText + '</p>';
+        pdfHtml += '<p><strong>' + contactLabel + '</strong> <span style="color: #2563eb; font-weight: bold;">emmanuel.genesteix@agilevizion.com</span></p>';
+        pdfHtml += '</div>';
         
-        // Translate audit section
-        var auditTitleEl = document.getElementById('pdf-audit-title');
-        var auditTextEl = document.getElementById('pdf-audit-text');
-        var contactLabelEl = document.getElementById('pdf-contact-label');
-        if (auditTitleEl) auditTitleEl.textContent = t('simulator.pdf_audit_section_title');
-        if (auditTextEl) auditTextEl.textContent = t('simulator.pdf_audit_section_text');
-        if (contactLabelEl) contactLabelEl.textContent = t('simulator.pdf_contact_email');
-
-        // Set all results in PDF
-        document.getElementById('pdf-results').innerHTML = pdfHtml;
-
-        var pdfEl = document.getElementById('pdf-template');
+        // Footer
+        pdfHtml += '<div class="footer">';
+        pdfHtml += '<p><strong>AgileVizion</strong> — Conseil GRC et Cybersécurité</p>';
+        pdfHtml += '<p>emmanuel.genesteix@agilevizion.com | agilevizion.com</p>';
+        pdfHtml += '</div>';
         
-        // Verify content is injected
-        var resultsDiv = document.getElementById('pdf-results');
-        if (!resultsDiv || !resultsDiv.innerHTML || resultsDiv.innerHTML.trim() === '') {
-            console.error('PDF content is empty!');
-            if (msgError) msgError.classList.add('visible');
+        // Close HTML
+        printHtml += pdfHtml;
+        printHtml += '</body></html>';
+        
+        // Open print window with complete HTML
+        var printWindow = window.open('', '_blank');
+        if (!printWindow) {
+            // If popup blocked, show error
+            if (msgError) {
+                var errorMsg = t('simulator.pdf_error') + ' ' + (t('simulator.pdf_popup_blocked') || 'Popup bloquée. Autorisez les popups pour ce site.');
+                msgError.textContent = errorMsg;
+                msgError.classList.add('visible');
+            }
             btn.innerHTML = orig;
+            btn.disabled = false;
             return;
         }
-
-        // Make template visible but off-screen
-        var originalDisplay = pdfEl.style.display;
-        var originalPosition = pdfEl.style.position;
-        var originalLeft = pdfEl.style.left;
-        var originalTop = pdfEl.style.top;
-        var originalZIndex = pdfEl.style.zIndex;
         
-        pdfEl.style.display = 'block';
-        pdfEl.style.position = 'absolute';
-        pdfEl.style.left = '-10000px';
-        pdfEl.style.top = '0';
-        pdfEl.style.width = '794px'; // A4 width in pixels
-        pdfEl.style.backgroundColor = '#ffffff';
-        pdfEl.style.color = '#1a202c';
-        pdfEl.style.zIndex = '10000';
-
-        // Force reflow
-        var height = pdfEl.offsetHeight;
-        console.log('PDF template height:', height);
-        console.log('PDF results content length:', resultsDiv.innerHTML.length);
+        printWindow.document.write(printHtml);
+        printWindow.document.close();
         
-        // Wait for rendering
+        // Wait for content to load, then trigger print dialog
         setTimeout(function() {
-            html2pdf().set({ 
-
-            margin: 10, 
-
-            filename: 'AgileVizion_Diagnostic_' + company.replace(/[^a-zA-Z0-9]/g, '_') + '.pdf', 
-
-            image: { type: 'jpeg', quality: 0.98 }, 
-
-            html2canvas: { 
-                scale: 2, 
-                useCORS: true,
-                backgroundColor: '#ffffff',
-                logging: true,
-                letterRendering: true,
-                allowTaint: false
-            }, 
-
-            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' } 
-
-            }).from(pdfEl).save().then(function() {
-                // Restore original styles
-                pdfEl.style.display = originalDisplay;
-                pdfEl.style.position = originalPosition;
-                pdfEl.style.left = originalLeft;
-                pdfEl.style.top = originalTop;
-                pdfEl.style.zIndex = originalZIndex;
-
-                if (msgSuccess) msgSuccess.classList.add('visible');
-
-                btn.innerHTML = orig;
-
-                checkPdfFormValid();
-
-            }).catch(function(err) {
-                console.error('PDF error:', err);
-                console.error('Error details:', err.message, err.stack);
-                
-                // Restore original styles
-                pdfEl.style.display = originalDisplay;
-                pdfEl.style.position = originalPosition;
-                pdfEl.style.left = originalLeft;
-                pdfEl.style.top = originalTop;
-                pdfEl.style.zIndex = originalZIndex;
-
-                if (msgError) msgError.classList.add('visible');
-
-                btn.innerHTML = orig;
-
-                checkPdfFormValid();
-
-            });
-        }, 300); // Delay to ensure DOM is fully updated
+            printWindow.focus();
+            printWindow.print();
+            
+            // Show success message
+            if (msgSuccess) msgSuccess.classList.add('visible');
+            btn.innerHTML = orig;
+            btn.disabled = false;
+            checkPdfFormValid();
+            
+            // Close window after a delay (user can cancel print)
+            setTimeout(function() {
+                printWindow.close();
+            }, 1000);
+        }, 500);
 
     } catch (e) {
 
