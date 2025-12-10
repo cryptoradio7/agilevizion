@@ -903,7 +903,7 @@ function buildNormCard(norm, status) {
 
     var isMandatory = status === 'obligatoire';
     var t = window.I18n && window.I18n.t ? function(key) { return window.I18n.t(key); } : function(key) { return key; };
-    var sanctionLabel = norm.isRegulation ? t('simulator.sanctions') : t('simulator.risks');
+    var sanctionLabel = String(norm.isRegulation ? t('simulator.sanctions') : t('simulator.risks'));
     var sanctionClass = norm.isRegulation ? 'sanction' : 'risk';
     
     // Get translated values
@@ -917,7 +917,7 @@ function buildNormCard(norm, status) {
     var noteHtml = '';
 
     if (norm.key === 'nis2' && norm.extraterritorial) {
-        var noteText = t('simulator.nis2_extraterritorial_note');
+        var noteText = String(t('simulator.nis2_extraterritorial_note'));
         var colonIndex = noteText.indexOf(':');
         var noteTitle = colonIndex > 0 ? noteText.substring(0, colonIndex) : '';
         var noteContent = colonIndex > 0 ? noteText.substring(colonIndex + 1).trim() : noteText;
@@ -926,13 +926,13 @@ function buildNormCard(norm, status) {
 
     
 
-    var appliesText = isMandatory ? t('simulator.applies') : t('simulator.recommended_badge');
-    var whyText = t('simulator.why');
-    var deadlineText = t('simulator.deadline');
+    var appliesText = String(isMandatory ? t('simulator.applies') : t('simulator.recommended_badge'));
+    var whyText = String(t('simulator.why'));
+    var deadlineText = String(t('simulator.deadline'));
     
     return '<div class="norm-card ' + (isMandatory ? 'mandatory' : 'recommended') + '">' +
 
-        '<div class="norm-header"><div><span class="norm-name">' + norm.name + '</span><span class="norm-fullname"> — ' + fullName + '</span></div>' +
+        '<div class="norm-header"><div><span class="norm-name">' + String(norm.name || '') + '</span><span class="norm-fullname"> — ' + fullName + '</span></div>' +
 
         '<span class="norm-badge ' + status + '">' + appliesText + '</span></div>' +
 
@@ -944,7 +944,7 @@ function buildNormCard(norm, status) {
 
         '<div class="norm-detail deadline"><i class="fa-solid fa-calendar"></i> <strong>' + deadlineText + ' :</strong> ' + deadline + '</div>' +
 
-        '<div class="norm-detail"><i class="fa-solid fa-book"></i> <strong>Réf. :</strong> ' + norm.source + '</div></div>' +
+        '<div class="norm-detail"><i class="fa-solid fa-book"></i> <strong>Réf. :</strong> ' + String(norm.source || '') + '</div></div>' +
 
         noteHtml +
 
