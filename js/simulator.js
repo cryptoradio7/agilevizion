@@ -1061,14 +1061,13 @@ function generatePDF() {
             mandatory.forEach(function(n) {
 
                 var label = String(n.isRegulation ? t('simulator.sanctions') : t('simulator.risks'));
-                var whyText = String(t('simulator.why'));
                 var deadlineText = String(t('simulator.deadline'));
                 var fullName = getNormTranslation(n, 'fullName');
                 var why = getWhyTranslation(n);
                 var sanctions = getNormTranslation(n, 'sanctions');
                 var deadline = getNormTranslation(n, 'deadline');
 
-                pdfHtml += '<div class="norm-card norm-mandatory"><h4>' + String(n.name || '') + ' — ' + fullName + '</h4><p><strong>' + whyText + ' :</strong> ' + why + '</p><p><strong>' + deadlineText + '</strong> ' + deadline + '</p><p style="color: #c53030;"><strong>' + label + '</strong> ' + sanctions + '</p></div>';
+                pdfHtml += '<div class="norm-card norm-mandatory"><h4>' + String(n.name || '') + ' — ' + fullName + '</h4><p>' + why + '</p><p><strong>' + deadlineText + '</strong> ' + deadline + '</p><p style="color: #c53030;"><strong>' + label + '</strong> ' + sanctions + '</p></div>';
 
             });
 

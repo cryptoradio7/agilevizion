@@ -368,7 +368,7 @@
     "input_company": "Nom de votre entreprise *",
     "input_email": "Votre email *",
     "btn_download": "Télécharger PDF",
-    "pdf_success": "Rapport prêt ! Utilisez Ctrl+P (ou Cmd+P sur Mac) pour enregistrer en PDF.",
+    "pdf_success": "Rapport prêt",
     "pdf_error": "Erreur, réessayez.",
     "pdf_popup_blocked": "Popup bloquée. Autorisez les popups pour ce site.",
     "pdf_report_title": "Diagnostic Compliance",
