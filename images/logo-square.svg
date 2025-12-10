@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Square logo for profile pictures -->
+  <rect width="200" height="200" fill="#1a202c" rx="20"/>
+  
+  <!-- AgileVizion Logo - Centered in square -->
+  <text x="100" y="120" font-family="'Segoe UI', 'Arial', 'Helvetica', sans-serif" font-size="36" font-weight="700" text-anchor="middle" letter-spacing="-0.5">
+    <tspan fill="#FFFFFF">Agile</tspan><tspan fill="#2563eb">Vizion</tspan>
+  </text>
+</svg>
+

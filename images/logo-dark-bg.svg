@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="140" viewBox="0 0 500 140" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background for cards/LinkedIn -->
+  <rect width="500" height="140" fill="#1a202c" rx="8"/>
+  
+  <!-- AgileVizion Logo -->
+  <text x="250" y="90" font-family="'Segoe UI', 'Arial', 'Helvetica', sans-serif" font-size="56" font-weight="700" text-anchor="middle" letter-spacing="-1">
+    <tspan fill="#FFFFFF">Agile</tspan><tspan fill="#2563eb">Vizion</tspan>
+  </text>
+</svg>
+

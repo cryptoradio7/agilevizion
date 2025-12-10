@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="120" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background (optional, can be removed for transparent) -->
+  <rect width="400" height="120" fill="transparent"/>
+  
+  <!-- AgileVizion Logo Text -->
+  <text x="200" y="75" font-family="'Segoe UI', 'Arial', sans-serif" font-size="48" font-weight="700" text-anchor="middle" fill="#FFFFFF">
+    <tspan fill="#FFFFFF">Agile</tspan><tspan fill="#2563eb">Vizion</tspan>
+  </text>
+  
+  <!-- Alternative: If you want a more stylized version with spacing -->
+</svg>
+
