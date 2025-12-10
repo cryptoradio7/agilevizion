@@ -1135,20 +1135,14 @@ function generatePDF() {
             printWindow.document.write(printHtml);
             printWindow.document.close();
             
-            // Wait for content to load, then show instructions
+            // Wait for content to load, then trigger print
             setTimeout(function() {
                 printWindow.focus();
                 
-                // Add instructions at the top of the page
-                var instructions = printWindow.document.createElement('div');
-                instructions.style.cssText = 'background: #e3f2fd; border: 2px solid #2563eb; padding: 15px; margin: 20px; border-radius: 8px; text-align: center; font-family: "Segoe UI", sans-serif;';
-                instructions.innerHTML = '<h3 style="color: #2563eb; margin: 0 0 10px;">📄 Votre rapport est prêt !</h3><p style="margin: 5px 0; color: #2d3748;"><strong>Pour sauvegarder en PDF :</strong></p><p style="margin: 5px 0; color: #2d3748;">1. Appuyez sur <strong>Ctrl+P</strong> (ou Cmd+P sur Mac)</p><p style="margin: 5px 0; color: #2d3748;">2. Choisissez <strong>"Enregistrer en PDF"</strong> comme destination</p><p style="margin: 5px 0; color: #2d3748;">3. Cliquez sur <strong>"Enregistrer"</strong></p><p style="margin: 10px 0 0; color: #666; font-size: 0.9em;">💡 Le fichier HTML a également été téléchargé dans vos téléchargements</p>';
-                printWindow.document.body.insertBefore(instructions, printWindow.document.body.firstChild);
-                
-                // Auto-trigger print after showing instructions
+                // Auto-trigger print
                 setTimeout(function() {
                     printWindow.print();
-                }, 1000);
+                }, 500);
                 
                 // Show success message
                 if (msgSuccess) {
