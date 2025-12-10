@@ -1144,7 +1144,7 @@ function generatePDF() {
                 
                 // Show success message
                 if (msgSuccess) {
-                    msgSuccess.innerHTML = '<i class="fa-solid fa-circle-check"></i> <span>' + t('simulator.pdf_success') + ' <strong>Fichier HTML téléchargé !</strong> Utilisez Ctrl+P pour sauvegarder en PDF.</span>';
+                    msgSuccess.innerHTML = '<i class="fa-solid fa-circle-check"></i> <span>' + t('simulator.pdf_success') + '</span>';
                     msgSuccess.classList.add('visible');
                 }
                 btn.innerHTML = orig;
@@ -1154,7 +1154,7 @@ function generatePDF() {
         } else {
             // If popup blocked, still allow download
             if (msgSuccess) {
-                msgSuccess.innerHTML = '<i class="fa-solid fa-circle-check"></i> <span>' + t('simulator.pdf_success') + ' <strong>Fichier HTML téléchargé !</strong> Ouvrez-le et utilisez Ctrl+P pour sauvegarder en PDF.</span>';
+                msgSuccess.innerHTML = '<i class="fa-solid fa-circle-check"></i> <span>' + t('simulator.pdf_success') + '</span>';
                 msgSuccess.classList.add('visible');
             }
             btn.innerHTML = orig;
