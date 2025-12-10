@@ -98,8 +98,15 @@ body {
 .hero {
     background: var(--hero-gradient);
     color: white;
-    padding: 80px 20px;
+    height: 315px;
+    min-height: 315px;
+    max-height: 315px;
+    padding: 20px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero h1 {

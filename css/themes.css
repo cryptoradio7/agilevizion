@@ -39,17 +39,19 @@
     color: #27ae60;
 }
 
-/* Service Management - Hero padding adjustment */
+/* Service Management - Hero height same as others */
 .theme-service .hero {
-    padding: 105px 20px;
+    height: 315px;
+    min-height: 315px;
+    max-height: 315px;
+    padding: 20px;
 }
 
-/* Why Me - Hero h1 same size as simulator */
+/* Why Me - Hero height same as others */
 .theme-whyme .hero {
+    height: 315px;
     min-height: 315px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    max-height: 315px;
 }
 
 .theme-whyme .hero h1 {
