@@ -73,9 +73,9 @@ body.theme-grc[data-page="simulator"] .navbar .navbar-brand span,
 
 }
 
-.sim-hero h1 { font-size: 1.9em; margin-bottom: 12px; font-weight: 700; max-width: 800px; }
+.sim-hero h1 { font-size: 1.9em; margin: 0; font-weight: 700; max-width: 800px; }
 
-.sim-hero p { font-size: 1.1em; opacity: 0.95; max-width: 650px; }
+.sim-hero p { font-size: 1.1em; margin: 0; opacity: 0.95; max-width: 650px; }
 
 /* Container et Cards */
 
