@@ -17,6 +17,11 @@
         padding: 50px 15px;
     }
     
+    /* Why Me - Maintain height on mobile */
+    .theme-whyme .hero {
+        min-height: 200px;
+    }
+    
     .hero h1 {
         font-size: 1.8em;
         padding: 0 10px;
