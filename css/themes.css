@@ -44,21 +44,32 @@
     padding: 105px 20px;
 }
 
-/* Why Me - Hero h1 larger and fixed height */
+/* Why Me - Hero h1 same size as simulator */
 .theme-whyme .hero {
     min-height: 315px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
 .theme-whyme .hero h1 {
-    font-size: 2.8em;
-.theme-whyme .hero {
-    min-height: 315px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    font-size: 1.9em !important;
+    font-weight: 700 !important;
+    max-width: 800px;
+    margin: 0 auto;
 }
+
+/* Force override for desktop - higher specificity */
+body.theme-whyme .hero h1,
+body[data-page="why"].theme-whyme .hero h1,
+.theme-whyme .hero h1 {
+    font-size: 1.9em !important;
+    line-height: 1.2 !important;
+}
+
+/* Service Management - Frameworks grid 3 columns */
+.theme-service .frameworks-grid {
+    grid-template-columns: repeat(3, 1fr);
 }
 
 /* Simulator - Override primary color for navbar brand */
@@ -86,4 +97,3 @@ body.theme-grc[data-page="simulator"] .navbar .navbar-brand span,
 .border-primary {
     border-color: var(--primary-color);
 }
-
