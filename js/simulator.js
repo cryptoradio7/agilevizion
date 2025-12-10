@@ -1082,7 +1082,6 @@ function generatePDF() {
 
             recommended.forEach(function(n) {
 
-                var whyText = String(t('simulator.why'));
                 var deadlineText = String(t('simulator.deadline'));
                 var fullName = getNormTranslation(n, 'fullName');
                 var why = getWhyTranslation(n);
@@ -1090,7 +1089,7 @@ function generatePDF() {
                 var label = String(n.isRegulation ? t('simulator.sanctions') : t('simulator.risks'));
                 var sanctions = getNormTranslation(n, 'sanctions');
 
-                pdfHtml += '<div class="norm-card norm-recommended"><h4>' + String(n.name || '') + ' — ' + fullName + '</h4><p><strong>' + whyText + ' :</strong> ' + why + '</p><p><strong>' + deadlineText + '</strong> ' + deadline + '</p><p><strong>' + label + '</strong> ' + sanctions + '</p></div>';
+                pdfHtml += '<div class="norm-card norm-recommended"><h4>' + String(n.name || '') + ' — ' + fullName + '</h4><p>' + why + '</p><p><strong>' + deadlineText + '</strong> ' + deadline + '</p><p><strong>' + label + '</strong> ' + sanctions + '</p></div>';
 
             });
 
