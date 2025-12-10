@@ -55,7 +55,7 @@
 }
 
 .theme-whyme .hero h1 {
-    font-size: 1.4em !important;
+    font-size: 1.7em !important;
     font-weight: 700 !important;
     max-width: 800px;
     margin: 0 auto;
@@ -65,7 +65,7 @@
 body.theme-whyme .hero h1,
 body[data-page="why"].theme-whyme .hero h1,
 .theme-whyme .hero h1 {
-    font-size: 1.4em !important;
+    font-size: 1.7em !important;
     line-height: 1.2 !important;
 }
 
