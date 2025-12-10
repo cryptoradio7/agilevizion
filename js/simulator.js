@@ -874,25 +874,29 @@ function displayResults() {
 function getNormTranslation(norm, property) {
     if (!window.I18n || !window.I18n.t) {
         console.warn('I18n not available, returning original value');
-        return norm[property];
+        return String(norm[property] || '');
     }
     var key = 'simulator.norms.' + norm.key + '.' + property;
     var translated = window.I18n.t(key);
-    // Fallback to original value if translation not found
-    return (translated === key) ? norm[property] : translated;
+    // Ensure we always return a string, not an object
+    var result = (translated === key) ? norm[property] : translated;
+    // Convert to string explicitly to avoid [object Object]
+    return String(result || '');
 }
 
 function getWhyTranslation(norm) {
     if (!window.I18n || !window.I18n.t) {
         console.warn('I18n not available, returning original value');
-        return norm.why;
+        return String(norm.why || '');
     }
     if (norm.whyKey) {
         var key = 'simulator.why.' + norm.whyKey;
         var translated = window.I18n.t(key);
-        return (translated === key) ? norm.why : translated;
+        var result = (translated === key) ? norm.why : translated;
+        // Convert to string explicitly to avoid [object Object]
+        return String(result || '');
     }
-    return norm.why;
+    return String(norm.why || '');
 }
 
 function buildNormCard(norm, status) {
@@ -1079,15 +1083,15 @@ function generatePDF() {
 
             recommended.forEach(function(n) {
 
-                var whyText = t('simulator.why');
-                var deadlineText = t('simulator.deadline');
+                var whyText = String(t('simulator.why'));
+                var deadlineText = String(t('simulator.deadline'));
                 var fullName = getNormTranslation(n, 'fullName');
                 var why = getWhyTranslation(n);
                 var deadline = getNormTranslation(n, 'deadline');
-                var label = n.isRegulation ? t('simulator.sanctions') : t('simulator.risks');
+                var label = String(n.isRegulation ? t('simulator.sanctions') : t('simulator.risks'));
                 var sanctions = getNormTranslation(n, 'sanctions');
 
-                pdfHtml += '<div class="norm-card norm-recommended"><h4>' + n.name + ' — ' + fullName + '</h4><p><strong>' + whyText + ' :</strong> ' + why + '</p><p><strong>' + deadlineText + ' :</strong> ' + deadline + '</p><p><strong>' + label + ' :</strong> ' + sanctions + '</p></div>';
+                pdfHtml += '<div class="norm-card norm-recommended"><h4>' + String(n.name || '') + ' — ' + fullName + '</h4><p><strong>' + whyText + ' :</strong> ' + why + '</p><p><strong>' + deadlineText + ' :</strong> ' + deadline + '</p><p><strong>' + label + ' :</strong> ' + sanctions + '</p></div>';
 
             });
 
