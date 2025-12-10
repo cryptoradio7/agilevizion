@@ -1037,10 +1037,14 @@ function generatePDF() {
             recommended.forEach(function(n) {
 
                 var whyText = t('simulator.why');
+                var deadlineText = t('simulator.deadline');
                 var fullName = getNormTranslation(n, 'fullName');
                 var why = getWhyTranslation(n);
+                var deadline = getNormTranslation(n, 'deadline');
+                var label = n.isRegulation ? t('simulator.sanctions') : t('simulator.risks');
+                var sanctions = getNormTranslation(n, 'sanctions');
 
-                pdfHtml += '<div class="pdf-norm recommended" style="padding: 15px; margin: 12px 0; border-left: 4px solid #2563eb; background: #f8f9fa; border-radius: 0 8px 8px 0; color: #1a202c;"><h4 style="color: #2563eb; margin: 0 0 8px; font-size: 1.1em; font-weight: bold;">' + n.name + ' — ' + fullName + '</h4><p style="color: #2d3748; margin: 5px 0; font-size: 0.95em;"><strong style="color: #2d3748;">' + whyText + ' :</strong> <span style="color: #2d3748;">' + why + '</span></p></div>';
+                pdfHtml += '<div class="pdf-norm recommended" style="padding: 15px; margin: 12px 0; border-left: 4px solid #2563eb; background: #f8f9fa; border-radius: 0 8px 8px 0; color: #1a202c;"><h4 style="color: #2563eb; margin: 0 0 8px; font-size: 1.1em; font-weight: bold;">' + n.name + ' — ' + fullName + '</h4><p style="color: #2d3748; margin: 5px 0; font-size: 0.95em;"><strong style="color: #2d3748;">' + whyText + ' :</strong> <span style="color: #2d3748;">' + why + '</span></p><p style="color: #2d3748; margin: 5px 0; font-size: 0.95em;"><strong style="color: #2d3748;">' + deadlineText + ' :</strong> <span style="color: #2d3748;">' + deadline + '</span></p><p style="color: #2d3748; margin: 5px 0; font-size: 0.95em;"><strong style="color: #2d3748;">' + label + ' :</strong> <span style="color: #2d3748;">' + sanctions + '</span></p></div>';
 
             });
 
