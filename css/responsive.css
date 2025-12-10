@@ -120,6 +120,10 @@
         font-size: 0.9em;
         max-width: 90%;
         word-break: break-word;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     /* CTA section */
@@ -282,6 +286,9 @@
     .cta-btn {
         width: 100%;
         justify-content: center;
+        text-align: center;
+        display: flex;
+        align-items: center;
     }
     
     .cta-section h3 {
