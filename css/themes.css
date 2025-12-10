@@ -41,17 +41,17 @@
 
 /* Service Management - Hero height same as others */
 .theme-service .hero {
-    height: 330px;
-    min-height: 330px;
-    max-height: 330px;
+    height: 350px;
+    min-height: 350px;
+    max-height: 350px;
     padding: 20px;
 }
 
 /* Why Me - Hero height same as others */
 .theme-whyme .hero {
-    height: 330px;
-    min-height: 330px;
-    max-height: 330px;
+    height: 350px;
+    min-height: 350px;
+    max-height: 350px;
 }
 
 .theme-whyme .hero h1 {

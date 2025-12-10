@@ -53,11 +53,11 @@ body.theme-grc[data-page="simulator"] .navbar .navbar-brand span,
 
     color: white; 
 
-    height: 330px; 
+    height: 350px; 
 
-    min-height: 330px; 
+    min-height: 350px; 
 
-    max-height: 330px; 
+    max-height: 350px; 
 
     display: flex; 
 
@@ -391,7 +391,7 @@ body.theme-grc[data-page="simulator"] .navbar .navbar-brand span,
 
 @media (max-width: 768px) {
 
-    .sim-hero { height: 330px; min-height: 330px; max-height: 330px; padding: 15px; }
+    .sim-hero { height: 350px; min-height: 350px; max-height: 350px; padding: 15px; }
 
     .sim-hero h1 { font-size: 1.4em; }
 

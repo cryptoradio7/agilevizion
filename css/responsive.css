@@ -12,19 +12,19 @@
 
 /* === MOBILE (max-width: 768px) === */
 @media (max-width: 768px) {
-    /* Hero - Maintain 330px height on mobile */
+    /* Hero - Maintain 350px height on mobile */
     .hero {
-        height: 330px;
-        min-height: 330px;
-        max-height: 330px;
+        height: 350px;
+        min-height: 350px;
+        max-height: 350px;
         padding: 15px;
     }
     
     .theme-service .hero,
     .theme-whyme .hero {
-        height: 330px;
-        min-height: 330px;
-        max-height: 330px;
+        height: 350px;
+        min-height: 350px;
+        max-height: 350px;
     }
     
     .hero h1 {
