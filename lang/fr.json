@@ -185,7 +185,7 @@
     "q1_option_eu": "Siège dans l'Union Européenne",
     "q1_option_eu_clients": "Hors UE mais clients/utilisateurs dans l'UE",
     "q1_option_non_eu": "Hors UE, aucune activité UE",
-    "select": "Sélectionnez",
+    "select": "— Sélectionnez —",
     "yes": "Oui",
     "no": "Non",
     "btn_reset": "Réinitialiser",

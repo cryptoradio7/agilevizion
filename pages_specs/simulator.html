@@ -52,7 +52,7 @@
             <div class="question-group" id="group-q1">
                 <label class="question-label" data-i18n="simulator.q1_label" data-i18n-html>Où est situé votre siège social / activité principale ?<span class="required">*</span></label>
                 <select class="question-select" id="q1_location" onchange="handleChange(this)">
-                    <option value="">— <span data-i18n="simulator.select">Sélectionnez</span> —</option>
+                    <option value=""><span data-i18n="simulator.select">— Sélectionnez —</span></option>
                     <option value="eu" data-i18n="simulator.q1_option_eu">Siège dans l'Union Européenne</option>
                     <option value="eu_clients" data-i18n="simulator.q1_option_eu_clients">Hors UE mais clients/utilisateurs dans l'UE</option>
                     <option value="non_eu" data-i18n="simulator.q1_option_non_eu">Hors UE, aucune activité UE</option>
@@ -63,7 +63,7 @@
             <div class="question-group" id="group-q2">
                 <label class="question-label" data-i18n="simulator.q2_label" data-i18n-html>Quel est votre secteur d'activité principal ?<span class="required">*</span></label>
                 <select class="question-select" id="q2_sector" onchange="handleChange(this)">
-                    <option value="">— <span data-i18n="simulator.select">Sélectionnez</span> —</option>
+                    <option value=""><span data-i18n="simulator.select">— Sélectionnez —</span></option>
                     <optgroup label="" data-i18n="simulator.q2_optgroup_annex1">NIS 2 Annexe I — Hautement critiques</optgroup>
                         <option value="energy" data-i18n="simulator.q2_option_energy">Énergie (électricité, gaz, pétrole, hydrogène)</option>
                         <option value="transport" data-i18n="simulator.q2_option_transport">Transports (aérien, ferroviaire, maritime, routier)</option>
@@ -100,7 +100,7 @@
             <div class="question-group" id="group-q3">
                 <label class="question-label" data-i18n="simulator.q3_label" data-i18n-html>Quelle est la taille de votre organisation ?<span class="required">*</span></label>
                 <select class="question-select" id="q3_size" onchange="handleChange(this)">
-                    <option value="">— <span data-i18n="simulator.select">Sélectionnez</span> —</option>
+                    <option value=""><span data-i18n="simulator.select">— Sélectionnez —</span></option>
                     <option value="small" data-i18n="simulator.q3_option_small">Petite : moins de 50 employés ET CA &lt;10M€ ET bilan &lt;10M€</option>
                     <option value="medium" data-i18n="simulator.q3_option_medium">Moyenne : 50-249 employés OU CA 10-50M€ OU bilan 10-43M€</option>
                     <option value="large" data-i18n="simulator.q3_option_large">Grande : 250+ employés OU CA &gt;50M€ OU bilan &gt;43M€</option>
@@ -111,7 +111,7 @@
             <div class="question-group" id="group-q4">
                 <label class="question-label" data-i18n="simulator.q4_label" data-i18n-html>Traitez-vous des données personnelles ?<span class="required">*</span></label>
                 <select class="question-select" id="q4_personal_data" onchange="handleChange(this)">
-                    <option value="">— <span data-i18n="simulator.select">Sélectionnez</span> —</option>
+                    <option value=""><span data-i18n="simulator.select">— Sélectionnez —</span></option>
                     <option value="yes" data-i18n="simulator.yes">Oui</option>
                     <option value="no" data-i18n="simulator.no">Non</option>
                 </select>
@@ -121,7 +121,7 @@
             <div class="question-group" id="group-q5">
                 <label class="question-label" data-i18n="simulator.q5_label" data-i18n-html>Détenez-vous un agrément financier (AMF, ACPR, CSSF...) ?<span class="required">*</span></label>
                 <select class="question-select" id="q5_regulated" onchange="handleChange(this)">
-                    <option value="">— <span data-i18n="simulator.select">Sélectionnez</span> —</option>
+                    <option value=""><span data-i18n="simulator.select">— Sélectionnez —</span></option>
                     <option value="yes" data-i18n="simulator.q5_option_yes">Oui — Entité régulée</option>
                     <option value="no" data-i18n="simulator.no">Non</option>
                 </select>
@@ -131,7 +131,7 @@
             <div class="question-group" id="group-q6">
                 <label class="question-label" data-i18n="simulator.q6_label" data-i18n-html>Fournissez-vous des services IT/Cloud à des clients ?<span class="required">*</span></label>
                 <select class="question-select" id="q6_it_services" onchange="handleChange(this)">
-                    <option value="">— <span data-i18n="simulator.select">Sélectionnez</span> —</option>
+                    <option value=""><span data-i18n="simulator.select">— Sélectionnez —</span></option>
                     <option value="yes" data-i18n="simulator.yes">Oui</option>
                     <option value="no" data-i18n="simulator.no">Non</option>
                 </select>
@@ -141,7 +141,7 @@
             <div class="conditional-group question-group" id="cond-tic">
                 <label class="question-label" data-i18n="simulator.q7_label">Êtes-vous prestataire TIC pour des entités financières régulées ?</label>
                 <select class="question-select" id="q7_tic_provider" onchange="handleChange(this)">
-                    <option value="">— <span data-i18n="simulator.select">Sélectionnez</span> —</option>
+                    <option value=""><span data-i18n="simulator.select">— Sélectionnez —</span></option>
                     <option value="yes" data-i18n="simulator.yes">Oui</option>
                     <option value="no" data-i18n="simulator.no">Non</option>
                 </select>
@@ -151,7 +151,7 @@
             <div class="conditional-group question-group" id="cond-hds">
                 <label class="question-label" data-i18n="simulator.q8_label">Hébergez-vous des données de santé pour des tiers (clients) ?</label>
                 <select class="question-select" id="q8_hds" onchange="handleChange(this)">
-                    <option value="">— <span data-i18n="simulator.select">Sélectionnez</span> —</option>
+                    <option value=""><span data-i18n="simulator.select">— Sélectionnez —</span></option>
                     <option value="yes" data-i18n="simulator.yes">Oui</option>
                     <option value="no" data-i18n="simulator.no">Non</option>
                 </select>
@@ -161,7 +161,7 @@
             <div class="conditional-group question-group" id="cond-pci">
                 <label class="question-label" data-i18n="simulator.q9_label">Stockez/traitez-vous des numéros de cartes bancaires (PAN) ?</label>
                 <select class="question-select" id="q9_pci" onchange="handleChange(this)">
-                    <option value="">— <span data-i18n="simulator.select">Sélectionnez</span> —</option>
+                    <option value=""><span data-i18n="simulator.select">— Sélectionnez —</span></option>
                     <option value="yes" data-i18n="simulator.yes">Oui</option>
                     <option value="no" data-i18n="simulator.q9_option_no">Non (Stripe/PayPal gère les paiements)</option>
                 </select>
@@ -183,7 +183,7 @@
             <div class="conditional-group question-group" id="cond-us-certs">
                 <label class="question-label" data-i18n="simulator.q10a_label">Vos clients US exigent-ils des certifications (ISO 27001 / SOC 2) ?</label>
                 <select class="question-select" id="q10a_us_certs" onchange="handleChange(this)">
-                    <option value="">— <span data-i18n="simulator.select">Sélectionnez</span> —</option>
+                    <option value=""><span data-i18n="simulator.select">— Sélectionnez —</span></option>
                     <option value="iso27001" data-i18n="simulator.q10a_option_iso27001">ISO 27001 exigé</option>
                     <option value="soc2" data-i18n="simulator.q10a_option_soc2">SOC 2 exigé</option>
                     <option value="both" data-i18n="simulator.q10a_option_both">Les deux</option>
@@ -195,7 +195,7 @@
             <div class="conditional-group question-group" id="cond-us-dod">
                 <label class="question-label" data-i18n="simulator.q10b_label">Travaillez-vous avec le Département de la Défense US (DoD) ?</label>
                 <select class="question-select" id="q10b_dod" onchange="handleChange(this)">
-                    <option value="">— <span data-i18n="simulator.select">Sélectionnez</span> —</option>
+                    <option value=""><span data-i18n="simulator.select">— Sélectionnez —</span></option>
                     <option value="yes" data-i18n="simulator.q10b_option_yes">Oui — Contrats directs ou sous-traitance</option>
                     <option value="no" data-i18n="simulator.no">Non</option>
                 </select>
@@ -208,7 +208,7 @@
             <div class="question-group" id="group-q11">
                 <label class="question-label" data-i18n="simulator.q11_label" data-i18n-html>Avez-vous des activités critiques nécessitant un plan de continuité ?<span class="required">*</span></label>
                 <select class="question-select" id="q11_continuity" onchange="handleChange(this)">
-                    <option value="">— <span data-i18n="simulator.select">Sélectionnez</span> —</option>
+                    <option value=""><span data-i18n="simulator.select">— Sélectionnez —</span></option>
                     <option value="yes" data-i18n="simulator.yes">Oui</option>
                     <option value="no" data-i18n="simulator.no">Non</option>
                 </select>
