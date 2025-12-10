@@ -27,9 +27,9 @@
         padding: 0 10px;
     }
     
-    /* Why Me - Same font size as other pages on mobile */
+    /* Why Me - Same font size as simulator on mobile */
     .theme-whyme .hero h1 {
-        font-size: 1.8em;
+        font-size: 1.4em;
     }
     
     .hero p {
