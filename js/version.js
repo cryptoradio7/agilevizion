@@ -15,12 +15,10 @@
      * Uses a date-based version that changes daily + hash for uniqueness
      */
     function getFileVersion(filePath) {
-        // Use date-based version that changes daily
-        // Format: YYYYMMDD.hash
-        const today = new Date();
-        const dateStr = today.getFullYear() + 
-                       String(today.getMonth() + 1).padStart(2, '0') + 
-                       String(today.getDate()).padStart(2, '0');
+        // Use timestamp-based version that changes on every page load
+        // This ensures cache busting even if files are updated multiple times per day
+        // Format: timestamp.hash
+        const timestamp = Date.now();
         
         // Add a hash based on the file path for uniqueness per file
         let hash = 0;
@@ -31,7 +29,8 @@
         }
         const hashStr = Math.abs(hash).toString(36).substring(0, 4);
         
-        return dateStr + '.' + hashStr;
+        // Use timestamp for immediate cache busting, but keep hash for file uniqueness
+        return timestamp + '.' + hashStr;
     }
 
     /**
