@@ -201,9 +201,9 @@ body.theme-grc[data-page="simulator"] .navbar .navbar-brand span,
 
 .summary-card { text-align: center; padding: 22px 15px; border-radius: 12px; color: white; }
 
-.summary-card.mandatory { background: linear-gradient(135deg, var(--success), var(--success-dark)); }
+.summary-card.mandatory { background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%); }
 
-.summary-card.recommended { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); }
+.summary-card.recommended { background: linear-gradient(135deg, #2563eb 0%, #1e40af 50%, #1e3a8a 100%); }
 
 .summary-number { font-size: 2.8em; font-weight: 700; line-height: 1; }
 
