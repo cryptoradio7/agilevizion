@@ -1006,11 +1006,54 @@ function generatePDF() {
         var regsText = mandatory.length + ' ' + t('simulator.regulations_applicable');
         var recsText = recommended.length + ' ' + t('simulator.recommendations_count');
         var profileTitle = t('simulator.profiles.' + state.profile + '.title');
-        var pdfHtml = '<div class="pdf-profile" style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px; color: #1a202c; font-size: 1em;"><strong style="color: #1a202c;">' + p.icon + ' ' + profileLabel + '</strong> <span style="color: #1a202c;">' + profileTitle + '</span><br><strong style="color: #1a202c;">' + resultLabel + '</strong> <span style="color: #1a202c;">' + regsText + ', ' + recsText + '</span></div>';
+        var baseTitle = t('simulator.pdf_report_title');
+        var reportTitle = baseTitle + ' — ' + company;
+        var auditTitle = t('simulator.pdf_audit_section_title');
+        var auditText = t('simulator.pdf_audit_section_text');
+        var contactLabel = t('simulator.pdf_contact_email');
+        var currentDate = new Date().toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' });
+        
+        // Build complete HTML page for printing
+        var printHtml = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>' + reportTitle + '</title><style>';
+        printHtml += '@media print { @page { margin: 15mm; } body { margin: 0; } }';
+        printHtml += 'body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; color: #1a202c; background: white; padding: 20px; max-width: 210mm; margin: 0 auto; }';
+        printHtml += 'h1 { color: #2563eb; font-size: 1.8em; margin-bottom: 10px; border-bottom: 3px solid #2563eb; padding-bottom: 10px; }';
+        printHtml += 'h2 { color: #2563eb; font-size: 1.3em; margin: 25px 0 10px; border-bottom: 2px solid #2563eb; padding-bottom: 5px; }';
+        printHtml += 'h3 { color: #27ae60; font-size: 1.2em; margin: 20px 0 10px; border-bottom: 2px solid #27ae60; padding-bottom: 5px; }';
+        printHtml += 'h4 { color: #2563eb; font-size: 1.1em; margin: 15px 0 8px; font-weight: bold; }';
+        printHtml += '.header-info { background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px; }';
+        printHtml += '.profile-box { background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px; }';
+        printHtml += '.norm-card { padding: 15px; margin: 12px 0; border-left: 4px solid; background: #f8f9fa; border-radius: 0 8px 8px 0; }';
+        printHtml += '.norm-mandatory { border-left-color: #27ae60; }';
+        printHtml += '.norm-recommended { border-left-color: #2563eb; }';
+        printHtml += '.audit-section { margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #2563eb; }';
+        printHtml += '.footer { margin-top: 30px; padding-top: 15px; border-top: 2px solid #e2e8f0; text-align: center; color: #2563eb; }';
+        printHtml += 'p { margin: 8px 0; line-height: 1.6; }';
+        printHtml += 'strong { color: #2d3748; }';
+        printHtml += '.disclaimer { font-size: 0.85em; color: #666; font-style: italic; margin-top: 10px; }';
+        printHtml += '</style></head><body>';
+        
+        // Header
+        printHtml += '<div class="header-info">';
+        printHtml += '<h1>' + reportTitle + '</h1>';
+        printHtml += '<p style="color: #2563eb; font-size: 1.1em; margin: 5px 0;"><strong>AgileVizion</strong> — GRC et Cybersécurité</p>';
+        printHtml += '<p><strong>Entreprise :</strong> ' + company + '</p>';
+        printHtml += '<p><strong>Email :</strong> ' + email + '</p>';
+        printHtml += '<p><strong>Date :</strong> ' + currentDate + '</p>';
+        printHtml += '<p class="disclaimer">Ce document fournit une indication générale et ne constitue pas un avis juridique.</p>';
+        printHtml += '</div>';
+        
+        // Profile
+        printHtml += '<div class="profile-box">';
+        printHtml += '<p><strong>' + p.icon + ' ' + profileLabel + '</strong> ' + profileTitle + '</p>';
+        printHtml += '<p><strong>' + resultLabel + '</strong> ' + regsText + ', ' + recsText + '</p>';
+        printHtml += '</div>';
+        
+        var pdfHtml = '';
 
         if (mandatory.length > 0) {
 
-            pdfHtml += '<h3 style="color:#27ae60;margin:20px 0 10px;border-bottom:2px solid #27ae60;padding-bottom:5px;">' + t('simulator.mandatory_title').toUpperCase() + ' (' + mandatory.length + ')</h3>';
+            pdfHtml += '<h3>' + t('simulator.mandatory_title').toUpperCase() + ' (' + mandatory.length + ')</h3>';
 
             mandatory.forEach(function(n) {
 
@@ -1022,7 +1065,7 @@ function generatePDF() {
                 var sanctions = getNormTranslation(n, 'sanctions');
                 var deadline = getNormTranslation(n, 'deadline');
 
-                pdfHtml += '<div class="pdf-norm mandatory" style="padding: 15px; margin: 12px 0; border-left: 4px solid #27ae60; background: #f8f9fa; border-radius: 0 8px 8px 0; color: #1a202c;"><h4 style="color: #1e8449; margin: 0 0 8px; font-size: 1.1em; font-weight: bold;">' + n.name + ' — ' + fullName + '</h4><p style="color: #2d3748; margin: 5px 0; font-size: 0.95em;"><strong style="color: #2d3748;">' + whyText + ' :</strong> <span style="color: #2d3748;">' + why + '</span></p><p style="color: #2d3748; margin: 5px 0; font-size: 0.95em;"><strong style="color: #2d3748;">' + deadlineText + ' :</strong> <span style="color: #2d3748;">' + deadline + '</span></p><p style="color: #c53030; margin: 5px 0; font-size: 0.95em;"><strong style="color: #c53030;">' + label + ' :</strong> <span style="color: #c53030;">' + sanctions + '</span></p></div>';
+                pdfHtml += '<div class="norm-card norm-mandatory"><h4>' + n.name + ' — ' + fullName + '</h4><p><strong>' + whyText + ' :</strong> ' + why + '</p><p><strong>' + deadlineText + ' :</strong> ' + deadline + '</p><p style="color: #c53030;"><strong>' + label + ' :</strong> ' + sanctions + '</p></div>';
 
             });
 
@@ -1032,7 +1075,7 @@ function generatePDF() {
 
         if (recommended.length > 0) {
 
-            pdfHtml += '<h3 style="color:#2563eb;margin:20px 0 10px;border-bottom:2px solid #2563eb;padding-bottom:5px;">' + t('simulator.recommended_title').toUpperCase() + ' (' + recommended.length + ')</h3>';
+            pdfHtml += '<h2 style="color:#2563eb;">' + t('simulator.recommended_title').toUpperCase() + ' (' + recommended.length + ')</h2>';
 
             recommended.forEach(function(n) {
 
@@ -1044,7 +1087,7 @@ function generatePDF() {
                 var label = n.isRegulation ? t('simulator.sanctions') : t('simulator.risks');
                 var sanctions = getNormTranslation(n, 'sanctions');
 
-                pdfHtml += '<div class="pdf-norm recommended" style="padding: 15px; margin: 12px 0; border-left: 4px solid #2563eb; background: #f8f9fa; border-radius: 0 8px 8px 0; color: #1a202c;"><h4 style="color: #2563eb; margin: 0 0 8px; font-size: 1.1em; font-weight: bold;">' + n.name + ' — ' + fullName + '</h4><p style="color: #2d3748; margin: 5px 0; font-size: 0.95em;"><strong style="color: #2d3748;">' + whyText + ' :</strong> <span style="color: #2d3748;">' + why + '</span></p><p style="color: #2d3748; margin: 5px 0; font-size: 0.95em;"><strong style="color: #2d3748;">' + deadlineText + ' :</strong> <span style="color: #2d3748;">' + deadline + '</span></p><p style="color: #2d3748; margin: 5px 0; font-size: 0.95em;"><strong style="color: #2d3748;">' + label + ' :</strong> <span style="color: #2d3748;">' + sanctions + '</span></p></div>';
+                pdfHtml += '<div class="norm-card norm-recommended"><h4>' + n.name + ' — ' + fullName + '</h4><p><strong>' + whyText + ' :</strong> ' + why + '</p><p><strong>' + deadlineText + ' :</strong> ' + deadline + '</p><p><strong>' + label + ' :</strong> ' + sanctions + '</p></div>';
 
             });
 
