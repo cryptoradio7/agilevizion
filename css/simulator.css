@@ -391,7 +391,7 @@ body.theme-grc[data-page="simulator"] .navbar .navbar-brand span,
 
 @media (max-width: 768px) {
 
-    .sim-hero { height: 315px; min-height: 315px; max-height: 315px; padding: 15px; }
+    .sim-hero { height: 330px; min-height: 330px; max-height: 330px; padding: 15px; }
 
     .sim-hero h1 { font-size: 1.4em; }
 

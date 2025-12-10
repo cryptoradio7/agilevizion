@@ -98,9 +98,9 @@ body {
 .hero {
     background: var(--hero-gradient);
     color: white;
-    height: 315px;
-    min-height: 315px;
-    max-height: 315px;
+    height: 330px;
+    min-height: 330px;
+    max-height: 330px;
     padding: 20px;
     text-align: center;
     display: flex;
