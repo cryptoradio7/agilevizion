@@ -332,6 +332,10 @@
         font-size: 1.5em;
     }
     
+    .theme-whyme .hero h1 {
+        font-size: 1.5em;
+    }
+    
     .section-title {
         font-size: 1.4em;
     }
@@ -381,6 +385,10 @@
 /* === EXTRA SMALL (max-width: 400px) === */
 @media (max-width: 400px) {
     .hero h1 {
+        font-size: 1.5em;
+    }
+    
+    .theme-whyme .hero h1 {
         font-size: 1.5em;
     }
     
