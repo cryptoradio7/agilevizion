@@ -943,7 +943,7 @@ function buildNormCard(norm, status) {
 
         '<div class="norm-detail deadline"><i class="fa-solid fa-calendar"></i> <strong>' + deadlineText + '</strong> ' + deadline + '</div>' +
 
-        '<div class="norm-detail"><i class="fa-solid fa-book"></i> <strong>Réf. :</strong> ' + String(norm.source || '') + '</div></div>' +
+        '<div class="norm-detail"><i class="fa-solid fa-book"></i> <strong>' + String(t('simulator.reference')) + '</strong> ' + String(norm.source || '') + '</div></div>' +
 
         noteHtml +
 
