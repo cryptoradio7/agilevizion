@@ -98,9 +98,14 @@ const I18n = {
         // Handle dynamic replacements like {year}
         if (typeof value === 'string') {
             value = value.replace('{year}', new Date().getFullYear());
+        } else if (typeof value === 'object' && value !== null) {
+            // If value is an object, return the key to avoid [object Object]
+            console.warn(`Translation for key "${key}" is an object, not a string`);
+            return key;
         }
 
-        return value;
+        // Ensure we always return a string
+        return typeof value === 'string' ? value : String(value || key);
     },
 
     /**
