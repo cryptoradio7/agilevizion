@@ -181,7 +181,7 @@
     "phase3": "PDF report",
     "organization_title": "Your organisation",
     "organization_subtitle": "These 6 questions determine applicable regulations",
-    "q1_label": "Where is your headquarters / main activity located?<span class=\"required\">*</span>",
+    "q1_label": "Where are your headquarters / main activity located?<span class=\"required\">*</span>",
     "q1_option_eu": "Headquarters in the European Union",
     "q1_option_eu_clients": "Outside EU but clients/users in the EU",
     "q1_option_non_eu": "Outside EU, no EU activity",
