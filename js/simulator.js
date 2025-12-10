@@ -1049,6 +1049,11 @@ function generatePDF() {
             });
 
         }
+        
+        // Add message if no results
+        if (mandatory.length === 0 && recommended.length === 0) {
+            pdfHtml += '<div style="padding: 20px; text-align: center; color: #2d3748;"><p style="font-size: 1.1em; margin: 10px 0;">' + t('simulator.no_results_title') + '</p><p style="font-size: 0.95em; margin: 10px 0;">' + t('simulator.no_results_text') + '</p></div>';
+        }
 
         // Set company name, email, and date
         document.getElementById('pdf-company').textContent = company;
