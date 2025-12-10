@@ -927,7 +927,6 @@ function buildNormCard(norm, status) {
     
 
     var appliesText = String(isMandatory ? t('simulator.applies') : t('simulator.recommended_badge'));
-    var whyText = String(t('simulator.why'));
     var deadlineText = String(t('simulator.deadline'));
     
     return '<div class="norm-card ' + (isMandatory ? 'mandatory' : 'recommended') + '">' +
@@ -936,7 +935,7 @@ function buildNormCard(norm, status) {
 
         '<span class="norm-badge ' + status + '">' + appliesText + '</span></div>' +
 
-        '<div class="norm-why"><i class="fa-solid fa-check"></i> <strong>' + whyText + ' :</strong> ' + why + '</div>' +
+        '<div class="norm-why">' + why + '</div>' +
 
         '<div class="norm-details">' +
 
