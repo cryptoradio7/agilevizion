@@ -1115,39 +1115,57 @@ function generatePDF() {
         printHtml += pdfHtml;
         printHtml += '</body></html>';
         
-        // Open print window with complete HTML
+        // Create download link for HTML file
+        var blob = new Blob([printHtml], { type: 'text/html;charset=utf-8' });
+        var url = URL.createObjectURL(blob);
+        var link = document.createElement('a');
+        link.href = url;
+        link.download = 'AgileVizion_Diagnostic_' + company.replace(/[^a-zA-Z0-9]/g, '_') + '.html';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+        
+        // Also open print window for easy PDF save
         var printWindow = window.open('', '_blank');
-        if (!printWindow) {
-            // If popup blocked, show error
-            if (msgError) {
-                var errorMsg = t('simulator.pdf_error') + ' ' + (t('simulator.pdf_popup_blocked') || 'Popup bloquée. Autorisez les popups pour ce site.');
-                msgError.textContent = errorMsg;
-                msgError.classList.add('visible');
+        if (printWindow) {
+            printWindow.document.write(printHtml);
+            printWindow.document.close();
+            
+            // Wait for content to load, then show instructions
+            setTimeout(function() {
+                printWindow.focus();
+                
+                // Add instructions at the top of the page
+                var instructions = printWindow.document.createElement('div');
+                instructions.style.cssText = 'background: #e3f2fd; border: 2px solid #2563eb; padding: 15px; margin: 20px; border-radius: 8px; text-align: center; font-family: "Segoe UI", sans-serif;';
+                instructions.innerHTML = '<h3 style="color: #2563eb; margin: 0 0 10px;">📄 Votre rapport est prêt !</h3><p style="margin: 5px 0; color: #2d3748;"><strong>Pour sauvegarder en PDF :</strong></p><p style="margin: 5px 0; color: #2d3748;">1. Appuyez sur <strong>Ctrl+P</strong> (ou Cmd+P sur Mac)</p><p style="margin: 5px 0; color: #2d3748;">2. Choisissez <strong>"Enregistrer en PDF"</strong> comme destination</p><p style="margin: 5px 0; color: #2d3748;">3. Cliquez sur <strong>"Enregistrer"</strong></p><p style="margin: 10px 0 0; color: #666; font-size: 0.9em;">💡 Le fichier HTML a également été téléchargé dans vos téléchargements</p>';
+                printWindow.document.body.insertBefore(instructions, printWindow.document.body.firstChild);
+                
+                // Auto-trigger print after showing instructions
+                setTimeout(function() {
+                    printWindow.print();
+                }, 1000);
+                
+                // Show success message
+                if (msgSuccess) {
+                    msgSuccess.innerHTML = '<i class="fa-solid fa-circle-check"></i> <span>' + t('simulator.pdf_success') + ' <strong>Fichier HTML téléchargé !</strong> Utilisez Ctrl+P pour sauvegarder en PDF.</span>';
+                    msgSuccess.classList.add('visible');
+                }
+                btn.innerHTML = orig;
+                btn.disabled = false;
+                checkPdfFormValid();
+            }, 300);
+        } else {
+            // If popup blocked, still allow download
+            if (msgSuccess) {
+                msgSuccess.innerHTML = '<i class="fa-solid fa-circle-check"></i> <span>' + t('simulator.pdf_success') + ' <strong>Fichier HTML téléchargé !</strong> Ouvrez-le et utilisez Ctrl+P pour sauvegarder en PDF.</span>';
+                msgSuccess.classList.add('visible');
             }
             btn.innerHTML = orig;
             btn.disabled = false;
-            return;
-        }
-        
-        printWindow.document.write(printHtml);
-        printWindow.document.close();
-        
-        // Wait for content to load, then trigger print dialog
-        setTimeout(function() {
-            printWindow.focus();
-            printWindow.print();
-            
-            // Show success message
-            if (msgSuccess) msgSuccess.classList.add('visible');
-            btn.innerHTML = orig;
-            btn.disabled = false;
             checkPdfFormValid();
-            
-            // Close window after a delay (user can cancel print)
-            setTimeout(function() {
-                printWindow.close();
-            }, 1000);
-        }, 500);
+        }
 
     } catch (e) {
 
