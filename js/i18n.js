@@ -147,6 +147,24 @@ const I18n = {
             element.title = this.t(key);
         });
 
+        // Translate select options
+        document.querySelectorAll('option[data-i18n]').forEach(option => {
+            const key = option.getAttribute('data-i18n');
+            const translation = this.t(key);
+            if (translation !== key) {
+                option.textContent = translation;
+            }
+        });
+
+        // Translate optgroup labels
+        document.querySelectorAll('optgroup[data-i18n]').forEach(optgroup => {
+            const key = optgroup.getAttribute('data-i18n');
+            const translation = this.t(key);
+            if (translation !== key) {
+                optgroup.label = translation;
+            }
+        });
+
         // Update page title if specified
         const pageTitleKey = document.body.getAttribute('data-page-title');
         if (pageTitleKey) {
