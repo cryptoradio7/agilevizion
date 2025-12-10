@@ -49,9 +49,9 @@
 
 /* Why Me - Hero height same as others */
 .theme-whyme .hero {
-    height: 315px;
-    min-height: 315px;
-    max-height: 315px;
+    height: 330px;
+    min-height: 330px;
+    max-height: 330px;
 }
 
 .theme-whyme .hero h1 {
