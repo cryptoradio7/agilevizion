@@ -941,7 +941,7 @@ function buildNormCard(norm, status) {
 
         '<div class="norm-detail ' + sanctionClass + '"><i class="fa-solid fa-triangle-exclamation"></i> <strong>' + sanctionLabel + '</strong> ' + sanctions + '</div>' +
 
-        '<div class="norm-detail deadline"><i class="fa-solid fa-calendar"></i> <strong>' + deadlineText + ' :</strong> ' + deadline + '</div>' +
+        '<div class="norm-detail deadline"><i class="fa-solid fa-calendar"></i> <strong>' + deadlineText + '</strong> ' + deadline + '</div>' +
 
         '<div class="norm-detail"><i class="fa-solid fa-book"></i> <strong>Réf. :</strong> ' + String(norm.source || '') + '</div></div>' +
 
@@ -1068,7 +1068,7 @@ function generatePDF() {
                 var sanctions = getNormTranslation(n, 'sanctions');
                 var deadline = getNormTranslation(n, 'deadline');
 
-                pdfHtml += '<div class="norm-card norm-mandatory"><h4>' + String(n.name || '') + ' — ' + fullName + '</h4><p><strong>' + whyText + ' :</strong> ' + why + '</p><p><strong>' + deadlineText + ' :</strong> ' + deadline + '</p><p style="color: #c53030;"><strong>' + label + '</strong> ' + sanctions + '</p></div>';
+                pdfHtml += '<div class="norm-card norm-mandatory"><h4>' + String(n.name || '') + ' — ' + fullName + '</h4><p><strong>' + whyText + ' :</strong> ' + why + '</p><p><strong>' + deadlineText + '</strong> ' + deadline + '</p><p style="color: #c53030;"><strong>' + label + '</strong> ' + sanctions + '</p></div>';
 
             });
 
@@ -1090,7 +1090,7 @@ function generatePDF() {
                 var label = String(n.isRegulation ? t('simulator.sanctions') : t('simulator.risks'));
                 var sanctions = getNormTranslation(n, 'sanctions');
 
-                pdfHtml += '<div class="norm-card norm-recommended"><h4>' + String(n.name || '') + ' — ' + fullName + '</h4><p><strong>' + whyText + ' :</strong> ' + why + '</p><p><strong>' + deadlineText + ' :</strong> ' + deadline + '</p><p><strong>' + label + '</strong> ' + sanctions + '</p></div>';
+                pdfHtml += '<div class="norm-card norm-recommended"><h4>' + String(n.name || '') + ' — ' + fullName + '</h4><p><strong>' + whyText + ' :</strong> ' + why + '</p><p><strong>' + deadlineText + '</strong> ' + deadline + '</p><p><strong>' + label + '</strong> ' + sanctions + '</p></div>';
 
             });
 
