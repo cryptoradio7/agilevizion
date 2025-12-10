@@ -29,7 +29,7 @@
     
     /* Why Me - Same font size as simulator on mobile */
     .theme-whyme .hero h1 {
-        font-size: 1.4em;
+        font-size: 1.4em !important;
     }
     
     .hero p {
@@ -333,7 +333,7 @@
     }
     
     .theme-whyme .hero h1 {
-        font-size: 1.5em;
+        font-size: 1.4em !important;
     }
     
     .section-title {
@@ -389,7 +389,7 @@
     }
     
     .theme-whyme .hero h1 {
-        font-size: 1.5em;
+        font-size: 1.4em !important;
     }
     
     .cta-button-primary,
