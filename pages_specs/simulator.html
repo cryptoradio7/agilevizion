@@ -283,7 +283,7 @@
     <!-- PDF TEMPLATE (hidden) -->
     <div id="pdf-template" style="background: white; color: #1a202c; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 25px;">
         <div class="pdf-header" style="margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid #2563eb; color: #1a202c;">
-            <h1 style="color: #2563eb; font-size: 1.5em; margin-bottom: 5px;">Diagnostic Compliance</h1>
+            <h1 id="pdf-report-title" style="color: #2563eb; font-size: 1.5em; margin-bottom: 5px;">Diagnostic Compliance</h1>
             <p style="color: #2563eb; font-size: 1.1em; margin: 5px 0; color: #2563eb;">AgileVizion — GRC et Cybersécurité</p>
             <p style="color: #1a202c; margin: 5px 0;"><strong style="color: #1a202c;">Entreprise :</strong> <span id="pdf-company" style="color: #1a202c;"></span></p>
             <p style="color: #1a202c; margin: 5px 0;"><strong style="color: #1a202c;">Email :</strong> <span id="pdf-email" style="color: #1a202c;"></span></p>
@@ -291,6 +291,11 @@
             <p style="font-size: 0.85em; color: #666; margin-top: 10px; font-style: italic;">Ce document fournit une indication générale et ne constitue pas un avis juridique.</p>
         </div>
         <div id="pdf-results" style="color: #1a202c;"></div>
+        <div id="pdf-audit-section" style="margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #2563eb; color: #1a202c;">
+            <h3 id="pdf-audit-title" style="color: #2563eb; margin: 0 0 10px; font-size: 1.1em; font-weight: bold;">Souhaitez-vous implémenter un ou plusieurs audits ?</h3>
+            <p id="pdf-audit-text" style="color: #2d3748; margin: 10px 0; font-size: 0.95em; line-height: 1.6;">Pour mettre en œuvre les normes identifiées dans ce diagnostic, je propose des audits personnalisés adaptés à votre contexte. Contactez-moi à l'adresse ci-dessous pour discuter de vos besoins.</p>
+            <p style="color: #2d3748; margin: 10px 0; font-size: 0.95em;"><strong id="pdf-contact-label" style="color: #2d3748;">Email de contact :</strong> <span style="color: #2563eb; font-weight: bold;">emmanuel.genesteix@agilevizion.com</span></p>
+        </div>
         <div class="pdf-footer" style="margin-top: 30px; padding-top: 15px; border-top: 2px solid #e2e8f0; text-align: center; color: #2563eb;">
             <p style="color: #2563eb; margin: 5px 0;"><strong style="color: #2563eb;">AgileVizion</strong> — Conseil GRC et Cybersécurité</p>
             <p style="color: #2563eb; margin: 5px 0;">emmanuel.genesteix@agilevizion.com | agilevizion.com</p>

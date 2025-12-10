@@ -370,6 +370,10 @@
     "btn_download": "Download PDF",
     "pdf_success": "Report downloaded!",
     "pdf_error": "Error, please try again.",
+    "pdf_report_title": "Compliance Diagnostic",
+    "pdf_audit_section_title": "Would you like to implement one or more audits?",
+    "pdf_audit_section_text": "To implement the standards identified in this diagnostic, I offer personalized audits tailored to your context. Contact me at the address below to discuss your needs.",
+    "pdf_contact_email": "Contact email:",
     "cta_title": "Need support?",
     "cta_text": "Get a personalized audit and roadmap for your compliance.",
     "cta_contact": "Contact me"

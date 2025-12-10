@@ -1046,12 +1046,27 @@ function generatePDF() {
 
         }
 
+        // Set company name, email, and date
         document.getElementById('pdf-company').textContent = company;
-
         document.getElementById('pdf-email').textContent = email;
-
         document.getElementById('pdf-date').textContent = new Date().toLocaleDateString('fr-FR');
+        
+        // Set PDF title with company name
+        var pdfTitleEl = document.getElementById('pdf-report-title');
+        if (pdfTitleEl) {
+            var baseTitle = t('simulator.pdf_report_title');
+            pdfTitleEl.textContent = baseTitle + ' — ' + company;
+        }
+        
+        // Translate audit section
+        var auditTitleEl = document.getElementById('pdf-audit-title');
+        var auditTextEl = document.getElementById('pdf-audit-text');
+        var contactLabelEl = document.getElementById('pdf-contact-label');
+        if (auditTitleEl) auditTitleEl.textContent = t('simulator.pdf_audit_section_title');
+        if (auditTextEl) auditTextEl.textContent = t('simulator.pdf_audit_section_text');
+        if (contactLabelEl) contactLabelEl.textContent = t('simulator.pdf_contact_email');
 
+        // Set all results in PDF
         document.getElementById('pdf-results').innerHTML = pdfHtml;
 
         var pdfEl = document.getElementById('pdf-template');
