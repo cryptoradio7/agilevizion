@@ -204,6 +204,96 @@
     .arguments-grid {
         grid-template-columns: 1fr;
     }
+    
+    /* Expertise section */
+    .expertise-section {
+        padding: 40px 15px;
+    }
+    
+    .expertise-section .cert-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    /* Simulator specific */
+    .norm-details {
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+    }
+    
+    .norm-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .norm-why {
+        font-size: 0.85em;
+        padding: 12px;
+        word-break: break-word;
+    }
+    
+    .norm-card {
+        padding: 15px;
+    }
+    
+    .norm-detail {
+        font-size: 0.8em;
+    }
+    
+    .pdf-section {
+        padding: 20px 15px;
+    }
+    
+    .pdf-section h4 {
+        font-size: 1em;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .form-input {
+        min-width: 100%;
+        width: 100%;
+    }
+    
+    .btn-download {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .cta-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .cta-section h3 {
+        font-size: 1.2em;
+    }
+    
+    .summary-card {
+        padding: 18px 12px;
+    }
+    
+    .summary-number {
+        font-size: 2.2em;
+    }
+    
+    /* Results sections */
+    .results-category {
+        padding: 15px;
+    }
+    
+    .results-category h3 {
+        font-size: 1.2em;
+    }
 }
 
 /* === SMALL MOBILE (max-width: 600px) === */
@@ -244,6 +334,43 @@
     .navbar-brand {
         font-size: 1.2em;
     }
+    
+    /* Simulator - extra small */
+    .norm-card {
+        padding: 12px;
+    }
+    
+    .norm-name {
+        font-size: 1em;
+    }
+    
+    .norm-fullname {
+        font-size: 0.8em;
+    }
+    
+    .summary-number {
+        font-size: 2em;
+    }
+    
+    .summary-card {
+        padding: 15px 10px;
+    }
+    
+    .cta-section {
+        padding: 30px 15px;
+    }
+    
+    .cta-section h3 {
+        font-size: 1.1em;
+    }
+    
+    .pdf-section {
+        padding: 15px 12px;
+    }
+    
+    .expertise-section .cert-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* === EXTRA SMALL (max-width: 400px) === */
@@ -268,6 +395,41 @@
     
     .cta-section h2 {
         font-size: 1.4em;
+    }
+    
+    .cta-section h3 {
+        font-size: 1em;
+    }
+    
+    .norm-card {
+        padding: 10px;
+    }
+    
+    .norm-why {
+        font-size: 0.8em;
+        padding: 10px;
+    }
+    
+    .norm-detail {
+        font-size: 0.75em;
+    }
+    
+    .summary-number {
+        font-size: 1.8em;
+    }
+    
+    .cert-item {
+        width: 130px;
+        height: 130px;
+        padding: 12px 8px;
+    }
+    
+    .cert-item h4 {
+        font-size: 0.7em;
+    }
+    
+    .cert-item p {
+        font-size: 0.65em;
     }
 }
 
