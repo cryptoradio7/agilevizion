@@ -27,6 +27,11 @@
         padding: 0 10px;
     }
     
+    /* Why Me - Same font size as other pages on mobile */
+    .theme-whyme .hero h1 {
+        font-size: 1.8em;
+    }
+    
     .hero p {
         font-size: 1.1em;
         padding: 0 10px;
