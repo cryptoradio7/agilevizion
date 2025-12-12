@@ -475,10 +475,18 @@
         margin-left: 0 !important;
     }
     
-    /* Override inline styles on icons */
-    .cta-button-primary i[style*="margin-right"],
-    .cta-button-secondary i[style*="margin-right"] {
+    /* Override inline styles on icons - keep spacing but ensure centering */
+    .cta-button-primary i,
+    .cta-button-secondary i {
         margin-right: 8px !important;
+        margin-left: 0 !important;
+        flex-shrink: 0;
+    }
+    
+    /* Ensure text is centered in buttons */
+    .cta-button-primary,
+    .cta-button-secondary {
+        box-sizing: border-box;
     }
     
     /* Hero buttons container on extra small mobile */
