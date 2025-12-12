@@ -146,7 +146,9 @@ body {
 
 /* === CTA BUTTONS === */
 .cta-button-primary {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background: white;
     color: var(--primary-color);
     padding: 15px 35px;
@@ -156,6 +158,7 @@ body {
     font-size: 1.1em;
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    text-align: center;
 }
 
 .cta-button-primary:hover {
@@ -164,7 +167,9 @@ body {
 }
 
 .cta-button-secondary {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background: transparent;
     color: white;
     padding: 15px 35px;
@@ -174,6 +179,7 @@ body {
     font-size: 1.1em;
     border: 2px solid white;
     transition: transform 0.3s, background 0.3s;
+    text-align: center;
 }
 
 .cta-button-secondary:hover {

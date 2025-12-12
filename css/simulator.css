@@ -413,6 +413,12 @@ body.theme-grc[data-page="simulator"] .navbar .navbar-brand span,
 
     .cta-buttons { flex-direction: column; }
 
-    .cta-btn { width: 100%; justify-content: center; }
+    .cta-btn { 
+        width: 100%; 
+        justify-content: center; 
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
 
 }

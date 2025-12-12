@@ -123,6 +123,9 @@
         word-break: break-word;
         text-align: center;
         display: flex;
+        justify-content: center;
+        align-items: center;
+        display: flex;
         align-items: center;
         justify-content: center;
     }
