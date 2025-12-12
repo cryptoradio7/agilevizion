@@ -127,8 +127,14 @@
         justify-content: center !important;
         align-items: center !important;
         margin: 0 auto;
-        align-items: center;
-        justify-content: center;
+    }
+    
+    .cta-button-primary span,
+    .cta-button-primary i,
+    .cta-button-secondary span,
+    .cta-button-secondary i {
+        text-align: center !important;
+        margin: 0 !important;
     }
     
     /* CTA section */
