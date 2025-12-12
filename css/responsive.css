@@ -469,13 +469,22 @@
     .cta-button-primary,
     .cta-button-secondary {
         padding: 12px 15px !important;
-        font-size: 0.85em;
+        font-size: 0.85em !important;
         width: 100% !important;
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
         text-align: center !important;
         margin: 0 auto !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Force center all content inside buttons */
+    .cta-button-primary *,
+    .cta-button-secondary * {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
     
     .cta-button-primary span,
@@ -483,9 +492,10 @@
     .cta-button-secondary span,
     .cta-button-secondary i {
         text-align: center !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
         margin: 0 !important;
-        margin-right: 0 !important;
-        margin-left: 0 !important;
     }
     
     /* Override inline styles on icons - keep spacing but ensure centering */
@@ -493,13 +503,16 @@
     .cta-button-secondary i {
         margin-right: 8px !important;
         margin-left: 0 !important;
-        flex-shrink: 0;
+        flex-shrink: 0 !important;
     }
     
-    /* Ensure text is centered in buttons */
-    .cta-button-primary,
-    .cta-button-secondary {
-        box-sizing: border-box;
+    /* Force button content to be centered */
+    .cta-button-primary::before,
+    .cta-button-primary::after,
+    .cta-button-secondary::before,
+    .cta-button-secondary::after {
+        content: '';
+        flex: 1;
     }
     
     /* Hero buttons container on extra small mobile */
