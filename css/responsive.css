@@ -412,6 +412,10 @@
     .cta-button-secondary {
         padding: 12px 15px;
         font-size: 0.85em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
     
     .navbar-brand {
