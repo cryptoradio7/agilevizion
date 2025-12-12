@@ -494,6 +494,12 @@
         margin-right: auto !important;
     }
     
+    /* Force center all content inside buttons - AGGRESSIVE */
+    .cta-button-primary,
+    .cta-button-secondary {
+        position: relative;
+    }
+    
     .cta-button-primary span,
     .cta-button-primary i,
     .cta-button-secondary span,
@@ -503,6 +509,7 @@
         align-items: center !important;
         justify-content: center !important;
         margin: 0 !important;
+        width: auto !important;
     }
     
     /* Override inline styles on icons - keep spacing but ensure centering */
@@ -511,15 +518,15 @@
         margin-right: 8px !important;
         margin-left: 0 !important;
         flex-shrink: 0 !important;
+        display: inline-flex !important;
+        align-items: center !important;
     }
     
-    /* Force button content to be centered */
-    .cta-button-primary::before,
-    .cta-button-primary::after,
-    .cta-button-secondary::before,
-    .cta-button-secondary::after {
-        content: '';
-        flex: 1;
+    /* Force text alignment */
+    .cta-button-primary span,
+    .cta-button-secondary span {
+        text-align: center !important;
+        display: inline-block !important;
     }
     
     /* Hero buttons container on extra small mobile */
