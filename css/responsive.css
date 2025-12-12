@@ -43,6 +43,17 @@
         margin: 0;
     }
     
+    /* Hero buttons container */
+    .hero-buttons {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        text-align: center;
+    }
+    
     /* Section titles */
     .section-title {
         font-size: 1.6em;
