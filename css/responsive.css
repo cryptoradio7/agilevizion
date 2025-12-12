@@ -447,14 +447,14 @@
     
     .cta-button-primary,
     .cta-button-secondary {
-        padding: 12px 15px;
+        padding: 12px 15px !important;
         font-size: 0.85em;
-        width: 100%;
+        width: 100% !important;
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
         text-align: center !important;
-        margin: 0 auto;
+        margin: 0 auto !important;
     }
     
     .cta-button-primary span,
@@ -463,6 +463,14 @@
     .cta-button-secondary i {
         text-align: center !important;
         margin: 0 !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+    
+    /* Override inline styles on icons */
+    .cta-button-primary i[style*="margin-right"],
+    .cta-button-secondary i[style*="margin-right"] {
+        margin-right: 8px !important;
     }
     
     /* Hero buttons container on extra small mobile */
