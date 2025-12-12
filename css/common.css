@@ -167,13 +167,15 @@ body {
 .cta-button-primary span,
 .cta-button-primary i {
     text-align: center;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
 }
 
 .cta-button-secondary span,
 .cta-button-secondary i {
     text-align: center;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
 }
 
 .cta-button-primary:hover {
