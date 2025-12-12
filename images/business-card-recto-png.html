@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgileVizion - Carte de visite PNG Export</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 69mm;
+            height: 69mm;
+            background-color: #1a202c;
+            color: #FFFFFF;
+            font-family: 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6mm 8mm;
+            margin: 0;
+            position: relative;
+        }
+
+        .logo {
+            font-family: 'Segoe UI', 'Arial', 'Helvetica', sans-serif;
+            font-size: 11mm;
+            font-weight: 700;
+            text-align: center;
+            letter-spacing: -0.5px;
+            margin-bottom: 2mm;
+        }
+
+        .logo .agile {
+            color: #FFFFFF;
+        }
+
+        .logo .vizion {
+            color: #2563eb;
+        }
+
+        .name {
+            font-family: 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+            font-size: 7mm;
+            font-weight: 600;
+            color: #FFFFFF;
+            text-align: center;
+            margin-bottom: 3mm;
+            letter-spacing: 0.4px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 4mm;
+            line-height: 1.4;
+        }
+
+        .title-line {
+            font-family: 'Space Grotesk', 'Inter', 'Poppins', 'Segoe UI', sans-serif;
+            font-size: 5.2mm;
+            font-weight: 500;
+            color: #E2E8F0;
+            letter-spacing: 0.3px;
+        }
+
+        .title-line.cybersecurity {
+            font-weight: 700;
+            color: #60A5FA;
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+        }
+
+        .contact-info {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2mm;
+        }
+
+        .phone {
+            font-family: 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+            font-size: 5.5mm;
+            color: #FFFFFF;
+            text-align: center;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+        }
+
+        .email {
+            font-family: 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+            font-size: 4.8mm;
+            color: #CBD5E0;
+            text-align: center;
+            font-weight: 400;
+            letter-spacing: 0.1px;
+            word-break: break-all;
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <span class="agile">Agile</span><span class="vizion">Vizion</span>
+    </div>
+
+    <div class="name">Emmanuel Genesteix</div>
+
+    <div class="title">
+        <div class="title-line">GRC</div>
+        <div class="title-line cybersecurity">Cybersecurity</div>
+        <div class="title-line">& IT Service Management</div>
+    </div>
+
+    <div class="contact-info">
+        <div class="phone">+352.661.78.08.07</div>
+        <div class="email">emmanuel.genesteix@agilevizion.com</div>
+    </div>
+</body>
+</html>
+
+
