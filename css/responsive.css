@@ -148,6 +148,17 @@
         margin: 0 !important;
     }
     
+    /* Hero buttons container on mobile */
+    .hero-buttons {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+    
     /* CTA section */
     .cta-section {
         padding: 50px 15px;
