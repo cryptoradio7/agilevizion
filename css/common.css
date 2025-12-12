@@ -161,6 +161,18 @@ body {
     text-align: center;
 }
 
+.cta-button-primary span,
+.cta-button-primary i {
+    text-align: center;
+    display: inline-block;
+}
+
+.cta-button-secondary span,
+.cta-button-secondary i {
+    text-align: center;
+    display: inline-block;
+}
+
 .cta-button-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0,0,0,0.3);
