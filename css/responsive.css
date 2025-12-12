@@ -421,6 +421,14 @@
         margin: 0 auto;
     }
     
+    .cta-button-primary span,
+    .cta-button-primary i,
+    .cta-button-secondary span,
+    .cta-button-secondary i {
+        text-align: center !important;
+        margin: 0 !important;
+    }
+    
     .navbar-brand {
         font-size: 1.2em;
     }
