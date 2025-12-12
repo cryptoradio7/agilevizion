@@ -457,6 +457,17 @@
         margin: 0 !important;
     }
     
+    /* Hero buttons container on extra small mobile */
+    .hero-buttons {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+    
     .navbar-brand {
         font-size: 1.2em;
     }
