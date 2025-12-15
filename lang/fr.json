@@ -71,9 +71,9 @@
     "ebios_desc": "Analyse des risques (ANSSI)",
     "cta_title": "Prêt à y voir clair sur votre conformité ?",
     "cta_subtitle": "Premier échange de 30 minutes pour identifier vos priorités — gratuit, sans engagement",
-    "cta_step_1": "Identifier les normes applicables",
-    "cta_step_2": "Estimation durée et budget",
-    "cta_step_3": "Premier diagnostic offert",
+    "cta_step_1": "Évaluation rapide des réglementations qui s'appliquent à vous",
+    "cta_step_2": "Identification des écarts critiques prioritaires",
+    "cta_step_3": "Roadmap d'actions concrètes et budgétisées",
     "cta_discuss": "Discutons de votre projet"
   },
   "itsm": {
