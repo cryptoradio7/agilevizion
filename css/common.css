@@ -147,73 +147,86 @@ body {
     text-align: center;
 }
 
-/* === CTA BUTTONS === */
-.cta-button-primary {
-    display: inline-flex !important;
+/* === CTA BUTTONS - UNIFIED BASE STYLES === */
+.cta-button-primary,
+.cta-button-secondary,
+.cta-calendly-primary,
+.cta-email-secondary,
+.cta-btn.primary,
+.cta-btn.secondary {
+    display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    text-align: center !important;
+    padding: 16px 32px;
+    font-size: 1.05em;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    gap: 10px;
+    width: auto;
+    box-sizing: border-box;
+}
+
+.cta-button-primary,
+.cta-calendly-primary,
+.cta-btn.primary {
     background: white;
     color: var(--primary-color);
-    padding: 15px 35px;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 1.1em;
-    transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    text-align: center !important;
-    width: auto;
 }
 
-.cta-button-primary span,
-.cta-button-primary i {
-    text-align: center !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    margin: 0 !important;
-}
-
-.cta-button-secondary {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-}
-
-.cta-button-secondary span,
-.cta-button-secondary i {
-    text-align: center !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    margin: 0 !important;
-}
-
-.cta-button-primary:hover {
+.cta-button-primary:hover,
+.cta-calendly-primary:hover,
+.cta-btn.primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
-.cta-button-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+.cta-button-secondary,
+.cta-email-secondary,
+.cta-btn.secondary {
     background: transparent;
     color: white;
-    padding: 15px 35px;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 1.1em;
     border: 2px solid white;
-    transition: transform 0.3s, background 0.3s;
-    text-align: center;
 }
 
-.cta-button-secondary:hover {
+.cta-button-secondary:hover,
+.cta-email-secondary:hover,
+.cta-btn.secondary:hover {
     transform: translateY(-2px);
     background: rgba(255,255,255,0.1);
+}
+
+/* Contenu interne - centré */
+.cta-button-primary span,
+.cta-button-primary i,
+.cta-button-secondary span,
+.cta-button-secondary i,
+.cta-calendly-primary span,
+.cta-calendly-primary i,
+.cta-email-secondary span,
+.cta-email-secondary i,
+.cta-btn.primary span,
+.cta-btn.primary i,
+.cta-btn.secondary span,
+.cta-btn.secondary i {
+    text-align: center !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+}
+
+.cta-button-primary i,
+.cta-button-secondary i,
+.cta-calendly-primary i,
+.cta-email-secondary i,
+.cta-btn.primary i,
+.cta-btn.secondary i {
+    margin-right: 10px !important;
+    flex-shrink: 0 !important;
 }
 
 .cta-buttons {

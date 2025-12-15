@@ -297,15 +297,59 @@ body.theme-grc[data-page="simulator"] .navbar .navbar-brand span,
 
 .cta-section p { opacity: 0.95; margin-bottom: 25px; }
 
-.cta-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+.cta-buttons { 
+    display: flex; 
+    justify-content: center; 
+    gap: 15px; 
+    flex-wrap: wrap; 
+}
 
-.cta-btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; cursor: pointer; border: none; font-size: 1em; transition: transform 0.2s; }
+.cta-btn { 
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 10px;
+    padding: 16px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    font-size: 1.05em;
+    transition: transform 0.2s;
+    width: auto;
+    box-sizing: border-box;
+}
 
-.cta-btn.primary { background: white; color: var(--primary); }
+.cta-btn.primary { 
+    background: white; 
+    color: var(--primary); 
+}
 
-.cta-btn.secondary { background: transparent; border: 2px solid white; color: white; }
+.cta-btn.secondary { 
+    background: transparent; 
+    border: 2px solid white; 
+    color: white; 
+}
 
-.cta-btn:hover { transform: translateY(-2px); }
+.cta-btn:hover { 
+    transform: translateY(-2px); 
+}
+
+.cta-btn span,
+.cta-btn i {
+    text-align: center !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+}
+
+.cta-btn i {
+    margin-right: 10px !important;
+    flex-shrink: 0 !important;
+}
 
 /* PDF Template */
 
@@ -411,12 +455,19 @@ body.theme-grc[data-page="simulator"] .navbar .navbar-brand span,
 
     .form-row { flex-direction: column; }
 
-    .cta-buttons { flex-direction: column; }
+    .cta-buttons { 
+        flex-direction: column; 
+        gap: 15px;
+        width: 100%;
+    }
 
     .cta-btn { 
-        width: 100%; 
-        justify-content: center; 
-        text-align: center;
+        width: 100% !important; 
+        justify-content: center !important; 
+        text-align: center !important;
+        padding: 16px 32px !important;
+        font-size: 1.05em !important;
+        gap: 10px !important;
         display: flex;
         align-items: center;
     }
