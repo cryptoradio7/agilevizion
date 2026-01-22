@@ -24,12 +24,13 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      - name: Setup Pages
+      - name: Build static site
         run: |
           mkdir -p _site
-          cp -r * _site/ 2>/dev/null || true
-          # Exclure les fichiers non nécessaires
-          rm -rf _site/.git _site/node_modules _site/.github 2>/dev/null || true
+          # Copier tous les fichiers sauf ceux à exclure
+          find . -maxdepth 1 ! -name '.' ! -name '.git' ! -name 'node_modules' ! -name '.github' ! -name '_site' -exec cp -r {} _site/ \;
+          # S'assurer que .nojekyll est présent
+          touch _site/.nojekyll
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
