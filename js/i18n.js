@@ -67,7 +67,9 @@ const I18n = {
     async loadTranslations(lang) {
         try {
             const basePath = this.getBasePath();
-            const response = await fetch(`${basePath}lang/${lang}.json`);
+            // Add cache busting timestamp to force reload
+            const timestamp = Date.now();
+            const response = await fetch(`${basePath}lang/${lang}.json?v=${timestamp}`);
             if (!response.ok) throw new Error(`Failed to load ${lang}.json`);
             this.translations = await response.json();
         } catch (error) {
