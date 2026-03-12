@@ -1,0 +1,18 @@
+# Fichiers sensibles
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+
+# Claude Code
+.claude/settings.local.json
+
+# Système
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Node (si utilisé à l'avenir)
+node_modules/
