@@ -760,30 +760,6 @@ function generatePDF() {
 }
 
 // ============================================
-// CALENDLY
-// ============================================
-
-function openCalendly() {
-    var CALENDLY_URL = 'https://calendly.com/emmanuel-genesteix-agilevizion/diagnostic-agilevizion';
-    if (typeof Calendly !== 'undefined') {
-        Calendly.initPopupWidget({ url: CALENDLY_URL });
-        return;
-    }
-    // Fallback : attendre le chargement async (max 3s)
-    var attempts = 0;
-    var checkCalendly = setInterval(function() {
-        attempts++;
-        if (typeof Calendly !== 'undefined') {
-            clearInterval(checkCalendly);
-            Calendly.initPopupWidget({ url: CALENDLY_URL });
-        } else if (attempts >= 60) {
-            clearInterval(checkCalendly);
-            window.open(CALENDLY_URL, '_blank');
-        }
-    }, 50);
-}
-
-// ============================================
 // INIT
 // ============================================
 
