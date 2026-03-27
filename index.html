@@ -11,26 +11,72 @@
     <meta property="og:title" content="AgileVizion — GRC Cybersécurité & IA Agentique">
     <meta property="og:description" content="Conseil en GRC Cybersécurité et IA Agentique. Simulateur de conformité gratuit.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://agilevizion.com">
+    <meta property="og:url" content="https://agilevizion.com/">
+    <meta property="og:image" content="https://agilevizion.com/images/photo_emmanuel.png">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AgileVizion — GRC Cybersécurité & IA Agentique">
+    <meta name="twitter:description" content="Conseil en GRC Cybersécurité et IA Agentique. Simulateur de conformité gratuit.">
+    <link rel="canonical" href="https://agilevizion.com/">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "AgileVizion",
-        "url": "https://agilevizion.com",
-        "description": "Conseil en GRC Cybersécurité et IA Agentique",
-        "founder": {
-            "@type": "Person",
-            "name": "Emmanuel Genesteix"
-        },
-        "areaServed": "Europe",
-        "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "LU"
-        }
+        "@graph": [
+            {
+                "@type": "Organization",
+                "name": "AgileVizion",
+                "url": "https://agilevizion.com",
+                "logo": "https://agilevizion.com/images/photo_emmanuel.png",
+                "description": "Conseil en GRC Cybersécurité et IA Agentique",
+                "founder": {
+                    "@type": "Person",
+                    "name": "Emmanuel Genesteix"
+                },
+                "areaServed": "Europe",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "LU",
+                    "addressLocality": "Luxembourg"
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+352-661-78-08-07",
+                    "email": "emmanuel.genesteix@agilevizion.com",
+                    "contactType": "customer support",
+                    "availableLanguage": ["French", "English"]
+                },
+                "sameAs": [
+                    "https://www.linkedin.com/in/emmanuelgenesteix"
+                ]
+            },
+            {
+                "@type": "Service",
+                "name": "GRC Cybersécurité",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "AgileVizion",
+                    "url": "https://agilevizion.com"
+                },
+                "description": "Audit et mise en conformité DORA, NIS 2, ISO 27001, RGPD — diagnostic, audit terrain, feuille de route priorisée",
+                "areaServed": "Europe",
+                "serviceType": "Audit GRC Cybersécurité",
+                "url": "https://agilevizion.com/cyber.html"
+            },
+            {
+                "@type": "Service",
+                "name": "IA Agentique",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "AgileVizion",
+                    "url": "https://agilevizion.com"
+                },
+                "description": "Automatisation des tâches répétitives avec des agents IA dédiés — diagnostic, construction, déploiement",
+                "areaServed": "Europe",
+                "serviceType": "IA Agentique & Automatisation",
+                "url": "https://agilevizion.com/ia.html"
+            }
+        ]
     }
     </script>
 
@@ -64,6 +110,7 @@
     </div>
 
     <!-- Navigation -->
+    <header>
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="/" class="nav-logo" data-i18n-html="common.brand">Agile<span>Vizion</span></a>
@@ -83,7 +130,9 @@
             </ul>
         </div>
     </nav>
+    </header>
 
+    <main>
     <!-- Hero Section -->
     <section class="hero" id="hero">
         <div class="container">
@@ -510,6 +559,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
