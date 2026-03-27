@@ -342,30 +342,149 @@
     color: var(--color-primary);
 }
 
-/* --- Profile Section --- */
-.profile-section {
-    display: flex;
-    align-items: center;
-    gap: var(--space-8);
-    margin-top: var(--space-12);
-    padding: var(--space-8);
-    background: var(--color-primary-50);
-    border-radius: var(--radius-2xl);
-}
-
-.profile-photo {
-    width: 120px;
-    height: 120px;
-    border-radius: var(--radius-full);
-    object-fit: cover;
-    border: 3px solid var(--color-primary-light);
-    flex-shrink: 0;
-}
-
+/* --- Profile Section (legacy, non utilisé) --- */
 .profile-role {
     color: var(--color-primary);
     font-weight: var(--font-weight-semibold);
     margin-bottom: var(--space-2);
+}
+
+/* --- Why Profile (Story #6) --- */
+.why-profile {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: var(--space-12);
+    align-items: start;
+    margin-top: var(--space-12);
+    padding: var(--space-10);
+    background: var(--color-primary-50);
+    border-radius: var(--radius-2xl);
+}
+
+/* Photo colonne */
+.why-photo-col {
+    display: flex;
+    justify-content: center;
+}
+
+.photo-portrait-wrapper {
+    position: relative;
+    width: 220px;
+}
+
+.photo-portrait {
+    width: 220px;
+    max-width: 100%;
+    border-radius: var(--radius-xl);
+    object-fit: cover;
+    display: block;
+    border: 3px solid var(--color-primary-100);
+}
+
+.photo-initials {
+    width: 220px;
+    height: 280px;
+    border-radius: var(--radius-xl);
+    background: var(--color-primary);
+    color: var(--text-inverse);
+    font-size: var(--font-size-6xl);
+    font-weight: var(--font-weight-extrabold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: -0.02em;
+}
+
+/* Info colonne */
+.why-info-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.why-profile-name {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 0;
+}
+
+.why-profile-role {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-base);
+    margin-bottom: 0;
+}
+
+.why-experience {
+    color: var(--text-secondary);
+    font-size: var(--font-size-base);
+    margin-bottom: 0;
+}
+
+/* Triple compétence */
+.why-triple {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.triple-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background: var(--bg-primary);
+    border: 1px solid var(--color-primary-100);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary-dark);
+}
+
+.triple-item i {
+    color: var(--color-primary);
+    font-size: var(--font-size-sm);
+}
+
+/* Certifications */
+.why-certs {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.certs-label {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 0;
+}
+
+.cert-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+.cert-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    background: var(--bg-primary);
+    border: 1.5px solid var(--color-gray-200);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--text-primary);
+    white-space: nowrap;
+}
+
+.cert-badge i {
+    color: var(--color-primary);
+    font-size: var(--font-size-sm);
 }
 
 /* --- Video Placeholder --- */

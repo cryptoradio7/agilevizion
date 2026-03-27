@@ -90,10 +90,42 @@
         font-size: var(--font-size-2xl);
     }
 
-    /* Profile */
-    .profile-section {
-        flex-direction: column;
-        text-align: center;
+    /* Why profile → colonne unique */
+    .why-profile {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+        padding: var(--space-6);
+    }
+
+    .why-photo-col {
+        order: -1; /* photo au-dessus sur mobile */
+    }
+
+    .photo-portrait,
+    .photo-initials {
+        width: 160px;
+        height: auto;
+    }
+
+    .photo-initials {
+        height: 200px;
+    }
+
+    /* Certifications scroll horizontal sur mobile */
+    .cert-badges {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: var(--space-2);
+        scrollbar-width: none; /* Firefox */
+    }
+
+    .cert-badges::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
+    }
+
+    .why-triple {
+        flex-wrap: wrap;
     }
 
     /* Footer */

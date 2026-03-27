@@ -39,7 +39,13 @@
     "arg_3_text": "Proven audit kits, tested methodology, ready-to-use deliverables from day one.",
     "profile_name": "Emmanuel Genesteix",
     "profile_role": "GRC & Cybersecurity Consultant",
-    "profile_years": "<strong>20 years at the crossroads of technology, law and business.</strong>"
+    "profile_years": "<strong>20 years at the crossroads of technology, law and business.</strong>",
+    "profile_experience": "<strong>20+ years</strong> of experience at the crossroads of technology, law and business.",
+    "photo_alt": "Emmanuel Genesteix — GRC & Cybersecurity Consultant",
+    "triple_tech": "Computer Science",
+    "triple_legal": "Law",
+    "triple_mba": "MBA",
+    "certs_title": "Certifications"
   },
   "simulator": {
     "hero_title": "Which cyber regulations apply to you?",

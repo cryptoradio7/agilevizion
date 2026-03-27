@@ -410,28 +410,91 @@
             <h2 class="section-title animate-in" data-i18n="why.hero_h1">Pourquoi travailler avec moi ?</h2>
             <div class="why-grid">
                 <div class="why-card animate-in">
-                    <div class="why-icon"><i class="fa-solid fa-crosshairs"></i></div>
+                    <div class="why-icon"><i class="fa-solid fa-crosshairs" aria-hidden="true"></i></div>
                     <h3 data-i18n="why.arg_1_title">Technique, Juridique & Business</h3>
-                    <p data-i18n="why.arg_1_text">20 ans à l'intersection de l'IT, du juridique et de la stratégie.</p>
+                    <p data-i18n="why.arg_1_text">20 ans à l'intersection de l'IT, du juridique et de la stratégie. Triple compétence rare.</p>
                 </div>
                 <div class="why-card animate-in">
-                    <div class="why-icon"><i class="fa-solid fa-layer-group"></i></div>
+                    <div class="why-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></div>
                     <h3 data-i18n="why.arg_2_title">Un seul interlocuteur</h3>
-                    <p data-i18n="why.arg_2_text">DORA, NIS 2, ISO 27001, RGPD — une approche cohérente.</p>
+                    <p data-i18n="why.arg_2_text">DORA, NIS 2, ISO 27001, RGPD — une approche cohérente, un seul point de contact.</p>
                 </div>
                 <div class="why-card animate-in">
-                    <div class="why-icon"><i class="fa-solid fa-rocket"></i></div>
+                    <div class="why-icon"><i class="fa-solid fa-rocket" aria-hidden="true"></i></div>
                     <h3 data-i18n="why.arg_3_title">Prêt à déployer</h3>
-                    <p data-i18n="why.arg_3_text">Kits d'audit éprouvés, méthodologie testée.</p>
+                    <p data-i18n="why.arg_3_text">Kits d'audit éprouvés, méthodologie testée, livrables clé en main dès J+1.</p>
                 </div>
             </div>
-            <div class="profile-section animate-in">
-                <img src="images/photo_emmanuel.png" alt="Emmanuel Genesteix" class="profile-photo" loading="lazy">
-                <div class="profile-info">
-                    <h3 data-i18n="why.profile_name">Emmanuel Genesteix</h3>
-                    <p class="profile-role" data-i18n="why.profile_role">Consultant GRC & Cybersécurité</p>
-                    <p data-i18n-html="why.profile_years">20 ans à la croisée du technique, du juridique et du business.</p>
+
+            <!-- Portrait + profil détaillé -->
+            <div class="why-profile animate-in">
+
+                <!-- Photo portrait -->
+                <div class="why-photo-col">
+                    <div class="photo-portrait-wrapper">
+                        <img src="images/photo_emmanuel.png"
+                             alt="Emmanuel Genesteix — Consultant GRC & Cybersécurité"
+                             class="photo-portrait"
+                             loading="lazy"
+                             data-i18n-alt="why.photo_alt"
+                             onerror="this.style.display='none'; document.getElementById('photo-fallback').style.display='flex';">
+                        <div class="photo-initials" id="photo-fallback" style="display:none;" aria-hidden="true">EG</div>
+                    </div>
                 </div>
+
+                <!-- Infos profil -->
+                <div class="why-info-col">
+                    <h3 class="why-profile-name" data-i18n="why.profile_name">Emmanuel Genesteix</h3>
+                    <p class="why-profile-role" data-i18n="why.profile_role">Consultant GRC & Cybersécurité</p>
+
+                    <p class="why-experience" data-i18n-html="why.profile_experience">
+                        <strong>20+ ans</strong> d'expérience à la croisée de l'informatique, du droit et du business.
+                    </p>
+
+                    <!-- Triple compétence -->
+                    <div class="why-triple">
+                        <div class="triple-item">
+                            <i class="fa-solid fa-microchip" aria-hidden="true"></i>
+                            <span data-i18n="why.triple_tech">Informatique</span>
+                        </div>
+                        <div class="triple-item">
+                            <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>
+                            <span data-i18n="why.triple_legal">Droit</span>
+                        </div>
+                        <div class="triple-item">
+                            <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+                            <span data-i18n="why.triple_mba">MBA</span>
+                        </div>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="why-certs">
+                        <p class="certs-label" data-i18n="why.certs_title">Certifications</p>
+                        <div class="cert-badges" role="list">
+                            <span class="cert-badge" role="listitem">
+                                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                                ISO 27001
+                            </span>
+                            <span class="cert-badge" role="listitem">
+                                <i class="fa-solid fa-gear" aria-hidden="true"></i>
+                                ITIL V4
+                            </span>
+                            <span class="cert-badge" role="listitem">
+                                <i class="fa-solid fa-crown" aria-hidden="true"></i>
+                                Prince2
+                            </span>
+                            <span class="cert-badge" role="listitem">
+                                <i class="fa-solid fa-arrows-spin" aria-hidden="true"></i>
+                                AgilePM
+                            </span>
+                            <span class="cert-badge" role="listitem">
+                                <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
+                                SAFe
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
