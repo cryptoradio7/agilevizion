@@ -125,6 +125,7 @@
     --transition-fast: 150ms ease;
     --transition-base: 250ms ease;
     --transition-slow: 350ms ease;
+    --transition-enter: 600ms ease-out;  /* animations scroll Intersection Observer */
 
     /* Layout */
     --container-max: 1200px;
