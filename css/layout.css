@@ -117,6 +117,7 @@
     min-height: 85vh;
     display: flex;
     align-items: center;
+    background: linear-gradient(180deg, var(--color-primary-50) 0%, var(--bg-primary) 70%);
 }
 
 .hero-page {

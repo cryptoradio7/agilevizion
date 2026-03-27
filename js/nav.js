@@ -1,6 +1,18 @@
 /* ============================================
-   AgileVizion 2 — Navigation
+   AgileVizion 2 — Navigation + Calendly
    ============================================ */
+
+/* --- Calendly popup avec fallback --- */
+var CALENDLY_URL = 'https://calendly.com/emmanuel-genesteix';
+
+function openCalendly() {
+    if (window.Calendly && typeof window.Calendly.initPopupWidget === 'function') {
+        window.Calendly.initPopupWidget({ url: CALENDLY_URL });
+    } else {
+        window.open(CALENDLY_URL, '_blank', 'noopener,noreferrer');
+    }
+}
+window.openCalendly = openCalendly;
 
 document.addEventListener('DOMContentLoaded', function () {
     var navbar = document.getElementById('navbar');
