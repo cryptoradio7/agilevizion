@@ -642,3 +642,170 @@
     font-size: var(--font-size-lg);
     letter-spacing: -0.01em;
 }
+
+/* --- IA Verb Cards (page IA Agentique) --- */
+.ia-verb-card {
+    padding: var(--space-6);
+    border-radius: var(--radius-xl);
+    background: var(--color-primary-50);
+    border: 2px solid var(--color-primary-100);
+    text-align: center;
+    transition: all var(--transition-base);
+}
+
+.ia-verb-card:hover {
+    border-color: var(--color-primary);
+    background: var(--color-primary-100);
+    transform: translateY(-2px);
+}
+
+.ia-verb {
+    display: block;
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-primary);
+    line-height: 1;
+    margin-bottom: var(--space-3);
+}
+
+.ia-verb-icon {
+    display: block;
+    font-size: var(--font-size-2xl);
+    color: var(--color-accent);
+    margin-bottom: var(--space-3);
+}
+
+.ia-verb-card p {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin-bottom: 0;
+    line-height: var(--line-height-normal);
+}
+
+/* IA augmented key message */
+.ia-key-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    margin-top: var(--space-10);
+    padding: var(--space-5) var(--space-8);
+    background: var(--color-primary);
+    color: var(--text-inverse);
+    border-radius: var(--radius-xl);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    text-align: center;
+}
+
+.ia-key-message i {
+    font-size: var(--font-size-2xl);
+    flex-shrink: 0;
+}
+
+/* IA consequences block */
+.ia-consequences {
+    margin-top: var(--space-10);
+    padding: var(--space-6);
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-gray-200);
+}
+
+.ia-consequences h3 {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-4);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: var(--font-size-xs);
+}
+
+.ia-consequences-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+    list-style: none;
+}
+
+.ia-consequences-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.ia-consequences-list li i {
+    color: var(--color-warning);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* KPI source citation */
+.kpi-source {
+    display: block;
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    margin-top: var(--space-3);
+    font-style: italic;
+}
+
+/* --- Job Detail Cards (IA page — 7 métiers) --- */
+.jobs-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-5);
+    margin-top: var(--space-8);
+}
+
+.job-detail-card {
+    padding: var(--space-5);
+    border-radius: var(--radius-lg);
+    background: var(--bg-primary);
+    border: 1px solid var(--color-gray-200);
+    transition: all var(--transition-base);
+}
+
+.job-detail-card:hover {
+    border-color: var(--color-primary-light);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.job-detail-icon {
+    font-size: var(--font-size-2xl);
+    color: var(--color-primary);
+    margin-bottom: var(--space-3);
+}
+
+.job-detail-card h3 {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-3);
+}
+
+.job-detail-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-bottom: 0;
+}
+
+.job-detail-card ul li {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    padding-left: var(--space-4);
+    position: relative;
+    line-height: var(--line-height-normal);
+}
+
+.job-detail-card ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: var(--font-weight-bold);
+}
