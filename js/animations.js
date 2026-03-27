@@ -8,6 +8,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!animatedElements.length) return;
 
+    // Fallback : navigateur sans IntersectionObserver → tout visible
+    if (!('IntersectionObserver' in window)) {
+        animatedElements.forEach(function (el) {
+            el.classList.add('visible');
+        });
+        return;
+    }
+
     // Respect reduced motion preference
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         animatedElements.forEach(function (el) {
