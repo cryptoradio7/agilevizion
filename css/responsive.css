@@ -1,0 +1,129 @@
+/* ============================================
+   AgileVizion 2 — Responsive (Mobile-First)
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .steps-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .jobs-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .deliverables-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --font-size-5xl: 2.25rem;
+        --font-size-3xl: 1.5rem;
+    }
+
+    /* Navbar mobile */
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: var(--navbar-height);
+        left: 0;
+        right: 0;
+        background: var(--bg-primary);
+        flex-direction: column;
+        padding: var(--space-6);
+        gap: var(--space-4);
+        border-bottom: 1px solid var(--color-gray-200);
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: all var(--transition-base);
+    }
+
+    .nav-menu.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-lang {
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: 70vh;
+        padding-top: calc(var(--navbar-height) + var(--space-10));
+    }
+
+    .hero-page {
+        min-height: 50vh;
+    }
+
+    /* Grids → single column */
+    .services-grid,
+    .kpi-grid,
+    .steps-grid,
+    .steps-4,
+    .problems-grid,
+    .deliverables-grid,
+    .frameworks-grid,
+    .why-grid,
+    .workflow-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .jobs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Section spacing */
+    .section {
+        padding: var(--space-12) 0;
+    }
+
+    .section-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    /* Profile */
+    .profile-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        gap: var(--space-6);
+    }
+
+    .footer-contact {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --font-size-5xl: 1.875rem;
+        --container-padding: var(--space-4);
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .jobs-grid {
+        grid-template-columns: 1fr;
+    }
+}

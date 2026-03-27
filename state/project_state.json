@@ -1,0 +1,43 @@
+{
+  "project": "agilevizion-2",
+  "work_dir": "/home/egx/Bureau/APPS/agilevizion-2",
+  "git_url": null,
+  "gate_mode": "autonome",
+  "phase": "architecture",
+  "phase_status": "in_progress",
+  "phases": {
+    "architecture": {
+      "status": "in_progress",
+      "outputs": [
+        "ARCHITECTURE.md"
+      ]
+    },
+    "specs": {
+      "status": "pending",
+      "outputs": [
+        "SPECS_FONCTIONNELLES.md"
+      ]
+    },
+    "dev": {
+      "status": "pending",
+      "outputs": [],
+      "stories_done": 0,
+      "stories_total": 0
+    },
+    "cyber": {
+      "status": "pending",
+      "outputs": []
+    },
+    "devops": {
+      "status": "pending",
+      "outputs": [
+        "README.md"
+      ]
+    }
+  },
+  "stories": [],
+  "blockers": [],
+  "retries": {},
+  "derniere_maj": "2026-03-27T19:39:40.761465",
+  "profile": "app"
+}
