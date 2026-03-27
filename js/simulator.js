@@ -257,7 +257,9 @@ function showConditional(id) {
 // ============================================
 
 function resetSimulator() {
-    state = { answers: { q10_us_activity: 'no' }, results: null, profile: null };
+    state.answers = { q10_us_activity: 'no' };
+    state.results = null;
+    state.profile = null;
 
     document.querySelectorAll('.question-select').forEach(function(s) {
         if (s.id === 'q10_us_activity') {
@@ -793,9 +795,20 @@ window.SimulatorApp = {
             q10.value = 'no';
             state.answers.q10_us_activity = 'no';
         }
-    }
+    },
+    // Accesseur état (utilisé par les tests JSDOM)
+    getState: function() { return state; }
 };
 
 document.addEventListener('DOMContentLoaded', function() {
     window.SimulatorApp.init();
 });
+
+// ============================================
+// EXPORTS WINDOW (inline onclick HTML + tests JSDOM)
+// ============================================
+window.handleChange = handleChange;
+window.checkPdfFormValid = checkPdfFormValid;
+window.generatePDF = generatePDF;
+window.resetSimulator = resetSimulator;
+window.analyzeProfile = analyzeProfile;
