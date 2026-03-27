@@ -21,7 +21,7 @@
     "dev": {
       "status": "in_progress",
       "outputs": [],
-      "stories_done": 1,
+      "stories_done": 3,
       "stories_total": 24
     },
     "cyber": {
@@ -35,9 +35,9 @@
       ]
     }
   },
-  "stories": [{"id": 1, "title": "Navbar sticky avec navigation", "status": "done", "commit": "6d44c60"}],
+  "stories": [],
   "blockers": [],
   "retries": {},
-  "derniere_maj": "2026-03-27T20:30:00.000000",
+  "derniere_maj": "2026-03-27T21:00:00.000000",
   "profile": "app"
 }
