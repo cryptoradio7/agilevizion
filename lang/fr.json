@@ -8,7 +8,9 @@
     "copyright": "© 2024-2030 AgileVizion — Numéro d'immatriculation : A46385 — TVA LU36976357",
     "book_call": "Réserver un appel",
     "send_email": "M'envoyer un email",
-    "video_coming": "Présentation vidéo à venir"
+    "video_coming": "Présentation vidéo à venir",
+    "footer_legal": "Mentions légales",
+    "footer_phone": "+352.661.78.08.07"
   },
   "nav": {
     "services": "Services",

@@ -315,3 +315,44 @@
     font-size: var(--font-size-xs);
     margin-bottom: 0;
 }
+
+.footer-legal-nav {
+    margin-top: var(--space-2);
+}
+
+.footer-legal-link {
+    color: var(--color-gray-500);
+    font-size: var(--font-size-xs);
+    text-decoration: underline;
+    transition: color var(--transition-fast);
+}
+
+.footer-legal-link:hover {
+    color: var(--text-inverse);
+}
+
+.footer-legal {
+    border-top: 1px solid var(--color-gray-700);
+    padding-top: var(--space-4);
+    margin-top: var(--space-4);
+}
+
+.footer-legal p {
+    font-size: var(--font-size-xs);
+    color: var(--color-gray-500);
+    margin-bottom: var(--space-1);
+    line-height: var(--line-height-relaxed);
+}
+
+.footer-legal p:last-child {
+    margin-bottom: 0;
+}
+
+.footer-legal a {
+    color: var(--color-gray-400);
+    text-decoration: underline;
+}
+
+.footer-legal a:hover {
+    color: var(--text-inverse);
+}
