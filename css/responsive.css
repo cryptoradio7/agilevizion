@@ -12,12 +12,12 @@
 
 /* Tap targets : minimum 44x44px (accessibilité tactile) */
 .btn {
-    min-height: 44px;
+    min-height: var(--tap-target);
 }
 
 .lang-btn {
-    min-height: 44px;
-    min-width: 44px;
+    min-height: var(--tap-target);
+    min-width: var(--tap-target);
 }
 
 .nav-menu a {
@@ -50,12 +50,22 @@ select {
 
 .photo-portrait,
 .photo-initials {
-    width: 160px;
+    width: var(--photo-sm);
     height: auto;
 }
 
 .photo-initials {
-    height: 200px;
+    height: var(--photo-height-sm);
+}
+
+/* Trusted logos : gap réduit sur mobile */
+.trusted-logos {
+    gap: var(--space-3);
+}
+
+.trusted-logo-item {
+    min-width: 70px;
+    padding: var(--space-2) var(--space-4);
 }
 
 /* Certifications : scroll horizontal sur mobile */
@@ -293,7 +303,7 @@ select {
 
     /* Why profile : retour layout 2 col tablette */
     .why-profile {
-        grid-template-columns: 200px 1fr;
+        grid-template-columns: var(--col-photo-md) 1fr;
         gap: var(--space-8);
         padding: var(--space-8);
     }
@@ -304,12 +314,12 @@ select {
 
     .photo-portrait,
     .photo-portrait-wrapper {
-        width: 200px;
+        width: var(--photo-md);
     }
 
     .photo-initials {
-        width: 200px;
-        height: 250px;
+        width: var(--photo-md);
+        height: var(--photo-height-md);
     }
 
     /* Solution layout 2 col */
@@ -424,7 +434,7 @@ select {
 
     /* Why profile : layout desktop complet */
     .why-profile {
-        grid-template-columns: 260px 1fr;
+        grid-template-columns: var(--col-photo-lg) 1fr;
         gap: var(--space-12);
         padding: var(--space-10);
         margin-top: var(--space-12);
@@ -432,12 +442,12 @@ select {
 
     .photo-portrait,
     .photo-portrait-wrapper {
-        width: 220px;
+        width: var(--photo-lg);
     }
 
     .photo-initials {
-        width: 220px;
-        height: 280px;
+        width: var(--photo-lg);
+        height: var(--photo-height-lg);
     }
 }
 

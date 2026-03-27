@@ -2,6 +2,66 @@
    AgileVizion 2 — Components
    ============================================ */
 
+/* --- Trusted By Section --- */
+.section-trusted {
+    padding: var(--space-10) 0;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--color-gray-100);
+    border-bottom: 1px solid var(--color-gray-100);
+}
+
+.trusted-headline {
+    text-align: center;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-8);
+}
+
+.trusted-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-6);
+    flex-wrap: wrap;
+}
+
+.trusted-logo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-5);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-lg);
+    background: var(--bg-primary);
+    filter: grayscale(1);
+    opacity: 0.45;
+    transition: filter var(--transition-base), opacity var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+    min-width: 80px;
+}
+
+.trusted-logo-item:hover {
+    filter: grayscale(0);
+    opacity: 1;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.trusted-icon {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+}
+
+.trusted-logo-label {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
 /* --- Buttons --- */
 .btn {
     display: inline-flex;
@@ -85,8 +145,8 @@
 }
 
 .service-icon {
-    width: 56px;
-    height: 56px;
+    width: var(--size-icon-lg);
+    height: var(--size-icon-lg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -153,8 +213,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
+    width: var(--size-icon-md);
+    height: var(--size-icon-md);
     background: var(--color-primary-50);
     color: var(--color-primary);
     border-radius: var(--radius-full);
@@ -216,8 +276,8 @@
 }
 
 .why-icon {
-    width: 48px;
-    height: 48px;
+    width: var(--size-icon-md);
+    height: var(--size-icon-md);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -362,11 +422,11 @@
 
 .photo-portrait-wrapper {
     position: relative;
-    width: 220px;
+    width: var(--photo-lg);
 }
 
 .photo-portrait {
-    width: 220px;
+    width: var(--photo-lg);
     max-width: 100%;
     border-radius: var(--radius-xl);
     object-fit: cover;
@@ -375,8 +435,8 @@
 }
 
 .photo-initials {
-    width: 220px;
-    height: 280px;
+    width: var(--photo-lg);
+    height: var(--photo-height-lg);
     border-radius: var(--radius-xl);
     background: var(--color-primary);
     color: var(--text-inverse);
@@ -516,7 +576,7 @@
 .risk-item strong {
     color: var(--color-danger);
     white-space: nowrap;
-    min-width: 50px;
+    min-width: var(--risk-label-min);
 }
 
 /* --- Solution Section --- */
@@ -560,7 +620,7 @@
     color: var(--color-accent);
     font-size: var(--font-size-base);
     flex-shrink: 0;
-    margin-top: 2px;
+    margin-top: var(--offset-icon);
 }
 
 .solution-check span {
@@ -579,7 +639,7 @@
 /* --- Video Placeholder --- */
 .placeholder-video {
     width: 100%;
-    max-width: 720px;
+    max-width: var(--width-video-max);
     margin: var(--space-8) auto;
 }
 
@@ -604,8 +664,8 @@
 }
 
 .video-placeholder-play {
-    width: 72px;
-    height: 72px;
+    width: var(--size-icon-play);
+    height: var(--size-icon-play);
     border-radius: var(--radius-full);
     background: var(--color-white-15);
     border: 2px solid var(--color-white-40);
@@ -741,7 +801,7 @@
 .ia-consequences-list li i {
     color: var(--color-warning);
     flex-shrink: 0;
-    margin-top: 2px;
+    margin-top: var(--offset-icon);
 }
 
 /* KPI source citation */
