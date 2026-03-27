@@ -7,9 +7,12 @@ document.addEventListener('DOMContentLoaded', function () {
     var toggle = document.getElementById('nav-toggle');
     var menu = document.getElementById('nav-menu');
 
-    // Scroll shadow
+    var SCROLL_THRESHOLD = 50;
+    var MOBILE_BREAKPOINT = 768;
+
+    // Scroll shadow (threshold 50px)
     window.addEventListener('scroll', function () {
-        if (window.scrollY > 10) {
+        if (window.scrollY > SCROLL_THRESHOLD) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
@@ -32,9 +35,50 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Close mobile menu on resize above breakpoint
+    window.addEventListener('resize', function () {
+        if (window.innerWidth > MOBILE_BREAKPOINT && menu) {
+            menu.classList.remove('open');
+            if (toggle) toggle.classList.remove('active');
+        }
+    });
+
+    // Active page link
+    function setActiveNavLink() {
+        var path = window.location.pathname;
+        var links = document.querySelectorAll('.nav-menu a[href]');
+        links.forEach(function (link) {
+            var href = link.getAttribute('href');
+            if (!href || href.startsWith('#') || href.startsWith('/#')) return;
+            link.classList.remove('active');
+        });
+
+        var activeHref = null;
+        if (path === '/' || path.endsWith('/index.html') || path.endsWith('/agilevizion-2/')) {
+            activeHref = '/';
+        } else if (path.includes('cyber.html')) {
+            activeHref = 'cyber.html';
+        } else if (path.includes('ia.html')) {
+            activeHref = 'ia.html';
+        }
+
+        if (activeHref) {
+            var candidates = document.querySelectorAll('.nav-menu a[href]');
+            candidates.forEach(function (link) {
+                var href = link.getAttribute('href');
+                if (href === activeHref ||
+                    (activeHref === '/' && (href === '/' || href === 'index.html' || href === '/index.html'))) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    }
+
+    setActiveNavLink();
+
     // Active language button
     function updateLangButtons() {
-        var lang = (window.I18n && window.I18n.currentLang) || 'en';
+        var lang = (window.I18n && window.I18n.currentLang) || 'fr';
         document.querySelectorAll('.lang-btn').forEach(function (btn) {
             btn.classList.remove('active');
         });
