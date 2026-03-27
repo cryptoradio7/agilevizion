@@ -408,6 +408,7 @@
   },
   "cookies": {
     "text": "This site uses essential cookies for its operation.",
+    "text_with_link": "This site uses essential cookies for its operation. <a href=\"/#legal\">Legal notice</a>",
     "accept": "Accept",
     "refuse": "Decline",
     "link": "Legal notice"

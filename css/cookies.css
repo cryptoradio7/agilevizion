@@ -8,7 +8,9 @@
     left: 0;
     right: 0;
     z-index: 9999;
-    background: var(--bg-dark);
+    background: rgba(15, 15, 25, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     color: var(--color-gray-300);
     padding: var(--space-4) var(--space-6);
     display: flex;
@@ -16,18 +18,52 @@
     justify-content: center;
     gap: var(--space-4);
     font-size: var(--font-size-sm);
-    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.cookie-banner--hidden {
+    transform: translateY(100%);
+    opacity: 0;
 }
 
 .cookie-banner p {
     margin-bottom: 0;
+    flex: 1;
 }
 
-.cookie-banner .btn {
+.cookie-banner p a {
+    color: var(--color-primary-light, #818cf8);
+    text-decoration: underline;
+}
+
+.cookie-banner p a:hover {
+    color: var(--color-primary, #4F46E5);
+}
+
+.cookie-banner .cookie-actions {
+    display: flex;
+    gap: var(--space-2);
+    flex-shrink: 0;
+}
+
+.cookie-banner .btn-accept {
     white-space: nowrap;
     background: var(--color-primary);
     color: var(--text-inverse);
     border-color: var(--color-primary);
+}
+
+.cookie-banner .btn-refuse {
+    white-space: nowrap;
+    background: transparent;
+    color: var(--color-gray-300);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.cookie-banner .btn-refuse:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 @media (max-width: 480px) {
@@ -35,5 +71,15 @@
         flex-direction: column;
         text-align: center;
         gap: var(--space-3);
+        padding: var(--space-4);
+    }
+
+    .cookie-banner p {
+        flex: none;
+    }
+
+    .cookie-banner .cookie-actions {
+        width: 100%;
+        justify-content: center;
     }
 }

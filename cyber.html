@@ -81,9 +81,12 @@
 <body data-page-title="grc.title">
 
     <!-- Cookie Banner -->
-    <div id="cookie-banner" class="cookie-banner" style="display:none;">
-        <p data-i18n="cookies.text">Ce site utilise des cookies essentiels au fonctionnement.</p>
-        <button onclick="acceptCookies()" class="btn btn-sm" data-i18n="cookies.accept">Accepter</button>
+    <div id="cookie-banner" class="cookie-banner" style="display:none;" role="dialog" aria-label="Consentement cookies">
+        <p data-i18n-html="cookies.text_with_link">Ce site utilise des cookies essentiels pour son fonctionnement. <a href="/#legal" data-i18n="cookies.link">Mentions légales</a></p>
+        <div class="cookie-actions">
+            <button onclick="acceptCookies()" class="btn btn-sm btn-accept" data-i18n="cookies.accept">Accepter</button>
+            <button onclick="refuseCookies()" class="btn btn-sm btn-refuse" data-i18n="cookies.refuse">Refuser</button>
+        </div>
     </div>
 
     <!-- Navigation -->

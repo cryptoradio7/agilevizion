@@ -408,6 +408,7 @@
   },
   "cookies": {
     "text": "Ce site utilise des cookies essentiels pour son fonctionnement.",
+    "text_with_link": "Ce site utilise des cookies essentiels pour son fonctionnement. <a href=\"/#legal\">Mentions légales</a>",
     "accept": "Accepter",
     "refuse": "Refuser",
     "link": "Mentions légales"
