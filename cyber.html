@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GRC Cybersécurité — AgileVizion</title>
+    <title data-i18n="grc.title">GRC Cybersécurité — AgileVizion</title>
 
-    <meta name="description" content="Audit et mise en conformité DORA, NIS 2, ISO 27001, RGPD. Kits d'audit prêts à l'emploi, livrables professionnels.">
+    <meta name="description" content="Audit et mise en conformité DORA, NIS 2, ISO 27001, RGPD. Diagnostic initial gratuit, livrables professionnels, feuille de route priorisée.">
     <meta property="og:title" content="GRC Cybersécurité — AgileVizion">
-    <meta property="og:description" content="Audit et mise en conformité DORA, NIS 2, ISO 27001, RGPD.">
+    <meta property="og:description" content="Audit et mise en conformité DORA, NIS 2, ISO 27001, RGPD. Kits d'audit prêts à l'emploi, livrables professionnels.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://agilevizion.com/cyber.html">
     <meta name="twitter:card" content="summary_large_image">
 
     <script type="application/ld+json">
@@ -16,9 +17,14 @@
         "@context": "https://schema.org",
         "@type": "Service",
         "name": "GRC Cybersécurité",
-        "provider": { "@type": "Organization", "name": "AgileVizion" },
-        "description": "Audit et mise en conformité DORA, NIS 2, ISO 27001, RGPD",
-        "areaServed": "Europe"
+        "provider": {
+            "@type": "Organization",
+            "name": "AgileVizion",
+            "url": "https://agilevizion.com"
+        },
+        "description": "Audit et mise en conformité DORA, NIS 2, ISO 27001, RGPD — diagnostic, audit terrain, feuille de route",
+        "areaServed": "Europe",
+        "serviceType": "Audit GRC Cybersécurité"
     }
     </script>
 
@@ -38,11 +44,13 @@
 </head>
 <body data-page-title="grc.title">
 
+    <!-- Cookie Banner -->
     <div id="cookie-banner" class="cookie-banner" style="display:none;">
-        <p data-i18n="cookies.text">Ce site utilise des cookies essentiels.</p>
+        <p data-i18n="cookies.text">Ce site utilise des cookies essentiels au fonctionnement.</p>
         <button onclick="acceptCookies()" class="btn btn-sm" data-i18n="cookies.accept">Accepter</button>
     </div>
 
+    <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="/" class="nav-logo" data-i18n-html="common.brand">Agile<span>Vizion</span></a>
@@ -51,7 +59,7 @@
             </button>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="/" data-i18n="nav.home">Accueil</a></li>
-                <li><a href="cyber.html" data-i18n="nav.cyber">Cyber GRC</a></li>
+                <li><a href="cyber.html" class="active" data-i18n="nav.cyber">Cyber GRC</a></li>
                 <li><a href="ia.html" data-i18n="nav.ia">IA Agentique</a></li>
                 <li><a href="/#simulator" data-i18n="nav.simulator">Simulateur</a></li>
                 <li class="nav-lang">
@@ -62,166 +70,294 @@
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="hero hero-page">
+    <!-- ======================================================
+         HERO — Accroche choc sur les risques
+         ====================================================== -->
+    <section class="hero hero-page" id="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title animate-in" data-i18n="grc.hero_h1">10 millions d'euros d'amende ou 2% du CA — et ce n'est que NIS 2</h1>
-                <p class="hero-subtitle animate-in" data-i18n="grc.hero_p1">DORA, NIS 2, ISO 27001, RGPD... Chaque mois une nouvelle exigence ?</p>
+                <h1 class="hero-title animate-in" data-i18n="grc.hero_h1">
+                    10 millions d'euros d'amende ou 2&nbsp;% du CA mondial — et ce n'est que NIS&nbsp;2
+                </h1>
+                <p class="hero-subtitle animate-in" data-i18n="grc.hero_subtitle">
+                    DORA (Digital Operational Resilience Act), NIS&nbsp;2, ISO&nbsp;27001, RGPD — chaque mois une nouvelle exigence, chaque manquement une sanction. Je vous guide de l'audit à la conformité.
+                </p>
                 <div class="hero-video placeholder-video animate-in">
-                    <div class="video-placeholder">
-                        <i class="fa-solid fa-play"></i>
-                        <span data-i18n="common.video_coming">Vidéo à venir</span>
+                    <div class="video-placeholder" role="img" aria-label="Présentation vidéo à venir">
+                        <div class="video-placeholder-brand">Agile<span>Vizion</span></div>
+                        <div class="video-placeholder-play">
+                            <i class="fa-solid fa-play" aria-hidden="true"></i>
+                        </div>
+                        <span data-i18n="common.video_coming">Présentation vidéo à venir</span>
+                    </div>
+                </div>
+                <div class="hero-cta animate-in">
+                    <button onclick="openCalendly()" class="btn btn-primary btn-lg" data-i18n="grc.hero_cta">
+                        Réserver un diagnostic
+                    </button>
+                    <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-outline btn-lg" data-i18n="common.send_email">
+                        M'envoyer un email
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================
+         SECTION "LE PROBLÈME" — 4 pain points
+         ====================================================== -->
+    <section class="section section-alt" id="probleme" aria-labelledby="problems-heading">
+        <div class="container">
+            <h2 class="section-title animate-in" id="problems-heading" data-i18n="grc.problems_title">Vous vous posez ces questions ?</h2>
+            <div class="problems-grid">
+
+                <!-- Pain point 1 : Quelles normes s'appliquent ? -->
+                <div class="problem-card animate-in">
+                    <div class="problem-icon" aria-hidden="true">
+                        <i class="fa-solid fa-circle-question"></i>
+                    </div>
+                    <h3 data-i18n="grc.problem_1_title">Quelles normes s'appliquent à moi ?</h3>
+                    <p data-i18n="grc.problem_1_text">DORA, NIS&nbsp;2, RGPD, ISO&nbsp;27001, CIS Controls... La multiplication des référentiels rend difficile l'identification de vos obligations réelles — et de celles qui ne vous concernent pas.</p>
+                </div>
+
+                <!-- Pain point 2 : Obligatoire vs recommandé ? -->
+                <div class="problem-card animate-in">
+                    <div class="problem-icon" aria-hidden="true">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h3 data-i18n="grc.problem_2_title">Obligatoire ou recommandé ?</h3>
+                    <p data-i18n="grc.problem_2_text">Certaines normes exposent à des sanctions pénales et financières sévères. D'autres sont de simples bonnes pratiques. Confondre les deux coûte cher — en sur-investissement ou en amende.</p>
+                </div>
+
+                <!-- Pain point 3 : Risque financier -->
+                <div class="problem-card animate-in">
+                    <div class="problem-icon" aria-hidden="true">
+                        <i class="fa-solid fa-euro-sign"></i>
+                    </div>
+                    <h3 data-i18n="grc.problem_3_title">Quel est le risque financier ?</h3>
+                    <p data-i18n="grc.problem_3_text">Les amendes prévues par les réglementations européennes sont massives :</p>
+                    <ul class="risk-amounts" aria-label="Amendes réglementaires">
+                        <li class="risk-item">
+                            <strong><abbr title="Digital Operational Resilience Act">DORA</abbr></strong>
+                            <span data-i18n="grc.problem_3_dora">astreintes périodiques + retrait d'agrément possible</span>
+                        </li>
+                        <li class="risk-item">
+                            <strong><abbr title="Network and Information Security Directive 2">NIS&nbsp;2</abbr></strong>
+                            <span data-i18n="grc.problem_3_nis2">jusqu'à 10&nbsp;M€ ou 2&nbsp;% du CA mondial</span>
+                        </li>
+                        <li class="risk-item">
+                            <strong><abbr title="Règlement Général sur la Protection des Données">RGPD</abbr></strong>
+                            <span data-i18n="grc.problem_3_rgpd">jusqu'à 20&nbsp;M€ ou 4&nbsp;% du CA annuel mondial</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Pain point 4 : Risque dirigeants -->
+                <div class="problem-card animate-in">
+                    <div class="problem-icon" aria-hidden="true">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <h3 data-i18n="grc.problem_4_title">Quel est le risque pour les dirigeants ?</h3>
+                    <p data-i18n="grc.problem_4_text">DORA et NIS&nbsp;2 introduisent la responsabilité personnelle des dirigeants : amendes nominatives, obligation de formation sur les risques cyber, destitution possible en cas de manquement grave.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================
+         SECTION "LA SOLUTION" — audit et mise en conformité structurés
+         ====================================================== -->
+    <section class="section" id="solution" aria-labelledby="solution-heading">
+        <div class="container">
+            <div class="solution-layout animate-in">
+                <div class="solution-desc">
+                    <h2 id="solution-heading" data-i18n="grc.solution_title">La solution : audit et mise en conformité structurés</h2>
+                    <p class="solution-text" data-i18n="grc.solution_text">Je transforme la complexité réglementaire en plan d'action clair, priorisé et actionnable — sans mobiliser vos équipes pendant des mois.</p>
+                </div>
+                <div class="solution-checklist">
+                    <div class="solution-check">
+                        <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                        <span data-i18n="grc.solution_point1">Identification précise de vos obligations réglementaires réelles</span>
+                    </div>
+                    <div class="solution-check">
+                        <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                        <span data-i18n="grc.solution_point2">Audit terrain méthodique avec collecte de preuves et livrables professionnels</span>
+                    </div>
+                    <div class="solution-check">
+                        <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                        <span data-i18n="grc.solution_point3">Feuille de route priorisée par criticité, effort et impact</span>
+                    </div>
+                    <div class="solution-check">
+                        <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                        <span data-i18n="grc.solution_point4">Accompagnement jusqu'à la conformité effective</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Problem -->
-    <section class="section">
+    <!-- ======================================================
+         SECTION "L'APPROCHE" — 3 étapes numérotées
+         ====================================================== -->
+    <section class="section section-alt" id="approche" aria-labelledby="approach-heading">
         <div class="container">
-            <h2 class="section-title animate-in" data-i18n="grc.problems_title">Vous vous posez ces questions ?</h2>
-            <div class="problems-grid">
-                <div class="problem-card animate-in" data-i18n-html="grc.problem_1">Quelles normes s'appliquent vraiment à mon organisation ?</div>
-                <div class="problem-card animate-in" data-i18n-html="grc.problem_2">Qu'est-ce qui est obligatoire vs recommandé ?</div>
-                <div class="problem-card animate-in" data-i18n-html="grc.problem_3">Comment auditer sans mobiliser mon équipe pendant des mois ?</div>
-                <div class="problem-card animate-in" data-i18n-html="grc.problem_4">Et si je rate quelque chose qui expose l'entreprise ?</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sanctions -->
-    <section class="section section-alt">
-        <div class="container">
-            <h2 class="section-title animate-in" data-i18n="grc.sanctions_title">Le risque financier est réel</h2>
-            <div class="kpi-grid">
-                <div class="kpi-card animate-in">
-                    <span class="kpi-value" data-i18n="grc.sanction_1_percent">2%</span>
-                    <span class="kpi-label" data-i18n-html="grc.sanction_1_label">du CA ou 10M€ — NIS 2</span>
-                </div>
-                <div class="kpi-card animate-in">
-                    <span class="kpi-value" data-i18n="grc.sanction_2_percent">4%</span>
-                    <span class="kpi-label" data-i18n-html="grc.sanction_2_label">du CA ou 20M€ — RGPD</span>
-                </div>
-                <div class="kpi-card animate-in">
-                    <span class="kpi-value"><i class="fa-solid fa-gavel"></i></span>
-                    <span class="kpi-label" data-i18n-html="grc.sanction_3_label">DORA — Responsabilité dirigeants</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Approach -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title animate-in" data-i18n="grc.approach_title">Mon approche</h2>
+            <h2 class="section-title animate-in" id="approach-heading" data-i18n="grc.approach_title">Mon approche en 3 étapes</h2>
             <div class="steps-grid">
+
                 <div class="step-card animate-in">
-                    <span class="step-number">01</span>
+                    <span class="step-number" aria-hidden="true">01</span>
                     <h3 data-i18n="grc.approach_1_title">Diagnostic initial</h3>
-                    <p data-i18n="grc.approach_1_text">J'identifie les normes réellement applicables.</p>
+                    <p data-i18n="grc.approach_1_text">Évaluation du périmètre réglementaire applicable : identification des normes obligatoires, des seuils de taille, des secteurs concernés et des délais de mise en conformité.</p>
                 </div>
+
                 <div class="step-card animate-in">
-                    <span class="step-number">02</span>
+                    <span class="step-number" aria-hidden="true">02</span>
                     <h3 data-i18n="grc.approach_2_title">Audit terrain</h3>
-                    <p data-i18n="grc.approach_2_text">Méthodologie structurée, livrables professionnels.</p>
+                    <p data-i18n="grc.approach_2_text">Contrôles sur pièces et sur site, entretiens avec les parties prenantes, collecte de preuves. Grille structurée de 100 à 160+ points de contrôle par norme.</p>
                 </div>
+
                 <div class="step-card animate-in">
-                    <span class="step-number">03</span>
-                    <h3 data-i18n="grc.approach_3_title">Visibilité totale</h3>
-                    <p data-i18n="grc.approach_3_text">Jalons clairs, zéro surprise.</p>
+                    <span class="step-number" aria-hidden="true">03</span>
+                    <h3 data-i18n="grc.approach_3_title">Feuille de route</h3>
+                    <p data-i18n="grc.approach_3_text">Plan d'action priorisé par criticité, effort et délai réglementaire. Chaque écart est documenté avec une recommandation concrète et un responsable désigné.</p>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Deliverables -->
-    <section class="section section-alt">
+    <!-- ======================================================
+         SECTION "LES LIVRABLES" — 6 cards avec icônes
+         ====================================================== -->
+    <section class="section" id="livrables" aria-labelledby="deliverables-heading">
         <div class="container">
-            <h2 class="section-title animate-in" data-i18n="grc.deliverables_title">Ce que je livre</h2>
+            <h2 class="section-title animate-in" id="deliverables-heading" data-i18n="grc.deliverables_title">Ce que je vous livre</h2>
             <div class="deliverables-grid">
+
                 <div class="deliverable-card animate-in">
-                    <i class="fa-solid fa-table-list"></i>
+                    <i class="fa-solid fa-table-list" aria-hidden="true"></i>
                     <h4 data-i18n="grc.deliverable_1_title">Grille d'audit complète</h4>
-                    <p data-i18n="grc.deliverable_1_text">100 à 160+ points de contrôle par norme.</p>
+                    <p data-i18n="grc.deliverable_1_text">100 à 160+ points de contrôle par norme, avec statut (conforme / non conforme / partiel) et preuves associées.</p>
                 </div>
+
                 <div class="deliverable-card animate-in">
-                    <i class="fa-solid fa-file-lines"></i>
+                    <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
                     <h4 data-i18n="grc.deliverable_2_title">Rapport exécutif</h4>
-                    <p data-i18n="grc.deliverable_2_text">Synthèse direction + détail technique.</p>
+                    <p data-i18n="grc.deliverable_2_text">Synthèse pour la direction avec indicateurs clés + détail technique exploitable par les équipes sécurité.</p>
                 </div>
+
                 <div class="deliverable-card animate-in">
-                    <i class="fa-solid fa-route"></i>
+                    <i class="fa-solid fa-route" aria-hidden="true"></i>
                     <h4 data-i18n="grc.deliverable_3_title">Feuille de route priorisée</h4>
-                    <p data-i18n="grc.deliverable_3_text">Actions par criticité, effort et impact.</p>
+                    <p data-i18n="grc.deliverable_3_text">Actions classées par criticité, effort estimé et délai réglementaire. Chaque action est traçable à un écart.</p>
                 </div>
+
                 <div class="deliverable-card animate-in">
-                    <i class="fa-solid fa-file-signature"></i>
-                    <h4 data-i18n="grc.deliverable_4_title">PV de validation</h4>
-                    <p data-i18n="grc.deliverable_4_text">Clôture formelle, signé.</p>
+                    <i class="fa-solid fa-file-signature" aria-hidden="true"></i>
+                    <h4 data-i18n="grc.deliverable_4_title">PV de conformité</h4>
+                    <p data-i18n="grc.deliverable_4_text">Document de clôture formel attestant la réalisation de l'audit, signé par les parties prenantes.</p>
                 </div>
+
                 <div class="deliverable-card animate-in">
-                    <i class="fa-solid fa-copy"></i>
-                    <h4 data-i18n="grc.deliverable_5_title">Modèles réutilisables</h4>
-                    <p data-i18n="grc.deliverable_5_text">Lettres de mission, registres, matrices RACI.</p>
+                    <i class="fa-solid fa-copy" aria-hidden="true"></i>
+                    <h4 data-i18n="grc.deliverable_5_title">Modèles de politiques</h4>
+                    <p data-i18n="grc.deliverable_5_text">Templates prêts à l'emploi : PSSI (Politique de Sécurité des Systèmes d'Information), procédures incidents, DPIA (Data Protection Impact Assessment).</p>
                 </div>
+
                 <div class="deliverable-card animate-in">
-                    <i class="fa-solid fa-chart-pie"></i>
-                    <h4 data-i18n="grc.deliverable_6_title">Infographie norme</h4>
-                    <p data-i18n="grc.deliverable_6_text">Vue d'ensemble visuelle du référentiel.</p>
+                    <i class="fa-solid fa-chart-pie" aria-hidden="true"></i>
+                    <h4 data-i18n="grc.deliverable_6_title">Infographie de synthèse</h4>
+                    <p data-i18n="grc.deliverable_6_text">Vue visuelle du référentiel et de votre niveau de conformité — communicable à la direction et aux parties prenantes.</p>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Frameworks -->
-    <section class="section">
+    <!-- ======================================================
+         SECTION "NORMES COUVERTES" — 3 catégories
+         ====================================================== -->
+    <section class="section section-alt" id="normes" aria-labelledby="frameworks-heading">
         <div class="container">
-            <h2 class="section-title animate-in" data-i18n="grc.frameworks_title">Référentiels & Normes couverts</h2>
-            <p class="section-subtitle animate-in" data-i18n="grc.frameworks_subtitle">Des kits d'audit complets, testés et prêts à l'emploi</p>
+            <h2 class="section-title animate-in" id="frameworks-heading" data-i18n="grc.frameworks_title">Référentiels et normes couverts</h2>
+            <p class="section-subtitle animate-in" data-i18n="grc.frameworks_subtitle">Kits d'audit complets, testés et prêts à l'emploi</p>
             <div class="frameworks-grid">
+
                 <div class="framework-group animate-in">
                     <h3 data-i18n="grc.frameworks_eu">Réglementations européennes</h3>
                     <div class="framework-tags">
-                        <span class="tag">DORA</span>
-                        <span class="tag">NIS 2</span>
-                        <span class="tag">RGPD</span>
+                        <span class="tag tag-regulatory">
+                            <abbr title="Digital Operational Resilience Act — Résilience opérationnelle numérique (UE 2022/2554)">DORA</abbr>
+                        </span>
+                        <span class="tag tag-regulatory">
+                            <abbr title="Network and Information Security Directive 2 — Directive sur la sécurité des réseaux et de l'information">NIS&nbsp;2</abbr>
+                        </span>
+                        <span class="tag">
+                            <abbr title="Règlement Général sur la Protection des Données (UE 2016/679)">RGPD</abbr>
+                        </span>
                     </div>
                 </div>
+
                 <div class="framework-group animate-in">
                     <h3 data-i18n="grc.frameworks_iso">Standards ISO</h3>
                     <div class="framework-tags">
-                        <span class="tag">ISO 27001</span>
-                        <span class="tag">ISO 27002</span>
-                        <span class="tag">ISO 27005</span>
+                        <span class="tag">
+                            <abbr title="ISO 27001 — Système de Management de la Sécurité de l'Information">ISO&nbsp;27001</abbr>
+                        </span>
+                        <span class="tag">
+                            <abbr title="ISO 27002 — Référentiel de contrôles de sécurité de l'information">ISO&nbsp;27002</abbr>
+                        </span>
+                        <span class="tag">
+                            <abbr title="ISO 27005 — Gestion des risques liés à la sécurité de l'information">ISO&nbsp;27005</abbr>
+                        </span>
                     </div>
                 </div>
+
                 <div class="framework-group animate-in">
                     <h3 data-i18n="grc.frameworks_cyber">Frameworks cybersécurité</h3>
                     <div class="framework-tags">
-                        <span class="tag">CIS Controls</span>
-                        <span class="tag">NIST</span>
-                        <span class="tag">EBIOS RM</span>
+                        <span class="tag">
+                            <abbr title="CIS Controls v8 — 18 contrôles de sécurité critiques (Center for Internet Security)">CIS Controls v8</abbr>
+                        </span>
+                        <span class="tag">
+                            <abbr title="NIST 800-53 — Contrôles de sécurité et confidentialité pour systèmes d'information">NIST&nbsp;800-53</abbr>
+                        </span>
+                        <span class="tag">
+                            <abbr title="NIST 800-37 — Cadre de gestion des risques">NIST&nbsp;800-37</abbr>
+                        </span>
+                        <span class="tag">
+                            <abbr title="EBIOS Risk Manager — Méthode d'appréciation et traitement des risques (ANSSI)">EBIOS&nbsp;RM</abbr>
+                        </span>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="section section-cta">
+    <!-- ======================================================
+         CTA FINAL — "Réserver un diagnostic"
+         ====================================================== -->
+    <section class="section section-cta" id="contact" aria-labelledby="cta-heading">
         <div class="container">
-            <h2 class="section-title animate-in" data-i18n="grc.cta_title">Prêt à y voir clair sur votre conformité ?</h2>
-            <p class="section-subtitle animate-in" data-i18n="grc.cta_subtitle">Premier échange de 30 minutes — gratuit, sans engagement</p>
+            <h2 class="section-title animate-in" id="cta-heading" data-i18n="grc.cta_title">Prêt à y voir clair sur votre conformité ?</h2>
+            <p class="section-subtitle animate-in" data-i18n="grc.cta_subtitle">Premier diagnostic de 30 minutes — gratuit, sans engagement</p>
             <div class="hero-cta animate-in">
-                <button onclick="openCalendly()" class="btn btn-primary btn-lg" data-i18n="common.book_call">Réserver un créneau</button>
-                <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-outline btn-lg" data-i18n="common.send_email">M'envoyer un email</a>
+                <button onclick="openCalendly()" class="btn btn-primary btn-lg" data-i18n="grc.hero_cta">
+                    Réserver un diagnostic
+                </button>
+                <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-outline btn-lg" data-i18n="common.send_email">
+                    M'envoyer un email
+                </a>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
+    <!-- ======================================================
+         FOOTER
+         ====================================================== -->
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
@@ -233,7 +369,7 @@
                     <a href="tel:+352661780807" data-i18n="common.footer_phone">
                         <i class="fa-solid fa-phone" aria-hidden="true"></i> +352.661.78.08.07
                     </a>
-                    <a href="https://www.linkedin.com/in/emmanuelgenesteix" target="_blank" rel="noopener">
+                    <a href="https://www.linkedin.com/in/emmanuelgenesteix" target="_blank" rel="noopener noreferrer">
                         <i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn
                     </a>
                 </div>

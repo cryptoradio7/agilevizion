@@ -480,6 +480,102 @@
     font-size: var(--font-size-sm);
 }
 
+/* --- Problem Card inner elements --- */
+.problem-card .problem-icon {
+    font-size: var(--font-size-2xl);
+    color: var(--color-danger);
+    margin-bottom: var(--space-3);
+}
+
+.problem-card h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-3);
+    color: var(--color-gray-900);
+}
+
+.problem-card p {
+    color: var(--color-gray-700);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-3);
+}
+
+.risk-amounts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.risk-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-700);
+}
+
+.risk-item strong {
+    color: var(--color-danger);
+    white-space: nowrap;
+    min-width: 50px;
+}
+
+/* --- Solution Section --- */
+.solution-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+    align-items: center;
+    margin-top: var(--space-8);
+}
+
+.solution-desc h2 {
+    text-align: left;
+    margin-bottom: var(--space-4);
+}
+
+.solution-text {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    line-height: var(--line-height-normal);
+    margin-bottom: 0;
+}
+
+.solution-checklist {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.solution-check {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background: var(--color-primary-50);
+    border-radius: var(--radius-lg);
+    border-left: 3px solid var(--color-primary);
+}
+
+.solution-check i {
+    color: var(--color-accent);
+    font-size: var(--font-size-base);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.solution-check span {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: var(--line-height-normal);
+}
+
+/* --- Tag Regulatory (DORA/NIS2 highlight) --- */
+.tag-regulatory {
+    background: var(--color-primary);
+    color: var(--text-inverse);
+    font-weight: var(--font-weight-semibold);
+}
+
 /* --- Video Placeholder --- */
 .placeholder-video {
     width: 100%;
