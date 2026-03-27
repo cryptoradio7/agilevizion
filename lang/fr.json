@@ -206,7 +206,7 @@
         "deadline": "Obligatoire pour contrats DoD (déploiement 2024-2028)"
       }
     },
-    "why_reasons": {
+    "why": {
       "rgpd": "Traitement de données personnelles avec activité dans l'UE ou clients/utilisateurs UE",
       "dora_regulated": "Entité financière UE détenant un agrément (AMF, ACPR, CSSF ou équivalent)",
       "dora_tic": "Prestataire TIC critique fournissant des services à des entités financières UE régulées",
@@ -229,6 +229,9 @@
       "iso22301_critical_activity": "Activités critiques identifiées — plan de continuité recommandé",
       "cmmc": "Contrats directs ou sous-traitance avec le Département de la Défense US (DoD)"
     },
+    "pdf_audit_section_title": "Souhaitez-vous implémenter un ou plusieurs audits ?",
+    "pdf_audit_section_text": "Pour mettre en œuvre les normes identifiées dans ce diagnostic, je propose des audits personnalisés adaptés à votre contexte. Contactez-moi à l'adresse ci-dessous pour discuter de vos besoins.",
+    "pdf_contact_email": "Email de contact :",
     "profiles": {
       "startup": {
         "title": "Petite structure",
