@@ -88,11 +88,8 @@ var I18n = {
             return value;
         }
 
-        if (typeof value === 'object' && value !== null) {
-            return key;
-        }
-
-        return typeof value === 'string' ? value : String(value || key);
+        // Valeur non-string non-null (ex: number, boolean) — ne devrait pas arriver en pratique
+        return key;
     },
 
     /**
