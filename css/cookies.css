@@ -8,7 +8,7 @@
     left: 0;
     right: 0;
     z-index: 9999;
-    background: rgba(15, 15, 25, 0.92);
+    background: var(--bg-cookie);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     color: var(--color-gray-300);
@@ -18,7 +18,7 @@
     justify-content: center;
     gap: var(--space-4);
     font-size: var(--font-size-sm);
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-banner);
     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 }
 
@@ -33,12 +33,12 @@
 }
 
 .cookie-banner p a {
-    color: var(--color-primary-light, #818cf8);
+    color: var(--color-primary-light);
     text-decoration: underline;
 }
 
 .cookie-banner p a:hover {
-    color: var(--color-primary, #4F46E5);
+    color: var(--color-primary);
 }
 
 .cookie-banner .cookie-actions {
@@ -58,12 +58,12 @@
     white-space: nowrap;
     background: transparent;
     color: var(--color-gray-300);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border: 1px solid var(--color-white-25);
 }
 
 .cookie-banner .btn-refuse:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.4);
+    background: var(--color-white-08);
+    border-color: var(--color-white-40);
 }
 
 @media (max-width: 480px) {

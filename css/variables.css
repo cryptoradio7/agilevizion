@@ -96,6 +96,30 @@
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    --shadow-banner: 0 -4px 20px rgba(0, 0, 0, 0.3);
+
+    /* White alpha variants (overlays sur fond sombre) */
+    --color-white-08: rgba(255, 255, 255, 0.08);
+    --color-white-15: rgba(255, 255, 255, 0.15);
+    --color-white-25: rgba(255, 255, 255, 0.25);
+    --color-white-30: rgba(255, 255, 255, 0.30);
+    --color-white-40: rgba(255, 255, 255, 0.40);
+    --color-white-50: rgba(255, 255, 255, 0.50);
+    --color-white-60: rgba(255, 255, 255, 0.60);
+    --color-white-85: rgba(255, 255, 255, 0.85);
+    --color-white-90: rgba(255, 255, 255, 0.90);
+    --color-white-95: rgba(255, 255, 255, 0.95);
+
+    /* Accent clair */
+    --color-accent-50: #D1FAE5;
+
+    /* Backgrounds sémantiques */
+    --bg-navbar: rgba(255, 255, 255, 0.95);
+    --bg-cookie: rgba(15, 15, 25, 0.92);
+
+    /* Line heights supplémentaires */
+    --line-height-snug: 1.5;
+    --line-height-button: 1.4;
 
     /* Transitions */
     --transition-fast: 150ms ease;
