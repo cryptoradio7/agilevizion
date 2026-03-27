@@ -13,6 +13,7 @@
     "footer_phone": "+352.661.78.08.07"
   },
   "nav": {
+    "home": "Home",
     "services": "Services",
     "simulator": "Simulator",
     "why": "Why me",

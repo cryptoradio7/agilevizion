@@ -21,7 +21,7 @@
     "dev": {
       "status": "in_progress",
       "outputs": [],
-      "stories_done": 5,
+      "stories_done": 7,
       "stories_total": 24
     },
     "cyber": {
@@ -38,6 +38,6 @@
   "stories": [],
   "blockers": [],
   "retries": {},
-  "derniere_maj": "2026-03-27T21:26:29.803486",
+  "derniere_maj": "2026-03-27T21:58:44.746656",
   "profile": "app"
 }

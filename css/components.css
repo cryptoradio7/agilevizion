@@ -342,13 +342,6 @@
     color: var(--color-primary);
 }
 
-/* --- Profile Section (legacy, non utilisé) --- */
-.profile-role {
-    color: var(--color-primary);
-    font-weight: var(--font-weight-semibold);
-    margin-bottom: var(--space-2);
-}
-
 /* --- Why Profile (Story #6) --- */
 .why-profile {
     display: grid;
