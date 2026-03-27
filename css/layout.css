@@ -41,9 +41,29 @@
 }
 
 .nav-menu {
+    /* Mobile-first : menu caché par défaut, affiché en hamburger */
     display: flex;
-    align-items: center;
-    gap: var(--space-6);
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+    right: 0;
+    background: var(--bg-primary);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--space-6);
+    gap: var(--space-4);
+    border-bottom: 1px solid var(--color-gray-200);
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all var(--transition-base);
+    z-index: 999;
+}
+
+.nav-menu.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .nav-menu a {
@@ -91,13 +111,17 @@
 }
 
 .nav-toggle {
-    display: none;
+    display: flex;   /* visible par défaut sur mobile (mobile-first) */
     flex-direction: column;
     gap: 5px;
     background: none;
     border: none;
     cursor: pointer;
     padding: var(--space-2);
+    min-width: 44px;  /* tap target */
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav-toggle span {
@@ -111,17 +135,18 @@
 
 /* --- Sections --- */
 .hero {
-    padding-top: calc(var(--navbar-height) + var(--space-16));
-    padding-bottom: var(--space-16);
+    /* Mobile-first : hero réduit sur mobile */
+    padding-top: calc(var(--navbar-height) + var(--space-10));
+    padding-bottom: var(--space-12);
     text-align: center;
-    min-height: 85vh;
+    min-height: 70vh;
     display: flex;
     align-items: center;
     background: linear-gradient(180deg, var(--color-primary-50) 0%, var(--bg-primary) 70%);
 }
 
 .hero-page {
-    min-height: 70vh;
+    min-height: 50vh;
     background: linear-gradient(180deg, var(--color-primary-50) 0%, var(--bg-primary) 100%);
 }
 
@@ -147,13 +172,19 @@
 
 .hero-cta {
     display: flex;
-    gap: var(--space-4);
+    gap: var(--space-3);
     justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;   /* mobile-first : colonne (boutons pleine largeur) */
+    align-items: center;
+}
+
+.hero-cta .btn {
+    width: 100%;
+    max-width: 320px;
 }
 
 .section {
-    padding: var(--space-20) 0;
+    padding: var(--space-12) 0;   /* mobile-first : spacing réduit */
 }
 
 .section-alt {
@@ -183,7 +214,7 @@
 }
 
 .section-title {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);   /* mobile-first — scale up via media query */
     text-align: center;
     margin-bottom: var(--space-4);
 }
@@ -191,76 +222,76 @@
 .section-subtitle {
     text-align: center;
     color: var(--text-secondary);
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base);  /* mobile-first */
     max-width: 640px;
-    margin: 0 auto var(--space-12);
+    margin: 0 auto var(--space-8);
 }
 
-/* --- Grids --- */
+/* --- Grids (mobile-first : 1 colonne par défaut) --- */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-8);
-    margin-top: var(--space-12);
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin-top: var(--space-8);
 }
 
 .kpi-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-6);
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
     margin-top: var(--space-8);
 }
 
 .steps-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-6);
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
     margin-top: var(--space-8);
 }
 
 .steps-4 {
-    grid-template-columns: repeat(4, 1fr);
+    /* Hérite de .steps-grid — override dans les media queries */
 }
 
 .problems-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: var(--space-4);
     margin-top: var(--space-8);
 }
 
 .deliverables-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-6);
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
     margin-top: var(--space-8);
 }
 
 .frameworks-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-6);
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
     margin-top: var(--space-8);
 }
 
 .why-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-6);
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
     margin-top: var(--space-8);
 }
 
 .workflow-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-6);
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
     margin-top: var(--space-8);
 }
 
 .jobs-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-4);
+    grid-template-columns: repeat(2, 1fr);   /* 2 col dès mobile — assez compact */
+    gap: var(--space-3);
     margin-top: var(--space-8);
 }
 

@@ -345,11 +345,11 @@
 /* --- Why Profile (Story #6) --- */
 .why-profile {
     display: grid;
-    grid-template-columns: 260px 1fr;
-    gap: var(--space-12);
+    grid-template-columns: 1fr;   /* mobile-first */
+    gap: var(--space-8);
     align-items: start;
-    margin-top: var(--space-12);
-    padding: var(--space-10);
+    margin-top: var(--space-8);
+    padding: var(--space-6);      /* mobile-first — réduit */
     background: var(--color-primary-50);
     border-radius: var(--radius-2xl);
 }
@@ -522,8 +522,8 @@
 /* --- Solution Section --- */
 .solution-layout {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-12);
+    grid-template-columns: 1fr;   /* mobile-first */
+    gap: var(--space-8);
     align-items: center;
     margin-top: var(--space-8);
 }
@@ -687,15 +687,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--space-4);
-    margin-top: var(--space-10);
-    padding: var(--space-5) var(--space-8);
+    gap: var(--space-3);
+    margin-top: var(--space-8);
+    padding: var(--space-4) var(--space-6);   /* mobile-first */
     background: var(--color-primary);
     color: var(--text-inverse);
     border-radius: var(--radius-xl);
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base);         /* mobile-first */
     font-weight: var(--font-weight-semibold);
     text-align: center;
+    flex-wrap: wrap;
 }
 
 .ia-key-message i {
@@ -724,7 +725,7 @@
 
 .ia-consequences-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;   /* mobile-first */
     gap: var(--space-3);
     list-style: none;
 }
@@ -755,8 +756,8 @@
 /* --- Job Detail Cards (IA page — 7 métiers) --- */
 .jobs-detail-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-5);
+    grid-template-columns: 1fr;   /* mobile-first */
+    gap: var(--space-4);
     margin-top: var(--space-8);
 }
 

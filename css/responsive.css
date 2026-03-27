@@ -1,170 +1,500 @@
 /* ============================================
    AgileVizion 2 — Responsive (Mobile-First)
+   Base = mobile, scale up via min-width queries
+   Breakpoints : 480px / 768px / 1024px
    ============================================ */
 
-@media (max-width: 1024px) {
-    .steps-4 {
-        grid-template-columns: repeat(2, 1fr);
+/* ============================================
+   BASE MOBILE — règles spécifiques au mobile
+   (sans media query = s'applique à tous,
+    surchargé par les min-width ci-dessous)
+   ============================================ */
+
+/* Tap targets : minimum 44x44px (accessibilité tactile) */
+.btn {
+    min-height: 44px;
+}
+
+.lang-btn {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+.nav-menu a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+/* Inputs : font-size 16px pour éviter le zoom auto iOS */
+.question-select,
+.pdf-section input,
+input[type="text"],
+input[type="email"],
+select {
+    font-size: var(--font-size-base);  /* 16px — iOS zoom si < 16px */
+}
+
+/* Nav lang : centré dans le menu mobile */
+.nav-lang {
+    margin-left: 0;
+    justify-content: flex-start;
+}
+
+/* Photo portrait : pleine largeur sur mobile */
+.why-photo-col {
+    order: -1;   /* photo au-dessus sur mobile */
+    display: flex;
+    justify-content: center;
+}
+
+.photo-portrait,
+.photo-initials {
+    width: 160px;
+    height: auto;
+}
+
+.photo-initials {
+    height: 200px;
+}
+
+/* Certifications : scroll horizontal sur mobile */
+.cert-badges {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: var(--space-2);
+    scrollbar-width: none;  /* Firefox */
+}
+
+.cert-badges::-webkit-scrollbar {
+    display: none;  /* Chrome/Safari */
+}
+
+.why-triple {
+    flex-wrap: wrap;
+}
+
+/* Footer mobile */
+.footer-content {
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.footer-contact {
+    text-align: left;
+}
+
+/* Simulator card mobile */
+.sim-card {
+    padding: var(--space-4);
+}
+
+.sim-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+}
+
+.results-summary {
+    grid-template-columns: 1fr;
+}
+
+.summary-number {
+    font-size: var(--font-size-3xl);
+}
+
+.norm-header {
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+/* Solution desc heading mobile */
+.solution-desc h2 {
+    text-align: center;
+}
+
+/* ============================================
+   BREAKPOINT 480px — Petit mobile (paysage,
+   iPhone SE, Galaxy A, etc.)
+   ============================================ */
+
+@media (min-width: 480px) {
+    :root {
+        --font-size-5xl: 2.25rem;
+        --font-size-4xl: 2.25rem;
     }
 
+    /* Hero CTA : on peut passer en row dès 480px */
+    .hero-cta {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .hero-cta .btn {
+        width: auto;
+    }
+
+    /* Jobs grid : 2 col dès 480px */
     .jobs-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .deliverables-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .jobs-detail-grid {
-        grid-template-columns: repeat(2, 1fr);
+    /* Simulator summary : 2 col */
+    .results-summary {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-3);
     }
 
-    .ia-consequences-list {
-        grid-template-columns: 1fr;
+    .sim-card {
+        padding: var(--space-5);
+    }
+
+    .sim-card-header {
+        flex-direction: row;
+        align-items: center;
     }
 }
 
-@media (max-width: 768px) {
+/* ============================================
+   BREAKPOINT 768px — Tablette
+   (iPad portrait, Android tablette, etc.)
+   ============================================ */
+
+@media (min-width: 768px) {
     :root {
-        --font-size-5xl: 2.25rem;
-        --font-size-3xl: 1.5rem;
+        --font-size-5xl: 2.5rem;
+        --font-size-4xl: 2.25rem;
+        --font-size-3xl: 1.875rem;
+        --font-size-6xl: 3.25rem;
     }
 
-    /* Navbar mobile */
+    /* Navbar : retour au mode desktop */
     .nav-toggle {
-        display: flex;
+        display: none;
     }
 
     .nav-menu {
-        position: fixed;
-        top: var(--navbar-height);
-        left: 0;
-        right: 0;
-        background: var(--bg-primary);
-        flex-direction: column;
-        padding: var(--space-6);
-        gap: var(--space-4);
-        border-bottom: 1px solid var(--color-gray-200);
-        transform: translateY(-100%);
-        opacity: 0;
-        pointer-events: none;
-        transition: all var(--transition-base);
-    }
-
-    .nav-menu.open {
-        transform: translateY(0);
+        position: static;
+        transform: none;
         opacity: 1;
         pointer-events: auto;
+        flex-direction: row;
+        align-items: center;
+        padding: 0;
+        gap: var(--space-6);
+        border: none;
+        background: transparent;
+        z-index: auto;
+    }
+
+    .nav-menu a {
+        min-height: auto;
+        display: inline;
     }
 
     .nav-lang {
-        margin-left: 0;
-        justify-content: center;
+        margin-left: var(--space-4);
     }
 
     /* Hero */
     .hero {
-        min-height: 70vh;
-        padding-top: calc(var(--navbar-height) + var(--space-10));
+        min-height: 75vh;
+        padding-top: calc(var(--navbar-height) + var(--space-16));
+        padding-bottom: var(--space-16);
     }
 
     .hero-page {
-        min-height: 50vh;
+        min-height: 60vh;
     }
 
-    /* Grids → single column */
-    .services-grid,
-    .kpi-grid,
-    .steps-grid,
-    .steps-4,
-    .problems-grid,
-    .deliverables-grid,
-    .frameworks-grid,
-    .why-grid,
-    .workflow-grid,
-    .jobs-detail-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .jobs-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    /* Section spacing */
+    /* Section spacing tablette */
     .section {
-        padding: var(--space-12) 0;
+        padding: var(--space-16) 0;
     }
 
     .section-title {
-        font-size: var(--font-size-2xl);
+        font-size: var(--font-size-3xl);
     }
 
-    /* Why profile → colonne unique */
-    .why-profile {
-        grid-template-columns: 1fr;
+    .section-subtitle {
+        font-size: var(--font-size-lg);
+        margin-bottom: var(--space-12);
+    }
+
+    /* Grids 2 colonnes sur tablette */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
         gap: var(--space-8);
-        padding: var(--space-6);
+    }
+
+    .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-6);
+    }
+
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-6);
+    }
+
+    .problems-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .deliverables-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-6);
+    }
+
+    .frameworks-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-6);
+    }
+
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-6);
+    }
+
+    .workflow-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-6);
+    }
+
+    .jobs-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-4);
+    }
+
+    /* Composants 2 col tablette */
+    .jobs-detail-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-5);
+    }
+
+    .ia-consequences-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .results-summary {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-4);
+    }
+
+    .summary-number {
+        font-size: var(--font-size-4xl);
+    }
+
+    .norm-header {
+        flex-direction: row;
+        gap: var(--space-4);
+    }
+
+    /* Why profile : retour layout 2 col tablette */
+    .why-profile {
+        grid-template-columns: 200px 1fr;
+        gap: var(--space-8);
+        padding: var(--space-8);
     }
 
     .why-photo-col {
-        order: -1; /* photo au-dessus sur mobile */
+        order: 0;
     }
 
     .photo-portrait,
-    .photo-initials {
-        width: 160px;
-        height: auto;
+    .photo-portrait-wrapper {
+        width: 200px;
     }
 
     .photo-initials {
-        height: 200px;
+        width: 200px;
+        height: 250px;
     }
 
-    /* Certifications scroll horizontal sur mobile */
-    .cert-badges {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: var(--space-2);
-        scrollbar-width: none; /* Firefox */
+    /* Solution layout 2 col */
+    .solution-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-12);
     }
 
-    .cert-badges::-webkit-scrollbar {
-        display: none; /* Chrome/Safari */
+    .solution-desc h2 {
+        text-align: left;
     }
 
-    .why-triple {
-        flex-wrap: wrap;
+    /* IA key message */
+    .ia-key-message {
+        font-size: var(--font-size-lg);
+        padding: var(--space-5) var(--space-8);
+        margin-top: var(--space-10);
     }
 
     /* Footer */
     .footer-content {
-        flex-direction: column;
-        gap: var(--space-6);
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
     }
 
     .footer-contact {
-        text-align: left;
+        text-align: right;
+    }
+
+    /* Simulator */
+    .sim-card {
+        padding: var(--space-8);
+    }
+
+    .sim-card-header {
+        flex-direction: row;
+        align-items: center;
+        gap: 0;
+    }
+
+    /* Inputs : restaure la taille sm sur tablette */
+    .question-select,
+    .pdf-section input {
+        font-size: var(--font-size-sm);
     }
 }
 
-@media (max-width: 480px) {
+/* ============================================
+   BREAKPOINT 1024px — Desktop
+   ============================================ */
+
+@media (min-width: 1024px) {
     :root {
-        --font-size-5xl: 1.875rem;
-        --container-padding: var(--space-4);
+        --font-size-5xl: 3rem;
+        --font-size-4xl: 2.25rem;
+        --font-size-3xl: 1.875rem;
+        --font-size-6xl: 3.75rem;
     }
 
-    .hero-cta {
-        flex-direction: column;
-        align-items: center;
+    /* Hero : taille complète desktop */
+    .hero {
+        min-height: 85vh;
     }
 
-    .hero-cta .btn {
-        width: 100%;
-        max-width: 320px;
+    .hero-page {
+        min-height: 70vh;
+    }
+
+    /* Section spacing desktop */
+    .section {
+        padding: var(--space-20) 0;
+    }
+
+    /* Grids 3+ colonnes desktop */
+    .kpi-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .steps-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .steps-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .deliverables-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .frameworks-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .why-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .workflow-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .jobs-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Composants 4 col desktop */
+    .jobs-detail-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Why profile : layout desktop complet */
+    .why-profile {
+        grid-template-columns: 260px 1fr;
+        gap: var(--space-12);
+        padding: var(--space-10);
+        margin-top: var(--space-12);
+    }
+
+    .photo-portrait,
+    .photo-portrait-wrapper {
+        width: 220px;
+    }
+
+    .photo-initials {
+        width: 220px;
+        height: 280px;
+    }
+}
+
+/* ============================================
+   EDGE CASE : Paysage mobile
+   (orientation landscape + écran petit)
+   ============================================ */
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        max-height: 100vh;
+        padding-top: calc(var(--navbar-height) + var(--space-6));
+        padding-bottom: var(--space-6);
+    }
+
+    .hero-page {
+        min-height: auto;
+        max-height: 80vh;
+    }
+}
+
+/* ============================================
+   EDGE CASE : Très petit écran (<320px)
+   Dégradation gracieuse
+   ============================================ */
+
+@media (max-width: 319px) {
+    :root {
+        --container-padding: var(--space-3);
+        --font-size-5xl: 1.5rem;
+        --font-size-2xl: 1.25rem;
+    }
+
+    /* Évite toute coupure de texte */
+    .hero-title,
+    .section-title,
+    h1, h2, h3 {
+        word-break: break-word;
+        hyphens: auto;
+    }
+
+    /* Boutons : pas de dépassement */
+    .btn {
+        max-width: 100%;
+        white-space: normal;
+        text-align: center;
+    }
+
+    /* Simulator : réduit encore plus */
+    .sim-card {
+        padding: var(--space-3);
+    }
+
+    /* Tags : wrap forcé */
+    .cert-badges {
+        flex-wrap: wrap;
+        overflow-x: visible;
     }
 }
