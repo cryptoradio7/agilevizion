@@ -184,19 +184,19 @@ test.describe('Fallback photo — initiales EG', () => {
 });
 
 // ====================================================================
-// CA3 — Certifications : 5 badges
+// CA3 — Certifications : 6 badges (Story #18 — PMP ajouté)
 // ====================================================================
-test.describe('Certifications — 5 badges', () => {
-    const CERTS = ['ISO 27001', 'ITIL V4', 'Prince2', 'AgilePM', 'SAFe'];
+test.describe('Certifications — 6 badges', () => {
+    const CERTS = ['ISO 27001', 'ITIL V4', 'Prince2', 'AgilePM', 'SAFe', 'PMP'];
 
     test.beforeEach(async ({ page }) => {
         await page.goto('/');
         await page.locator('#why-me').scrollIntoViewIfNeeded();
     });
 
-    test('exactement 5 .cert-badge dans #why-me', async ({ page }) => {
+    test('exactement 6 .cert-badge dans #why-me (Story #18 — PMP ajouté)', async ({ page }) => {
         const badges = page.locator('#why-me .cert-badge');
-        await expect(badges).toHaveCount(5);
+        await expect(badges).toHaveCount(6);
     });
 
     for (const cert of CERTS) {
@@ -217,7 +217,7 @@ test.describe('Certifications — 5 badges', () => {
 
     test('chaque badge a une icône Font Awesome', async ({ page }) => {
         const icons = page.locator('#why-me .cert-badge i');
-        await expect(icons).toHaveCount(5);
+        await expect(icons).toHaveCount(6);
     });
 
     test('libellé "Certifications" visible', async ({ page }) => {
@@ -388,7 +388,7 @@ test.describe('Accessibilité de la section Why Me', () => {
 
     test('chaque .cert-badge a role="listitem"', async ({ page }) => {
         const badges = page.locator('.cert-badge[role="listitem"]');
-        await expect(badges).toHaveCount(5);
+        await expect(badges).toHaveCount(6);
     });
 
     test('img.photo-portrait a aria-hidden="false" ou alt descriptif', async ({ page }) => {

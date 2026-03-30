@@ -1,0 +1,299 @@
+/* ============================================
+   AgileVizion 2 — Blog Styles (LinkedIn-style)
+   ============================================ */
+
+/* --- Filters (now in section-nav, old pill styles removed) --- */
+
+/* --- Posts Grid --- */
+.blog-grid {
+    padding: var(--space-4) 0 var(--space-12);
+}
+
+.posts-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+/* --- LinkedIn-style Blog Card --- */
+.blog-card {
+    background: var(--color-surface, #fff);
+    border: 1px solid var(--color-border, #e2e8f0);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow var(--transition-base);
+}
+
+.blog-card:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* --- LinkedIn header: avatar + name + title + date --- */
+.post-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px 0;
+}
+
+.post-author-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.post-author-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.post-author-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text-primary, #1e293b);
+    line-height: 1.3;
+}
+
+.post-author-name a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.post-author-name a:hover {
+    color: #0a66c2;
+    text-decoration: underline;
+}
+
+.post-author-title {
+    font-size: 12px;
+    color: var(--color-text-secondary, #64748b);
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.post-author-date {
+    font-size: 12px;
+    color: #92929d;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.post-author-date i {
+    font-size: 10px;
+}
+
+/* --- Category badge (top-right) --- */
+.post-category-badge {
+    float: right;
+    margin: 12px 16px 0 0;
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: var(--radius-full, 9999px);
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.post-category-badge--dora {
+    background: #ede9fe;
+    color: #6d28d9;
+}
+
+.post-category-badge--nis2 {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.post-category-badge--iso27001 {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.post-category-badge--iso22301 {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.post-category-badge--grc {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.post-category-badge--ia {
+    background: #fce7f3;
+    color: #9d174d;
+}
+
+/* --- Post content (LinkedIn style) --- */
+.post-body {
+    padding: 8px 16px 0;
+}
+
+.post-content {
+    max-height: 160px;
+    overflow: hidden;
+    position: relative;
+    color: var(--color-text-primary, #1e293b);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.post-content::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: linear-gradient(transparent, var(--color-surface, #fff));
+    pointer-events: none;
+}
+
+.blog-card.expanded .post-content {
+    max-height: none;
+}
+
+.blog-card.expanded .post-content::after {
+    display: none;
+}
+
+.post-content p {
+    margin-bottom: 0.2em;
+}
+
+.post-content .post-bullet {
+    padding-left: 4px;
+    color: var(--color-text-primary, #1e293b);
+}
+
+.post-content .post-bold {
+    font-weight: 600;
+}
+
+/* --- See more (LinkedIn style) --- */
+.post-expand-btn {
+    display: inline-block;
+    padding: 4px 16px 8px;
+    border: none;
+    background: none;
+    color: #0a66c2;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color var(--transition-fast);
+}
+
+.post-expand-btn:hover {
+    color: #004182;
+    text-decoration: underline;
+}
+
+/* --- Hashtags row --- */
+.post-hashtags {
+    padding: 4px 16px 8px;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.post-tag {
+    font-size: 13px;
+    color: #0a66c2;
+    font-weight: 500;
+    cursor: default;
+}
+
+/* --- LinkedIn-style footer actions --- */
+.blog-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px 12px;
+    border-top: 1px solid var(--color-border, #e2e8f0);
+}
+
+.post-linkedin-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #0a66c2;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background var(--transition-fast);
+}
+
+.post-linkedin-link:hover {
+    background: #e8f0fe;
+}
+
+.post-linkedin-link i {
+    font-size: 16px;
+}
+
+.post-profile-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #0a66c2;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background var(--transition-fast);
+}
+
+.post-profile-link:hover {
+    background: #e8f0fe;
+}
+
+.post-profile-link i {
+    font-size: 16px;
+}
+
+/* --- Empty / Error --- */
+.blog-empty,
+.blog-load-error {
+    text-align: center;
+    color: var(--color-text-secondary, #64748b);
+    padding: var(--space-12) 0;
+    font-size: var(--font-size-base);
+}
+
+/* --- Responsive --- */
+@media (max-width: 640px) {
+    .posts-container {
+        max-width: 100%;
+    }
+
+    .filter-bar {
+        gap: var(--space-2);
+    }
+
+    .filter-btn {
+        padding: var(--space-1) var(--space-3);
+        font-size: 0.75rem;
+    }
+
+    .post-author-avatar {
+        width: 40px;
+        height: 40px;
+    }
+
+    .blog-card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+}

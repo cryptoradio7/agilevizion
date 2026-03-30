@@ -187,11 +187,11 @@ describe('Fallback photo — initiales EG', () => {
 // Certifications
 // ====================================================================
 describe('Certifications (.cert-badge)', () => {
-    const EXPECTED_CERTS = ['ISO 27001', 'ITIL V4', 'Prince2', 'AgilePM', 'SAFe'];
+    const EXPECTED_CERTS = ['ISO 27001', 'ITIL V4', 'Prince2', 'AgilePM', 'SAFe', 'PMP'];
 
-    test('exactement 5 .cert-badge', () => {
+    test('exactement 6 .cert-badge (Story #18 — PMP ajouté)', () => {
         const badges = document.querySelectorAll('.cert-badge');
-        expect(badges.length).toBe(5);
+        expect(badges.length).toBe(6);
     });
 
     EXPECTED_CERTS.forEach(cert => {
@@ -204,7 +204,7 @@ describe('Certifications (.cert-badge)', () => {
 
     test('chaque badge a une icône FA', () => {
         const icons = document.querySelectorAll('.cert-badge i');
-        expect(icons.length).toBe(5);
+        expect(icons.length).toBe(6);
     });
 
     test('.cert-badges a role="list"', () => {

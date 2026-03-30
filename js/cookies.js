@@ -1,9 +1,9 @@
 /* ============================================
-   AgileVizion 2 — Cookie Banner (RGPD)
+   AgileVizion 2 — Cookie Consent Popup (RGPD)
    ============================================ */
 
-var COOKIE_KEY = 'cookie_consent';
-var COOKIE_TTL_MS = 365 * 24 * 60 * 60 * 1000; // 12 mois en millisecondes
+var COOKIE_KEY = 'cookie_consent_v2';
+var COOKIE_TTL_MS = 365 * 24 * 60 * 60 * 1000; // 12 mois
 
 function _localStorageAvailable() {
     try {
@@ -41,33 +41,37 @@ function _setConsent(value) {
             timestamp: Date.now()
         }));
     } catch (e) {
-        // Silently fail (stockage plein ou navigation privée stricte)
+        // Silently fail
     }
 }
 
-function _hideBanner() {
-    var banner = document.getElementById('cookie-banner');
-    if (!banner) return;
-    banner.classList.add('cookie-banner--hidden');
+function _hidePopup() {
+    var popup = document.getElementById('cookie-popup');
+    var overlay = document.getElementById('cookie-overlay');
+    if (popup) popup.classList.add('cookie-popup--hidden');
+    if (overlay) overlay.classList.add('cookie-overlay--hidden');
     setTimeout(function () {
-        banner.style.display = 'none';
+        if (popup) popup.style.display = 'none';
+        if (overlay) overlay.style.display = 'none';
     }, 300);
 }
 
 function acceptCookies() {
     _setConsent('accepted');
-    _hideBanner();
+    _hidePopup();
 }
 
 function refuseCookies() {
     _setConsent('refused');
-    _hideBanner();
+    _hidePopup();
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    var banner = document.getElementById('cookie-banner');
-    if (!banner) return;
+    var popup = document.getElementById('cookie-popup');
+    var overlay = document.getElementById('cookie-overlay');
+    if (!popup || !overlay) return;
     if (_getConsent() === null) {
-        banner.style.display = 'flex';
+        overlay.style.display = 'block';
+        popup.style.display = 'block';
     }
 });

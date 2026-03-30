@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' https://agilevizion.com data:; connect-src 'self'; object-src 'none';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="refresh" content="0;url=cyber.html">
     <title>AgileVizion — GRC Cybersécurité & IA Agentique</title>
 
     <!-- SEO Meta -->
@@ -47,7 +51,7 @@
                     "availableLanguage": ["French", "English"]
                 },
                 "sameAs": [
-                    "https://www.linkedin.com/in/emmanuelgenesteix"
+                    "https://www.linkedin.com/in/genesteix-emmanuel"
                 ]
             },
             {
@@ -86,7 +90,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/variables.css">
@@ -94,18 +98,22 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/simulator.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/cookies.css">
+    <link rel="stylesheet" href="css/section-nav.css">
 </head>
 <body data-page-title="common.site_title">
 
-    <!-- Cookie Banner -->
-    <div id="cookie-banner" class="cookie-banner" style="display:none;" role="dialog" aria-label="Consentement cookies">
-        <p data-i18n-html="cookies.text_with_link">Ce site utilise des cookies essentiels pour son fonctionnement. <a href="#legal">Mentions légales</a></p>
-        <div class="cookie-actions">
-            <button onclick="acceptCookies()" class="btn btn-sm btn-accept" data-i18n="cookies.accept">Accepter</button>
-            <button onclick="refuseCookies()" class="btn btn-sm btn-refuse" data-i18n="cookies.refuse">Refuser</button>
+    <!-- Cookie Consent Popup -->
+    <div id="cookie-overlay" class="cookie-overlay" style="display:none;"></div>
+    <div id="cookie-popup" class="cookie-popup" style="display:none;" role="dialog" aria-modal="true" aria-label="Consentement cookies">
+        <div class="cookie-popup-icon" aria-hidden="true"><i class="fa-solid fa-cookie-bite"></i></div>
+        <h3 class="cookie-popup-title" data-i18n="cookies.popup_title">Ce site utilise des cookies</h3>
+        <p class="cookie-popup-text" data-i18n="cookies.popup_text">Nous utilisons uniquement des cookies essentiels au fonctionnement du site. Aucun cookie publicitaire ni de tracking.</p>
+        <p class="cookie-popup-link"><a href="#legal" data-i18n="cookies.link">Mentions légales</a></p>
+        <div class="cookie-popup-actions">
+            <button onclick="acceptCookies()" class="btn cookie-btn-accept" data-i18n="cookies.accept">Accepter</button>
+            <button onclick="refuseCookies()" class="btn cookie-btn-refuse" data-i18n="cookies.refuse">Refuser</button>
         </div>
     </div>
 
@@ -113,16 +121,15 @@
     <header>
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="/" class="nav-logo" data-i18n-html="common.brand">Agile<span>Vizion</span></a>
+            <a href="cyber.html" class="nav-logo" data-i18n-html="common.brand">Agile<span>Vizion</span></a>
             <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="#services" data-i18n="nav.services">Services</a></li>
-                <li><a href="#simulator" data-i18n="nav.simulator">Simulateur</a></li>
-                <li><a href="#why-me" data-i18n="nav.why">Pourquoi moi</a></li>
-                <li><a href="cyber.html" data-i18n="nav.cyber">Cyber GRC</a></li>
+                <li><a href="cyber.html" data-i18n="nav.cyber">GRC Cybersécurité</a></li>
                 <li><a href="ia.html" data-i18n="nav.ia">IA Agentique</a></li>
+                <li><a href="blog.html" data-i18n="nav.blog">Publications</a></li>
+                <li><a href="#why-me" data-i18n="nav.together">Travailler ensemble</a></li>
                 <li class="nav-lang">
                     <button onclick="I18n.switchLanguage('fr')" class="lang-btn" id="lang-fr">FR</button>
                     <button onclick="I18n.switchLanguage('en')" class="lang-btn" id="lang-en">EN</button>
@@ -139,18 +146,17 @@
             <div class="hero-content">
                 <h1 class="hero-title animate-in" data-i18n="landing.hero_title">Conformité cyber &amp; IA agentique — un consultant, des résultats</h1>
                 <p class="hero-subtitle animate-in" data-i18n="landing.hero_subtitle">DORA, NIS 2, ISO 27001, RGPD — je vous accompagne de l'audit à la conformité. Et j'automatise vos processus métier avec l'IA agentique.</p>
-                <div class="hero-video placeholder-video animate-in">
-                    <div class="video-placeholder" onclick="openCalendly()" role="button" aria-label="Réserver un appel">
+                <div class="hero-video animate-in">
+                    <div class="video-placeholder" style="display:flex" aria-label="Production des vidéos de présentation en cours">
                         <div class="video-placeholder-brand">Agile<span>Vizion</span></div>
                         <div class="video-placeholder-play">
-                            <i class="fa-solid fa-play" aria-hidden="true"></i>
+                            <i class="fa-solid fa-film" aria-hidden="true"></i>
                         </div>
-                        <span data-i18n="common.video_coming">Présentation vidéo à venir</span>
+                        <span>Production des vidéos de présentation en cours</span>
                     </div>
                 </div>
                 <div class="hero-cta animate-in">
-                    <button onclick="openCalendly()" class="btn btn-primary btn-lg" data-i18n="common.book_call">Réserver un appel</button>
-                    <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-outline btn-lg" data-i18n="common.send_email">M'envoyer un email</a>
+                    <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-primary btn-lg" data-i18n="common.book_meeting">Réserver un rendez-vous</a>
                 </div>
             </div>
         </div>
@@ -181,310 +187,19 @@
                     <i class="fa-solid fa-diagram-project trusted-icon" aria-hidden="true"></i>
                     <span class="trusted-logo-label">SAFe</span>
                 </div>
-                <div class="trusted-logo-item" role="listitem">
-                    <i class="fa-solid fa-award trusted-icon" aria-hidden="true"></i>
-                    <span class="trusted-logo-label">PMP</span>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="section" id="services">
-        <div class="container">
-            <h2 class="section-title animate-in" data-i18n="landing.services_title">Deux expertises, un objectif : votre résilience</h2>
-            <div class="services-grid">
-                <a href="cyber.html" class="service-card animate-in">
-                    <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h3 data-i18n="landing.service_cyber_title">GRC Cybersécurité</h3>
-                    <p data-i18n="landing.service_cyber_desc">Audit, conformité et mise en place des référentiels DORA, NIS 2, ISO 27001, RGPD. Kits d'audit prêts à l'emploi.</p>
-                    <span class="service-link" data-i18n="landing.learn_more">En savoir plus &rarr;</span>
-                </a>
-                <a href="ia.html" class="service-card animate-in">
-                    <div class="service-icon"><i class="fa-solid fa-robot"></i></div>
-                    <h3 data-i18n="landing.service_ia_title">IA Agentique</h3>
-                    <p data-i18n="landing.service_ia_desc">Automatisation des tâches répétitives avec des agents IA dédiés. L'employé augmenté qui produit, vérifie et apprend.</p>
-                    <span class="service-link" data-i18n="landing.learn_more">En savoir plus &rarr;</span>
-                </a>
-            </div>
+
+    <!-- Section Navigation -->
+    <nav class="section-nav" aria-label="Navigation sections">
+        <div class="section-nav-inner">
+            <a class="section-nav-link" href="#trusted-by" data-i18n="landing.nav_trusted">Certifications</a>
+            <a class="section-nav-link" href="#why-me" data-i18n="landing.nav_why">Pourquoi moi</a>
+            <a class="section-nav-link" href="#contact" data-i18n="landing.nav_contact">Contact</a>
         </div>
-    </section>
-
-    <!-- Simulator Section -->
-    <section class="section section-alt" id="simulator">
-        <div class="container">
-            <h2 class="section-title animate-in" data-i18n="simulator.hero_title">Quelles réglementations cyber s'appliquent à vous ?</h2>
-            <p class="section-subtitle animate-in" data-i18n-html="simulator.hero_text">Répondez à quelques questions et découvrez immédiatement quels référentiels sont applicables ou recommandés pour votre organisation.</p>
-
-            <div id="simulator-container" class="simulator-container animate-in">
-
-                <!-- Card questions -->
-                <div class="sim-card">
-                    <div class="sim-card-header">
-                        <h3 class="sim-card-title">
-                            <i class="fa-solid fa-building" aria-hidden="true"></i>
-                            <span data-i18n="simulator.organization_title">Votre organisation</span>
-                        </h3>
-                        <button class="btn-sim-reset" onclick="resetSimulator()">
-                            <i class="fa-solid fa-rotate-left" aria-hidden="true"></i>
-                            <span data-i18n="simulator.btn_reset">Réinitialiser</span>
-                        </button>
-                    </div>
-
-                    <p class="simulator-disclaimer">
-                        <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
-                        <span data-i18n="simulator.disclaimer">Ce simulateur fournit une indication générale et ne constitue pas un avis juridique.</span>
-                    </p>
-
-                    <!-- Q1 : Localisation -->
-                    <div class="question-group" id="group-q1">
-                        <label for="q1_location" data-i18n-html="simulator.q1_label">Où est situé votre siège social / activité principale ?<span class="required">*</span></label>
-                        <select class="question-select" id="q1_location" onchange="handleChange(this)">
-                            <option value="" data-i18n="simulator.select">— Sélectionnez —</option>
-                            <option value="eu" data-i18n="simulator.q1_option_eu">Siège dans l'Union Européenne</option>
-                            <option value="eu_clients" data-i18n="simulator.q1_option_eu_clients">Hors UE mais clients/utilisateurs dans l'UE</option>
-                            <option value="non_eu" data-i18n="simulator.q1_option_non_eu">Hors UE, aucune activité UE</option>
-                        </select>
-                    </div>
-
-                    <!-- Q2 : Secteur d'activité -->
-                    <div class="question-group" id="group-q2">
-                        <label for="q2_sector" data-i18n-html="simulator.q2_label">Quel est votre secteur d'activité principal ?<span class="required">*</span></label>
-                        <span class="hint" data-i18n-html="simulator.q2_hint">Détermine NIS 2 (Annexe I/II), DORA (secteur financier)</span>
-                        <select class="question-select" id="q2_sector" onchange="handleChange(this)">
-                            <option value="" data-i18n="simulator.select">— Sélectionnez —</option>
-                            <optgroup label="NIS 2 Annexe I — Hautement critiques" data-i18n="simulator.q2_optgroup_annex1">
-                                <option value="energy" data-i18n="simulator.q2_option_energy">Énergie (électricité, gaz, pétrole, hydrogène)</option>
-                                <option value="transport" data-i18n="simulator.q2_option_transport">Transports (aérien, ferroviaire, maritime, routier)</option>
-                                <option value="banking" data-i18n="simulator.q2_option_banking">Banque / Établissements de crédit</option>
-                                <option value="financial_infra" data-i18n="simulator.q2_option_financial_infra">Infrastructures des marchés financiers</option>
-                                <option value="health" data-i18n="simulator.q2_option_health">Santé (hôpitaux, labos, pharma)</option>
-                                <option value="water" data-i18n="simulator.q2_option_water">Eau potable / Eaux usées</option>
-                                <option value="digital_infra" data-i18n="simulator.q2_option_digital_infra">Infrastructure numérique (IXP, DNS, TLD, datacenter)</option>
-                                <option value="ict_b2b" data-i18n="simulator.q2_option_ict_b2b">Services TIC B2B (MSP, MSSP, infogérance)</option>
-                                <option value="public_admin" data-i18n="simulator.q2_option_public_admin">Administrations publiques</option>
-                                <option value="space" data-i18n="simulator.q2_option_space">Espace</option>
-                            </optgroup>
-                            <optgroup label="NIS 2 Annexe II — Secteurs critiques" data-i18n="simulator.q2_optgroup_annex2">
-                                <option value="postal" data-i18n="simulator.q2_option_postal">Services postaux et courrier</option>
-                                <option value="waste" data-i18n="simulator.q2_option_waste">Gestion des déchets</option>
-                                <option value="chemistry" data-i18n="simulator.q2_option_chemistry">Chimie (fabrication, production)</option>
-                                <option value="food" data-i18n="simulator.q2_option_food">Agroalimentaire (production, distribution)</option>
-                                <option value="manufacturing" data-i18n="simulator.q2_option_manufacturing">Fabrication (médical, électronique, machines, véhicules)</option>
-                                <option value="digital_providers" data-i18n="simulator.q2_option_digital_providers">Fournisseurs numériques (marketplaces, moteurs, réseaux sociaux)</option>
-                                <option value="research" data-i18n="simulator.q2_option_research">Organismes de recherche</option>
-                            </optgroup>
-                            <optgroup label="Secteur financier (DORA)" data-i18n="simulator.q2_optgroup_financial">
-                                <option value="insurance" data-i18n="simulator.q2_option_insurance">Assurance / Réassurance / Mutuelle</option>
-                                <option value="investment" data-i18n="simulator.q2_option_investment">Entreprise d'investissement / SGP / OPCVM</option>
-                                <option value="crypto" data-i18n="simulator.q2_option_crypto">Prestataire crypto (agrément MiCA)</option>
-                                <option value="crowdfunding" data-i18n="simulator.q2_option_crowdfunding">Plateforme de crowdfunding</option>
-                                <option value="rating" data-i18n="simulator.q2_option_rating">Agence de notation</option>
-                            </optgroup>
-                            <optgroup label="Autres secteurs" data-i18n="simulator.q2_optgroup_other">
-                                <option value="retail" data-i18n="simulator.q2_option_retail">Commerce / E-commerce</option>
-                                <option value="services" data-i18n="simulator.q2_option_services">Services aux entreprises / Conseil</option>
-                                <option value="other" data-i18n="simulator.q2_option_other">Autre secteur</option>
-                            </optgroup>
-                        </select>
-                    </div>
-
-                    <!-- Q3 : Taille -->
-                    <div class="question-group" id="group-q3">
-                        <label for="q3_size" data-i18n-html="simulator.q3_label">Quelle est la taille de votre organisation ?<span class="required">*</span></label>
-                        <span class="hint" data-i18n-html="simulator.q3_hint">NIS 2 : &lt;50 sal ET &lt;10M€ = non concerné</span>
-                        <select class="question-select" id="q3_size" onchange="handleChange(this)">
-                            <option value="" data-i18n="simulator.select">— Sélectionnez —</option>
-                            <option value="small" data-i18n="simulator.q3_option_small">Petite : moins de 50 employés ET CA &lt;10M€ ET bilan &lt;10M€</option>
-                            <option value="medium" data-i18n="simulator.q3_option_medium">Moyenne : 50-249 employés OU CA 10-50M€ OU bilan 10-43M€</option>
-                            <option value="large" data-i18n="simulator.q3_option_large">Grande : 250+ employés OU CA &gt;50M€ OU bilan &gt;43M€</option>
-                        </select>
-                    </div>
-
-                    <!-- Q4 : Données personnelles -->
-                    <div class="question-group" id="group-q4">
-                        <label for="q4_personal_data" data-i18n-html="simulator.q4_label">Traitez-vous des données personnelles ?<span class="required">*</span></label>
-                        <span class="hint" data-i18n-html="simulator.q4_hint">Nom, email, téléphone, IP, cookies, données RH...</span>
-                        <select class="question-select" id="q4_personal_data" onchange="handleChange(this)">
-                            <option value="" data-i18n="simulator.select">— Sélectionnez —</option>
-                            <option value="yes" data-i18n="simulator.yes">Oui</option>
-                            <option value="no" data-i18n="simulator.no">Non</option>
-                        </select>
-                    </div>
-
-                    <!-- Q5 : Licence financière -->
-                    <div class="question-group" id="group-q5">
-                        <label for="q5_regulated" data-i18n-html="simulator.q5_label">Détenez-vous un agrément financier (AMF, ACPR, CSSF...) ?<span class="required">*</span></label>
-                        <span class="hint" data-i18n-html="simulator.q5_hint">DORA cible exclusivement les entités financières régulées.</span>
-                        <select class="question-select" id="q5_regulated" onchange="handleChange(this)">
-                            <option value="" data-i18n="simulator.select">— Sélectionnez —</option>
-                            <option value="yes" data-i18n="simulator.q5_option_yes">Oui — Entité régulée</option>
-                            <option value="no" data-i18n="simulator.no">Non</option>
-                        </select>
-                    </div>
-
-                    <!-- Q6 : Services IT/Cloud -->
-                    <div class="question-group" id="group-q6">
-                        <label for="q6_it_services" data-i18n-html="simulator.q6_label">Fournissez-vous des services IT/Cloud à des clients ?<span class="required">*</span></label>
-                        <span class="hint" data-i18n="simulator.q6_hint">MSP, infogérance, SaaS, hébergement, conseil IT...</span>
-                        <select class="question-select" id="q6_it_services" onchange="handleChange(this)">
-                            <option value="" data-i18n="simulator.select">— Sélectionnez —</option>
-                            <option value="yes" data-i18n="simulator.yes">Oui</option>
-                            <option value="no" data-i18n="simulator.no">Non</option>
-                        </select>
-                    </div>
-
-                    <!-- Q7 (conditionnel) : Prestataire TIC -->
-                    <div class="conditional-group question-group" id="cond-tic">
-                        <label for="q7_tic_provider" data-i18n="simulator.q7_label">Êtes-vous prestataire TIC pour des entités financières régulées ?</label>
-                        <span class="hint" data-i18n="simulator.q7_hint">Sous-traitant IT critique pour banques, assureurs, SGP... → DORA s'applique</span>
-                        <select class="question-select" id="q7_tic_provider" onchange="handleChange(this)">
-                            <option value="" data-i18n="simulator.select">— Sélectionnez —</option>
-                            <option value="yes" data-i18n="simulator.yes">Oui</option>
-                            <option value="no" data-i18n="simulator.no">Non</option>
-                        </select>
-                    </div>
-
-                    <!-- Q8 (conditionnel) : HDS -->
-                    <div class="conditional-group question-group" id="cond-hds">
-                        <label for="q8_hds" data-i18n="simulator.q8_label">Hébergez-vous des données de santé pour des tiers (clients) ?</label>
-                        <span class="hint" data-i18n="simulator.q8_hint">Pour des clients (hôpitaux, médecins, cliniques). PAS vos propres données internes.</span>
-                        <select class="question-select" id="q8_hds" onchange="handleChange(this)">
-                            <option value="" data-i18n="simulator.select">— Sélectionnez —</option>
-                            <option value="yes" data-i18n="simulator.yes">Oui</option>
-                            <option value="no" data-i18n="simulator.no">Non</option>
-                        </select>
-                    </div>
-
-                    <!-- Q9 (conditionnel) : PCI-DSS -->
-                    <div class="conditional-group question-group" id="cond-pci">
-                        <label for="q9_pci" data-i18n="simulator.q9_label">Stockez/traitez-vous des numéros de cartes bancaires (PAN) ?</label>
-                        <span class="hint" data-i18n="simulator.q9_hint">NON applicable si vous utilisez Stripe/PayPal sans jamais voir les numéros.</span>
-                        <select class="question-select" id="q9_pci" onchange="handleChange(this)">
-                            <option value="" data-i18n="simulator.select">— Sélectionnez —</option>
-                            <option value="yes" data-i18n="simulator.yes">Oui</option>
-                            <option value="no" data-i18n="simulator.q9_option_no">Non (Stripe/PayPal gère les paiements)</option>
-                        </select>
-                    </div>
-
-                    <!-- Section : Activités aux États-Unis -->
-                    <div class="section-divider">
-                        <i class="fa-solid fa-flag-usa" aria-hidden="true"></i>
-                        <span data-i18n="simulator.us_section">Activités aux États-Unis</span>
-                    </div>
-
-                    <!-- Q10 : Activité aux USA -->
-                    <div class="question-group" id="group-q10">
-                        <label for="q10_us_activity" data-i18n-html="simulator.q10_label">Avez-vous des activités ou clients aux États-Unis ?<span class="required">*</span></label>
-                        <select class="question-select" id="q10_us_activity" onchange="handleChange(this)">
-                            <option value="yes" data-i18n="simulator.yes">Oui</option>
-                            <option value="no" selected data-i18n="simulator.no">Non</option>
-                        </select>
-                    </div>
-
-                    <!-- Q10a (conditionnel) : Certifications US -->
-                    <div class="conditional-group question-group" id="cond-us-certs">
-                        <label for="q10a_us_certs" data-i18n="simulator.q10a_label">Vos clients US exigent-ils des certifications (ISO 27001 / SOC 2) ?</label>
-                        <select class="question-select" id="q10a_us_certs" onchange="handleChange(this)">
-                            <option value="" data-i18n="simulator.select">— Sélectionnez —</option>
-                            <option value="iso27001" data-i18n="simulator.q10a_option_iso27001">ISO 27001 exigé</option>
-                            <option value="soc2" data-i18n="simulator.q10a_option_soc2">SOC 2 exigé</option>
-                            <option value="both" data-i18n="simulator.q10a_option_both">Les deux</option>
-                            <option value="no" data-i18n="simulator.q10a_option_no">Non / Pas encore</option>
-                        </select>
-                    </div>
-
-                    <!-- Q10b (conditionnel) : Contrats DoD -->
-                    <div class="conditional-group question-group" id="cond-us-dod">
-                        <label for="q10b_dod" data-i18n="simulator.q10b_label">Travaillez-vous avec le Département de la Défense US (DoD) ?</label>
-                        <select class="question-select" id="q10b_dod" onchange="handleChange(this)">
-                            <option value="" data-i18n="simulator.select">— Sélectionnez —</option>
-                            <option value="yes" data-i18n="simulator.q10b_option_yes">Oui — Contrats directs ou sous-traitance</option>
-                            <option value="no" data-i18n="simulator.no">Non</option>
-                        </select>
-                    </div>
-
-                    <!-- Section : Continuité d'activité -->
-                    <div class="section-divider">
-                        <i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i>
-                        <span data-i18n="simulator.continuity_section">Continuité d'activité</span>
-                    </div>
-
-                    <!-- Q11 : Continuité -->
-                    <div class="question-group" id="group-q11">
-                        <label for="q11_continuity" data-i18n-html="simulator.q11_label">Avez-vous des activités critiques nécessitant un plan de continuité ?<span class="required">*</span></label>
-                        <select class="question-select" id="q11_continuity" onchange="handleChange(this)">
-                            <option value="" data-i18n="simulator.select">— Sélectionnez —</option>
-                            <option value="yes" data-i18n="simulator.yes">Oui</option>
-                            <option value="no" data-i18n="simulator.no">Non</option>
-                        </select>
-                        <div class="question-note warning" id="note-continuity" style="display:none;" role="alert">
-                            <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
-                            <span data-i18n="simulator.continuity_note">NIS 2 / DORA impose des mesures de continuité d'activité (Art. 21). Un plan sera requis même si vous n'en avez pas encore.</span>
-                        </div>
-                    </div>
-
-                    <!-- Bouton Analyser -->
-                    <button class="btn btn-primary btn-lg" id="btn-analyze" onclick="analyzeProfile()" disabled aria-disabled="true">
-                        <i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i>
-                        <span data-i18n="simulator.btn_analyze">Analyser mon profil</span>
-                    </button>
-                </div>
-
-                <!-- Carte profil (masquée jusqu'à l'analyse) -->
-                <div id="profile-card" aria-live="polite">
-                    <div class="profile-header">
-                        <div class="profile-icon" id="profile-icon" aria-hidden="true"></div>
-                        <div>
-                            <div class="profile-title" id="profile-title"></div>
-                            <div class="profile-subtitle" id="profile-subtitle"></div>
-                        </div>
-                    </div>
-                    <div class="profile-tags" id="profile-tags"></div>
-                </div>
-
-                <!-- Section résultats (masquée jusqu'à l'analyse) -->
-                <section id="results-section" aria-live="polite">
-                    <div class="sim-card">
-                        <h3 class="sim-card-title">
-                            <i class="fa-solid fa-clipboard-check" aria-hidden="true"></i>
-                            <span data-i18n="simulator.results_title">Votre diagnostic compliance</span>
-                        </h3>
-
-                        <div class="results-summary">
-                            <div class="summary-card mandatory">
-                                <div class="summary-number" id="count-mandatory">0</div>
-                                <div class="summary-label" data-i18n="simulator.mandatory_label">Réglementation(s) applicable(s)</div>
-                            </div>
-                            <div class="summary-card recommended">
-                                <div class="summary-number" id="count-recommended">0</div>
-                                <div class="summary-label" data-i18n="simulator.recommended_label">Recommandation(s)</div>
-                            </div>
-                        </div>
-
-                        <div id="results-container"></div>
-                    </div>
-
-                    <!-- Section PDF -->
-                    <div class="pdf-section">
-                        <h4><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> <span data-i18n="simulator.pdf_title">Télécharger votre rapport</span></h4>
-                        <p data-i18n="simulator.pdf_text">Recevez un PDF récapitulatif avec toutes les réglementations, risques et échéances.</p>
-                        <div class="pdf-form-row">
-                            <input type="text" id="input-company" data-i18n-placeholder="simulator.input_company" placeholder="Nom de votre entreprise *" oninput="checkPdfFormValid()" autocomplete="organization">
-                            <input type="email" id="input-email" data-i18n-placeholder="simulator.input_email" placeholder="Votre email *" oninput="checkPdfFormValid()" autocomplete="email">
-                            <button class="btn btn-primary" id="btn-pdf" onclick="generatePDF()" disabled>
-                                <i class="fa-solid fa-download" aria-hidden="true"></i>
-                                <span data-i18n="simulator.btn_download">Télécharger PDF</span>
-                            </button>
-                        </div>
-                        <div id="msg-success" role="status"></div>
-                        <div id="msg-error" role="alert"></div>
-                    </div>
-                </section>
-
-            </div>
-        </div>
-    </section>
+    </nav>
 
     <!-- Why Me Section -->
     <section class="section" id="why-me">
@@ -515,7 +230,7 @@
                 <div class="why-photo-col">
                     <div class="photo-portrait-wrapper">
                         <img src="images/photo_emmanuel.png"
-                             alt="Emmanuel Genesteix — Consultant GRC & Cybersécurité"
+                             alt="Emmanuel Genesteix — GRC Cybersécurité & Agentic AI Automation"
                              class="photo-portrait"
                              loading="lazy"
                              data-i18n-alt="why.photo_alt"
@@ -527,7 +242,7 @@
                 <!-- Infos profil -->
                 <div class="why-info-col">
                     <h3 class="why-profile-name" data-i18n="why.profile_name">Emmanuel Genesteix</h3>
-                    <p class="why-profile-role" data-i18n="why.profile_role">Consultant GRC & Cybersécurité</p>
+                    <p class="why-profile-role" data-i18n="why.profile_role">GRC Cybersécurité & Agentic AI Automation</p>
 
                     <p class="why-experience" data-i18n-html="why.profile_experience">
                         <strong>20+ ans</strong> d'expérience à la croisée de l'informatique, du droit et du business.
@@ -573,10 +288,6 @@
                                 <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
                                 SAFe
                             </span>
-                            <span class="cert-badge" role="listitem">
-                                <i class="fa-solid fa-award" aria-hidden="true"></i>
-                                PMP
-                            </span>
                         </div>
                     </div>
                 </div>
@@ -591,8 +302,7 @@
             <h2 class="section-title animate-in" data-i18n="landing.cta_title">Prêt à échanger ?</h2>
             <p class="section-subtitle animate-in" data-i18n="landing.cta_subtitle">30 minutes pour comprendre votre situation — gratuit, sans engagement</p>
             <div class="hero-cta animate-in">
-                <button onclick="openCalendly()" class="btn btn-primary btn-lg" data-i18n="common.book_call">Réserver un appel</button>
-                <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-outline btn-lg" data-i18n="common.send_email">M'envoyer un email</a>
+                <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-primary btn-lg" data-i18n="common.book_meeting">Réserver un rendez-vous</a>
             </div>
         </div>
     </section>
@@ -611,7 +321,7 @@
                     <a href="tel:+352661780807" data-i18n="common.footer_phone">
                         <i class="fa-solid fa-phone" aria-hidden="true"></i> +352.661.78.08.07
                     </a>
-                    <a href="https://www.linkedin.com/in/emmanuelgenesteix" target="_blank" rel="noopener">
+                    <a href="https://www.linkedin.com/in/genesteix-emmanuel" target="_blank" rel="noopener">
                         <i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn
                     </a>
                 </div>
@@ -627,17 +337,15 @@
                 <p>Responsable de la publication : Emmanuel Genesteix —
                     <a href="mailto:emmanuel.genesteix@agilevizion.com">emmanuel.genesteix@agilevizion.com</a>
                 </p>
-                <p>Hébergement : GitHub Pages — GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA</p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="js/calendly.js"></script>
     <script src="js/i18n.js"></script>
-    <script src="js/simulator.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/cookies.js"></script>
+    <script src="js/section-nav.js"></script>
 </body>
 </html>

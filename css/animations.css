@@ -15,12 +15,12 @@
 }
 
 /* Staggered delays for grid items */
-.animate-in:nth-child(2) { transition-delay: 0.1s; }
-.animate-in:nth-child(3) { transition-delay: 0.2s; }
-.animate-in:nth-child(4) { transition-delay: 0.3s; }
-.animate-in:nth-child(5) { transition-delay: 0.35s; }
-.animate-in:nth-child(6) { transition-delay: 0.4s; }
-.animate-in:nth-child(7) { transition-delay: 0.45s; }
+.animate-in:nth-child(2) { transition-delay: var(--delay-nth-2); }
+.animate-in:nth-child(3) { transition-delay: var(--delay-nth-3); }
+.animate-in:nth-child(4) { transition-delay: var(--delay-nth-4); }
+.animate-in:nth-child(5) { transition-delay: var(--delay-nth-5); }
+.animate-in:nth-child(6) { transition-delay: var(--delay-nth-6); }
+.animate-in:nth-child(7) { transition-delay: var(--delay-nth-7); }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {

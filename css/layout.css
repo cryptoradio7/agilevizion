@@ -29,7 +29,7 @@
 }
 
 .nav-logo {
-    font-size: var(--font-size-xl);
+    font-size: 2.4rem;
     font-weight: var(--font-weight-extrabold);
     color: var(--text-primary);
     text-decoration: none;
@@ -80,8 +80,8 @@
 .nav-menu a.active {
     color: var(--color-primary);
     font-weight: var(--font-weight-semibold);
-    border-bottom: 2px solid var(--color-primary);
-    padding-bottom: 2px;
+    border-bottom: var(--border-2) solid var(--color-primary);
+    padding-bottom: var(--border-2);
 }
 
 .nav-lang {
@@ -118,19 +118,19 @@
     border: none;
     cursor: pointer;
     padding: var(--space-2);
-    min-width: 44px;  /* tap target */
-    min-height: 44px;
+    min-width: var(--tap-target);  /* tap target */
+    min-height: var(--tap-target);
     align-items: center;
     justify-content: center;
 }
 
 .nav-toggle span {
     display: block;
-    width: 24px;
-    height: 2px;
+    width: var(--size-hamburger);
+    height: var(--border-2);
     background: var(--text-primary);
     transition: all var(--transition-fast);
-    border-radius: 2px;
+    border-radius: var(--border-2);
 }
 
 /* --- Sections --- */
@@ -145,13 +145,15 @@
     background: linear-gradient(180deg, var(--color-primary-50) 0%, var(--bg-primary) 70%);
 }
 
-.hero-page {
-    min-height: 50vh;
+.hero.hero-page {
+    min-height: auto;
+    padding-top: calc(var(--navbar-height) + var(--space-6));
+    padding-bottom: var(--space-4);
     background: linear-gradient(180deg, var(--color-primary-50) 0%, var(--bg-primary) 100%);
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: var(--width-hero-content);
     margin: 0 auto;
 }
 
@@ -166,7 +168,7 @@
 .hero-subtitle {
     font-size: var(--font-size-lg);
     color: var(--text-secondary);
-    max-width: 640px;
+    max-width: var(--width-text-block);
     margin: 0 auto var(--space-8);
 }
 
@@ -180,7 +182,7 @@
 
 .hero-cta .btn {
     width: 100%;
-    max-width: 320px;
+    max-width: var(--width-cta-max);
 }
 
 .section {
@@ -223,7 +225,7 @@
     text-align: center;
     color: var(--text-secondary);
     font-size: var(--font-size-base);  /* mobile-first */
-    max-width: 640px;
+    max-width: var(--width-text-block);
     margin: 0 auto var(--space-8);
 }
 
@@ -339,7 +341,7 @@
 .footer-bottom {
     border-top: 1px solid var(--color-gray-700);
     padding-top: var(--space-6);
-    text-align: center;
+    text-align: left;
 }
 
 .footer-bottom p {

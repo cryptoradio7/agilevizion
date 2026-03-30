@@ -101,6 +101,9 @@ var I18n = {
         document.querySelectorAll('[data-i18n]').forEach(function (el) {
             var key = el.getAttribute('data-i18n');
             if (!key) return;
+            // Skip option/optgroup — handled separately below
+            var tag = el.tagName.toLowerCase();
+            if (tag === 'option' || tag === 'optgroup') return;
             var translation = self.t(key);
             if (translation === key) return;
             if (el.hasAttribute('data-i18n-html')) {

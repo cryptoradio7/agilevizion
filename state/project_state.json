@@ -3,8 +3,8 @@
   "work_dir": "/home/egx/Bureau/APPS/agilevizion-2",
   "git_url": null,
   "gate_mode": "autonome",
-  "phase": "dev",
-  "phase_status": "in_progress",
+  "phase": "devops",
+  "phase_status": "done",
   "phases": {
     "architecture": {
       "status": "done",
@@ -19,17 +19,17 @@
       ]
     },
     "dev": {
-      "status": "in_progress",
+      "status": "done",
       "outputs": [],
-      "stories_done": 15,
+      "stories_done": 24,
       "stories_total": 24
     },
     "cyber": {
-      "status": "pending",
+      "status": "done",
       "outputs": []
     },
     "devops": {
-      "status": "pending",
+      "status": "done",
       "outputs": [
         "README.md"
       ]
@@ -38,6 +38,6 @@
   "stories": [],
   "blockers": [],
   "retries": {},
-  "derniere_maj": "2026-03-28T10:00:00.000000",
+  "derniere_maj": "2026-03-28T09:04:48.331747",
   "profile": "app"
 }

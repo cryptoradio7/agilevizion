@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' https://agilevizion.com data:; connect-src 'self'; object-src 'none';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <title>IA Agentique — AgileVizion</title>
 
     <meta name="description" content="Augmentez la productivité de vos équipes avec des agents IA dédiés. Automatisation des tâches répétitives, employé augmenté, ROI mesurable.">
@@ -44,7 +47,7 @@
                     "availableLanguage": ["French", "English"]
                 },
                 "sameAs": [
-                    "https://www.linkedin.com/in/emmanuelgenesteix"
+                    "https://www.linkedin.com/in/genesteix-emmanuel"
                 ]
             },
             {
@@ -67,7 +70,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
@@ -76,15 +79,20 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/cookies.css">
+    <link rel="stylesheet" href="css/section-nav.css">
 </head>
 <body data-page-title="ia.title">
 
-    <!-- Cookie Banner -->
-    <div id="cookie-banner" class="cookie-banner" style="display:none;" role="dialog" aria-label="Consentement cookies">
-        <p data-i18n-html="cookies.text_with_link">Ce site utilise des cookies essentiels pour son fonctionnement. <a href="/#legal">Mentions légales</a></p>
-        <div class="cookie-actions">
-            <button onclick="acceptCookies()" class="btn btn-sm btn-accept" data-i18n="cookies.accept">Accepter</button>
-            <button onclick="refuseCookies()" class="btn btn-sm btn-refuse" data-i18n="cookies.refuse">Refuser</button>
+    <!-- Cookie Consent Popup -->
+    <div id="cookie-overlay" class="cookie-overlay" style="display:none;"></div>
+    <div id="cookie-popup" class="cookie-popup" style="display:none;" role="dialog" aria-modal="true" aria-label="Consentement cookies">
+        <div class="cookie-popup-icon" aria-hidden="true"><i class="fa-solid fa-cookie-bite"></i></div>
+        <h3 class="cookie-popup-title" data-i18n="cookies.popup_title">Ce site utilise des cookies</h3>
+        <p class="cookie-popup-text" data-i18n="cookies.popup_text">Nous utilisons uniquement des cookies essentiels au fonctionnement du site. Aucun cookie publicitaire ni de tracking.</p>
+        <p class="cookie-popup-link"><a href="/#legal" data-i18n="cookies.link">Mentions légales</a></p>
+        <div class="cookie-popup-actions">
+            <button onclick="acceptCookies()" class="btn cookie-btn-accept" data-i18n="cookies.accept">Accepter</button>
+            <button onclick="refuseCookies()" class="btn cookie-btn-refuse" data-i18n="cookies.refuse">Refuser</button>
         </div>
     </div>
 
@@ -92,15 +100,15 @@
     <header>
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="/" class="nav-logo" data-i18n-html="common.brand">Agile<span>Vizion</span></a>
+            <a href="cyber.html" class="nav-logo" data-i18n-html="common.brand">Agile<span>Vizion</span></a>
             <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="/" data-i18n="nav.home">Accueil</a></li>
-                <li><a href="cyber.html" data-i18n="nav.cyber">Cyber GRC</a></li>
+                <li><a href="cyber.html" data-i18n="nav.cyber">GRC Cybersécurité</a></li>
                 <li><a href="ia.html" class="active" data-i18n="nav.ia">IA Agentique</a></li>
-                <li><a href="/#simulator" data-i18n="nav.simulator">Simulateur</a></li>
+                <li><a href="blog.html" data-i18n="nav.blog">Publications</a></li>
+                <li><a href="/#why-me" data-i18n="nav.together">Travailler ensemble</a></li>
                 <li class="nav-lang">
                     <button onclick="I18n.switchLanguage('fr')" class="lang-btn" id="lang-fr">FR</button>
                     <button onclick="I18n.switchLanguage('en')" class="lang-btn" id="lang-en">EN</button>
@@ -118,31 +126,39 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title animate-in" data-i18n="ia.hero_h1">
-                    Vos équipes perdent du temps sur des tâches que l'IA sait faire
+                    Automatisez vos processus métier avec des agents IA dédiés
                 </h1>
                 <p class="hero-subtitle animate-in" data-i18n="ia.hero_subtitle">
-                    Un agent IA dédié prépare, produit, vérifie et apprend — pour que vos collaborateurs se concentrent sur ce qui a vraiment de la valeur.
+                    De l'assistance ponctuelle à l'exécution autonome — vous choisissez le degré d'autonomie. L'humain garde le contrôle, apporte le jugement expert et pilote l'amélioration continue.
                 </p>
-                <div class="hero-video placeholder-video animate-in">
-                    <div class="video-placeholder" role="img" aria-label="Présentation vidéo à venir">
+                <div class="hero-video animate-in">
+                    <div class="video-placeholder" style="display:flex" aria-label="Production des vidéos de présentation en cours">
                         <div class="video-placeholder-brand">Agile<span>Vizion</span></div>
                         <div class="video-placeholder-play">
-                            <i class="fa-solid fa-play" aria-hidden="true"></i>
+                            <i class="fa-solid fa-film" aria-hidden="true"></i>
                         </div>
-                        <span data-i18n="common.video_coming">Présentation vidéo à venir</span>
+                        <span>Production des vidéos de présentation en cours</span>
                     </div>
                 </div>
                 <div class="hero-cta animate-in">
-                    <button onclick="openCalendly()" class="btn btn-primary btn-lg" data-i18n="ia.hero_cta">
-                        Réserver un diagnostic IA
-                    </button>
-                    <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-outline btn-lg" data-i18n="common.send_email">
-                        M'envoyer un email
-                    </a>
+                    <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-primary btn-lg" data-i18n="common.book_meeting">Réserver un rendez-vous</a>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Section Navigation -->
+    <nav class="section-nav" aria-label="Navigation sections">
+        <div class="section-nav-inner">
+            <a class="section-nav-link" href="#probleme" data-i18n="ia.nav_probleme">Le problème</a>
+            <a class="section-nav-link" href="#comment-ca-marche" data-i18n="ia.nav_comment">Comment ça marche</a>
+            <a class="section-nav-link" href="#metiers" data-i18n="ia.nav_metiers">Cas d'usage</a>
+            <a class="section-nav-link" href="#stack" data-i18n="ia.nav_stack">Technologies</a>
+            <a class="section-nav-link" href="#approche" data-i18n="ia.nav_approche">Méthodologie</a>
+            <a class="section-nav-link" href="#resultats" data-i18n="ia.nav_resultats">Résultats</a>
+            <a class="section-nav-link" href="#contact" data-i18n="ia.nav_contact">Contact</a>
+        </div>
+    </nav>
 
     <!-- ======================================================
          SECTION "LE PROBLÈME" — 3 chiffres clés avec sources
@@ -199,176 +215,126 @@
     </section>
 
     <!-- ======================================================
-         SECTION "L'EMPLOYÉ AUGMENTÉ" — 4 verbes + message clé
+         SECTION "COMMENT ÇA MARCHE" — Autonomie + Contrôle + Amélioration
          ====================================================== -->
-    <section class="section" id="employe-augmente" aria-labelledby="augmented-heading">
+    <section class="section" id="comment-ca-marche" aria-labelledby="how-heading">
         <div class="container">
-            <h2 class="section-title animate-in" id="augmented-heading" data-i18n="ia.augmented_title">L'employé augmenté par un agent IA dédié</h2>
-            <p class="section-subtitle animate-in" data-i18n="ia.augmented_subtitle">Un agent IA est un programme autonome qui accomplit des tâches complexes en plusieurs étapes, en utilisant des outils et en prenant des décisions — sans intervention humaine à chaque étape.</p>
+            <h2 class="section-title animate-in" id="how-heading" data-i18n="ia.how_title">Un agent IA qui s'adapte à votre besoin d'autonomie</h2>
+            <p class="section-subtitle animate-in" data-i18n="ia.how_subtitle">Chaque processus métier est différent. L'agent IA s'ajuste : de l'assistance ponctuelle à l'exécution autonome — c'est vous qui choisissez le curseur.</p>
 
-            <div class="steps-grid steps-4">
-
-                <div class="ia-verb-card animate-in">
-                    <span class="ia-verb" data-i18n="ia.verb_1">Prépare</span>
-                    <i class="fa-solid fa-magnifying-glass-chart ia-verb-icon" aria-hidden="true"></i>
-                    <p data-i18n="ia.verb_1_desc">Recherche, collecte et structure l'information dont vous avez besoin, avant même que vous le demandiez</p>
+            <!-- Spectre d'autonomie -->
+            <div class="autonomy-spectrum animate-in">
+                <div class="autonomy-level">
+                    <div class="autonomy-icon"><i class="fa-solid fa-user-pen" aria-hidden="true"></i></div>
+                    <h3 data-i18n="ia.autonomy_1_title">Assisté</h3>
+                    <p data-i18n="ia.autonomy_1_desc">L'agent prépare et propose — l'humain décide et exécute à chaque étape.</p>
+                    <span class="autonomy-tag" data-i18n="ia.autonomy_1_example">Ex : rédaction de contrats, analyse juridique</span>
                 </div>
-
-                <div class="ia-verb-card animate-in">
-                    <span class="ia-verb" data-i18n="ia.verb_2">Produit</span>
-                    <i class="fa-solid fa-file-pen ia-verb-icon" aria-hidden="true"></i>
-                    <p data-i18n="ia.verb_2_desc">Génère des livrables structurés — rapports, analyses, documents — sur la base des données collectées</p>
+                <div class="autonomy-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
+                <div class="autonomy-level">
+                    <div class="autonomy-icon"><i class="fa-solid fa-user-gear" aria-hidden="true"></i></div>
+                    <h3 data-i18n="ia.autonomy_2_title">Supervisé</h3>
+                    <p data-i18n="ia.autonomy_2_desc">L'agent exécute le processus de bout en bout — l'humain valide aux points clés avant livraison.</p>
+                    <span class="autonomy-tag" data-i18n="ia.autonomy_2_example">Ex : audit GRC, production documentaire</span>
                 </div>
-
-                <div class="ia-verb-card animate-in">
-                    <span class="ia-verb" data-i18n="ia.verb_3">Vérifie</span>
-                    <i class="fa-solid fa-shield-check ia-verb-icon" aria-hidden="true"></i>
-                    <p data-i18n="ia.verb_3_desc">Contrôle la qualité, détecte les incohérences et valide selon des critères définis — zéro oubli</p>
+                <div class="autonomy-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
+                <div class="autonomy-level">
+                    <div class="autonomy-icon"><i class="fa-solid fa-robot" aria-hidden="true"></i></div>
+                    <h3 data-i18n="ia.autonomy_3_title">Autonome</h3>
+                    <p data-i18n="ia.autonomy_3_desc">L'agent gère l'intégralité du processus — l'humain intervient uniquement sur exception ou revue périodique.</p>
+                    <span class="autonomy-tag" data-i18n="ia.autonomy_3_example">Ex : veille réglementaire, reporting récurrent</span>
                 </div>
-
-                <div class="ia-verb-card animate-in">
-                    <span class="ia-verb" data-i18n="ia.verb_4">Apprend</span>
-                    <i class="fa-solid fa-brain ia-verb-icon" aria-hidden="true"></i>
-                    <p data-i18n="ia.verb_4_desc">S'améliore à chaque itération en intégrant vos retours et les nouvelles exigences métier</p>
-                </div>
-
             </div>
 
+            <!-- Contrôle humain -->
             <div class="ia-key-message animate-in" role="note">
-                <i class="fa-solid fa-user-check" aria-hidden="true"></i>
-                <span data-i18n="ia.augmented_key_message">Le collaborateur reste aux commandes — l'agent amplifie son travail, il ne le remplace pas.</span>
+                <i class="fa-solid fa-user-shield" aria-hidden="true"></i>
+                <span data-i18n="ia.control_message">L'humain garde toujours le contrôle. C'est lui qui apporte la valeur : revue qualité, jugement expert, décision finale. L'agent amplifie — il ne remplace pas.</span>
             </div>
-        </div>
-    </section>
 
-    <!-- ======================================================
-         SECTION "EXEMPLE CONCRET" — Audit GRC automatisé
-         ====================================================== -->
-    <section class="section section-alt" id="exemple" aria-labelledby="example-heading">
-        <div class="container">
-            <h2 class="section-title animate-in" id="example-heading" data-i18n="ia.example_title">Exemple concret : Audit GRC automatisé</h2>
-            <p class="section-subtitle animate-in" data-i18n="ia.example_subtitle">Un agent IA travaille en 2 phases coordonnées pour produire un audit de conformité complet et traçable.</p>
-
-            <div class="workflow-grid">
-
-                <div class="workflow-phase animate-in">
-                    <h3>
-                        <i class="fa-solid fa-database" aria-hidden="true"></i>
-                        <span data-i18n="ia.phase_1_title">Phase 1 — Sourcing</span>
-                    </h3>
-                    <ul>
-                        <li data-i18n="ia.phase_1_item_1">Recherche et téléchargement des textes normatifs (DORA, NIS 2, ISO 27001…)</li>
-                        <li data-i18n="ia.phase_1_item_2">Constitution du corpus documentaire de référence</li>
-                        <li data-i18n="ia.phase_1_item_3">Vérification selon 7 critères qualité : complétude, fidélité, traçabilité, pertinence, actualité, format, exploitabilité</li>
-                        <li data-i18n="ia.phase_1_item_4">Structuration automatique en base de connaissances</li>
-                    </ul>
-                </div>
-
-                <div class="workflow-phase animate-in">
-                    <h3>
-                        <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
-                        <span data-i18n="ia.phase_2_title">Phase 2 — Production</span>
-                    </h3>
-                    <ul>
-                        <li data-i18n="ia.phase_2_item_1">Pré-remplissage automatique de la grille d'audit (100 à 160+ points de contrôle)</li>
-                        <li data-i18n="ia.phase_2_item_2">Génération des rapports exécutifs et techniques</li>
-                        <li data-i18n="ia.phase_2_item_3">Proposition de feuille de route priorisée</li>
-                        <li data-i18n="ia.phase_2_item_4">Le consultant revoit, ajuste et signe — il conserve le jugement expert</li>
-                    </ul>
-                </div>
-
-                <div class="workflow-results animate-in">
-                    <h3 data-i18n="ia.example_results_title">Résultats obtenus</h3>
-                    <div class="result-tags">
-                        <span class="tag tag-accent" data-i18n="ia.result_tag_1">×4 plus rapide</span>
-                        <span class="tag tag-accent" data-i18n="ia.result_tag_2">3+ normes en parallèle</span>
-                        <span class="tag tag-accent" data-i18n="ia.result_tag_3">0 oubli</span>
-                        <span class="tag" data-i18n="ia.result_tag_4">Qualité homogène</span>
-                        <span class="tag" data-i18n="ia.result_tag_5">Traçabilité complète</span>
+            <!-- Boucle d'amélioration -->
+            <div class="improvement-loop animate-in">
+                <h3 class="improvement-title" data-i18n="ia.loop_title">Amélioration continue intégrée</h3>
+                <div class="loop-steps">
+                    <div class="loop-step">
+                        <span class="loop-number">1</span>
+                        <span data-i18n="ia.loop_1">L'agent exécute le processus</span>
+                    </div>
+                    <div class="loop-connector" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="loop-step">
+                        <span class="loop-number">2</span>
+                        <span data-i18n="ia.loop_2">L'humain revoit et corrige</span>
+                    </div>
+                    <div class="loop-connector" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="loop-step">
+                        <span class="loop-number">3</span>
+                        <span data-i18n="ia.loop_3">L'agent intègre les retours</span>
+                    </div>
+                    <div class="loop-connector" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="loop-step">
+                        <span class="loop-number">4</span>
+                        <span data-i18n="ia.loop_4">La qualité progresse à chaque cycle</span>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
     <!-- ======================================================
-         SECTION "APPLICABLE À TOUS LES MÉTIERS" — 7 cards détail
+         SECTION "CAS D'USAGE CONCRETS" — 4 cards détail
          ====================================================== -->
-    <section class="section" id="metiers" aria-labelledby="jobs-ia-heading">
+    <section class="section section-alt" id="metiers" aria-labelledby="jobs-ia-heading">
         <div class="container">
-            <h2 class="section-title animate-in" id="jobs-ia-heading" data-i18n="ia.jobs_title">Applicable à tous les métiers</h2>
-            <p class="section-subtitle animate-in" data-i18n="ia.jobs_subtitle">L'IA agentique n'est pas réservée aux équipes IT — chaque fonction peut gagner des heures par semaine.</p>
+            <h2 class="section-title animate-in" id="jobs-ia-heading" data-i18n="ia.jobs_title">Cas d'usage concrets</h2>
+            <p class="section-subtitle animate-in" data-i18n="ia.jobs_subtitle">Voici ce que l'IA agentique produit concrètement dans nos missions.</p>
 
             <div class="jobs-detail-grid">
 
                 <div class="job-detail-card animate-in">
                     <div class="job-detail-icon" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h3 data-i18n="ia.job_1_title">Consultant GRC</h3>
+                    <h3 data-i18n="ia.job_1_title">GRC Cybersécurité</h3>
                     <ul>
-                        <li data-i18n="ia.job_1_item_1">Collecte automatique des normes et mises à jour réglementaires</li>
-                        <li data-i18n="ia.job_1_item_2">Pré-remplissage des grilles d'audit</li>
-                        <li data-i18n="ia.job_1_item_3">Génération de rapports de conformité</li>
+                        <li data-i18n="ia.job_1_item_1">Assistance à l'audit sur tout le processus de bout en bout</li>
+                        <li data-i18n="ia.job_1_item_2">Production des livrables complets de référence (client et auditeur)</li>
+                        <li data-i18n="ia.job_1_item_3">Préparation des entretiens et de la communication</li>
+                        <li data-i18n="ia.job_1_item_4">Production des rapports finaux</li>
+                        <li data-i18n="ia.job_1_item_5">Contrôle humain et review sur toute la chaîne</li>
+                        <li data-i18n="ia.job_1_item_6">Processus customisé et sur mesure pour chaque client</li>
                     </ul>
                 </div>
 
                 <div class="job-detail-card animate-in">
                     <div class="job-detail-icon" aria-hidden="true"><i class="fa-solid fa-code"></i></div>
-                    <h3 data-i18n="ia.job_2_title">Développeur</h3>
+                    <h3 data-i18n="ia.job_2_title">Développement</h3>
                     <ul>
-                        <li data-i18n="ia.job_2_item_1">Revue de code automatisée et détection de vulnérabilités</li>
-                        <li data-i18n="ia.job_2_item_2">Génération de tests unitaires</li>
-                        <li data-i18n="ia.job_2_item_3">Documentation technique auto-générée</li>
-                    </ul>
-                </div>
-
-                <div class="job-detail-card animate-in">
-                    <div class="job-detail-icon" aria-hidden="true"><i class="fa-solid fa-scale-balanced"></i></div>
-                    <h3 data-i18n="ia.job_3_title">Juriste</h3>
-                    <ul>
-                        <li data-i18n="ia.job_3_item_1">Veille juridique et analyse de textes législatifs</li>
-                        <li data-i18n="ia.job_3_item_2">Rédaction de premières versions de contrats</li>
-                        <li data-i18n="ia.job_3_item_3">Synthèse de dossiers et recherche jurisprudentielle</li>
-                    </ul>
-                </div>
-
-                <div class="job-detail-card animate-in">
-                    <div class="job-detail-icon" aria-hidden="true"><i class="fa-solid fa-calculator"></i></div>
-                    <h3 data-i18n="ia.job_4_title">Comptable</h3>
-                    <ul>
-                        <li data-i18n="ia.job_4_item_1">Extraction et rapprochement automatique de données financières</li>
-                        <li data-i18n="ia.job_4_item_2">Contrôle de cohérence des écritures</li>
-                        <li data-i18n="ia.job_4_item_3">Préparation des reportings périodiques</li>
-                    </ul>
-                </div>
-
-                <div class="job-detail-card animate-in">
-                    <div class="job-detail-icon" aria-hidden="true"><i class="fa-solid fa-users"></i></div>
-                    <h3 data-i18n="ia.job_5_title">Ressources Humaines</h3>
-                    <ul>
-                        <li data-i18n="ia.job_5_item_1">Tri et analyse des candidatures selon critères définis</li>
-                        <li data-i18n="ia.job_5_item_2">Rédaction de fiches de poste et d'offres</li>
-                        <li data-i18n="ia.job_5_item_3">Suivi automatisé des obligations légales RH</li>
-                    </ul>
-                </div>
-
-                <div class="job-detail-card animate-in">
-                    <div class="job-detail-icon" aria-hidden="true"><i class="fa-solid fa-handshake"></i></div>
-                    <h3 data-i18n="ia.job_6_title">Commercial</h3>
-                    <ul>
-                        <li data-i18n="ia.job_6_item_1">Recherche et qualification automatique de prospects</li>
-                        <li data-i18n="ia.job_6_item_2">Rédaction de propositions commerciales personnalisées</li>
-                        <li data-i18n="ia.job_6_item_3">Suivi de pipeline et relances intelligentes</li>
+                        <li data-i18n="ia.job_2_item_1">Cadrage projet avec questionnaire interactif</li>
+                        <li data-i18n="ia.job_2_item_2">Production du code 24h/24, jour et nuit</li>
+                        <li data-i18n="ia.job_2_item_3">Équipe complète : architecte, BA, développeurs, QA, reviewer, cyber, devops</li>
+                        <li data-i18n="ia.job_2_item_4">~200 tests automatisés par projet (QA + cybersécurité)</li>
+                        <li data-i18n="ia.job_2_item_5">Review humain obligatoire avant livraison</li>
                     </ul>
                 </div>
 
                 <div class="job-detail-card animate-in">
                     <div class="job-detail-icon" aria-hidden="true"><i class="fa-solid fa-chart-line"></i></div>
-                    <h3 data-i18n="ia.job_7_title">Direction</h3>
+                    <h3 data-i18n="ia.job_3_title">Direction</h3>
                     <ul>
-                        <li data-i18n="ia.job_7_item_1">Synthèse hebdomadaire automatique des KPIs et alertes</li>
-                        <li data-i18n="ia.job_7_item_2">Préparation de notes de décision et présentations</li>
-                        <li data-i18n="ia.job_7_item_3">Veille stratégique et benchmarks sectoriels</li>
+                        <li data-i18n="ia.job_3_item_1">Tableaux de bord KPI et reporting automatisé</li>
+                        <li data-i18n="ia.job_3_item_2">Notes de synthèse et préparation de comités</li>
+                        <li data-i18n="ia.job_3_item_3">Veille stratégique, concurrentielle et réglementaire</li>
+                        <li data-i18n="ia.job_3_item_4">Aide à la décision basée sur l'analyse de données</li>
+                    </ul>
+                </div>
+
+                <div class="job-detail-card animate-in">
+                    <div class="job-detail-icon" aria-hidden="true"><i class="fa-solid fa-arrows-spin"></i></div>
+                    <h3 data-i18n="ia.job_4_title">Transverse — Tous métiers</h3>
+                    <ul>
+                        <li data-i18n="ia.job_4_item_1">Production documentaire automatisée (contrats, procédures, présentations)</li>
+                        <li data-i18n="ia.job_4_item_2">Intégrations avec vos outils existants (ERP, CRM, bases de données)</li>
+                        <li data-i18n="ia.job_4_item_3">Collecte, nettoyage et structuration de données</li>
+                        <li data-i18n="ia.job_4_item_4">Automatisation des tâches répétitives à faible valeur ajoutée</li>
+                        <li data-i18n="ia.job_4_item_5">Contrôle humain systématique — l'agent amplifie, il ne remplace pas</li>
                     </ul>
                 </div>
 
@@ -377,31 +343,136 @@
     </section>
 
     <!-- ======================================================
-         SECTION "NOTRE APPROCHE" — 3 étapes numérotées
+         SECTION "STACK TECHNOLOGIQUE"
+         ====================================================== -->
+    <section class="section" id="stack" aria-labelledby="stack-heading">
+        <div class="container">
+            <h2 class="section-title animate-in" id="stack-heading" data-i18n="ia.stack_title">Technologies de pointe</h2>
+            <p class="section-subtitle animate-in" data-i18n="ia.stack_subtitle">Nos agents s'appuient sur les meilleurs modèles d'IA et outils d'automatisation du marché.</p>
+
+            <div class="tech-stack-grid">
+                <div class="tech-card animate-in">
+                    <div class="tech-icon"><i class="fa-solid fa-brain" aria-hidden="true"></i></div>
+                    <h3 data-i18n="ia.tech_1_title">LLM dernière génération</h3>
+                    <span class="tech-provider">Raisonnement avancé</span>
+                    <p data-i18n="ia.tech_1_desc">Modèles de langage de pointe — raisonnement avancé, analyse de documents complexes, production de contenu structuré.</p>
+                </div>
+
+                <div class="tech-card animate-in">
+                    <div class="tech-icon"><i class="fa-solid fa-terminal" aria-hidden="true"></i></div>
+                    <h3 data-i18n="ia.tech_2_title">Agent de développement</h3>
+                    <span class="tech-provider">Coding autonome</span>
+                    <p data-i18n="ia.tech_2_desc">Agent IA dédié au code — développe, teste, débogue et déploie avec revue humaine intégrée à chaque étape.</p>
+                </div>
+
+                <div class="tech-card animate-in">
+                    <div class="tech-icon"><i class="fa-solid fa-network-wired" aria-hidden="true"></i></div>
+                    <h3 data-i18n="ia.tech_3_title">Orchestration multi-agents</h3>
+                    <span class="tech-provider">Coordination</span>
+                    <p data-i18n="ia.tech_3_desc">Des agents spécialisés qui collaborent sur des tâches complexes — chacun son rôle, un seul objectif.</p>
+                </div>
+
+                <div class="tech-card animate-in">
+                    <div class="tech-icon"><i class="fa-solid fa-plug" aria-hidden="true"></i></div>
+                    <h3 data-i18n="ia.tech_4_title">Protocole d'intégration ouvert</h3>
+                    <span class="tech-provider">Connectivité</span>
+                    <p data-i18n="ia.tech_4_desc">Standard ouvert qui connecte les agents à vos outils existants — bases de données, API, fichiers, navigateurs.</p>
+                </div>
+
+                <div class="tech-card animate-in">
+                    <div class="tech-icon"><i class="fa-solid fa-globe" aria-hidden="true"></i></div>
+                    <h3 data-i18n="ia.tech_5_title">Automatisation web</h3>
+                    <span class="tech-provider">Navigation & collecte</span>
+                    <p data-i18n="ia.tech_5_desc">Navigation automatisée, collecte de données, tests end-to-end sur sites et applications web.</p>
+                </div>
+
+                <div class="tech-card animate-in">
+                    <div class="tech-icon"><i class="fa-brands fa-python" aria-hidden="true"></i></div>
+                    <h3 data-i18n="ia.tech_6_title">Orchestration Python</h3>
+                    <span class="tech-provider">Socle technique</span>
+                    <p data-i18n="ia.tech_6_desc">Planification, gestion d'état, vérification qualité, intégration des pipelines métier.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================
+         SECTION "NOTRE APPROCHE" — Méthodologie en 5 étapes
          ====================================================== -->
     <section class="section section-alt" id="approche" aria-labelledby="approach-ia-heading">
         <div class="container">
-            <h2 class="section-title animate-in" id="approach-ia-heading" data-i18n="ia.approach_title">Notre approche en 3 étapes</h2>
-            <div class="steps-grid">
+            <h2 class="section-title animate-in" id="approach-ia-heading" data-i18n="ia.approach_title">Notre méthodologie</h2>
+            <p class="section-subtitle animate-in" data-i18n="ia.approach_subtitle">Un processus structuré, agile et itératif — du cadrage stratégique à l'amélioration continue.</p>
 
-                <div class="step-card animate-in">
-                    <span class="step-number" aria-hidden="true">01</span>
-                    <h3 data-i18n="ia.approach_1_title">Diagnostic</h3>
-                    <p data-i18n="ia.approach_1_text">1 à 2 jours pour cartographier vos processus et identifier les tâches automatisables à fort ROI (retour sur investissement).</p>
+            <div class="approach-timeline">
+
+                <div class="approach-step animate-in">
+                    <span class="approach-number" aria-hidden="true">01</span>
+                    <div class="approach-content">
+                        <h3 data-i18n="ia.approach_1_title">Gouvernance</h3>
+                        <p data-i18n="ia.approach_1_text">Cadrage stratégique : sponsors, objectifs mesurables, périmètre. On définit les règles du jeu avant de jouer.</p>
+                    </div>
                 </div>
 
-                <div class="step-card animate-in">
-                    <span class="step-number" aria-hidden="true">02</span>
-                    <h3 data-i18n="ia.approach_2_title">Construction</h3>
-                    <p data-i18n="ia.approach_2_text">1 à 3 semaines pour développer et configurer les agents IA adaptés à vos outils, vos données et vos contraintes métier.</p>
+                <div class="approach-step animate-in">
+                    <span class="approach-number" aria-hidden="true">02</span>
+                    <div class="approach-content">
+                        <h3 data-i18n="ia.approach_2_title">Sélection du pilote</h3>
+                        <p data-i18n="ia.approach_2_text">1 rôle, 1 processus métier concret. On choisit le cas d'usage à plus fort ROI (retour sur investissement) pour démontrer la valeur rapidement.</p>
+                    </div>
                 </div>
 
-                <div class="step-card animate-in">
-                    <span class="step-number" aria-hidden="true">03</span>
-                    <h3 data-i18n="ia.approach_3_title">Déploiement continu</h3>
-                    <p data-i18n="ia.approach_3_text">Formation de vos équipes, suivi des performances, ajustements itératifs. L'agent s'améliore avec votre feedback.</p>
+                <div class="approach-step animate-in">
+                    <span class="approach-number" aria-hidden="true">03</span>
+                    <div class="approach-content">
+                        <h3 data-i18n="ia.approach_3_title">Analyse du processus</h3>
+                        <p data-i18n="ia.approach_3_text">Décomposition en tâches avec inputs, outputs et états de progression. On identifie ce qui est automatisable vs ce qui reste humain.</p>
+                    </div>
                 </div>
 
+                <div class="approach-step animate-in">
+                    <span class="approach-number" aria-hidden="true">04</span>
+                    <div class="approach-content">
+                        <h3 data-i18n="ia.approach_4_title">Automatisation agile</h3>
+                        <p data-i18n="ia.approach_4_text">Itérations courtes — on livre un premier résultat en quelques jours, puis on affine. Chaque itération produit un livrable exploitable.</p>
+                    </div>
+                </div>
+
+                <div class="approach-step animate-in">
+                    <span class="approach-number" aria-hidden="true">05</span>
+                    <div class="approach-content">
+                        <h3 data-i18n="ia.approach_5_title">Amélioration continue</h3>
+                        <p data-i18n="ia.approach_5_text">Feedback utilisateur, métriques de performance, ajustements itératifs. L'agent s'améliore à chaque cycle — puis on passe au processus suivant.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Process anatomy -->
+            <div class="process-anatomy animate-in">
+                <h3 data-i18n="ia.process_title">Un processus, c'est quoi ?</h3>
+                <div class="process-flow">
+                    <div class="process-node process-input">
+                        <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>
+                        <span data-i18n="ia.process_input">Inputs</span>
+                    </div>
+                    <div class="process-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
+                    <div class="process-node process-task">
+                        <i class="fa-solid fa-gears" aria-hidden="true"></i>
+                        <span data-i18n="ia.process_tasks">Tâches</span>
+                    </div>
+                    <div class="process-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
+                    <div class="process-node process-state">
+                        <i class="fa-solid fa-signal" aria-hidden="true"></i>
+                        <span data-i18n="ia.process_states">États</span>
+                    </div>
+                    <div class="process-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
+                    <div class="process-node process-output">
+                        <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i>
+                        <span data-i18n="ia.process_output">Outputs</span>
+                    </div>
+                </div>
+                <p class="process-desc" data-i18n="ia.process_desc">Chaque processus est décomposé en tâches traçables. À tout moment, vous savez où en est la progression, quels inputs sont requis et quels outputs sont livrés.</p>
             </div>
         </div>
     </section>
@@ -442,12 +513,7 @@
             <h2 class="section-title animate-in" id="cta-ia-heading" data-i18n="ia.cta_title">Prêt à identifier ce que l'IA peut faire pour vous ?</h2>
             <p class="section-subtitle animate-in" data-i18n="ia.cta_subtitle">Diagnostic de 30 minutes — gratuit, sans engagement. On identifie ensemble les 2 à 3 tâches les plus automatisables dans votre contexte.</p>
             <div class="hero-cta animate-in">
-                <button onclick="openCalendly()" class="btn btn-primary btn-lg" data-i18n="ia.cta_btn">
-                    Réserver un diagnostic IA
-                </button>
-                <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-outline btn-lg" data-i18n="common.send_email">
-                    M'envoyer un email
-                </a>
+                <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-primary btn-lg" data-i18n="common.book_meeting">Réserver un rendez-vous</a>
             </div>
         </div>
     </section>
@@ -468,7 +534,7 @@
                     <a href="tel:+352661780807" data-i18n="common.footer_phone">
                         <i class="fa-solid fa-phone" aria-hidden="true"></i> +352.661.78.08.07
                     </a>
-                    <a href="https://www.linkedin.com/in/emmanuelgenesteix" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/genesteix-emmanuel" target="_blank" rel="noopener noreferrer">
                         <i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn
                     </a>
                 </div>
@@ -484,15 +550,14 @@
                 <p>Responsable de la publication : Emmanuel Genesteix —
                     <a href="mailto:emmanuel.genesteix@agilevizion.com">emmanuel.genesteix@agilevizion.com</a>
                 </p>
-                <p>Hébergement : GitHub Pages — GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA</p>
             </div>
         </div>
     </footer>
 
-    <script src="js/calendly.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/cookies.js"></script>
+    <script src="js/section-nav.js"></script>
 </body>
 </html>

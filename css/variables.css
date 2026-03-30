@@ -131,4 +131,57 @@
     --container-max: 1200px;
     --container-padding: var(--space-6);
     --navbar-height: 72px;
+
+    /* Icon / component sizes */
+    --size-icon-inline: 0.75rem;   /* 12px — icône inline (norm-detail, select arrow) */
+    --size-icon-md: 3rem;          /* 48px — step numbers, why icons */
+    --size-icon-lg: 3.5rem;        /* 56px — service icons */
+    --size-icon-play: 4.5rem;      /* 72px — bouton play vidéo */
+    --size-hamburger: 1.5rem;      /* 24px — barre hamburger nav */
+    --tap-target: 44px;            /* Tap target minimum accessibilité tactile */
+
+    /* Layout max-widths */
+    --width-hero-content: 800px;
+    --width-text-block: 640px;
+    --width-cta-max: 320px;
+    --width-video-max: 720px;
+    --width-simulator-max: 820px;
+
+    /* Photo portrait dimensions */
+    --photo-sm: 160px;
+    --photo-height-sm: 200px;
+    --photo-md: 200px;
+    --photo-height-md: 250px;
+    --photo-lg: 220px;
+    --photo-height-lg: 280px;
+
+    /* Why-profile grid column sizes */
+    --col-photo-md: 200px;
+    --col-photo-lg: 260px;
+
+    /* UI micro-values */
+    --border-2: 2px;               /* Épaisseur bordure fine (btn, nav active, hamburger) */
+    --select-arrow-offset: 2.25rem; /* 36px — padding-right décalage flèche select */
+    --risk-label-min: 3.125rem;    /* 50px — min-width label risque */
+    --offset-icon: 2px;            /* Alignement vertical micro icône inline */
+    --offset-icon-xs: 1px;         /* Alignement vertical fin (1px) */
+
+    /* Transitions supplémentaires */
+    --transition-exit: 300ms ease-out;  /* Slide-out bannière cookies, collapse */
+    --transition-reveal: 400ms ease;    /* Reveal cards (profile, results) */
+
+    /* Staggered animation delays */
+    --delay-nth-2: 0.1s;
+    --delay-nth-3: 0.2s;
+    --delay-nth-4: 0.3s;
+    --delay-nth-5: 0.35s;
+    --delay-nth-6: 0.4s;
+    --delay-nth-7: 0.45s;
+
+    /* Animation */
+    --duration-spin: 600ms;
+    --easing-linear: linear;
+
+    /* Hauteur max groupe conditionnel simulateur */
+    --height-conditional-max: 300px;
 }

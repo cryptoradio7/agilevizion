@@ -39,4 +39,32 @@ document.addEventListener('DOMContentLoaded', function () {
     animatedElements.forEach(function (el) {
         observer.observe(el);
     });
+
+    // Hero video autoplay — masquer placeholder si vidéo chargée
+    var heroVideo = document.querySelector('.hero-video-player');
+    if (heroVideo) {
+        heroVideo.addEventListener('canplay', function () {
+            heroVideo.classList.add('is-playing');
+        });
+        // Si déjà chargée (cache navigateur)
+        if (heroVideo.readyState >= 3) {
+            heroVideo.classList.add('is-playing');
+        }
+    }
 });
+
+// Toggle son vidéo hero
+function toggleVideoSound(btn) {
+    var video = btn.closest('.hero-video').querySelector('.hero-video-player');
+    if (!video) return;
+    var icon = btn.querySelector('i');
+    if (video.muted) {
+        video.muted = false;
+        icon.className = 'fa-solid fa-volume-high';
+        btn.setAttribute('aria-label', 'Couper le son');
+    } else {
+        video.muted = true;
+        icon.className = 'fa-solid fa-volume-xmark';
+        btn.setAttribute('aria-label', 'Activer le son');
+    }
+}

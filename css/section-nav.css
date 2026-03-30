@@ -1,0 +1,68 @@
+/* ============================================
+   Section Navigation — Sticky bar under navbar
+   ============================================ */
+
+.section-nav {
+    position: sticky;
+    top: var(--navbar-height, 64px);
+    z-index: 900;
+    background: var(--bg-primary, #fff);
+    border-bottom: 1px solid var(--color-border, #e2e8f0);
+    overflow: hidden;
+    transition: box-shadow var(--transition-fast, 0.15s);
+}
+
+.section-nav.has-shadow {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.section-nav-inner {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    max-width: var(--width-max, 1200px);
+    margin: 0 auto;
+    padding: 0 var(--space-4, 1rem);
+}
+
+.section-nav-inner::-webkit-scrollbar {
+    display: none;
+}
+
+a.section-nav-link,
+button.section-nav-link {
+    flex-shrink: 0;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary, #64748b);
+    text-decoration: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    background: none;
+    font-family: inherit;
+    transition: all var(--transition-fast, 0.15s);
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.section-nav-link:hover {
+    color: var(--color-primary, #4f46e5);
+}
+
+.section-nav-link.active {
+    color: var(--color-primary, #4f46e5);
+    border-bottom-color: var(--color-primary, #4f46e5);
+    font-weight: 600;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .section-nav-link {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
