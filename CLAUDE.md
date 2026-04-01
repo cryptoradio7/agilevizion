@@ -76,4 +76,4 @@ Le site v1 est dans `~/Bureau/APPS/AGILEVIZION/`. Les fichiers suivants sont mig
 ## Sécurité
 
 - Pas de tokens/secrets dans le code
-- .gitignore protège : .env, logs/, references/, data/
+- .gitignore protège : .env, logs/, references/ (data/blog-posts.json est commité)

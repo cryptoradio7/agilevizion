@@ -9,8 +9,9 @@ node_modules/
 logs/
 *.log
 
-# Data
-data/
+# Data (blog-posts.json is public, keep it tracked)
+data/*.secret
+data/*.credentials
 
 # References (source docs, not committed)
 references/
