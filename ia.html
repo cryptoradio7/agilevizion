@@ -153,6 +153,7 @@
             <a class="section-nav-link" href="#probleme" data-i18n="ia.nav_probleme">Le problème</a>
             <a class="section-nav-link" href="#comment-ca-marche" data-i18n="ia.nav_comment">Comment ça marche</a>
             <a class="section-nav-link" href="#metiers" data-i18n="ia.nav_metiers">Cas d'usage</a>
+            <a class="section-nav-link" href="#qualite" data-i18n="ia.nav_qualite">Qualité</a>
             <a class="section-nav-link" href="#stack" data-i18n="ia.nav_stack">Technologies</a>
             <a class="section-nav-link" href="#approche" data-i18n="ia.nav_approche">Méthodologie</a>
             <a class="section-nav-link" href="#resultats" data-i18n="ia.nav_resultats">Résultats</a>
@@ -300,6 +301,7 @@
                         <li data-i18n="ia.job_1_item_4">Production des rapports finaux</li>
                         <li data-i18n="ia.job_1_item_5">Contrôle humain et review sur toute la chaîne</li>
                         <li data-i18n="ia.job_1_item_6">Processus customisé et sur mesure pour chaque client</li>
+                        <li data-i18n="ia.job_1_item_7">Audit cybersécurité intégré — chaque livraison passe par un scan OWASP automatique avant livraison</li>
                     </ul>
                 </div>
 
@@ -309,9 +311,11 @@
                     <ul>
                         <li data-i18n="ia.job_2_item_1">Cadrage projet avec questionnaire interactif</li>
                         <li data-i18n="ia.job_2_item_2">Production du code 24h/24, jour et nuit</li>
-                        <li data-i18n="ia.job_2_item_3">Équipe complète : architecte, BA, développeurs, QA, reviewer, cyber, devops</li>
-                        <li data-i18n="ia.job_2_item_4">~200 tests automatisés par projet (QA + cybersécurité)</li>
-                        <li data-i18n="ia.job_2_item_5">Review humain obligatoire avant livraison</li>
+                        <li data-i18n="ia.job_2_item_3">Workflow multi-rôles orchestré : Architecte → BA → Dev → QA → Review → Cyber → DevOps — une équipe IA complète, clé en main</li>
+                        <li data-i18n="ia.job_2_item_4">Routage intelligent des erreurs : chaque bug est classifié et redirigé vers le bon spécialiste (dev, debug ou reviewer)</li>
+                        <li data-i18n="ia.job_2_item_5">~200 tests automatisés par projet (QA + OWASP + MITRE ATT&CK)</li>
+                        <li data-i18n="ia.job_2_item_6">Review humain obligatoire avant livraison</li>
+                        <li data-i18n="ia.job_2_item_7">Boucle d'auto-amélioration : l'agent analyse ses propres erreurs et améliore ses pratiques à chaque projet</li>
                     </ul>
                 </div>
 
@@ -343,9 +347,50 @@
     </section>
 
     <!-- ======================================================
+         SECTION "QUALITÉ GARANTIE" — Comparaison chat LLM vs AgileVizion
+         ====================================================== -->
+    <section class="section" id="qualite" aria-labelledby="quality-heading">
+        <div class="container">
+            <h2 class="section-title animate-in" id="quality-heading" data-i18n="ia.quality_title">Bien au-delà d'un simple chat avec une IA</h2>
+            <p class="section-subtitle animate-in" data-i18n="ia.quality_subtitle">Un prompt dans ChatGPT peut générer du code. Mais qui vérifie la qualité, la sécurité, la résilience ? Notre pipeline le fait automatiquement.</p>
+
+            <div class="quality-comparison animate-in">
+                <div class="quality-col quality-before">
+                    <div class="quality-header">
+                        <i class="fa-solid fa-comment-dots" aria-hidden="true"></i>
+                        <h3 data-i18n="ia.quality_before_title">Chat IA classique</h3>
+                    </div>
+                    <ul>
+                        <li data-i18n="ia.quality_before_1"><i class="fa-solid fa-xmark" aria-hidden="true"></i> Code généré sans vérification</li>
+                        <li data-i18n="ia.quality_before_2"><i class="fa-solid fa-xmark" aria-hidden="true"></i> Pas de tests automatisés</li>
+                        <li data-i18n="ia.quality_before_3"><i class="fa-solid fa-xmark" aria-hidden="true"></i> Aucun audit de sécurité</li>
+                        <li data-i18n="ia.quality_before_4"><i class="fa-solid fa-xmark" aria-hidden="true"></i> Pas de review de code</li>
+                        <li data-i18n="ia.quality_before_5"><i class="fa-solid fa-xmark" aria-hidden="true"></i> Si ça casse, c'est votre problème</li>
+                        <li data-i18n="ia.quality_before_6"><i class="fa-solid fa-xmark" aria-hidden="true"></i> Aucune traçabilité des décisions</li>
+                    </ul>
+                </div>
+                <div class="quality-col quality-after">
+                    <div class="quality-header">
+                        <i class="fa-solid fa-shield-check" aria-hidden="true"></i>
+                        <h3 data-i18n="ia.quality_after_title">Pipeline AgileVizion</h3>
+                    </div>
+                    <ul>
+                        <li data-i18n="ia.quality_after_1"><i class="fa-solid fa-check" aria-hidden="true"></i> Code robuste — review automatique + humain</li>
+                        <li data-i18n="ia.quality_after_2"><i class="fa-solid fa-check" aria-hidden="true"></i> Tests unitaires, intégration et e2e systématiques</li>
+                        <li data-i18n="ia.quality_after_3"><i class="fa-solid fa-check" aria-hidden="true"></i> Audit OWASP + MITRE ATT&CK à chaque livraison</li>
+                        <li data-i18n="ia.quality_after_4"><i class="fa-solid fa-check" aria-hidden="true"></i> 3 niveaux de correction : dev → debug → reviewer</li>
+                        <li data-i18n="ia.quality_after_5"><i class="fa-solid fa-check" aria-hidden="true"></i> Boucle itérative : rien ne passe sans tests OK</li>
+                        <li data-i18n="ia.quality_after_6"><i class="fa-solid fa-check" aria-hidden="true"></i> Auto-amélioration continue — l'agent apprend de ses erreurs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================
          SECTION "STACK TECHNOLOGIQUE"
          ====================================================== -->
-    <section class="section" id="stack" aria-labelledby="stack-heading">
+    <section class="section section-alt" id="stack" aria-labelledby="stack-heading">
         <div class="container">
             <h2 class="section-title animate-in" id="stack-heading" data-i18n="ia.stack_title">Technologies de pointe</h2>
             <p class="section-subtitle animate-in" data-i18n="ia.stack_subtitle">Nos agents s'appuient sur les meilleurs modèles d'IA et outils d'automatisation du marché.</p>
