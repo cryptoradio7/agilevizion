@@ -1486,6 +1486,20 @@
     }
 }
 
+/* --- Quality Badge --- */
+.quality-badge {
+    display: inline-block;
+    background: var(--color-primary);
+    color: #fff;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.3em 1em;
+    border-radius: 999px;
+    margin-bottom: var(--space-3);
+}
+
 /* --- Quality Comparison (Chat LLM vs AgileVizion) --- */
 .quality-comparison {
     display: grid;
