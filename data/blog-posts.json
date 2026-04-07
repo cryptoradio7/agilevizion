@@ -1,6 +1,24 @@
 [
   {
     "id": 1,
+    "topic": "ISO 22301 clause 4.3 — périmètre SMCA incohérent avec la BIA",
+    "content": "Votre SMCA couvre 3 sites sur 5. Votre BIA identifie une activité critique sur le site 4.\n\nC'est une non-conformité majeure ISO 22301. Et personne ne l'a vu pendant deux ans.\n\nLa clause 4.3 d'ISO 22301 impose un document de périmètre formalisé — entités couvertes, sites inclus, produits et services dans le scope, exclusions justifiées.\n\nMais il y a une règle que beaucoup ignorent : une activité critique identifiée par la BIA — le Bilan d'Impact sur les Activités, l'analyse qui détermine ce que vous ne pouvez pas vous permettre d'arrêter — ne peut PAS être exclue du périmètre SMCA — le Système de Management de la Continuité des Activités.\n\nC'est écrit explicitement dans la norme. Ce n'est pas une recommandation. C'est une exigence.\n\nCe que j'observe dans les audits :\n→ Des périmètres rédigés une fois, jamais révisés après une réorg ou une acquisition\n→ Des exclusions listées sans justification — « hors scope » sans explication\n→ Des incohérences entre le périmètre certifié et les résultats de la BIA, détectées deux ans après\n→ Des sites critiques mis de côté parce qu'ils étaient « trop complexes à intégrer »\n\nLa conséquence est simple : vous êtes certifié ISO 22301. Mais votre plan de continuité ne couvre pas vos activités les plus critiques.\n\nLa certification ne vous protège pas — elle vous expose.\n\nParce que si un incident frappe le site 4, vous avez un beau certificat et rien pour tenir.\n\nLa vérification à faire maintenant :\nPrenez votre document de périmètre. Prenez vos résultats de BIA. Mettez-les côte à côte.\nToutes vos activités critiques sont-elles couvertes ?\n\nSi la réponse n'est pas un oui immédiat, vous avez un sujet.",
+    "hashtags": [
+      "#ISO22301",
+      "#SMCA",
+      "#GRC",
+      "#ContinuitéDActivité",
+      "#Conformité",
+      "#AgileVizion"
+    ],
+    "category": "ISO22301",
+    "published_at": "2026-04-07",
+    "date_fr": "07/04/2026",
+    "date_en": "April 07, 2026",
+    "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7447201534049931265"
+  },
+  {
+    "id": 2,
     "topic": "TLPT DORA — le vrai test de résilience que personne ne comprend",
     "content": "Votre pentest annuel ne vous protège pas de DORA.\n\nDORA impose un niveau de test radicalement différent pour les entités désignées : le TLPT — le Threat-Led Penetration Testing, un test de pénétration piloté par les menaces réelles qui ciblent votre entité spécifiquement.\n\nCe n'est pas un pentest standard.\n\nUn pentest classique, c'est un testeur externe qui cherche des vulnérabilités connues sur votre périmètre technique. C'est utile. Mais c'est une photographie à un instant T sur un périmètre souvent trop limité.\n\nLe TLPT, c'est autre chose.\n\nC'est un exercice de red teaming — une simulation d'attaque sophistiquée, construite à partir de renseignements sur les menaces réelles qui ciblent votre secteur et votre organisation. Le RTS 2025-1190 fixe le cadre : testeurs certifiés, prestataire de threat intelligence indépendant, coordination obligatoire avec l'autorité compétente (la CSSF au Luxembourg), rapport structuré et validé.\n\nCe que j'observe sur le terrain :\n→ Des entités qui pensent que leur pentest annuel coche la case DORA — ce n'est pas le cas\n→ Des périmètres de test limités au « visible depuis internet », sans toucher aux systèmes critiques réels\n→ Aucun renseignement sur les menaces utilisé pour calibrer les scénarios d'attaque\n→ Des rapports de pentest que personne ne lit vraiment au-delà de la liste CVE\n\nPoint important : le TLPT n'est pas universel.\nL'autorité compétente désigne les entités concernées — en général les plus systémiquement importantes du secteur financier. Mais si vous êtes désigné et que vous n'avez jamais fait de red teaming structuré, l'écart de maturité sera visible dès le premier exercice.\n\nEt même hors désignation formelle, la logique du TLPT devrait inspirer vos tests : partir des menaces réelles qui vous ciblent, pas d'une checklist générique achetée à un prestataire.\n\nLa résilience opérationnelle numérique se prouve. Elle ne se déclare pas.",
     "hashtags": [
@@ -18,7 +36,7 @@
     "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7446885506740592640"
   },
   {
-    "id": 2,
+    "id": 3,
     "topic": "REX 4.2 NIS2 — Sauvegarde périodique mal comprise",
     "content": "REX 4.2 NIS2 — Sauvegarde périodique mal comprise.\nTout le monde a une stratégie backup. Très peu l'ont vraiment.\n\nL'exigence REX 4.2 du règlement européen est précise :\n« Sauvegarde périodique et restauration en toute sécurité des données et configurations système »\n\nMais « périodique » ne veut pas dire « tous les soirs à 3h ».\nEt « en toute sécurité » ne veut pas dire « sur le SAN de production ».\n\nCe que j'observe sur le terrain :\n→ Backup quotidien configuré, jamais testé depuis 18 mois\n→ Sauvegardes chiffrées, clés stockées sur le même réseau\n→ Restauration testée sur 2 fichiers Excel, jamais sur une VM complète\n→ RTO annoncé 4h, temps réel de restauration jamais chronométré\n→ Configuration système sauvegardée, mais pas les certificats ni les clés privées\n\nLa vraie conformité REX 4.2 :\n✅ Fréquence adaptée à votre RPO métier — pas un standard IT\n✅ Isolation réseau des sauvegardes — règle 3-2-1 respectée\n✅ Test de restauration COMPLET documenté et chronométré\n✅ Procédure de restauration opérationnelle, pas juste technique\n✅ Sauvegarde des configurations ET des données\n\nUne sauvegarde non testée n'est qu'une illusion de sécurité.\nEt face à un ransomware, l'illusion ne résiste pas longtemps.\n\nQuand avez-vous testé votre dernière restauration complète ?",
     "hashtags": [
@@ -36,7 +54,7 @@
     "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7446583709052379136"
   },
   {
-    "id": 3,
+    "id": 4,
     "topic": "Matrice audit DORA - les 4 niveaux de conformité mal utilisés",
     "content": "Votre auditeur vous note « 3 - Partiellement conforme » sur DORA.\nVous respirez. « Au moins, on n'est pas en rouge. »\n\nErreur.\n\nLa matrice d'audit DORA a 4 niveaux de conformité. Et la plupart des entités ne comprennent pas ce qu'ils impliquent vraiment.\n\nNiveau 4 — Conforme : Document à jour (< 12 mois) ET processus effectivement appliqué ET personnel formé ET mesures techniques vérifiées. Tous les critères. Pas juste le document.\n\nNiveau 3 — Partiellement conforme : Il suffit qu'UN seul critère manque pour tomber ici. Document obsolète de 13 mois ? Niveau 3. Processus documenté mais non appliqué systématiquement ? Niveau 3. Personnel non formé ? Niveau 3.\n\nNiveau 2 — Non conforme : Le document n'existe pas OU le processus est inexistant OU aucun contrôle. Non-conformité majeure, plan de remédiation < 90 jours exigé par l'autorité.\n\nNiveau 1 — Critique : Absence totale + risque immédiat + direction non impliquée. Intervention possible du superviseur.\n\nCe que j'observe dans les audits :\n→ Des entités « satisfaites » d'un niveau 3 sur leur registre tiers\n→ Des équipes qui pensent qu'avoir le document suffit\n→ Des processus sur papier, jamais testés dans la réalité\n→ Des formations sécurité datant de 2022\n\nLa conformité DORA ne se mesure pas qu'au papier.\nElle se mesure à l'efficacité opérationnelle.\n\nUn niveau 3, c'est déjà une non-conformité mineure. Avec un délai de remédiation de 6 mois maximum.\n\nLa question à vous poser : sur combien de vos exigences DORA pouvez-vous honnêtement cocher les 4 critères ?",
     "hashtags": [
@@ -53,7 +71,7 @@
     "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7445024698368958464"
   },
   {
-    "id": 4,
+    "id": 5,
     "topic": "REX 3.2 NIS2 - 12 catégories de logs obligatoires mal comprises",
     "content": "J'audite votre politique de journalisation.\nVous me montez un document de 2 pages : « Nous gardons les logs 1 an ».\n\nC'est tout ?\n\nREX 3.2 de NIS2 impose 12 catégories de journaux PRÉCISES.\nPas « les logs en général ». 12 catégories nominatives que 90% des entités ignorent.\n\nLes 12 catégories obligatoires :\n→ Journaux d'administration système\n→ Accès aux comptes privilégiés\n→ Tentatives d'accès non autorisées\n→ Modifications de configuration sécurité\n→ Installation/désinstallation logiciels\n→ Accès aux données sensibles\n→ Échecs d'authentification\n→ Utilisation des outils d'administration\n→ Transferts de données\n→ Activités de maintenance\n→ Connexions réseau entrantes/sortantes\n→ Utilisation des systèmes critiques\n\nCe que j'observe sur le terrain :\n→ « On a les logs du firewall » — OK, mais les 11 autres ?\n→ Pas de politique de rétention différenciée par catégorie\n→ Logs stockés mais jamais analysés\n→ Horodatage non synchronisé (NTP obligatoire)\n→ Aucune protection des logs contre l'altération\n\nChaque catégorie a sa raison d'être.\nLes accès privilégiés pour détecter les mouvements latéraux.\nLes modifications de config pour tracer les backdoors.\nLes transferts de données pour identifier l'exfiltration.\n\nUne vraie politique de logs, c'est 15 pages minimum.\nAvec la matrice catégorie × système × rétention × analyse.\n\nVotre « on garde tout 1 an » ne tient pas face à un audit NIS2.",
     "hashtags": [
@@ -71,7 +89,7 @@
     "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7444674871718092800"
   },
   {
-    "id": 5,
+    "id": 6,
     "topic": "RTS 2024-1774 — 11 domaines de politique sécurité obligatoires DORA",
     "content": "Votre politique de sécurité DORA ne peut plus être un document fourre-tout.\n\nLe RTS 2024-1774 impose 11 domaines distincts et précis. Pas 9, pas 12. Onze.\n\nChaque domaine doit être documenté, maintenu, et surtout — opérationnel.\n\nLes 11 domaines obligatoires :\n→ Gouvernance de la sécurité de l'information\n→ Protection des actifs d'information\n→ Sécurité des ressources humaines  \n→ Sécurité physique et environnementale\n→ Communications et gestion des opérations\n→ Contrôle d'accès\n→ Acquisition, développement et maintenance des SI\n→ Gestion des incidents de sécurité\n→ Gestion de la continuité d'activité\n→ Surveillance et évaluation de la sécurité\n→ Conformité\n\nCe que j'observe sur le terrain :\n→ Des politiques « sécurité générale » de 3 pages qui mélangent tout\n→ Le domaine « surveillance » souvent absent ou théorique\n→ La « sécurité physique » négligée parce que « on est dans le cloud »\n→ Aucun lien entre la politique et les procédures opérationnelles\n\nLe piège : croire qu'on peut regrouper ces domaines.\nChacun a sa logique, ses mesures, ses responsables.\n\nUne politique DORA conforme, c'est 11 politiques sectorielles qui s'articulent.\nPas un document unique qui survole tout.\n\nVotre politique actuelle couvre-t-elle explicitement ces 11 domaines ?\nSi vous hésitez, c'est probablement non.",
     "hashtags": [
@@ -88,7 +106,7 @@
     "linkedin_url": ""
   },
   {
-    "id": 6,
+    "id": 7,
     "topic": "Clause 4.2 ISO 27001 - parties intéressées oubliées",
     "content": "Dans 9 SMSI sur 10 que j'audite, les parties intéressées se résument à « clients et fournisseurs ».\nC'est une vision dangereusement incomplète.\n\nLa clause 4.2 d'ISO 27001 exige d'identifier TOUTES les parties intéressées pertinentes pour votre SMSI — pas seulement les évidentes.\n\nCe que la norme demande :\n→ Identifier chaque partie intéressée\n→ Lister leurs exigences sécurité spécifiques\n→ Décider lesquelles seront traitées par le SMSI\n\nCe que j'observe sur le terrain :\n→ Le régulateur (CSSF, ANSSI) absent du registre\n→ Les employés oubliés — pourtant ils ont des exigences confidentialité\n→ Les assureurs ignorés — ils imposent des mesures contractuelles\n→ Les sous-traitants de vos fournisseurs — invisibles mais critiques\n→ Les autorités judiciaires — réquisitions, perquisitions, obligations de conservation\n\nChaque partie intéressée oubliée, c'est un angle mort dans votre SMSI.\n\nExemple concret :\nVotre assureur cyber exige un délai de notification de 24h en cas d'incident.\nSi ce n'est pas dans votre registre des parties intéressées, cette exigence ne remonte pas dans vos procédures.\nRésultat : vous respectez DORA (72h) mais violez votre contrat d'assurance.\n\nLa clause 4.2 n'est pas un exercice administratif.\nC'est la carte des exigences réelles qui pèsent sur votre sécurité.\n\nQuestion : avez-vous inclus votre direction juridique dans l'identification des parties intéressées ?",
     "hashtags": [
@@ -105,7 +123,7 @@
     "linkedin_url": ""
   },
   {
-    "id": 7,
+    "id": 8,
     "topic": "Classification incidents DORA - critères pratiques matérialité",
     "content": "Votre incident TIC de ce matin est-il « majeur » au sens de DORA ?\nLa question n'est pas anodine. Se tromper, c'est risquer une sanction pour non-déclaration.\n\nDORA impose de notifier au régulateur tout incident TIC « majeur » dans les 4h.\nMais comment savoir si votre panne entre dans cette catégorie ?\n\nLe RTS 2024-1772 fixe des critères précis :\n\n→ Nombre de clients impactés (seuils par type d'entité)\n→ Durée de l'interruption de service\n→ Perte ou corruption de données\n→ Impact financier direct\n→ Atteinte à la réputation ou à la confiance\n\nCe que j'observe sur le terrain :\n→ Des entités qui n'ont pas encore défini leurs seuils internes\n→ Des équipes techniques qui ne connaissent pas les critères réglementaires\n→ Pas de processus de décision rapide pour qualifier un incident\n→ La confusion entre « incident IT » et « incident TIC majeur »\n\nLa réalité : quand votre système tombe un vendredi à 17h, vous avez 4h pour évaluer, qualifier et notifier.\nPas le temps de chercher dans le règlement.\n\nVotre matrice de classification d'incidents doit être prête.\nVos équipes formées.\nVotre processus de décision testé.\n\nParce qu'en cas de doute, le régulateur préfère une déclaration de trop qu'une déclaration en moins.",
     "hashtags": [
@@ -123,7 +141,7 @@
     "linkedin_url": ""
   },
   {
-    "id": 8,
+    "id": 9,
     "topic": "PCA vs PRA : la différence critique",
     "content": "Votre PCA ne vaut rien si vous n'avez pas de PRA.\n\nLe Plan de Continuité d'Activité (PCA), c'est la vision métier :\n→ Quels processus critiques maintenir coûte que coûte ?\n→ Dans quel délai maximum (RTO) ?\n→ Avec quelle perte de données acceptable (RPO) ?\n→ Qui décide de l'activation ? Qui fait quoi ?\n\nLe Plan de Reprise d'Activité (PRA), c'est l'exécution technique :\n→ Comment basculer concrètement sur le site de secours ?\n→ Dans quel ordre redémarrer les serveurs ?\n→ Quelles commandes exactes pour restaurer la base ?\n→ Comment tester que tout fonctionne avant la remise en service ?\n\nCe que j'observe trop souvent :\n→ Un PCA de 50 pages qui dit « on bascule sur le site de backup »\n→ Personne ne sait comment faire ce basculement\n→ Les RTO sont théoriques — jamais testés en conditions réelles\n→ Les contacts de crise datent de 2022\n\nNIS2 exige les deux. Le REX 4.1.1 impose un PCA avec « mesures et ressources nécessaires ». Mais sans PRA opérationnel, votre PCA reste un document de conformité.\n\nLa vraie question :\nSi votre datacenter principal tombe ce soir, qui fait quoi ? Avec quelle procédure ? En combien de temps ?\n\nUn PCA sans PRA, c'est une carte sans itinéraire.\nVous savez où aller, mais pas comment y arriver.",
     "hashtags": [
@@ -141,7 +159,7 @@
     "linkedin_url": ""
   },
   {
-    "id": 9,
+    "id": 10,
     "topic": "Clause 5.1 ISO 27001 - engagement direction manqué",
     "content": "Dans presque tous les audits ISO 27001 que je fais, la clause 5.1 est ratée.\nPas sur le papier — sur le terrain.\n\nLa clause 5.1, c'est l'engagement de la direction vis-à-vis du SMSI.\nPas juste signer une politique — DÉMONTRER concrètement cet engagement.\n\nCe que la norme exige précisément :\n✓ Politique ET objectifs SI compatibles avec l'orientation stratégique\n✓ Intégration des exigences SMSI dans les processus métier\n✓ Ressources nécessaires disponibles (budget, personnel)\n✓ Communication sur l'importance de la sécurité\n✓ Pilotage pour atteindre les résultats attendus\n\nCe que j'observe trop souvent :\n→ Direction signe la politique mais n'assiste jamais aux revues\n→ Budget SI inexistant ou non formalisé\n→ Aucune trace de communication direction sur la sécurité\n→ Objectifs SI déconnectés de la stratégie business\n→ RSSI seul porteur du SMSI sans soutien managérial\n\nLe piège classique ?\nCroire qu'une signature suffit. L'auditeur cherche des PREUVES d'engagement : PV de revues direction, budget alloué, communications internes, participation active.\n\nSans engagement démontrable de la direction, pas de certificat ISO 27001.\nC'est une exigence \"shall\" — non négociable.\n\nLa question à poser à votre DG : comment démontrez-vous concrètement votre engagement vis-à-vis du SMSI ?",
     "hashtags": [
@@ -158,7 +176,7 @@
     "linkedin_url": ""
   },
   {
-    "id": 10,
+    "id": 11,
     "topic": "Matrice RACI sécurité — Pourquoi vos responsables ne savent pas qui fait quoi",
     "content": "Dans 90% des audits que je fais, je pose la même question :\n« Qui décide si on coupe l'accès d'un prestataire critique en cas d'incident ? »\n\nSilence radio.\nOu pire : « Euh... on verra selon le contexte. »\n\nC'est exactement pour ça que NIS2 exige une matrice RACI sécurité formalisée.\n\nUne matrice RACI, c'est simple :\nR — Responsible (qui fait)\nA — Accountable (qui décide et assume)\nC — Consulted (qui conseille)\nI — Informed (qui est tenu informé)\n\nMais appliquée à la sécurité, elle devient votre bouclier anti-chaos.\n\nCe que j'observe trop souvent :\n→ Le RSSI pense qu'il décide — mais la direction IT dit non\n→ En cas d'incident, 3 personnes donnent 3 ordres différents\n→ Les prestataires attendent qu'on leur dise qui est leur interlocuteur\n→ Le DPO et le RSSI se renvoient la balle sur les fuites de données\n\nLa matrice RACI tranche net :\n✅ Un seul A par processus — une seule personne qui décide\n✅ Des R clairement identifiés — pas de « ce n'est pas mon job »\n✅ Un lien de reporting direct aux organes de direction\n\nQuand l'incident tombe à 22h un vendredi, vous n'avez pas le temps de négocier les rôles.\n\nVotre matrice RACI n'est pas un organigramme.\nC'est votre plan de bataille.\nEt elle doit être testée avant d'en avoir besoin.",
     "hashtags": [
@@ -176,7 +194,7 @@
     "linkedin_url": ""
   },
   {
-    "id": 11,
+    "id": 12,
     "topic": "Article 5 DORA - gouvernance TIC intégrée",
     "content": "Votre gouvernance TIC est-elle vraiment intégrée à votre gouvernance globale ?\nC'est la première exigence de DORA — Article 5§1 — et c'est là que la plupart des entités échouent.\n\nL'erreur classique ?\nTraiter la sécurité IT comme un sujet technique à part.\nUn RSSI qui fait ses rapports dans son coin, des comités IT déconnectés du comité de direction, des budgets cybersécurité négociés en fin d'exercice.\n\nCe que DORA exige concrètement :\nUn cadre de gouvernance qui intègre le risque TIC dans le pilotage global de l'entreprise\nPas un comité IT de plus — une gouvernance où le risque TIC remonte naturellement au conseil d'administration\nDes rôles définis entre direction générale, fonctions de contrôle et opérationnels IT\n\nCe que j'observe sur le terrain :\n→ Des RSSI qui ne parlent jamais au comité d'audit\n→ Des politiques IT signées par la DSI… mais jamais vues par la direction générale\n→ Des organigrammes où les responsabilités TIC sont floues\n→ Des budgets cybersécurité traités comme des coûts, jamais comme des investissements stratégiques\n\nLa vraie question :\nQuand votre RSSI identifie un risque critique, combien d'échelons avant que ça arrive au directeur général ? Et en combien de temps ?\n\nSi la réponse dépasse 48h ou 2 intermédiaires, votre gouvernance TIC n'est pas intégrée.\nElle est en silo.\n\nEt DORA ne pardonne pas les silos.",
     "hashtags": [
@@ -194,7 +212,7 @@
     "linkedin_url": ""
   },
   {
-    "id": 12,
+    "id": 13,
     "topic": "Clause 4.3 ISO 27001 - périmètre SMSI mal défini",
     "content": "Je teste toujours cette question simple avant de commencer un audit :\n« Montrez-moi exactement ce que couvre votre SMSI »\n\nDans presque tous les SMSI que j'audite, le périmètre est mal défini.\n\nLa clause 4.3 d'ISO 27001 exige un domaine d'application documenté — sites, processus, systèmes, exclusions justifiées.\nCe n'est pas du formalisme.\nC'est la base de tout ce qui suit.\n\nCe que j'observe trop souvent :\n→ « Tous les systèmes d'information » — sans détail\n→ Exclusions non justifiées (« le système métier legacy n'est pas concerné »)\n→ Sites distants oubliés dans le périmètre\n→ Interfaces avec des tiers non documentées\n\nLe piège : un périmètre flou génère des non-conformités en cascade.\nComment évaluer les risques si vous ne savez pas ce que vous protégez ?\nComment former le personnel si vous ne savez pas qui est concerné ?\n\nLa règle que j'applique :\nSi un auditeur externe ne peut pas comprendre votre périmètre en 2 minutes de lecture, c'est raté.\n\nVotre domaine d'application doit être précis :\n✅ Sites physiques listés\n✅ Processus métier couverts\n✅ Applications et infrastructures détaillées\n✅ Exclusions avec justification business\n\nLe périmètre SMSI, c'est comme les fondations d'une maison.\nSi c'est bancal au départ, tout ce que vous construisez dessus le sera aussi.",
     "hashtags": [
