@@ -72,6 +72,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!popup || !overlay) return;
     if (_getConsent() === null) {
         overlay.style.display = 'block';
-        popup.style.display = 'block';
+        popup.style.display = 'flex';
     }
 });

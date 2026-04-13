@@ -59,9 +59,11 @@
     <div id="cookie-overlay" class="cookie-overlay" style="display:none;"></div>
     <div id="cookie-popup" class="cookie-popup" style="display:none;" role="dialog" aria-modal="true" aria-label="Consentement cookies">
         <div class="cookie-popup-icon" aria-hidden="true"><i class="fa-solid fa-cookie-bite"></i></div>
-        <h3 class="cookie-popup-title" data-i18n="cookies.popup_title">Ce site utilise des cookies</h3>
-        <p class="cookie-popup-text" data-i18n="cookies.popup_text">Nous utilisons uniquement des cookies essentiels au fonctionnement du site. Aucun cookie publicitaire ni de tracking.</p>
-        <p class="cookie-popup-link"><a href="/#legal" data-i18n="cookies.link">Mentions légales</a></p>
+        <div class="cookie-popup-content">
+            <h3 class="cookie-popup-title" data-i18n="cookies.popup_title">Ce site utilise des cookies</h3>
+            <p class="cookie-popup-text" data-i18n="cookies.popup_text">Nous utilisons uniquement des cookies essentiels au fonctionnement du site. Aucun cookie publicitaire ni de tracking.</p>
+            <p class="cookie-popup-link"><a href="/#legal" data-i18n="cookies.link">Mentions légales</a></p>
+        </div>
         <div class="cookie-popup-actions">
             <button onclick="acceptCookies()" class="btn cookie-btn-accept" data-i18n="cookies.accept">Accepter</button>
             <button onclick="refuseCookies()" class="btn cookie-btn-refuse" data-i18n="cookies.refuse">Refuser</button>
