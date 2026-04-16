@@ -103,15 +103,15 @@
     <header>
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="cyber.html" class="nav-logo" data-i18n-html="common.brand">Agile<span>Vizion</span></a>
+            <a href="pentest.html" class="nav-logo" data-i18n-html="common.brand">Agile<span>Vizion</span></a>
             <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-menu" id="nav-menu">
+                <li><a href="pentest.html" data-i18n="nav.pentest">Pentest & Audit Sécu</a></li>
                 <li><a href="cyber.html" class="active" data-i18n="nav.cyber">GRC Cybersécurité</a></li>
                 <li><a href="ia.html" data-i18n="nav.ia">IA Agentique</a></li>
                 <li><a href="blog.html" data-i18n="nav.blog">Publications</a></li>
-                <li><a href="/#why-me" data-i18n="nav.together">Travailler ensemble</a></li>
                 <li class="nav-lang">
                     <button onclick="I18n.switchLanguage('fr')" class="lang-btn" id="lang-fr">FR</button>
                     <button onclick="I18n.switchLanguage('en')" class="lang-btn" id="lang-en">EN</button>
@@ -134,15 +134,6 @@
                 <p class="hero-subtitle animate-in" data-i18n="grc.hero_subtitle">
                     DORA (Digital Operational Resilience Act), NIS&nbsp;2, ISO&nbsp;27001, RGPD — chaque mois une nouvelle exigence, chaque manquement une sanction. Je vous guide de l'audit à la conformité.
                 </p>
-                <div class="hero-video animate-in">
-                    <div class="video-placeholder" style="display:flex" aria-label="Production des vidéos de présentation en cours">
-                        <div class="video-placeholder-brand">Agile<span>Vizion</span></div>
-                        <div class="video-placeholder-play">
-                            <i class="fa-solid fa-film" aria-hidden="true"></i>
-                        </div>
-                        <span>Production des vidéos de présentation en cours</span>
-                    </div>
-                </div>
                 <div class="hero-cta animate-in">
                     <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-primary btn-lg" data-i18n="common.book_meeting">Réserver un rendez-vous</a>
                 </div>
@@ -263,137 +254,61 @@
     </section>
 
     <!-- ======================================================
-         SECTION "PÉRIMÈTRE D'INTERVENTION" — 4 normes détaillées
+         SECTION "PÉRIMÈTRE D'INTERVENTION" — 4 normes condensées
          ====================================================== -->
     <section class="section section-alt" id="perimetre" aria-labelledby="scope-heading">
         <div class="container">
             <h2 class="section-title animate-in" id="scope-heading" data-i18n="grc.scope_title">Périmètre d'intervention</h2>
             <p class="section-subtitle animate-in" data-i18n="grc.scope_subtitle">Un seul consultant pour DORA, NIS 2, ISO 27001 et ISO 22301 — pas de coordination entre 3 cabinets, pas de perte de contexte entre les phases.</p>
 
-            <!-- ISO 27001 -->
-            <div class="scope-block animate-in" id="scope-iso27001">
-                <div class="scope-header">
-                    <div class="scope-badge scope-badge--iso"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
-                    <div>
-                        <h3 data-i18n="grc.scope_iso27001_title">ISO 27001 — SMSI</h3>
-                        <p class="scope-ref" data-i18n="grc.scope_iso27001_ref">Système de Management de la Sécurité de l'Information · ISO 27001:2022 · ISO 27002 · ISO 27005 · ISO 19011</p>
-                    </div>
-                </div>
-                <div class="scope-columns">
-                    <div class="scope-col">
-                        <h4 data-i18n="grc.scope_iso27001_impl_title"><i class="fa-solid fa-cubes" aria-hidden="true"></i> Implémentation du SMSI</h4>
-                        <ul>
-                            <li data-i18n="grc.scope_iso27001_impl_1">Périmètre, contexte de l'organisation et parties intéressées (clauses 4.1 à 4.4)</li>
-                            <li data-i18n="grc.scope_iso27001_impl_2">Politique de sécurité, objectifs et leadership (clauses 5 et 6)</li>
-                            <li data-i18n="grc.scope_iso27001_impl_3">Appréciation et traitement des risques (clause 6.1.2 / ISO 27005)</li>
-                            <li data-i18n="grc.scope_iso27001_impl_4">DdA (Déclaration d'Applicabilité) et sélection des 93 contrôles Annexe A (ISO 27002)</li>
-                            <li data-i18n="grc.scope_iso27001_impl_5">Documentation opérationnelle : registre des risques, procédures, compétences</li>
-                        </ul>
-                    </div>
-                    <div class="scope-col">
-                        <h4 data-i18n="grc.scope_iso27001_audit_title"><i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i> Audit & amélioration continue</h4>
-                        <ul>
-                            <li data-i18n="grc.scope_iso27001_audit_1">Audit interne conforme ISO 19011 : entretiens, vérification sur pièces, cotation des non-conformités (mineur / majeur / critique)</li>
-                            <li data-i18n="grc.scope_iso27001_audit_2">Évaluation de la performance et revue de direction (clauses 9.1 à 9.3)</li>
-                            <li data-i18n="grc.scope_iso27001_audit_3">Pilotage de la remédiation et accompagnement certification</li>
-                            <li data-i18n="grc.scope_iso27001_audit_4">Audits de surveillance et re-certification (cycle triennal)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <div class="cards-grid cards-2">
+                <!-- ISO 27001 -->
+                <article class="card animate-in">
+                    <div class="card-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
+                    <h3 data-i18n="grc.scope_iso27001_title">ISO 27001 — SMSI</h3>
+                    <p class="scope-ref" data-i18n="grc.scope_iso27001_ref">Système de Management de la Sécurité de l'Information · ISO 27001:2022 · ISO 27002 · ISO 27005 · ISO 19011</p>
+                    <ul class="norm-list">
+                        <li data-i18n="grc.scope_iso27001_s1">Implémentation SMSI : périmètre, politique, risques, DdA, 93 contrôles Annexe A</li>
+                        <li data-i18n="grc.scope_iso27001_s2">Audit interne ISO 19011 : cotation non-conformités, revue de direction</li>
+                        <li data-i18n="grc.scope_iso27001_s3">Remédiation, accompagnement certification et cycle triennal</li>
+                    </ul>
+                </article>
 
-            <!-- DORA -->
-            <div class="scope-block animate-in" id="scope-dora">
-                <div class="scope-header">
-                    <div class="scope-badge scope-badge--dora"><i class="fa-solid fa-landmark" aria-hidden="true"></i></div>
-                    <div>
-                        <h3 data-i18n="grc.scope_dora_title">DORA — Résilience opérationnelle numérique</h3>
-                        <p class="scope-ref" data-i18n="grc.scope_dora_ref">Digital Operational Resilience Act · Règlement UE 2022/2554 · RTS/ITS · Circulaires CSSF</p>
-                    </div>
-                </div>
-                <ul class="scope-list">
-                    <li data-i18n="grc.scope_dora_1">Gap analysis sur les 5 piliers : gestion des risques TIC, incidents, tests de résilience, risques tiers, partage d'information</li>
-                    <li data-i18n="grc.scope_dora_2">Cotation de maturité 1 à 4 par exigence — identification des écarts critiques</li>
-                    <li data-i18n="grc.scope_dora_3">Plan de remédiation priorisé avec feuille de route d'implémentation</li>
-                    <li data-i18n="grc.scope_dora_4">Corpus documentaire complet : Règlement DORA, RTS/ITS (Regulatory/Implementing Technical Standards), Circulaires CSSF</li>
-                    <li data-i18n="grc.scope_dora_5">Cadrage prestataire TIC critique : clauses contractuelles, due diligence, stratégie de sortie</li>
-                </ul>
-            </div>
+                <!-- DORA -->
+                <article class="card animate-in">
+                    <div class="card-icon"><i class="fa-solid fa-landmark" aria-hidden="true"></i></div>
+                    <h3 data-i18n="grc.scope_dora_title">DORA — Résilience opérationnelle numérique</h3>
+                    <p class="scope-ref" data-i18n="grc.scope_dora_ref">Digital Operational Resilience Act · Règlement UE 2022/2554 · RTS/ITS · Circulaires CSSF</p>
+                    <ul class="norm-list">
+                        <li data-i18n="grc.scope_dora_s1">Gap analysis sur les 5 piliers : risques TIC, incidents, résilience, tiers, partage</li>
+                        <li data-i18n="grc.scope_dora_s2">Cotation de maturité 1 à 4 + plan de remédiation priorisé</li>
+                        <li data-i18n="grc.scope_dora_s3">Cadrage prestataire TIC critique : clauses, due diligence, stratégie de sortie</li>
+                    </ul>
+                </article>
 
-            <!-- NIS 2 -->
-            <div class="scope-block animate-in" id="scope-nis2">
-                <div class="scope-header">
-                    <div class="scope-badge scope-badge--nis2"><i class="fa-solid fa-building-shield" aria-hidden="true"></i></div>
-                    <div>
-                        <h3 data-i18n="grc.scope_nis2_title">NIS 2 — Sécurité des réseaux et de l'information</h3>
-                        <p class="scope-ref" data-i18n="grc.scope_nis2_ref">Network and Information Security Directive 2 · Directive UE 2022/2555 · Art. 21 (10 mesures)</p>
-                    </div>
-                </div>
-                <ul class="scope-list">
-                    <li data-i18n="grc.scope_nis2_1">Évaluation des 10 mesures de l'Art. 21 : politiques de sécurité, analyse de risques, gestion des incidents, continuité d'activité</li>
-                    <li data-i18n="grc.scope_nis2_2">Sécurité de la chaîne d'approvisionnement (supply chain) et gestion des prestataires</li>
-                    <li data-i18n="grc.scope_nis2_3">Notification d'incidents : procédures 24h (alerte précoce) / 72h (notification complète)</li>
-                    <li data-i18n="grc.scope_nis2_4">MFA (authentification multi-facteurs), chiffrement, contrôle d'accès</li>
-                    <li data-i18n="grc.scope_nis2_5">Formation cybersécurité des dirigeants (obligation légale NIS 2)</li>
-                </ul>
-            </div>
+                <!-- NIS 2 -->
+                <article class="card animate-in">
+                    <div class="card-icon"><i class="fa-solid fa-building-shield" aria-hidden="true"></i></div>
+                    <h3 data-i18n="grc.scope_nis2_title">NIS 2 — Sécurité des réseaux et de l'information</h3>
+                    <p class="scope-ref" data-i18n="grc.scope_nis2_ref">Network and Information Security Directive 2 · Directive UE 2022/2555 · Art. 21 (10 mesures)</p>
+                    <ul class="norm-list">
+                        <li data-i18n="grc.scope_nis2_s1">10 mesures Art. 21 : politiques, risques, incidents, continuité, supply chain</li>
+                        <li data-i18n="grc.scope_nis2_s2">Notification d'incidents 24h / 72h + MFA, chiffrement, contrôle d'accès</li>
+                        <li data-i18n="grc.scope_nis2_s3">Formation cybersécurité obligatoire des dirigeants</li>
+                    </ul>
+                </article>
 
-            <!-- ISO 22301 -->
-            <div class="scope-block animate-in" id="scope-iso22301">
-                <div class="scope-header">
-                    <div class="scope-badge scope-badge--bcp"><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i></div>
-                    <div>
-                        <h3 data-i18n="grc.scope_22301_title">ISO 22301 — Continuité d'activité</h3>
-                        <p class="scope-ref" data-i18n="grc.scope_22301_ref">ISO 22301:2019 · ISO 22313 · ISO 22317 (BIA) · ISO 27031 (préparation TIC)</p>
-                    </div>
-                </div>
-                <div class="scope-columns">
-                    <div class="scope-col">
-                        <h4 data-i18n="grc.scope_22301_bia_title"><i class="fa-solid fa-chart-bar" aria-hidden="true"></i> BIA — Business Impact Analysis</h4>
-                        <ul>
-                            <li data-i18n="grc.scope_22301_bia_1">Analyse activité par activité : identification des processus critiques</li>
-                            <li data-i18n="grc.scope_22301_bia_2">Définition des KPI par activité critique :</li>
-                        </ul>
-                        <div class="kpi-tags">
-                            <span class="kpi-tag"><abbr title="Maximum Tolerable Period of Disruption — Durée maximale d'interruption tolérable">MTPD</abbr></span>
-                            <span class="kpi-tag"><abbr title="Recovery Time Objective — Objectif de délai de reprise">RTO</abbr></span>
-                            <span class="kpi-tag"><abbr title="Recovery Point Objective — Objectif de point de reprise (perte de données acceptable)">RPO</abbr></span>
-                            <span class="kpi-tag"><abbr title="Recovery Time and Point Objective — Objectif combiné de délai et point de reprise">RTPO</abbr></span>
-                        </div>
-                        <ul>
-                            <li data-i18n="grc.scope_22301_bia_3">Validation des objectifs par la direction</li>
-                        </ul>
-                    </div>
-                    <div class="scope-col">
-                        <h4 data-i18n="grc.scope_22301_bcp_title"><i class="fa-solid fa-file-shield" aria-hidden="true"></i> BCP — Plan métier de continuité</h4>
-                        <ul>
-                            <li data-i18n="grc.scope_22301_bcp_1">9 éléments obligatoires : périmètre, rôles/RACI, activation, procédures dégradées, locaux de repli, ressources critiques, arbre d'appel, fournisseurs alternatifs, retour à la normale</li>
-                            <li data-i18n="grc.scope_22301_bcp_2">Exécutable sans expert ni réseau par tout collaborateur désigné</li>
-                        </ul>
-                        <h4 data-i18n="grc.scope_22301_drp_title"><i class="fa-solid fa-server" aria-hidden="true"></i> DRP — Plan technique de reprise IT</h4>
-                        <ul>
-                            <li data-i18n="grc.scope_22301_drp_1">Basculement site de secours, restauration sauvegardes, retour site principal</li>
-                            <li data-i18n="grc.scope_22301_drp_2">RTO/RPO alignés sur BIA — chaque étape exécutable par technicien IT sans appel externe</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="scope-tests animate-in">
-                    <h4 data-i18n="grc.scope_22301_tests_title"><i class="fa-solid fa-vial" aria-hidden="true"></i> Tests & Validation</h4>
-                    <div class="scope-test-items">
-                        <div class="scope-test-item">
-                            <strong data-i18n="grc.scope_22301_test_1_title">Tabletop exercise</strong>
-                            <span data-i18n="grc.scope_22301_test_1_desc">Scénario fictif, test chaîne de décision et angles morts BCP</span>
-                        </div>
-                        <div class="scope-test-item">
-                            <strong data-i18n="grc.scope_22301_test_2_title">Test technique DRP</strong>
-                            <span data-i18n="grc.scope_22301_test_2_desc">Backup/restore, basculement, coupure réelle</span>
-                        </div>
-                        <div class="scope-test-item">
-                            <strong data-i18n="grc.scope_22301_test_3_title">Mesure RTO/RPO réels</strong>
-                            <span data-i18n="grc.scope_22301_test_3_desc">Rapport écarts vs objectifs BIA + plan de remédiation</span>
-                        </div>
-                    </div>
-                </div>
+                <!-- ISO 22301 -->
+                <article class="card animate-in">
+                    <div class="card-icon"><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i></div>
+                    <h3 data-i18n="grc.scope_22301_title">ISO 22301 — Continuité d'activité</h3>
+                    <p class="scope-ref" data-i18n="grc.scope_22301_ref">ISO 22301:2019 · ISO 22313 · ISO 22317 (BIA) · ISO 27031 (préparation TIC)</p>
+                    <ul class="norm-list">
+                        <li data-i18n="grc.scope_22301_s1">BIA (Business Impact Analysis) : processus critiques, MTPD, RTO, RPO</li>
+                        <li data-i18n="grc.scope_22301_s2">BCP (Plan de continuité) + DRP (Plan de reprise IT)</li>
+                        <li data-i18n="grc.scope_22301_s3">Tests : tabletop exercise, test DRP, mesure RTO/RPO réels</li>
+                    </ul>
+                </article>
             </div>
 
         </div>

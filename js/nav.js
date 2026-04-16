@@ -56,6 +56,8 @@ document.addEventListener('DOMContentLoaded', function () {
         var activeHref = null;
         if (path === '/' || path.endsWith('/index.html') || path.endsWith('/agilevizion-2/')) {
             activeHref = '/';
+        } else if (path.includes('pentest.html')) {
+            activeHref = 'pentest.html';
         } else if (path.includes('cyber.html')) {
             activeHref = 'cyber.html';
         } else if (path.includes('ia.html')) {
