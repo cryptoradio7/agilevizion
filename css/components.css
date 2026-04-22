@@ -139,21 +139,28 @@
     }
 }
 
-/* --- CTA Contact Info --- */
-.cta-contact-info {
-    margin-top: var(--space-4);
+/* --- CTA Links (contact section) --- */
+.cta-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-6);
+    flex-wrap: wrap;
+}
+
+.cta-link-item {
     color: var(--text-inverse);
     font-size: var(--font-size-sm);
-}
-
-.cta-contact-info a {
-    color: var(--text-inverse);
-    opacity: 0.85;
+    font-weight: var(--font-weight-medium);
+    opacity: 0.9;
     transition: opacity var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
 }
 
-.cta-contact-info a:hover {
+.cta-link-item:hover {
     opacity: 1;
+    color: var(--text-inverse);
 }
 
 /* --- Card Link --- */
