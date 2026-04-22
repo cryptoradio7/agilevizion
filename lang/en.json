@@ -21,7 +21,7 @@
   },
   "home": {
     "title": "AgileVizion — IT Project & Transformation Manager",
-    "hero_title": "Your IT is disorganized, non-compliant or stuck in transition?<br>→ I fix that.",
+    "hero_title": "Your IT is disorganized, non-compliant or stuck in transition?<br><i class=\"fa-solid fa-arrow-right\" style=\"color: var(--color-primary); font-size: 0.7em;\"></i> I fix that.",
     "hero_subtitle": "Emmanuel Genesteix — IT Project & Transformation Manager, Freelance. I take ownership, coordinate the teams and deliver results. Migration, governance, compliance, digitalization & AI.",
     "hero_cta": "<i class=\"fa-solid fa-envelope\"></i> Contact me",
     "nav_areas": "Areas of Intervention",

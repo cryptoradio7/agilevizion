@@ -21,7 +21,7 @@
   },
   "home": {
     "title": "AgileVizion — IT Project & Transformation Manager",
-    "hero_title": "Votre IT est désorganisé, non conforme ou bloqué en transition ?<br>→ Je m'en occupe.",
+    "hero_title": "Votre IT est désorganisé, non conforme ou bloqué en transition ?<br><i class=\"fa-solid fa-arrow-right\" style=\"color: var(--color-primary); font-size: 0.7em;\"></i> Je m'en occupe.",
     "hero_subtitle": "Emmanuel Genesteix — IT Project & Transformation Manager, Freelance. Je prends en main, je coordonne les équipes et je livre des résultats. Migration, gouvernance, conformité, digitalisation & IA.",
     "hero_cta": "<i class=\"fa-solid fa-envelope\"></i> Me contacter",
     "nav_areas": "Domaines d'intervention",
