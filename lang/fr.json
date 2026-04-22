@@ -6,7 +6,7 @@
     "phone": "+352.661.78.08.07",
     "location": "Luxembourg (interventions Europe)",
     "copyright": "© 2024-2030 AgileVizion",
-    "book_meeting": "Réserver un rendez-vous",
+    "book_meeting": "<i class=\"fa-solid fa-envelope\"></i> Me contacter",
     "video_coming": "Présentation vidéo à venir",
     "footer_legal": "Mentions légales",
     "footer_phone": "+352.661.78.08.07"

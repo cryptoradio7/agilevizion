@@ -6,7 +6,7 @@
     "phone": "+352.661.78.08.07",
     "location": "Luxembourg (Europe-wide engagements)",
     "copyright": "© 2024-2030 AgileVizion",
-    "book_meeting": "Book a meeting",
+    "book_meeting": "<i class=\"fa-solid fa-envelope\"></i> Contact me",
     "video_coming": "Video presentation coming soon",
     "footer_legal": "Legal notice",
     "footer_phone": "+352.661.78.08.07"
