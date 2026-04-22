@@ -37,6 +37,7 @@ Thumbs.db
 # Test artifacts (screenshots, rapports)
 test-results/
 *.png
+!images/*.png
 
 # Videos (too large for GitHub Pages)
 *.mp4

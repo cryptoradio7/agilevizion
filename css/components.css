@@ -63,6 +63,56 @@
     margin-bottom: var(--space-1);
 }
 
+/* --- Hero Split (landing page: texte + photo) --- */
+.hero-split {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+}
+
+.hero-split .hero-content {
+    flex: 1;
+    text-align: left;
+}
+
+.hero-split .hero-subtitle {
+    margin-left: 0;
+}
+
+.hero-split .hero-cta {
+    justify-content: flex-start;
+}
+
+.hero-photo {
+    flex-shrink: 0;
+}
+
+.hero-portrait {
+    width: 150px;
+    height: auto;
+    border-radius: var(--radius-xl);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+}
+
+@media (max-width: 767px) {
+    .hero-split {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-split .hero-content {
+        text-align: center;
+    }
+
+    .hero-split .hero-cta {
+        justify-content: center;
+    }
+
+    .hero-portrait {
+        width: 120px;
+    }
+}
+
 /* --- CTA Contact Info --- */
 .cta-contact-info {
     margin-top: var(--space-4);
