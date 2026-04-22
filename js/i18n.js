@@ -6,9 +6,9 @@
  */
 
 var I18n = {
-    currentLang: 'fr',
+    currentLang: 'en',
     translations: {},
-    defaultLang: 'fr',
+    defaultLang: 'en',
     supportedLangs: ['fr', 'en'],
 
     /**
