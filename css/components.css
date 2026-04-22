@@ -63,6 +63,23 @@
     margin-bottom: var(--space-1);
 }
 
+/* --- CTA Contact Info --- */
+.cta-contact-info {
+    margin-top: var(--space-4);
+    color: var(--text-inverse);
+    font-size: var(--font-size-sm);
+}
+
+.cta-contact-info a {
+    color: var(--text-inverse);
+    opacity: 0.85;
+    transition: opacity var(--transition-fast);
+}
+
+.cta-contact-info a:hover {
+    opacity: 1;
+}
+
 /* --- Card Link --- */
 .card-link {
     display: inline-block;

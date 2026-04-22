@@ -71,8 +71,9 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/cookies.css">
+    <link rel="stylesheet" href="css/section-nav.css">
 </head>
-<body>
+<body data-page-title="home.title">
 
     <!-- Cookie Consent Popup -->
     <div id="cookie-overlay" class="cookie-overlay" style="display:none;"></div>
@@ -98,6 +99,7 @@
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="active">IT Transformation</a></li>
                 <li><a href="cyber.html" data-i18n="nav.cyber">GRC Cybersécurité</a></li>
                 <li><a href="ia.html" data-i18n="nav.ia">IA Agentique</a></li>
                 <li><a href="blog.html">Blog</a></li>
@@ -111,13 +113,16 @@
     </header>
 
     <main>
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
+    <!-- Hero -->
+    <section class="hero hero-page" id="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title animate-in">Emmanuel Genesteix</h1>
-                <p class="hero-role animate-in" style="font-size: var(--text-xl); font-weight: 600; color: var(--color-primary); margin-bottom: var(--space-4);">IT Project & Transformation Manager — Freelance</p>
-                <p class="hero-subtitle animate-in">I help organisations structure, transform and secure their IT. Whether it's a migration, a merger, a compliance gap or a lack of governance. I take ownership, coordinate the teams and deliver results.</p>
+                <h1 class="hero-title animate-in">
+                    Your IT is disorganized, non-compliant or stuck in transition? I fix that.
+                </h1>
+                <p class="hero-subtitle animate-in">
+                    Emmanuel Genesteix — IT Project & Transformation Manager, Freelance. I take ownership, coordinate the teams and deliver results. Migration, governance, compliance, digitalization & AI.
+                </p>
                 <div class="hero-cta animate-in">
                     <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-primary btn-lg"><i class="fa-solid fa-envelope"></i> Contact me</a>
                 </div>
@@ -125,11 +130,21 @@
         </div>
     </section>
 
+    <!-- Section Navigation -->
+    <nav class="section-nav" aria-label="Navigation sections">
+        <div class="section-nav-inner">
+            <a class="section-nav-link" href="#areas">Areas of Intervention</a>
+            <a class="section-nav-link" href="#engagements">Selected Engagements</a>
+            <a class="section-nav-link" href="#certifications">Certifications</a>
+            <a class="section-nav-link" href="#contact">Contact</a>
+        </div>
+    </nav>
+
     <!-- Areas of Intervention -->
     <section class="section" id="areas">
         <div class="container">
             <h2 class="section-title animate-in">Areas of Intervention</h2>
-            <div class="why-grid" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="why-grid">
                 <article class="why-card animate-in">
                     <div class="why-icon"><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i></div>
                     <h3>IT Transformation & Migration</h3>
@@ -167,7 +182,7 @@
     </section>
 
     <!-- Selected Engagements -->
-    <section class="section" id="engagements" style="background: var(--bg-secondary);">
+    <section class="section section-alt" id="engagements">
         <div class="container">
             <h2 class="section-title animate-in">Selected Engagements</h2>
             <div class="engagements-list">
@@ -265,9 +280,9 @@
             <div class="hero-cta animate-in">
                 <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-primary btn-lg"><i class="fa-solid fa-envelope"></i> emmanuel.genesteix@agilevizion.com</a>
             </div>
-            <p class="animate-in" style="margin-top: var(--space-4); color: var(--text-secondary);">
+            <p class="cta-contact-info animate-in">
                 <i class="fa-solid fa-phone" aria-hidden="true"></i> +352 661.78.08.07 ·
-                <a href="https://www.linkedin.com/in/genesteix-emmanuel" target="_blank" rel="noopener" style="color: var(--text-secondary);"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+                <a href="https://www.linkedin.com/in/genesteix-emmanuel" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
             </p>
         </div>
     </section>
