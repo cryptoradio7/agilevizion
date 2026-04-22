@@ -68,15 +68,21 @@
     display: flex;
     align-items: center;
     gap: var(--space-8);
+    max-width: 960px;
+    margin: 0 auto;
 }
 
 .hero-split .hero-content {
     flex: 1;
+    min-width: 0;
     text-align: left;
+    max-width: none;
+    margin: 0;
 }
 
 .hero-split .hero-subtitle {
     margin-left: 0;
+    margin-right: 0;
 }
 
 .hero-split .hero-cta {
@@ -85,6 +91,7 @@
 
 .hero-photo {
     flex-shrink: 0;
+    align-self: center;
 }
 
 .hero-portrait {
