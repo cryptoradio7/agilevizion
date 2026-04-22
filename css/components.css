@@ -2,6 +2,82 @@
    AgileVizion 2 — Components
    ============================================ */
 
+/* --- Engagements Section --- */
+.engagements-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.engagement-item {
+    padding: var(--space-6);
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-gray-200);
+    transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.engagement-item:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.engagement-header {
+    margin-bottom: var(--space-3);
+}
+
+.engagement-header h3 {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.engagement-company {
+    display: inline-block;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-primary);
+    margin-top: var(--space-1);
+}
+
+.engagement-date {
+    display: block;
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    margin-top: var(--space-1);
+}
+
+.engagement-details {
+    list-style: disc;
+    padding-left: var(--space-5);
+    margin: 0;
+}
+
+.engagement-details li {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-1);
+}
+
+/* --- Card Link --- */
+.card-link {
+    display: inline-block;
+    margin-top: var(--space-3);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
+.card-link:hover {
+    color: var(--color-primary-dark);
+}
+
 /* --- Trusted By Section --- */
 .section-trusted {
     padding: var(--space-10) 0;

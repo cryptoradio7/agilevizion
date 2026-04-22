@@ -6,20 +6,18 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' https://agilevizion.com data:; connect-src 'self'; object-src 'none';">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-    <meta http-equiv="refresh" content="0;url=pentest.html">
-    <title>AgileVizion — GRC Cybersécurité & IA Agentique</title>
+    <title>AgileVizion — IT Project & Transformation Manager</title>
 
     <!-- SEO Meta -->
-    <meta name="description" content="AgileVizion — Conseil en GRC Cybersécurité et IA Agentique. DORA, NIS 2, ISO 27001, RGPD. Simulateur de conformité gratuit.">
+    <meta name="description" content="AgileVizion — Emmanuel Genesteix, IT Project & Transformation Manager. IT governance, migration, compliance, digitalization & AI. Luxembourg.">
     <meta name="author" content="Emmanuel Genesteix">
-    <meta property="og:title" content="AgileVizion — GRC Cybersécurité & IA Agentique">
-    <meta property="og:description" content="Conseil en GRC Cybersécurité et IA Agentique. Simulateur de conformité gratuit.">
+    <meta property="og:title" content="AgileVizion — IT Project & Transformation Manager">
+    <meta property="og:description" content="I help organisations structure, transform and secure their IT. Migration, governance, compliance, digitalization & AI.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://agilevizion.com/">
-    <meta property="og:image" content="https://agilevizion.com/images/photo_emmanuel.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AgileVizion — GRC Cybersécurité & IA Agentique">
-    <meta name="twitter:description" content="Conseil en GRC Cybersécurité et IA Agentique. Simulateur de conformité gratuit.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="AgileVizion — IT Project & Transformation Manager">
+    <meta name="twitter:description" content="I help organisations structure, transform and secure their IT.">
     <link rel="canonical" href="https://agilevizion.com/">
 
     <!-- Structured Data -->
@@ -31,8 +29,7 @@
                 "@type": "Organization",
                 "name": "AgileVizion",
                 "url": "https://agilevizion.com",
-                "logo": "https://agilevizion.com/images/photo_emmanuel.png",
-                "description": "Conseil en GRC Cybersécurité et IA Agentique",
+                "description": "IT Project & Transformation Manager — Freelance",
                 "founder": {
                     "@type": "Person",
                     "name": "Emmanuel Genesteix"
@@ -53,32 +50,6 @@
                 "sameAs": [
                     "https://www.linkedin.com/in/genesteix-emmanuel"
                 ]
-            },
-            {
-                "@type": "Service",
-                "name": "GRC Cybersécurité",
-                "provider": {
-                    "@type": "Organization",
-                    "name": "AgileVizion",
-                    "url": "https://agilevizion.com"
-                },
-                "description": "Audit et mise en conformité DORA, NIS 2, ISO 27001, RGPD — diagnostic, audit terrain, feuille de route priorisée",
-                "areaServed": "Europe",
-                "serviceType": "Audit GRC Cybersécurité",
-                "url": "https://agilevizion.com/cyber.html"
-            },
-            {
-                "@type": "Service",
-                "name": "IA Agentique",
-                "provider": {
-                    "@type": "Organization",
-                    "name": "AgileVizion",
-                    "url": "https://agilevizion.com"
-                },
-                "description": "Automatisation des tâches répétitives avec des agents IA dédiés — diagnostic, construction, déploiement",
-                "areaServed": "Europe",
-                "serviceType": "IA Agentique & Automatisation",
-                "url": "https://agilevizion.com/ia.html"
             }
         ]
     }
@@ -100,9 +71,8 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/cookies.css">
-    <link rel="stylesheet" href="css/section-nav.css">
 </head>
-<body data-page-title="common.site_title">
+<body>
 
     <!-- Cookie Consent Popup -->
     <div id="cookie-overlay" class="cookie-overlay" style="display:none;"></div>
@@ -123,15 +93,14 @@
     <header>
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="pentest.html" class="nav-logo" data-i18n-html="common.brand">Agile<span>Vizion</span></a>
+            <a href="index.html" class="nav-logo" data-i18n-html="common.brand">Agile<span>Vizion</span></a>
             <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="pentest.html" data-i18n="nav.pentest">Pentest & Audit Sécu</a></li>
                 <li><a href="cyber.html" data-i18n="nav.cyber">GRC Cybersécurité</a></li>
                 <li><a href="ia.html" data-i18n="nav.ia">IA Agentique</a></li>
-                <li><a href="blog.html" data-i18n="nav.blog">Publications</a></li>
+                <li><a href="blog.html">Blog</a></li>
                 <li class="nav-lang">
                     <button onclick="I18n.switchLanguage('fr')" class="lang-btn" id="lang-fr">FR</button>
                     <button onclick="I18n.switchLanguage('en')" class="lang-btn" id="lang-en">EN</button>
@@ -146,31 +115,131 @@
     <section class="hero" id="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title animate-in" data-i18n="landing.hero_title">Conformité cyber &amp; IA agentique — un consultant, des résultats</h1>
-                <p class="hero-subtitle animate-in" data-i18n="landing.hero_subtitle">DORA, NIS 2, ISO 27001, RGPD — je vous accompagne de l'audit à la conformité. Et j'automatise vos processus métier avec l'IA agentique.</p>
+                <h1 class="hero-title animate-in">Emmanuel Genesteix</h1>
+                <p class="hero-role animate-in" style="font-size: var(--text-xl); font-weight: 600; color: var(--color-primary); margin-bottom: var(--space-4);">IT Project & Transformation Manager — Freelance</p>
+                <p class="hero-subtitle animate-in">I help organisations structure, transform and secure their IT. Whether it's a migration, a merger, a compliance gap or a lack of governance. I take ownership, coordinate the teams and deliver results.</p>
                 <div class="hero-cta animate-in">
-                    <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-primary btn-lg" data-i18n="common.book_meeting">Réserver un rendez-vous</a>
+                    <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-primary btn-lg"><i class="fa-solid fa-envelope"></i> Contact me</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Trusted By Section -->
-    <section class="section-trusted" id="trusted-by" aria-label="Certifications et expérience">
+    <!-- Areas of Intervention -->
+    <section class="section" id="areas">
         <div class="container">
-            <p class="trusted-headline" data-i18n="landing.trusted_headline">Consultant certifié · 20+ missions réalisées au Luxembourg et en Europe</p>
-            <div class="trusted-logos" role="list" aria-label="Certifications et expérience professionnelle">
+            <h2 class="section-title animate-in">Areas of Intervention</h2>
+            <div class="why-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <article class="why-card animate-in">
+                    <div class="why-icon"><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i></div>
+                    <h3>IT Transformation & Migration</h3>
+                    <p>ServiceNow, CRM, data migration, system consolidation</p>
+                </article>
+                <article class="why-card animate-in">
+                    <div class="why-icon"><i class="fa-solid fa-sitemap" aria-hidden="true"></i></div>
+                    <h3>IT Governance & PMO</h3>
+                    <p>Structuring from scratch, project portfolio, budget, executive reporting</p>
+                </article>
+                <article class="why-card animate-in">
+                    <div class="why-icon"><i class="fa-solid fa-handshake" aria-hidden="true"></i></div>
+                    <h3>Service Delivery Management</h3>
+                    <p>SLA, vendor governance, KPI dashboards, continuous improvement</p>
+                </article>
+                <article class="why-card animate-in">
+                    <div class="why-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
+                    <h3>Compliance & Risk Management</h3>
+                    <p>ISO 27001, NIS2, DORA, audit preparation, remediation</p>
+                    <a href="cyber.html" class="card-link">Learn more →</a>
+                </article>
+                <article class="why-card animate-in">
+                    <div class="why-icon"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></div>
+                    <h3>Business Digitalization</h3>
+                    <p>Front-end digitalization, process automation, vendor selection</p>
+                </article>
+                <article class="why-card animate-in">
+                    <div class="why-icon"><i class="fa-solid fa-robot" aria-hidden="true"></i></div>
+                    <h3>AI Facilitator</h3>
+                    <p>AI agents for cybersecurity, GRC compliance audit automation, AI-assisted programming</p>
+                    <a href="ia.html" class="card-link">Learn more →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Selected Engagements -->
+    <section class="section" id="engagements" style="background: var(--bg-secondary);">
+        <div class="container">
+            <h2 class="section-title animate-in">Selected Engagements</h2>
+            <div class="engagements-list">
+
+                <article class="engagement-item animate-in">
+                    <div class="engagement-header">
+                        <h3>IT Governance, Compliance & AI</h3>
+                        <span class="engagement-company">AgileVizion</span>
+                        <span class="engagement-date">2024–Present · Luxembourg</span>
+                    </div>
+                    <ul class="engagement-details">
+                        <li>ISO 27001, NIS2 and DORA gap analysis, audit preparation and remediation planning</li>
+                        <li>AI agents for cybersecurity, GRC audit automation, AI-assisted programming</li>
+                    </ul>
+                </article>
+
+                <article class="engagement-item animate-in">
+                    <div class="engagement-header">
+                        <h3>Service Delivery Transformation</h3>
+                        <span class="engagement-company">European Commission, DG DIGIT</span>
+                        <span class="engagement-date">2020–2023 · Luxembourg</span>
+                    </div>
+                    <ul class="engagement-details">
+                        <li>IT service orchestration platform for 20+ directorates-general and 2,000 users — automation rate raised to over 80%</li>
+                        <li>ServiceNow migration (€500K) — BMC replacement, CMDB migration, service catalogue redesign</li>
+                        <li>Vendor management of 14 ICT contractors, business continuity planning, ISO 27001 gap analysis</li>
+                    </ul>
+                </article>
+
+                <article class="engagement-item animate-in">
+                    <div class="engagement-header">
+                        <h3>Business Digitalization</h3>
+                        <span class="engagement-company">Société Générale, Sogelife</span>
+                        <span class="engagement-date">2017–2020 · Luxembourg</span>
+                    </div>
+                    <ul class="engagement-details">
+                        <li>Executive Board approval for digital roadmap — front-end digitalization, eIDAS compliance across 5 countries</li>
+                    </ul>
+                </article>
+
+                <article class="engagement-item animate-in">
+                    <div class="engagement-header">
+                        <h3>IT Governance, PMO & Data Migration</h3>
+                        <span class="engagement-company">Luxaviation Group, Q-Leap</span>
+                        <span class="engagement-date">2014–2017 · Luxembourg</span>
+                    </div>
+                    <ul class="engagement-details">
+                        <li>IT governance framework from scratch (COBIT 5), PMO, 15 projects portfolio (€600K → €1.8M)</li>
+                        <li>CRM data migration — local CRMs consolidated into Salesforce group-wide</li>
+                    </ul>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="section-trusted" id="certifications" aria-label="Certifications">
+        <div class="container">
+            <p class="trusted-headline">Certifications</p>
+            <div class="trusted-logos" role="list" aria-label="Certifications professionnelles">
                 <div class="trusted-logo-item" role="listitem">
-                    <i class="fa-solid fa-shield-halved trusted-icon" aria-hidden="true"></i>
-                    <span class="trusted-logo-label">ISO 27001</span>
+                    <i class="fa-solid fa-crown trusted-icon" aria-hidden="true"></i>
+                    <span class="trusted-logo-label">PRINCE2</span>
                 </div>
                 <div class="trusted-logo-item" role="listitem">
                     <i class="fa-solid fa-gear trusted-icon" aria-hidden="true"></i>
                     <span class="trusted-logo-label">ITIL V4</span>
                 </div>
                 <div class="trusted-logo-item" role="listitem">
-                    <i class="fa-solid fa-crown trusted-icon" aria-hidden="true"></i>
-                    <span class="trusted-logo-label">Prince2</span>
+                    <i class="fa-solid fa-shield-halved trusted-icon" aria-hidden="true"></i>
+                    <span class="trusted-logo-label">ISO 27001</span>
                 </div>
                 <div class="trusted-logo-item" role="listitem">
                     <i class="fa-solid fa-arrows-spin trusted-icon" aria-hidden="true"></i>
@@ -178,113 +247,12 @@
                 </div>
                 <div class="trusted-logo-item" role="listitem">
                     <i class="fa-solid fa-diagram-project trusted-icon" aria-hidden="true"></i>
-                    <span class="trusted-logo-label">SAFe</span>
+                    <span class="trusted-logo-label">SAFe 5 SPC</span>
                 </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Section Navigation -->
-    <nav class="section-nav" aria-label="Navigation sections">
-        <div class="section-nav-inner">
-            <a class="section-nav-link" href="#trusted-by" data-i18n="landing.nav_trusted">Certifications</a>
-            <a class="section-nav-link" href="#why-me" data-i18n="landing.nav_why">Pourquoi moi</a>
-            <a class="section-nav-link" href="#contact" data-i18n="landing.nav_contact">Contact</a>
-        </div>
-    </nav>
-
-    <!-- Why Me Section -->
-    <section class="section" id="why-me">
-        <div class="container">
-            <h2 class="section-title animate-in" data-i18n="why.hero_h1">Pourquoi travailler avec moi ?</h2>
-            <div class="why-grid">
-                <article class="why-card animate-in">
-                    <div class="why-icon"><i class="fa-solid fa-crosshairs" aria-hidden="true"></i></div>
-                    <h3 data-i18n="why.arg_1_title">Technique, Juridique & Business</h3>
-                    <p data-i18n="why.arg_1_text">20 ans à l'intersection de l'IT, du juridique et de la stratégie. Triple compétence rare.</p>
-                </article>
-                <article class="why-card animate-in">
-                    <div class="why-icon"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></div>
-                    <h3 data-i18n="why.arg_2_title">Un seul interlocuteur</h3>
-                    <p data-i18n="why.arg_2_text">DORA, NIS 2, ISO 27001, RGPD — une approche cohérente, un seul point de contact.</p>
-                </article>
-                <article class="why-card animate-in">
-                    <div class="why-icon"><i class="fa-solid fa-rocket" aria-hidden="true"></i></div>
-                    <h3 data-i18n="why.arg_3_title">Prêt à déployer</h3>
-                    <p data-i18n="why.arg_3_text">Kits d'audit éprouvés, méthodologie testée, livrables clé en main dès J+1.</p>
-                </article>
-            </div>
-
-            <!-- Portrait + profil détaillé -->
-            <div class="why-profile animate-in">
-
-                <!-- Photo portrait -->
-                <div class="why-photo-col">
-                    <div class="photo-portrait-wrapper">
-                        <img src="images/photo_emmanuel.png"
-                             alt="Emmanuel Genesteix — GRC Cybersécurité & Agentic AI Automation"
-                             class="photo-portrait"
-                             loading="lazy"
-                             data-i18n-alt="why.photo_alt"
-                             onerror="this.style.display='none'; document.getElementById('photo-fallback').style.display='flex';">
-                        <div class="photo-initials" id="photo-fallback" style="display:none;" aria-hidden="true">EG</div>
-                    </div>
+                <div class="trusted-logo-item" role="listitem">
+                    <i class="fa-solid fa-people-arrows trusted-icon" aria-hidden="true"></i>
+                    <span class="trusted-logo-label">Scrum Master</span>
                 </div>
-
-                <!-- Infos profil -->
-                <div class="why-info-col">
-                    <h3 class="why-profile-name" data-i18n="why.profile_name">Emmanuel Genesteix</h3>
-                    <p class="why-profile-role" data-i18n="why.profile_role">GRC Cybersécurité & Agentic AI Automation</p>
-
-                    <p class="why-experience" data-i18n-html="why.profile_experience">
-                        <strong>20+ ans</strong> d'expérience à la croisée de l'informatique, du droit et du business.
-                    </p>
-
-                    <!-- Triple compétence -->
-                    <div class="why-triple">
-                        <div class="triple-item">
-                            <i class="fa-solid fa-microchip" aria-hidden="true"></i>
-                            <span data-i18n="why.triple_tech">Informatique</span>
-                        </div>
-                        <div class="triple-item">
-                            <i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>
-                            <span data-i18n="why.triple_legal">Droit</span>
-                        </div>
-                        <div class="triple-item">
-                            <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
-                            <span data-i18n="why.triple_mba">MBA</span>
-                        </div>
-                    </div>
-
-                    <!-- Certifications -->
-                    <div class="why-certs">
-                        <p class="certs-label" data-i18n="why.certs_title">Certifications</p>
-                        <div class="cert-badges" role="list">
-                            <span class="cert-badge" role="listitem">
-                                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
-                                ISO 27001
-                            </span>
-                            <span class="cert-badge" role="listitem">
-                                <i class="fa-solid fa-gear" aria-hidden="true"></i>
-                                ITIL V4
-                            </span>
-                            <span class="cert-badge" role="listitem">
-                                <i class="fa-solid fa-crown" aria-hidden="true"></i>
-                                Prince2
-                            </span>
-                            <span class="cert-badge" role="listitem">
-                                <i class="fa-solid fa-arrows-spin" aria-hidden="true"></i>
-                                AgilePM
-                            </span>
-                            <span class="cert-badge" role="listitem">
-                                <i class="fa-solid fa-diagram-project" aria-hidden="true"></i>
-                                SAFe
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
@@ -292,11 +260,15 @@
     <!-- CTA Section -->
     <section class="section section-cta" id="contact">
         <div class="container">
-            <h2 class="section-title animate-in" data-i18n="landing.cta_title">Prêt à échanger ?</h2>
-            <p class="section-subtitle animate-in" data-i18n="landing.cta_subtitle">30 minutes pour comprendre votre situation — gratuit, sans engagement</p>
+            <h2 class="section-title animate-in">Let's talk</h2>
+            <p class="section-subtitle animate-in">30 minutes to understand your situation — free, no commitment</p>
             <div class="hero-cta animate-in">
-                <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-primary btn-lg" data-i18n="common.book_meeting">Réserver un rendez-vous</a>
+                <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-primary btn-lg"><i class="fa-solid fa-envelope"></i> emmanuel.genesteix@agilevizion.com</a>
             </div>
+            <p class="animate-in" style="margin-top: var(--space-4); color: var(--text-secondary);">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i> +352 661.78.08.07 ·
+                <a href="https://www.linkedin.com/in/genesteix-emmanuel" target="_blank" rel="noopener" style="color: var(--text-secondary);"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+            </p>
         </div>
     </section>
     </main>
@@ -307,12 +279,12 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <span class="nav-logo" data-i18n-html="common.brand">Agile<span>Vizion</span></span>
-                    <p data-i18n="common.location">Luxembourg (interventions Europe)</p>
+                    <p>Luxembourg (interventions Europe)</p>
                 </div>
                 <div class="footer-contact">
-                    <a href="mailto:emmanuel.genesteix@agilevizion.com" data-i18n="common.email">emmanuel.genesteix@agilevizion.com</a>
-                    <a href="tel:+352661780807" data-i18n="common.footer_phone">
-                        <i class="fa-solid fa-phone" aria-hidden="true"></i> +352.661.78.08.07
+                    <a href="mailto:emmanuel.genesteix@agilevizion.com">emmanuel.genesteix@agilevizion.com</a>
+                    <a href="tel:+352661780807">
+                        <i class="fa-solid fa-phone" aria-hidden="true"></i> +352 661.78.08.07
                     </a>
                     <a href="https://www.linkedin.com/in/genesteix-emmanuel" target="_blank" rel="noopener">
                         <i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn
@@ -320,9 +292,9 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p data-i18n-html="common.copyright">&copy; 2024-2030 AgileVizion</p>
+                <p>&copy; 2024-2030 AgileVizion</p>
                 <p class="footer-legal-nav">
-                    <a href="#legal" class="footer-legal-link" data-i18n="common.footer_legal">Mentions légales</a>
+                    <a href="#legal" class="footer-legal-link">Mentions légales</a>
                 </p>
             </div>
             <div id="legal" class="footer-legal">
@@ -339,6 +311,5 @@
     <script src="js/nav.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/cookies.js"></script>
-    <script src="js/section-nav.js"></script>
 </body>
 </html>
