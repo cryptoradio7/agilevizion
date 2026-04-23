@@ -38,7 +38,7 @@
 }
 
 .trusted {
-    padding: 24px 20px;
+    padding: 24px 0;
 }
 
 .trusted-inner {
@@ -53,7 +53,7 @@
 }
 
 .testimonial-section {
-    padding: 48px 20px;
+    padding: 48px 0;
 }
 
 .testimonial-card {
@@ -74,7 +74,7 @@
 }
 
 .cta-final {
-    padding: 48px 20px;
+    padding: 48px 0;
 }
 
 .cta-final h2 {
@@ -276,7 +276,7 @@ select {
     }
 
     .testimonial-section {
-        padding: 64px 48px;
+        padding: 64px 0;
     }
 
     .testimonial-card {
@@ -296,7 +296,7 @@ select {
     }
 
     .cta-final {
-        padding: 64px 48px;
+        padding: 64px 0;
     }
 
     .services-section {
@@ -437,13 +437,12 @@ select {
 
     /* Footer */
     .footer-content {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
+        flex-direction: column;
+        gap: var(--space-4);
     }
 
     .footer-contact {
-        text-align: right;
+        text-align: left;
     }
 
     /* Simulator */
@@ -526,7 +525,7 @@ select {
     }
 
     .testimonial-section {
-        padding: 88px 48px;
+        padding: 88px 0;
     }
 
     .testimonial-card {
@@ -538,7 +537,7 @@ select {
     }
 
     .cta-final {
-        padding: 88px 48px;
+        padding: 88px 0;
     }
 
     .cta-final h2 {

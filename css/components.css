@@ -2305,14 +2305,12 @@
 
 /* --- Trusted By Bar --- */
 .trusted {
-    padding: 32px 48px;
+    padding: 32px 0;
     border-bottom: 1px solid var(--color-gray-200);
     background: var(--color-white);
 }
 
 .trusted-inner {
-    max-width: var(--container-max);
-    margin: 0 auto;
     display: flex;
     align-items: center;
     gap: 32px;
@@ -2516,7 +2514,7 @@
 
 /* --- Testimonial --- */
 .testimonial-section {
-    padding: 88px 48px;
+    padding: 88px 0;
     background: var(--color-primary-50);
 }
 
@@ -2580,7 +2578,7 @@
 
 /* --- CTA Final (dark) --- */
 .cta-final {
-    padding: 88px 48px;
+    padding: 88px 0;
     background: var(--bg-dark);
     color: var(--text-inverse);
 }

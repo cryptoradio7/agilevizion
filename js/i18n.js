@@ -39,11 +39,6 @@ var I18n = {
             return storedLang;
         }
 
-        var browserLang = (navigator.language || '').split('-')[0];
-        if (this.supportedLangs.indexOf(browserLang) !== -1) {
-            return browserLang;
-        }
-
         return this.defaultLang;
     },
 

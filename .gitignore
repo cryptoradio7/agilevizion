@@ -1,6 +1,3 @@
-# Dependencies
-node_modules/
-
 # Environment
 .env
 .env.local
@@ -9,7 +6,7 @@ node_modules/
 logs/
 *.log
 
-# Data (blog-posts.json is public, keep it tracked)
+# Data secrets
 data/*.secret
 data/*.credentials
 
@@ -34,12 +31,17 @@ Thumbs.db
 *.swp
 *~
 
-# Test artifacts (screenshots, rapports)
+# Test artifacts
 test-results/
 *.png
 !images/*.png
-
-# Videos (too large for GitHub Pages)
-*.mp4
-.github/
 !images/clients/*.png
+
+# Videos
+*.mp4
+
+# Node (if ever used)
+node_modules/
+
+# Playwright
+.playwright-mcp/
