@@ -10,6 +10,81 @@
     surchargé par les min-width ci-dessous)
    ============================================ */
 
+/* --- New template: mobile-first overrides --- */
+.hero-new {
+    padding: calc(var(--navbar-height) + 24px) 20px 32px;
+}
+
+.hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+}
+
+.hero-h1 {
+    font-size: 2rem;
+}
+
+.fix-line span {
+    font-size: 1.75rem;
+}
+
+.stat-row {
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.service-grid {
+    grid-template-columns: 1fr;
+}
+
+.trusted {
+    padding: 24px 20px;
+}
+
+.trusted-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.trusted-logos {
+    gap: 16px;
+    justify-content: flex-start;
+}
+
+.testimonial-section {
+    padding: 48px 20px;
+}
+
+.testimonial-card {
+    padding: 32px;
+}
+
+.testimonial-text {
+    font-size: 18px;
+    margin-left: 0;
+}
+
+.testimonial-author {
+    margin-left: 0;
+}
+
+.quote-mark {
+    display: none;
+}
+
+.cta-final {
+    padding: 48px 20px;
+}
+
+.cta-final h2 {
+    font-size: 28px;
+}
+
+.services-section {
+    padding: 48px 0;
+}
+
 /* Tap targets : minimum 44x44px (accessibilité tactile) */
 .btn {
     min-height: var(--tap-target);
@@ -177,6 +252,55 @@ select {
         --font-size-4xl: 2.25rem;
         --font-size-3xl: 1.875rem;
         --font-size-6xl: 3.25rem;
+    }
+
+    /* New template: tablet */
+    .hero-new {
+        padding: calc(var(--navbar-height) + 48px) 48px 48px;
+    }
+
+    .hero-h1 {
+        font-size: 2.5rem;
+    }
+
+    .fix-line span {
+        font-size: 2rem;
+    }
+
+    .trusted {
+        padding: 32px 48px;
+    }
+
+    .trusted-inner {
+        flex-direction: row;
+    }
+
+    .testimonial-section {
+        padding: 64px 48px;
+    }
+
+    .testimonial-card {
+        padding: 48px;
+    }
+
+    .testimonial-text {
+        margin-left: 68px;
+    }
+
+    .testimonial-author {
+        margin-left: 68px;
+    }
+
+    .quote-mark {
+        display: block;
+    }
+
+    .cta-final {
+        padding: 64px 48px;
+    }
+
+    .services-section {
+        padding: var(--space-16) 0;
     }
 
     /* Hero */
@@ -378,6 +502,51 @@ select {
         --font-size-4xl: 2.25rem;
         --font-size-3xl: 1.875rem;
         --font-size-6xl: 3.75rem;
+    }
+
+    /* New template: desktop */
+    .hero-new {
+        padding: calc(var(--navbar-height) + 72px) 48px 56px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1.4fr 1fr;
+    }
+
+    .hero-h1 {
+        font-size: 3rem;
+    }
+
+    .fix-line span {
+        font-size: 2.5rem;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .testimonial-section {
+        padding: 88px 48px;
+    }
+
+    .testimonial-card {
+        padding: 56px;
+    }
+
+    .testimonial-text {
+        font-size: 22px;
+    }
+
+    .cta-final {
+        padding: 88px 48px;
+    }
+
+    .cta-final h2 {
+        font-size: 36px;
+    }
+
+    .services-section {
+        padding: var(--space-20) 0;
     }
 
     /* Hero : taille complète desktop */
