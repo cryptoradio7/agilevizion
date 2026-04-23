@@ -94,6 +94,34 @@
     justify-content: flex-start;
 }
 
+.fab-cv {
+    position: fixed;
+    bottom: var(--space-6);
+    right: var(--space-6);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: var(--color-primary);
+    color: var(--text-inverse);
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(79, 70, 229, 0.4);
+    z-index: 1000;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.fab-cv:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(79, 70, 229, 0.5);
+}
+
+.fab-cv i {
+    font-size: var(--font-size-base);
+}
+
 .hero-clients {
     margin-top: var(--space-4);
 }
