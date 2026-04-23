@@ -94,9 +94,17 @@
     justify-content: flex-start;
 }
 
+.hero-tagline {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--space-4);
+}
+
 .hero-photo {
     flex-shrink: 0;
     align-self: center;
+    text-align: center;
 }
 
 .hero-portrait {
@@ -104,6 +112,18 @@
     height: auto;
     border-radius: var(--radius-2xl);
     filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.12));
+}
+
+.hero-caption {
+    margin-top: var(--space-4);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.hero-caption strong {
+    font-size: var(--font-size-base);
+    color: var(--text-primary);
 }
 
 @media (min-width: 768px) {
