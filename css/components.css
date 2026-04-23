@@ -465,7 +465,22 @@
     border-radius: var(--radius-xl);
     background: var(--bg-primary);
     border: 1px solid var(--color-gray-200);
-    text-align: center;
+    text-align: left;
+    position: relative;
+}
+
+.why-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: var(--space-4);
+}
+
+.why-number {
+    font-size: 2.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary-50);
+    line-height: 1;
 }
 
 .why-icon {
@@ -478,7 +493,6 @@
     color: var(--color-primary);
     border-radius: var(--radius-full);
     font-size: var(--font-size-lg);
-    margin: 0 auto var(--space-4);
 }
 
 .why-card h3 {
