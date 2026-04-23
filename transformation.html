@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' https://agilevizion.com data:; connect-src 'self'; object-src 'none';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <title>IT Strategy & Transformation — AgileVizion</title>
+
+    <meta name="description" content="IT governance, PMO, migration & digitalization. I take over when projects aren't moving. European Commission, Luxaviation, Société Générale.">
+    <meta property="og:title" content="IT Strategy & Transformation — AgileVizion">
+    <meta property="og:description" content="When your programme is stalled or your PMO exists only on paper. I bring structure, own the delivery, and report to the executive level.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://agilevizion.com/transformation.html">
+    <meta property="og:image" content="https://agilevizion.com/images/photo_emmanuel.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="IT Strategy & Transformation — AgileVizion">
+    <meta name="twitter:description" content="IT governance, PMO, migration & digitalization. Senior operator, not a methodology deck.">
+    <link rel="canonical" href="https://agilevizion.com/transformation.html">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "name": "AgileVizion",
+                "url": "https://agilevizion.com",
+                "logo": "https://agilevizion.com/images/photo_emmanuel.png",
+                "description": "IT Project & Transformation Manager — Freelance",
+                "founder": {
+                    "@type": "Person",
+                    "name": "Emmanuel Genesteix"
+                },
+                "areaServed": "Europe",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "LU",
+                    "addressLocality": "Luxembourg"
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+352-661-78-08-07",
+                    "email": "emmanuel.genesteix@agilevizion.com",
+                    "contactType": "customer support",
+                    "availableLanguage": ["French", "English"]
+                },
+                "sameAs": [
+                    "https://www.linkedin.com/in/genesteix-emmanuel"
+                ]
+            },
+            {
+                "@type": "Service",
+                "name": "IT Strategy & Transformation",
+                "provider": {
+                    "@type": "Organization",
+                    "name": "AgileVizion",
+                    "url": "https://agilevizion.com"
+                },
+                "description": "IT governance, PMO, migration & digitalization — hands-on delivery for stalled programmes",
+                "areaServed": "Europe",
+                "serviceType": "IT Transformation & Programme Management",
+                "url": "https://agilevizion.com/transformation.html"
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/cookies.css">
+    <link rel="stylesheet" href="css/section-nav.css">
+</head>
+<body data-page-title="transfo.title">
+
+    <!-- Cookie Consent Popup -->
+    <div id="cookie-overlay" class="cookie-overlay" style="display:none;"></div>
+    <div id="cookie-popup" class="cookie-popup" style="display:none;" role="dialog" aria-modal="true" aria-label="Consentement cookies">
+        <div class="cookie-popup-icon" aria-hidden="true"><i class="fa-solid fa-cookie-bite"></i></div>
+        <div class="cookie-popup-content">
+            <h3 class="cookie-popup-title" data-i18n="cookies.popup_title">Ce site utilise des cookies</h3>
+            <p class="cookie-popup-text" data-i18n="cookies.popup_text">Nous utilisons uniquement des cookies essentiels au fonctionnement du site. Aucun cookie publicitaire ni de tracking.</p>
+            <p class="cookie-popup-link"><a href="/#legal" data-i18n="cookies.link">Mentions légales</a></p>
+        </div>
+        <div class="cookie-popup-actions">
+            <button onclick="acceptCookies()" class="btn cookie-btn-accept" data-i18n="cookies.accept">Accepter</button>
+            <button onclick="refuseCookies()" class="btn cookie-btn-refuse" data-i18n="cookies.refuse">Refuser</button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo" data-i18n-html="common.brand">Agile<span>Vizion</span></a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="transformation.html" class="active" data-i18n="nav.transformation">IT Transformation</a></li>
+                <li><a href="cyber.html" data-i18n="nav.cyber">GRC Cybersecurity</a></li>
+                <li><a href="ia.html" data-i18n="nav.ia">Agentic AI</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li class="nav-lang">
+                    <button onclick="I18n.switchLanguage('fr')" class="lang-btn" id="lang-fr">FR</button>
+                    <button onclick="I18n.switchLanguage('en')" class="lang-btn" id="lang-en">EN</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    </header>
+
+    <main>
+    <!-- ======================================================
+         HERO
+         ====================================================== -->
+    <section class="hero hero-page" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title animate-in" data-i18n="transfo.hero_h1">
+                    Your IT transformation is stuck. I unstick it.
+                </h1>
+                <p class="hero-subtitle animate-in" data-i18n="transfo.hero_subtitle">
+                    I take over when projects aren't moving, governance doesn't exist yet, or a migration is stuck. I bring structure, own the delivery, and report directly to the executive level.
+                </p>
+                <div class="hero-cta animate-in">
+                    <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-primary btn-lg" data-i18n-html="common.book_meeting"><i class="fa-solid fa-envelope"></i> Contact me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Navigation -->
+    <nav class="section-nav" aria-label="Navigation sections">
+        <div class="section-nav-inner">
+            <a class="section-nav-link" href="#scope" data-i18n="transfo.nav_scope">What I do</a>
+            <a class="section-nav-link" href="#missions" data-i18n="transfo.nav_missions">Missions</a>
+            <a class="section-nav-link" href="#value" data-i18n="transfo.nav_value">What you get</a>
+            <a class="section-nav-link" href="#contact" data-i18n="transfo.nav_contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- ======================================================
+         WHAT I DO — 3 pillars
+         ====================================================== -->
+    <section class="section section-alt" id="scope" aria-labelledby="scope-heading">
+        <div class="container">
+            <h2 class="section-title animate-in" id="scope-heading" data-i18n="transfo.scope_title">What I do</h2>
+            <p class="section-subtitle animate-in" data-i18n="transfo.scope_subtitle">Three areas where I operate hands-on — not as an advisor, as the person accountable for delivery.</p>
+
+            <div class="steps-grid steps-grid-3">
+
+                <div class="step-card animate-in">
+                    <span class="step-number" aria-hidden="true">01</span>
+                    <h3 data-i18n="transfo.scope_1_title">IT Governance & PMO</h3>
+                    <p data-i18n="transfo.scope_1_text">Build governance frameworks from scratch (COBIT, ITIL). Create PMO functions, steering committees, phase-gate reviews. PRINCE2, Agile/Scrum hybrid delivery.</p>
+                </div>
+
+                <div class="step-card animate-in">
+                    <span class="step-number" aria-hidden="true">02</span>
+                    <h3 data-i18n="transfo.scope_2_title">Migration & Platforms</h3>
+                    <p data-i18n="transfo.scope_2_text">ServiceNow, Salesforce, ERP migrations. CMDB rebuild, service catalogue redesign, data consolidation across entities. End-to-end ownership from vendor selection to go-live.</p>
+                </div>
+
+                <div class="step-card animate-in">
+                    <span class="step-number" aria-hidden="true">03</span>
+                    <h3 data-i18n="transfo.scope_3_title">Service Delivery & Digitalization</h3>
+                    <p data-i18n="transfo.scope_3_text">IT service delivery transformation. SLA enforcement, contractor management, cost control. Front-end business process digitalization, e-signature rollout, vendor coordination.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================
+         SELECTED MISSIONS — 3 case studies
+         ====================================================== -->
+    <section class="section" id="missions" aria-labelledby="missions-heading">
+        <div class="container">
+            <h2 class="section-title animate-in" id="missions-heading" data-i18n="transfo.missions_title">Selected missions</h2>
+            <p class="section-subtitle animate-in" data-i18n="transfo.missions_subtitle">Real engagements. Real outcomes. Here's what delivery looks like.</p>
+
+            <div class="missions-list">
+
+                <!-- Mission 1: European Commission -->
+                <article class="mission-card animate-in">
+                    <div class="mission-header">
+                        <div class="mission-logo">
+                            <img src="images/clients/ec.png" alt="European Commission">
+                        </div>
+                        <div class="mission-meta">
+                            <h3 data-i18n="transfo.m1_title">IT Service Delivery Transformation</h3>
+                            <div class="mission-client" data-i18n="transfo.m1_client">European Commission — DG DIGIT</div>
+                            <div class="mission-info">
+                                <span class="mission-tag"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Luxembourg</span>
+                                <span class="mission-tag"><i class="fa-solid fa-calendar" aria-hidden="true"></i> 2020–2023</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mission-context" data-i18n="transfo.m1_context">Inherited a fragmented IT service platform serving 20+ Directorates-General and 2,000 users.</p>
+                    <ul class="mission-results">
+                        <li data-i18n="transfo.m1_r1">Raised automation rate to 80%+</li>
+                        <li data-i18n="transfo.m1_r2">Piloted full ServiceNow migration (&#8364;500K): replaced BMC, rebuilt CMDB, redesigned service catalogue</li>
+                        <li data-i18n="transfo.m1_r3">Managed 14 ICT contractors: SLA enforcement, performance reviews, cost control</li>
+                        <li data-i18n="transfo.m1_r4">Built Business Continuity & Disaster Recovery plans from scratch (Ukraine crisis context)</li>
+                        <li data-i18n="transfo.m1_r5">Contributed to managed services tender specification (>&#8364;500M contract)</li>
+                    </ul>
+                    <div class="mission-kpis">
+                        <span class="mission-kpi"><i class="fa-solid fa-users" aria-hidden="true"></i> 14 contractors</span>
+                        <span class="mission-kpi"><i class="fa-solid fa-euro-sign" aria-hidden="true"></i> >&#8364;1M budget</span>
+                        <span class="mission-kpi"><i class="fa-solid fa-building" aria-hidden="true"></i> 2,000 users</span>
+                    </div>
+                </article>
+
+                <!-- Mission 2: Luxaviation -->
+                <article class="mission-card animate-in">
+                    <div class="mission-header">
+                        <div class="mission-logo">
+                            <img src="images/clients/luxaviation.png" alt="Luxaviation Group">
+                        </div>
+                        <div class="mission-meta">
+                            <h3 data-i18n="transfo.m2_title">IT Governance, PMO & Data Migration</h3>
+                            <div class="mission-client" data-i18n="transfo.m2_client">Luxaviation Group</div>
+                            <div class="mission-info">
+                                <span class="mission-tag"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Luxembourg</span>
+                                <span class="mission-tag"><i class="fa-solid fa-calendar" aria-hidden="true"></i> 2014–2017</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mission-context" data-i18n="transfo.m2_context">World's No. 2 private aviation group. No IT governance framework existed. Reporting to CIO and Executive Board.</p>
+                    <ul class="mission-results">
+                        <li data-i18n="transfo.m2_r1">Built the IT governance framework from scratch (COBIT 5): project selection matrix, roadmap, KPIs, Board reporting</li>
+                        <li data-i18n="transfo.m2_r2">Created and structured the PMO function (PRINCE2 + Agile/Scrum): steering committees, phase-gate reviews</li>
+                        <li data-i18n="transfo.m2_r3">Managed a portfolio of 15 projects — budget grown from &#8364;600K to &#8364;1.8M in 3 years</li>
+                        <li data-i18n="transfo.m2_r4">Led group-wide CRM data migration: consolidated local CRMs into Salesforce across all entities</li>
+                        <li data-i18n="transfo.m2_r5">Co-defined security policies: least privilege, zero trust, BYOD, data segregation</li>
+                    </ul>
+                    <div class="mission-kpis">
+                        <span class="mission-kpi"><i class="fa-solid fa-users" aria-hidden="true"></i> ~500 employees</span>
+                        <span class="mission-kpi"><i class="fa-solid fa-euro-sign" aria-hidden="true"></i> &#8364;1.8M portfolio</span>
+                        <span class="mission-kpi"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> EASA-regulated</span>
+                    </div>
+                </article>
+
+                <!-- Mission 3: Société Générale -->
+                <article class="mission-card animate-in">
+                    <div class="mission-header">
+                        <div class="mission-logo">
+                            <img src="images/clients/sg.jpeg" alt="Société Générale — Sogelife">
+                        </div>
+                        <div class="mission-meta">
+                            <h3 data-i18n="transfo.m3_title">Business Digitalization</h3>
+                            <div class="mission-client" data-i18n="transfo.m3_client">Société Générale — Sogelife</div>
+                            <div class="mission-info">
+                                <span class="mission-tag"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Luxembourg</span>
+                                <span class="mission-tag"><i class="fa-solid fa-calendar" aria-hidden="true"></i> 2017–2020</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mission-context" data-i18n="transfo.m3_context">Life insurance subsidiary, &#8364;10Bn AUM, CSSF/CAA-regulated.</p>
+                    <ul class="mission-results">
+                        <li data-i18n="transfo.m3_r1">Secured Executive Board approval for the digital transformation roadmap</li>
+                        <li data-i18n="transfo.m3_r2">Digitalized front-end business processes end-to-end: vendor selection, cross-functional coordination</li>
+                        <li data-i18n="transfo.m3_r3">Defined regulatory framework for electronic signatures across 5 European countries (eIDAS)</li>
+                        <li data-i18n="transfo.m3_r4">Selected third-party AML screening solution</li>
+                    </ul>
+                    <div class="mission-kpis">
+                        <span class="mission-kpi"><i class="fa-solid fa-users" aria-hidden="true"></i> ~100 employees</span>
+                        <span class="mission-kpi"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> &#8364;10Bn AUM</span>
+                        <span class="mission-kpi"><i class="fa-solid fa-landmark" aria-hidden="true"></i> CSSF/CAA-regulated</span>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================
+         WHAT YOU GET — 4 value props
+         ====================================================== -->
+    <section class="section section-alt" id="value" aria-labelledby="value-heading">
+        <div class="container">
+            <h2 class="section-title animate-in" id="value-heading" data-i18n="transfo.value_title">What you get</h2>
+            <div class="deliverables-grid">
+
+                <div class="deliverable-card animate-in">
+                    <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
+                    <h4 data-i18n="transfo.value_1_title">A senior operator</h4>
+                    <p data-i18n="transfo.value_1_text">Not a methodology deck. Not a junior consultant supervised by a partner. A hands-on programme manager with 20 years of delivery experience.</p>
+                </div>
+
+                <div class="deliverable-card animate-in">
+                    <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+                    <h4 data-i18n="transfo.value_2_title">Direct accountability</h4>
+                    <p data-i18n="transfo.value_2_text">I report directly to your executive team. No intermediary, no translation layer, no game of telephone between management and delivery.</p>
+                </div>
+
+                <div class="deliverable-card animate-in">
+                    <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                    <h4 data-i18n="transfo.value_3_title">Operational from day one</h4>
+                    <p data-i18n="transfo.value_3_text">No 3-month ramp-up. I've seen enough IT organizations to diagnose fast and act immediately. First deliverables within the first two weeks.</p>
+                </div>
+
+                <div class="deliverable-card animate-in">
+                    <i class="fa-solid fa-earth-europe" aria-hidden="true"></i>
+                    <h4 data-i18n="transfo.value_4_title">Luxembourg-based, Europe-wide</h4>
+                    <p data-i18n="transfo.value_4_text">Based in Luxembourg, available across Europe. Fluent in French and English. Experienced in multi-country, multi-entity environments.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================
+         CTA FINAL
+         ====================================================== -->
+    <section class="section section-cta" id="contact" aria-labelledby="cta-transfo-heading">
+        <div class="container">
+            <h2 class="section-title animate-in" id="cta-transfo-heading" data-i18n="transfo.cta_title">Your programme needs momentum?</h2>
+            <p class="section-subtitle animate-in" data-i18n="transfo.cta_subtitle">30-minute call — free, no commitment. I'll tell you straight whether I can help.</p>
+            <div class="hero-cta animate-in">
+                <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-primary btn-lg" data-i18n-html="common.book_meeting"><i class="fa-solid fa-envelope"></i> Contact me</a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="nav-logo" data-i18n-html="common.brand">Agile<span>Vizion</span></span>
+                    <p data-i18n="common.location">Luxembourg (interventions Europe)</p>
+                </div>
+                <div class="footer-contact">
+                    <a href="mailto:emmanuel.genesteix@agilevizion.com" data-i18n="common.email">emmanuel.genesteix@agilevizion.com</a>
+                    <a href="tel:+352661780807" data-i18n="common.footer_phone">
+                        <i class="fa-solid fa-phone" aria-hidden="true"></i> +352.661.78.08.07
+                    </a>
+                    <a href="https://www.linkedin.com/in/genesteix-emmanuel" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-i18n-html="common.copyright">&copy; 2024-2030 AgileVizion</p>
+                <p class="footer-legal-nav">
+                    <a href="#legal" class="footer-legal-link" data-i18n="common.footer_legal">Mentions légales</a>
+                </p>
+            </div>
+            <div id="legal" class="footer-legal">
+                <p><strong>AgileVizion</strong> — Immatriculation : A46385 — TVA LU36976357</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/cookies.js"></script>
+    <script src="js/section-nav.js"></script>
+</body>
+</html>
