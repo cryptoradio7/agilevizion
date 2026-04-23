@@ -116,13 +116,16 @@
 
 .hero-caption {
     margin-top: var(--space-4);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
     color: var(--text-secondary);
     line-height: 1.6;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-caption strong {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-sm);
     color: var(--text-primary);
 }
 
