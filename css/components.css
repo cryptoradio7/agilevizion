@@ -134,9 +134,23 @@
     margin-right: var(--space-2);
 }
 
-.hero-clients-list {
-    font-size: var(--font-size-sm);
-    color: var(--text-secondary);
+.hero-clients-logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-4);
+    margin-top: var(--space-2);
+}
+
+.client-logo {
+    height: 28px;
+    width: auto;
+    filter: grayscale(100%) opacity(0.5);
+    transition: filter 0.2s;
+}
+
+.client-logo:hover {
+    filter: grayscale(0%) opacity(1);
 }
 
 .hero-tagline {
