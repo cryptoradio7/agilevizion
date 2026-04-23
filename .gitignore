@@ -42,3 +42,4 @@ test-results/
 # Videos (too large for GitHub Pages)
 *.mp4
 .github/
+!images/clients/*.png
