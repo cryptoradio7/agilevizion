@@ -472,6 +472,29 @@
     margin-bottom: 0;
 }
 
+.area-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.area-list li {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    padding: var(--space-1) 0;
+    padding-left: var(--space-4);
+    position: relative;
+}
+
+.area-list li::before {
+    content: "›";
+    position: absolute;
+    left: var(--space-1);
+    color: var(--color-primary);
+    font-weight: var(--font-weight-bold);
+}
+
 /* --- Tags --- */
 .tag {
     display: inline-block;
