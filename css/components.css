@@ -94,6 +94,23 @@
     justify-content: flex-start;
 }
 
+.hero-clients {
+    margin-top: var(--space-4);
+}
+
+.hero-clients-label {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.15em;
+    font-size: var(--font-size-xs);
+    margin-right: var(--space-2);
+}
+
+.hero-clients-list {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
 .hero-tagline {
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-bold);
