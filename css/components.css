@@ -131,6 +131,27 @@
     filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.12));
 }
 
+.hero-certifs {
+    margin-top: var(--space-3);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-1);
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-certif {
+    font-size: 0.65rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-primary);
+    background: var(--color-primary-50);
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    letter-spacing: 0.02em;
+}
+
 .hero-caption {
     margin-top: var(--space-4);
     font-size: var(--font-size-xs);
