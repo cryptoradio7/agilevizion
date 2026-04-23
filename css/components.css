@@ -509,6 +509,22 @@
     margin-bottom: 0;
 }
 
+.clients-bar {
+    text-align: center;
+    font-size: var(--font-size-base);
+    color: var(--text-primary);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: 0.02em;
+}
+
+.clients-label {
+    color: var(--color-primary);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.15em;
+    font-size: var(--font-size-sm);
+    margin-right: var(--space-4);
+}
+
 .area-list {
     list-style: none;
     padding: 0;
