@@ -79,7 +79,7 @@
     "pill_brand": "IT Projects & Transformation · GRC Cyber · AI",
     "hero_h1": "Your IT is disorganized, non-compliant or stuck in transition?",
     "hero_fix": "I fix that.",
-    "hero_intro": "Freelance senior consultant. I step in when your programme is stalled, your audit is coming, or your regulator is asking hard questions — and I deliver, hands-on.",
+    "hero_intro": "Freelance consultant. I step in to structure your IT transformation, get you cyber-compliant and automate your business processes with AI.",
     "hero_cta_book": "<i class=\"fa-solid fa-envelope\"></i> Book a 30-min call",
     "hero_cta_services": "See services →",
     "stat_years_label": "years in IT",
@@ -93,14 +93,15 @@
     "service_2_tagline": "Audit-ready in 3–6 months — not 18. Ahead of the enforcement curve.",
     "service_3_tagline": "AI agents that do the repetitive work — so you focus on decisions.",
     "service_1_recent": "€500K ServiceNow migration · European Commission",
-    "service_2_recent": "Full DORA & NIS2 readiness · regulated SMEs",
+    "service_2_recent": "DORA & ISO 27001 readiness · ICT supply chain",
     "service_3_recent": "Pentest automation agents · Luxembourg law firms",
     "recent_label": "Recent:",
     "testimonial_text": "Emmanuel is the rare consultant who ships. He walked into a stalled ServiceNow migration and delivered it on budget — while rebuilding our governance around it.",
     "testimonial_author": "Head of IT Service Management",
     "testimonial_role": "European Commission, DG DIGIT",
     "cta_intro": "30 minutes to understand your situation — free, no commitment. Most calls turn into a concrete action plan within 48 hours.",
-    "id_loc": "Freelance — Luxembourg"
+    "id_loc": "Freelance — Luxembourg",
+    "id_experience": "20 years IT experience"
   },
   "landing": {
     "hero_title": "Cyber compliance & agentic AI — one consultant, real results",

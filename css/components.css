@@ -2144,14 +2144,13 @@
 /* --- Hero New --- */
 .hero-new {
     background: linear-gradient(180deg, var(--color-primary-50) 0%, #F5F6FD 100%);
-    padding: calc(var(--navbar-height) + 48px) 48px 56px;
+    padding: calc(var(--navbar-height) + 48px) 0 56px;
+    overflow: hidden;
 }
 
 .hero-grid {
-    max-width: var(--container-max);
-    margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.4fr 1fr;
+    grid-template-columns: 1fr 340px;
     gap: 48px;
     align-items: center;
 }
@@ -2170,9 +2169,9 @@
 }
 
 .hero-h1 {
-    font-size: 3rem;
+    font-size: 2.6rem;
     font-weight: var(--font-weight-bold);
-    line-height: 1.1;
+    line-height: 1.15;
     color: var(--text-primary);
     letter-spacing: -0.02em;
     margin-bottom: 16px;
@@ -2271,6 +2270,7 @@
     font-size: 13px;
     color: var(--text-primary);
     margin-bottom: 2px;
+    font-weight: var(--font-weight-bold);
 }
 
 .id-loc {
@@ -2278,6 +2278,13 @@
     color: var(--color-primary);
     font-weight: var(--font-weight-medium);
     margin-top: 4px;
+    margin-bottom: 6px;
+}
+
+.id-experience {
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+    font-weight: var(--font-weight-medium);
     margin-bottom: 16px;
 }
 

@@ -12,7 +12,7 @@
 
 /* --- New template: mobile-first overrides --- */
 .hero-new {
-    padding: calc(var(--navbar-height) + 24px) 20px 32px;
+    padding: calc(var(--navbar-height) + 24px) 0 32px;
 }
 
 .hero-grid {
@@ -256,7 +256,7 @@ select {
 
     /* New template: tablet */
     .hero-new {
-        padding: calc(var(--navbar-height) + 48px) 48px 48px;
+        padding: calc(var(--navbar-height) + 48px) 0 48px;
     }
 
     .hero-h1 {
@@ -506,15 +506,15 @@ select {
 
     /* New template: desktop */
     .hero-new {
-        padding: calc(var(--navbar-height) + 72px) 48px 56px;
+        padding: calc(var(--navbar-height) + 72px) 0 56px;
     }
 
     .hero-grid {
-        grid-template-columns: 1.4fr 1fr;
+        grid-template-columns: 1fr 340px;
     }
 
     .hero-h1 {
-        font-size: 3rem;
+        font-size: 2.6rem;
     }
 
     .fix-line span {

@@ -79,7 +79,7 @@
     "pill_brand": "IT Projects & Transformation · GRC Cyber · AI",
     "hero_h1": "Votre IT est désorganisé, non conforme ou bloqué en transition ?",
     "hero_fix": "Je m'en occupe.",
-    "hero_intro": "Consultant senior freelance. J'interviens quand votre programme est en panne, votre audit approche, ou votre régulateur pose des questions difficiles — et je livre, sur le terrain.",
+    "hero_intro": "Consultant freelance. J'interviens pour structurer votre transformation IT, vous mettre en conformité cyber et automatiser vos processus métiers grâce à l'IA.",
     "hero_cta_book": "<i class=\"fa-solid fa-envelope\"></i> Réserver un appel de 30 min",
     "hero_cta_services": "Voir les services →",
     "stat_years_label": "ans en IT",
@@ -93,14 +93,15 @@
     "service_2_tagline": "Prêt pour l'audit en 3–6 mois — pas 18. En avance sur le calendrier réglementaire.",
     "service_3_tagline": "Des agents IA qui font le travail répétitif — pour que vous vous concentriez sur les décisions.",
     "service_1_recent": "Migration ServiceNow 500K€ · Commission Européenne",
-    "service_2_recent": "Conformité DORA & NIS2 complète · PME régulées",
+    "service_2_recent": "Conformité DORA & ISO 27001 · supply chain ICT",
     "service_3_recent": "Agents d'automatisation pentest · Cabinets d'avocats luxembourgeois",
     "recent_label": "Récent :",
     "testimonial_text": "Emmanuel est le rare consultant qui livre. Il est arrivé sur une migration ServiceNow à l'arrêt et l'a livrée dans le budget — tout en reconstruisant notre gouvernance autour.",
     "testimonial_author": "Responsable IT Service Management",
     "testimonial_role": "Commission Européenne, DG DIGIT",
     "cta_intro": "30 minutes pour comprendre votre situation — gratuit, sans engagement. La plupart des appels débouchent sur un plan d'action concret sous 48 heures.",
-    "id_loc": "Freelance — Luxembourg"
+    "id_loc": "Freelance — Luxembourg",
+    "id_experience": "20 ans d'expérience IT"
   },
   "landing": {
     "hero_title": "Conformité cyber & IA agentique — un consultant, des résultats",
