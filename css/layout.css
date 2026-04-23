@@ -186,7 +186,7 @@
 }
 
 .section {
-    padding: var(--space-12) 0;   /* mobile-first : spacing réduit */
+    padding: var(--space-8) 0;
 }
 
 .section-alt {
