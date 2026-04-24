@@ -527,7 +527,7 @@
     "job_1_s2": "Deliverables and final reports production",
     "job_1_s3": "Automatic OWASP scan before each delivery",
     "job_2_title_s": "Development",
-    "job_2_s1": "Full AI team: Architect → Dev → QA → Review → DevOps",
+    "job_2_s1": "Full AI agent team: Architect → Dev → QA → Review → DevOps",
     "job_2_s2": "~200 automated tests per project (QA + security)",
     "job_2_s3": "Mandatory human review before delivery",
     "job_3_title_s": "All departments",
