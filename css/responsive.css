@@ -53,6 +53,16 @@
     justify-content: flex-start;
 }
 
+.trusted-inline {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.trusted-inline .trusted-logos {
+    gap: 12px;
+}
+
 .testimonial-section {
     padding: 48px 0;
 }
