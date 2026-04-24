@@ -508,6 +508,33 @@
     font-size: var(--font-size-sm);
 }
 
+.step-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.step-list li {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    padding: var(--space-2) 0;
+    padding-left: var(--space-4);
+    position: relative;
+}
+
+.step-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: var(--font-weight-bold);
+}
+
+.step-list li + li {
+    border-top: 1px solid var(--color-gray-100);
+}
+
 /* --- Problem Cards --- */
 .problem-card {
     padding: var(--space-6);
