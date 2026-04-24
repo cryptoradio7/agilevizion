@@ -2179,7 +2179,7 @@
     display: grid;
     grid-template-columns: 1fr 340px;
     gap: 48px;
-    align-items: center;
+    align-items: start;
 }
 
 .pill-brand {
