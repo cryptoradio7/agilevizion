@@ -163,8 +163,17 @@
             </div>
             <div class="hero-right animate-in">
                 <div class="id-card">
-                    <div class="id-photo">
-                        <img src="images/photo_emmanuel_nobg.png" alt="Emmanuel Genesteix">
+                    <div class="id-photo" id="hero-media">
+                        <img src="images/photo_emmanuel_nobg.png" alt="Emmanuel Genesteix" id="hero-photo">
+                        <div class="play-btn" id="play-btn" role="button" aria-label="Play video" tabindex="0">
+                            <svg viewBox="0 0 80 80" width="64" height="64">
+                                <circle cx="40" cy="40" r="38" fill="rgba(255,255,255,0.85)" stroke="rgba(79,70,229,0.3)" stroke-width="2"/>
+                                <polygon points="32,24 32,56 58,40" fill="#4F46E5"/>
+                            </svg>
+                        </div>
+                        <video id="hero-video" playsinline preload="none" style="display:none;">
+                            <source src="video.mp4" type="video/mp4">
+                        </video>
                     </div>
                     <div class="id-name">Emmanuel Genesteix</div>
                     <div class="id-title">IT Projects &amp; Transformation Manager</div>
@@ -286,6 +295,40 @@
     <a href="CV_Emmanuel_Genesteix.pdf" download class="fab-cv" title="Download CV" aria-label="Download CV">
         <span data-i18n-html="common.fab_cv"><i class="fa-solid fa-file-arrow-down"></i> CV</span>
     </a>
+
+    <!-- Hero Video -->
+    <script>
+    (function() {
+        var btn = document.getElementById('play-btn');
+        var photo = document.getElementById('hero-photo');
+        var video = document.getElementById('hero-video');
+        var container = document.getElementById('hero-media');
+
+        function playVideo() {
+            photo.style.display = 'none';
+            btn.style.display = 'none';
+            video.style.display = 'block';
+            container.style.alignItems = 'stretch';
+            video.play();
+        }
+
+        function stopVideo() {
+            video.pause();
+            video.currentTime = 0;
+            video.style.display = 'none';
+            photo.style.display = '';
+            btn.style.display = '';
+            container.style.alignItems = '';
+        }
+
+        btn.addEventListener('click', playVideo);
+        btn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); playVideo(); }
+        });
+        video.addEventListener('ended', stopVideo);
+        video.addEventListener('click', stopVideo);
+    })();
+    </script>
 
     <!-- Scripts -->
     <script src="js/i18n.js"></script>
