@@ -37,8 +37,8 @@ test-results/
 !images/*.png
 !images/clients/*.png
 
-# Videos
-*.mp4
+# Videos (kept for deployment)
+# *.mp4
 
 # Node (if ever used)
 node_modules/
