@@ -255,6 +255,10 @@
     /* Hérite de .steps-grid — override dans les media queries */
 }
 
+.steps-5 {
+    /* Hérite de .steps-grid — override dans les media queries */
+}
+
 .problems-grid {
     display: grid;
     grid-template-columns: 1fr;
