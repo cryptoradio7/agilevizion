@@ -5,105 +5,16 @@
    ============================================ */
 
 /* ============================================
-   BASE MOBILE — règles spécifiques au mobile
-   (sans media query = s'applique à tous,
-    surchargé par les min-width ci-dessous)
+   BASE MOBILE
    ============================================ */
 
-/* --- New template: mobile-first overrides --- */
-.hero-new {
-    padding: calc(var(--navbar-height) + 24px) 0 32px;
-}
-
-.hero-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-}
-
-.hero-h1,
 .hero-title {
     font-size: 2rem;
 }
 
-.fix-line span {
-    font-size: 1.75rem;
-}
-
-.stat-row {
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.service-grid {
-    grid-template-columns: 1fr;
-}
-
-.trusted {
-    padding: 24px 0;
-}
-
-.trusted-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-}
-
-.trusted-logos {
-    gap: 16px;
-    justify-content: flex-start;
-}
-
-.trusted-inline {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-}
-
-.trusted-inline .trusted-logos {
-    gap: 12px;
-}
-
-.testimonial-section {
-    padding: 48px 0;
-}
-
-.testimonial-card {
-    padding: 32px;
-}
-
-.testimonial-text {
-    font-size: 18px;
-    margin-left: 0;
-}
-
-.testimonial-author {
-    margin-left: 0;
-}
-
-.quote-mark {
-    display: none;
-}
-
-.cta-final {
-    padding: 48px 0;
-}
-
-.cta-final h2 {
-    font-size: 28px;
-}
-
-.services-section {
-    padding: 48px 0;
-}
-
-/* Tap targets : minimum 44x44px (accessibilité tactile) */
+/* Tap targets : minimum 44x44px */
 .btn {
     min-height: var(--tap-target);
-}
-
-.lang-btn {
-    min-height: var(--tap-target);
-    min-width: var(--tap-target);
 }
 
 .nav-menu a {
@@ -112,116 +23,17 @@
     align-items: center;
 }
 
-/* Inputs : font-size 16px pour éviter le zoom auto iOS */
-.question-select,
-.pdf-section input,
-input[type="text"],
-input[type="email"],
-select {
-    font-size: var(--font-size-base);  /* 16px — iOS zoom si < 16px */
-}
-
-/* Nav lang : centré dans le menu mobile */
-.nav-lang {
-    margin-left: 0;
-    justify-content: flex-start;
-}
-
-/* Photo portrait : pleine largeur sur mobile */
-.why-photo-col {
-    order: -1;   /* photo au-dessus sur mobile */
-    display: flex;
-    justify-content: center;
-}
-
-.photo-portrait,
-.photo-initials {
-    width: var(--photo-sm);
-    height: auto;
-}
-
-.photo-initials {
-    height: var(--photo-height-sm);
-}
-
-/* Trusted logos : gap réduit sur mobile */
-.trusted-logos {
-    gap: var(--space-3);
-}
-
-.trusted-logo-item {
-    min-width: 70px;
-    padding: var(--space-2) var(--space-4);
-}
-
-/* Certifications : scroll horizontal sur mobile */
-.cert-badges {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: var(--space-2);
-    scrollbar-width: none;  /* Firefox */
-}
-
-.cert-badges::-webkit-scrollbar {
-    display: none;  /* Chrome/Safari */
-}
-
-.why-triple {
-    flex-wrap: wrap;
-}
-
 /* Footer mobile */
 .footer-content {
     flex-direction: column;
     gap: var(--space-6);
 }
 
-.footer-contact {
-    text-align: left;
-}
-
-/* Simulator card mobile */
-.sim-card {
-    padding: var(--space-4);
-}
-
-.sim-card-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-3);
-}
-
-.results-summary {
-    grid-template-columns: 1fr;
-}
-
-.summary-number {
-    font-size: var(--font-size-3xl);
-}
-
-.norm-header {
-    flex-direction: column;
-    gap: var(--space-2);
-}
-
-/* Solution desc heading mobile */
-.solution-desc h2 {
-    text-align: center;
-}
-
 /* ============================================
-   BREAKPOINT 480px — Petit mobile (paysage,
-   iPhone SE, Galaxy A, etc.)
+   BREAKPOINT 480px
    ============================================ */
 
 @media (min-width: 480px) {
-    :root {
-        --font-size-5xl: 2.25rem;
-        --font-size-4xl: 2.25rem;
-    }
-
-    /* Hero CTA : on peut passer en row dès 480px */
     .hero-cta {
         flex-direction: row;
         flex-wrap: wrap;
@@ -230,31 +42,10 @@ select {
     .hero-cta .btn {
         width: auto;
     }
-
-    /* Jobs grid : 2 col dès 480px */
-    .jobs-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    /* Simulator summary : 2 col */
-    .results-summary {
-        grid-template-columns: 1fr 1fr;
-        gap: var(--space-3);
-    }
-
-    .sim-card {
-        padding: var(--space-5);
-    }
-
-    .sim-card-header {
-        flex-direction: row;
-        align-items: center;
-    }
 }
 
 /* ============================================
    BREAKPOINT 768px — Tablette
-   (iPad portrait, Android tablette, etc.)
    ============================================ */
 
 @media (min-width: 768px) {
@@ -262,71 +53,18 @@ select {
         --font-size-5xl: 2.5rem;
         --font-size-4xl: 2.25rem;
         --font-size-3xl: 1.875rem;
-        --font-size-6xl: 3.25rem;
     }
 
-    /* New template: tablet */
-    .hero-new {
-        padding: calc(var(--navbar-height) + 48px) 0 48px;
-    }
-
-    .hero-h1,
     .hero-title {
         font-size: 2.5rem;
     }
 
-    .fix-line span {
-        font-size: 2rem;
-    }
-
-    .trusted {
-        padding: 32px 48px;
-    }
-
-    .trusted-inner {
-        flex-direction: row;
-    }
-
-    .testimonial-section {
-        padding: 64px 0;
-    }
-
-    .testimonial-card {
-        padding: 48px;
-    }
-
-    .testimonial-text {
-        margin-left: 68px;
-    }
-
-    .testimonial-author {
-        margin-left: 68px;
-    }
-
-    .quote-mark {
-        display: block;
-    }
-
-    .cta-final {
-        padding: 64px 0;
-    }
-
-    .services-section {
-        padding: var(--space-16) 0;
-    }
-
-    /* Hero */
     .hero {
         min-height: 75vh;
         padding-top: calc(var(--navbar-height) + var(--space-16));
         padding-bottom: var(--space-16);
     }
 
-    .hero.hero-page {
-        min-height: auto;
-    }
-
-    /* Section spacing tablette */
     .section {
         padding: var(--space-16) 0;
     }
@@ -340,7 +78,6 @@ select {
         margin-bottom: var(--space-12);
     }
 
-    /* Grids 2 colonnes sur tablette */
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--space-8);
@@ -351,129 +88,10 @@ select {
         gap: var(--space-6);
     }
 
-    .steps-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-6);
-    }
-
-    .problems-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .deliverables-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-6);
-    }
-
-    .frameworks-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-6);
-    }
-
-    .why-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-6);
-    }
-
-    .workflow-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-6);
-    }
-
-    .jobs-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-4);
-    }
-
-    /* Composants 2 col tablette */
-    .jobs-detail-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-5);
-    }
-
-    .ia-consequences-list {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .results-summary {
-        grid-template-columns: 1fr 1fr;
-        gap: var(--space-4);
-    }
-
-    .summary-number {
-        font-size: var(--font-size-4xl);
-    }
-
-    .norm-header {
-        flex-direction: row;
-        gap: var(--space-4);
-    }
-
-    /* Why profile : retour layout 2 col tablette */
-    .why-profile {
-        grid-template-columns: var(--col-photo-md) 1fr;
-        gap: var(--space-8);
-        padding: var(--space-8);
-    }
-
-    .why-photo-col {
-        order: 0;
-    }
-
-    .photo-portrait,
-    .photo-portrait-wrapper {
-        width: var(--photo-md);
-    }
-
-    .photo-initials {
-        width: var(--photo-md);
-        height: var(--photo-height-md);
-    }
-
-    /* Solution layout 2 col */
-    .solution-layout {
-        grid-template-columns: 1fr 1fr;
-        gap: var(--space-12);
-    }
-
-    .solution-desc h2 {
-        text-align: left;
-    }
-
-    /* IA key message */
-    .ia-key-message {
-        font-size: var(--font-size-lg);
-        padding: var(--space-5) var(--space-8);
-        margin-top: var(--space-10);
-    }
-
-    /* Footer */
     .footer-content {
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
-    }
-
-    .footer-contact {
-        text-align: right;
-        align-items: flex-end;
-    }
-
-    /* Simulator */
-    .sim-card {
-        padding: var(--space-8);
-    }
-
-    .sim-card-header {
-        flex-direction: row;
-        align-items: center;
-        gap: 0;
-    }
-
-    /* Inputs : restaure la taille sm sur tablette */
-    .question-select,
-    .pdf-section input {
-        font-size: var(--font-size-sm);
     }
 }
 
@@ -482,7 +100,6 @@ select {
    ============================================ */
 
 @media (min-width: 1024px) {
-    /* Navbar : retour au mode desktop */
     .nav-toggle {
         display: none;
     }
@@ -506,142 +123,31 @@ select {
         display: inline;
     }
 
-    .nav-lang {
-        margin-left: var(--space-4);
-    }
-
     :root {
         --font-size-5xl: 3rem;
         --font-size-4xl: 2.25rem;
         --font-size-3xl: 1.875rem;
-        --font-size-6xl: 3.75rem;
     }
 
-    /* New template: desktop */
-    .hero-new {
-        padding: calc(var(--navbar-height) + 72px) 0 56px;
-    }
-
-    .hero-grid {
-        grid-template-columns: 1fr 340px;
-    }
-
-    .hero-h1,
     .hero-title {
         font-size: 2.6rem;
     }
 
-    .fix-line span {
-        font-size: 2.5rem;
-    }
-
-    .service-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .testimonial-section {
-        padding: 88px 0;
-    }
-
-    .testimonial-card {
-        padding: 56px;
-    }
-
-    .testimonial-text {
-        font-size: 22px;
-    }
-
-    .cta-final {
-        padding: 88px 0;
-    }
-
-    .cta-final h2 {
-        font-size: 36px;
-    }
-
-    .services-section {
-        padding: var(--space-20) 0;
-    }
-
-    /* Hero : taille complète desktop */
     .hero {
         min-height: 85vh;
     }
 
-    .hero.hero-page {
-        min-height: auto;
-    }
-
-    /* Section spacing desktop */
     .section {
         padding: var(--space-20) 0;
     }
 
-    /* Grids 3+ colonnes desktop */
     .kpi-grid {
         grid-template-columns: repeat(3, 1fr);
-    }
-
-    .steps-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .steps-4 {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .steps-5 {
-        grid-template-columns: repeat(5, 1fr);
-    }
-
-    .deliverables-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .frameworks-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .why-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .workflow-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .jobs-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-5);
-    }
-
-    /* Composants 4 col desktop */
-    .jobs-detail-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    /* Why profile : layout desktop complet */
-    .why-profile {
-        grid-template-columns: var(--col-photo-lg) 1fr;
-        gap: var(--space-12);
-        padding: var(--space-10);
-        margin-top: var(--space-12);
-    }
-
-    .photo-portrait,
-    .photo-portrait-wrapper {
-        width: var(--photo-lg);
-    }
-
-    .photo-initials {
-        width: var(--photo-lg);
-        height: var(--photo-height-lg);
     }
 }
 
 /* ============================================
    EDGE CASE : Paysage mobile
-   (orientation landscape + écran petit)
    ============================================ */
 
 @media (max-height: 500px) and (orientation: landscape) {
@@ -651,16 +157,10 @@ select {
         padding-top: calc(var(--navbar-height) + var(--space-6));
         padding-bottom: var(--space-6);
     }
-
-    .hero.hero-page {
-        min-height: auto;
-        max-height: 80vh;
-    }
 }
 
 /* ============================================
-   EDGE CASE : Très petit écran (<320px)
-   Dégradation gracieuse
+   EDGE CASE : Tres petit ecran (<320px)
    ============================================ */
 
 @media (max-width: 319px) {
@@ -670,7 +170,6 @@ select {
         --font-size-2xl: 1.25rem;
     }
 
-    /* Évite toute coupure de texte */
     .hero-title,
     .section-title,
     h1, h2, h3 {
@@ -678,21 +177,9 @@ select {
         hyphens: auto;
     }
 
-    /* Boutons : pas de dépassement */
     .btn {
         max-width: 100%;
         white-space: normal;
         text-align: center;
-    }
-
-    /* Simulator : réduit encore plus */
-    .sim-card {
-        padding: var(--space-3);
-    }
-
-    /* Tags : wrap forcé */
-    .cert-badges {
-        flex-wrap: wrap;
-        overflow-x: visible;
     }
 }
