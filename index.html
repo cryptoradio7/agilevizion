@@ -6,18 +6,18 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' https://agilevizion.com data:; connect-src 'self'; object-src 'none';">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-    <title>AgileVizion — IT Project & Transformation Manager</title>
+    <title>AgileVizion — CISO as a Service | Luxembourg & Benelux</title>
 
     <!-- SEO Meta -->
-    <meta name="description" content="AgileVizion — Emmanuel Genesteix, IT Project & Transformation Manager. IT governance, migration, compliance, digitalization & AI. Luxembourg.">
+    <meta name="description" content="AgileVizion — Outsourced CISO for regulated financial entities in Luxembourg and the Benelux. NIS2, DORA, ISO 27001 compliance. Operational security governance without hiring full-time.">
     <meta name="author" content="Emmanuel Genesteix">
-    <meta property="og:title" content="AgileVizion — IT Project & Transformation Manager">
-    <meta property="og:description" content="I help organisations structure, transform and secure their IT. Migration, governance, compliance, digitalization & AI.">
+    <meta property="og:title" content="AgileVizion — CISO as a Service">
+    <meta property="og:description" content="Outsourced CISO for regulated financial entities. NIS2, DORA, ISO 27001. Luxembourg & Benelux.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://agilevizion.com/">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="AgileVizion — IT Project & Transformation Manager">
-    <meta name="twitter:description" content="I help organisations structure, transform and secure their IT.">
+    <meta name="twitter:title" content="AgileVizion — CISO as a Service">
+    <meta name="twitter:description" content="Outsourced CISO for regulated financial entities in Luxembourg & Benelux.">
     <link rel="canonical" href="https://agilevizion.com/">
 
     <!-- Structured Data -->
@@ -29,12 +29,12 @@
                 "@type": "Organization",
                 "name": "AgileVizion",
                 "url": "https://agilevizion.com",
-                "description": "IT Project & Transformation Manager — Freelance",
+                "description": "CISO as a Service — Outsourced cybersecurity governance for regulated financial entities",
                 "founder": {
                     "@type": "Person",
                     "name": "Emmanuel Genesteix"
                 },
-                "areaServed": "Europe",
+                "areaServed": ["Luxembourg", "Belgium", "Netherlands"],
                 "address": {
                     "@type": "PostalAddress",
                     "addressCountry": "LU",
@@ -71,21 +71,112 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/cookies.css">
+
+    <style>
+        /* Framework pillars */
+        .pillar {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 0;
+            align-items: start;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--color-gray-200);
+        }
+        .pillar:last-child { border-bottom: none; }
+        .pillar-label {
+            font-size: var(--font-size-xs);
+            font-weight: var(--font-weight-bold);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--color-primary);
+            padding-top: 2px;
+        }
+        .pillar-content h3 {
+            font-size: var(--font-size-base);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: 4px;
+        }
+        .pillar-content p {
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        /* Story cards */
+        .story-card {
+            padding: var(--space-5);
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-gray-200);
+            border-left: 3px solid var(--color-primary);
+        }
+        .story-label {
+            font-size: var(--font-size-xs);
+            font-weight: var(--font-weight-semibold);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--color-primary);
+            margin-bottom: var(--space-2);
+        }
+        .story-problem {
+            font-size: var(--font-size-sm);
+            color: var(--text-primary);
+            font-weight: var(--font-weight-medium);
+            margin-bottom: var(--space-2);
+        }
+        .story-action {
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+
+        /* Approach timeline */
+        .approach-step {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: var(--space-4);
+            align-items: start;
+            padding: var(--space-5) 0;
+            border-bottom: 1px solid var(--color-gray-200);
+        }
+        .approach-step:last-child { border-bottom: none; }
+        .approach-period {
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+        }
+        .approach-step h3 {
+            font-size: var(--font-size-base);
+            margin-bottom: 4px;
+        }
+        .approach-step p {
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 600px) {
+            .pillar {
+                grid-template-columns: 1fr;
+                gap: var(--space-1);
+            }
+        }
+    </style>
 </head>
-<body data-page-title="home.title">
+<body>
 
     <!-- Cookie Consent Popup -->
     <div id="cookie-overlay" class="cookie-overlay" style="display:none;"></div>
-    <div id="cookie-popup" class="cookie-popup" style="display:none;" role="dialog" aria-modal="true" aria-label="Consentement cookies">
+    <div id="cookie-popup" class="cookie-popup" style="display:none;" role="dialog" aria-modal="true" aria-label="Cookie consent">
         <div class="cookie-popup-icon" aria-hidden="true"><i class="fa-solid fa-cookie-bite"></i></div>
         <div class="cookie-popup-content">
-            <h3 class="cookie-popup-title" data-i18n="cookies.popup_title">Ce site utilise des cookies</h3>
-            <p class="cookie-popup-text" data-i18n="cookies.popup_text">Nous utilisons uniquement des cookies essentiels au fonctionnement du site. Aucun cookie publicitaire ni de tracking.</p>
-            <p class="cookie-popup-link"><a href="#legal" data-i18n="cookies.link">Mentions légales</a></p>
+            <h3 class="cookie-popup-title">This site uses cookies</h3>
+            <p class="cookie-popup-text">We only use essential cookies for site functionality. No advertising or tracking cookies.</p>
         </div>
         <div class="cookie-popup-actions">
-            <button onclick="acceptCookies()" class="btn cookie-btn-accept" data-i18n="cookies.accept">Accepter</button>
-            <button onclick="refuseCookies()" class="btn cookie-btn-refuse" data-i18n="cookies.refuse">Refuser</button>
+            <button onclick="acceptCookies()" class="btn cookie-btn-accept">Accept</button>
+            <button onclick="refuseCookies()" class="btn cookie-btn-refuse">Decline</button>
         </div>
     </div>
 
@@ -93,172 +184,289 @@
     <header>
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="nav-logo" data-i18n-html="common.brand">Agile<span>Vizion</span></a>
+            <a href="#hero" class="nav-logo">Agile<span>Vizion</span></a>
             <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-menu" id="nav-menu">
-                <li class="nav-secondary"><a href="index.html" class="active" data-i18n="nav.home">Services</a></li>
-                <li class="nav-primary"><a href="ia.html" data-i18n="nav.ia">Agentic AI</a></li>
-                <li class="nav-primary"><a href="cyber.html" data-i18n="nav.cyber">GRC Cybersécurité</a></li>
-                <li class="nav-primary"><a href="transformation.html" data-i18n="nav.transformation">IT Transformation</a></li>
-                <li class="nav-secondary"><a href="blog.html">Blog</a></li>
-                <li class="nav-lang">
-                    <button onclick="I18n.switchLanguage('fr')" class="lang-btn" id="lang-fr">FR</button>
-                    <button onclick="I18n.switchLanguage('en')" class="lang-btn" id="lang-en">EN</button>
-                </li>
+                <li><a href="#scope">Scope</a></li>
+                <li><a href="#proof">In practice</a></li>
+                <li><a href="#approach">Approach</a></li>
+                <li><a href="#who">Who it's for</a></li>
+                <li><a href="#contact" class="btn btn-primary" style="padding: 8px 20px; min-height: auto; border-radius: var(--radius-full);">Get in touch</a></li>
             </ul>
         </div>
     </nav>
     </header>
 
     <main>
+
     <!-- Hero -->
-    <section class="hero-new" id="hero">
+    <section class="hero" id="hero">
         <div class="container">
-        <div class="hero-grid">
-            <div class="hero-left">
-                <div class="pill-brand" data-i18n="home.pill_brand">IT Projects &amp; Transformation · GRC Cyber · AI</div>
-                <h1 class="hero-h1 animate-in" data-i18n="home.hero_h1">Your IT is disorganized, non-compliant or stuck in transition?</h1>
-                <div class="fix-line animate-in">
-                    <i class="fa-solid fa-arrow-right"></i>
-                    <span data-i18n="home.hero_fix">I fix that.</span>
+            <div class="hero-content">
+                <div style="margin-bottom: var(--space-4);">
+                    <span style="display: inline-block; background: var(--color-primary-100); color: var(--color-primary); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); padding: 6px 16px; border-radius: var(--radius-full);">CISO as a Service</span>
                 </div>
-                <p class="hero-intro animate-in" data-i18n="home.hero_intro">
-                    Freelance consultant. I step in to structure your IT transformation, get you cyber-compliant and automate your business processes with AI.
+                <h1 class="hero-title animate-in" style="letter-spacing: -0.02em;">Your security function,<br>without the full-time hire.</h1>
+                <p class="hero-subtitle animate-in">
+                    I work as an outsourced CISO for regulated financial entities in Luxembourg and the Benelux: funds, banks, PSFs, law firms. The goal: give you an operational, well-governed security function — without waiting to hire a full-time CISO.
                 </p>
-                <div class="cta-row animate-in">
-                    <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-primary btn-lg" data-i18n-html="home.hero_cta_book"><i class="fa-solid fa-envelope"></i> Book a 30-min call</a>
-                    <a href="#services" class="btn btn-outline" data-i18n="home.hero_cta_services">See services →</a>
-                </div>
-                <div class="trusted-inline animate-in">
-                    <div class="trusted-label" data-i18n="home.trusted_label">TRUSTED BY</div>
-                    <div class="trusted-logos">
-                        <div class="trusted-logo-item">
-                            <img src="images/clients/ec.png" alt="European Commission" class="trusted-logo-img">
-                            <span>European Commission</span>
-                        </div>
-                        <div class="trusted-logo-item">
-                            <img src="images/clients/sg.jpeg" alt="Société Générale" class="trusted-logo-img">
-                            <span>Société Générale</span>
-                        </div>
-                        <div class="trusted-logo-item">
-                            <img src="images/clients/luxaviation.png" alt="Luxaviation Group" class="trusted-logo-img">
-                            <span>Luxaviation Group</span>
-                        </div>
-                        <div class="trusted-logo-item">
-                            <img src="images/clients/cgi.jpg" alt="CGI" class="trusted-logo-img">
-                            <span>CGI</span>
-                        </div>
-                        <div class="trusted-logo-item">
-                            <img src="images/clients/sjl.jpeg" alt="SJL Avocats" class="trusted-logo-img">
-                            <span>SJL Avocats</span>
-                        </div>
-                        <div class="trusted-logo-item">
-                            <img src="images/clients/parametriks.png" alt="Parametriks" class="trusted-logo-img">
-                            <span>Parametriks</span>
-                        </div>
-                    </div>
+                <div class="hero-cta animate-in">
+                    <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-primary btn-lg"><i class="fa-solid fa-envelope"></i> Let's talk</a>
+                    <a href="#scope" class="btn btn-outline">See the full scope</a>
                 </div>
             </div>
-            <div class="hero-right animate-in">
-                <div class="id-card">
-                    <div class="id-photo" id="hero-media">
-                        <img src="images/photo_emmanuel_nobg.png" alt="Emmanuel Genesteix" id="hero-photo">
-                        <div class="play-btn" id="play-btn" role="button" aria-label="Play video" tabindex="0">
-                            <svg viewBox="0 0 80 80" width="64" height="64">
-                                <circle cx="40" cy="40" r="38" fill="rgba(255,255,255,0.85)" stroke="rgba(79,70,229,0.3)" stroke-width="2"/>
-                                <polygon points="32,24 32,56 58,40" fill="#4F46E5"/>
-                            </svg>
-                        </div>
-                        <video id="hero-video" playsinline preload="none" style="display:none;">
-                            <source src="video.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="id-name">Emmanuel Genesteix</div>
-                    <div class="id-title">IT Projects &amp; Transformation Manager</div>
-                    <div class="id-title">· GRC Cyber · AI</div>
-                    <div class="id-loc" data-i18n="home.id_loc">Freelance — Luxembourg</div>
-                    <div class="id-experience" data-i18n="home.id_experience">20 years IT experience</div>
-                    <div class="certs">
-                        <span class="cert-pill">PRINCE2</span>
-                        <span class="cert-pill">ITIL V4</span>
-                        <span class="cert-pill">ISO 27001</span>
-                        <span class="cert-pill">SAFe 5 SPC</span>
-                        <span class="cert-pill">Scrum</span>
-                        <span class="cert-pill">AgilePM</span>
-                        <span class="cert-pill">Change Management</span>
-                    </div>
-                </div>
-            </div>
-        </div>
         </div>
     </section>
 
+    <!-- Trusted by -->
+    <section style="padding: 32px 0; background: var(--bg-secondary); border-top: 1px solid var(--color-gray-200); border-bottom: 1px solid var(--color-gray-200);">
+        <div class="container" style="text-align: center;">
+            <div style="font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-4);">Trusted by</div>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 32px;">
+                <img src="images/clients/ec.png" alt="European Commission" style="height: 36px; opacity: 0.6; filter: grayscale(100%);">
+                <img src="images/clients/sg.jpeg" alt="Societe Generale" style="height: 36px; opacity: 0.6; filter: grayscale(100%);">
+                <img src="images/clients/luxaviation.png" alt="Luxaviation Group" style="height: 36px; opacity: 0.6; filter: grayscale(100%);">
+                <img src="images/clients/sjl.jpeg" alt="SJL Avocats" style="height: 36px; opacity: 0.6; filter: grayscale(100%);">
+                <img src="images/clients/cgi.jpg" alt="CGI" style="height: 36px; opacity: 0.6; filter: grayscale(100%);">
+                <img src="images/clients/parametriks.png" alt="Parametriks" style="height: 36px; opacity: 0.6; filter: grayscale(100%);">
+            </div>
+        </div>
+    </section>
 
-    <!-- Services -->
-    <section class="section services-section" id="services">
+    <!-- Scope: 5 pillars -->
+    <section class="section" id="scope">
         <div class="container">
-            <div class="section-head">
-                <div class="eyebrow" data-i18n="home.services_eyebrow">SERVICES</div>
-                <h2 class="section-title animate-in" data-i18n="home.areas_title">Three services — delivered hands-on.</h2>
+            <div class="section-head" style="margin-bottom: var(--space-8);">
+                <div style="font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.1em; text-align: center; margin-bottom: var(--space-2);">Full scope</div>
+                <h2 class="section-title animate-in">Everything a CISO covers — on a flexible basis.</h2>
+                <p class="section-subtitle">I embed in your organisation as your acting CISO, with a structured handover plan to a permanent hire when you're ready.</p>
             </div>
 
-            <div class="service-grid">
-                <article class="service-card animate-in">
-                    <div class="service-num">01</div>
-                    <div class="service-icon"><i class="fa-solid fa-sitemap" aria-hidden="true"></i></div>
-                    <h3 data-i18n="home.area_1_title">IT Strategy &amp; Transformation</h3>
-                    <p class="service-tagline" data-i18n="home.service_1_tagline">When your programme is stalled or your PMO exists only on paper.</p>
-                    <ul class="area-list" data-i18n-html="home.area_1_desc"><li>PMO · Agile Project Management</li><li>Migration · Digitalisation</li><li>Service delivery · ITIL</li></ul>
-                    <div class="service-recent">
-                        <span class="service-recent-label" data-i18n="home.recent_label">Recent:</span>
-                        <span data-i18n="home.service_1_recent">€500K ServiceNow migration · European Commission</span>
-                    </div>
-                    <a href="transformation.html" class="card-link" data-i18n="home.area_1_link">Learn more →</a>
-                </article>
+            <div style="max-width: 760px; margin: 0 auto;" class="animate-in">
 
-                <article class="service-card animate-in">
-                    <div class="service-num">02</div>
-                    <div class="service-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
-                    <h3 data-i18n="home.area_2_title">Governance, Compliance &amp; Risks</h3>
-                    <p class="service-tagline" data-i18n="home.service_2_tagline">Audit-ready in 3–6 months — not 18. Ahead of the enforcement curve.</p>
-                    <ul class="area-list" data-i18n-html="home.area_2_desc"><li>DORA · NIS2 · ISO 27001</li><li>Gap analysis &amp; roadmap</li><li>Audit · remediation</li></ul>
-                    <div class="service-recent">
-                        <span class="service-recent-label" data-i18n="home.recent_label">Recent:</span>
-                        <span data-i18n="home.service_2_recent">Full DORA &amp; NIS2 readiness · regulated SMEs</span>
+                <div class="pillar">
+                    <div class="pillar-label"><i class="fa-solid fa-compass" style="margin-right: 6px;"></i> Governance</div>
+                    <div class="pillar-content">
+                        <h3>Risk register + Policies & standards</h3>
+                        <p>The foundation: which risks matter, which rules apply. Building the risk register, drafting and enforcing security policies, maintaining the Statement of Applicability. Advising Management and preparing Board reporting on cyber matters.</p>
                     </div>
-                    <a href="cyber.html" class="card-link" data-i18n="home.area_2_link">Learn more →</a>
-                </article>
+                </div>
 
-                <article class="service-card featured animate-in">
-                    <div class="badge-new">NEW</div>
-                    <div class="service-num">03</div>
-                    <div class="service-icon"><i class="fa-solid fa-robot" aria-hidden="true"></i></div>
-                    <h3 data-i18n="home.area_3_title">AI · Process Automation &amp; Reporting</h3>
-                    <p class="service-tagline" data-i18n="home.service_3_tagline">AI agents that do the repetitive work — so you focus on decisions.</p>
-                    <ul class="area-list" data-i18n-html="home.area_3_desc"><li>Repetitive tasks automated end-to-end</li><li>Custom dashboards with real-time KPIs</li><li>Reporting</li></ul>
-                    <div class="service-recent">
-                        <span class="service-recent-label" data-i18n="home.recent_label">Recent:</span>
-                        <span data-i18n="home.service_3_recent">Pentest automation agents · Luxembourg law firms</span>
+                <div class="pillar">
+                    <div class="pillar-label"><i class="fa-solid fa-gears" style="margin-right: 6px;"></i> Operational</div>
+                    <div class="pillar-content">
+                        <h3>Security in projects + Architecture board</h3>
+                        <p>Embedding security into every project from day one — data classification, access control, authentication design, compliance checklist. Sitting on the architecture board to review and challenge technical choices before they go live.</p>
                     </div>
-                    <a href="ia.html" class="card-link" data-i18n="home.area_3_link">Learn more →</a>
-                </article>
+                </div>
+
+                <div class="pillar">
+                    <div class="pillar-label"><i class="fa-solid fa-shield-halved" style="margin-right: 6px;"></i> Technical</div>
+                    <div class="pillar-content">
+                        <h3>Vulnerability management + Incident response</h3>
+                        <p>Overseeing vulnerability scans, prioritising by real business impact, driving remediation within deadlines. Running the incident response process: detect, contain, eradicate, recover, learn. Training teams so everyone knows who to call.</p>
+                    </div>
+                </div>
+
+                <div class="pillar">
+                    <div class="pillar-label"><i class="fa-solid fa-life-ring" style="margin-right: 6px;"></i> Resilience</div>
+                    <div class="pillar-content">
+                        <h3>Business continuity</h3>
+                        <p>Business Impact Analysis with the business, BCP/DRP plans, crisis simulation exercises. Making sure the organisation can survive a major incident — and has tested it, not just documented it.</p>
+                    </div>
+                </div>
+
+                <div class="pillar">
+                    <div class="pillar-label"><i class="fa-solid fa-chart-line" style="margin-right: 6px;"></i> Reporting</div>
+                    <div class="pillar-content">
+                        <h3>Dashboards & KPIs</h3>
+                        <p>Translating technical reality into metrics that Management can act on. Compliance coverage, mean time to remediate, incident trends, training completion. Proving that security works — and getting the budget to keep it running.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Plus: what else -->
+            <div style="max-width: 760px; margin: var(--space-8) auto 0; text-align: center;">
+                <p style="font-size: var(--font-size-sm); color: var(--text-secondary);">
+                    <strong style="color: var(--text-primary);">Also covered:</strong>
+                    Third-party risk management &middot; Security awareness & phishing simulations &middot; Regulatory compliance (NIS2, DORA, GDPR, ISO 27001) &middot; M365 security hardening &middot; Knowledge transfer & handover to permanent CISO
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-final" id="contact">
-        <div class="container cta-final-inner">
-            <h2 class="animate-in" data-i18n="home.cta_title">Let's talk</h2>
-            <p class="animate-in" data-i18n="home.cta_intro">30 minutes to understand your situation — free, no commitment. Most calls turn into a concrete action plan within 48 hours.</p>
-            <div class="cta-row animate-in">
-                <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-primary btn-lg" data-i18n-html="home.hero_cta_book"><i class="fa-solid fa-envelope"></i> Book a 30-min call</a>
-                <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-outline-light">emmanuel.genesteix@agilevizion.com</a>
+    <!-- In practice: real situations -->
+    <section class="section section-alt" id="proof">
+        <div class="container">
+            <div class="section-head" style="margin-bottom: var(--space-8);">
+                <div style="font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.1em; text-align: center; margin-bottom: var(--space-2);">In practice</div>
+                <h2 class="section-title animate-in">Problems I've actually fixed.</h2>
+                <p class="section-subtitle">Anonymised situations from real engagements.</p>
+            </div>
+
+            <div class="services-grid" style="max-width: 960px; margin: 0 auto;">
+
+                <div class="story-card animate-in">
+                    <div class="story-label">Governance</div>
+                    <div class="story-problem">Board reporting was all green — then an incident happened.</div>
+                    <p class="story-action">Reporting measured activity (number of scans launched), not effectiveness (vulnerabilities remediated on time). Rebuilt the dashboard around outcome KPIs: compliance coverage, MTTR, open critical findings. Management finally had a real picture.</p>
+                </div>
+
+                <div class="story-card animate-in">
+                    <div class="story-label">Governance</div>
+                    <div class="story-problem">ISO 27001 audit: no evidence of management involvement, risk register outdated, DdA exclusions without justification.</div>
+                    <p class="story-action">Restructured the risk review process with formal management sign-off, quarterly risk register updates, and documented justification for every DdA exclusion. Built the evidence trail the auditor needed.</p>
+                </div>
+
+                <div class="story-card animate-in">
+                    <div class="story-label">Operational</div>
+                    <div class="story-problem">Major platform migration — security brought in two weeks before go-live.</div>
+                    <p class="story-action">Introduced security-by-design checkpoints: data classification at project kickoff, access model in design phase, compliance checklist before staging. Security became a gate, not an afterthought.</p>
+                </div>
+
+                <div class="story-card animate-in">
+                    <div class="story-label">Technical</div>
+                    <div class="story-problem">M365 migration: MFA deployed, but legacy protocols (SMTP basic, POP3) left wide open in Entra ID.</div>
+                    <p class="story-action">Ran a CIS Benchmark assessment, blocked legacy authentication, enforced conditional access policies, removed orphan accounts. MFA actually meant something after that.</p>
+                </div>
+
+                <div class="story-card animate-in">
+                    <div class="story-label">Technical</div>
+                    <div class="story-problem">Ransomware hit a law firm — first reflex was to restore from backup. Nobody knew who to call.</div>
+                    <p class="story-action">Built an incident response playbook: who does what in the first hour, escalation chain, containment steps, communication template. Ran tabletop exercises so the team would react on muscle memory, not panic.</p>
+                </div>
+
+                <div class="story-card animate-in">
+                    <div class="story-label">Resilience</div>
+                    <div class="story-problem">Business continuity plan existed on paper — never tested, staff unaware.</div>
+                    <p class="story-action">Ran a tabletop crisis simulation with the executive committee. Identified gaps in communication chains, recovery priorities and vendor dependencies. Updated the BCP and scheduled quarterly exercises.</p>
+                </div>
+
             </div>
         </div>
     </section>
+
+    <!-- Approach: first 6 months -->
+    <section class="section" id="approach">
+        <div class="container">
+            <div class="section-head" style="margin-bottom: var(--space-8);">
+                <div style="font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.1em; text-align: center; margin-bottom: var(--space-2);">Approach</div>
+                <h2 class="section-title animate-in">The first 6 months.</h2>
+                <p class="section-subtitle">A structured ramp-up — from assessment to running security function.</p>
+            </div>
+
+            <div style="max-width: 660px; margin: 0 auto;" class="animate-in">
+
+                <div class="approach-step">
+                    <div class="approach-period">Month 1-2</div>
+                    <div>
+                        <h3>Understand & assess</h3>
+                        <p>Stakeholder interviews, maturity assessment, asset inventory, quick wins (MFA, passwords, awareness). Deliver: maturity report + risk overview.</p>
+                    </div>
+                </div>
+
+                <div class="approach-step">
+                    <div class="approach-period">Month 3-4</div>
+                    <div>
+                        <h3>Build foundations</h3>
+                        <p>Update security policy, set up governance committee, deploy priority standards, structure documentation framework, start risk register.</p>
+                    </div>
+                </div>
+
+                <div class="approach-step">
+                    <div class="approach-period">Month 5-6</div>
+                    <div>
+                        <h3>Deliver & hand over</h3>
+                        <p>3-year security roadmap, KPI dashboard, complete handover dossier: current state, risks, stakeholder map, documentation, action plan, recommendations for the next 12 months.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="max-width: 660px; margin: var(--space-6) auto 0; padding: var(--space-4) var(--space-5); background: var(--color-primary-50); border-radius: var(--radius-lg); text-align: center;">
+                <p style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: 0;">
+                    <strong style="color: var(--text-primary);">After 6 months you have:</strong> a maturity assessment, governance framework, first standards deployed, quick wins in place, a security roadmap — and a dossier ready for your permanent CISO or for continued engagement.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who it's for -->
+    <section class="section section-alt" id="who">
+        <div class="container">
+            <div class="section-head" style="margin-bottom: var(--space-8);">
+                <div style="font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.1em; text-align: center; margin-bottom: var(--space-2);">Who it's for</div>
+                <h2 class="section-title animate-in">Regulated entities that need a CISO — now.</h2>
+                <p class="section-subtitle">Under CSSF, CAA or CNPD supervision, without a dedicated security function yet.</p>
+            </div>
+
+            <div class="steps-grid steps-5" style="max-width: 960px; margin: 0 auto;">
+
+                <div class="animate-in" style="padding: var(--space-5); background: var(--bg-primary); border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--color-gray-200);">
+                    <div style="font-size: 1.5rem; color: var(--color-primary); margin-bottom: var(--space-3);"><i class="fa-solid fa-landmark"></i></div>
+                    <h3 style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Banks & credit institutions</h3>
+                </div>
+
+                <div class="animate-in" style="padding: var(--space-5); background: var(--bg-primary); border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--color-gray-200);">
+                    <div style="font-size: 1.5rem; color: var(--color-primary); margin-bottom: var(--space-3);"><i class="fa-solid fa-chart-pie"></i></div>
+                    <h3 style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Fund managers & ManCos</h3>
+                </div>
+
+                <div class="animate-in" style="padding: var(--space-5); background: var(--bg-primary); border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--color-gray-200);">
+                    <div style="font-size: 1.5rem; color: var(--color-primary); margin-bottom: var(--space-3);"><i class="fa-solid fa-umbrella"></i></div>
+                    <h3 style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Insurance companies</h3>
+                </div>
+
+                <div class="animate-in" style="padding: var(--space-5); background: var(--bg-primary); border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--color-gray-200);">
+                    <div style="font-size: 1.5rem; color: var(--color-primary); margin-bottom: var(--space-3);"><i class="fa-solid fa-building-columns"></i></div>
+                    <h3 style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">PSFs & support PFS</h3>
+                </div>
+
+                <div class="animate-in" style="padding: var(--space-5); background: var(--bg-primary); border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--color-gray-200);">
+                    <div style="font-size: 1.5rem; color: var(--color-primary); margin-bottom: var(--space-3);"><i class="fa-solid fa-gavel"></i></div>
+                    <h3 style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Law firms</h3>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Credentials -->
+    <section class="section" id="creds">
+        <div class="container" style="text-align: center;">
+            <div style="font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-2);">Credentials</div>
+            <h2 class="section-title animate-in" style="margin-bottom: var(--space-8);">20 years in IT. Certified where it matters.</h2>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 700px; margin: 0 auto;">
+                <span style="background: var(--color-primary-100); color: var(--color-primary-dark); padding: 6px 16px; border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);">ISO 27001 Lead Implementer</span>
+                <span style="background: var(--color-primary-100); color: var(--color-primary-dark); padding: 6px 16px; border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);">ISO 27001 Lead Auditor</span>
+                <span style="background: var(--bg-secondary); color: var(--text-secondary); padding: 6px 16px; border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);">TOGAF</span>
+                <span style="background: var(--bg-secondary); color: var(--text-secondary); padding: 6px 16px; border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);">SAFe 5 SPC</span>
+                <span style="background: var(--bg-secondary); color: var(--text-secondary); padding: 6px 16px; border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);">PRINCE2 Practitioner</span>
+                <span style="background: var(--bg-secondary); color: var(--text-secondary); padding: 6px 16px; border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);">ITIL V4</span>
+                <span style="background: var(--bg-secondary); color: var(--text-secondary); padding: 6px 16px; border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);">Change Management</span>
+                <span style="background: var(--bg-secondary); color: var(--text-secondary); padding: 6px 16px; border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);">AWS Cloud Practitioner</span>
+                <span style="background: var(--bg-secondary); color: var(--text-secondary); padding: 6px 16px; border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);">Scrum Master</span>
+            </div>
+            <p style="font-size: var(--font-size-sm); color: var(--text-muted); margin-top: var(--space-4);">MBA (Instituto Empresa) &middot; MSc Innovation (ESCP Europe)</p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-cta" id="contact" style="padding: var(--space-20) 0;">
+        <div class="container" style="max-width: 640px;">
+            <h2 class="animate-in" style="font-size: var(--font-size-4xl); margin-bottom: var(--space-4);">Let's talk.</h2>
+            <p class="animate-in" style="font-size: var(--font-size-lg); color: var(--color-white-85); margin-bottom: var(--space-8);">30 minutes to understand your situation — free, no commitment.</p>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: var(--space-4);" class="animate-in">
+                <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-primary btn-lg" style="background: var(--color-white); color: var(--color-primary-dark); font-weight: var(--font-weight-semibold);"><i class="fa-solid fa-envelope"></i> emmanuel.genesteix@agilevizion.com</a>
+                <a href="tel:+352661780807" style="color: var(--color-white-85); font-size: var(--font-size-base);"><i class="fa-solid fa-phone"></i> +352 661 78 08 07</a>
+                <a href="https://www.linkedin.com/in/genesteix-emmanuel" target="_blank" rel="noopener noreferrer" style="color: var(--color-white-85); font-size: var(--font-size-base);"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
     </main>
 
     <!-- Footer -->
@@ -266,72 +474,28 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <span class="nav-logo" data-i18n-html="common.brand">Agile<span>Vizion</span></span>
-                    <p data-i18n="common.location">Luxembourg (interventions Europe)</p>
+                    <span class="nav-logo">Agile<span>Vizion</span></span>
+                    <p>Luxembourg</p>
                 </div>
                 <div class="footer-contact">
-                    <a href="mailto:emmanuel.genesteix@agilevizion.com" data-i18n="common.email">emmanuel.genesteix@agilevizion.com</a>
-                    <a href="tel:+352661780807" data-i18n="common.footer_phone">
-                        <i class="fa-solid fa-phone" aria-hidden="true"></i> +352.661.78.08.07
-                    </a>
-                    <a href="https://www.linkedin.com/in/genesteix-emmanuel" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn
-                    </a>
+                    <a href="mailto:emmanuel.genesteix@agilevizion.com">emmanuel.genesteix@agilevizion.com</a>
+                    <a href="tel:+352661780807"><i class="fa-solid fa-phone" aria-hidden="true"></i> +352.661.78.08.07</a>
+                    <a href="https://www.linkedin.com/in/genesteix-emmanuel" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p data-i18n-html="common.copyright">&copy; 2024-2030 AgileVizion</p>
+                <p>&copy; 2024-2030 AgileVizion</p>
                 <p class="footer-legal-nav">
-                    <a href="#legal" class="footer-legal-link" data-i18n="common.footer_legal">Mentions légales</a>
+                    <a href="#legal" class="footer-legal-link">Legal notice</a>
                 </p>
             </div>
             <div id="legal" class="footer-legal">
-                <p><strong>AgileVizion</strong> — Immatriculation : A46385 — TVA LU36976357</p>
+                <p><strong>AgileVizion</strong> — Registration: A46385 — VAT LU36976357</p>
             </div>
         </div>
     </footer>
 
-    <!-- Bouton flottant CV -->
-    <a href="CV_Emmanuel_Genesteix.pdf" download class="fab-cv" title="Download CV" aria-label="Download CV">
-        <span data-i18n-html="common.fab_cv"><i class="fa-solid fa-file-arrow-down"></i> CV</span>
-    </a>
-
-    <!-- Hero Video -->
-    <script>
-    (function() {
-        var btn = document.getElementById('play-btn');
-        var photo = document.getElementById('hero-photo');
-        var video = document.getElementById('hero-video');
-        var container = document.getElementById('hero-media');
-
-        function playVideo() {
-            photo.style.display = 'none';
-            btn.style.display = 'none';
-            video.style.display = 'block';
-            container.style.alignItems = 'stretch';
-            video.play();
-        }
-
-        function stopVideo() {
-            video.pause();
-            video.currentTime = 0;
-            video.style.display = 'none';
-            photo.style.display = '';
-            btn.style.display = '';
-            container.style.alignItems = '';
-        }
-
-        btn.addEventListener('click', playVideo);
-        btn.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); playVideo(); }
-        });
-        video.addEventListener('ended', stopVideo);
-        video.addEventListener('click', stopVideo);
-    })();
-    </script>
-
     <!-- Scripts -->
-    <script src="js/i18n.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/cookies.js"></script>
