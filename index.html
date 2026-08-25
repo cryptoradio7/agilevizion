@@ -74,33 +74,49 @@
 
     <style>
         /* Framework pillars */
-        .pillar {
+        .pillars-grid {
             display: grid;
-            grid-template-columns: 140px 1fr;
-            gap: 0;
-            align-items: start;
-            padding: 20px 0;
-            border-bottom: 1px solid var(--color-gray-200);
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
         }
-        .pillar:last-child { border-bottom: none; }
+        .pillar {
+            display: flex;
+            align-items: stretch;
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-gray-200);
+            overflow: hidden;
+            transition: box-shadow var(--transition-base);
+        }
+        .pillar:hover {
+            box-shadow: var(--shadow-md);
+        }
+        .pillar-accent {
+            width: 4px;
+            flex-shrink: 0;
+            background: var(--color-primary);
+        }
+        .pillar-inner {
+            padding: 20px 20px 20px 16px;
+        }
         .pillar-label {
             font-size: var(--font-size-xs);
             font-weight: var(--font-weight-bold);
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: var(--color-primary);
-            padding-top: 2px;
+            margin-bottom: 6px;
         }
         .pillar-content h3 {
-            font-size: var(--font-size-base);
+            font-size: var(--font-size-sm);
             font-weight: var(--font-weight-semibold);
             margin-bottom: 4px;
         }
         .pillar-content p {
-            font-size: var(--font-size-sm);
+            font-size: var(--font-size-xs);
             color: var(--text-secondary);
             margin-bottom: 0;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         /* Story cards */
@@ -246,45 +262,60 @@
                 <p class="section-subtitle">I embed in your organisation as your acting CISO, with a structured handover plan to a permanent hire when you're ready.</p>
             </div>
 
-            <div style="max-width: 760px; margin: 0 auto;" class="animate-in">
+            <div class="pillars-grid animate-in" style="max-width: 960px; margin: 0 auto;">
 
                 <div class="pillar">
-                    <div class="pillar-label"><i class="fa-solid fa-compass" style="margin-right: 6px;"></i> Governance</div>
-                    <div class="pillar-content">
-                        <h3>Risk register + Policies & standards + Cyber business cases</h3>
-                        <p>The foundation: which risks matter, which rules apply, what to fund. Building the risk register, drafting security policies, maintaining the Statement of Applicability. Building business cases for security investments and presenting the prioritised project roadmap to the executive committee for budget approval.</p>
+                    <div class="pillar-accent"></div>
+                    <div class="pillar-inner">
+                        <div class="pillar-label"><i class="fa-solid fa-compass" style="margin-right: 6px;"></i> Governance</div>
+                        <div class="pillar-content">
+                            <h3>Risk register + Policies + Business cases</h3>
+                            <p>Risk register, security policies, DdA. Cyber business cases and prioritised roadmap for exco approval.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="pillar">
-                    <div class="pillar-label"><i class="fa-solid fa-gears" style="margin-right: 6px;"></i> Operational</div>
-                    <div class="pillar-content">
-                        <h3>Security in projects + Architecture board</h3>
-                        <p>Embedding security into every project from day one: data classification, access control, authentication design, compliance checklist. Sitting on the architecture board to review and challenge technical choices before they go live.</p>
+                    <div class="pillar-accent"></div>
+                    <div class="pillar-inner">
+                        <div class="pillar-label"><i class="fa-solid fa-gears" style="margin-right: 6px;"></i> Operational</div>
+                        <div class="pillar-content">
+                            <h3>Security in projects + Architecture board</h3>
+                            <p>Security by design from kickoff. Architecture review before go-live.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="pillar">
-                    <div class="pillar-label"><i class="fa-solid fa-shield-halved" style="margin-right: 6px;"></i> Technical</div>
-                    <div class="pillar-content">
-                        <h3>Vulnerability management + Incident response</h3>
-                        <p>Overseeing vulnerability scans, prioritising by real business impact, driving remediation within deadlines. Running the incident response process: detect, contain, eradicate, recover, learn. Training teams so everyone knows who to call.</p>
+                    <div class="pillar-accent"></div>
+                    <div class="pillar-inner">
+                        <div class="pillar-label"><i class="fa-solid fa-shield-halved" style="margin-right: 6px;"></i> Technical</div>
+                        <div class="pillar-content">
+                            <h3>Vulnerabilities + Incident response</h3>
+                            <p>Scans, prioritised remediation. Playbooks and crisis exercises.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="pillar">
-                    <div class="pillar-label"><i class="fa-solid fa-life-ring" style="margin-right: 6px;"></i> Resilience</div>
-                    <div class="pillar-content">
-                        <h3>Business continuity</h3>
-                        <p>Business Impact Analysis with the business, BCP/DRP plans, crisis simulation exercises. Making sure the organisation can survive a major incident, and has tested it, not just documented it.</p>
+                    <div class="pillar-accent"></div>
+                    <div class="pillar-inner">
+                        <div class="pillar-label"><i class="fa-solid fa-life-ring" style="margin-right: 6px;"></i> Resilience</div>
+                        <div class="pillar-content">
+                            <h3>Business continuity</h3>
+                            <p>BIA, BCP/DRP, tabletop crisis simulations. Tested, not just documented.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="pillar">
-                    <div class="pillar-label"><i class="fa-solid fa-chart-line" style="margin-right: 6px;"></i> Reporting</div>
-                    <div class="pillar-content">
-                        <h3>Dashboards & KPIs</h3>
-                        <p>Translating technical reality into metrics that Management can act on. Compliance coverage, mean time to remediate, incident trends, training completion. Proving that security works, and getting the budget to keep it running.</p>
+                    <div class="pillar-accent"></div>
+                    <div class="pillar-inner">
+                        <div class="pillar-label"><i class="fa-solid fa-chart-line" style="margin-right: 6px;"></i> Reporting</div>
+                        <div class="pillar-content">
+                            <h3>Dashboards & KPIs</h3>
+                            <p>Compliance coverage, MTTR, incident trends. Board-ready reporting.</p>
+                        </div>
                     </div>
                 </div>
 
