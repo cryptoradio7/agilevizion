@@ -164,6 +164,19 @@
             .radar-grid {
                 grid-template-columns: 1fr !important;
             }
+            .approach-step {
+                grid-template-columns: 60px 1fr;
+                gap: var(--space-2);
+            }
+            .story-card {
+                padding: var(--space-4);
+            }
+            .dashboard-mockup {
+                padding: 16px !important;
+            }
+            .dashboard-kpi-grid {
+                grid-template-columns: 1fr 1fr !important;
+            }
         }
     </style>
 </head>
@@ -339,14 +352,14 @@
             <!-- Visual: mini dashboard mockup -->
             <div style="max-width: 960px; margin: var(--space-12) auto 0;">
                 <div style="font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.1em; text-align: center; margin-bottom: var(--space-4);">What your Board receives</div>
-                <div class="animate-in" style="background: var(--color-gray-900); border-radius: var(--radius-xl); padding: 28px 32px; color: white; box-shadow: var(--shadow-xl);">
+                <div class="animate-in dashboard-mockup" style="background: var(--color-gray-900); border-radius: var(--radius-xl); padding: 28px 32px; color: white; box-shadow: var(--shadow-xl);">
                     <!-- Dashboard header -->
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 8px;">
                         <div style="font-size: var(--font-size-sm); font-weight: var(--font-weight-bold); color: white;">Security Dashboard, August 2026</div>
                         <div style="font-size: var(--font-size-xs); color: var(--color-gray-400);">Monthly Board Report</div>
                     </div>
                     <!-- KPI row -->
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin-bottom: 24px;">
+                    <div class="dashboard-kpi-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin-bottom: 24px;">
                         <div style="background: rgba(255,255,255,0.06); border-radius: var(--radius-md); padding: 16px; text-align: center;">
                             <div style="font-size: 1.75rem; font-weight: var(--font-weight-bold); color: var(--color-accent-light);">67%</div>
                             <div style="font-size: var(--font-size-xs); color: var(--color-gray-400); margin-top: 4px;">NIS2 compliance</div>
@@ -617,7 +630,7 @@
             <h2 class="animate-in" style="font-size: var(--font-size-4xl); margin-bottom: var(--space-4); color: white;">Let's talk.</h2>
             <p class="animate-in" style="font-size: var(--font-size-lg); color: var(--color-white-85); margin-bottom: var(--space-8);">30 minutes to understand your situation. Free, no commitment.</p>
             <div style="display: flex; flex-direction: column; align-items: center; gap: var(--space-4);" class="animate-in">
-                <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-primary btn-lg" style="background: var(--color-white); color: var(--color-primary-dark); font-weight: var(--font-weight-semibold);"><i class="fa-solid fa-envelope"></i> emmanuel.genesteix@agilevizion.com</a>
+                <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-primary btn-lg" style="background: var(--color-white); color: var(--color-primary-dark); font-weight: var(--font-weight-semibold); font-size: var(--font-size-sm); word-break: break-all; text-align: center;"><i class="fa-solid fa-envelope"></i> emmanuel.genesteix@agilevizion.com</a>
                 <a href="tel:+352661780807" style="color: var(--color-white-85); font-size: var(--font-size-base);"><i class="fa-solid fa-phone"></i> +352 661 78 08 07</a>
                 <a href="https://www.linkedin.com/in/genesteix-emmanuel" target="_blank" rel="noopener noreferrer" style="color: var(--color-white-85); font-size: var(--font-size-base);"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
             </div>
