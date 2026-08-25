@@ -4,18 +4,18 @@
    ============================================ */
 
 :root {
-    /* Primary — Deep Navy/Slate (institutional) */
-    --color-primary: #1E3A5F;
-    --color-primary-light: #2C5282;
-    --color-primary-dark: #14273F;
-    --color-primary-50: #F0F4F8;
-    --color-primary-100: #DCE5EE;
-    --color-primary-900: #0B1826;
+    /* Primary — Deep Petrol Teal */
+    --color-primary: #0F5C56;
+    --color-primary-light: #1B7A72;
+    --color-primary-dark: #0A3F3B;
+    --color-primary-50: #EEF7F6;
+    --color-primary-100: #D7EBE9;
+    --color-primary-900: #072B28;
 
-    /* Accent — Muted Gold (reserved for CTAs) */
-    --color-accent: #B8935F;
-    --color-accent-light: #C9A876;
-    --color-accent-dark: #96754A;
+    /* Accent — Copper */
+    --color-accent: #C17F45;
+    --color-accent-light: #D19863;
+    --color-accent-dark: #9C6535;
 
     /* Alert / Danger */
     --color-danger: #EF4444;
