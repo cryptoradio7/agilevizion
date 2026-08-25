@@ -161,6 +161,9 @@
                 grid-template-columns: 1fr;
                 gap: var(--space-1);
             }
+            .radar-grid {
+                grid-template-columns: 1fr !important;
+            }
         }
     </style>
 </head>
@@ -346,6 +349,84 @@
                 </div>
 
             </div>
+
+            <!-- Visual: mini dashboard mockup -->
+            <div style="max-width: 960px; margin: var(--space-12) auto 0;">
+                <div style="font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.1em; text-align: center; margin-bottom: var(--space-4);">What your Board receives</div>
+                <div class="animate-in" style="background: var(--color-gray-900); border-radius: var(--radius-xl); padding: 28px 32px; color: white; box-shadow: var(--shadow-xl);">
+                    <!-- Dashboard header -->
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 8px;">
+                        <div style="font-size: var(--font-size-sm); font-weight: var(--font-weight-bold); color: white;">Security Dashboard — August 2026</div>
+                        <div style="font-size: var(--font-size-xs); color: var(--color-gray-400);">Monthly Board Report</div>
+                    </div>
+                    <!-- KPI row -->
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin-bottom: 24px;">
+                        <div style="background: rgba(255,255,255,0.06); border-radius: var(--radius-md); padding: 16px; text-align: center;">
+                            <div style="font-size: 1.75rem; font-weight: var(--font-weight-bold); color: var(--color-accent-light);">67%</div>
+                            <div style="font-size: var(--font-size-xs); color: var(--color-gray-400); margin-top: 4px;">NIS2 compliance</div>
+                            <div style="font-size: var(--font-size-xs); color: var(--color-accent);">▲ +12%</div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.06); border-radius: var(--radius-md); padding: 16px; text-align: center;">
+                            <div style="font-size: 1.75rem; font-weight: var(--font-weight-bold); color: white;">3.2d</div>
+                            <div style="font-size: var(--font-size-xs); color: var(--color-gray-400); margin-top: 4px;">MTTR critical vulns</div>
+                            <div style="font-size: var(--font-size-xs); color: var(--color-warning);">target: 3d</div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.06); border-radius: var(--radius-md); padding: 16px; text-align: center;">
+                            <div style="font-size: 1.75rem; font-weight: var(--font-weight-bold); color: white;">2</div>
+                            <div style="font-size: var(--font-size-xs); color: var(--color-gray-400); margin-top: 4px;">Open critical findings</div>
+                            <div style="font-size: var(--font-size-xs); color: var(--color-accent);">▼ was 5</div>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.06); border-radius: var(--radius-md); padding: 16px; text-align: center;">
+                            <div style="font-size: 1.75rem; font-weight: var(--font-weight-bold); color: var(--color-accent-light);">94%</div>
+                            <div style="font-size: var(--font-size-xs); color: var(--color-gray-400); margin-top: 4px;">Staff trained</div>
+                            <div style="font-size: var(--font-size-xs); color: var(--color-accent);">target met</div>
+                        </div>
+                    </div>
+                    <!-- Compliance bars -->
+                    <div style="margin-bottom: 20px;">
+                        <div style="font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); color: var(--color-gray-400); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px;">Compliance coverage</div>
+                        <div style="margin-bottom: 10px;">
+                            <div style="display: flex; justify-content: space-between; font-size: var(--font-size-xs); color: var(--color-gray-400); margin-bottom: 4px;">
+                                <span>NIS2 (art.21)</span><span>67%</span>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); border-radius: 4px; height: 8px;">
+                                <div style="background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light)); width: 67%; height: 100%; border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                            <div style="display: flex; justify-content: space-between; font-size: var(--font-size-xs); color: var(--color-gray-400); margin-bottom: 4px;">
+                                <span>DORA</span><span>54%</span>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); border-radius: 4px; height: 8px;">
+                                <div style="background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light)); width: 54%; height: 100%; border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; font-size: var(--font-size-xs); color: var(--color-gray-400); margin-bottom: 4px;">
+                                <span>ISO 27001 Annex A</span><span>71%</span>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.1); border-radius: 4px; height: 8px;">
+                                <div style="background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light)); width: 71%; height: 100%; border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Risk table -->
+                    <div>
+                        <div style="font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); color: var(--color-gray-400); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;">Top risks — Board decisions needed</div>
+                        <div style="display: grid; grid-template-columns: auto 1fr auto; gap: 4px 12px; font-size: var(--font-size-xs);">
+                            <span style="color: var(--color-danger); font-weight: bold;">HIGH</span>
+                            <span style="color: var(--color-gray-300);">Ransomware exposure (legacy server)</span>
+                            <span style="color: var(--color-gray-500);">Budget approval needed</span>
+                            <span style="color: var(--color-danger); font-weight: bold;">HIGH</span>
+                            <span style="color: var(--color-gray-300);">Data leakage risk (no DLP)</span>
+                            <span style="color: var(--color-gray-500);">Deploy M+1</span>
+                            <span style="color: var(--color-warning); font-weight: bold;">MED</span>
+                            <span style="color: var(--color-gray-300);">Critical vendor without SLA</span>
+                            <span style="color: var(--color-gray-500);">Accept or renegotiate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -386,7 +467,69 @@
 
             </div>
 
-            <div style="max-width: 660px; margin: var(--space-6) auto 0; padding: var(--space-4) var(--space-5); background: var(--color-primary-50); border-radius: var(--radius-lg); text-align: center;">
+            <!-- Maturity radar SVG -->
+            <div style="max-width: 960px; margin: var(--space-12) auto 0;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); align-items: center;" class="radar-grid">
+                    <div style="text-align: center;" class="animate-in">
+                        <svg viewBox="0 0 300 280" style="max-width: 320px; width: 100%;">
+                            <!-- Background grid -->
+                            <g transform="translate(150,140)">
+                                <!-- Grid circles -->
+                                <polygon points="0,-120 114,-37 70,97 -70,97 -114,-37" fill="none" stroke="#E5E7EB" stroke-width="0.5"/>
+                                <polygon points="0,-90 85,-28 53,73 -53,73 -85,-28" fill="none" stroke="#E5E7EB" stroke-width="0.5"/>
+                                <polygon points="0,-60 57,-19 35,49 -35,49 -57,-19" fill="none" stroke="#E5E7EB" stroke-width="0.5"/>
+                                <polygon points="0,-30 29,-9 18,24 -18,24 -29,-9" fill="none" stroke="#E5E7EB" stroke-width="0.5"/>
+                                <!-- Axes -->
+                                <line x1="0" y1="0" x2="0" y2="-120" stroke="#E5E7EB" stroke-width="0.5"/>
+                                <line x1="0" y1="0" x2="114" y2="-37" stroke="#E5E7EB" stroke-width="0.5"/>
+                                <line x1="0" y1="0" x2="70" y2="97" stroke="#E5E7EB" stroke-width="0.5"/>
+                                <line x1="0" y1="0" x2="-70" y2="97" stroke="#E5E7EB" stroke-width="0.5"/>
+                                <line x1="0" y1="0" x2="-114" y2="-37" stroke="#E5E7EB" stroke-width="0.5"/>
+                                <!-- Before (level ~1.5) — red/orange area -->
+                                <polygon points="0,-36 34,-11 21,29 -21,29 -34,-11" fill="rgba(239,68,68,0.15)" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="4,3"/>
+                                <!-- After 6 months (level ~3) — indigo area -->
+                                <polygon points="0,-72 68,-22 53,58 -42,73 -68,-22" fill="rgba(79,70,229,0.12)" stroke="#4F46E5" stroke-width="2"/>
+                                <!-- Dots after -->
+                                <circle cx="0" cy="-72" r="4" fill="#4F46E5"/>
+                                <circle cx="68" cy="-22" r="4" fill="#4F46E5"/>
+                                <circle cx="53" cy="58" r="4" fill="#4F46E5"/>
+                                <circle cx="-42" cy="73" r="4" fill="#4F46E5"/>
+                                <circle cx="-68" cy="-22" r="4" fill="#4F46E5"/>
+                                <!-- Labels -->
+                                <text x="0" y="-130" text-anchor="middle" font-size="10" font-weight="600" fill="#374151">Governance</text>
+                                <text x="128" y="-34" text-anchor="start" font-size="10" font-weight="600" fill="#374151">Operational</text>
+                                <text x="80" y="112" text-anchor="middle" font-size="10" font-weight="600" fill="#374151">Technical</text>
+                                <text x="-80" y="112" text-anchor="middle" font-size="10" font-weight="600" fill="#374151">Resilience</text>
+                                <text x="-128" y="-34" text-anchor="end" font-size="10" font-weight="600" fill="#374151">Reporting</text>
+                                <!-- Level labels -->
+                                <text x="8" y="-23" font-size="7" fill="#9CA3AF">1</text>
+                                <text x="8" y="-53" font-size="7" fill="#9CA3AF">2</text>
+                                <text x="8" y="-83" font-size="7" fill="#9CA3AF">3</text>
+                                <text x="8" y="-113" font-size="7" fill="#9CA3AF">4</text>
+                            </g>
+                            <!-- Legend -->
+                            <g transform="translate(60, 268)">
+                                <line x1="0" y1="0" x2="20" y2="0" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="4,3"/>
+                                <text x="26" y="4" font-size="9" fill="#6B7280">Day 1</text>
+                                <line x1="90" y1="0" x2="110" y2="0" stroke="#4F46E5" stroke-width="2"/>
+                                <text x="116" y="4" font-size="9" fill="#6B7280">After 6 months</text>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="animate-in">
+                        <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--space-3);">Measurable progress.</h3>
+                        <p style="font-size: var(--font-size-sm); color: var(--text-secondary);">Most organisations start at maturity level 1-2: informal processes, no documentation, reactive posture. After 6 months, the goal is to reach level 3 on critical domains: defined, documented, applied.</p>
+                        <div style="margin-top: var(--space-4); font-size: var(--font-size-xs); color: var(--text-muted);">
+                            <div style="margin-bottom: 4px;"><strong style="color: var(--text-secondary);">Level 1</strong> — Nothing in place</div>
+                            <div style="margin-bottom: 4px;"><strong style="color: var(--text-secondary);">Level 2</strong> — Informal, ad hoc</div>
+                            <div style="margin-bottom: 4px;"><strong style="color: var(--text-secondary);">Level 3</strong> — Defined & applied</div>
+                            <div><strong style="color: var(--text-secondary);">Level 4</strong> — Measured & managed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="max-width: 660px; margin: var(--space-8) auto 0; padding: var(--space-4) var(--space-5); background: var(--color-primary-50); border-radius: var(--radius-lg); text-align: center;">
                 <p style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: 0;">
                     <strong style="color: var(--text-primary);">After 6 months you have:</strong> a maturity assessment, governance framework, first standards deployed, quick wins in place, a security roadmap — and a dossier ready for your permanent CISO or for continued engagement.
                 </p>
@@ -399,35 +542,63 @@
         <div class="container">
             <div class="section-head" style="margin-bottom: var(--space-8);">
                 <div style="font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.1em; text-align: center; margin-bottom: var(--space-2);">Who it's for</div>
-                <h2 class="section-title animate-in">Regulated entities that need a CISO — now.</h2>
-                <p class="section-subtitle">Under CSSF, CAA or CNPD supervision, without a dedicated security function yet.</p>
+                <h2 class="section-title animate-in">Organisations that need a CISO — now.</h2>
             </div>
 
-            <div class="steps-grid steps-5" style="max-width: 960px; margin: 0 auto;">
+            <div style="max-width: 960px; margin: 0 auto;">
 
-                <div class="animate-in" style="padding: var(--space-5); background: var(--bg-primary); border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--color-gray-200);">
-                    <div style="font-size: 1.5rem; color: var(--color-primary); margin-bottom: var(--space-3);"><i class="fa-solid fa-landmark"></i></div>
-                    <h3 style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Banks & credit institutions</h3>
+                <!-- Private sector -->
+                <div style="margin-bottom: var(--space-8);">
+                    <div style="font-size: var(--font-size-xs); font-weight: var(--font-weight-bold); text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: var(--space-4); padding-left: var(--space-1);">
+                        <i class="fa-solid fa-briefcase" style="margin-right: 6px;"></i> Private sector — regulated entities
+                    </div>
+                    <div class="steps-grid steps-5">
+                        <div class="animate-in" style="padding: var(--space-5); background: var(--bg-primary); border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--color-gray-200);">
+                            <div style="font-size: 1.5rem; color: var(--color-primary); margin-bottom: var(--space-3);"><i class="fa-solid fa-landmark"></i></div>
+                            <h3 style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Banks & credit institutions</h3>
+                        </div>
+                        <div class="animate-in" style="padding: var(--space-5); background: var(--bg-primary); border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--color-gray-200);">
+                            <div style="font-size: 1.5rem; color: var(--color-primary); margin-bottom: var(--space-3);"><i class="fa-solid fa-chart-pie"></i></div>
+                            <h3 style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Fund managers & ManCos</h3>
+                        </div>
+                        <div class="animate-in" style="padding: var(--space-5); background: var(--bg-primary); border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--color-gray-200);">
+                            <div style="font-size: 1.5rem; color: var(--color-primary); margin-bottom: var(--space-3);"><i class="fa-solid fa-umbrella"></i></div>
+                            <h3 style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Insurance companies</h3>
+                        </div>
+                        <div class="animate-in" style="padding: var(--space-5); background: var(--bg-primary); border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--color-gray-200);">
+                            <div style="font-size: 1.5rem; color: var(--color-primary); margin-bottom: var(--space-3);"><i class="fa-solid fa-building-columns"></i></div>
+                            <h3 style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">PSFs & support PFS</h3>
+                        </div>
+                        <div class="animate-in" style="padding: var(--space-5); background: var(--bg-primary); border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--color-gray-200);">
+                            <div style="font-size: 1.5rem; color: var(--color-primary); margin-bottom: var(--space-3);"><i class="fa-solid fa-gavel"></i></div>
+                            <h3 style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Law firms</h3>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="animate-in" style="padding: var(--space-5); background: var(--bg-primary); border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--color-gray-200);">
-                    <div style="font-size: 1.5rem; color: var(--color-primary); margin-bottom: var(--space-3);"><i class="fa-solid fa-chart-pie"></i></div>
-                    <h3 style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Fund managers & ManCos</h3>
-                </div>
-
-                <div class="animate-in" style="padding: var(--space-5); background: var(--bg-primary); border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--color-gray-200);">
-                    <div style="font-size: 1.5rem; color: var(--color-primary); margin-bottom: var(--space-3);"><i class="fa-solid fa-umbrella"></i></div>
-                    <h3 style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Insurance companies</h3>
-                </div>
-
-                <div class="animate-in" style="padding: var(--space-5); background: var(--bg-primary); border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--color-gray-200);">
-                    <div style="font-size: 1.5rem; color: var(--color-primary); margin-bottom: var(--space-3);"><i class="fa-solid fa-building-columns"></i></div>
-                    <h3 style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">PSFs & support PFS</h3>
-                </div>
-
-                <div class="animate-in" style="padding: var(--space-5); background: var(--bg-primary); border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--color-gray-200);">
-                    <div style="font-size: 1.5rem; color: var(--color-primary); margin-bottom: var(--space-3);"><i class="fa-solid fa-gavel"></i></div>
-                    <h3 style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Law firms</h3>
+                <!-- Public sector -->
+                <div>
+                    <div style="font-size: var(--font-size-xs); font-weight: var(--font-weight-bold); text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: var(--space-4); padding-left: var(--space-1);">
+                        <i class="fa-solid fa-flag" style="margin-right: 6px;"></i> Public sector — NIS2 essential entities
+                    </div>
+                    <div class="steps-grid steps-4">
+                        <div class="animate-in" style="padding: var(--space-5); background: var(--bg-primary); border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--color-gray-200);">
+                            <div style="font-size: 1.5rem; color: var(--color-primary); margin-bottom: var(--space-3);"><i class="fa-solid fa-city"></i></div>
+                            <h3 style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Municipalities & cities</h3>
+                        </div>
+                        <div class="animate-in" style="padding: var(--space-5); background: var(--bg-primary); border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--color-gray-200);">
+                            <div style="font-size: 1.5rem; color: var(--color-primary); margin-bottom: var(--space-3);"><i class="fa-solid fa-building-flag"></i></div>
+                            <h3 style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Government agencies</h3>
+                        </div>
+                        <div class="animate-in" style="padding: var(--space-5); background: var(--bg-primary); border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--color-gray-200);">
+                            <div style="font-size: 1.5rem; color: var(--color-primary); margin-bottom: var(--space-3);"><i class="fa-solid fa-hospital"></i></div>
+                            <h3 style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Healthcare & public services</h3>
+                        </div>
+                        <div class="animate-in" style="padding: var(--space-5); background: var(--bg-primary); border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--color-gray-200);">
+                            <div style="font-size: 1.5rem; color: var(--color-primary); margin-bottom: var(--space-3);"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <h3 style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold);">Education & research</h3>
+                        </div>
+                    </div>
                 </div>
 
             </div>
