@@ -183,21 +183,6 @@
     margin: 0 auto var(--space-8);
 }
 
-/* --- Grids --- */
-.services-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
-    margin-top: var(--space-8);
-}
-
-.kpi-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-4);
-    margin-top: var(--space-8);
-}
-
 /* --- Footer --- */
 .footer {
     background: var(--bg-dark);

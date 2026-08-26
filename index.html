@@ -58,7 +58,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -153,34 +153,6 @@
             margin-bottom: 0;
         }
 
-        /* Story cards */
-        .story-card {
-            padding: var(--space-5);
-            background: var(--bg-primary);
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--color-gray-200);
-            border-left: 3px solid var(--color-primary);
-        }
-        .story-label {
-            font-size: var(--font-size-xs);
-            font-weight: var(--font-weight-semibold);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--color-primary);
-            margin-bottom: var(--space-2);
-        }
-        .story-problem {
-            font-size: var(--font-size-sm);
-            color: var(--text-primary);
-            font-weight: var(--font-weight-medium);
-            margin-bottom: var(--space-2);
-        }
-        .story-action {
-            font-size: var(--font-size-sm);
-            color: var(--text-secondary);
-            margin-bottom: 0;
-        }
-
         /* Approach timeline */
         .approach-step {
             display: grid;
@@ -231,15 +203,6 @@
                 grid-template-columns: 60px 1fr;
                 gap: var(--space-2);
             }
-            .story-card {
-                padding: var(--space-4);
-            }
-            .dashboard-mockup {
-                padding: 16px !important;
-            }
-            .dashboard-kpi-grid {
-                grid-template-columns: 1fr 1fr !important;
-            }
         }
     </style>
 </head>
@@ -251,7 +214,7 @@
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
             <a href="#hero" class="nav-logo">Agile<span>Vizion</span></a>
-            <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-menu" id="nav-menu">
@@ -450,7 +413,9 @@
             <div style="max-width: 960px; margin: var(--space-12) auto 0;">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); align-items: center;" class="radar-grid">
                     <div style="text-align: center;" class="animate-in">
-                        <svg viewBox="-40 0 380 280" style="max-width: 380px; width: 100%;">
+                        <svg viewBox="-40 0 380 280" style="max-width: 380px; width: 100%;" role="img" aria-labelledby="radar-title radar-desc">
+                            <title id="radar-title">Progression de la maturité sécurité sur 5 axes</title>
+                            <desc id="radar-desc">Radar comparant le niveau de maturité (gouvernance, opérationnel, technique, résilience, reporting) au jour 1, autour du niveau 1-2, et après 6 mois, proche du niveau 3.</desc>
                             <!-- Background grid -->
                             <g transform="translate(150,140)">
                                 <!-- Grid circles -->
@@ -571,7 +536,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024-2030 AgileVizion</p>
+                <p>&copy; 2024 AgileVizion</p>
                 <p class="footer-legal-nav">
                     <a href="#legal" class="footer-legal-link">Legal notice</a>
                 </p>

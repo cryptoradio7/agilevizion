@@ -78,16 +78,6 @@
         margin-bottom: var(--space-12);
     }
 
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-8);
-    }
-
-    .kpi-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--space-6);
-    }
-
     .footer-content {
         flex-direction: row;
         justify-content: space-between;
@@ -139,10 +129,6 @@
 
     .section {
         padding: var(--space-20) 0;
-    }
-
-    .kpi-grid {
-        grid-template-columns: repeat(3, 1fr);
     }
 }
 
