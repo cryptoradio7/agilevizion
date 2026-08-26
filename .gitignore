@@ -36,6 +36,7 @@ test-results/
 *.png
 !images/*.png
 !images/clients/*.png
+!img/*.png
 
 # Videos (kept for deployment)
 # *.mp4
