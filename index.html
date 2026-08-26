@@ -198,12 +198,53 @@
             </div>
 
             <h4 style="margin-top: 30px; margin-bottom: 6px;">Maturity assessment.</h4>
-            <p class="lede" style="margin-bottom: 6px;">Most organisations start at maturity level 1-2: informal processes, no documentation, reactive posture. After 6 months, the goal is to reach level 3 on critical domains: defined, documented, applied.</p>
-            <div class="dynamics">
-                <div><strong>pp</strong> Level 1 — Nothing in place</div>
-                <div><strong>p</strong> Level 2 — Informal, ad hoc</div>
-                <div><strong>mf</strong> Level 3 — Defined &amp; applied</div>
-                <div><strong>f</strong> Level 4 — Measured &amp; managed</div>
+            <p class="lede" style="margin-bottom: 16px;">Most organisations start at maturity level 1-2: informal processes, no documentation, reactive posture. After 6 months, the goal is to reach level 3 on critical domains: defined, documented, applied.</p>
+            <div style="text-align: center;">
+                <svg viewBox="-40 0 380 280" style="max-width: 380px; width: 100%;" role="img" aria-labelledby="radar-title radar-desc">
+                    <title id="radar-title">Security maturity progression across 5 domains</title>
+                    <desc id="radar-desc">Radar comparing maturity level (governance, operational, technical, resilience, reporting) at day 1 (level 1-2) and after 6 months (level 3).</desc>
+                    <g transform="translate(150,140)">
+                        <!-- Grid -->
+                        <polygon points="0,-120 114,-37 70,97 -70,97 -114,-37" fill="none" stroke="#D1D5DB" stroke-width="0.5"/>
+                        <polygon points="0,-90 85,-28 53,73 -53,73 -85,-28" fill="none" stroke="#D1D5DB" stroke-width="0.5"/>
+                        <polygon points="0,-60 57,-19 35,49 -35,49 -57,-19" fill="none" stroke="#D1D5DB" stroke-width="0.5"/>
+                        <polygon points="0,-30 29,-9 18,24 -18,24 -29,-9" fill="none" stroke="#D1D5DB" stroke-width="0.5"/>
+                        <!-- Axes -->
+                        <line x1="0" y1="0" x2="0" y2="-120" stroke="#D1D5DB" stroke-width="0.5"/>
+                        <line x1="0" y1="0" x2="114" y2="-37" stroke="#D1D5DB" stroke-width="0.5"/>
+                        <line x1="0" y1="0" x2="70" y2="97" stroke="#D1D5DB" stroke-width="0.5"/>
+                        <line x1="0" y1="0" x2="-70" y2="97" stroke="#D1D5DB" stroke-width="0.5"/>
+                        <line x1="0" y1="0" x2="-114" y2="-37" stroke="#D1D5DB" stroke-width="0.5"/>
+                        <!-- Day 1 (level ~1.5) -->
+                        <polygon points="0,-36 34,-11 21,29 -21,29 -34,-11" fill="rgba(196,106,77,0.15)" stroke="#C46A4D" stroke-width="1.5" stroke-dasharray="4,3"/>
+                        <!-- After 6 months (level ~3) -->
+                        <polygon points="0,-72 68,-22 53,58 -42,73 -68,-22" fill="rgba(30,51,80,0.10)" stroke="#1E3350" stroke-width="2"/>
+                        <!-- Dots -->
+                        <circle cx="0" cy="-72" r="4" fill="#1E3350"/>
+                        <circle cx="68" cy="-22" r="4" fill="#1E3350"/>
+                        <circle cx="53" cy="58" r="4" fill="#1E3350"/>
+                        <circle cx="-42" cy="73" r="4" fill="#1E3350"/>
+                        <circle cx="-68" cy="-22" r="4" fill="#1E3350"/>
+                        <!-- Labels -->
+                        <text x="0" y="-130" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3350">Governance</text>
+                        <text x="128" y="-34" text-anchor="start" font-size="10" font-weight="600" fill="#1E3350">Operational</text>
+                        <text x="80" y="112" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3350">Technical</text>
+                        <text x="-80" y="112" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3350">Resilience</text>
+                        <text x="-128" y="-34" text-anchor="end" font-size="10" font-weight="600" fill="#1E3350">Reporting</text>
+                        <!-- Level numbers -->
+                        <text x="8" y="-23" font-size="7" fill="#6E7684">1</text>
+                        <text x="8" y="-53" font-size="7" fill="#6E7684">2</text>
+                        <text x="8" y="-83" font-size="7" fill="#6E7684">3</text>
+                        <text x="8" y="-113" font-size="7" fill="#6E7684">4</text>
+                    </g>
+                    <!-- Legend -->
+                    <g transform="translate(60, 268)">
+                        <line x1="0" y1="0" x2="20" y2="0" stroke="#C46A4D" stroke-width="1.5" stroke-dasharray="4,3"/>
+                        <text x="26" y="4" font-size="9" fill="#6E7684">Day 1</text>
+                        <line x1="90" y1="0" x2="110" y2="0" stroke="#1E3350" stroke-width="2"/>
+                        <text x="116" y="4" font-size="9" fill="#6E7684">After 6 months</text>
+                    </g>
+                </svg>
             </div>
         </section>
 
