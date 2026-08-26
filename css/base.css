@@ -1,5 +1,5 @@
 /* ============================================
-   AgileVizion 2 — Base / Reset
+   AgileVizion — Base / Reset
    ============================================ */
 
 *, *::before, *::after {
@@ -13,71 +13,35 @@ html {
     -webkit-text-size-adjust: 100%;
 }
 
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+}
+
 body {
-    font-family: var(--font-sans);
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-normal);
-    color: var(--text-primary);
-    background: var(--bg-primary);
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-a {
-    color: var(--color-primary);
-    text-decoration: none;
-    transition: color var(--transition-fast);
-}
-
-a:hover {
-    color: var(--color-primary-dark);
-}
+a { color: inherit; }
 
 a:focus-visible,
 button:focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
-    border-radius: var(--radius-sm, 2px);
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
 }
 
-ul, ol {
-    list-style: none;
+ul { list-style: none; }
+
+h1, h2, h3, h4 {
+    font-family: var(--serif);
+    font-weight: 600;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    line-height: var(--line-height-tight);
-    font-weight: var(--font-weight-bold);
-    color: var(--text-primary);
-}
-
-h1 { font-size: var(--font-size-5xl); }
-h2 { font-size: var(--font-size-3xl); }
-h3 { font-size: var(--font-size-xl); }
-h4 { font-size: var(--font-size-lg); }
-
-p {
-    margin-bottom: var(--space-4);
-}
-
-strong {
-    font-weight: var(--font-weight-semibold);
-}
-
-::selection {
-    background: var(--color-primary-100);
-    color: var(--color-primary-dark);
-}
-
-/* Container */
-.container {
+.sheet {
     max-width: var(--container-max);
     margin: 0 auto;
-    padding: 0 var(--container-padding);
+    padding: 48px 24px 80px;
 }

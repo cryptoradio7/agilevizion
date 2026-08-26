@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' https://agilevizion.com data:; connect-src 'self'; object-src 'none';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data:; connect-src 'self'; object-src 'none';">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-    <title>AgileVizion — CISO as a Service | Luxembourg & Benelux</title>
+    <title>AgileVizion — CISO as a Service | Luxembourg &amp; Benelux</title>
 
     <!-- SEO Meta -->
     <meta name="description" content="AgileVizion — Outsourced CISO for regulated financial entities in Luxembourg and the Benelux. NIS2, DORA, ISO 27001 compliance. Operational security governance without hiring full-time.">
@@ -58,490 +58,199 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/responsive.css">
-
-    <style>
-        /* Framework pillars */
-        .pillars-grid {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 16px;
-        }
-        .pillars-row {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            width: 100%;
-        }
-        .pillars-row .pillar {
-            flex: 0 1 300px;
-        }
-        .pillars-row-1 .pillar {
-            flex: 0 1 320px;
-        }
-        @media (max-width: 680px) {
-            .pillars-row {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .pillars-row .pillar {
-                flex: 1 1 auto;
-            }
-        }
-        .pillar {
-            display: flex;
-            align-items: stretch;
-            background: var(--bg-primary);
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--color-gray-200);
-            overflow: hidden;
-            transition: box-shadow var(--transition-base);
-        }
-        .pillar:hover {
-            box-shadow: var(--shadow-md);
-        }
-        .pillar-accent {
-            width: 4px;
-            flex-shrink: 0;
-            background: var(--color-primary);
-        }
-        .pillar-inner {
-            padding: 20px 20px 20px 16px;
-        }
-        .pillar-label {
-            font-size: var(--font-size-xs);
-            font-weight: var(--font-weight-bold);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--color-primary);
-            margin-bottom: 6px;
-        }
-        .pillar-content h3 {
-            font-size: var(--font-size-sm);
-            font-weight: var(--font-weight-semibold);
-            margin-bottom: 4px;
-        }
-        .pillar-content p {
-            font-size: var(--font-size-xs);
-            color: var(--text-secondary);
-            margin-bottom: 0;
-            line-height: 1.5;
-        }
-        .pillar-content ul {
-            font-size: var(--font-size-xs);
-            color: var(--text-secondary);
-            line-height: 1.5;
-            margin: 4px 0 0 0;
-            padding-left: 18px;
-        }
-        .pillar-content li {
-            margin-bottom: 4px;
-        }
-        .pillar-content li:last-child {
-            margin-bottom: 0;
-        }
-
-        /* Approach timeline */
-        .approach-step {
-            display: grid;
-            grid-template-columns: 80px 1fr;
-            gap: var(--space-4);
-            align-items: start;
-            padding: var(--space-5) 0;
-            border-bottom: 1px solid var(--color-gray-200);
-        }
-        .approach-step:last-child { border-bottom: none; }
-        .approach-period {
-            font-size: var(--font-size-sm);
-            font-weight: var(--font-weight-bold);
-            color: var(--color-primary);
-        }
-        .approach-step h3 {
-            font-size: var(--font-size-base);
-            margin-bottom: 4px;
-        }
-        .approach-step p {
-            font-size: var(--font-size-sm);
-            color: var(--text-secondary);
-            margin-bottom: 0;
-        }
-        .approach-step ul {
-            font-size: var(--font-size-sm);
-            color: var(--text-secondary);
-            margin: 0;
-            padding-left: 18px;
-            list-style: disc;
-        }
-        .approach-step li {
-            margin-bottom: 3px;
-        }
-        .approach-step li:last-child {
-            margin-bottom: 0;
-        }
-
-        @media (max-width: 600px) {
-            .pillar {
-                grid-template-columns: 1fr;
-                gap: var(--space-1);
-            }
-            .radar-grid {
-                grid-template-columns: 1fr !important;
-            }
-            .approach-step {
-                grid-template-columns: 60px 1fr;
-                gap: var(--space-2);
-            }
-        }
-    </style>
 </head>
 <body>
 
+<div class="sheet">
 
-    <!-- Navigation -->
-    <header>
-    <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="#hero" class="nav-logo">Agile<span>Vizion</span></a>
-            <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
-                <span></span><span></span><span></span>
-            </button>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#scope">Services</a></li>
-                <li><a href="#approach">Approach</a></li>
-                <li><a href="#creds">My Credentials</a></li>
-                <li><a href="#contact" class="btn btn-primary" style="padding: 8px 20px; min-height: auto; border-radius: var(--radius-full); color: white;">Contact</a></li>
-            </ul>
-        </div>
+    <div class="staff" aria-hidden="true"></div>
+
+    <nav class="menu" aria-label="Primary">
+        <ul>
+            <li><a href="#scope">Scope</a></li>
+            <li><a href="#approach">Approach</a></li>
+            <li><a href="#who">Who it's for</a></li>
+            <li><a href="#creds">Credentials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
-    </header>
+
+    <div class="top-row">
+        <span class="brand">AgileVizion</span>
+        <span class="tagline">CISO as a Service — Luxembourg &amp; Benelux</span>
+    </div>
 
     <main>
 
-    <!-- Hero -->
-    <section class="hero" id="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div style="margin-bottom: var(--space-4);">
-                    <span style="display: inline-block; background: var(--color-primary-100); color: var(--color-primary); font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); padding: 6px 16px; border-radius: var(--radius-full);">CISO as a Service</span>
-                </div>
-                <h1 class="hero-title animate-in" style="letter-spacing: -0.02em;">Everything a CISO covers, as-a-service.</h1>
-                <p class="hero-subtitle animate-in">
-                    I embed in your organisation as your acting CISO, with a structured handover plan to a permanent hire when you're ready.
-                </p>
-                <div class="hero-cta animate-in">
-                    <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-primary btn-lg"><i class="fa-solid fa-envelope"></i> Contact</a>
-                </div>
+        <section>
+            <div class="eyebrow">CISO as a Service</div>
+            <h1>Everything a CISO covers, delivered as a service.</h1>
+            <p class="lede">I embed in your organisation as your acting CISO, with a structured handover plan to a permanent hire when you're ready.</p>
+            <div class="cta-row">
+                <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-fill">Contact</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Scope: 5 pillars -->
-    <section class="section" id="scope">
-        <div class="container">
-            <div class="section-head" style="margin-bottom: var(--space-8);">
-                <h2 class="section-title animate-in">Governance. Operational. Technical. Resilience. Reporting.</h2>
-            </div>
+        <section id="scope">
+            <div class="eyebrow">Scope of the mandate</div>
+            <h2>Governance. Operational. Technical. Resilience. Reporting.</h2>
 
-            <div class="pillars-grid animate-in" style="max-width: 960px; margin: 0 auto;">
-
-                <!-- Row 1: Governance (top of pyramid) -->
-                <div class="pillars-row pillars-row-1">
-                    <div class="pillar">
-                        <div class="pillar-accent"></div>
-                        <div class="pillar-inner">
-                            <div class="pillar-label"><i class="fa-solid fa-compass" style="margin-right: 6px;"></i> Governance</div>
-                            <div class="pillar-content">
-                                <h3>Strategy &amp; business alignment</h3>
-                                <ul>
-                                    <li><strong>Cyber business cases</strong> with cost-benefit analysis; prioritised <strong>roadmap</strong> for exco approval</li>
-                                    <li><strong>Risk register</strong>, <strong>security policies</strong>, <strong>Statement of Applicability</strong> — living documents tied to the actual threat landscape, not shelfware</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Row 2: Operational + Technical -->
-                <div class="pillars-row">
-                    <div class="pillar">
-                        <div class="pillar-accent"></div>
-                        <div class="pillar-inner">
-                            <div class="pillar-label"><i class="fa-solid fa-gears" style="margin-right: 6px;"></i> Operational</div>
-                            <div class="pillar-content">
-                                <h3>Security by design</h3>
-                                <ul>
-                                    <li><strong>Security requirements</strong> embedded from project kickoff, not as an afterthought</li>
-                                    <li><strong>Architecture review</strong> gate: no go-live without security sign-off</li>
-                                    <li><strong>Change management</strong> tied to security baselines</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pillar">
-                        <div class="pillar-accent"></div>
-                        <div class="pillar-inner">
-                            <div class="pillar-label"><i class="fa-solid fa-shield-halved" style="margin-right: 6px;"></i> Technical</div>
-                            <div class="pillar-content">
-                                <h3>Detect, respond, remediate</h3>
-                                <ul>
-                                    <li><strong>Vulnerability scans</strong> → risk-rated findings → prioritised <strong>remediation</strong> tracking to closure</li>
-                                    <li><strong>Incident response</strong> playbooks and <strong>crisis communication</strong> plans calibrated to your risk profile</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Row 3: Resilience + Reporting -->
-                <div class="pillars-row">
-                    <div class="pillar">
-                        <div class="pillar-accent"></div>
-                        <div class="pillar-inner">
-                            <div class="pillar-label"><i class="fa-solid fa-life-ring" style="margin-right: 6px;"></i> Resilience</div>
-                            <div class="pillar-content">
-                                <h3>Continuity under pressure</h3>
-                                <ul>
-                                    <li><strong>Business Impact Analysis</strong> drives the scope: <strong>BCP/DRP</strong> designed around what actually matters</li>
-                                    <li><strong>Crisis simulations</strong> tested under realistic conditions — not just documented on a shelf</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pillar">
-                        <div class="pillar-accent"></div>
-                        <div class="pillar-inner">
-                            <div class="pillar-label"><i class="fa-solid fa-chart-line" style="margin-right: 6px;"></i> Reporting</div>
-                            <div class="pillar-content">
-                                <h3>Prove progress to the board</h3>
-                                <ul>
-                                    <li><strong>Traffic-light dashboards</strong>, quarter-over-quarter progress, executive-ready format</li>
-                                    <li><strong>KPIs</strong> aligned to risk appetite: compliance coverage, <strong>MTTR</strong>, patch status, incident trends, residual risk evolution</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Approach: first 6 months -->
-    <section class="section" id="approach">
-        <div class="container">
-            <div class="section-head" style="margin-bottom: var(--space-8);">
-                <div style="font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.1em; text-align: center; margin-bottom: var(--space-2);">Approach</div>
-                <h2 class="section-title animate-in">The first 6 months.</h2>
-                <p class="section-subtitle">A structured ramp-up, from assessment to running security function.</p>
-            </div>
-
-            <div style="max-width: 660px; margin: 0 auto var(--space-6); padding: var(--space-4) var(--space-5); background: var(--color-primary-50); border-radius: var(--radius-lg); text-align: center;" class="animate-in">
-                <p style="font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: 0;">
-                    <strong style="color: var(--text-primary);">After 6 months you have:</strong> a maturity assessment, governance framework, first standards deployed, quick wins in place, a security roadmap, and a dossier ready for your permanent CISO or for continued engagement.
-                </p>
-            </div>
-
-            <div style="max-width: 660px; margin: 0 auto;" class="animate-in">
-
-                <div class="approach-step">
-                    <div class="approach-period">Month 1-2</div>
-                    <div>
-                        <h3>Understand &amp; assess</h3>
-                        <p style="margin-bottom: 6px;">Map the current state, identify critical gaps, deliver first wins.</p>
-                        <ul>
-                            <li><strong>Stakeholder interviews</strong> to understand business priorities and risk tolerance</li>
-                            <li><strong>Maturity assessment</strong> across governance, technical, operational domains</li>
-                            <li><strong>Asset inventory</strong> and critical systems mapping</li>
-                            <li><strong>Quick wins</strong> deployed immediately: MFA, password policies, awareness basics</li>
-                            <li><strong>Deliver:</strong> maturity report + risk overview</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="approach-step">
-                    <div class="approach-period">Month 3-4</div>
-                    <div>
-                        <h3>Build foundations</h3>
-                        <p style="margin-bottom: 6px;">Put the governance structure and core documentation in place.</p>
-                        <ul>
-                            <li><strong>Security policy</strong> updated and approved by management</li>
-                            <li><strong>Governance committee</strong> set up with clear roles and meeting cadence</li>
-                            <li><strong>Priority standards</strong> deployed (access control, incident management, change management)</li>
-                            <li><strong>Documentation framework</strong> structured and operational</li>
-                            <li><strong>Risk register</strong> initiated, linked to business impact</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="approach-step">
-                    <div class="approach-period">Month 5-6</div>
-                    <div>
-                        <h3>Deliver &amp; hand over</h3>
-                        <p style="margin-bottom: 6px;">Leave you with a running security function and a clear path forward.</p>
-                        <ul>
-                            <li><strong>3-year security roadmap</strong> with prioritised initiatives and budget estimates</li>
-                            <li><strong>KPI dashboard</strong> tracking compliance, risk reduction, and operational metrics</li>
-                            <li><strong>Complete handover dossier:</strong> current state, risks, stakeholder map, documentation, action plan</li>
-                            <li><strong>Recommendations</strong> for the next 12 months</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Maturity radar SVG -->
-            <div style="max-width: 960px; margin: var(--space-12) auto 0;">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); align-items: center;" class="radar-grid">
-                    <div style="text-align: center;" class="animate-in">
-                        <svg viewBox="-40 0 380 280" style="max-width: 380px; width: 100%;" role="img" aria-labelledby="radar-title radar-desc">
-                            <title id="radar-title">Progression de la maturité sécurité sur 5 axes</title>
-                            <desc id="radar-desc">Radar comparant le niveau de maturité (gouvernance, opérationnel, technique, résilience, reporting) au jour 1, autour du niveau 1-2, et après 6 mois, proche du niveau 3.</desc>
-                            <!-- Background grid -->
-                            <g transform="translate(150,140)">
-                                <!-- Grid circles -->
-                                <polygon points="0,-120 114,-37 70,97 -70,97 -114,-37" fill="none" stroke="#E5E7EB" stroke-width="0.5"/>
-                                <polygon points="0,-90 85,-28 53,73 -53,73 -85,-28" fill="none" stroke="#E5E7EB" stroke-width="0.5"/>
-                                <polygon points="0,-60 57,-19 35,49 -35,49 -57,-19" fill="none" stroke="#E5E7EB" stroke-width="0.5"/>
-                                <polygon points="0,-30 29,-9 18,24 -18,24 -29,-9" fill="none" stroke="#E5E7EB" stroke-width="0.5"/>
-                                <!-- Axes -->
-                                <line x1="0" y1="0" x2="0" y2="-120" stroke="#E5E7EB" stroke-width="0.5"/>
-                                <line x1="0" y1="0" x2="114" y2="-37" stroke="#E5E7EB" stroke-width="0.5"/>
-                                <line x1="0" y1="0" x2="70" y2="97" stroke="#E5E7EB" stroke-width="0.5"/>
-                                <line x1="0" y1="0" x2="-70" y2="97" stroke="#E5E7EB" stroke-width="0.5"/>
-                                <line x1="0" y1="0" x2="-114" y2="-37" stroke="#E5E7EB" stroke-width="0.5"/>
-                                <!-- Before (level ~1.5) — red/orange area -->
-                                <polygon points="0,-36 34,-11 21,29 -21,29 -34,-11" fill="rgba(239,68,68,0.15)" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="4,3"/>
-                                <!-- After 6 months (level ~3) — indigo area -->
-                                <polygon points="0,-72 68,-22 53,58 -42,73 -68,-22" fill="rgba(79,70,229,0.12)" stroke="#4F46E5" stroke-width="2"/>
-                                <!-- Dots after -->
-                                <circle cx="0" cy="-72" r="4" fill="#4F46E5"/>
-                                <circle cx="68" cy="-22" r="4" fill="#4F46E5"/>
-                                <circle cx="53" cy="58" r="4" fill="#4F46E5"/>
-                                <circle cx="-42" cy="73" r="4" fill="#4F46E5"/>
-                                <circle cx="-68" cy="-22" r="4" fill="#4F46E5"/>
-                                <!-- Labels -->
-                                <text x="0" y="-130" text-anchor="middle" font-size="10" font-weight="600" fill="#374151">Governance</text>
-                                <text x="128" y="-34" text-anchor="start" font-size="10" font-weight="600" fill="#374151">Operational</text>
-                                <text x="80" y="112" text-anchor="middle" font-size="10" font-weight="600" fill="#374151">Technical</text>
-                                <text x="-80" y="112" text-anchor="middle" font-size="10" font-weight="600" fill="#374151">Resilience</text>
-                                <text x="-128" y="-34" text-anchor="end" font-size="10" font-weight="600" fill="#374151">Reporting</text>
-                                <!-- Level labels -->
-                                <text x="8" y="-23" font-size="7" fill="#9CA3AF">1</text>
-                                <text x="8" y="-53" font-size="7" fill="#9CA3AF">2</text>
-                                <text x="8" y="-83" font-size="7" fill="#9CA3AF">3</text>
-                                <text x="8" y="-113" font-size="7" fill="#9CA3AF">4</text>
-                            </g>
-                            <!-- Legend -->
-                            <g transform="translate(60, 268)">
-                                <line x1="0" y1="0" x2="20" y2="0" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="4,3"/>
-                                <text x="26" y="4" font-size="9" fill="#6B7280">Day 1</text>
-                                <line x1="90" y1="0" x2="110" y2="0" stroke="#4F46E5" stroke-width="2"/>
-                                <text x="116" y="4" font-size="9" fill="#6B7280">After 6 months</text>
-                            </g>
-                        </svg>
-                    </div>
-                    <div class="animate-in">
-                        <h3 style="font-size: var(--font-size-lg); margin-bottom: var(--space-3);">Maturity assessment.</h3>
-                        <p style="font-size: var(--font-size-sm); color: var(--text-secondary);">Most organisations start at maturity level 1-2: informal processes, no documentation, reactive posture. After 6 months, the goal is to reach level 3 on critical domains: defined, documented, applied.</p>
-                        <div style="margin-top: var(--space-4); font-size: var(--font-size-xs); color: var(--text-muted);">
-                            <div style="margin-bottom: 4px;"><strong style="color: var(--text-secondary);">Level 1</strong> : Nothing in place</div>
-                            <div style="margin-bottom: 4px;"><strong style="color: var(--text-secondary);">Level 2</strong> : Informal, ad hoc</div>
-                            <div style="margin-bottom: 4px;"><strong style="color: var(--text-secondary);">Level 3</strong> : Defined & applied</div>
-                            <div><strong style="color: var(--text-secondary);">Level 4</strong> : Measured & managed</div>
-                        </div>
-                    </div>
+            <div class="voice">
+                <div class="voice-name">Governance</div>
+                <div>
+                    <h3>Strategy &amp; business alignment</h3>
+                    <ul>
+                        <li>Cyber business cases with cost-benefit analysis; prioritised roadmap for exco approval</li>
+                        <li>Risk register, security policies, Statement of Applicability — living documents tied to the actual threat landscape, not shelfware</li>
+                    </ul>
                 </div>
             </div>
+            <div class="voice">
+                <div class="voice-name">Operational</div>
+                <div>
+                    <h3>Security by design</h3>
+                    <ul>
+                        <li>Security requirements embedded from project kickoff, not as an afterthought</li>
+                        <li>Architecture review gate: no go-live without security sign-off</li>
+                        <li>Change management tied to security baselines</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="voice">
+                <div class="voice-name">Technical</div>
+                <div>
+                    <h3>Detect, respond, remediate</h3>
+                    <ul>
+                        <li>Vulnerability scans → risk-rated findings → prioritised remediation tracking to closure</li>
+                        <li>Incident response playbooks and crisis communication plans calibrated to your risk profile</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="voice">
+                <div class="voice-name">Resilience</div>
+                <div>
+                    <h3>Continuity under pressure</h3>
+                    <ul>
+                        <li>Business Impact Analysis drives the scope: BCP/DRP designed around what actually matters</li>
+                        <li>Crisis simulations tested under realistic conditions — not just documented on a shelf</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="voice">
+                <div class="voice-name">Reporting</div>
+                <div>
+                    <h3>Prove progress to the board</h3>
+                    <ul>
+                        <li>Traffic-light dashboards, quarter-over-quarter progress, executive-ready format</li>
+                        <li>KPIs aligned to risk appetite: compliance coverage, MTTR, patch status, incident trends, residual risk evolution</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-        </div>
-    </section>
+        <section id="approach">
+            <div class="eyebrow">The roadmap</div>
+            <h2>The first 6 months.</h2>
+            <p class="lede">A structured ramp-up, from assessment to running security function.</p>
+            <div class="callout"><strong>After 6 months you have:</strong> a maturity assessment, governance framework, first standards deployed, quick wins in place, a security roadmap, and a dossier ready for your permanent CISO or for continued engagement.</div>
 
-    <!-- Who it's for -->
-    <section class="section section-alt" id="who">
-        <div class="container">
-            <div class="section-head" style="margin-bottom: var(--space-8);">
-                <h2 class="section-title animate-in">Private and public sector.</h2>
+            <div class="movement">
+                <div class="movement-num">Movement I</div>
+                <h4>Understand &amp; assess</h4>
+                <div class="tempo">Month 1–2 — Map the current state, identify critical gaps, deliver first wins.</div>
+                <ul>
+                    <li>Stakeholder interviews to understand business priorities and risk tolerance</li>
+                    <li>Maturity assessment across governance, technical, operational domains</li>
+                    <li>Asset inventory and critical systems mapping</li>
+                    <li>Quick wins deployed immediately: MFA, password policies, awareness basics</li>
+                    <li>Deliver: maturity report + risk overview</li>
+                </ul>
+            </div>
+            <div class="movement">
+                <div class="movement-num">Movement II</div>
+                <h4>Build foundations</h4>
+                <div class="tempo">Month 3–4 — Put the governance structure and core documentation in place.</div>
+                <ul>
+                    <li>Security policy updated and approved by management</li>
+                    <li>Governance committee set up with clear roles and meeting cadence</li>
+                    <li>Priority standards deployed (access control, incident management, change management)</li>
+                    <li>Documentation framework structured and operational</li>
+                    <li>Risk register initiated, linked to business impact</li>
+                </ul>
+            </div>
+            <div class="movement">
+                <div class="movement-num">Movement III</div>
+                <h4>Deliver &amp; hand over</h4>
+                <div class="tempo">Month 5–6 — Leave you with a running security function and a clear path forward.</div>
+                <ul>
+                    <li>3-year security roadmap with prioritised initiatives and budget estimates</li>
+                    <li>KPI dashboard tracking compliance, risk reduction, and operational metrics</li>
+                    <li>Complete handover dossier: current state, risks, stakeholder map, documentation, action plan</li>
+                    <li>Recommendations for the next 12 months</li>
+                </ul>
             </div>
 
-            <div style="max-width: 760px; margin: 0 auto; text-align: center; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;" class="animate-in">
-                <span style="background: var(--bg-primary); border: 1px solid var(--color-gray-200); padding: 8px 16px; border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); color: var(--text-primary);">Government agencies</span>
-                <span style="background: var(--bg-primary); border: 1px solid var(--color-gray-200); padding: 8px 16px; border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); color: var(--text-primary);">Municipalities</span>
-                <span style="background: var(--bg-primary); border: 1px solid var(--color-gray-200); padding: 8px 16px; border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium); color: var(--text-primary);">PSFs</span>
+            <h4 style="margin-top: 30px; margin-bottom: 6px;">Maturity assessment.</h4>
+            <p class="lede" style="margin-bottom: 6px;">Most organisations start at maturity level 1-2: informal processes, no documentation, reactive posture. After 6 months, the goal is to reach level 3 on critical domains: defined, documented, applied.</p>
+            <div class="dynamics">
+                <div><strong>pp</strong> Level 1 — Nothing in place</div>
+                <div><strong>p</strong> Level 2 — Informal, ad hoc</div>
+                <div><strong>mf</strong> Level 3 — Defined &amp; applied</div>
+                <div><strong>f</strong> Level 4 — Measured &amp; managed</div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Credentials -->
-    <section class="section" id="creds">
-        <div class="container" style="text-align: center;">
-            <div style="font-size: var(--font-size-xs); font-weight: var(--font-weight-semibold); color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-2);">Credentials</div>
-            <h2 class="section-title animate-in" style="margin-bottom: var(--space-8);">20 years in IT. Certified where it matters.</h2>
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 700px; margin: 0 auto;">
-                <span style="background: var(--color-primary-100); color: var(--color-primary-dark); padding: 6px 16px; border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);">ISO 27001 Lead Implementer</span>
-                <span style="background: var(--color-primary-100); color: var(--color-primary-dark); padding: 6px 16px; border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);">ISO 27001 Lead Auditor</span>
-                <span style="background: var(--bg-secondary); color: var(--text-secondary); padding: 6px 16px; border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);">TOGAF</span>
-                <span style="background: var(--bg-secondary); color: var(--text-secondary); padding: 6px 16px; border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);">SAFe 5 SPC</span>
-                <span style="background: var(--bg-secondary); color: var(--text-secondary); padding: 6px 16px; border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);">PRINCE2 Practitioner</span>
-                <span style="background: var(--bg-secondary); color: var(--text-secondary); padding: 6px 16px; border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);">ITIL V4</span>
-                <span style="background: var(--bg-secondary); color: var(--text-secondary); padding: 6px 16px; border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);">Change Management</span>
-                <span style="background: var(--bg-secondary); color: var(--text-secondary); padding: 6px 16px; border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);">AWS Cloud Practitioner</span>
-                <span style="background: var(--bg-secondary); color: var(--text-secondary); padding: 6px 16px; border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: var(--font-weight-medium);">Scrum Master</span>
+        <section id="who">
+            <h2>Who it's for.</h2>
+            <p class="lede">Private and public sector organisations across Luxembourg and the Benelux.</p>
+            <div class="badges">
+                <span class="badge">Government agencies</span>
+                <span class="badge">Municipalities</span>
+                <span class="badge">PSFs</span>
             </div>
-            <p style="font-size: var(--font-size-sm); color: var(--text-muted); margin-top: var(--space-4);">Executive MBA Instituto Empresa &middot; Master of Science MSIE ESCP Europe</p>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA -->
-    <section class="section-cta" id="contact" style="padding: var(--space-20) 0;">
-        <div class="container" style="max-width: 640px;">
-            <h2 class="animate-in" style="font-size: var(--font-size-4xl); margin-bottom: var(--space-4); color: white;">Contact.</h2>
-            <p class="animate-in" style="font-size: var(--font-size-lg); color: var(--color-white-85); margin-bottom: var(--space-8);">30 minutes to understand your situation. Free, no commitment.</p>
-            <div style="display: flex; flex-direction: column; align-items: center; gap: var(--space-4);" class="animate-in">
-                <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-primary btn-lg" style="background: var(--color-white); color: var(--color-primary-dark); font-weight: var(--font-weight-semibold); font-size: var(--font-size-sm); word-break: break-all; text-align: center;"><i class="fa-solid fa-envelope"></i> emmanuel.genesteix@agilevizion.com</a>
-                <a href="tel:+352661780807" style="color: var(--color-white-85); font-size: var(--font-size-base);"><i class="fa-solid fa-phone"></i> +352 661 78 08 07</a>
-                <a href="https://www.linkedin.com/in/genesteix-emmanuel" target="_blank" rel="noopener noreferrer" style="color: var(--color-white-85); font-size: var(--font-size-base);"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <section id="creds">
+            <div class="eyebrow">Credentials</div>
+            <h2>20 years in IT. Certified where it matters.</h2>
+            <div class="badges">
+                <span class="badge on">ISO 27001 Lead Implementer</span>
+                <span class="badge on">ISO 27001 Lead Auditor</span>
+                <span class="badge">TOGAF</span>
+                <span class="badge">SAFe 5 SPC</span>
+                <span class="badge">PRINCE2 Practitioner</span>
+                <span class="badge">ITIL V4</span>
+                <span class="badge">Change Management</span>
+                <span class="badge">AWS Cloud Practitioner</span>
+                <span class="badge">Scrum Master</span>
             </div>
-        </div>
-    </section>
+            <p class="lede" style="margin-top: 14px; font-size: 0.9rem;">Executive MBA Instituto Empresa &middot; Master of Science MSIE ESCP Europe</p>
+        </section>
+
+        <section id="contact">
+            <h2>Let's talk.</h2>
+            <p class="lede">30 minutes to understand your situation. Free, no commitment.</p>
+            <div class="cta-row" style="flex-direction: column; align-items: flex-start;">
+                <a href="mailto:emmanuel.genesteix@agilevizion.com" class="btn btn-fill">emmanuel.genesteix@agilevizion.com</a>
+                <a href="tel:+352661780807" style="color: var(--muted);">+352 661 78 08 07</a>
+                <a href="https://www.linkedin.com/in/genesteix-emmanuel" target="_blank" rel="noopener noreferrer" style="color: var(--muted);">LinkedIn</a>
+            </div>
+        </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <span class="nav-logo">Agile<span>Vizion</span></span>
-                    <p>Luxembourg</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 AgileVizion</p>
-                <p class="footer-legal-nav">
-                    <a href="#legal" class="footer-legal-link">Legal notice</a>
-                </p>
-            </div>
-            <div id="legal" class="footer-legal">
-                <p><strong>AgileVizion</strong> | Registration: A46385 | VAT LU36976357</p>
-            </div>
-        </div>
+    <footer>
+        AgileVizion — Ehnen, Luxembourg &middot; RCS Luxembourg A46385 &middot; VAT LU36976357
     </footer>
 
-    <!-- Scripts -->
-    <script src="js/nav.js"></script>
-    <script src="js/animations.js"></script>
+</div>
 </body>
 </html>

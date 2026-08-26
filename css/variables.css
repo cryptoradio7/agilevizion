@@ -1,114 +1,22 @@
 /* ============================================
-   AgileVizion 2 — Design Tokens
-   Palette moderne, abandon navy/gold
+   AgileVizion — La Partition
+   Design Tokens — Marine & Ambre
    ============================================ */
 
 :root {
-    /* Primary — Deep Petrol Teal */
-    --color-primary: #0F5C56;
-    --color-primary-dark: #0A3F3B;
-    --color-primary-50: #EEF7F6;
-    --color-primary-100: #D7EBE9;
-    --color-primary-900: #072B28;
+    --paper: #FFFFFF;
+    --ink: #1E3350;
+    --ink-hover: #14243A;
+    --amber: #D99A3D;
+    --terracotta: #C46A4D;
+    --muted: #6E7684;
+    --line: rgba(30, 51, 80, 0.18);
 
-    /* Neutrals */
-    --color-white: #FFFFFF;
-    --color-gray-50: #F9FAFB;
-    --color-gray-200: #E5E7EB;
-    --color-gray-400: #9CA3AF;
-    --color-gray-500: #6B7280;
-    --color-gray-600: #4B5563;
-    --color-gray-700: #374151;
-    --color-gray-900: #111827;
+    --serif: 'EB Garamond', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
-    /* Text */
-    --text-primary: var(--color-gray-900);
-    --text-secondary: var(--color-gray-600);
-    --text-muted: var(--color-gray-400);
-    --text-inverse: var(--color-white);
-
-    /* Backgrounds */
-    --bg-primary: var(--color-white);
-    --bg-secondary: var(--color-gray-50);
-    --bg-dark: var(--color-gray-900);
-
-    /* Typography */
-    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --font-size-xs: 0.75rem;
-    --font-size-sm: 0.875rem;
-    --font-size-base: 1rem;       /* 16px — minimum pour éviter zoom auto iOS */
-    --font-size-lg: 1.125rem;
-    --font-size-xl: 1.25rem;
-    --font-size-2xl: 1.5rem;
-    --font-size-3xl: 1.5rem;      /* mobile base — scale up via min-width queries */
-    --font-size-4xl: 2rem;        /* mobile base */
-    --font-size-5xl: 1.875rem;    /* mobile base — scale up via min-width queries */
-    --line-height-tight: 1.15;
-    --line-height-normal: 1.6;
-    --line-height-relaxed: 1.75;
-    --font-weight-medium: 500;
-    --font-weight-semibold: 600;
-    --font-weight-bold: 700;
-    --font-weight-extrabold: 800;
-
-    /* Spacing */
-    --space-1: 0.25rem;
-    --space-2: 0.5rem;
-    --space-3: 0.75rem;
-    --space-4: 1rem;
-    --space-5: 1.25rem;
-    --space-6: 1.5rem;
-    --space-8: 2rem;
-    --space-10: 2.5rem;
-    --space-12: 3rem;
-    --space-16: 4rem;
-    --space-20: 5rem;
-
-    /* Border radius */
-    --radius-lg: 0.375rem;
-    --radius-xl: 0.5rem;
-    --radius-full: 9999px;
-
-    /* Shadows */
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-
-    /* White alpha variants (overlays sur fond sombre) */
-    --color-white-85: rgba(255, 255, 255, 0.85);
-
-    /* Backgrounds sémantiques */
-    --bg-navbar: rgba(255, 255, 255, 0.95);
-
-    /* Line heights supplémentaires */
-    --line-height-button: 1.4;
-
-    /* Transitions */
+    --container-max: 820px;
+    --radius: 2px;
+    --radius-pill: 999px;
     --transition-fast: 150ms ease;
-    --transition-base: 250ms ease;
-    --transition-enter: 600ms ease-out;  /* animations scroll Intersection Observer */
-
-    /* Layout */
-    --container-max: 1200px;
-    --container-padding: var(--space-6);
-    --navbar-height: 72px;
-
-    /* Icon / component sizes */
-    --size-hamburger: 1.5rem;      /* 24px — barre hamburger nav */
-    --tap-target: 44px;            /* Tap target minimum accessibilité tactile */
-
-    /* Layout max-widths */
-    --width-hero-content: 800px;
-    --width-text-block: 640px;
-    --width-cta-max: 320px;
-
-    /* UI micro-values */
-    --border-2: 2px;               /* Épaisseur bordure fine (btn, nav active, hamburger) */
-
-    /* Staggered animation delays */
-    --delay-nth-2: 0.1s;
-    --delay-nth-3: 0.2s;
-    --delay-nth-4: 0.3s;
-    --delay-nth-5: 0.35s;
-    --delay-nth-6: 0.4s;
-    --delay-nth-7: 0.45s;
 }

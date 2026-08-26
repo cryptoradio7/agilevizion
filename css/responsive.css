@@ -1,171 +1,36 @@
 /* ============================================
-   AgileVizion 2 — Responsive (Mobile-First)
-   Base = mobile, scale up via min-width queries
-   Breakpoints : 480px / 768px / 1024px
+   AgileVizion — Responsive
+   Breakpoint : 560px
    ============================================ */
 
-/* ============================================
-   BASE MOBILE
-   ============================================ */
-
-.hero-title {
-    font-size: 2rem;
-}
-
-/* Tap targets : minimum 44x44px */
-.btn {
-    min-height: var(--tap-target);
-}
-
-.nav-menu a {
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-}
-
-/* Footer mobile */
-.footer-content {
-    flex-direction: column;
-    gap: var(--space-6);
-}
-
-/* ============================================
-   BREAKPOINT 480px
-   ============================================ */
-
-@media (min-width: 480px) {
-    .hero-cta {
-        flex-direction: row;
-        flex-wrap: wrap;
+@media (max-width: 560px) {
+    .voice {
+        grid-template-columns: 1fr;
+        gap: 6px;
     }
 
-    .hero-cta .btn {
-        width: auto;
-    }
-}
-
-/* ============================================
-   BREAKPOINT 768px — Tablette
-   ============================================ */
-
-@media (min-width: 768px) {
-    :root {
-        --font-size-5xl: 2.5rem;
-        --font-size-4xl: 2.25rem;
-        --font-size-3xl: 1.875rem;
+    .voice-name {
+        font-size: 0.95rem;
     }
 
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero {
-        min-height: 75vh;
-        padding-top: calc(var(--navbar-height) + var(--space-16));
-        padding-bottom: var(--space-16);
-    }
-
-    .section {
-        padding: var(--space-16) 0;
-    }
-
-    .section-title {
-        font-size: var(--font-size-3xl);
-    }
-
-    .section-subtitle {
-        font-size: var(--font-size-lg);
-        margin-bottom: var(--space-12);
-    }
-
-    .footer-content {
-        flex-direction: row;
-        justify-content: space-between;
+    .top-row {
+        flex-direction: column;
         align-items: flex-start;
     }
-}
 
-/* ============================================
-   BREAKPOINT 1024px — Desktop
-   ============================================ */
-
-@media (min-width: 1024px) {
-    .nav-toggle {
-        display: none;
+    nav.menu {
+        margin: 0 -16px 20px;
+        padding: 0 16px;
     }
 
-    .nav-menu {
-        position: static;
-        transform: none;
-        opacity: 1;
-        pointer-events: auto;
-        flex-direction: row;
-        align-items: center;
-        padding: 0;
-        gap: var(--space-6);
-        border: none;
-        background: transparent;
-        z-index: auto;
-    }
-
-    .nav-menu a {
-        min-height: auto;
-        display: inline;
-    }
-
-    :root {
-        --font-size-5xl: 3rem;
-        --font-size-4xl: 2.25rem;
-        --font-size-3xl: 1.875rem;
-    }
-
-    .hero-title {
-        font-size: 2.6rem;
-    }
-
-    .hero {
-        min-height: 85vh;
-    }
-
-    .section {
-        padding: var(--space-20) 0;
+    .sheet {
+        padding: 32px 16px 64px;
     }
 }
 
-/* ============================================
-   EDGE CASE : Paysage mobile
-   ============================================ */
-
-@media (max-height: 500px) and (orientation: landscape) {
-    .hero {
-        min-height: auto;
-        max-height: 100vh;
-        padding-top: calc(var(--navbar-height) + var(--space-6));
-        padding-bottom: var(--space-6);
-    }
-}
-
-/* ============================================
-   EDGE CASE : Tres petit ecran (<320px)
-   ============================================ */
-
-@media (max-width: 319px) {
-    :root {
-        --container-padding: var(--space-3);
-        --font-size-5xl: 1.5rem;
-        --font-size-2xl: 1.25rem;
-    }
-
-    .hero-title,
-    .section-title,
-    h1, h2, h3 {
-        word-break: break-word;
-        hyphens: auto;
-    }
-
-    .btn {
-        max-width: 100%;
-        white-space: normal;
-        text-align: center;
+@media (max-width: 380px) {
+    nav.menu a {
+        font-size: 0.76rem;
+        padding: 12px 7px;
     }
 }
