@@ -43,9 +43,11 @@ section {
 section:first-of-type { border-top: none; }
 
 .eyebrow {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 0.95rem;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
     color: var(--terracotta);
     margin: 32px 0 10px;
 }
