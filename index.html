@@ -104,66 +104,88 @@
             <div class="eyebrow">Scope of the mandate</div>
             <h2>Governance. Operational. Technical. Resilience. Reporting.</h2>
 
-            <!-- Pillar cards: pyramid layout -->
-            <div class="pillar-grid">
-                <!-- Row 1: Governance (full width) -->
-                <div class="pillar-card pillar-full">
-                    <div class="pillar-icon"><i class="fa-solid fa-compass"></i></div>
-                    <div class="pillar-body">
-                        <h3>Governance</h3>
-                        <p class="pillar-sub">Strategy &amp; business alignment</p>
-                        <ul>
-                            <li>Cyber business cases with <u>cost-benefit analysis</u>; prioritised roadmap for exco approval</li>
-                            <li><u>Risk register</u>, <u>security policies</u>, Statement of Applicability. Living documents tied to the actual threat landscape, not shelfware</li>
-                        </ul>
-                    </div>
+            <!-- 5 pillars visual -->
+            <div style="text-align: center; margin: 20px 0 30px;">
+                <svg viewBox="0 0 400 320" style="max-width: 400px; width: 100%;" role="img" aria-label="5 pillars of the CISO mandate">
+                    <!-- Pentagon shape -->
+                    <polygon points="200,30 370,155 335,290 65,290 30,155" fill="none" stroke="#D1D5DB" stroke-width="1.5"/>
+                    <!-- Connecting lines to center -->
+                    <line x1="200" y1="160" x2="200" y2="30" stroke="#D1D5DB" stroke-width="0.8"/>
+                    <line x1="200" y1="160" x2="370" y2="155" stroke="#D1D5DB" stroke-width="0.8"/>
+                    <line x1="200" y1="160" x2="335" y2="290" stroke="#D1D5DB" stroke-width="0.8"/>
+                    <line x1="200" y1="160" x2="65" y2="290" stroke="#D1D5DB" stroke-width="0.8"/>
+                    <line x1="200" y1="160" x2="30" y2="155" stroke="#D1D5DB" stroke-width="0.8"/>
+                    <!-- Center -->
+                    <circle cx="200" cy="160" r="38" fill="#1E3350"/>
+                    <text x="200" y="155" text-anchor="middle" font-size="8" font-weight="700" fill="#FFFFFF">CISO</text>
+                    <text x="200" y="168" text-anchor="middle" font-size="7.5" fill="rgba(255,255,255,0.85)">as-a-service</text>
+                    <!-- Node: Governance (top) -->
+                    <circle cx="200" cy="30" r="14" fill="#C46A4D" opacity="0.15" stroke="#C46A4D" stroke-width="2"/>
+                    <text x="200" y="8" text-anchor="middle" font-size="11" font-weight="600" fill="#1E3350">Governance</text>
+                    <!-- Node: Operational (top-right) -->
+                    <circle cx="370" cy="155" r="14" fill="#C46A4D" opacity="0.15" stroke="#C46A4D" stroke-width="2"/>
+                    <text x="370" y="140" text-anchor="middle" font-size="11" font-weight="600" fill="#1E3350">Operational</text>
+                    <!-- Node: Reporting (bottom-right) -->
+                    <circle cx="335" cy="290" r="14" fill="#C46A4D" opacity="0.15" stroke="#C46A4D" stroke-width="2"/>
+                    <text x="335" y="313" text-anchor="middle" font-size="11" font-weight="600" fill="#1E3350">Reporting</text>
+                    <!-- Node: Resilience (bottom-left) -->
+                    <circle cx="65" cy="290" r="14" fill="#C46A4D" opacity="0.15" stroke="#C46A4D" stroke-width="2"/>
+                    <text x="65" y="313" text-anchor="middle" font-size="11" font-weight="600" fill="#1E3350">Resilience</text>
+                    <!-- Node: Technical (top-left) -->
+                    <circle cx="30" cy="155" r="14" fill="#C46A4D" opacity="0.15" stroke="#C46A4D" stroke-width="2"/>
+                    <text x="30" y="140" text-anchor="middle" font-size="11" font-weight="600" fill="#1E3350">Technical</text>
+                </svg>
+            </div>
+
+            <div class="voice">
+                <div class="voice-name"><i class="fa-solid fa-compass"></i> Governance</div>
+                <div>
+                    <h3>Strategy &amp; business alignment</h3>
+                    <ul>
+                        <li>Cyber business cases with <u>cost-benefit analysis</u>; prioritised roadmap for exco approval</li>
+                        <li><u>Risk register</u>, <u>security policies</u>, Statement of Applicability. Living documents tied to the actual threat landscape, not shelfware</li>
+                    </ul>
                 </div>
-                <!-- Row 2: Operational + Technical -->
-                <div class="pillar-card">
-                    <div class="pillar-icon"><i class="fa-solid fa-gears"></i></div>
-                    <div class="pillar-body">
-                        <h3>Operational</h3>
-                        <p class="pillar-sub">Security by design</p>
-                        <ul>
-                            <li><u>Security requirements</u> embedded from project kickoff, not as an afterthought</li>
-                            <li><u>Architecture review</u> gate: no go-live without security sign-off</li>
-                            <li>Change management tied to <u>security baselines</u></li>
-                        </ul>
-                    </div>
+            </div>
+            <div class="voice">
+                <div class="voice-name"><i class="fa-solid fa-gears"></i> Operational</div>
+                <div>
+                    <h3>Security by design</h3>
+                    <ul>
+                        <li><u>Security requirements</u> embedded from project kickoff, not as an afterthought</li>
+                        <li><u>Architecture review</u> gate: no go-live without security sign-off</li>
+                        <li>Change management tied to <u>security baselines</u></li>
+                    </ul>
                 </div>
-                <div class="pillar-card">
-                    <div class="pillar-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                    <div class="pillar-body">
-                        <h3>Technical</h3>
-                        <p class="pillar-sub">Detect, respond, remediate</p>
-                        <ul>
-                            <li><u>Vulnerability scans</u> → risk-rated findings → prioritised remediation tracking to closure</li>
-                            <li><u>Incident response</u> playbooks and crisis communication plans calibrated to your risk profile</li>
-                        </ul>
-                    </div>
+            </div>
+            <div class="voice">
+                <div class="voice-name"><i class="fa-solid fa-shield-halved"></i> Technical</div>
+                <div>
+                    <h3>Detect, respond, remediate</h3>
+                    <ul>
+                        <li><u>Vulnerability scans</u> → risk-rated findings → prioritised remediation tracking to closure</li>
+                        <li><u>Incident response</u> playbooks and crisis communication plans calibrated to your risk profile</li>
+                    </ul>
                 </div>
-                <!-- Row 3: Resilience + Reporting -->
-                <div class="pillar-card">
-                    <div class="pillar-icon"><i class="fa-solid fa-life-ring"></i></div>
-                    <div class="pillar-body">
-                        <h3>Resilience</h3>
-                        <p class="pillar-sub">Continuity under pressure</p>
-                        <ul>
-                            <li>Business Impact Analysis drives the scope: <u>BCP/DRP</u> designed around what actually matters</li>
-                            <li>Crisis simulations tested under realistic conditions, not just documented on a shelf</li>
-                        </ul>
-                    </div>
+            </div>
+            <div class="voice">
+                <div class="voice-name"><i class="fa-solid fa-life-ring"></i> Resilience</div>
+                <div>
+                    <h3>Continuity under pressure</h3>
+                    <ul>
+                        <li>Business Impact Analysis drives the scope: <u>BCP/DRP</u> designed around what actually matters</li>
+                        <li>Crisis simulations tested under realistic conditions, not just documented on a shelf</li>
+                    </ul>
                 </div>
-                <div class="pillar-card">
-                    <div class="pillar-icon"><i class="fa-solid fa-chart-line"></i></div>
-                    <div class="pillar-body">
-                        <h3>Reporting</h3>
-                        <p class="pillar-sub">Prove progress to the board</p>
-                        <ul>
-                            <li><u>Traffic-light dashboards</u>, quarter-over-quarter progress, executive-ready format</li>
-                            <li><u>KPIs</u> aligned to risk appetite: compliance coverage, MTTR, patch status, incident trends, residual risk evolution</li>
-                        </ul>
-                    </div>
+            </div>
+            <div class="voice">
+                <div class="voice-name"><i class="fa-solid fa-chart-line"></i> Reporting</div>
+                <div>
+                    <h3>Prove progress to the board</h3>
+                    <ul>
+                        <li><u>Traffic-light dashboards</u>, quarter-over-quarter progress, executive-ready format</li>
+                        <li><u>KPIs</u> aligned to risk appetite: compliance coverage, MTTR, patch status, incident trends, residual risk evolution</li>
+                    </ul>
                 </div>
             </div>
         </section>
