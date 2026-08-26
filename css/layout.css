@@ -102,6 +102,56 @@ h2 {
 
 .voice li { margin-bottom: 5px; }
 
+/* --- Pillar cards (pyramid layout) --- */
+.pillar-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+}
+.pillar-card {
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 20px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+.pillar-full {
+    grid-column: 1 / -1;
+}
+.pillar-icon {
+    font-size: 1.4rem;
+    color: var(--terracotta);
+    flex-shrink: 0;
+    width: 28px;
+    text-align: center;
+    padding-top: 2px;
+}
+.pillar-body h3 {
+    font-size: 1.02rem;
+    margin-bottom: 2px;
+}
+.pillar-sub {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+.pillar-body ul {
+    padding-left: 18px;
+    font-size: 0.9rem;
+    color: var(--muted);
+    list-style: disc;
+}
+.pillar-body li {
+    margin-bottom: 5px;
+}
+@media (max-width: 560px) {
+    .pillar-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* --- Movements (the six-month roadmap) --- */
 .movement {
     padding: 26px 0;
